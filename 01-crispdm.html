@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="00-introduction_files/libs/clipboard/clipboard.min.js"></script>
-<script src="00-introduction_files/libs/quarto-html/tabby.min.js"></script>
-<script src="00-introduction_files/libs/quarto-html/popper.min.js"></script>
-<script src="00-introduction_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="00-introduction_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="00-introduction_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="00-introduction_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="00-introduction_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="01-crispdm_files/libs/clipboard/clipboard.min.js"></script>
+<script src="01-crispdm_files/libs/quarto-html/tabby.min.js"></script>
+<script src="01-crispdm_files/libs/quarto-html/popper.min.js"></script>
+<script src="01-crispdm_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="01-crispdm_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="01-crispdm_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="01-crispdm_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="01-crispdm_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Matteo Francia">
-  <title>introduction</title>
+  <title>crispdm</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="00-introduction_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="00-introduction_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -30,11 +30,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="00-introduction_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="00-introduction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="00-introduction_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="00-introduction_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="00-introduction_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="01-crispdm_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="01-crispdm_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="01-crispdm_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="01-crispdm_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -345,96 +345,26 @@ Matteo Francia
 
 <img data-src="https://imgs.xkcd.com/comics/machine_learning.png" class="r-stretch quarto-figure-center"><p class="caption">What is machine learning?</p></section>
 
-<section id="hi" class="title-slide slide level1 center">
-<h1>Hi!</h1>
-<p>Matteo Francia, Ph.D.</p>
-<ul>
-<li>Email: m.francia@unibo.it</li>
-<li>Assistant Professor (junior) @ DISI, UniBO</li>
-<li>www: [https://www.unibo.it/sitoweb/m.francia/en]</li>
-</ul>
-<p>Research topics</p>
-<ul>
-<li>Big data / database / machine learning</li>
-<li>Precision agriculture and spatio-temporal analytics</li>
-</ul>
-<p>BIG (Business Intelligence Group)</p>
-<ul>
-<li>[https://big.csr.unibo.it/]</li>
-</ul>
-</section>
-
-<section id="table-of-contents-and-exam" class="title-slide slide level1 center">
-<h1>Table of Contents and Exam</h1>
-<p>Hands-on machine learning</p>
-<ul>
-<li>Introduction to the CRISP-DM methodology</li>
-<li>Theory and practice of the main steps of machine learning pipelines
-<ul>
-<li>Labs will be every two weeks</li>
-<li>Python libraries for machine learning (mainly Pandas and sk-learn)</li>
-</ul></li>
-</ul>
-<p>All these points will be part of the oral examination! :)</p>
-<ul>
-<li>Be prepared: you have to wait 1 month before trying again (in any case)</li>
-</ul>
-</section>
-
-<section id="table-of-contents-and-exam-1" class="title-slide slide level1 center">
-<h1>Table of Contents and Exam</h1>
-<p>Questions on all (theoretical and practical) aspects of the course</p>
-<ul>
-<li>Two separate and independent exam sessions (the other w/ Prof.&nbsp;Golfarelli)
-<ul>
-<li>The final mark is the average of the two exams</li>
-</ul></li>
-<li>Lab contents are included in the evaluation</li>
-<li>Interaction during the lectures/labs is considered in the final evaluation</li>
-</ul>
-<p>Assignment:</p>
-<ul>
-<li>Either on Machine Learning (ask me) or Data Mining (ask Prof.&nbsp;Golfarelli)</li>
-<li>You are responsible for your code
-<ul>
-<li>If you cannot explain your code and your choices…</li>
-<li>… and/or you copied and pasted it from colleagues or LLMs</li>
-<li>… you will need to retake the exam</li>
-<li>“I do not know how to program” is not a valid excuse!</li>
-</ul></li>
-</ul>
-<p>No scheduled dates, just come when you are ready</p>
-<ul>
-<li>At least one week in advance</li>
-</ul>
-<p>According to the University’s regulation</p>
-<ul>
-<li>Exams must be in presence</li>
-<li>Cannot refuse a grade more than once</li>
-</ul>
-</section>
-
-<section id="teaching-material" class="title-slide slide level1 center">
-<h1>Teaching material</h1>
-<p>You will find all you need in these slides</p>
-<p>However, keeping up the pace with machine learning and data mining is hard</p>
-<ul>
-<li>There is a rapid development of trends and technologies, and not all of them will survive</li>
-<li>Books are easily outdated with respect to cutting-edge services and technologies</li>
-<li>Research papers (often) describe solutions that are not commercial yet</li>
-<li>(IRL) You will need to deal with a lot of (bad) documentation, online articles, etc.</li>
-</ul>
-<p>Rule of thumb</p>
-<ul>
-<li>Understand the general concepts and fundamentals</li>
-<li>Connect the dots… and ask questions!</li>
-</ul>
-</section>
-
-<section id="books" class="title-slide slide level1 center">
-<h1>Books</h1>
-
-<img data-src="https://learning.oreilly.com/library/cover/9781492032632/250w/" class="r-stretch quarto-figure-center"><p class="caption">Hands on ML</p><div class="quarto-auto-generated-content">
+<section id="crisp-dm" class="title-slide slide level1 center">
+<h1>CRISP-DM</h1>
+<p>:::: {.columns}</p>
+<p>::: {.column width=“40%”}</p>
+<p>CRISP-DM (CRoss-Industry Standard Process for Data Mining) <span class="citation" data-cites="shearer2000crisp">[@shearer2000crisp]</span></p>
+<blockquote>
+<p>a non-proprietary, documented, and freely available data mining model.</p>
+<p>Developed by industry leaders with input from more than 200 data mining users and data mining tool and service providers, CRISP-DM is an industry-, tool-, and application-neutral model.</p>
+<p>This model encourages best practices and offers organizations the structure needed to realize better, faster results from data mining.</p>
+<p>CRISP-DM organizes the data mining process into six phases: business understanding, data understanding, data preparation, modeling, evaluation, and deployment. These phases help organizations understand the data mining process and provide a road map to follow while planning and carrying out a data mining project.</p>
+</blockquote>
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png"></p>
+<figcaption>CRISP-DM</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
@@ -444,19 +374,19 @@ Matteo Francia
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="00-introduction_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="01-crispdm_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="00-introduction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="00-introduction_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="00-introduction_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="00-introduction_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="00-introduction_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="01-crispdm_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="01-crispdm_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="01-crispdm_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="01-crispdm_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="01-crispdm_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="00-introduction_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="00-introduction_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="00-introduction_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="00-introduction_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="01-crispdm_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="01-crispdm_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="01-crispdm_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="01-crispdm_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
