@@ -3,7 +3,7 @@ services:
   build-quarto:
     init: true
     # restart: always
-    image: w4bo/quarto-slides:1.0.0
+    image: w4bo/quarto-slides:1.0.23
     hostname: build-quarto
     container_name: build-quarto
     volumes:
