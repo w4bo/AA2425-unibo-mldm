@@ -10,7 +10,7 @@ jobs:
           cd slides 
           docker compose up
       - name: Deploy
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
           branch: gh-pages
@@ -20,7 +20,7 @@ jobs:
         with:
           node-version-file: package.json
       - name: Release
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         run: |
           npm install
           npx semantic-release
