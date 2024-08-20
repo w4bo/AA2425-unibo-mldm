@@ -1,8 +1,8 @@
 {{< include _cover.md >}}
 
-# Machine Learning and Data Mining
+#
 
-![](https://imgs.xkcd.com/comics/machine_learning.png)
+![What is machine learning?](https://imgs.xkcd.com/comics/machine_learning.png)
 
 # Hi!
 
@@ -23,7 +23,7 @@ BIG (Business Intelligence Group)
 
 # Table of Contents and Exam
 
-Hands on machine learning
+Hands-on machine learning
 
 - Introduction to the CRISP-DM methodology
 - Theory and practice of the main steps of machine learning pipelines
@@ -31,6 +31,8 @@ Hands on machine learning
     - Python libraries for machine learning (mainly Pandas and sk-learn)
 
 All these points will be part of the oral examination! :)
+
+- Be prepared: you have to wait 1 month before trying again (in any case)
 
 # Table of Contents and Exam
 
@@ -49,6 +51,7 @@ Assignment:
     - ... and/or you copied and pasted it from colleagues or LLMs
     - ... you will need to retake the exam
     - "I do not know how to program" is not a valid excuse!
+
 No scheduled dates, just come when you are ready
 
 - At least one week in advance
@@ -57,8 +60,6 @@ According to the University's regulation
 
 - Exams must be in presence
 - Cannot refuse a grade more than once
-
-Be prepared: you have to wait 1 month before trying again (in any case)
 
 # Teaching material
 
@@ -78,4 +79,4 @@ Rule of thumb
 
 # Books
 
-![Book 1](https://learning.oreilly.com/library/cover/9781492032632/250w/)
+![Hands on ML](https://learning.oreilly.com/library/cover/9781492032632/250w/)
