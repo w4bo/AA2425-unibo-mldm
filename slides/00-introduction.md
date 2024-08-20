@@ -10,7 +10,7 @@ Matteo Francia, Ph.D.
 
 - Email: m.francia@unibo.it
 - Assistant Professor (junior) @ DISI, UniBO
-- www: https://www.unibo.it/sitoweb/m.francia/en 
+- www: [https://www.unibo.it/sitoweb/m.francia/en]
 
 Research topics
 
@@ -19,7 +19,7 @@ Research topics
 
 BIG (Business Intelligence Group)
 
-- https://big.csr.unibo.it/
+- [https://big.csr.unibo.it/]
 
 # Table of Contents and Exam
 
