@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="04-datapreparation_files/libs/clipboard/clipboard.min.js"></script>
-<script src="04-datapreparation_files/libs/quarto-html/tabby.min.js"></script>
-<script src="04-datapreparation_files/libs/quarto-html/popper.min.js"></script>
-<script src="04-datapreparation_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="04-datapreparation_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="04-datapreparation_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="04-datapreparation_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="04-datapreparation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="05-modeling_files/libs/clipboard/clipboard.min.js"></script>
+<script src="05-modeling_files/libs/quarto-html/tabby.min.js"></script>
+<script src="05-modeling_files/libs/quarto-html/popper.min.js"></script>
+<script src="05-modeling_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="05-modeling_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="05-modeling_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="05-modeling_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="05-modeling_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
-  <title>datapreparation</title>
+  <title>modeling</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="04-datapreparation_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="04-datapreparation_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="05-modeling_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="05-modeling_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -28,32 +28,12 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
-  <link rel="stylesheet" href="04-datapreparation_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="04-datapreparation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="04-datapreparation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="04-datapreparation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="04-datapreparation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  </style>
+  <link rel="stylesheet" href="05-modeling_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="05-modeling_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="05-modeling_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="05-modeling_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="05-modeling_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -346,108 +326,16 @@
     <div class="slides">
 
 
-<section>
-<section id="data-preparation" class="title-slide slide level1 center">
-<h1>Data Preparation</h1>
-<p>The data preparation phase covers all activities to construct the final data set or the data that will be fed into the modeling tool(s) from the initial raw data. Tasks include table, record, and attribute selection, as well as transformation and cleaning of data for modeling tools. The five steps in data preparation are the selection of data, the cleansing of data, the construction of data, the integration of data, and the formatting of data. Select Data</p>
-<p>Deciding on the data that will be used for the analysis is based on several criteria, including its relevance to the data mining goals, as well as quality and technical constraints such as limits on data volume or data types. For instance, while an individual’s address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated. Part of the data selection process should involve explaining why certain data was included or excluded. It is also a good idea to decide if one or more attributes are more important than others are.</p>
-</section>
-<section class="slide level2">
+<section id="modeling" class="title-slide slide level1 center">
+<h1>Modeling</h1>
 
-<p>Data (preparation) preprocessing plays a key role in a data analytics process and avoids “Garbage in, garbage out” <span class="citation" data-cites="giovanelli2021effective">(<a href="#/references" role="doc-biblioref" onclick="">Giovanelli, Bilalli, and Abelló Gamazo 2021</a>)</span></p>
-<ul>
-<li>A broad range of activities; from correcting errors to selecting the most relevant features</li>
-<li>There are no pre-defined rules on the impact of pre-processing transformations</li>
-<li>Data scientists cannot easily foresee the impact of pipeline prototypes</li>
-</ul>
-<p>“Garbage in, garbage out” is particularly applicable to data mining and machine learning</p>
-<ul>
-<li>Out-of-range values (e.g., Income: −100)</li>
-<li>Impossible data combinations (e.g., Exam mark: 15, Exam result: Passed)</li>
-<li>Missing values</li>
-<li>Inconsistent data among multiple sources</li>
-<li>More?</li>
-</ul>
-</section></section>
-<section id="clean-data" class="title-slide slide level1 center">
-<h1>Clean Data</h1>
-<p>Without clean data, the results of a data mining analysis are in question. Thus at this stage, the data analyst must either select clean subsets of data or incorporate more ambitious techniques such as estimating missing data through modeling analyses. At this point, data analysts should make sure they outline how they addressed each quality problem reported in the earlier “Verify Data Quality” step.</p>
 </section>
 
-<section id="construct-data" class="title-slide slide level1 center">
-<h1>Construct Data</h1>
-<p>After the data is cleaned, the data analyst should undertake data preparation operations such as developing entirely new records or producing derived attributes. An example of a new record would be the creation of an empty purchase record for customers who made no purchases during the past year. Derived attributes, in contrast, are new attributes that are constructed from existing attributes, such as Area = Length x Width. These derived attributes should only be added if they ease the model process or facilitate the modeling algorithm, not just to reduce the number of input attributes. For instance, perhaps “income per head” is a better/easier attribute to use than “income per household.” Another type of derived attribute is single-attribute transformations, usually performed to fit the needs of the modeling tools. These transformations may be necessary to transform ranges to symbolic fields (e.g., ages to age bands), or symbolic fields (“definitely yes,” “yes,” “don’t know,” “no”) to numeric values. Modeling tools or algorithms often require these transformations.</p>
-</section>
-
-<section id="integrate-data" class="title-slide slide level1 center">
-<h1>Integrate Data</h1>
-<p>Integrating data involves combining information from multiple tables or records to create new records or values. With table-based data, an analyst can join two or more tables that have different information about the same objects. For instance, a retail chain has one table with information about each store’s general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from previous year), and another table with information about the demographics of the surrounding area. Each of these tables contains one record for each store. These tables can be merged together into a new table with one record for each store, combining fields from the source tables.</p>
-<p>Data integration also covers aggregations. Aggregations refer to operations where new values are computed by summarizing information from multiple records and/or tables. For example, an aggregation could include converting a table of customer purchases, where there is one record for each purchase, into a new table where there is one record for each customer. The table’s fields could include the number of purchases, the average purchase amount, the percent of orders charged to credit cards, the percent of items under promotion, etc.</p>
-</section>
-
-<section id="format-data" class="title-slide slide level1 center">
-<h1>Format Data</h1>
-<p>In some cases, the data analyst will change the format or design of the data. These changes might be simple—for example, removing illegal characters from strings or trimming them to a maximum length—or they may be more complex, such as those involving a reorganization of the information. Sometimes these changes are needed to make the data suitable for a specific modeling tool. In other instances, the changes are needed to pose the necessary data mining questions.</p>
-</section>
-
-<section id="data-variety" class="title-slide slide level1 center">
-<h1>Data variety</h1>
-
-<img data-src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*YejjU_69ffDyrC0z-X9jYQ.jpeg" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-
-<section>
-<section id="main-python-libraries" class="title-slide slide level1 center">
-<h1>Main Python Libraries</h1>
-<p>Considering <code>(volume, variety, velocity, veracity)</code>, we focus on the <code>(*, structured, batch, *)</code> scenario</p>
-</section>
-<h3 id="relational-data">Relational data</h3>
-<p><strong>Relational data</strong> are usually collected in <strong>tabular</strong> format</p>
-<ul>
-<li>Each row is an <strong>observation</strong> (instance or tuple)
-<ul>
-<li>An object of the analysis</li>
-<li>E.g., a product for market basket analysis</li>
-</ul></li>
-<li>Each column is an <strong>attribute</strong> (or feature) characterizing each object
-<ul>
-<li>All values within a column have the same type (i.e., all values belong to the same attribute domain)</li>
-<li>E.g., the attributes ID (int), ProductName (str), or Price (float)</li>
-</ul></li>
-</ul>
-<p>We need proper tools (e.g., libraries) to manage such data</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/w4bo/img-dump/assets/18005592/72869b67-6a16-4a5a-a8a4-8d8e10c2633d"></p>
-<figcaption>1712676223218</figcaption>
-</figure>
-</div></section>
-<section id="pandas" class="title-slide slide level1 center">
-<h1>Pandas</h1>
-<p><strong>Pandas</strong> is the shorthand for ‘Python and Data Analysis’</p>
-<ul>
-<li>It provides a rich set of features for exploring and manipulating data</li>
-<li><a href="https://pandas.pydata.org/">https://pandas.pydata.org/</a></li>
-</ul>
-<p>pandas (Python) is a solution for the manipulation of relational data</p>
-<ul>
-<li>Two main data types: Series (e.g., temporal series) and DataFrame (e.g., table)</li>
-<li>Support to SQL-like operations (join/merge, aggregation, etc.)</li>
-<li>Imputation of missing values</li>
-<li>Manipulation of data shape</li>
-<li>By convention, the package pandas is imported as <code>pd</code></li>
-</ul>
-</section>
-
-<section id="references" class="title-slide slide level1 smaller scrollable">
+<section id="references" class="title-slide slide level1 center">
 <h1>References</h1>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Machine Learning - A.Y. 2024/25</p>
-</div>
-</div>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-giovanelli2021effective" class="csl-entry" role="listitem">
-Giovanelli, Joseph, Besim Bilalli, and Alberto Abelló Gamazo. 2021. <span>“Effective Data Pre-Processing for AutoML.”</span> In <em>Proceedings of the 23rd International Workshop on Design, Optimization, Languages and Analytical Processing of Big Data (DOLAP): Co-Located with the 24th International Conference on Extending Database Technology and the 24th International Conference on Database Theory (EDBT/ICDT 2021): Nicosia, Cyprus, March 23, 2021</em>, 1–10. CEUR-WS. org.
 </div>
 </div>
 </section>
@@ -455,19 +343,19 @@ Giovanelli, Joseph, Besim Bilalli, and Alberto Abelló Gamazo. 2021. <span>“Ef
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="04-datapreparation_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="05-modeling_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="04-datapreparation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="05-modeling_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="05-modeling_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="05-modeling_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="05-modeling_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="05-modeling_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="04-datapreparation_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="05-modeling_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="05-modeling_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="05-modeling_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="05-modeling_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
