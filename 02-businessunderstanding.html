@@ -326,24 +326,30 @@
     <div class="slides">
 
 
-<section>
-<section id="business-understanding" class="title-slide slide level1 center">
+<section id="business-understanding" class="title-slide slide level1 center scrollable">
 <h1>Business understanding</h1>
-<p>(Perhaps the most important/hard phase of any data mining project)</p>
+<p>(<em>Perhaps the most important/hard phase of any data mining project</em>)</p>
 <p>The initial business understanding phase focuses on</p>
 <ul>
 <li>understanding the project objectives from a business perspective,</li>
 <li>converting this knowledge into a data mining problem definition,</li>
 <li>and then developing a preliminary plan designed to achieve the objectives.</li>
 </ul>
-<p>In order to understand which data should later be analyzed, and how, it is vital for data mining practitioners to fully understand the business for which they are finding a solution. The business understanding phase involves several key steps, including determining business objectives, assessing the situation, determining the data mining goals, and producing the project plan.</p>
+<p>To understand which data should later be analyzed, and how, it is vital for data mining practitioners to fully understand:</p>
+<ol type="1">
+<li>business objectives,</li>
+<li>assessing the situation,</li>
+<li>determining the data mining goals,</li>
+<li>and producing the project plan.</li>
+</ol>
 </section>
-<section id="determine-the-business-objectives" class="slide level2">
-<h2>Determine the Business Objectives</h2>
+
+<section id="determine-the-business-objectives" class="title-slide slide level1 center">
+<h1>Determine the Business Objectives</h1>
 <p>Understanding a client’s true goal is critical to uncovering the important factors involved in the planned project—and to ensuring that the project does not result in producing the right answers to the wrong questions.</p>
 <p>Data analysts must uncover the primary business objective as well as the related questions the business would like to address.</p>
 <ul>
-<li>For example, the primary business goal could be to retain current customers by predicting when they are prone to move to a competitor. Examples of related business questions might be
+<li>For example, the primary business goal could be to retain current customers by predicting when they are prone to move to a competitor.
 <ul>
 <li>“How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?” or</li>
 <li>“Will lower ATM fees significantly reduce the number of highvalue customers who leave?” A secondary issue might be to determine whether lower fees affect only one particular customer segment.</li>
@@ -355,8 +361,9 @@
 <li>Data analysts should beware of setting unattainable goals and should make sure that each success criterion relates to at least one of the specified business objectives</li>
 </ul>
 </section>
-<section id="assess-the-situation" class="slide level2">
-<h2>Assess the Situation</h2>
+
+<section id="assess-the-situation" class="title-slide slide level1 center">
+<h1>Assess the Situation</h1>
 <p>Data analysts outlines the resources, from personnel to software, that are available to accomplish the data mining project.</p>
 <ul>
 <li>Particularly important is discovering what data is available to meet the primary business goal.</li>
@@ -367,16 +374,19 @@
 </ul></li>
 </ul>
 </section>
-<section id="determine-the-data-mining-goals" class="slide level2">
-<h2>Determine the Data Mining Goals</h2>
+
+<section id="determine-the-data-mining-goals" class="title-slide slide level1 center">
+<h1>Determine the Data Mining Goals</h1>
 <p>The data mining goal states project objectives in business terms</p>
 <ul>
-<li>“Predict how many widgets a customer will buy given their purchases in the past three years, demographic information (age, salary, city, etc.), and the item price.” - Success also should be defined in these terms—for instance, success could be defined as achieving a certain level of predictive accuracy.</li>
+<li>“Predict how many widgets a customer will buy given their purchases in the past three years, demographic information (age, salary, city, etc.), and the item price.”</li>
+<li>Success also should be defined in these terms—for instance, success could be defined as achieving a certain level of predictive accuracy.</li>
 </ul>
-<p>If the business goal cannot be effectively translated into a data mining goal, it may be wise to consider redefining the problem at this point.</p>
+<p>If the business goal cannot be effectively translated into a data mining goal, <em>it may be wise to consider redefining the problem</em>.</p>
 </section>
-<section id="produce-a-project-plan" class="slide level2">
-<h2>Produce a Project Plan</h2>
+
+<section id="produce-a-project-plan" class="title-slide slide level1 center">
+<h1>Produce a Project Plan</h1>
 <p>The project plan describes the intended plan for achieving the data mining goals, including</p>
 <ul>
 <li>outlining specific steps and a proposed timeline,</li>
@@ -390,12 +400,65 @@
 <li>only 10 to 20 percent is spent in each of the Modeling, Evaluation, and Business Understanding Phases;</li>
 <li>and 5 to 10 percent is spent in the Deployment Planning Phase.</li>
 </ul>
-</section></section>
+</section>
+
+<section id="business-understanding-case-study-in-precision-agriculture" class="title-slide slide level1 center">
+<h1>Business Understanding: Case Study in Precision Agriculture</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<blockquote>
+<p>Brown spot of European pear</p>
+<ul>
+<li>A company wants to track the spreading of Brown spot of European pear in Emilia Romagna.</li>
+<li>Brown spots are caused by a fungus (Stemphylium vesicarium) damaging pear fruits and causing economy loss for producers.</li>
+<li>Also, the company wants to find out if there are environmental factors related to the spreading of such fungus.</li>
+</ul>
+</blockquote>
+<p>How would you address this problem?</p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://agricoltura.regione.emilia-romagna.it/fitosanitario/temi/avversita/schede/avversita-per-nome/immagini-e-documenti/maculatura-bruna-del-pero/sui-frutti-l2019area-necrotica-si-circonda-spesso-di-alone-rossastro"></p>
+</div>
+</div>
+</section>
+
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+<blockquote>
+<p>The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.</p>
+</blockquote>
+<p>In your opinion, what are the pros/cons of this solution?</p>
+</section>
+
+<section id="section-1" class="title-slide slide level1 center">
+<h1></h1>
+<blockquote>
+<p>Once the employee has collected almost 100 questionnairs, the company company ask us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.</p>
+</blockquote>
+<p>If you were the analyst, what would you do?</p>
+</section>
+
+<section id="section-2" class="title-slide slide level1 center">
+<h1></h1>
+<blockquote>
+<p>To us, it was impossible to apply machine learning techniques to data un paper. We prepared a Google Form where answers could be digitalized.</p>
+<p>The employee would take ~1 month to return us the digitalized questionnaires.</p>
+<p><strong>Issue #1</strong>: some answers where inconsistent with the provided options.</p>
+<p><strong>Issue #2</strong>: what about open questions?</p>
+<p><strong>Issue #3</strong>: what about the trustworthiness of the data? E.g., there are some pesticides/fertilizers whose application is constrained by the Italian/European laws. Can we trust the answers to these questions?</p>
+<p><strong>Issue #4</strong>: we have a dataset of 100 features (assuming for simplicity that each question can be simply turned into an attribute), and a dataset of 100 data.</p>
+</blockquote>
+<p>Outcome?</p>
+<ul>
+<li>This project was missing a proper plan (business+data understanding), and turned out to be a failure for the company.</li>
+<li>Even if we apply ML techniques to the data, the result we get are not statistically relevant.</li>
+</ul>
+</section>
+
 <section id="references" class="title-slide slide level1 center">
 <h1>References</h1>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-
+<p>Matteo Francia - Machine Learning - A.Y. 2024/25</p>
 </div>
 </div>
 </section>

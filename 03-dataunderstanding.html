@@ -360,8 +360,8 @@
 </ul>
 <p>Here a data analyst acquires the necessary data, including loading and integrating this data if necessary.</p>
 <ul>
-<li>The analyst should make sure to report problems encountered and his or her solutions to aid with future replications of the project.</li>
-<li>For instance, data may have to be collected from several different sources, and some of these sources may have a long lag time.</li>
+<li>The analyst should make sure to report problems and solutions to aid with future replications of the project.</li>
+<li>For instance, data may have to be collected from several different sources, and some of these sources may have a lag time.</li>
 </ul>
 <p>The analyst then proceeds to</p>
 <ul>
@@ -432,17 +432,14 @@
 <ul>
 <li>It is a consolidated practice in the world of research</li>
 <li>It is the basis of the scientific method, in particular for the reproducibility of the results obtained</li>
-<li>I release my data so that others can conduct my own experiments, verifying my results and perhaps proposing better solutions!</li>
-<li>Examples:
-<ul>
-<li>https://www.image-net.org/</li>
-</ul></li>
+<li>I release my data so that others can conduct my own experiments and verify my results</li>
+<li>Examples: <a href="https://www.image-net.org/">https://www.image-net.org/</a></li>
 </ul></li>
 </ul>
 <p>Other platforms make datasets available for competitions:</p>
 <ul>
-<li>Kaggle: https://www.kaggle.com/datasets</li>
-<li>https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62</li>
+<li>Kaggle: <a href="https://www.kaggle.com/datasets">https://www.kaggle.com/datasets</a></li>
+<li>and <a href="https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62">others</a></li>
 </ul>
 </section>
 <section id="acquisition-of-a-new-dataset" class="slide level2">
@@ -453,7 +450,10 @@
 <ul>
 <li>Programming or learning to use an acquisition tool</li>
 <li>Handling of large amounts of data</li>
-<li>Testing to find any bugs that could compromise the success of the acquisition (and we often notice them at the end of the process)</li>
+<li>Testing to find any bugs that could compromise the success of the acquisition
+<ul>
+<li>Unfrtunately, we often notice them at the end of the process</li>
+</ul></li>
 <li>Acquire new hardware for data collection and storage</li>
 </ul></li>
 <li>It is necessary to carefully consider whether it is appropriate to acquire a new dataset.
@@ -461,54 +461,6 @@
 <li>Considerations not only in engineering, but also in management and economics.</li>
 <li>Future needs must be foreseen in advance.</li>
 </ul></li>
-</ul>
-</section>
-<section id="data-collection-case-study-in-precision-agriculture" class="slide level2">
-<h2>Data Collection: Case Study in Precision Agriculture</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<blockquote>
-<p>Brown spot of European pear</p>
-<ul>
-<li>A company wants to track the spreading of Brown spot of European pear in Emilia Romagna.</li>
-<li>Brown spots are caused by a fungus (Stemphylium vesicarium) damaging pear fruits and causing economy loss for producers.</li>
-<li>Also, the company wants to find out if there are environmental factors related to the spreading of such fungus.</li>
-</ul>
-</blockquote>
-<p>How would you address this problem?</p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="https://agricoltura.regione.emilia-romagna.it/fitosanitario/temi/avversita/schede/avversita-per-nome/immagini-e-documenti/maculatura-bruna-del-pero/sui-frutti-l2019area-necrotica-si-circonda-spesso-di-alone-rossastro"></p>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<blockquote>
-<p>The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.</p>
-</blockquote>
-<p>In your opinion, what are the pros/cons of this solution?</p>
-</section>
-<section class="slide level2">
-
-<blockquote>
-<p>Once the employee has collected almost 100 questionnairs, the company company ask us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.</p>
-</blockquote>
-<p>If you were the analyst, what would you do?</p>
-</section>
-<section class="slide level2">
-
-<blockquote>
-<p>To us, it is impossible to apply machine learning techniques to data un paper. We prepared a Google Form where answers could be digitalized.</p>
-<p>The employee would take ~1 month to return us the digitalized questionnaires.</p>
-<p>Issue #1: some answers where inconsistent with the provided options.</p>
-<p>Issue #2: what about open questions?</p>
-<p>Issue #3: what about the trustworthiness of the data? E.g., there are some pesticides/fertilizers whose application is constrained by the Italian/European laws. Can we trust the answers to these questions?</p>
-<p>Issue #4: we have a dataset of 100 features (assuming for simplicity that each question can be simply turned into an attribute), and a dataset of 100 data.</p>
-</blockquote>
-<p>Outcome?</p>
-<ul>
-<li>This project was missing a proper plan (business+data understanding), and turned out to be a failure for the company.</li>
-<li>Even if we apply ML techniques to the data, the result we get are not statistically relevant.</li>
 </ul>
 </section>
 <section id="data-annotation" class="slide level2">
@@ -555,14 +507,13 @@
 </ul>
 </section>
 <section id="amazon-mechanical-turk" class="slide level2">
-<h2>Amazon Mechanical Turk</h2>
-<p><a href="https://www.mturk.com/">Amazon Mechanical Turk</a></p>
+<h2><a href="https://www.mturk.com/">Amazon Mechanical Turk</a></h2>
 
-<img data-src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
+<img data-src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="r-stretch quarto-figure-center"><p class="caption">Amazon Mechanical Turk</p></section>
 <section id="different-ways-of-learning" class="slide level2">
 <h2>Different Ways of Learning</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:65%;">
 <p>We define different types of learning depending on data annotation:</p>
 <ul>
 <li>Annotated data → Supervised Learning
@@ -571,26 +522,26 @@
 </ul></li>
 <li>Not annotated data → Unsupervised Learning
 <ul>
-<li>The results that can be obtained are usually worse than the previous case</li>
+<li>Results that can be obtained are usually worse than the previous case</li>
 </ul></li>
 <li>Partially annotated data → Semi-Supervised Learning</li>
 </ul>
 <p>Specific algorithms correspond to each of these areas</p>
 <ul>
-<li>The best performances are usually obtained with supervised trained algorithms</li>
-<li>In this course, we will mainly work on fully annotated data → Supervised Learning</li>
+<li>Best performances are usually obtained with supervised trained algorithms</li>
+<li>We will mainly work on fully annotated data → Supervised Learning</li>
 </ul>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:35%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://github.com/user-attachments/assets/50c6092b-43cd-4dbe-95c1-c0d9494803e6"></p>
-<figcaption>image</figcaption>
+<figcaption>Fully annotated</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://github.com/user-attachments/assets/e6d4832d-902c-49c3-8c62-a1948517bb7e"></p>
-<figcaption>image</figcaption>
+<figcaption>Partially annotated</figcaption>
 </figure>
 </div>
 </div>
@@ -598,7 +549,7 @@
 </section>
 <section id="open-and-closed-sets" class="slide level2">
 <h2>Open and Closed Sets</h2>
-<p>Last aspect to be defined relating to data annotation: do we know all annotations?</p>
+<p>Last aspect to be defined relating to data annotation: <strong>do we know all annotations</strong>?</p>
 <p><em>Closed Set</em>: it is assumed that the pattern to be classified belongs to one of the known classes.</p>
 <ul>
 <li>The most common case in machine learning benchmarks</li>
@@ -611,10 +562,13 @@
 </ul>
 <p>Two possible solutions to the open set problem:</p>
 <ul>
-<li>An additional fictitious class is added to the classes (“the rest of the world”, “unknown”) and the so-called “negative examples” are added to the training set.</li>
-<li>You allow the system not to assign the pattern.
+<li>An additional fictitious class is added to the classes (“the rest of the world”, “unknown”)
 <ul>
-<li>To this end, a threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold.</li>
+<li>The so-called “negative examples” are added to the training set</li>
+</ul></li>
+<li>You allow the system not to assign the pattern
+<ul>
+<li>A threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold</li>
 </ul></li>
 </ul>
 </section>
@@ -680,7 +634,7 @@
 <h1>References</h1>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-
+<p>Matteo Francia - Machine Learning - A.Y. 2024/25</p>
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
