@@ -1,4 +1,7 @@
 ---
+format:
+  revealjs: 
+    footer: "Matteo Francia - Machine Learning - A.Y. 2024/25"
 bibliography: refs.bib
 ---
 
@@ -14,16 +17,16 @@ Matteo Francia, Ph.D.
 
 - Email: m.francia@unibo.it
 - Assistant Professor (junior) @ DISI, UniBO
-- www: [https://www.unibo.it/sitoweb/m.francia/en]
+- www: [https://www.unibo.it/sitoweb/m.francia/en](https://www.unibo.it/sitoweb/m.francia/en)
 
 Research topics
 
 - Big data / database / machine learning
 - Precision agriculture and spatio-temporal analytics
 
-BIG (Business Intelligence Group)
+[BIG (Business Intelligence Group)](https://big.csr.unibo.it/)
 
-- [https://big.csr.unibo.it/]
+- w/ Prof. Golfarelli, Prof. Gallinucci
 
 # Table of Contents and Course Goals
 
