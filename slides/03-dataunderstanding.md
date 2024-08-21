@@ -17,8 +17,8 @@ Data collection is the process of gathering and measuring information on targete
 
 Here a data analyst acquires the necessary data, including loading and integrating this data if necessary.
 
-- The analyst should make sure to report problems encountered and his or her solutions to aid with future replications of the project.
-- For instance, data may have to be collected from several different sources, and some of these sources may have a long lag time.
+- The analyst should make sure to report problems and solutions to aid with future replications of the project.
+- For instance, data may have to be collected from several different sources, and some of these sources may have a lag time.
 
 The analyst then proceeds to
 
@@ -78,14 +78,13 @@ Many universities publicly release their datasets:
 - There are no requirements related to profit or non-disclosure agreement (NDA)
   - It is a consolidated practice in the world of research
   - It is the basis of the scientific method, in particular for the reproducibility of the results obtained
-  - I release my data so that others can conduct my own experiments, verifying my results and perhaps proposing better solutions!
-  - Examples:
-    - https://www.image-net.org/ 
+  - I release my data so that others can conduct my own experiments and verify my results
+  - Examples: [https://www.image-net.org/](https://www.image-net.org/) 
 
 Other platforms make datasets available for competitions:
 
-- Kaggle: https://www.kaggle.com/datasets 
-- https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62 
+- Kaggle: [https://www.kaggle.com/datasets](https://www.kaggle.com/datasets)
+- and [others](https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62) 
 
 ## Acquisition of a new dataset
 
@@ -94,62 +93,13 @@ Acquiring a new dataset is usually a costly process!
 - Investment of time and money for:
   - Programming or learning to use an acquisition tool
   - Handling of large amounts of data
-  - Testing to find any bugs that could compromise the success of the acquisition (and we often notice them at the end of the process)
+  - Testing to find any bugs that could compromise the success of the acquisition
+    - Unfrtunately, we often notice them at the end of the process
   - Acquire new hardware for data collection and storage
 
 - It is necessary to carefully consider whether it is appropriate to acquire a new dataset.
   - Considerations not only in engineering, but also in management and economics.
   - Future needs must be foreseen in advance.
-
-## Data Collection: Case Study in Precision Agriculture
-
-:::: {.columns}
-::: {.column width="60%"}
-
-> Brown spot of European pear
->
-> - A company wants to track the spreading of Brown spot of European pear in Emilia Romagna.
-> - Brown spots are caused by a fungus (Stemphylium vesicarium) damaging pear fruits and causing economy loss for producers.
-> - Also, the company wants to find out if there are environmental factors related to the spreading of such fungus.
-
-How would you address this problem?
-:::
-::: {.column width="40%"}
-![](https://agricoltura.regione.emilia-romagna.it/fitosanitario/temi/avversita/schede/avversita-per-nome/immagini-e-documenti/maculatura-bruna-del-pero/sui-frutti-l2019area-necrotica-si-circonda-spesso-di-alone-rossastro)
-:::
-::::
-
----
-
-> The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers. 
-
-In your opinion, what are the pros/cons of this solution?
-
----
-
-> Once the employee has collected almost 100 questionnairs, the company company ask us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.
-
-If you were the analyst, what would you do?
-
----
-
-> To us, it is impossible to apply machine learning techniques to data un paper.
-> We prepared a Google Form where answers could be digitalized.
-> 
-> The employee would take ~1 month to return us the digitalized questionnaires.
-> 
-> Issue #1: some answers where inconsistent with the provided options.
->
-> Issue #2: what about open questions?
->
-> Issue #3: what about the trustworthiness of the data? E.g., there are some pesticides/fertilizers whose application is constrained by the Italian/European laws. Can we trust the answers to these questions?
->
-> Issue #4: we have a dataset of 100 features (assuming for simplicity that each question can be simply turned into an attribute), and a dataset of 100 data.
-
-Outcome?
-
-- This project was missing a proper plan (business+data understanding), and turned out to be a failure for the company.
-- Even if we apply ML techniques to the data, the result we get are not statistically relevant.
 
 ## Data Annotation
 
@@ -185,18 +135,16 @@ The data annotation process can take place in several ways:
   - Free of charge: this is the case, for example, in which users barter the free use of some platform with the transfer of their annotated data (for example, photos uploaded - to Facebook accompanied by information regarding the content, the position of the face, or scene acquired).
   - Paid: there are platforms where is possible to purchase annotation time from third parties (often from “developing countries”). Example: Amazon Mechanical Turk
 
-## Amazon Mechanical Turk
+## [Amazon Mechanical Turk](https://www.mturk.com/)
 
-[Amazon Mechanical Turk](https://www.mturk.com/)
-
-![image](https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70)
+![Amazon Mechanical Turk](https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70)
 
 
 ## Different Ways of Learning
 
 :::: {.columns}
 
-::: {.column width="60%"}
+::: {.column width="65%"}
 
 We define different types of learning depending on data annotation:
 
@@ -204,28 +152,28 @@ We define different types of learning depending on data annotation:
   - One of the most studied types that allows to obtain the best results
 
 - Not annotated data → Unsupervised Learning
-  - The results that can be obtained are usually worse than the previous case
+  - Results that can be obtained are usually worse than the previous case
 
 - Partially annotated data → Semi-Supervised Learning
 
 Specific algorithms correspond to each of these areas
 
-- The best performances are usually obtained with supervised trained algorithms
-- In this course, we will mainly work on fully annotated data → Supervised Learning
+- Best performances are usually obtained with supervised trained algorithms
+- We will mainly work on fully annotated data → Supervised Learning
 
 :::
-::: {.column width="40%"}
+::: {.column width="35%"}
 
-![image](https://github.com/user-attachments/assets/50c6092b-43cd-4dbe-95c1-c0d9494803e6)
+![Fully annotated](https://github.com/user-attachments/assets/50c6092b-43cd-4dbe-95c1-c0d9494803e6)
 
-![image](https://github.com/user-attachments/assets/e6d4832d-902c-49c3-8c62-a1948517bb7e)
+![Partially annotated](https://github.com/user-attachments/assets/e6d4832d-902c-49c3-8c62-a1948517bb7e)
 
 :::
 ::::
 
 ## Open and Closed Sets
 
-Last aspect to be defined relating to data annotation: do we know all annotations?
+Last aspect to be defined relating to data annotation: **do we know all annotations**?
 
 *Closed Set*: it is assumed that the pattern to be classified belongs to one of the known classes.
 
@@ -239,9 +187,10 @@ Last aspect to be defined relating to data annotation: do we know all annotation
 
 Two possible solutions to the open set problem:
 
-- An additional fictitious class is added to the classes (“the rest of the world”, “unknown”) and the so-called “negative examples” are added to the training set.
-- You allow the system not to assign the pattern.
-  - To this end, a threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold.
+- An additional fictitious class is added to the classes (“the rest of the world”, “unknown”)
+  - The so-called “negative examples” are added to the training set
+- You allow the system not to assign the pattern
+  - A threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold
 
 ## Common Problems in Data Collection
 

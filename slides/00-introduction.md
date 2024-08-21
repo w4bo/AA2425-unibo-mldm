@@ -104,8 +104,8 @@ Once the project is completed AND both members are ready (have studied), the gro
 - Contact me and define an appointment for the exam
 - Send the project code (e.g. the link of the Github repo)
 - Send a 6 pages paper about the project:
-  - Use Latex (https://www.overleaf.com/)
-  - Use this template (https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip)
+  - Use Latex ([https://www.overleaf.com/](https://www.overleaf.com/))
+  - Use this template ([https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip](https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip))
   - Tentative sections: 1. Introduction, 2. Related Work, 3. Proposed Method, 4. Results, 5. Conclusions + a section of
 peer-review about group organization and the work done by each member
 
@@ -144,7 +144,7 @@ Rule of thumb
 
 Slides and notes are sufficient to prepare the final exam
 
-- You can find them on Virtuale platform (https://virtuale.unibo.it/)
+- You can find them on Virtuale platform ([https://virtuale.unibo.it/](https://virtuale.unibo.it/))
 
 However, I suggest you to read the book:
 
@@ -152,13 +152,13 @@ However, I suggest you to read the book:
 - Author: Aurélien Géron
 - Some notes about the book:
   - The book is intended as a support
-  - The book is available for free in the «Leon Battista Alberti» library
+  - The book is available for free in the library
   - The book is pretty huge (about 800 pages)
   - Carefully check the summary and select our topics
   - If you want, you can read the other parts to take inspiration (not requested for the final exam)
 
 :::
-::: {.column width="60%"}
+::: {.column width="40%"}
 
 ![Hands on ML](https://learning.oreilly.com/library/cover/9781492032632/250w/)
 
