@@ -74,7 +74,7 @@ We need proper tools (e.g., libraries) to manage such data
 **Pandas** is the shorthand for 'Python and Data Analysis'
 
 - It provides a rich set of features for exploring and manipulating data
-- https://pandas.pydata.org/
+- [https://pandas.pydata.org/](https://pandas.pydata.org/)
 
 pandas (Python) is a solution for the manipulation of relational data
 
@@ -82,6 +82,6 @@ pandas (Python) is a solution for the manipulation of relational data
 - Support to SQL-like operations (join/merge, aggregation, etc.)
 - Imputation of missing values
 - Manipulation of data shape
-- By convention, the package pandas is imported as “pd”
+- By convention, the package pandas is imported as `pd`
 
 # References

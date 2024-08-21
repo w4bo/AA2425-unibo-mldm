@@ -145,13 +145,13 @@ The data annotation process can take place in several ways:
 
 We define different types of learning depending on data annotation:
 
-- Annotated data → Supervised Learning
+- *Annotated data* → Supervised Learning
   - One of the most studied types that allows to obtain the best results
 
-- Not annotated data → Unsupervised Learning
+- *Not annotated data* → Unsupervised Learning
   - Results that can be obtained are usually worse than the previous case
 
-- Partially annotated data → Semi-Supervised Learning
+- *Partially annotated data* → Semi-Supervised Learning
 
 Specific algorithms correspond to each of these areas
 

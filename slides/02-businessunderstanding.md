@@ -76,6 +76,8 @@ Generally accepted industry timeline standards are:
 :::: {.columns}
 ::: {.column width="60%"}
 
+> Brown spot of European Pear
+> 
 > - A company wants to track the spreading of Brown spot of European pear in Emilia Romagna.
 > - Brown spots are caused by a fungus (Stemphylium vesicarium) damaging pear fruits and causing economy loss for producers.
 > - Also, the company wants to find out if there are environmental factors related to the spreading of such fungus.
