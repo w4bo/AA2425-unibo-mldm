@@ -1,17 +1,42 @@
+---
+bibliography: refs.bib
+---
+
 # Data understanding
 
 The data understanding phase involves four steps, including the collection of initial data, the description of data, the exploration of data, and the verification of data quality.
 
 # Data collection (or acquisition)
 
-Here a data analyst acquires the necessary data, including loading and integrating this data if necessary.
-The analyst should make sure to report problems encountered and his or her solutions to aid with future replications of the project.
-For instance, data may have to be collected from several different sources, and some of these sources may have a long lag time.
-It is helpful to know this in advance to avoid potential delays.
+Data collection is the process of gathering and measuring information on targeted variables in an established system
 
-- The analyst then proceeds to increase familiarity with the data,
+- The goal is to capture evidence that allows data analysis to formulate credible answers to the questions that have been posed
+
+Here a data analyst acquires the necessary data, including loading and integrating this data if necessary.
+
+- The analyst should make sure to report problems encountered and his or her solutions to aid with future replications of the project.
+- For instance, data may have to be collected from several different sources, and some of these sources may have a long lag time.
+
+The analyst then proceeds to
+
+- increase familiarity with the data,
 - to identify data quality problems, to discover initial insights into the data,
 - or to detect interesting subsets to form hypotheses about hidden information.
+
+---
+
+Several *biases* can occur:
+
+- **Selection**: the sample used for data collection is not representative of the population being studied
+- **Sampling**: Arises when certain segments of the population are more likely to be included or excluded from the sample
+- **Response**: Occurs when participants in a survey or study provide inaccurate or misleading responses
+- **Confirmation**: Refers to the tendency to favor information that confirms pre-existing beliefs or hypotheses while ignoring or discounting contradictory evidence
+- **Cultural**: Occurs when data collection methods, survey questions, or study designs are culturally insensitive or fail to account for cultural differences
+- **Time-Interval**: Occurs when the timing of data collection influences the results
+- **Publication**: Tendency for researchers or journals to publish studies with positive or significant results while neglecting to publish studies with null or negative results
+- ... and many others
+
+--- 
 
 Still today, this is one of the most important steps for many companies:
 
@@ -20,6 +45,17 @@ Still today, this is one of the most important steps for many companies:
 - However, acquiring data is a time-consuming, investment and knowledge-intensive process
 - In Europe (but now in many areas of the world), there can be problems related to privacy
     - When is it “right” to protect privacy? When does it become a limit?
+
+Plus,
+
+- You should consider a tradeoff between time/costs
+- How much is *enough*?
+
+---
+
+Rule of thumb: one in ten/twenty [@chowdhury2020variable]
+
+> There is no set rule as to the number of variables to include in a prediction model as it often depends on several factors. The ‘one in ten rule’, a rule that stipulates for how many variables/parameters can be estimated from a data set, is quite popular in traditional clinical prediction modelling strategy (eg, logistic regression and survival models). According to this rule, one variable can be considered in a model for every 10 events
 
 ## Public Datasets
 
@@ -188,12 +224,12 @@ Specific algorithms correspond to each of these areas
 
 Last aspect to be defined relating to data annotation: do we know all annotations?
 
-Closed Set: it is assumed that the pattern to be classified belongs to one of the known classes.
+*Closed Set*: it is assumed that the pattern to be classified belongs to one of the known classes.
 
 - The most common case in machine learning benchmarks
 - Ideal condition, but not always suitable for real-world systems
 
-Open Set: the patterns to be classified can belong to none of known classes. 
+*Open Set*: the patterns to be classified can belong to none of known classes. 
 
 - More realistic condition, but more challenging
 - Example: classify all fruits into {pears, bananas}
@@ -201,9 +237,10 @@ Open Set: the patterns to be classified can belong to none of known classes.
 Two possible solutions to the open set problem:
 
 - An additional fictitious class is added to the classes (“the rest of the world”, “unknown”) and the so-called “negative examples” are added to the training set.
-- You allow the system not to assign the pattern. To this end, a threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold.
+- You allow the system not to assign the pattern.
+  - To this end, a threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold.
 
-## Common problems in Data Acquisition
+## Common Problems in Data Collection
 
 Companies usually face common problems: 
 
@@ -217,24 +254,6 @@ Companies usually face common problems:
 - In many business processes it is unclear understanding:
   - Which data is possible to collect (also due to privacy issues)
   - Which data is (really) useful for the business
-
-## Common Probles on Data Collection
-
-The business process produces huge amounts of data
-
-- It is almost impossible to acquire all the data
-- Also, physical limitations when the data stream is bigger that the storing capacity
-- Usually, it is necessary to choose which ones to store
-
-Sometimes companies have a lot of “old” data in their databases or information systems: 
-
-- They don't know what to do with it
-- Data re-collection on existing data (since data must be clean or something similar)
-
-In many business processes it is unclear understanding:
-
-- Which data is possible to collect (also due to privacy issues)
-- Which data is (really) useful for the business
 
 # Describe the Data
 

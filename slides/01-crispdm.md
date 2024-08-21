@@ -1,3 +1,7 @@
+---
+bibliography: refs.bib
+---
+
 {{< include _cover.md >}}
 
 #

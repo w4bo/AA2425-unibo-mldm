@@ -1,3 +1,7 @@
+---
+bibliography: refs.bib
+---
+
 # Business understanding
 
 (Perhaps the most important/hard phase of any data mining project)
