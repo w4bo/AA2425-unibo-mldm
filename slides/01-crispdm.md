@@ -22,6 +22,8 @@ CRISP-DM (CRoss-Industry Standard Process for Data Mining) [@shearer2000crisp]
 >
 > These phases help organizations understand the data mining process and provide a road map to follow while planning and carrying out a data mining project.
 
+:::
+
 ::: {.column width="60%"}
 
 ![CRISP-DM](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png)
