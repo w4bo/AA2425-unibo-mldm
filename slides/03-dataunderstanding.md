@@ -81,10 +81,7 @@ Many universities publicly release their datasets:
   - I release my data so that others can conduct my own experiments and verify my results
   - Examples: [https://www.image-net.org/](https://www.image-net.org/) 
 
-Other platforms make datasets available for competitions:
-
-- Kaggle: [https://www.kaggle.com/datasets](https://www.kaggle.com/datasets)
-- and [others](https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62) 
+Some platforms make datasets available for competitions, such as [Kaggle](https://www.kaggle.com/datasets) and [others](https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62) 
 
 ## Acquisition of a new dataset
 

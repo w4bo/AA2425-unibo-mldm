@@ -71,13 +71,11 @@ Generally accepted industry timeline standards are:
 - only 10 to 20 percent is spent in each of the Modeling, Evaluation, and Business Understanding Phases;
 - and 5 to 10 percent is spent in the Deployment Planning Phase.
 
-# Business Understanding: Case Study in Precision Agriculture
+# Case Study: Brown spot of European Pear
 
 :::: {.columns}
 ::: {.column width="60%"}
 
-> Brown spot of European pear
->
 > - A company wants to track the spreading of Brown spot of European pear in Emilia Romagna.
 > - Brown spots are caused by a fungus (Stemphylium vesicarium) damaging pear fruits and causing economy loss for producers.
 > - Also, the company wants to find out if there are environmental factors related to the spreading of such fungus.
