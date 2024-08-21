@@ -89,6 +89,8 @@ How would you address this problem?
 
 #
 
+![Emilia Romagna, Italy](https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113)
+
 > The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers. 
 
 In your opinion, what are the pros/cons of this solution?
