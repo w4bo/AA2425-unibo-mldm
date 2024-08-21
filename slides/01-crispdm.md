@@ -23,7 +23,6 @@ CRISP-DM (CRoss-Industry Standard Process for Data Mining) [@shearer2000crisp]
 > These phases help organizations understand the data mining process and provide a road map to follow while planning and carrying out a data mining project.
 
 :::
-
 ::: {.column width="60%"}
 
 ![CRISP-DM](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png)
@@ -48,6 +47,7 @@ CRISP-DM breaks down the life cycle of a data mining project into six phases:
 1. evaluation,
 1. and deployment.
 
+:::
 ::: {.column width="60%"}
 
 ![CRISP-DM](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png)
@@ -73,6 +73,7 @@ The arrows indicate the most important and frequent dependencies between the pha
 
 - Synonyms: characteristic; attribute; property; trait, etc.
 
+:::
 ::: {.column width="60%"}
 
 ![](https://github.com/user-attachments/assets/6b3f38bf-1a0f-4979-b141-854508d5faa9)
@@ -258,6 +259,7 @@ Specific algorithms correspond to each of these areas
 - The best performances are usually obtained with supervised trained algorithms
 - In this course, we will mainly work on fully annotated data → Supervised Learning
 
+:::
 ::: {.column width="60%"}
 
 ![image](https://github.com/user-attachments/assets/50c6092b-43cd-4dbe-95c1-c0d9494803e6)
