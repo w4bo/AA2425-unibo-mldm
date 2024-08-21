@@ -283,3 +283,5 @@ At this point, the analyst examines the quality of the data, addressing question
 - and whether attributes with different values have similar meanings (e.g., low fat, diet).
 
 The data analyst also should review any attributes that may give answers that conflict with common sense (e.g., teenagers with high income).
+
+# References

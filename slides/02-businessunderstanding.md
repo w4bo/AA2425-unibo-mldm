@@ -63,3 +63,5 @@ Generally accepted industry timeline standards are:
 - 20 to 30 percent involves the Data Understanding Phase;
 - only 10 to 20 percent is spent in each of the Modeling, Evaluation, and Business Understanding Phases;
 - and 5 to 10 percent is spent in the Deployment Planning Phase.
+
+# References

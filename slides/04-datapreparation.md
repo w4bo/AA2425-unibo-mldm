@@ -80,3 +80,5 @@ pandas (Python) is a solution for the manipulation of relational data
 - Imputation of missing values
 - Manipulation of data shape
 - By convention, the package pandas is imported as “pd”
+
+# References

@@ -56,7 +56,7 @@ CRISP-DM breaks down the life cycle of a data mining project into six phases:
 :::
 ::::
 
-# Glossary [@sammut2017encyclopedia,@liu2009encyclopedia]
+# Glossary [@sammut2017encyclopedia]
 
 :::: {.columns}
 
@@ -82,7 +82,7 @@ CRISP-DM breaks down the life cycle of a data mining project into six phases:
 
 > A request for information
 
-**Query Language**
+**Query Language** [@liu2009encyclopedia]
 
 > A query language (e.g. SQL) is a specialized programming language for searching and changing the contents of a database. 
 
@@ -93,3 +93,5 @@ CRISP-DM breaks down the life cycle of a data mining project into six phases:
 
 :::
 ::::
+
+# References
