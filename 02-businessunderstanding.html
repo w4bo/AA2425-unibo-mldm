@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="01-crispdm_files/libs/clipboard/clipboard.min.js"></script>
-<script src="01-crispdm_files/libs/quarto-html/tabby.min.js"></script>
-<script src="01-crispdm_files/libs/quarto-html/popper.min.js"></script>
-<script src="01-crispdm_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="01-crispdm_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="01-crispdm_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="01-crispdm_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="01-crispdm_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="02-businessunderstanding_files/libs/clipboard/clipboard.min.js"></script>
+<script src="02-businessunderstanding_files/libs/quarto-html/tabby.min.js"></script>
+<script src="02-businessunderstanding_files/libs/quarto-html/popper.min.js"></script>
+<script src="02-businessunderstanding_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="02-businessunderstanding_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="02-businessunderstanding_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="02-businessunderstanding_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="02-businessunderstanding_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
-  <meta name="author" content="Matteo Francia">
-  <title>crispdm</title>
+  <title>businessunderstanding</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="02-businessunderstanding_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="02-businessunderstanding_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -30,11 +29,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="01-crispdm_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="01-crispdm_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="01-crispdm_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="01-crispdm_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="02-businessunderstanding_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="02-businessunderstanding_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="02-businessunderstanding_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="02-businessunderstanding_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="02-businessunderstanding_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -326,123 +325,94 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Machine Learning and Data Mining</h1>
-  <p class="subtitle">Module 2 (Machine Learning)</p>
-
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Matteo Francia 
-</div>
-</div>
-</div>
-
-</section>
-<section id="section" class="title-slide slide level1 center">
-<h1></h1>
-
-<img data-src="https://imgs.xkcd.com/comics/here_to_help.png" class="r-stretch quarto-figure-center"><p class="caption">Here to Help</p></section>
 
 <section>
-<section id="crisp-dm" class="title-slide slide level1 center">
-<h1>CRISP-DM</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>CRISP-DM</strong> (CRoss-Industry Standard Process for Data Mining) <span class="citation" data-cites="shearer2000crisp">[@shearer2000crisp]</span></p>
-<blockquote>
-<p>a non-proprietary, documented, and freely available data mining model.</p>
-<p>Developed by industry leaders with input from more than 200 data mining users […] and service providers, CRISP-DM is an <em>industry-, tool-, and application-neutral</em> model.</p>
-<p>This model encourages best practices and offers organizations the structure needed to realize better, faster results from data mining.</p>
-<p>CRISP-DM organizes the data mining process into phases […] that help organizations understand the data mining process and provide a road map to follow while planning and carrying out a data mining project.</p>
-</blockquote>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png"></p>
-<figcaption>CRISP-DM</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<section id="business-understanding" class="title-slide slide level1 center">
+<h1>Business understanding</h1>
+<p>(Perhaps the most important/hard phase of any data mining project)</p>
+<p>The initial business understanding phase focuses on</p>
+<ul>
+<li>understanding the project objectives from a business perspective,</li>
+<li>converting this knowledge into a data mining problem definition,</li>
+<li>and then developing a preliminary plan designed to achieve the objectives.</li>
+</ul>
+<p>In order to understand which data should later be analyzed, and how, it is vital for data mining practitioners to fully understand the business for which they are finding a solution. The business understanding phase involves several key steps, including determining business objectives, assessing the situation, determining the data mining goals, and producing the project plan.</p>
 </section>
-<section class="slide level2 scrollable">
-
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Arrows indicate the most important and frequent dependencies between the phases, while the outer circle symbolizes the cyclical nature of data mining itself and illustrates that the lessons learned during the data mining process and from the deployed solution can trigger new, often more focused business questions.</p>
-<p>CRISP-DM breaks down the life cycle of a data mining project into six phases:</p>
-<ol type="1">
-<li>business understanding,</li>
-<li>data understanding,</li>
-<li>data preparation,</li>
-<li>modeling,</li>
-<li>evaluation,</li>
-<li>and deployment.</li>
-</ol>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png"></p>
-<figcaption>CRISP-DM</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section></section>
-<section id="glossary-sammut2017encyclopedialiu2009encyclopedia" class="title-slide slide level1 center">
-<h1>Glossary <span class="citation" data-cites="sammut2017encyclopedia">[@sammut2017encyclopedia,@liu2009encyclopedia]</span></h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Data</strong></p>
-<blockquote>
-<p>Facts and statistics collected together for reference or analysis.</p>
-<p>Synonyms: data point, observation, data sample, instance, tuple, etc.</p>
-</blockquote>
-<p><strong>Dataset (data set)</strong></p>
-<blockquote>
-<p>A collection of data used for some specific purpose.</p>
-</blockquote>
-<p><strong>Feature</strong></p>
-<blockquote>
-<p>Properties of things, ways that we, as humans, might describe them.</p>
-<p>Synonyms: characteristic; attribute; property; trait, etc.</p>
-</blockquote>
-<p><strong>(Database) Query</strong></p>
-<blockquote>
-<p>A request for information</p>
-</blockquote>
-<p><strong>Query Language</strong></p>
-<blockquote>
-<p>A query language (e.g.&nbsp;SQL) is a specialized programming language for searching and changing the contents of a database.</p>
-</blockquote>
-</div><div class="column" style="width:40%;">
-<p><img data-src="https://github.com/user-attachments/assets/6b3f38bf-1a0f-4979-b141-854508d5faa9"></p>
-</div>
-</div>
+<section id="determine-the-business-objectives" class="slide level2">
+<h2>Determine the Business Objectives</h2>
+<p>Understanding a client’s true goal is critical to uncovering the important factors involved in the planned project—and to ensuring that the project does not result in producing the right answers to the wrong questions.</p>
+<p>Data analysts must uncover the primary business objective as well as the related questions the business would like to address.</p>
+<ul>
+<li>For example, the primary business goal could be to retain current customers by predicting when they are prone to move to a competitor. Examples of related business questions might be
+<ul>
+<li>“How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?” or</li>
+<li>“Will lower ATM fees significantly reduce the number of highvalue customers who leave?” A secondary issue might be to determine whether lower fees affect only one particular customer segment.</li>
+</ul></li>
+</ul>
+<p>Finally, a good data analyst always determines the measure of success</p>
+<ul>
+<li>Success may be measured by reducing lost customers by 10 percent or simply by achieving a better understanding of the customer base</li>
+<li>Data analysts should beware of setting unattainable goals and should make sure that each success criterion relates to at least one of the specified business objectives</li>
+</ul>
+</section>
+<section id="assess-the-situation" class="slide level2">
+<h2>Assess the Situation</h2>
+<p>Data analysts outlines the resources, from personnel to software, that are available to accomplish the data mining project.</p>
+<ul>
+<li>Particularly important is discovering what data is available to meet the primary business goal.</li>
+<li>At this point, the data analyst also should list the assumptions made in the project-assumptions
+<ul>
+<li>“To address the business question, a minimum number of customers over age 50 is necessary.”</li>
+<li>The data analyst also should list the project risks, list potential solutions to those risks, create a glossary of business and data mining terms, and construct a cost-benefit analysis for the project.</li>
+</ul></li>
+</ul>
+</section>
+<section id="determine-the-data-mining-goals" class="slide level2">
+<h2>Determine the Data Mining Goals</h2>
+<p>The data mining goal states project objectives in business terms</p>
+<ul>
+<li>“Predict how many widgets a customer will buy given their purchases in the past three years, demographic information (age, salary, city, etc.), and the item price.” - Success also should be defined in these terms—for instance, success could be defined as achieving a certain level of predictive accuracy.</li>
+</ul>
+<p>If the business goal cannot be effectively translated into a data mining goal, it may be wise to consider redefining the problem at this point.</p>
+</section>
+<section id="produce-a-project-plan" class="slide level2">
+<h2>Produce a Project Plan</h2>
+<p>The project plan describes the intended plan for achieving the data mining goals, including</p>
+<ul>
+<li>outlining specific steps and a proposed timeline,</li>
+<li>an assessment of potential risks,</li>
+<li>and an initial assessment of the tools and techniques needed to support the project.</li>
+</ul>
+<p>Generally accepted industry timeline standards are:</p>
+<ul>
+<li>50 to 70 percent of the time and effort in a data mining project involves the Data Preparation Phase;</li>
+<li>20 to 30 percent involves the Data Understanding Phase;</li>
+<li>only 10 to 20 percent is spent in each of the Modeling, Evaluation, and Business Understanding Phases;</li>
+<li>and 5 to 10 percent is spent in the Deployment Planning Phase.</li>
+</ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="01-crispdm_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="02-businessunderstanding_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="01-crispdm_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="02-businessunderstanding_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="02-businessunderstanding_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="02-businessunderstanding_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="02-businessunderstanding_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="02-businessunderstanding_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="01-crispdm_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="02-businessunderstanding_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="02-businessunderstanding_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="02-businessunderstanding_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="02-businessunderstanding_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

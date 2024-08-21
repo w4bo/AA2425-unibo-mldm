@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="01-crispdm_files/libs/clipboard/clipboard.min.js"></script>
-<script src="01-crispdm_files/libs/quarto-html/tabby.min.js"></script>
-<script src="01-crispdm_files/libs/quarto-html/popper.min.js"></script>
-<script src="01-crispdm_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="01-crispdm_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="01-crispdm_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="01-crispdm_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="01-crispdm_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="03-dataunderstanding_files/libs/clipboard/clipboard.min.js"></script>
+<script src="03-dataunderstanding_files/libs/quarto-html/tabby.min.js"></script>
+<script src="03-dataunderstanding_files/libs/quarto-html/popper.min.js"></script>
+<script src="03-dataunderstanding_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="03-dataunderstanding_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="03-dataunderstanding_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="03-dataunderstanding_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="03-dataunderstanding_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
-  <meta name="author" content="Matteo Francia">
-  <title>crispdm</title>
+  <title>dataunderstanding</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="03-dataunderstanding_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="03-dataunderstanding_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -30,11 +29,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="01-crispdm_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="01-crispdm_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="01-crispdm_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="01-crispdm_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="03-dataunderstanding_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="03-dataunderstanding_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="03-dataunderstanding_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="03-dataunderstanding_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="03-dataunderstanding_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -326,100 +325,313 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Machine Learning and Data Mining</h1>
-  <p class="subtitle">Module 2 (Machine Learning)</p>
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Matteo Francia 
-</div>
-</div>
-</div>
-
+<section id="data-understanding" class="title-slide slide level1 center">
+<h1>Data understanding</h1>
+<p>The data understanding phase involves four steps, including the collection of initial data, the description of data, the exploration of data, and the verification of data quality.</p>
 </section>
-<section id="section" class="title-slide slide level1 center">
-<h1></h1>
-
-<img data-src="https://imgs.xkcd.com/comics/here_to_help.png" class="r-stretch quarto-figure-center"><p class="caption">Here to Help</p></section>
 
 <section>
-<section id="crisp-dm" class="title-slide slide level1 center">
-<h1>CRISP-DM</h1>
+<section id="data-collection-or-acquisition" class="title-slide slide level1 center">
+<h1>Data collection (or acquisition)</h1>
+<p>Here a data analyst acquires the necessary data, including loading and integrating this data if necessary. The analyst should make sure to report problems encountered and his or her solutions to aid with future replications of the project. For instance, data may have to be collected from several different sources, and some of these sources may have a long lag time. It is helpful to know this in advance to avoid potential delays.</p>
+<ul>
+<li>The analyst then proceeds to increase familiarity with the data,</li>
+<li>to identify data quality problems, to discover initial insights into the data,</li>
+<li>or to detect interesting subsets to form hypotheses about hidden information.</li>
+</ul>
+<p>Still today, this is one of the most important steps for many companies:</p>
+<ul>
+<li>«Data is the new oil of the Digital Economy»</li>
+<li>Indeed, there are several disciplines focusing on data (Data Science, Data Mining, Big data, …)</li>
+<li>However, acquiring data is a time-consuming, investment and knowledge-intensive process</li>
+<li>In Europe (but now in many areas of the world), there can be problems related to privacy
+<ul>
+<li>When is it “right” to protect privacy? When does it become a limit?</li>
+</ul></li>
+</ul>
+</section>
+<section id="public-datasets" class="slide level2 scrollable">
+<h2>Public Datasets</h2>
+<p>We can get data mainly in two ways:</p>
+<ol type="1">
+<li>By using publicly available data (datasets or databases) → someone collected them for us!
+<ul>
+<li>They can be free or for a fee</li>
+<li>The quality of the data made available must be checked</li>
+</ul></li>
+<li>By acquiring a new set of data, but why?
+<ul>
+<li>It is not certain that public data well represent the problem we want to solve</li>
+<li>We want to acquire specific data and thus generate specific expertise for the company (know-how)</li>
+<li>We are forced to acquire data that due to their sensitive nature would not otherwise be available (privacy issues)</li>
+<li>The company we work for already has a data collection process that we can use</li>
+</ul></li>
+</ol>
+<p>Many universities publicly release their datasets:</p>
+<ul>
+<li>There are no requirements related to profit or non-disclosure agreement (NDA)
+<ul>
+<li>It is a consolidated practice in the world of research</li>
+<li>It is the basis of the scientific method, in particular for the reproducibility of the results obtained</li>
+<li>I release my data so that others can conduct my own experiments, verifying my results and perhaps proposing better solutions!</li>
+<li>Examples:
+<ul>
+<li>https://www.image-net.org/</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Other platforms make datasets available for competitions:</p>
+<ul>
+<li>Kaggle: https://www.kaggle.com/datasets</li>
+<li>https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62</li>
+</ul>
+</section>
+<section id="acquisition-of-a-new-dataset" class="slide level2">
+<h2>Acquisition of a new dataset</h2>
+<p>Acquiring a new dataset is usually a costly process!</p>
+<ul>
+<li>Investment of time and money for:
+<ul>
+<li>Programming or learning to use an acquisition tool</li>
+<li>Handling of large amounts of data</li>
+<li>Testing to find any bugs that could compromise the success of the acquisition (and we often notice them at the end of the process)</li>
+<li>Acquire new hardware for data collection and storage</li>
+</ul></li>
+<li>It is necessary to carefully consider whether it is appropriate to acquire a new dataset.
+<ul>
+<li>Considerations not only in engineering, but also in management and economics.</li>
+<li>Future needs must be foreseen in advance.</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-collection-case-study-in-precision-agriculture" class="slide level2">
+<h2>Data Collection: Case Study in Precision Agriculture</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><strong>CRISP-DM</strong> (CRoss-Industry Standard Process for Data Mining) <span class="citation" data-cites="shearer2000crisp">[@shearer2000crisp]</span></p>
 <blockquote>
-<p>a non-proprietary, documented, and freely available data mining model.</p>
-<p>Developed by industry leaders with input from more than 200 data mining users […] and service providers, CRISP-DM is an <em>industry-, tool-, and application-neutral</em> model.</p>
-<p>This model encourages best practices and offers organizations the structure needed to realize better, faster results from data mining.</p>
-<p>CRISP-DM organizes the data mining process into phases […] that help organizations understand the data mining process and provide a road map to follow while planning and carrying out a data mining project.</p>
+<p>Brown spot of European pear</p>
+<ul>
+<li>A company wants to track the spreading of Brown spot of European pear in Emilia Romagna.</li>
+<li>Brown spots are caused by a fungus (Stemphylium vesicarium) damaging pear fruits and causing economy loss for producers.</li>
+<li>Also, the company wants to find out if there are environmental factors related to the spreading of such fungus.</li>
+</ul>
 </blockquote>
+<p>How would you address this problem?</p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://agricoltura.regione.emilia-romagna.it/fitosanitario/temi/avversita/schede/avversita-per-nome/immagini-e-documenti/maculatura-bruna-del-pero/sui-frutti-l2019area-necrotica-si-circonda-spesso-di-alone-rossastro"></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<blockquote>
+<p>The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.</p>
+</blockquote>
+<p>In your opinion, what are the pros/cons of this solution?</p>
+</section>
+<section class="slide level2">
+
+<blockquote>
+<p>Once the employee has collected almost 100 questionnairs, the company company ask us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.</p>
+</blockquote>
+<p>If you were the analyst, what would you do?</p>
+</section>
+<section class="slide level2">
+
+<blockquote>
+<p>To us, it is impossible to apply machine learning techniques to data un paper. We prepared a Google Form where answers could be digitalized.</p>
+<p>The employee would take ~1 month to return us the digitalized questionnaires.</p>
+<p>Issue #1: some answers where inconsistent with the provided options.</p>
+<p>Issue #2: what about open questions?</p>
+<p>Issue #3: what about the trustworthiness of the data? E.g., there are some pesticides/fertilizers whose application is constrained by the Italian/European laws. Can we trust the answers to these questions?</p>
+<p>Issue #4: we have a dataset of 100 features (assuming for simplicity that each question can be simply turned into an attribute), and a dataset of 100 data.</p>
+</blockquote>
+<p>Outcome?</p>
+<ul>
+<li>This project was missing a proper plan (business+data understanding), and turned out to be a failure for the company.</li>
+<li>Even if we apply ML techniques to the data, the result we get are not statistically relevant.</li>
+</ul>
+</section>
+<section id="data-annotation" class="slide level2">
+<h2>Data Annotation</h2>
+<p>NB: acquiring a new dataset does not mean acquiring only new data!</p>
+<p>Indeed, one of the most relevant aspects is the annotation of the data</p>
+<ul>
+<li>The specific annotation is usually called “label” and is the (semantic) content of the data.</li>
+<li>The label depends on the problem we want to solve and can be numerical or categorical</li>
+<li>Examples:
+<ul>
+<li>A person’s height prediction → data: joint lengths, label: height (cm)</li>
+<li>Pedestrian Detection → data: images, label: presence of a pedestrian (yes/no)</li>
+<li>Pedestrian Localization → data: images, label: position of the pedestrain (x, y, w, h)</li>
+<li>Audio classification numbers → data: audio sequences, label: number («five»)</li>
+</ul></li>
+</ul>
+<p>A single data is therefore defined as annotated if it is associated with a label</p>
+<ul>
+<li>Data collected without correct and timely annotation is often useless</li>
+<li>However, it is also possible to “extract knowledge” from un-annotated data through, for instance, clustering</li>
+</ul>
+</section>
+<section id="data-annotation-process" class="slide level2">
+<h2>Data Annotation Process</h2>
+<p>The data annotation process can take place in several ways:</p>
+<ul>
+<li><em>Manual</em>: each data is manually annotated
+<ul>
+<li>Long and expensive process</li>
+<li>The quality of the annotations is usually controllable and high</li>
+<li>This is not always an applicable process (for example, is it possible to annotate a dataset with 1M of images?)</li>
+</ul></li>
+<li><em>Automatic</em>: each data is automatically annotated, using specific tools
+<ul>
+<li>It is based on particular a priori knowledge (for example, all images acquired in a dog shelter depict dogs).</li>
+<li>The quality of the annotations is not always easily controlled</li>
+</ul></li>
+<li><em>Third parties</em>: all data is noted by a third party
+<ul>
+<li>Free of charge: this is the case, for example, in which users barter the free use of some platform with the transfer of their annotated data (for example, photos uploaded - to Facebook accompanied by information regarding the content, the position of the face, or scene acquired).</li>
+<li>Paid: there are platforms where is possible to purchase annotation time from third parties (often from “developing countries”). Example: Amazon Mechanical Turk</li>
+</ul></li>
+</ul>
+</section>
+<section id="amazon-mechanical-turk" class="slide level2">
+<h2>Amazon Mechanical Turk</h2>
+<p><a href="https://www.mturk.com/">Amazon Mechanical Turk</a></p>
+
+<img data-src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
+<section id="different-ways-of-learning" class="slide level2">
+<h2>Different Ways of Learning</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>We define different types of learning depending on data annotation:</p>
+<ul>
+<li>Annotated data → Supervised Learning
+<ul>
+<li>One of the most studied types that allows to obtain the best results</li>
+</ul></li>
+<li>Not annotated data → Unsupervised Learning
+<ul>
+<li>The results that can be obtained are usually worse than the previous case</li>
+</ul></li>
+<li>Partially annotated data → Semi-Supervised Learning</li>
+</ul>
+<p>Specific algorithms correspond to each of these areas</p>
+<ul>
+<li>The best performances are usually obtained with supervised trained algorithms</li>
+<li>In this course, we will mainly work on fully annotated data → Supervised Learning</li>
+</ul>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png"></p>
-<figcaption>CRISP-DM</figcaption>
+<p><img data-src="https://github.com/user-attachments/assets/50c6092b-43cd-4dbe-95c1-c0d9494803e6"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/e6d4832d-902c-49c3-8c62-a1948517bb7e"></p>
+<figcaption>image</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section class="slide level2 scrollable">
-
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Arrows indicate the most important and frequent dependencies between the phases, while the outer circle symbolizes the cyclical nature of data mining itself and illustrates that the lessons learned during the data mining process and from the deployed solution can trigger new, often more focused business questions.</p>
-<p>CRISP-DM breaks down the life cycle of a data mining project into six phases:</p>
-<ol type="1">
-<li>business understanding,</li>
-<li>data understanding,</li>
-<li>data preparation,</li>
-<li>modeling,</li>
-<li>evaluation,</li>
-<li>and deployment.</li>
-</ol>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png"></p>
-<figcaption>CRISP-DM</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<section id="open-and-closed-sets" class="slide level2">
+<h2>Open and Closed Sets</h2>
+<p>Last aspect to be defined relating to data annotation: do we know all annotations?</p>
+<p>Closed Set: it is assumed that the pattern to be classified belongs to one of the known classes.</p>
+<ul>
+<li>The most common case in machine learning benchmarks</li>
+<li>Ideal condition, but not always suitable for real-world systems</li>
+</ul>
+<p>Open Set: the patterns to be classified can belong to none of known classes.</p>
+<ul>
+<li>More realistic condition, but more challenging</li>
+<li>Example: classify all fruits into {pears, bananas}</li>
+</ul>
+<p>Two possible solutions to the open set problem:</p>
+<ul>
+<li>An additional fictitious class is added to the classes (“the rest of the world”, “unknown”) and the so-called “negative examples” are added to the training set.</li>
+<li>You allow the system not to assign the pattern. To this end, a threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold.</li>
+</ul>
+</section>
+<section id="common-problems-in-data-acquisition" class="slide level2">
+<h2>Common problems in Data Acquisition</h2>
+<p>Companies usually face common problems:</p>
+<ul>
+<li>The business process produces huge amounts of data
+<ul>
+<li>It is almost impossible to acquire all the data</li>
+<li>Also, physical limitations when the data stream is bigger that the storing capacity</li>
+<li>Usually, it is necessary to choose which ones to store</li>
+</ul></li>
+<li>Sometimes companies have a lot of “old” data in their databases or information systems:
+<ul>
+<li>They don’t know what to do with it</li>
+<li>Data re-collection on existing data (since data must be clean or something similar)</li>
+</ul></li>
+<li>In many business processes it is unclear understanding:
+<ul>
+<li>Which data is possible to collect (also due to privacy issues)</li>
+<li>Which data is (really) useful for the business</li>
+</ul></li>
+</ul>
+</section>
+<section id="common-probles-on-data-collection" class="slide level2">
+<h2>Common Probles on Data Collection</h2>
+<p>The business process produces huge amounts of data</p>
+<ul>
+<li>It is almost impossible to acquire all the data</li>
+<li>Also, physical limitations when the data stream is bigger that the storing capacity</li>
+<li>Usually, it is necessary to choose which ones to store</li>
+</ul>
+<p>Sometimes companies have a lot of “old” data in their databases or information systems:</p>
+<ul>
+<li>They don’t know what to do with it</li>
+<li>Data re-collection on existing data (since data must be clean or something similar)</li>
+</ul>
+<p>In many business processes it is unclear understanding:</p>
+<ul>
+<li>Which data is possible to collect (also due to privacy issues)</li>
+<li>Which data is (really) useful for the business</li>
+</ul>
 </section></section>
-<section id="glossary-sammut2017encyclopedialiu2009encyclopedia" class="title-slide slide level1 center">
-<h1>Glossary <span class="citation" data-cites="sammut2017encyclopedia">[@sammut2017encyclopedia,@liu2009encyclopedia]</span></h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Data</strong></p>
-<blockquote>
-<p>Facts and statistics collected together for reference or analysis.</p>
-<p>Synonyms: data point, observation, data sample, instance, tuple, etc.</p>
-</blockquote>
-<p><strong>Dataset (data set)</strong></p>
-<blockquote>
-<p>A collection of data used for some specific purpose.</p>
-</blockquote>
-<p><strong>Feature</strong></p>
-<blockquote>
-<p>Properties of things, ways that we, as humans, might describe them.</p>
-<p>Synonyms: characteristic; attribute; property; trait, etc.</p>
-</blockquote>
-<p><strong>(Database) Query</strong></p>
-<blockquote>
-<p>A request for information</p>
-</blockquote>
-<p><strong>Query Language</strong></p>
-<blockquote>
-<p>A query language (e.g.&nbsp;SQL) is a specialized programming language for searching and changing the contents of a database.</p>
-</blockquote>
-</div><div class="column" style="width:40%;">
-<p><img data-src="https://github.com/user-attachments/assets/6b3f38bf-1a0f-4979-b141-854508d5faa9"></p>
-</div>
-</div>
+<section id="describe-the-data" class="title-slide slide level1 center">
+<h1>Describe the Data</h1>
+<p>During this step, the data analyst examines the “gross” or “surface” properties of the acquired data and reports on the results, examining issues such as the format of the data, the quantity of the data, the number of records and fields in each table, the identities of the fields, and any other surface features of the data.</p>
+<ul>
+<li>The key question to ask is: Does the data acquired satisfy the relevant requirements?
+<ul>
+<li>For instance, if age is an important field and the data does not reflect the entire age range, it may be wise to collect a different set of data.</li>
+</ul></li>
+<li>This step also provides a basic understanding of the data on which subsequent steps will build.</li>
+</ul>
+</section>
+
+<section id="explore-the-data" class="title-slide slide level1 center">
+<h1>Explore the Data</h1>
+<p>This task tackles the data mining questions, which can be addressed using querying, visualization, and reporting.</p>
+<ul>
+<li>For instance, a data analyst may query the data to discover the types of products that purchasers in a particular income group usually buy.</li>
+<li>Or the analyst may run a visualization analysis to uncover potential fraud patterns.</li>
+<li>The data analyst should then create a data exploration report that outlines first findings, or an initial hypothesis, and the potential impact on the remainder of the project</li>
+</ul>
+</section>
+
+<section id="verify-data-quality" class="title-slide slide level1 center">
+<h1>Verify Data Quality</h1>
+<p>At this point, the analyst examines the quality of the data, addressing questions such as:</p>
+<ul>
+<li>Is the data complete? Missing values often occur, particularly if the data was collected across long periods of time.</li>
+<li>Some common items to check include: missing attributes and blank fields;</li>
+<li>whether all possible values are represented;</li>
+<li>the plausibility of values;</li>
+<li>the spelling of values;</li>
+<li>and whether attributes with different values have similar meanings (e.g., low fat, diet).</li>
+</ul>
+<p>The data analyst also should review any attributes that may give answers that conflict with common sense (e.g., teenagers with high income).</p>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
@@ -430,19 +642,19 @@ Matteo Francia
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="01-crispdm_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="03-dataunderstanding_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="01-crispdm_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="03-dataunderstanding_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="03-dataunderstanding_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="03-dataunderstanding_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="03-dataunderstanding_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="03-dataunderstanding_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="01-crispdm_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="03-dataunderstanding_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="03-dataunderstanding_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="03-dataunderstanding_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="03-dataunderstanding_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
