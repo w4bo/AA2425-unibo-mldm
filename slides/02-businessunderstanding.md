@@ -52,7 +52,7 @@ and construct a cost-benefit analysis for the project.
 The data mining goal states project objectives in business terms
 
 - “Predict how many widgets a customer will buy given their purchases in the past three years, demographic information (age, salary, city, etc.), and the item price.”
-- Success also should be defined in these terms—for instance, success could be defined as achieving a certain level of predictive accuracy.
+- Success should also be defined in these terms such as achieving a certain level of predictive accuracy.
 
 If the business goal cannot be effectively translated into a data mining goal, *it may be wise to consider redefining the problem*.
 
