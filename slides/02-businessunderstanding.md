@@ -7,7 +7,7 @@ bibliography: refs.bib
 
 # Business understanding
 
-(*Perhaps the most important/hard phase of any data mining project*)
+(*Perhaps the most important/hard phase of any data mining project* [@shearer2000crisp])
 
 The initial business understanding phase focuses on
 
@@ -64,7 +64,7 @@ The project plan describes the intended plan for achieving the data mining goals
 - an assessment of potential risks,
 - and an initial assessment of the tools and techniques needed to support the project.
 
-Generally accepted industry timeline standards are:
+Generally accepted industry timeline standards are [@shearer2000crisp]:
 
 - 50 to 70 percent of the time and effort in a data mining project involves the Data Preparation Phase;
 - 20 to 30 percent involves the Data Understanding Phase;
