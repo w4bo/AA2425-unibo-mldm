@@ -55,6 +55,29 @@ CRISP-DM breaks down the life cycle of a data mining project into six phases:
 
 The arrows indicate the most important and frequent dependencies between the phases, while the outer circle symbolizes the cyclical nature of data mining itself and illustrates that the lessons learned during the data mining process and from the deployed solution can trigger new, often more focused business questions.
 
+# Glossary [@sammut2017encyclopedia]
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+**Data**: facts and statistics collected together for reference or analysis.
+
+- Synonyms: data point, observation, data sample, instance, tuple, etc.
+
+**Dataset (data set)**: a collection of data used for some specific purpose.
+
+**Feature**: properties of things, ways that we, as humans, might describe them. 
+
+- Synonyms: characteristic; attribute; property; trait, etc.
+
+::: {.column width="60%"}
+
+![](https://github.com/user-attachments/assets/6b3f38bf-1a0f-4979-b141-854508d5faa9)
+
+:::
+::::
+
 # Business understanding
 
 (Perhaps the most important phase of any data mining project)
@@ -276,6 +299,24 @@ Companies usually face common problems:
   - Which data is possible to collect (also due to privacy issues)
   - Which data is (really) useful for the business
 
+### Common Probles on Data Collection
+
+The business process produces huge amounts of data
+
+- It is almost impossible to acquire all the data
+- Also, physical limitations when the data stream is bigger that the storing capacity
+- Usually, it is necessary to choose which ones to store
+
+Sometimes companies have a lot of “old” data in their databases or information systems: 
+
+- They don't know what to do with it
+- Data re-collection on existing data (since data must be clean or something similar)
+
+In many business processes it is unclear understanding:
+
+- Which data is possible to collect (also due to privacy issues)
+- Which data is (really) useful for the business
+
 ## Describe the Data
 
 During this step, the data analyst examines the “gross” or “surface” properties of the acquired data and reports on the results, examining issues such as the format of the data, the quantity of the data, the number of records and fields in each table, the identities of the fields, and any other surface features of the data.
@@ -290,7 +331,7 @@ This task tackles the data mining questions, which can be addressed using queryi
 
 - For instance, a data analyst may query the data to discover the types of products that purchasers in a particular income group usually buy.
 - Or the analyst may run a visualization analysis to uncover potential fraud patterns.
-- The data analyst should then create a data exploration report that outlines first findings, or an initial hypothesis, and the potential impact on the remainder of the project.
+- The data analyst should then create a data exploration report that outlines first findings, or an initial hypothesis, and the potential impact on the remainder of the project
 
 ## Verify Data Quality
 
