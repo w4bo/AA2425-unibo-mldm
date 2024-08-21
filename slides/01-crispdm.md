@@ -8,7 +8,7 @@
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="60%"}
 
 CRISP-DM (CRoss-Industry Standard Process for Data Mining) [@shearer2000crisp]
 
@@ -23,7 +23,7 @@ CRISP-DM (CRoss-Industry Standard Process for Data Mining) [@shearer2000crisp]
 > These phases help organizations understand the data mining process and provide a road map to follow while planning and carrying out a data mining project.
 
 :::
-::: {.column width="60%"}
+::: {.column width="40%"}
 
 ![CRISP-DM](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png)
 
@@ -34,7 +34,7 @@ CRISP-DM (CRoss-Industry Standard Process for Data Mining) [@shearer2000crisp]
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="60%"}
 
 Put simply, CRISP-DM is a comprehensive data mining methodology and process model that provides anyone—from novices to data mining experts—with a complete blueprint for conducting a data mining project.
 
@@ -48,7 +48,7 @@ CRISP-DM breaks down the life cycle of a data mining project into six phases:
 1. and deployment.
 
 :::
-::: {.column width="60%"}
+::: {.column width="40%"}
 
 ![CRISP-DM](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png)
 
@@ -61,7 +61,7 @@ The arrows indicate the most important and frequent dependencies between the pha
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="60%"}
 
 **Data**: facts and statistics collected together for reference or analysis.
 
@@ -74,7 +74,7 @@ The arrows indicate the most important and frequent dependencies between the pha
 - Synonyms: characteristic; attribute; property; trait, etc.
 
 :::
-::: {.column width="60%"}
+::: {.column width="40%"}
 
 ![](https://github.com/user-attachments/assets/6b3f38bf-1a0f-4979-b141-854508d5faa9)
 
@@ -242,7 +242,7 @@ The data annotation process can take place in several ways:
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="60%"}
 
 We define different types of learning depending on data annotation:
 
@@ -260,7 +260,7 @@ Specific algorithms correspond to each of these areas
 - In this course, we will mainly work on fully annotated data → Supervised Learning
 
 :::
-::: {.column width="60%"}
+::: {.column width="40%"}
 
 ![image](https://github.com/user-attachments/assets/50c6092b-43cd-4dbe-95c1-c0d9494803e6)
 

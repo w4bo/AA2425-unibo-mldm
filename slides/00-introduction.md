@@ -43,7 +43,7 @@ Questions on all (theoretical and practical) aspects of the course
 - Lab contents are included in the evaluation
 - Interaction during the lectures/labs is considered in the final evaluation
 
-Assignment:
+Assignment (more information will come at the end of the lectures):
 
 - Either on Machine Learning (ask me) or Data Mining (ask Prof. Golfarelli)
 - You are responsible for your code
