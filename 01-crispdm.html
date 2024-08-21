@@ -393,6 +393,7 @@ Matteo Francia
 <p>The arrows indicate the most important and frequent dependencies between the phases, while the outer circle symbolizes the cyclical nature of data mining itself and illustrates that the lessons learned during the data mining process and from the deployed solution can trigger new, often more focused business questions.</p>
 </section>
 
+<section>
 <section id="business-understanding" class="title-slide slide level1 center">
 <h1>Business understanding</h1>
 <p>(Perhaps the most important phase of any data mining project)</p>
@@ -404,12 +405,273 @@ Matteo Francia
 </ul>
 <p>In order to understand which data should later be analyzed, and how, it is vital for data mining practitioners to fully understand the business for which they are finding a solution. The business understanding phase involves several key steps, including determining business objectives, assessing the situation, determining the data mining goals, and producing the project plan.</p>
 </section>
-
+<section id="determine-the-business-objectives" class="slide level2">
+<h2>Determine the Business Objectives</h2>
+<p>Understanding a client’s true goal is critical to uncovering the important factors involved in the planned project—and to ensuring that the project does not result in producing the right answers to the wrong questions.</p>
+<p>Data analysts must uncover the primary business objective as well as the related questions the business would like to address.</p>
+<ul>
+<li>For example, the primary business goal could be to retain current customers by predicting when they are prone to move to a competitor. Examples of related business questions might be
+<ul>
+<li>“How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?” or</li>
+<li>“Will lower ATM fees significantly reduce the number of highvalue customers who leave?” A secondary issue might be to determine whether lower fees affect only one particular customer segment.</li>
+</ul></li>
+</ul>
+<p>Finally, a good data analyst always determines the measure of success</p>
+<ul>
+<li>Success may be measured by reducing lost customers by 10 percent or simply by achieving a better understanding of the customer base</li>
+<li>Data analysts should beware of setting unattainable goals and should make sure that each success criterion relates to at least one of the specified business objectives</li>
+</ul>
+</section>
+<section id="assess-the-situation" class="slide level2">
+<h2>Assess the Situation</h2>
+<p>Data analysts outlines the resources, from personnel to software, that are available to accomplish the data mining project.</p>
+<ul>
+<li>Particularly important is discovering what data is available to meet the primary business goal.</li>
+<li>At this point, the data analyst also should list the assumptions made in the project-assumptions
+<ul>
+<li>“To address the business question, a minimum number of customers over age 50 is necessary.”</li>
+<li>The data analyst also should list the project risks, list potential solutions to those risks, create a glossary of business and data mining terms, and construct a cost-benefit analysis for the project.</li>
+</ul></li>
+</ul>
+</section>
+<section id="determine-the-data-mining-goals" class="slide level2">
+<h2>Determine the Data Mining Goals</h2>
+<p>The data mining goal states project objectives in business terms</p>
+<ul>
+<li>“Predict how many widgets a customer will buy given their purchases in the past three years, demographic information (age, salary, city, etc.), and the item price.” - Success also should be defined in these terms—for instance, success could be defined as achieving a certain level of predictive accuracy.</li>
+</ul>
+<p>If the business goal cannot be effectively translated into a data mining goal, it may be wise to consider redefining the problem at this point.</p>
+</section>
+<section id="produce-a-project-plan" class="slide level2">
+<h2>Produce a Project Plan</h2>
+<p>The project plan describes the intended plan for achieving the data mining goals, including outlining specific steps and a proposed timeline, an assessment of potential risks, and an initial assessment of the tools and techniques needed to support the project. Generally accepted industry timeline standards are: 50 to 70 percent of the time and effort in a data mining project involves the Data Preparation Phase; 20 to 30 percent involves the Data Understanding Phase; only 10 to 20 percent is spent in each of the Modeling, Evaluation, and Business Understanding Phases; and 5 to 10 percent is spent in the Deployment Planning Phase.</p>
+</section></section>
+<section>
 <section id="data-understanding" class="title-slide slide level1 center">
 <h1>Data understanding</h1>
-
+<p>The data understanding phase involves four steps, including the collection of initial data, the description of data, the exploration of data, and the verification of data quality.</p>
 </section>
-
+<section id="data-collection-or-acquisition" class="slide level2 scrollable">
+<h2>Data collection (or acquisition)</h2>
+<p>Here a data analyst acquires the necessary data, including loading and integrating this data if necessary. The analyst should make sure to report problems encountered and his or her solutions to aid with future replications of the project. For instance, data may have to be collected from several different sources, and some of these sources may have a long lag time. It is helpful to know this in advance to avoid potential delays.</p>
+<ul>
+<li>The analyst then proceeds to increase familiarity with the data,</li>
+<li>to identify data quality problems, to discover initial insights into the data,</li>
+<li>or to detect interesting subsets to form hypotheses about hidden information.</li>
+</ul>
+<p>Still today, this is one of the most important steps for many companies:</p>
+<ul>
+<li>«Data is the new oil of the Digital Economy»</li>
+<li>Indeed, there are several disciplines focusing on data (Data Science, Data Mining, Big data, …)</li>
+<li>However, acquiring data is a time-consuming, investment and knowledge-intensive process</li>
+<li>In Europe (but now in many areas of the world), there can be problems related to privacy
+<ul>
+<li>When is it “right” to protect privacy? When does it become a limit?</li>
+</ul></li>
+</ul>
+<h3 id="public-datasets">Public Datasets</h3>
+<p>We can get data mainly in two ways:</p>
+<ol type="1">
+<li>By using publicly available data (datasets or databases) → someone collected them for us!
+<ul>
+<li>They can be free or for a fee</li>
+<li>The quality of the data made available must be checked</li>
+</ul></li>
+<li>By acquiring a new set of data, but why?
+<ul>
+<li>It is not certain that public data well represent the problem we want to solve</li>
+<li>We want to acquire specific data and thus generate specific expertise for the company (know-how)</li>
+<li>We are forced to acquire data that due to their sensitive nature would not otherwise be available (privacy issues)</li>
+<li>The company we work for already has a data collection process that we can use</li>
+</ul></li>
+</ol>
+<p>Many universities publicly release their datasets:</p>
+<ul>
+<li>There are no requirements related to profit or non-disclosure agreement (NDA)
+<ul>
+<li>It is a consolidated practice in the world of research</li>
+<li>It is the basis of the scientific method, in particular for the reproducibility of the results obtained</li>
+<li>I release my data so that others can conduct my own experiments, verifying my results and perhaps proposing better solutions!</li>
+<li>Examples:
+<ul>
+<li>https://www.image-net.org/</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Other platforms make datasets available for competitions:</p>
+<ul>
+<li>Kaggle: https://www.kaggle.com/datasets</li>
+<li>https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62</li>
+</ul>
+<h3 id="acquisition-of-a-new-dataset">Acquisition of a new dataset</h3>
+<p>Acquiring a new dataset is usually a costly process!</p>
+<ul>
+<li>Investment of time and money for:
+<ul>
+<li>Programming or learning to use an acquisition tool</li>
+<li>Handling of large amounts of data</li>
+<li>Testing to find any bugs that could compromise the success of the acquisition (and we often notice them at the end of the process)</li>
+<li>Acquire new hardware for data collection and storage</li>
+</ul></li>
+<li>It is necessary to carefully consider whether it is appropriate to acquire a new dataset.
+<ul>
+<li>Considerations not only in engineering, but also in management and economics.</li>
+<li>Future needs must be foreseen in advance.</li>
+</ul></li>
+</ul>
+<h3 id="data-annotation">Data Annotation</h3>
+<p>NB: acquiring a new dataset does not mean acquiring only new data!</p>
+<p>Indeed, one of the most relevant aspects is the annotation of the data</p>
+<ul>
+<li>The specific annotation is usually called “label” and is the (semantic) content of the data.</li>
+<li>The label depends on the problem we want to solve and can be numerical or categorical</li>
+<li>Examples:
+<ul>
+<li>A person’s height prediction → data: joint lengths, label: height (cm)</li>
+<li>Pedestrian Detection → data: images, label: presence of a pedestrian (yes/no)</li>
+<li>Pedestrian Localization → data: images, label: position of the pedestrain (x, y, w, h)</li>
+<li>Audio classification numbers → data: audio sequences, label: number («five»)</li>
+</ul></li>
+</ul>
+<p>A single data is therefore defined as annotated if it is associated with a label</p>
+<ul>
+<li>Data collected without correct and timely annotation is often useless</li>
+<li>However, it is also possible to “extract knowledge” from un-annotated data through, for instance, clustering</li>
+</ul>
+<h3 id="data-annotation-process">Data Annotation Process</h3>
+<p>The data annotation process can take place in several ways:</p>
+<ul>
+<li>Manual: each data is manually annotated
+<ul>
+<li>Long and expensive process</li>
+<li>The quality of the annotations is usually controllable and high</li>
+<li>This is not always an applicable process (for example, is it possible to annotate a dataset with 1M of images?)</li>
+</ul></li>
+<li>Automatic: each data is automatically annotated, using specific tools
+<ul>
+<li>It is based on particular a priori knowledge (for example, all images acquired in a dog shelter depict dogs).</li>
+<li>The quality of the annotations is not always easily controlled</li>
+</ul></li>
+<li>Third parties: all data is noted by a third party
+<ul>
+<li>Free of charge: this is the case, for example, in which users barter the free use of some platform with the transfer of their annotated data (for example, photos uploaded - to Facebook accompanied by information regarding the content, the position of the face, or scene acquired).</li>
+<li>Paid: there are platforms where is possible to purchase annotation time from third parties (often from “developing countries”). Example: Amazon Mechanical Turk</li>
+</ul></li>
+</ul>
+<h3 id="amazon-mechanical-turk">Amazon Mechanical Turk</h3>
+<p><a href="https://www.mturk.com/">Amazon Mechanical Turk</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<h3 id="different-ways-of-learning">Different Ways of Learning</h3>
+<p>:::: {.columns}</p>
+<div class="column" style="width:40%;">
+<p>We define different types of learning depending on data annotation:</p>
+<ul>
+<li>Annotated data → Supervised Learning
+<ul>
+<li>One of the most studied types that allows to obtain the best results</li>
+</ul></li>
+<li>Not annotated data → Unsupervised Learning
+<ul>
+<li>The results that can be obtained are usually worse than the previous case</li>
+</ul></li>
+<li>Partially annotated data → Semi-Supervised Learning</li>
+</ul>
+<p>Specific algorithms correspond to each of these areas</p>
+<ul>
+<li>The best performances are usually obtained with supervised trained algorithms</li>
+<li>In this course, we will mainly work on fully annotated data → Supervised Learning</li>
+</ul>
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/50c6092b-43cd-4dbe-95c1-c0d9494803e6"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/e6d4832d-902c-49c3-8c62-a1948517bb7e"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<h3 id="open-and-closed-sets">Open and Closed Sets</h3>
+<p>Last aspect to be defined relating to data annotation: do we know all annotations?</p>
+<p>Closed Set: it is assumed that the pattern to be classified belongs to one of the known classes.</p>
+<ul>
+<li>The most common case in machine learning benchmarks</li>
+<li>Ideal condition, but not always suitable for real-world systems</li>
+</ul>
+<p>Open Set: the patterns to be classified can belong to none of known classes.</p>
+<ul>
+<li>More realistic condition, but more challenging</li>
+<li>Example: classify all fruits into {pears, bananas}</li>
+</ul>
+<p>Two possible solutions to the open set problem:</p>
+<ul>
+<li>An additional fictitious class is added to the classes (“the rest of the world”, “unknown”) and the so-called “negative examples” are added to the training set.</li>
+<li>You allow the system not to assign the pattern. To this end, a threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold.</li>
+</ul>
+<h3 id="common-problems-in-data-acquisition">Common problems in Data Acquisition</h3>
+<p>Companies usually face common problems:</p>
+<ul>
+<li>The business process produces huge amounts of data
+<ul>
+<li>It is almost impossible to acquire all the data</li>
+<li>Also, physical limitations when the data stream is bigger that the storing capacity</li>
+<li>Usually, it is necessary to choose which ones to store</li>
+</ul></li>
+<li>Sometimes companies have a lot of “old” data in their databases or information systems:
+<ul>
+<li>They don’t know what to do with it</li>
+<li>Data re-collection on existing data (since data must be clean or something similar)</li>
+</ul></li>
+<li>In many business processes it is unclear understanding:
+<ul>
+<li>Which data is possible to collect (also due to privacy issues)</li>
+<li>Which data is (really) useful for the business</li>
+</ul></li>
+</ul>
+</section>
+<section id="describe-the-data" class="slide level2">
+<h2>Describe the Data</h2>
+<p>During this step, the data analyst examines the “gross” or “surface” properties of the acquired data and reports on the results, examining issues such as the format of the data, the quantity of the data, the number of records and fields in each table, the identities of the fields, and any other surface features of the data.</p>
+<ul>
+<li>The key question to ask is: Does the data acquired satisfy the relevant requirements?
+<ul>
+<li>For instance, if age is an important field and the data does not reflect the entire age range, it may be wise to collect a different set of data.</li>
+</ul></li>
+<li>This step also provides a basic understanding of the data on which subsequent steps will build.</li>
+</ul>
+</section>
+<section id="explore-the-data" class="slide level2">
+<h2>Explore the Data</h2>
+<p>This task tackles the data mining questions, which can be addressed using querying, visualization, and reporting.</p>
+<ul>
+<li>For instance, a data analyst may query the data to discover the types of products that purchasers in a particular income group usually buy.</li>
+<li>Or the analyst may run a visualization analysis to uncover potential fraud patterns.</li>
+<li>The data analyst should then create a data exploration report that outlines first findings, or an initial hypothesis, and the potential impact on the remainder of the project.</li>
+</ul>
+</section>
+<section id="verify-data-quality" class="slide level2">
+<h2>Verify Data Quality</h2>
+<p>At this point, the analyst examines the quality of the data, addressing questions such as:</p>
+<ul>
+<li>Is the data complete? Missing values often occur, particularly if the data was collected across long periods of time.</li>
+<li>Some common items to check include: missing attributes and blank fields;</li>
+<li>whether all possible values are represented;</li>
+<li>the plausibility of values;</li>
+<li>the spelling of values;</li>
+<li>and whether attributes with different values have similar meanings (e.g., low fat, diet).</li>
+</ul>
+<p>The data analyst also should review any attributes that may give answers that conflict with common sense (e.g., teenagers with high income).</p>
+</section></section>
 <section id="data-preparation" class="title-slide slide level1 center">
 <h1>Data preparation</h1>
 
