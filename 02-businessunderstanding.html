@@ -28,7 +28,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="02-businessunderstanding_files/libs/revealjs/dist/theme/quarto.css">
   <link href="02-businessunderstanding_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="02-businessunderstanding_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -328,7 +348,7 @@
 
 <section id="business-understanding" class="title-slide slide level1 center scrollable">
 <h1>Business understanding</h1>
-<p>(<em>Perhaps the most important/hard phase of any data mining project</em>)</p>
+<p>(<em>Perhaps the most important/hard phase of any data mining project</em> <span class="citation" data-cites="shearer2000crisp">(<a href="#/references" role="doc-biblioref" onclick="">Shearer 2000</a>)</span>)</p>
 <p>The initial business understanding phase focuses on</p>
 <ul>
 <li>understanding the project objectives from a business perspective,</li>
@@ -393,7 +413,7 @@
 <li>an assessment of potential risks,</li>
 <li>and an initial assessment of the tools and techniques needed to support the project.</li>
 </ul>
-<p>Generally accepted industry timeline standards are:</p>
+<p>Generally accepted industry timeline standards are <span class="citation" data-cites="shearer2000crisp">(<a href="#/references" role="doc-biblioref" onclick="">Shearer 2000</a>)</span>:</p>
 <ul>
 <li>50 to 70 percent of the time and effort in a data mining project involves the Data Preparation Phase;</li>
 <li>20 to 30 percent involves the Data Understanding Phase;</li>
@@ -455,11 +475,16 @@
 </ul>
 </section>
 
-<section id="references" class="title-slide slide level1 center">
+<section id="references" class="title-slide slide level1 smaller scrollable">
 <h1>References</h1>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Machine Learning - A.Y. 2024/25</p>
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-shearer2000crisp" class="csl-entry" role="listitem">
+Shearer, Colin. 2000. <span>“The CRISP-DM Model: The New Blueprint for Data Mining.”</span> <em>Journal of Data Warehousing</em> 5 (4): 13–22.
 </div>
 </div>
 </section>
