@@ -57,6 +57,16 @@ The arrows indicate the most important and frequent dependencies between the pha
 
 # Business understanding
 
+(Perhaps the most important phase of any data mining project)
+
+The initial business understanding phase focuses on
+
+- understanding the project objectives from a business perspective,
+- converting this knowledge into a data mining problem definition,
+- and then developing a preliminary plan designed to achieve the objectives.
+
+In order to understand which data should later be analyzed, and how, it is vital for data mining practitioners to fully understand the business for which they are finding a solution. The business understanding phase involves several key steps, including determining business objectives, assessing the situation, determining the data mining goals, and producing the project plan.
+
 # Data understanding
 
 # Data preparation
