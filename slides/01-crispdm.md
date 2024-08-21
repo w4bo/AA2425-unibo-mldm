@@ -54,3 +54,15 @@ CRISP-DM breaks down the life cycle of a data mining project into six phases:
 ::::
 
 The arrows indicate the most important and frequent dependencies between the phases, while the outer circle symbolizes the cyclical nature of data mining itself and illustrates that the lessons learned during the data mining process and from the deployed solution can trigger new, often more focused business questions.
+
+# Business understanding
+
+# Data understanding
+
+# Data preparation
+
+# Modeling
+
+# Evaluation
+
+# Deployment
