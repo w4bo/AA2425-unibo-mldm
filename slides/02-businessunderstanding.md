@@ -71,7 +71,7 @@ Generally accepted industry timeline standards are:
 - only 10 to 20 percent is spent in each of the Modeling, Evaluation, and Business Understanding Phases;
 - and 5 to 10 percent is spent in the Deployment Planning Phase.
 
-# Case Study: Brown spot of European Pear
+# Case Study: Brown Spot of European Pear
 
 :::: {.columns}
 ::: {.column width="60%"}
