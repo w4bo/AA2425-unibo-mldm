@@ -31,7 +31,7 @@ CRISP-DM (CRoss-Industry Standard Process for Data Mining) [@shearer2000crisp]
 :::
 ::::
 
-# CRISP-DM
+---
 
 :::: {.columns}
 
