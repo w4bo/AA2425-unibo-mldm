@@ -136,17 +136,28 @@ Rule of thumb
 
 # Books
 
+:::: {.columns}
+::: {.column width="60%"}
+
 Slides and notes are sufficient to prepare the final exam
-• You can find them on Virtuale platform (https://virtuale.unibo.it/)
-• However, I suggest you to read the book:
-• Title: Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow
-• Author: Aurélien Géron
-• Some notes about the book:
-• The book is intended as a support
-• The book is available for free in the «Leon Battista Alberti» library
-• The book is pretty huge (about 800 pages)
-• Carefully check the summary and select our topics
-• If you want, you can read the other parts to take inspiration (not requested for the final exam)
-• Ask if in doubts
+
+- You can find them on Virtuale platform (https://virtuale.unibo.it/)
+
+However, I suggest you to read the book:
+
+- Title: Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow
+- Author: Aurélien Géron
+- Some notes about the book:
+  - The book is intended as a support
+  - The book is available for free in the «Leon Battista Alberti» library
+  - The book is pretty huge (about 800 pages)
+  - Carefully check the summary and select our topics
+  - If you want, you can read the other parts to take inspiration (not requested for the final exam)
+
+:::
+::: {.column width="60%"}
 
 ![Hands on ML](https://learning.oreilly.com/library/cover/9781492032632/250w/)
+
+:::
+::::
