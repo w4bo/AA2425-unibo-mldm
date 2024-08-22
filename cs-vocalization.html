@@ -28,7 +28,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="cs-vocalization_files/libs/revealjs/dist/theme/quarto.css">
   <link href="cs-vocalization_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="cs-vocalization_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -326,10 +346,12 @@
     <div class="slides">
 
 
-<section id="case-study-large-language-models-and-data-science" class="title-slide slide level1 center">
-<h1>Case Study: Large Language Models and Data Science</h1>
+<section id="case-study-data-science-and-automation" class="title-slide slide level1 center">
+<h1>Case Study: Data Science and Automation</h1>
+<p>Consider the following task.</p>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:30%;">
+<div style="font-size:15px!important">
 <table>
 <thead>
 <tr class="header">
@@ -446,7 +468,8 @@
 </tr>
 </tbody>
 </table>
-</div><div class="column" style="width:40%;">
+</div>
+</div><div class="column" style="width:70%;">
 <blockquote>
 <p>Given a query result, return insights describe the query result.</p>
 <p>This task requires to:</p>
@@ -463,7 +486,7 @@
 
 <section id="our-solution-vool" class="title-slide slide level1 center scrollable">
 <h1>Our solution: VOOL</h1>
-<p>For instance, this can has been done in VOOL <span class="citation" data-cites="DBLP:conf/adbis/FranciaGGR22">[@DBLP:conf/adbis/FranciaGGR22]</span> by:</p>
+<p>For instance, this can has been done in VOOL <span class="citation" data-cites="DBLP:conf/adbis/FranciaGGR22">(<a href="#/additional-issues-1" role="doc-biblioref" onclick=""><strong>DBLP:conf/adbis/FranciaGGR22?</strong></a>)</span> by:</p>
 <ol type="1">
 <li>applying existing ML techniques (modules) in a bag-of-task fashion,</li>
 <li>let each module compute its own insight (in a range that is shared by all modules)</li>
@@ -473,49 +496,45 @@
 
 <section id="llms" class="title-slide slide level1 center">
 <h1>LLMs</h1>
-<p>Generative AI and Large Language Models (LLMs) <span class="citation" data-cites="DBLP:conf/nips/BrownMRSKDNSSAA20">[@DBLP:conf/nips/BrownMRSKDNSSAA20]</span> <span class="citation" data-cites="openai2023gpt4">[@openai2023gpt4]</span> have recently witnessed a huge hype even in the data science community.</p>
+<p>Generative AI and Large Language Models (LLMs) <span class="citation" data-cites="DBLP:conf/nips/BrownMRSKDNSSAA20">(<a href="#/additional-issues-1" role="doc-biblioref" onclick="">Brown et al. 2020</a>)</span> <span class="citation" data-cites="openai2023gpt4">(<a href="#/additional-issues-1" role="doc-biblioref" onclick="">OpenAI 2023</a>)</span> have recently witnessed a huge hype even in the data science community.</p>
 <ul>
-<li><p>LLMs are autoregressive machine learning models that act as statistical next-word predictors <span class="citation" data-cites="bowman2023things">[@bowman2023things]</span> after being trained on huge datasets <span class="citation" data-cites="DBLP:conf/fat/BenderGMS21">[@DBLP:conf/fat/BenderGMS21]</span>.</p></li>
+<li><p>LLMs are autoregressive machine learning models that act as statistical next-word predictors <span class="citation" data-cites="bowman2023things">(<a href="#/additional-issues-1" role="doc-biblioref" onclick="">Bowman 2023</a>)</span> after being trained on huge datasets <span class="citation" data-cites="DBLP:conf/fat/BenderGMS21">(<a href="#/additional-issues-1" role="doc-biblioref" onclick="">Bender et al. 2021</a>)</span>.</p></li>
 <li><p>Applications leveraging LLMs, such as ChatGPT, are usually oriented to general-purpose information retrieval and are not specific for extracting, ranking, and selecting the most interesting insights out of multidimensional query results.</p></li>
 </ul>
+<p>LLMs are powerful tools for broad natural language applications, are they a good choice for data-intensive tasks as well?</p>
 </section>
 
-<section id="limits-of-llms" class="title-slide slide level1 center scrollable">
-<h1>Limits of LLMs</h1>
-<p>Although LLMs are powerful tools for broad natural language applications, they are not always the best choice for data-intensive tasks for two main reasons:</p>
-<p><strong>Data volume and cost</strong></p>
+<section id="data-volume-and-cost" class="title-slide slide level1 center">
+<h1>Data volume and cost</h1>
 <ul>
 <li>Since multidimensional data usually contain sensitive business information, they are stored in private repositories (such as data warehouses) unknown to LLMs during their training.</li>
 <li>To feed data to an LLM, the main possibility is to use the prompt.
 <ul>
 <li>Depending on the specific model, prompts have limits in the number of tokens shared between input and answer, with different models <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">having different limits (accessed on 2024-06-20)</a> and pricing
 <ul>
-<li>The <a href="https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service">OpenAI price calculator in Microsoft Azure (accessed 2024-06-20)</a> estimates that using GPT-4-32K costs around $0.06 per <span class="math inline">\(10^3\)</span> input tokens and $0.12 per <span class="math inline">\(10^3\)</span> output tokens (as of 2024-06-20), where 1000 tokens correspond to almost 750 words.</li>
+<li>The <a href="https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service">OpenAI price calculator in Microsoft Azure (accessed 2024-06-20)</a> estimates that using GPT-4-32K costs around $0.06 per <span class="math inline">\(10^3\)</span> input tokens and $0.12 per <span class="math inline">\(10^3\)</span> output tokens, where 1000 tokens correspond to almost 750 words.</li>
 </ul></li>
-<li>For instance, prompting a table with <span class="math inline">\(10^5\)</span> tuples (if feasible at all) could easily reach the cost of several dollars per execution. on input and output tokens.</li>
+<li>Prompting a table with <span class="math inline">\(10^5\)</span> tuples (if feasible at all) could easily reach the cost of several dollars per execution. on input and output tokens.</li>
 </ul></li>
-<li>Recently, LLMs began to allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content.
+<li>LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content.
 <ul>
 <li>On the one hand, this can overcome the limits and cost of tokens.</li>
 <li>On the other hand, if the summary process is incorrect, it will add errors and bias to the final answer.</li>
 </ul></li>
 </ul>
-<p><strong>Running algorithms</strong></p>
+</section>
+
+<section id="running-algorithms" class="title-slide slide level1 center">
+<h1>Running algorithms</h1>
 <ul>
 <li>Algorithmic tasks such as SQL querying and data mining are better handled by DBMSs and query engines since
 <ul>
-<li><ol type="i">
 <li>they are optimized for these types of operations (e.g., using R-trees to speed up clustering in Euclidean spaces);</li>
-</ol></li>
-<li><ol start="2" type="i">
 <li>their answers are correct, consistent, and reproducible;</li>
-</ol></li>
-<li><ol start="3" type="i">
 <li>they do not have hallucinations.</li>
-</ol></li>
 </ul></li>
 </ul>
-<p>At the moment, while (plain) LLMs have many strengths, they are not typically suitable for data-intensive tasks.</p>
+<p>At the moment (2024), while (plain) LLMs have many strengths, they are not typically suitable for data-intensive tasks.</p>
 </section>
 
 <section id="llm-based-applications" class="title-slide slide level1 center">
@@ -524,8 +543,8 @@
 <ul>
 <li>There are applications for data analysis that are capable of generating and interpreting code (mainly Python), analyzing datasets, and supporting data scientists in doing data elaborations and analyses.
 <ul>
-<li>Applications can be directly deployed by LLM providers (e.g., Data Analyst <span class="citation" data-cites="dataanalyst">[@dataanalyst]</span> by ChatGPT)</li>
-<li>or can be deployed by third-party users (e.g., Data Scientist <span class="citation" data-cites="datascientist">[@datascientist]</span>).</li>
+<li>Applications can be directly deployed by LLM providers (e.g., Data Analyst <span class="citation" data-cites="dataanalyst">(<a href="#/additional-issues-1" role="doc-biblioref" onclick="">ChatGPT 2024</a>)</span> by ChatGPT)</li>
+<li>or can be deployed by third-party users (e.g., Data Scientist <span class="citation" data-cites="datascientist">(<a href="#/additional-issues-1" role="doc-biblioref" onclick="">Sekha 2024</a>)</span>).</li>
 </ul></li>
 <li>Intuitively, these applications allow the underlying LLM to invoke functions from external libraries when appropriate (e.g., Python’s pandas, scikit-learn, and scipy) and to generate and execute external code.</li>
 <li>Data Scientists and Data Analyst are indeed closer to VOOL than plain LLMs, but they bear the following differences with VOOL:</li>
@@ -535,7 +554,7 @@
 <section id="applying-llms-to-query-results" class="title-slide slide level1 center">
 <h1>Applying LLMs to query results</h1>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:30%;">
 <table>
 <thead>
 <tr class="header">
@@ -652,7 +671,7 @@
 </tr>
 </tbody>
 </table>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:70%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://github.com/user-attachments/assets/9ec3dbd8-a7ef-49f9-8d78-df8cf96c238b"></p>
@@ -678,7 +697,7 @@
 <p>Should additional modules be necessary to produce domain-specific insights, such modules should be embedded into the LLM through prompting or calls to (external) third-party libraries.</p>
 </section>
 
-<section id="additional-issues-1" class="title-slide slide level1 center">
+<section id="additional-issues-1" class="title-slide slide level1 smaller scrollable">
 <h1>Additional Issues</h1>
 <p>We conclude by observing that LLMs are also exposed to a couple of additional issues:</p>
 <p><em>Libraries</em></p>
@@ -697,7 +716,27 @@
 </ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-
+<p>Matteo Francia - Machine Learning - A.Y. 2024/25</p>
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-DBLP:conf/fat/BenderGMS21" class="csl-entry" role="listitem">
+Bender, Emily M., Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. <span>“On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?”</span> In <em>Proc. <span>FAccT</span></em>, edited by Madeleine Clare Elish, William Isaac, and Richard S. Zemel, 610–23. <span>ACM</span>. <a href="https://doi.org/10.1145/3442188.3445922">https://doi.org/10.1145/3442188.3445922</a>.
+</div>
+<div id="ref-bowman2023things" class="csl-entry" role="listitem">
+Bowman, Samuel R. 2023. <span>“Eight Things to Know about Large Language Models.”</span> <a href="https://arxiv.org/abs/2304.00612">https://arxiv.org/abs/2304.00612</a>.
+</div>
+<div id="ref-DBLP:conf/nips/BrownMRSKDNSSAA20" class="csl-entry" role="listitem">
+Brown, Tom B. et al. 2020. <span>“Language Models Are Few-Shot Learners.”</span> In <em>Proc. NeurIPS</em>.
+</div>
+<div id="ref-dataanalyst" class="csl-entry" role="listitem">
+ChatGPT. 2024. <span>“Data Analyst.”</span> <a href="https://chatgpt.com/g/g-HMNcP6w7d-data-analyst" class="uri">https://chatgpt.com/g/g-HMNcP6w7d-data-analyst</a>.
+</div>
+<div id="ref-openai2023gpt4" class="csl-entry" role="listitem">
+OpenAI. 2023. <span>“GPT-4 Technical Report.”</span> <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a>.
+</div>
+<div id="ref-datascientist" class="csl-entry" role="listitem">
+Sekha, Phani Chandra. 2024. <span>“Data Scientist.”</span> <a href="https://chatgpt.com/g/g-UgvlRTBjV-data-scientist" class="uri">https://chatgpt.com/g/g-UgvlRTBjV-data-scientist</a>.
 </div>
 </div>
 </section>
