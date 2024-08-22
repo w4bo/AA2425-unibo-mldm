@@ -166,6 +166,59 @@ Several LLM-based applications have been deployed to overcome these limitations.
 :::
 ::: {.column width="70%"}
 
+Imagining a session of query results, here follow the prompts of an initial query:
+
+> You are a data scientist describing the highlights of query results.
+> Given the following query result in CSV format, return the most interesting quantitative insights describing it. 
+> You can use any algorithm to compute the insights (e.g., the ones from scikit-learn). 
+> The highlights must be 100 words at most.
+>
+> [Query result is added here]
+
+And the one of a refined query obtained by drilling down the previous one (to verify how sales are characterized by gender)
+
+> The following is the result of a drill-down of the previous data. Given the result in CSV format, return the most interesting quantitative insights describing it also in relationship with the previous result. You can use any algorithm to compute the insights (e.g., the ones from scikit-learn). The highlights must be 100 words at most.
+>
+> [Query result is added here]
+:::
+::::
+
+# Applying LLMs to query results
+
+:::: {.columns}
+::: {.column width="30%"}
+
+<div style="font-size:15px!important">
+
+| productDepartment   | gender | quantity |
+|---------------------|--------|----------|
+| Produce             | M      | 19076    |
+| Produce             | F      | 18711    |
+| Alcoholic Beverages | F      | 16939    |
+| Snack Foods         | M      | 16859    |
+| Snack Foods         | F      | 16186    |
+| Alcoholic Beverages | M      | 15399    |
+| Household           | M      | 13757    |
+| Frozen Foods        | M      | 13644    |
+| Household           | F      | 13278    |
+| Frozen Foods        | F      | 13011    |
+| Baking Goods        | M      | 10404    |
+| Baking Goods        | F      | 9841     |
+| ...                 | ...    | ...      |
+| Dairy               | M      | 8571     |
+| Dairy               | F      | 8500     |
+| Beverages           | M      | 6811     |
+| Beverages           | F      | 6775     |
+| Seafood             | F      | 947      |
+| Seafood             | M      | 817      |
+| Carousel            | M      | 473      |
+| Carousel            | F      | 368      |
+
+</div>
+
+:::
+::: {.column width="70%"}
+
 <img src="https://github.com/user-attachments/assets/9ec3dbd8-a7ef-49f9-8d78-df8cf96c238b" style="height: 600px !important; max-height: 1000px !important" />
 
 :::
