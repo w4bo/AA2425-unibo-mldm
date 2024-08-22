@@ -650,7 +650,7 @@
 <li>Since business data are sensitive, they are stored in private repositories (such as data warehouses) unknown to LLMs</li>
 <li>To feed data to an LLM, the main possibility is to use the prompt.
 <ul>
-<li>Depending on the LLM, prompts <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">have limits in the #tokens(as of 2024-06)</a> composing input and answer</li>
+<li>Depending on the LLM, prompts <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">have limits in the #tokens (as of 2024-06)</a> composing input and answer</li>
 <li>The <a href="https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service">OpenAI price calculator in Microsoft Azure (as of 2024-06)</a> estimates that using GPT-4-32K costs around $0.06 per <span class="math inline">\(10^3\)</span> input tokens and $0.12 per <span class="math inline">\(10^3\)</span> output tokens, where 1000 tokens correspond to almost 750 words.
 <ul>
 <li>Prompting a table with <span class="math inline">\(10^5\)</span> tuples (if feasible) could easily cost several dollars per execution.</li>
@@ -827,7 +827,7 @@
 <p>You are a data scientist describing the highlights of query results. Given the following query result in CSV format, return the most interesting quantitative insights describing it. You can use any algorithm to compute the insights (e.g., the ones from scikit-learn). The highlights must be 100 words at most.</p>
 <p>[Query result is added here]</p>
 </blockquote>
-<p>And the one of a refined query obtained by drilling down the previous one (to verify how sales are characterized by gender)</p>
+<p>and the one of a subsequent query obtained by drilling down the previous one (to verify how sales are characterized by gender)</p>
 <blockquote>
 <p>The following is the result of a drill-down of the previous data. Given the result in CSV format, return the most interesting quantitative insights describing it also in relationship with the previous result. You can use any algorithm to compute the insights (e.g., the ones from scikit-learn). The highlights must be 100 words at most.</p>
 <p>[Query result is added here]</p>
