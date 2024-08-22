@@ -54,14 +54,11 @@ In some cases, the data analyst will change the format or design of the data. Th
 
 Considering `(volume, variety, velocity, veracity)`, we focus on the `(*, structured, batch, *)` scenario
 
-# Relational data
-
 :::: {.columns}
 
 ::: {.column width="65%"}
 
-
-**Relational data** are usually collected in **tabular** format
+**Relational data** are usually collected in **tabular** format (e.g., csv files)
 
 - Each row is an **observation** (instance or tuple)
     - An object of the analysis
@@ -79,20 +76,5 @@ We need proper tools (e.g., libraries) to manage such data
 
 :::
 ::::
-
-# Pandas
-
-**Pandas** is the shorthand for 'Python and Data Analysis'
-
-- It provides a rich set of features for exploring and manipulating data
-- [https://pandas.pydata.org/](https://pandas.pydata.org/)
-
-pandas (Python) is a solution for the manipulation of relational data
-
-- Two main data types: Series (e.g., temporal series) and DataFrame (e.g., table)
-- Support to SQL-like operations (join/merge, aggregation, etc.)
-- Imputation of missing values
-- Manipulation of data shape
-- By convention, the package pandas is imported as `pd`
 
 # References
