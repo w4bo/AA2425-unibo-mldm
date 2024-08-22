@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="04-datapreparation_files/libs/clipboard/clipboard.min.js"></script>
-<script src="04-datapreparation_files/libs/quarto-html/tabby.min.js"></script>
-<script src="04-datapreparation_files/libs/quarto-html/popper.min.js"></script>
-<script src="04-datapreparation_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="04-datapreparation_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="04-datapreparation_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="04-datapreparation_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="04-datapreparation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="lab-00-introduction_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lab-00-introduction_files/libs/quarto-html/tabby.min.js"></script>
+<script src="lab-00-introduction_files/libs/quarto-html/popper.min.js"></script>
+<script src="lab-00-introduction_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="lab-00-introduction_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lab-00-introduction_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="lab-00-introduction_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="lab-00-introduction_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
-  <title>datapreparation</title>
+  <title>Opening a file and read the content</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="04-datapreparation_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="04-datapreparation_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="lab-00-introduction_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="lab-00-introduction_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -28,32 +28,12 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
-  <link rel="stylesheet" href="04-datapreparation_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="04-datapreparation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="04-datapreparation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="04-datapreparation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="04-datapreparation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  </style>
+  <link rel="stylesheet" href="lab-00-introduction_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="lab-00-introduction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="lab-00-introduction_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="lab-00-introduction_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="lab-00-introduction_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -345,137 +325,144 @@
   <div class="reveal">
     <div class="slides">
 
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title"><strong>Opening a file and read the content</strong></h1>
 
+<div class="quarto-title-authors">
+</div>
+
+</section>
 <section>
-<section id="data-preparation" class="title-slide slide level1 center">
-<h1>Data Preparation</h1>
-<p>The data preparation phase covers all activities to construct the final data set or the data that will be fed into the modeling tool(s) from the initial raw data. Tasks include table, record, and attribute selection, as well as transformation and cleaning of data for modeling tools. The five steps in data preparation are the selection of data, the cleansing of data, the construction of data, the integration of data, and the formatting of data. Select Data</p>
-<p>Deciding on the data that will be used for the analysis is based on several criteria, including its relevance to the data mining goals, as well as quality and technical constraints such as limits on data volume or data types. For instance, while an individual’s address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated. Part of the data selection process should involve explaining why certain data was included or excluded. It is also a good idea to decide if one or more attributes are more important than others are.</p>
+<section id="opening-a-file-and-read-the-content" class="title-slide slide level1 center">
+<h1><strong>Opening a file and read the content</strong></h1>
+<p>In this block, we learn how to open a file with Python and how to read the content.</p>
+<p><strong>It is absolutely recommended to read the documentation relating to the functions and methods used!</strong> Usually, it is sufficient type on Google the name of the function (and eventually the name of the library used).</p>
 </section>
-<section class="slide level2">
-
-<p>Data (preparation) preprocessing plays a key role in a data analytics process and avoids “Garbage in, garbage out” <span class="citation" data-cites="giovanelli2021effective">(<a href="#/references" role="doc-biblioref" onclick="">Giovanelli, Bilalli, and Abelló Gamazo 2021</a>)</span></p>
+<h3 id="locate-the-file-we-want-to-use.">Locate the file we want to use.</h3>
+<p>The file is <code>shapes.txt</code>: this is the file of the dataset that we are going to use in our exercises.</p>
+<p>There are two options to use the file in a Colab project: - Upload the file through the Colab GUI (temporary upload!); - Upload the file on your Google Drive (you have to use the same Google account that you use with Colab)). Then, it is necessary to mount the drive in your Colab machine (use the “Mount Drive” button.); - Use the following code snippet <br></p>
+<p>The default upload location of the file is in <code>/content</code>in the Google virtual machine.</p>
+<h3 id="first-way-to-open-a-file">First way to open a file</h3>
+<p>Remember to close the file once read! <br> <strong>Tools</strong>:</p>
 <ul>
-<li>A broad range of activities; from correcting errors to selecting the most relevant features</li>
-<li>There are no pre-defined rules on the impact of pre-processing transformations</li>
-<li>Data scientists cannot easily foresee the impact of pipeline prototypes</li>
+<li><code>open(&lt;path&gt;, &lt;mode&gt;)</code>: open the file located in the <code>path</code>, for reading, writing, ect. depending by the <code>mode</code>.</li>
 </ul>
-<p>“Garbage in, garbage out” is particularly applicable to data mining and machine learning</p>
+<h3 id="second-way-to-open-a-file">Second way to open a file</h3>
+<p>In this case, the file is auotomatically closed.</p></section>
+<section>
+<section id="file-content-processing" class="title-slide slide level1 center">
+<h1><strong>File content processing</strong></h1>
+<p>In this block, we learn how to process the content of a file.</p>
+</section>
+<h3 id="read-the-first-two-lines">Read the first two lines</h3>
+<p>Note that each line has the following format: <code>image_name</code> <code>coordinates</code>. Coordinates are organized as follows: <span class="math inline">\(p^1_x \quad p^1_y \quad p^2_x \quad p^2_y \quad ... \quad p^n_x \quad p^n_x\)</span>, <span class="math inline">\(\quad 3 \leq n \leq 4\)</span>, since we have the classes:</p>
 <ul>
-<li>Out-of-range values (e.g., Income: −100)</li>
-<li>Impossible data combinations (e.g., Exam mark: 15, Exam result: Passed)</li>
-<li>Missing values</li>
-<li>Inconsistent data among multiple sources</li>
-<li>More?</li>
+<li>Triangle</li>
+<li>Rectangle</li>
+<li>Square</li>
+<li>Rhombus</li>
 </ul>
-</section></section>
-<section id="clean-data" class="title-slide slide level1 center">
-<h1>Clean Data</h1>
-<p>Without clean data, the results of a data mining analysis are in question. Thus at this stage, the data analyst must either select clean subsets of data or incorporate more ambitious techniques such as estimating missing data through modeling analyses. At this point, data analysts should make sure they outline how they addressed each quality problem reported in the earlier “Verify Data Quality” step.</p>
-</section>
-
-<section id="construct-data" class="title-slide slide level1 center">
-<h1>Construct Data</h1>
-<p>After the data is cleaned, the data analyst should undertake data preparation operations such as developing entirely new records or producing derived attributes. An example of a new record would be the creation of an empty purchase record for customers who made no purchases during the past year. Derived attributes, in contrast, are new attributes that are constructed from existing attributes, such as Area = Length x Width. These derived attributes should only be added if they ease the model process or facilitate the modeling algorithm, not just to reduce the number of input attributes. For instance, perhaps “income per head” is a better/easier attribute to use than “income per household.” Another type of derived attribute is single-attribute transformations, usually performed to fit the needs of the modeling tools. These transformations may be necessary to transform ranges to symbolic fields (e.g., ages to age bands), or symbolic fields (“definitely yes,” “yes,” “don’t know,” “no”) to numeric values. Modeling tools or algorithms often require these transformations.</p>
-</section>
-
-<section id="integrate-data" class="title-slide slide level1 center">
-<h1>Integrate Data</h1>
-<p>Integrating data involves combining information from multiple tables or records to create new records or values. With table-based data, an analyst can join two or more tables that have different information about the same objects. For instance, a retail chain has one table with information about each store’s general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from previous year), and another table with information about the demographics of the surrounding area. Each of these tables contains one record for each store. These tables can be merged together into a new table with one record for each store, combining fields from the source tables.</p>
-<p>Data integration also covers aggregations. Aggregations refer to operations where new values are computed by summarizing information from multiple records and/or tables. For example, an aggregation could include converting a table of customer purchases, where there is one record for each purchase, into a new table where there is one record for each customer. The table’s fields could include the number of purchases, the average purchase amount, the percent of orders charged to credit cards, the percent of items under promotion, etc.</p>
-</section>
-
-<section id="format-data" class="title-slide slide level1 center">
-<h1>Format Data</h1>
-<p>In some cases, the data analyst will change the format or design of the data. These changes might be simple—for example, removing illegal characters from strings or trimming them to a maximum length—or they may be more complex, such as those involving a reorganization of the information. Sometimes these changes are needed to make the data suitable for a specific modeling tool. In other instances, the changes are needed to pose the necessary data mining questions.</p>
-</section>
-
-<section id="data-variety" class="title-slide slide level1 center">
-<h1>Data variety</h1>
-
-<img data-src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*YejjU_69ffDyrC0z-X9jYQ.jpeg" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-
-<section id="main-python-libraries" class="title-slide slide level1 center">
-<h1>Main Python Libraries</h1>
-<p>Considering <code>(volume, variety, velocity, veracity)</code>, we focus on the <code>(*, structured, batch, *)</code> scenario</p>
-</section>
-
-<section id="relational-data" class="title-slide slide level1 center">
-<h1>Relational data</h1>
-<div class="columns">
-<div class="column" style="width:65%;">
-<p><strong>Relational data</strong> are usually collected in <strong>tabular</strong> format</p>
+<p>Example: <code>0_triangle.png 114 221 152 189 223 30</code></p>
+<p><strong>Tools</strong>: - <code>strip()</code>: removes both the leading and the trailing characters. - <code>split()</code>: breaks up a string at the specified separator and returns a list of strings. - Slicing: <code>list[start:stop:step]</code></p>
+<p>Examples:</p>
 <ul>
-<li>Each row is an <strong>observation</strong> (instance or tuple)
-<ul>
-<li>An object of the analysis</li>
-<li>E.g., a product for market basket analysis</li>
-</ul></li>
-<li>Each column is an <strong>attribute</strong> (or feature) characterizing each object
-<ul>
-<li>All values within a column have the same type (i.e., all values belong to the same attribute domain)</li>
-<li>E.g., the attributes ID (int), ProductName (str), or Price (float)</li>
-</ul></li>
+<li><code>a[start:stop]  # items start through stop-1</code></li>
+<li><code>a[start:]      # items start through the rest of the array</code></li>
+<li><code>a[:stop]       # items from the beginning through stop-1</code></li>
+<li><code>a[:]           # a copy of the whole array</code></li>
+<li><code>a[-1]    # last item in the array</code></li>
+<li><code>a[-2:]   # last two items in the array</code></li>
+<li><code>a[:-2]   # everything except the last two items</code></li>
+<li><code>a[::-1]    # all items in the array, reversed</code></li>
 </ul>
-<p>We need proper tools (e.g., libraries) to manage such data</p>
-</div><div class="column" style="width:35%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/w4bo/img-dump/assets/18005592/72869b67-6a16-4a5a-a8a4-8d8e10c2633d"></p>
-<figcaption>Library ecosystem</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<p>Note that the element in the list are strings. We must convert these strings in integers (<code>int</code>). These integers are then saved in a list.</p>
+<p><strong>Tools</strong>: - List comprehension: <code>[expression for item in list]</code></p></section>
+<section>
+<section id="understanding-the-directory-organization-of-the-dataset" class="title-slide slide level1 center scrollable">
+<h1><strong>Understanding the directory organization of the dataset</strong></h1>
+<p>We will use the directory of the dataset that we are going to use in our exercises.</p>
+<p>Also in that case, we have many options to upload the content:</p>
+<ol type="1">
+<li><p>Upload the <code>.zip</code> file containing the <em>Euclid</em> dataset from the left panel (first icon on the top bar)</p></li>
+<li><p>Unzip the file using the following comand. Dataset folders will appear in <code>/content/sample_data</code></p></li>
+</ol>
+<p>A new folder is in your virtual machine (click the “Reload” icon if you do not see it).</p>
+<p>You can directly upload the dataset folder on your Google Drive account (you may have mounted the Drive before).</p>
+<p>Let’s define the path of the dataset</p>
 </section>
-
-<section id="pandas" class="title-slide slide level1 center">
-<h1>Pandas</h1>
-<p><strong>Pandas</strong> is the shorthand for ‘Python and Data Analysis’</p>
+<h3 id="count-the-number-of-images-in-each-dataset-folder">Count the number of images in each dataset folder</h3>
+<p><strong>Tools</strong>:</p>
 <ul>
-<li>It provides a rich set of features for exploring and manipulating data</li>
-<li><a href="https://pandas.pydata.org/">https://pandas.pydata.org/</a></li>
+<li><code>glob(&lt;pathname&gt;)</code>: return a possibly-empty list of path names that match pathname. You can also use wildcards (<code>*</code>,<code>?</code>, <code>[ranges]</code>) apart from exact string search to make path retrieval more simple and convenient.</li>
+<li><code>os.path.join</code>: join one or more path components</li>
 </ul>
-<p>pandas (Python) is a solution for the manipulation of relational data</p>
-<ul>
-<li>Two main data types: Series (e.g., temporal series) and DataFrame (e.g., table)</li>
-<li>Support to SQL-like operations (join/merge, aggregation, etc.)</li>
-<li>Imputation of missing values</li>
-<li>Manipulation of data shape</li>
-<li>By convention, the package pandas is imported as <code>pd</code></li>
-</ul>
+<p>Example of the <code>join</code> command.</p>
+<p>Example of the <code>glob</code> command</p>
+<p>Now, we are ready to count the number of images in each folder of the dataset.</p>
+<p>Let’s compute the total amount of images.</p>
+<h3 id="exercise">Exercise</h3>
+<p>Read the content of the file <code>shapes.txt</code> and <strong>accumulate</strong> the image names and coordinates (integers) in two different lists, named <code>image_names</code> and <code>shape_coordinates</code>. Output the final length of the two lists.</p></section>
+<section>
+<section id="images" class="title-slide slide level1 center">
+<h1><strong>Images</strong></h1>
+<p>Now, it’s time to play with images!</p>
 </section>
-
-<section id="references" class="title-slide slide level1 smaller scrollable">
-<h1>References</h1>
+<h3 id="reading-and-showing-images">Reading and showing images</h3>
+<p>We use the <em>OpenCV</em> library to handle images.</p>
+<p>Tools: - <code>cv2.imread()</code>: opens an image. Use: <code>imread(&lt;name&gt;, bw/color)</code> - <code>cv2_imshow()</code>: shows an image. (original cv2 function is <code>cv2.imshow()</code>) - <code>cv2.resize()</code>: resizes an image.</p>
+<h3 id="processing-images">Processing images</h3>
+<p>Remember that images are numbers, organized in <span class="math inline">\(M \times N \times C\)</span> matrices, where <span class="math inline">\(M\)</span> is the number of columns, <span class="math inline">\(N\)</span> is the number of rows and <span class="math inline">\(C\)</span> is the number of channels (<span class="math inline">\(C=1\)</span> for black and white images, <span class="math inline">\(C=3\)</span> for RGB images).</p>
+<p>We use the <em>Numpy</em> library.</p>
+<p><strong>Tools</strong>: - <code>np.max()</code>: returns the maximum along a given axis. - <code>np.min()</code>: returns the minimum along a given axis. - <code>np.mean()</code>: returns the average value along a given axis. - <code>np.std()</code>: returns the standard deviation along a given axis.</p>
+<h3 id="data-preparation">Data Preparation</h3>
+<p><strong>Data Normalization</strong> (also called min max scaling)</p>
+<ul>
+<li>Values are shifted and rescaled so that they end up ranging from 0 to 1</li>
+<li>We do this by subtracting the min value and dividing by the max minus the min</li>
+</ul>
+<p><strong>Data Standardization</strong></p>
+<ul>
+<li>We subtract the mean value, and then we divide by the standard deviation</li>
+<li>The resulting values will have zero mean and unit variance</li>
+</ul>
+<h3 id="exercise-1">Exercise</h3>
+<p>Apply data normalization and standardization on the first image of the Euclid dataset. Print the values <code>min, max, avg and std</code> of the resulting image.</p>
+<h3 id="from-coordinates-to-lines-and-points">From coordinates, to lines and points</h3>
+<p>We are going to draw coordinates and shapes in images using OpenCV library. It is a useful activity in order to better understand our data available in the dataset.</p>
+<p><strong>Tools</strong>: - <code>cv2.circle()</code>: draws a circle on any image. - <code>cv2.putText()</code>: draw a text string on any image. - <code>cv2.line()</code>: draws a line on any image.</p>
+<h3 id="homework">Homework</h3>
+<p>For each element of the Euclid dataset, compute:</p>
+<ul>
+<li><strong>Perimeter</strong></li>
+<li><strong>Area</strong></li>
+<li><strong>Centroid</strong> (barycenter)</li>
+</ul>
+<p>Save the results in a <code>results.txt</code> file. Each line of the file must correspond to the same line of the <code>shape.txt</code> file and must follows this format:</p>
+<p><code>&lt;perimeter&gt; &lt;area&gt; &lt;(x,y)&gt;</code></p>
+<p>Example: 423 433.5 (234,456)</p>
+<p>Upload the <code>results.txt</code> file on Virtuale (<em>Homework #1</em>).</p>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-<p>Matteo Francia - Machine Learning - A.Y. 2024/25</p>
+
 </div>
-</div>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-giovanelli2021effective" class="csl-entry" role="listitem">
-Giovanelli, Joseph, Besim Bilalli, and Alberto Abelló Gamazo. 2021. <span>“Effective Data Pre-Processing for AutoML.”</span> In <em>Proceedings of the 23rd International Workshop on Design, Optimization, Languages and Analytical Processing of Big Data (DOLAP): Co-Located with the 24th International Conference on Extending Database Technology and the 24th International Conference on Database Theory (EDBT/ICDT 2021): Nicosia, Cyprus, March 23, 2021</em>, 1–10. CEUR-WS. org.
-</div>
-</div>
-</section>
+</div></section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="04-datapreparation_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="lab-00-introduction_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="04-datapreparation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="lab-00-introduction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="lab-00-introduction_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="lab-00-introduction_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="lab-00-introduction_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="lab-00-introduction_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="04-datapreparation_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="04-datapreparation_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="lab-00-introduction_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="lab-00-introduction_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="lab-00-introduction_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="lab-00-introduction_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
