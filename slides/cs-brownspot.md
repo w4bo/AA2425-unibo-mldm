@@ -20,7 +20,18 @@ How would you address this problem?
 
 ![Emilia Romagna, Italy](https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113)
 
-> The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers. 
+> Ideally, the goal is to build a dataset such as the following
+>
+> | Min. Temperature | Presence of Water Source | ... | Level of Damage |
+> |------------------|--------------------------|-----|-----------------|
+> | 14               | Close distance           |     | High            |
+> | 14.5             | Medium distance          |     | High            |
+> | 13.8             | Medium distance          |     | Low             |
+> | ...              | ...                      |     | ...             |
+>
+> and to learn a relationship between environmental features and the `Level of Damage`.
+>
+> The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.
 
 In your opinion, what are the pros/cons of this solution?
 
