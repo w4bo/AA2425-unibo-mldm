@@ -376,7 +376,9 @@
 <li><code>a[::-1]    # all items in the array, reversed</code></li>
 </ul>
 <p>Note that the element in the list are strings. We must convert these strings in integers (<code>int</code>). These integers are then saved in a list.</p>
-<p><strong>Tools</strong>: - List comprehension: <code>[expression for item in list]</code></p></section>
+<p><strong>Tools</strong>: - List comprehension: <code>[expression for item in list]</code></p>
+<h3 id="exercise">Exercise</h3>
+<p>Read the content of the file <code>shapes.txt</code> and <strong>accumulate</strong> the image names and coordinates (integers) in two different lists, named <code>image_names</code> and <code>shape_coordinates</code>. Output the final length of the two lists.</p></section>
 <section>
 <section id="understanding-the-directory-organization-of-the-dataset" class="title-slide slide level1 center scrollable">
 <h1><strong>Understanding the directory organization of the dataset</strong></h1>
@@ -400,37 +402,7 @@
 <p>Example of the <code>glob</code> command</p>
 <p>Now, we are ready to count the number of images in each folder of the dataset.</p>
 <p>Let’s compute the total amount of images.</p>
-<h3 id="exercise">Exercise</h3>
-<p>Read the content of the file <code>shapes.txt</code> and <strong>accumulate</strong> the image names and coordinates (integers) in two different lists, named <code>image_names</code> and <code>shape_coordinates</code>. Output the final length of the two lists.</p></section>
-<section>
-<section id="images" class="title-slide slide level1 center">
-<h1><strong>Images</strong></h1>
-<p>Now, it’s time to play with images!</p>
-</section>
-<h3 id="reading-and-showing-images">Reading and showing images</h3>
-<p>We use the <em>OpenCV</em> library to handle images.</p>
-<p>Tools: - <code>cv2.imread()</code>: opens an image. Use: <code>imread(&lt;name&gt;, bw/color)</code> - <code>cv2_imshow()</code>: shows an image. (original cv2 function is <code>cv2.imshow()</code>) - <code>cv2.resize()</code>: resizes an image.</p>
-<h3 id="processing-images">Processing images</h3>
-<p>Remember that images are numbers, organized in <span class="math inline">\(M \times N \times C\)</span> matrices, where <span class="math inline">\(M\)</span> is the number of columns, <span class="math inline">\(N\)</span> is the number of rows and <span class="math inline">\(C\)</span> is the number of channels (<span class="math inline">\(C=1\)</span> for black and white images, <span class="math inline">\(C=3\)</span> for RGB images).</p>
-<p>We use the <em>Numpy</em> library.</p>
-<p><strong>Tools</strong>: - <code>np.max()</code>: returns the maximum along a given axis. - <code>np.min()</code>: returns the minimum along a given axis. - <code>np.mean()</code>: returns the average value along a given axis. - <code>np.std()</code>: returns the standard deviation along a given axis.</p>
-<h3 id="data-preparation">Data Preparation</h3>
-<p><strong>Data Normalization</strong> (also called min max scaling)</p>
-<ul>
-<li>Values are shifted and rescaled so that they end up ranging from 0 to 1</li>
-<li>We do this by subtracting the min value and dividing by the max minus the min</li>
-</ul>
-<p><strong>Data Standardization</strong></p>
-<ul>
-<li>We subtract the mean value, and then we divide by the standard deviation</li>
-<li>The resulting values will have zero mean and unit variance</li>
-</ul>
 <h3 id="exercise-1">Exercise</h3>
-<p>Apply data normalization and standardization on the first image of the Euclid dataset. Print the values <code>min, max, avg and std</code> of the resulting image.</p>
-<h3 id="from-coordinates-to-lines-and-points">From coordinates, to lines and points</h3>
-<p>We are going to draw coordinates and shapes in images using OpenCV library. It is a useful activity in order to better understand our data available in the dataset.</p>
-<p><strong>Tools</strong>: - <code>cv2.circle()</code>: draws a circle on any image. - <code>cv2.putText()</code>: draw a text string on any image. - <code>cv2.line()</code>: draws a line on any image.</p>
-<h3 id="homework">Homework</h3>
 <p>For each element of the Euclid dataset, compute:</p>
 <ul>
 <li><strong>Perimeter</strong></li>
@@ -440,7 +412,6 @@
 <p>Save the results in a <code>results.txt</code> file. Each line of the file must correspond to the same line of the <code>shape.txt</code> file and must follows this format:</p>
 <p><code>&lt;perimeter&gt; &lt;area&gt; &lt;(x,y)&gt;</code></p>
 <p>Example: 423 433.5 (234,456)</p>
-<p>Upload the <code>results.txt</code> file on Virtuale (<em>Homework #1</em>).</p>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
