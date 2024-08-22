@@ -27,7 +27,7 @@ How would you address this problem?
 > | 13.8             | Medium distance          | ... | Low             |
 > | ...              | ...                      | ... | ...             |
 >
-> and to learn a relationship between environmental features and the `Level of Damage`.
+> and to learn relationships between environmental features and the `Level of Damage`.
 
 What features would you select?
 
