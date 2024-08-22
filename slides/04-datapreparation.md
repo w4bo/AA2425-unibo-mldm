@@ -54,7 +54,12 @@ In some cases, the data analyst will change the format or design of the data. Th
 
 Considering `(volume, variety, velocity, veracity)`, we focus on the `(*, structured, batch, *)` scenario
 
-### Relational data
+# Relational data
+
+:::: {.columns}
+
+::: {.column width="65%"}
+
 
 **Relational data** are usually collected in **tabular** format
 
@@ -67,7 +72,13 @@ Considering `(volume, variety, velocity, veracity)`, we focus on the `(*, struct
     
 We need proper tools (e.g., libraries) to manage such data
 
-![1712676223218](https://github.com/w4bo/img-dump/assets/18005592/72869b67-6a16-4a5a-a8a4-8d8e10c2633d)
+:::
+::: {.column width="35%"}
+
+![Library ecosystem](https://github.com/w4bo/img-dump/assets/18005592/72869b67-6a16-4a5a-a8a4-8d8e10c2633d)
+
+:::
+::::
 
 # Pandas
 
