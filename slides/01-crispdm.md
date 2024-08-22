@@ -40,9 +40,7 @@ bibliography: refs.bib
 :::: {.columns}
 ::: {.column width="60%"}
 
-Arrows indicate the most important and frequent dependencies between the phases, while the outer circle symbolizes the cyclical nature of data mining itself and illustrates that the lessons learned during the data mining process and from the deployed solution can trigger new, often more focused business questions.
-
-CRISP-DM breaks down the life cycle of a data mining project into six phases:
+CRISP-DM breaks down the life cycle of a data mining project into **six phases**:
 
 1. business understanding,
 1. data understanding,
@@ -51,32 +49,17 @@ CRISP-DM breaks down the life cycle of a data mining project into six phases:
 1. evaluation,
 1. and deployment.
 
+**Arrows**
+
+- indicate the most important and frequent dependencies between the phases, while the 
+- the outer circle symbolizes the cyclical nature of data mining itself
+- ... lessons learned during the data mining process trigger new, often more focused business questions
+
+
 :::
 ::: {.column width="40%"}
 
 ![CRISP-DM](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png)
-
-:::
-::::
-
-# Disclaimer!
-
-:::: {.columns}
-::: {.column width="60%"}
-
-The CRISP-DM tells us that *we don't do machine learning for the sake of training machine learning models*
-
-- We have real problems to solve and questions to answer
-- A data scientist must understand the data and the domain before trying any model
-- Machine learning is not a simple copy and paste of code
-    - Code generation can be easily automated and outperform you!
-    - The added value of a data scientist is the understanding of the problem and data
-- Data mining/Machine learning is not a course on `scikit-learn`
-
-:::
-::: {.column width="40%"}
-
-![Dataset, Data, and Features](https://en.meming.world/images/en/a/a3/We_Don%27t_Do_That_Here.jpg)
 
 :::
 ::::
@@ -115,6 +98,28 @@ The CRISP-DM tells us that *we don't do machine learning for the sake of trainin
 ::: {.column width="40%"}
 
 ![](https://github.com/user-attachments/assets/6b3f38bf-1a0f-4979-b141-854508d5faa9)
+
+:::
+::::
+
+# Disclaimer!
+
+:::: {.columns}
+::: {.column width="60%"}
+
+The CRISP-DM tells us that *we don't do machine learning for the sake of training machine learning models*
+
+- We have real problems to solve and questions to answer
+- A data scientist must understand the data and the domain before trying any model
+- Machine learning is not a simple copy and paste of code
+    - Code generation can be easily automated and outperform you!
+    - The added value of a data scientist is the understanding of the problem and data
+- Data mining/Machine learning is not a course on `scikit-learn`
+
+:::
+::: {.column width="40%"}
+
+![-](https://en.meming.world/images/en/a/a3/We_Don%27t_Do_That_Here.jpg)
 
 :::
 ::::
