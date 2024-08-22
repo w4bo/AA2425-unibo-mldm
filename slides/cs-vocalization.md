@@ -23,6 +23,7 @@ Consider the following task.
 
 How would you do that?
 
+What insights would you return to describe the query result?
 :::
 ::: {.column width="30%"}
 
@@ -59,11 +60,25 @@ How would you do that?
 
 # Our solution: VOOL
 
+
+:::: {.columns}
+::: {.column width="70%"}
+
 For instance, this can has been done in VOOL [@DBLP:conf/adbis/FranciaGGR22] by:
 
 1. applying existing ML techniques (modules) in a bag-of-task fashion,
 2. let each module compute its own insight (in a range that is shared by all modules)
 3. Compute a knapsack of the patterns extracted on time.
+
+The reviewer #2 found it "good old fashioned AI", and asked us to compare against LLMs and LLM-based applications.
+
+:::
+::: {.column width="70%"}
+
+![Good old fashioned AI](https://github.com/user-attachments/assets/719bb7a2-488b-4fbc-9f22-0d7e5e3d2538)
+
+:::
+::::
 
 # LLMs
 
@@ -97,13 +112,24 @@ At the moment (2024), while (plain) LLMs have many strengths, they are not typic
 
 # LLM-based applications
 
+:::: {.columns}
+::: {.column width="70%"}
+
 Several LLM-based applications have been deployed to overcome these limitations.
 
 - There are applications for data analysis that are capable of generating and interpreting code (mainly Python), analyzing datasets, and supporting data scientists in doing data elaborations and analyses.
     - Applications can be directly deployed by LLM providers (e.g., Data Analyst [@dataanalyst] by ChatGPT)
     - or can be deployed by third-party users (e.g., Data Scientist [@datascientist]).
 - Intuitively, these applications allow the underlying LLM to invoke functions from external libraries when appropriate (e.g., Python's pandas, scikit-learn, and scipy) and to generate and execute external code.
-- Data Scientists and Data Analyst are indeed closer to VOOL than plain LLMs, but they bear the following differences with VOOL:
+- Data Scienti
+
+:::
+::: {.column width="70%"}
+
+![Data Scientist](https://github.com/user-attachments/assets/42d12755-4833-4836-983d-e8442f80372f)
+
+:::
+::::
 
 # Applying LLMs to query results
 
@@ -150,7 +176,7 @@ Several LLM-based applications have been deployed to overcome these limitations.
 
 **Interpretability.**
 
-In LLMs, the process that leads to the computation of the insights and their interest remains hidden and not interpretable to the end-user
+The process that leads to the computation of the insights and their interest remains hidden and not interpretable to the end-user
 
 - Has the model added some distortion to the data?
 
@@ -180,3 +206,5 @@ Should additional modules be necessary to produce domain-specific insights, such
 - Hence, following their development and deeply understanding their capabilities is often hard, also due to a lack of documentation.
     - On the one hand, this makes non-empirical comparisons between LLMs unfeasible.
     - On the other, exactly reproducing the results of empirical tests may be impossible.
+
+# References
