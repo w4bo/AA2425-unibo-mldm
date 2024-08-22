@@ -353,7 +353,7 @@
 <li>Manipulation of data shape</li>
 <li>By convention, the package pandas is imported as <code>pd</code></li>
 </ul>
-<div id="aacb3166" class="cell" data-outputid="40146411-65c2-4956-f33a-ca64920b586c" data-execution_count="62">
+<div id="aacb3166" class="cell" data-outputid="0f0c6375-3cbe-409d-a6d8-a2c550e8e259" data-execution_count="121">
 <div class="cell-output cell-output-stdout">
 <pre><code>2.1.4</code></pre>
 </div>
@@ -361,10 +361,10 @@
 <p>… plus we will use other libraries</p>
 <p>Pandas relies on DataFrame and Series</p>
 <p><strong>DataFrame</strong>: - Two-dimensional, size-mutable, potentially heterogeneous tabular data. - The primary pandas data structure. - Data structure also contains labeled axes (rows and columns). - Arithmetic operations align on both row and column labels. - Can be thought of as a dict-like container for Series objects. - https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html</p>
-<div id="74c37032" class="cell" data-outputid="721e757c-fed7-40cc-adcb-bc2e2b52d910" data-execution_count="64">
-<div class="cell-output cell-output-display" data-execution_count="64">
+<div id="74c37032" class="cell" data-outputid="fbe2d20d-2693-4085-b09a-1242db07fcb6" data-execution_count="123">
+<div class="cell-output cell-output-display" data-execution_count="123">
 
-  <div id="df-ae725767-383e-486c-9478-a072e858e937" class="colab-df-container">
+  <div id="df-8e99a2a3-1077-49f6-a566-61c18d665fc5" class="colab-df-container">
     <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -469,7 +469,7 @@
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ae725767-383e-486c-9478-a072e858e937')" title="Convert this dataframe to an interactive table." style="display:none;">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-8e99a2a3-1077-49f6-a566-61c18d665fc5')" title="Convert this dataframe to an interactive table." style="display:none;">
 
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
@@ -519,12 +519,12 @@
 
     <script>
       const buttonEl =
-        document.querySelector('#df-ae725767-383e-486c-9478-a072e858e937 button.colab-df-convert');
+        document.querySelector('#df-8e99a2a3-1077-49f6-a566-61c18d665fc5 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ae725767-383e-486c-9478-a072e858e937');
+        const element = document.querySelector('#df-8e99a2a3-1077-49f6-a566-61c18d665fc5');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -544,8 +544,8 @@
   </div>
 
 
-<div id="df-ca2f9a9a-6047-4fa4-8cb7-ceb94531a876">
-  <button class="colab-df-quickchart" onclick="quickchart('df-ca2f9a9a-6047-4fa4-8cb7-ceb94531a876')" title="Suggest charts" style="display:none;">
+<div id="df-b4280bde-1848-4fda-9a06-f80830cd2605">
+  <button class="colab-df-quickchart" onclick="quickchart('df-b4280bde-1848-4fda-9a06-f80830cd2605')" title="Suggest charts" style="display:none;">
 
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
     <g>
@@ -661,14 +661,14 @@
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-ca2f9a9a-6047-4fa4-8cb7-ceb94531a876 button');
+        document.querySelector('#df-b4280bde-1848-4fda-9a06-f80830cd2605 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_b91b9936-20e0-4290-95fc-553f51a6fdd4">
+  <div id="id_9a1b1444-0012-48cb-b888-3f5af6dc6933">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -709,7 +709,7 @@
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_b91b9936-20e0-4290-95fc-553f51a6fdd4 button.colab-df-generate');
+        document.querySelector('#id_9a1b1444-0012-48cb-b888-3f5af6dc6933 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -743,8 +743,8 @@
 <li>Operations between Series (e.g., +, -, /) align values based on their associated index values.</li>
 <li>https://pandas.pydata.org/docs/reference/api/pandas.Series.html</li>
 </ul>
-<div id="205a800c" class="cell" data-outputid="cdbdd625-d9fc-491a-c202-476b659d7aad" data-execution_count="65">
-<div class="cell-output cell-output-display" data-execution_count="65">
+<div id="205a800c" class="cell" data-outputid="448fe679-31c7-46b8-eda8-b66bbd869f54" data-execution_count="124">
+<div class="cell-output cell-output-display" data-execution_count="124">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -786,8 +786,8 @@
 </div><br><label><b>dtype:</b> int64</label>
 </div>
 </div>
-<div id="a4ed958f" class="cell" data-outputid="a96974a9-cb14-4a20-c0d6-7d50d2036b50" data-execution_count="66">
-<div class="cell-output cell-output-display" data-execution_count="66">
+<div id="a4ed958f" class="cell" data-outputid="65737e90-e0e3-458e-99ae-d7090c3302c5" data-execution_count="125">
+<div class="cell-output cell-output-display" data-execution_count="125">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -837,10 +837,10 @@
 </div><br><label><b>dtype:</b> int64</label>
 </div>
 </div>
-<div id="694287e9" class="cell" data-outputid="f140f7be-4093-480a-8d07-4d1a4cfc5569" data-execution_count="67">
-<div class="cell-output cell-output-display" data-execution_count="67">
+<div id="694287e9" class="cell" data-outputid="3b2e65e1-0304-4502-8ead-76f7123135bb" data-execution_count="126">
+<div class="cell-output cell-output-display" data-execution_count="126">
 
-  <div id="df-92d55746-0e59-4e17-a564-5570a33f9388" class="colab-df-container">
+  <div id="df-24e0ab7e-5f82-4d41-ba36-80e1be541858" class="colab-df-container">
     <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -951,7 +951,7 @@
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-92d55746-0e59-4e17-a564-5570a33f9388')" title="Convert this dataframe to an interactive table." style="display:none;">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-24e0ab7e-5f82-4d41-ba36-80e1be541858')" title="Convert this dataframe to an interactive table." style="display:none;">
 
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
@@ -1001,12 +1001,12 @@
 
     <script>
       const buttonEl =
-        document.querySelector('#df-92d55746-0e59-4e17-a564-5570a33f9388 button.colab-df-convert');
+        document.querySelector('#df-24e0ab7e-5f82-4d41-ba36-80e1be541858 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-92d55746-0e59-4e17-a564-5570a33f9388');
+        const element = document.querySelector('#df-24e0ab7e-5f82-4d41-ba36-80e1be541858');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1026,8 +1026,8 @@
   </div>
 
 
-<div id="df-21e4cd29-a5f8-4689-aa18-a927d0cf5658">
-  <button class="colab-df-quickchart" onclick="quickchart('df-21e4cd29-a5f8-4689-aa18-a927d0cf5658')" title="Suggest charts" style="display:none;">
+<div id="df-e30cd849-12fb-4255-8e77-d260ec83a09e">
+  <button class="colab-df-quickchart" onclick="quickchart('df-e30cd849-12fb-4255-8e77-d260ec83a09e')" title="Suggest charts" style="display:none;">
 
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
     <g>
@@ -1143,14 +1143,14 @@
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-21e4cd29-a5f8-4689-aa18-a927d0cf5658 button');
+        document.querySelector('#df-e30cd849-12fb-4255-8e77-d260ec83a09e button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_0f67aa73-dc1c-4b8b-aa5c-a7150cdf33dc">
+  <div id="id_5ebab8df-7af5-4217-97a6-6914e1cd8bf4">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -1191,7 +1191,7 @@
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_0f67aa73-dc1c-4b8b-aa5c-a7150cdf33dc button.colab-df-generate');
+        document.querySelector('#id_5ebab8df-7af5-4217-97a6-6914e1cd8bf4 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -1207,8 +1207,8 @@
 </div>
 </div>
 <p>… doing some element-wise operations</p>
-<div id="50a5bde6" class="cell" data-outputid="7e846765-607e-46f0-d48f-292b6c0065b7" data-execution_count="68">
-<div class="cell-output cell-output-display" data-execution_count="68">
+<div id="50a5bde6" class="cell" data-outputid="9c1e216e-b126-4f6f-d2e2-cb82379b28b5" data-execution_count="127">
+<div class="cell-output cell-output-display" data-execution_count="127">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1251,12 +1251,14 @@
 </div>
 </div>
 <p>… doing some aggregation</p>
-<div id="b2c64c8e" class="cell" data-outputid="bc6d1ff8-30e0-49a7-a5ad-20cb6db525f3" data-execution_count="72">
-<div class="cell-output cell-output-display" data-execution_count="72">
+<div id="b2c64c8e" class="cell" data-outputid="c37a1e71-8271-4db7-ff2e-475f043ab88c" data-execution_count="128">
+<div class="cell-output cell-output-display" data-execution_count="128">
 <pre><code>4</code></pre>
 </div>
 </div>
-<h3 id="understanding-data-types">Understanding data types</h3>
+</section>
+<section id="understanding-data-types" class="slide level2">
+<h2>Understanding data types</h2>
 <p>“It is imperative to know the attribute properties to carry out meaningful operations and research with them”</p>
 <p>Why is data type important?</p>
 
@@ -1266,10 +1268,10 @@
 <p><span class="math inline">\(2201010001 &gt; 2147483647\)</span></p>
 <p>What are the implications of a data type?</p>
 <p>Pandas automatically infers data types, or they can be specified during creation - Common data types are numeric ones - <code>np.floatN</code> represents floating numbers (e.g., -3.14) - <code>np.intN</code>/<code>np.uintN</code> represent integers with/without sign (-42 and 42) - <code>N</code> is the number of needed bits: 8, 16, 32 o 64 - Other data types - <code>bool</code>: Boolean values - <code>datetime64</code>, timedelta64: timestamp and time intervals - <code>object</code>: mainly used for strings</p>
-<div id="7d53489b" class="cell" data-outputid="ef7d282d-238d-496c-e7cd-d6b4185bac71" data-execution_count="73">
-<div class="cell-output cell-output-display" data-execution_count="73">
+<div id="7d53489b" class="cell" data-outputid="52cd8e11-7a2b-4f80-9e9b-2471d14c825c" data-execution_count="129">
+<div class="cell-output cell-output-display" data-execution_count="129">
 
-  <div id="df-ff88159e-0ce6-40d1-8fd4-c938c37c8931" class="colab-df-container">
+  <div id="df-63cabc07-935b-4b71-8b24-d73bb98f1511" class="colab-df-container">
     <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1344,7 +1346,7 @@
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ff88159e-0ce6-40d1-8fd4-c938c37c8931')" title="Convert this dataframe to an interactive table." style="display:none;">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-63cabc07-935b-4b71-8b24-d73bb98f1511')" title="Convert this dataframe to an interactive table." style="display:none;">
 
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
@@ -1394,12 +1396,12 @@
 
     <script>
       const buttonEl =
-        document.querySelector('#df-ff88159e-0ce6-40d1-8fd4-c938c37c8931 button.colab-df-convert');
+        document.querySelector('#df-63cabc07-935b-4b71-8b24-d73bb98f1511 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ff88159e-0ce6-40d1-8fd4-c938c37c8931');
+        const element = document.querySelector('#df-63cabc07-935b-4b71-8b24-d73bb98f1511');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1419,8 +1421,8 @@
   </div>
 
 
-<div id="df-e9cae780-9bba-4448-86ff-17faea5970a3">
-  <button class="colab-df-quickchart" onclick="quickchart('df-e9cae780-9bba-4448-86ff-17faea5970a3')" title="Suggest charts" style="display:none;">
+<div id="df-e83617f9-5693-4f95-b0d9-414456253f0f">
+  <button class="colab-df-quickchart" onclick="quickchart('df-e83617f9-5693-4f95-b0d9-414456253f0f')" title="Suggest charts" style="display:none;">
 
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
     <g>
@@ -1536,14 +1538,14 @@
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-e9cae780-9bba-4448-86ff-17faea5970a3 button');
+        document.querySelector('#df-e83617f9-5693-4f95-b0d9-414456253f0f button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_3bec01b8-9dba-4bf2-ad84-4e1239ed3ac8">
+  <div id="id_bab9993e-19e7-4f92-80ad-b8f5ca19d996">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -1584,7 +1586,7 @@
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_3bec01b8-9dba-4bf2-ad84-4e1239ed3ac8 button.colab-df-generate');
+        document.querySelector('#id_bab9993e-19e7-4f92-80ad-b8f5ca19d996 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -1607,8 +1609,8 @@
 <li>(Numeric) <strong>Interval</strong>: can distinguish and sort the values, and compute their difference</li>
 <li>(Numeric) <strong>Ratio</strong>: can distinguish and sort the values, and compute their difference and ratio</li>
 </ul>
-<div id="41926ed4" class="cell" data-outputid="a0c33d57-20a8-43a0-a548-907c4c9c28ea" data-execution_count="74">
-<div class="cell-output cell-output-display" data-execution_count="74">
+<div id="41926ed4" class="cell" data-outputid="1fa5a65f-aaaf-46e3-99e3-4e2adbcf480e" data-execution_count="130">
+<div class="cell-output cell-output-display" data-execution_count="130">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1667,7 +1669,7 @@
 <pre><code>Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn't necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn't necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.</code></pre>
 <p>The Likert scale is widely used in social work research, and is commonly constructed with four to seven points. It is usually treated as an interval scale, but strictly speaking it is an ordinal scale, where arithmetic operations cannot be conducted [1]</p>
 <p>[1] Wu, Huiping, and Shing-On Leung. “Can Likert scales be treated as interval scales?—A simulation study.” Journal of social service research 43.4 (2017): 527-532.</p>
-<div id="4d3c26ed" class="cell" data-outputid="895c9902-90fe-4811-f456-8ff5cbe44c71" data-execution_count="75">
+<div id="4d3c26ed" class="cell" data-outputid="a3dced0a-90ae-411b-d768-91c91269351a" data-execution_count="131">
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 5 entries, 0 to 4
@@ -1683,10 +1685,10 @@ dtypes: float64(1), int64(1), object(3)
 memory usage: 328.0+ bytes</code></pre>
 </div>
 </div>
-<div id="4061127e" class="cell" data-outputid="2cb63062-0091-466b-9c99-06be0adaf772" data-execution_count="76">
-<div class="cell-output cell-output-display" data-execution_count="76">
+<div id="4061127e" class="cell" data-outputid="e476467b-c399-407a-924a-d4244a7a49b7" data-execution_count="132">
+<div class="cell-output cell-output-display" data-execution_count="132">
 
-  <div id="df-ce9a6e31-fd98-4ae0-b2a4-eadb01737347" class="colab-df-container">
+  <div id="df-2accb9f2-6b20-41f7-a347-d22022d0cd37" class="colab-df-container">
     <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1809,7 +1811,7 @@ memory usage: 328.0+ bytes</code></pre>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ce9a6e31-fd98-4ae0-b2a4-eadb01737347')" title="Convert this dataframe to an interactive table." style="display:none;">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-2accb9f2-6b20-41f7-a347-d22022d0cd37')" title="Convert this dataframe to an interactive table." style="display:none;">
 
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
@@ -1859,12 +1861,12 @@ memory usage: 328.0+ bytes</code></pre>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-ce9a6e31-fd98-4ae0-b2a4-eadb01737347 button.colab-df-convert');
+        document.querySelector('#df-2accb9f2-6b20-41f7-a347-d22022d0cd37 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ce9a6e31-fd98-4ae0-b2a4-eadb01737347');
+        const element = document.querySelector('#df-2accb9f2-6b20-41f7-a347-d22022d0cd37');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1884,8 +1886,8 @@ memory usage: 328.0+ bytes</code></pre>
   </div>
 
 
-<div id="df-f55b7d52-2862-4a07-9a7c-b86acf35e992">
-  <button class="colab-df-quickchart" onclick="quickchart('df-f55b7d52-2862-4a07-9a7c-b86acf35e992')" title="Suggest charts" style="display:none;">
+<div id="df-c2aa10b3-b4d0-42fc-804c-283d24f4defc">
+  <button class="colab-df-quickchart" onclick="quickchart('df-c2aa10b3-b4d0-42fc-804c-283d24f4defc')" title="Suggest charts" style="display:none;">
 
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
     <g>
@@ -2001,7 +2003,7 @@ memory usage: 328.0+ bytes</code></pre>
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-f55b7d52-2862-4a07-9a7c-b86acf35e992 button');
+        document.querySelector('#df-c2aa10b3-b4d0-42fc-804c-283d24f4defc button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -2012,10 +2014,10 @@ memory usage: 328.0+ bytes</code></pre>
   </div>
 </div>
 </div>
-<div id="e5cf8058" class="cell" data-outputid="b86e7b82-f493-4ac0-9a80-b9ead69f9be1" data-execution_count="77">
-<div class="cell-output cell-output-display" data-execution_count="77">
+<div id="e5cf8058" class="cell" data-outputid="d5540b58-50fa-46f0-b1aa-c3b809f7a20b" data-execution_count="133">
+<div class="cell-output cell-output-display" data-execution_count="133">
 
-  <div id="df-1fbcda45-cf67-4f14-b457-8238db2d354b" class="colab-df-container">
+  <div id="df-8e2f5768-f746-4ab2-a71b-926935abb914" class="colab-df-container">
     <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -2090,7 +2092,7 @@ memory usage: 328.0+ bytes</code></pre>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-1fbcda45-cf67-4f14-b457-8238db2d354b')" title="Convert this dataframe to an interactive table." style="display:none;">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-8e2f5768-f746-4ab2-a71b-926935abb914')" title="Convert this dataframe to an interactive table." style="display:none;">
 
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
@@ -2140,12 +2142,12 @@ memory usage: 328.0+ bytes</code></pre>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-1fbcda45-cf67-4f14-b457-8238db2d354b button.colab-df-convert');
+        document.querySelector('#df-8e2f5768-f746-4ab2-a71b-926935abb914 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-1fbcda45-cf67-4f14-b457-8238db2d354b');
+        const element = document.querySelector('#df-8e2f5768-f746-4ab2-a71b-926935abb914');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2165,8 +2167,8 @@ memory usage: 328.0+ bytes</code></pre>
   </div>
 
 
-<div id="df-573e353b-bcc7-402d-8ede-07ae2a41b3a9">
-  <button class="colab-df-quickchart" onclick="quickchart('df-573e353b-bcc7-402d-8ede-07ae2a41b3a9')" title="Suggest charts" style="display:none;">
+<div id="df-b416d197-f42f-42a7-88dc-bc3ebc96a84c">
+  <button class="colab-df-quickchart" onclick="quickchart('df-b416d197-f42f-42a7-88dc-bc3ebc96a84c')" title="Suggest charts" style="display:none;">
 
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
     <g>
@@ -2282,7 +2284,7 @@ memory usage: 328.0+ bytes</code></pre>
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-573e353b-bcc7-402d-8ede-07ae2a41b3a9 button');
+        document.querySelector('#df-b416d197-f42f-42a7-88dc-bc3ebc96a84c button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -2295,18 +2297,18 @@ memory usage: 328.0+ bytes</code></pre>
 </div>
 </section></section>
 <section>
-<section id="the-housing-case-study" class="title-slide slide level1 center scrollable">
-<h1>The <code>Housing</code> case study</h1>
+<section id="the-california-housing-case-study" class="title-slide slide level1 center scrollable">
+<h1>The <code>California Housing</code> case study</h1>
 <p>Check also:</p>
 <ul>
 <li>https://www.kaggle.com/camnugent/california-housing-prices</li>
 <li>https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/</li>
 </ul>
 <p>We will use the California Housing Prices dataset. Our task is to use California census data to forecast housing prices given the population, median income, and median housing price for each block group in California. Block groups are the smallest geographical unit for which the US Census Bureau publishes sample data (a block group typically has a population of 600 to 3,000 people). We will just call them “districts” for short</p>
-<div id="80970f2e" class="cell" data-outputid="9de7afb1-fb1c-4272-83e0-db26181b9401" data-execution_count="78">
-<div class="cell-output cell-output-display" data-execution_count="78">
+<div id="80970f2e" class="cell" data-outputid="4eb0cf0b-08cf-4b83-81ff-7f2aed907e6f" data-execution_count="134">
+<div class="cell-output cell-output-display" data-execution_count="134">
 
-  <div id="df-f828de23-8fac-4b35-b06f-9f9510eccfee" class="colab-df-container">
+  <div id="df-960554df-1840-45b4-9667-177e6e312f0c" class="colab-df-container">
     <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -2490,7 +2492,7 @@ memory usage: 328.0+ bytes</code></pre>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-f828de23-8fac-4b35-b06f-9f9510eccfee')" title="Convert this dataframe to an interactive table." style="display:none;">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-960554df-1840-45b4-9667-177e6e312f0c')" title="Convert this dataframe to an interactive table." style="display:none;">
 
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
@@ -2540,12 +2542,12 @@ memory usage: 328.0+ bytes</code></pre>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-f828de23-8fac-4b35-b06f-9f9510eccfee button.colab-df-convert');
+        document.querySelector('#df-960554df-1840-45b4-9667-177e6e312f0c button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-f828de23-8fac-4b35-b06f-9f9510eccfee');
+        const element = document.querySelector('#df-960554df-1840-45b4-9667-177e6e312f0c');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2565,8 +2567,8 @@ memory usage: 328.0+ bytes</code></pre>
   </div>
 
 
-<div id="df-3cce5cd8-e58c-40ba-952d-6c14d523df97">
-  <button class="colab-df-quickchart" onclick="quickchart('df-3cce5cd8-e58c-40ba-952d-6c14d523df97')" title="Suggest charts" style="display:none;">
+<div id="df-df36604e-2bf8-461b-9190-f634dad08fac">
+  <button class="colab-df-quickchart" onclick="quickchart('df-df36604e-2bf8-461b-9190-f634dad08fac')" title="Suggest charts" style="display:none;">
 
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
     <g>
@@ -2682,14 +2684,14 @@ memory usage: 328.0+ bytes</code></pre>
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-3cce5cd8-e58c-40ba-952d-6c14d523df97 button');
+        document.querySelector('#df-df36604e-2bf8-461b-9190-f634dad08fac button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_40b9982f-8f6c-40a8-bed7-56ee3a16ab38">
+  <div id="id_e311ff91-722c-450b-835b-2d94a26b2d53">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -2730,7 +2732,7 @@ memory usage: 328.0+ bytes</code></pre>
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_40b9982f-8f6c-40a8-bed7-56ee3a16ab38 button.colab-df-generate');
+        document.querySelector('#id_e311ff91-722c-450b-835b-2d94a26b2d53 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -2751,8 +2753,8 @@ memory usage: 328.0+ bytes</code></pre>
 <li>Which attributes (i.e., columns) are contained in the dataset?</li>
 <li>Which is their semantics?</li>
 </ul>
-<div id="9817e68c" class="cell" data-outputid="28cd86cf-4781-4534-bb58-bcb562dc4e1c" data-execution_count="79">
-<div class="cell-output cell-output-display" data-execution_count="79">
+<div id="9817e68c" class="cell" data-outputid="dd1e66fe-de63-4c6d-cc83-f9961ee4fbf9" data-execution_count="135">
+<div class="cell-output cell-output-display" data-execution_count="135">
 <pre><code>Index(['longitude', 'latitude', 'housing_median_age', 'total_rooms',
        'total_bedrooms', 'population', 'households', 'median_income',
        'median_house_value', 'ocean_proximity'],
@@ -2772,7 +2774,7 @@ memory usage: 328.0+ bytes</code></pre>
 <li><code>medianHouseValue</code>: Median house value for households within a block (measured in US Dollars)</li>
 <li><code>oceanProximity</code>: Location of the house w.r.t ocean/sea</li>
 </ol>
-<div id="85441c0b" class="cell" data-scrolled="true" data-outputid="b56661e4-4068-46aa-e7ab-99c02bfef791" data-execution_count="80">
+<div id="85441c0b" class="cell" data-scrolled="true" data-outputid="d11049d6-aadd-4231-f494-a75a3f7c9d7a" data-execution_count="136">
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 20640 entries, 0 to 20639
@@ -2793,10 +2795,10 @@ dtypes: float64(9), object(1)
 memory usage: 1.6+ MB</code></pre>
 </div>
 </div>
-<div id="e6a24b3a" class="cell" data-outputid="7dd47087-fcb4-4c25-fcc8-c302d568ee1a" data-execution_count="81">
-<div class="cell-output cell-output-display" data-execution_count="81">
+<div id="e6a24b3a" class="cell" data-outputid="218e4395-7c14-436f-f840-f9bb8232acd0" data-execution_count="137">
+<div class="cell-output cell-output-display" data-execution_count="137">
 
-  <div id="df-172c7f50-d7e8-4e6f-825c-810b38f258dd" class="colab-df-container">
+  <div id="df-ff62eeda-bf80-439d-829c-fe48a9a2ff0d" class="colab-df-container">
     <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -2979,7 +2981,7 @@ memory usage: 1.6+ MB</code></pre>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-172c7f50-d7e8-4e6f-825c-810b38f258dd')" title="Convert this dataframe to an interactive table." style="display:none;">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-ff62eeda-bf80-439d-829c-fe48a9a2ff0d')" title="Convert this dataframe to an interactive table." style="display:none;">
 
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
@@ -3029,12 +3031,12 @@ memory usage: 1.6+ MB</code></pre>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-172c7f50-d7e8-4e6f-825c-810b38f258dd button.colab-df-convert');
+        document.querySelector('#df-ff62eeda-bf80-439d-829c-fe48a9a2ff0d button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-172c7f50-d7e8-4e6f-825c-810b38f258dd');
+        const element = document.querySelector('#df-ff62eeda-bf80-439d-829c-fe48a9a2ff0d');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3054,8 +3056,8 @@ memory usage: 1.6+ MB</code></pre>
   </div>
 
 
-<div id="df-c7df7946-ab3a-4e0f-a165-0ebcb218af7e">
-  <button class="colab-df-quickchart" onclick="quickchart('df-c7df7946-ab3a-4e0f-a165-0ebcb218af7e')" title="Suggest charts" style="display:none;">
+<div id="df-afb9df51-28ff-4b1e-9ecf-d9bd005e8be6">
+  <button class="colab-df-quickchart" onclick="quickchart('df-afb9df51-28ff-4b1e-9ecf-d9bd005e8be6')" title="Suggest charts" style="display:none;">
 
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
     <g>
@@ -3171,7 +3173,7 @@ memory usage: 1.6+ MB</code></pre>
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-c7df7946-ab3a-4e0f-a165-0ebcb218af7e button');
+        document.querySelector('#df-afb9df51-28ff-4b1e-9ecf-d9bd005e8be6 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -3185,7 +3187,7 @@ memory usage: 1.6+ MB</code></pre>
 <p>… are you satisfied with the understanding?</p>
 <p>… what about data visualization?</p>
 <p>Can we exploit the nature of the data?</p>
-<div id="H0bU-4jprHm3" class="cell" data-outputid="9f759720-e27d-437e-f6a7-6ad4ef7971e5" data-execution_count="82">
+<div id="H0bU-4jprHm3" class="cell" data-outputid="cc72a39f-25ff-4e8a-88d1-be9563a8c510" data-execution_count="138">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -3211,7 +3213,7 @@ memory usage: 1.6+ MB</code></pre>
 </section>
 <h4 id="memory-usage">Memory usage</h4>
 <p>What if I change float64 to float32?</p>
-<div id="8f1e7c90" class="cell" data-outputid="07497105-62f9-43b8-c520-7c54c5def6b5" data-execution_count="83">
+<div id="8f1e7c90" class="cell" data-outputid="91af1117-8b73-4ef1-b38a-8be309f500c3" data-execution_count="139">
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 20640 entries, 0 to 20639
@@ -3237,8 +3239,8 @@ memory usage: 887.0+ KB</code></pre>
 <p>Most Machine Learning algorithms cannot work with missing features. We have three options: - Get rid of the corresponding districts (i.e., drop the rows) - <code>df.dropna(subset=["total_bedrooms"])</code> - Get rid of the whole attribute (i.e., drop the columns) - <code>df.drop("total_bedrooms", axis=1</code>) - Set the values to some value (zero, the mean, the median, etc.) - <code>df["total_bedrooms"].fillna(df["total_bedrooms"].median())</code></p>
 <h4 id="non-numeric-attributes">Non-numeric attributes</h4>
 <p><code>ocean_proximity</code> is a text attribute so we cannot compute its median. Some options: - Get rid of the whole attribute. (<code>df.drop("ocean_proximity", axis=1</code>) - Change from categorical to ordinal (e.g., <code>NEAR BAY</code> = 0, <code>INLAND</code> = 1) - Can foresee any problem in this? - ML algorithms will assume that two nearby values are more similar than two distant values. This may be fine in some cases (e.g., for ordered categories such as “bad”, “average”, “good”, “excellent”), but it is obviously not the case for the ocean_proximity column (for example, categories 0 and 4 are clearly more similar than categories 0 and 1). - Change from categorical to one hot encoding - To fix this issue, a common solution is to create one binary attribute per category: one attribute equal to 1 when the category is “&lt;1H OCEAN” (and 0 otherwise), another attribute equal to 1 when the category is “INLAND” (and 0 otherwise), and so on. This is called one-hot encoding, because only one attribute will be equal to 1 (hot), while the others will be 0 (cold). The new attributes are sometimes called dummy attributes</p>
-<div id="3297de8e" class="cell" data-outputid="585d6125-3a08-45b2-f81a-ab2e1298a139" data-execution_count="84">
-<div class="cell-output cell-output-display" data-execution_count="84">
+<div id="3297de8e" class="cell" data-outputid="ab99cec2-9307-427d-dc8f-359676c658bc" data-execution_count="140">
+<div class="cell-output cell-output-display" data-execution_count="140">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -3292,7 +3294,7 @@ memory usage: 887.0+ KB</code></pre>
 </div><br><label><b>dtype:</b> int64</label>
 </div>
 </div>
-<div id="xkOk2VEdVkde" class="cell" data-outputid="53d67d98-2f94-474d-f5d0-ae6957df794d" data-execution_count="85">
+<div id="xkOk2VEdVkde" class="cell" data-outputid="8156f46a-fed6-42c6-87bb-e50e675413f2" data-execution_count="141">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -3302,7 +3304,7 @@ memory usage: 887.0+ KB</code></pre>
 </div>
 </div>
 <h3 id="visualization">Visualization</h3>
-<div id="570f14ff" class="cell" data-scrolled="true" data-outputid="91c55d9f-625e-4371-cabf-1d97e526b97c" data-execution_count="88">
+<div id="570f14ff" class="cell" data-scrolled="true" data-outputid="4ac28fce-1db7-437a-fe31-e7d581b3ce92" data-execution_count="142">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -3323,7 +3325,7 @@ memory usage: 887.0+ KB</code></pre>
 <li>A grid of Axes such that each numeric variable in data will by shared across the y-axes across a single row and the x-axes across a single column</li>
 <li>The diagonal plots are treated differently: a univariate distribution plot is drawn to show the marginal distribution of the data in each column.</li>
 </ul>
-<div id="jFvRyNbGV36l" class="cell" data-outputid="acea601d-236e-48c2-e713-0c1a851af8c9" data-execution_count="89">
+<div id="jFvRyNbGV36l" class="cell" data-outputid="a13bc30e-4fb6-4f7f-cdab-ca5565a3e5ca" data-execution_count="143">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -3333,10 +3335,10 @@ memory usage: 887.0+ KB</code></pre>
 </div>
 </div>
 <p>Check correlations and intervals</p>
-<div id="FYZ7EdT2V8Le" class="cell" data-outputid="5871d603-7ae1-4909-bee1-d9f8d75b87ea" data-execution_count="90">
-<div class="cell-output cell-output-display" data-execution_count="90">
+<div id="FYZ7EdT2V8Le" class="cell" data-outputid="8e41aec5-fd11-4f3e-c799-3ff32348bddc" data-execution_count="144">
+<div class="cell-output cell-output-display" data-execution_count="144">
 
-  <div id="df-8c1c9b02-892b-4c50-8bc7-b61f10e6a1a7" class="colab-df-container">
+  <div id="df-a3a2d88d-e28d-4784-ba9d-73fb96902336" class="colab-df-container">
     <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -3483,7 +3485,7 @@ memory usage: 887.0+ KB</code></pre>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-8c1c9b02-892b-4c50-8bc7-b61f10e6a1a7')" title="Convert this dataframe to an interactive table." style="display:none;">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a3a2d88d-e28d-4784-ba9d-73fb96902336')" title="Convert this dataframe to an interactive table." style="display:none;">
 
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
@@ -3533,12 +3535,12 @@ memory usage: 887.0+ KB</code></pre>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-8c1c9b02-892b-4c50-8bc7-b61f10e6a1a7 button.colab-df-convert');
+        document.querySelector('#df-a3a2d88d-e28d-4784-ba9d-73fb96902336 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-8c1c9b02-892b-4c50-8bc7-b61f10e6a1a7');
+        const element = document.querySelector('#df-a3a2d88d-e28d-4784-ba9d-73fb96902336');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3558,8 +3560,8 @@ memory usage: 887.0+ KB</code></pre>
   </div>
 
 
-<div id="df-28094196-2423-4550-99b8-43a48b7c6910">
-  <button class="colab-df-quickchart" onclick="quickchart('df-28094196-2423-4550-99b8-43a48b7c6910')" title="Suggest charts" style="display:none;">
+<div id="df-77e87ab4-9cc5-4ac2-a8e0-9ad8922a865e">
+  <button class="colab-df-quickchart" onclick="quickchart('df-77e87ab4-9cc5-4ac2-a8e0-9ad8922a865e')" title="Suggest charts" style="display:none;">
 
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
     <g>
@@ -3675,7 +3677,7 @@ memory usage: 887.0+ KB</code></pre>
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-28094196-2423-4550-99b8-43a48b7c6910 button');
+        document.querySelector('#df-77e87ab4-9cc5-4ac2-a8e0-9ad8922a865e button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -3686,7 +3688,7 @@ memory usage: 887.0+ KB</code></pre>
   </div>
 </div>
 </div>
-<div id="EmnZ1P4uV9H1" class="cell" data-outputid="845ba01a-e404-4af9-f8c5-df360bd6dc10" data-execution_count="91">
+<div id="EmnZ1P4uV9H1" class="cell" data-outputid="041a03b5-46dc-4b65-ebdc-c2d5d613a7a0" data-execution_count="145">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -3695,11 +3697,12 @@ memory usage: 887.0+ KB</code></pre>
 </div>
 </div>
 </div>
-<h4 id="hands-on">Hands on!</h4>
-<div id="ef4ed12b" class="cell" data-outputid="2c1ffaf7-56fe-400a-f4b7-e26e304ae4e0" data-execution_count="92">
-<div class="cell-output cell-output-display" data-execution_count="92">
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<div id="ef4ed12b" class="cell" data-outputid="f406de04-fc57-4839-fd2d-ff26e20eb053" data-execution_count="146">
+<div class="cell-output cell-output-display" data-execution_count="146">
 
-  <div id="df-84aebff5-6c76-4d44-a3d0-e7be6a902328" class="colab-df-container">
+  <div id="df-55615faa-253d-486f-b3ee-8bc4e9ec356c" class="colab-df-container">
     <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -3729,7 +3732,7 @@ memory usage: 887.0+ KB</code></pre>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-84aebff5-6c76-4d44-a3d0-e7be6a902328')" title="Convert this dataframe to an interactive table." style="display:none;">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-55615faa-253d-486f-b3ee-8bc4e9ec356c')" title="Convert this dataframe to an interactive table." style="display:none;">
 
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
@@ -3779,12 +3782,12 @@ memory usage: 887.0+ KB</code></pre>
 
     <script>
       const buttonEl =
-        document.querySelector('#df-84aebff5-6c76-4d44-a3d0-e7be6a902328 button.colab-df-convert');
+        document.querySelector('#df-55615faa-253d-486f-b3ee-8bc4e9ec356c button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-84aebff5-6c76-4d44-a3d0-e7be6a902328');
+        const element = document.querySelector('#df-55615faa-253d-486f-b3ee-8bc4e9ec356c');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3804,7 +3807,7 @@ memory usage: 887.0+ KB</code></pre>
   </div>
 
 
-  <div id="id_a63c0157-f2e5-4d9e-b773-02587a196af5">
+  <div id="id_72825b5b-63b2-40cd-b6b4-bfc973077118">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -3845,7 +3848,7 @@ memory usage: 887.0+ KB</code></pre>
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_a63c0157-f2e5-4d9e-b773-02587a196af5 button.colab-df-generate');
+        document.querySelector('#id_72825b5b-63b2-40cd-b6b4-bfc973077118 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -3864,7 +3867,8 @@ memory usage: 887.0+ KB</code></pre>
 <div class="footer footer-default">
 
 </div>
-</div></section>
+</div>
+</section></section>
     </div>
   </div>
 
