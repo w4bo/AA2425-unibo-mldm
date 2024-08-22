@@ -20,6 +20,8 @@ Consider the following task.
 > - extract interesting patterns/insights,
 > - rank them by their interest,
 > - select the most interesting insights given a limited word/time budget.
+>
+> Everything should be automatic, and without the human in the loop
 
 How would you do that?
 
@@ -62,9 +64,9 @@ What insights would you return to describe the query result?
 
 
 :::: {.columns}
-::: {.column width="70%"}
+::: {.column width="60%"}
 
-For instance, this can has been done in VOOL [@DBLP:conf/adbis/FranciaGGR22] by:
+For instance, this has been done in VOOL [@DBLP:conf/adbis/FranciaGGR22] by:
 
 1. applying existing ML techniques (modules) in a bag-of-task fashion,
 2. let each module compute its own insight (in a range that is shared by all modules)
@@ -73,7 +75,7 @@ For instance, this can has been done in VOOL [@DBLP:conf/adbis/FranciaGGR22] by:
 The reviewer #2 found it "good old fashioned AI", and asked us to compare against LLMs and LLM-based applications.
 
 :::
-::: {.column width="70%"}
+::: {.column width="40%"}
 
 ![Good old fashioned AI](https://github.com/user-attachments/assets/719bb7a2-488b-4fbc-9f22-0d7e5e3d2538)
 
@@ -91,10 +93,10 @@ LLMs are powerful tools for broad natural language applications, are they a good
 
 # Data volume and cost
 
-- Since business data are sensitive, they are stored in private repositories (such as data warehouses) unknown to LLMs during their training.
+- Since business data are sensitive, they are stored in private repositories (such as data warehouses) unknown to LLMs
 - To feed data to an LLM, the main possibility is to use the prompt.
-    -  Depending on the specific model, prompts have limits in the number of tokens shared between input and answer, with different models [having different limits (as of 2024-06)](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them)
-    - Pricing: the [OpenAI price calculator in Microsoft Azure (as of 2024-06)](https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service) estimates that using GPT-4-32K costs around \$0.06 per $10^3$ input tokens and \$0.12 per $10^3$ output tokens, where 1000 tokens correspond to almost 750 words.
+    - Depending on the LLM, prompts [have limits in the \#tokens(as of 2024-06)](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) composing input and answer
+    - The [OpenAI price calculator in Microsoft Azure (as of 2024-06)](https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service) estimates that using GPT-4-32K costs around \$0.06 per $10^3$ input tokens and \$0.12 per $10^3$ output tokens, where 1000 tokens correspond to almost 750 words.
       - Prompting a table with $10^5$ tuples (if feasible) could easily cost several dollars per execution.
 - LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content. 
     - This can overcome the limits and cost of tokens.
@@ -117,9 +119,9 @@ At the moment (2024), while (plain) LLMs have many strengths, they are not typic
 
 Several LLM-based applications have been deployed to overcome these limitations.
 
-- There are applications for data analysis that are capable of generating and interpreting code (mainly Python), analyzing datasets, and supporting data scientists in doing data elaborations and analyses.
-    - Applications can be directly deployed by LLM providers (e.g., Data Analyst [@dataanalyst] by ChatGPT)
-    - or can be deployed by third-party users (e.g., Data Scientist [@datascientist]).
+- There are applications for data analysis that generate and interpret code (mainly Python) to analyze datasets and support data scientists in doing analyses.
+    - Applications can be deployed by LLM providers (e.g., Data Analyst [@dataanalyst])
+    - or by third-party users (e.g., Data Scientist [@datascientist]).
 - Intuitively, these applications allow the underlying LLM to invoke functions from external libraries when appropriate (e.g., Python's pandas, scikit-learn, and scipy) and to generate and execute external code.
 
 :::
@@ -223,6 +225,10 @@ And the one of a refined query obtained by drilling down the previous one (to ve
 
 :::
 ::::
+
+# 
+
+![Data Error](https://imgs.xkcd.com/comics/data_error.png)
 
 # Additional Issues
 
