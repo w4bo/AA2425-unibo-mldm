@@ -1,7 +1,18 @@
-# Case Study: Large Language Models and Data Science
+---
+format:
+  revealjs: 
+    footer: "Matteo Francia - Machine Learning - A.Y. 2024/25"
+bibliography: refs.bib
+---
+
+# Case Study: Data Science and Automation
+
+Consider the following task.
 
 :::: {.columns}
-::: {.column width="60%"}
+::: {.column width="30%"}
+
+<div style="font-size:15px!important">
 
 | productDepartment   | gender | quantity |
 |---------------------|--------|----------|
@@ -26,8 +37,11 @@
 | Seafood             | M      | 817      |
 | Carousel            | M      | 473      |
 | Carousel            | F      | 368      |
+
+</div>
+
 :::
-::: {.column width="40%"}
+::: {.column width="70%"}
 
 > Given a query result, return insights describe the query result.
 > 
@@ -58,30 +72,28 @@ Generative AI and Large Language Models (LLMs) [@DBLP:conf/nips/BrownMRSKDNSSAA2
 
 - Applications leveraging LLMs, such as ChatGPT, are usually oriented to general-purpose information retrieval and are not specific for extracting, ranking, and selecting the most interesting insights out of multidimensional query results.
 
-# Limits of LLMs
+LLMs are powerful tools for broad natural language applications, are they a good choice for data-intensive tasks as well?
 
-Although LLMs are powerful tools for broad natural language applications, they are not always the best choice for data-intensive tasks for two main reasons:
-
-**Data volume and cost**
+# Data volume and cost
 
 - Since multidimensional data usually contain sensitive business information, they are stored in private repositories (such as data warehouses) unknown to LLMs during their training.
 - To feed data to an LLM, the main possibility is to use the prompt.
     -  Depending on the specific model, prompts have limits in the number of tokens shared between input and answer, with different models [having different limits (accessed on 2024-06-20)](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) and pricing
-       -  The [OpenAI price calculator in Microsoft Azure (accessed 2024-06-20)](https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service) estimates that using GPT-4-32K costs around \$0.06 per $10^3$ input tokens and \$0.12 per $10^3$ output tokens (as of 2024-06-20), where 1000 tokens correspond to almost 750 words.
-    - For instance, prompting a table with $10^5$ tuples (if feasible at all) could easily reach the cost of several dollars per execution.
+       -  The [OpenAI price calculator in Microsoft Azure (accessed 2024-06-20)](https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service) estimates that using GPT-4-32K costs around \$0.06 per $10^3$ input tokens and \$0.12 per $10^3$ output tokens, where 1000 tokens correspond to almost 750 words.
+    - Prompting a table with $10^5$ tuples (if feasible at all) could easily reach the cost of several dollars per execution.
 on input and output tokens.
-- Recently, LLMs began to allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content. 
+- LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content. 
     - On the one hand, this can overcome the limits and cost of tokens.
     - On the other hand, if the summary process is incorrect, it will add errors and bias to the final answer.
 
-**Running algorithms**
+# Running algorithms
 
 - Algorithmic tasks such as SQL querying and data mining are better handled by DBMSs and query engines since
-  - (i) they are optimized for these types of operations (e.g., using R-trees to speed up clustering in Euclidean spaces);
-  - (ii) their answers are correct, consistent, and reproducible;
-  - (iii) they do not have hallucinations.
+  - they are optimized for these types of operations (e.g., using R-trees to speed up clustering in Euclidean spaces);
+  - their answers are correct, consistent, and reproducible;
+  - they do not have hallucinations.
 
-At the moment, while (plain) LLMs have many strengths, they are not typically suitable for data-intensive tasks.
+At the moment (2024), while (plain) LLMs have many strengths, they are not typically suitable for data-intensive tasks.
 
 # LLM-based applications
 
@@ -96,7 +108,7 @@ Several LLM-based applications have been deployed to overcome these limitations.
 # Applying LLMs to query results
 
 :::: {.columns}
-::: {.column width="60%"}
+::: {.column width="30%"}
 
 | productDepartment   | gender | quantity |
 |---------------------|--------|----------|
@@ -122,7 +134,7 @@ Several LLM-based applications have been deployed to overcome these limitations.
 | Carousel            | M      | 473      |
 | Carousel            | F      | 368      |
 :::
-::: {.column width="40%"}
+::: {.column width="70%"}
 
 ![Returned insights](https://github.com/user-attachments/assets/9ec3dbd8-a7ef-49f9-8d78-df8cf96c238b)
 
