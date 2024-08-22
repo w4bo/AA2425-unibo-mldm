@@ -119,4 +119,4 @@ The CRISP-DM tells us that *we don't do machine learning for the sake of trainin
 :::
 ::::
 
-# References
+{{< include cs-automation.md >}}
