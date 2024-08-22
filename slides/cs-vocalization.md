@@ -91,11 +91,11 @@ LLMs are powerful tools for broad natural language applications, are they a good
 
 # Data volume and cost
 
-- Since multidimensional data usually contain sensitive business information, they are stored in private repositories (such as data warehouses) unknown to LLMs during their training.
+- Since business data are sensitive, they are stored in private repositories (such as data warehouses) unknown to LLMs during their training.
 - To feed data to an LLM, the main possibility is to use the prompt.
-    -  Depending on the specific model, prompts have limits in the number of tokens shared between input and answer, with different models [having different limits (as of 2024-06-20)](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) and pricing
-       -  The [OpenAI price calculator in Microsoft Azure (as of 2024-06-20)](https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service) estimates that using GPT-4-32K costs around \$0.06 per $10^3$ input tokens and \$0.12 per $10^3$ output tokens, where 1000 tokens correspond to almost 750 words.
-    - Prompting a table with $10^5$ tuples (if feasible) could easily cost several dollars per execution.
+    -  Depending on the specific model, prompts have limits in the number of tokens shared between input and answer, with different models [having different limits (as of 2024-06)](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them)
+    - Pricing: the [OpenAI price calculator in Microsoft Azure (as of 2024-06)](https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service) estimates that using GPT-4-32K costs around \$0.06 per $10^3$ input tokens and \$0.12 per $10^3$ output tokens, where 1000 tokens correspond to almost 750 words.
+      - Prompting a table with $10^5$ tuples (if feasible) could easily cost several dollars per execution.
 - LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content. 
     - This can overcome the limits and cost of tokens.
     - However, if the summary process is incorrect, it will add errors and bias to the final answer.
@@ -121,10 +121,9 @@ Several LLM-based applications have been deployed to overcome these limitations.
     - Applications can be directly deployed by LLM providers (e.g., Data Analyst [@dataanalyst] by ChatGPT)
     - or can be deployed by third-party users (e.g., Data Scientist [@datascientist]).
 - Intuitively, these applications allow the underlying LLM to invoke functions from external libraries when appropriate (e.g., Python's pandas, scikit-learn, and scipy) and to generate and execute external code.
-- Data Scienti
 
 :::
-::: {.column width="70%"}
+::: {.column width="30%"}
 
 ![Data Scientist](https://github.com/user-attachments/assets/42d12755-4833-4836-983d-e8442f80372f)
 
@@ -174,13 +173,13 @@ Several LLM-based applications have been deployed to overcome these limitations.
 
 # Additional Issues
 
-**Interpretability.**
+**Interpretability**
 
 The process that leads to the computation of the insights and their interest remains hidden and not interpretable to the end-user
 
 - Has the model added some distortion to the data?
 
-**Domain-specific data.**
+**Domain-specific data**
 
 The insights returned by LLM-based applications strongly depend on the context since LLMs also leverage domain knowledge for their "reasoning"
 
@@ -189,7 +188,7 @@ The insights returned by LLM-based applications strongly depend on the context s
 - For very specific domains and data types, a lack of knowledge can cause issues in the interpretation of the result.
     - For instance, in precision agriculture, having low temperatures could be bad for the production rates, but good in terms of pest control and water management.
 
-**Domain-specific modules.**
+**Domain-specific modules**
 
 Should additional modules be necessary to produce domain-specific insights, such modules should be embedded into the LLM through prompting or calls to (external) third-party libraries.
 
