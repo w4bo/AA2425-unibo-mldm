@@ -359,6 +359,7 @@
 <li>rank them by their interest,</li>
 <li>select the most interesting insights given a limited word/time budget.</li>
 </ul>
+<p>Everything should be automatic, and without the human in the loop</p>
 </blockquote>
 <p>How would you do that?</p>
 <p>What insights would you return to describe the query result?</p>
@@ -488,15 +489,15 @@
 <section id="our-solution-vool" class="title-slide slide level1 center scrollable">
 <h1>Our solution: VOOL</h1>
 <div class="columns">
-<div class="column" style="width:70%;">
-<p>For instance, this can has been done in VOOL <span class="citation" data-cites="DBLP:conf/adbis/FranciaGGR22">(<a href="#/references" role="doc-biblioref" onclick="">Francia et al. 2022</a>)</span> by:</p>
+<div class="column" style="width:60%;">
+<p>For instance, this has been done in VOOL <span class="citation" data-cites="DBLP:conf/adbis/FranciaGGR22">(<a href="#/references" role="doc-biblioref" onclick="">Francia et al. 2022</a>)</span> by:</p>
 <ol type="1">
 <li>applying existing ML techniques (modules) in a bag-of-task fashion,</li>
 <li>let each module compute its own insight (in a range that is shared by all modules)</li>
 <li>Compute a knapsack of the patterns extracted on time.</li>
 </ol>
 <p>The reviewer #2 found it “good old fashioned AI”, and asked us to compare against LLMs and LLM-based applications.</p>
-</div><div class="column" style="width:70%;">
+</div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://github.com/user-attachments/assets/719bb7a2-488b-4fbc-9f22-0d7e5e3d2538"></p>
@@ -520,11 +521,11 @@
 <section id="data-volume-and-cost" class="title-slide slide level1 center">
 <h1>Data volume and cost</h1>
 <ul>
-<li>Since business data are sensitive, they are stored in private repositories (such as data warehouses) unknown to LLMs during their training.</li>
+<li>Since business data are sensitive, they are stored in private repositories (such as data warehouses) unknown to LLMs</li>
 <li>To feed data to an LLM, the main possibility is to use the prompt.
 <ul>
-<li>Depending on the specific model, prompts have limits in the number of tokens shared between input and answer, with different models <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">having different limits (as of 2024-06)</a></li>
-<li>Pricing: the <a href="https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service">OpenAI price calculator in Microsoft Azure (as of 2024-06)</a> estimates that using GPT-4-32K costs around $0.06 per <span class="math inline">\(10^3\)</span> input tokens and $0.12 per <span class="math inline">\(10^3\)</span> output tokens, where 1000 tokens correspond to almost 750 words.
+<li>Depending on the LLM, prompts <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">have limits in the #tokens(as of 2024-06)</a> composing input and answer</li>
+<li>The <a href="https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service">OpenAI price calculator in Microsoft Azure (as of 2024-06)</a> estimates that using GPT-4-32K costs around $0.06 per <span class="math inline">\(10^3\)</span> input tokens and $0.12 per <span class="math inline">\(10^3\)</span> output tokens, where 1000 tokens correspond to almost 750 words.
 <ul>
 <li>Prompting a table with <span class="math inline">\(10^5\)</span> tuples (if feasible) could easily cost several dollars per execution.</li>
 </ul></li>
@@ -554,10 +555,10 @@
 <div class="column" style="width:70%;">
 <p>Several LLM-based applications have been deployed to overcome these limitations.</p>
 <ul>
-<li>There are applications for data analysis that are capable of generating and interpreting code (mainly Python), analyzing datasets, and supporting data scientists in doing data elaborations and analyses.
+<li>There are applications for data analysis that generate and interpret code (mainly Python) to analyze datasets and support data scientists in doing analyses.
 <ul>
-<li>Applications can be directly deployed by LLM providers (e.g., Data Analyst <span class="citation" data-cites="dataanalyst">(<a href="#/references" role="doc-biblioref" onclick="">ChatGPT 2024</a>)</span> by ChatGPT)</li>
-<li>or can be deployed by third-party users (e.g., Data Scientist <span class="citation" data-cites="datascientist">(<a href="#/references" role="doc-biblioref" onclick="">Sekha 2024</a>)</span>).</li>
+<li>Applications can be deployed by LLM providers (e.g., Data Analyst <span class="citation" data-cites="dataanalyst">(<a href="#/references" role="doc-biblioref" onclick="">ChatGPT 2024</a>)</span>)</li>
+<li>or by third-party users (e.g., Data Scientist <span class="citation" data-cites="datascientist">(<a href="#/references" role="doc-biblioref" onclick="">Sekha 2024</a>)</span>).</li>
 </ul></li>
 <li>Intuitively, these applications allow the underlying LLM to invoke functions from external libraries when appropriate (e.g., Python’s pandas, scikit-learn, and scipy) and to generate and execute external code.</li>
 </ul>
@@ -836,6 +837,11 @@
 </div>
 </div>
 </section>
+
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+
+<img data-src="https://imgs.xkcd.com/comics/data_error.png" class="r-stretch quarto-figure-center"><p class="caption">Data Error</p></section>
 
 <section id="additional-issues" class="title-slide slide level1 center">
 <h1>Additional Issues</h1>
