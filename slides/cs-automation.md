@@ -102,7 +102,7 @@ LLMs are powerful tools for broad natural language applications, are they a good
 
 - Since business data are sensitive, they are stored in private repositories (such as data warehouses) unknown to LLMs
 - To feed data to an LLM, the main possibility is to use the prompt.
-    - Depending on the LLM, prompts [have limits in the \#tokens(as of 2024-06)](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) composing input and answer
+    - Depending on the LLM, prompts [have limits in the \#tokens (as of 2024-06)](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) composing input and answer
     - The [OpenAI price calculator in Microsoft Azure (as of 2024-06)](https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service) estimates that using GPT-4-32K costs around \$0.06 per $10^3$ input tokens and \$0.12 per $10^3$ output tokens, where 1000 tokens correspond to almost 750 words.
       - Prompting a table with $10^5$ tuples (if feasible) could easily cost several dollars per execution.
 - LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content. 
@@ -184,7 +184,7 @@ Imagining a session of query results, here follow the prompts of an initial quer
 >
 > [Query result is added here]
 
-And the one of a refined query obtained by drilling down the previous one (to verify how sales are characterized by gender)
+and the one of a subsequent query obtained by drilling down the previous one (to verify how sales are characterized by gender)
 
 > The following is the result of a drill-down of the previous data. Given the result in CSV format, return the most interesting quantitative insights describing it also in relationship with the previous result. You can use any algorithm to compute the insights (e.g., the ones from scikit-learn). The highlights must be 100 words at most.
 >
