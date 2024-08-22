@@ -464,6 +464,542 @@
 </div>
 </section>
 
+<section id="case-study-data-science-and-automation" class="title-slide slide level1 center">
+<h1>Case Study: Data Science and Automation</h1>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>Consider the following task.</p>
+<blockquote>
+<p>Given a query result, return insights describe the query result.</p>
+<p>This task requires to:</p>
+<ul>
+<li>extract interesting patterns/insights,</li>
+<li>rank them by their interest,</li>
+<li>select the most interesting insights given a limited word/time budget.</li>
+</ul>
+<p>Everything should be automatic, and without the human in the loop</p>
+</blockquote>
+<p>How would you do that?</p>
+<p>What insights would you return to describe the query result?</p>
+</div><div class="column" style="width:30%;">
+<div style="font-size:15px!important">
+<table>
+<thead>
+<tr class="header">
+<th>productDepartment</th>
+<th>gender</th>
+<th>quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Produce</td>
+<td>M</td>
+<td>19076</td>
+</tr>
+<tr class="even">
+<td>Produce</td>
+<td>F</td>
+<td>18711</td>
+</tr>
+<tr class="odd">
+<td>Alcoholic Beverages</td>
+<td>F</td>
+<td>16939</td>
+</tr>
+<tr class="even">
+<td>Snack Foods</td>
+<td>M</td>
+<td>16859</td>
+</tr>
+<tr class="odd">
+<td>Snack Foods</td>
+<td>F</td>
+<td>16186</td>
+</tr>
+<tr class="even">
+<td>Alcoholic Beverages</td>
+<td>M</td>
+<td>15399</td>
+</tr>
+<tr class="odd">
+<td>Household</td>
+<td>M</td>
+<td>13757</td>
+</tr>
+<tr class="even">
+<td>Frozen Foods</td>
+<td>M</td>
+<td>13644</td>
+</tr>
+<tr class="odd">
+<td>Household</td>
+<td>F</td>
+<td>13278</td>
+</tr>
+<tr class="even">
+<td>Frozen Foods</td>
+<td>F</td>
+<td>13011</td>
+</tr>
+<tr class="odd">
+<td>Baking Goods</td>
+<td>M</td>
+<td>10404</td>
+</tr>
+<tr class="even">
+<td>Baking Goods</td>
+<td>F</td>
+<td>9841</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>Dairy</td>
+<td>M</td>
+<td>8571</td>
+</tr>
+<tr class="odd">
+<td>Dairy</td>
+<td>F</td>
+<td>8500</td>
+</tr>
+<tr class="even">
+<td>Beverages</td>
+<td>M</td>
+<td>6811</td>
+</tr>
+<tr class="odd">
+<td>Beverages</td>
+<td>F</td>
+<td>6775</td>
+</tr>
+<tr class="even">
+<td>Seafood</td>
+<td>F</td>
+<td>947</td>
+</tr>
+<tr class="odd">
+<td>Seafood</td>
+<td>M</td>
+<td>817</td>
+</tr>
+<tr class="even">
+<td>Carousel</td>
+<td>M</td>
+<td>473</td>
+</tr>
+<tr class="odd">
+<td>Carousel</td>
+<td>F</td>
+<td>368</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+
+<section id="our-solution-vool" class="title-slide slide level1 center scrollable">
+<h1>Our solution: VOOL</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>For instance, this has been done in VOOL <span class="citation" data-cites="DBLP:conf/adbis/FranciaGGR22">(<a href="#/references" role="doc-biblioref" onclick="">Francia et al. 2022</a>)</span> by:</p>
+<ol type="1">
+<li>applying existing ML techniques (modules) in a bag-of-task fashion,</li>
+<li>let each module compute its own insight (in a range that is shared by all modules)</li>
+<li>Compute a knapsack of the patterns extracted on time.</li>
+</ol>
+<p>The reviewer #2 found it “good old fashioned AI”, and asked us to compare against LLMs and LLM-based applications.</p>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/719bb7a2-488b-4fbc-9f22-0d7e5e3d2538"></p>
+<figcaption>Good old fashioned AI</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="llms" class="title-slide slide level1 center">
+<h1>LLMs</h1>
+<p>Generative AI and Large Language Models (LLMs) have recently witnessed a huge hype even in the data science community <span class="citation" data-cites="DBLP:conf/nips/BrownMRSKDNSSAA20">(<a href="#/references" role="doc-biblioref" onclick="">Brown et al. 2020</a>)</span> <span class="citation" data-cites="openai2023gpt4">(<a href="#/references" role="doc-biblioref" onclick="">OpenAI 2023</a>)</span></p>
+<ul>
+<li>LLMs are autoregressive machine learning models that act as statistical next-word predictors <span class="citation" data-cites="bowman2023things">(<a href="#/references" role="doc-biblioref" onclick="">Bowman 2023</a>)</span> after being trained on huge datasets <span class="citation" data-cites="DBLP:conf/fat/BenderGMS21">(<a href="#/references" role="doc-biblioref" onclick="">Bender et al. 2021</a>)</span>.</li>
+<li>Applications leveraging LLMs, such as ChatGPT, are usually oriented to general-purpose information retrieval and are not specific for extracting, ranking, and selecting the most interesting insights out of multidimensional query results.</li>
+</ul>
+<p>LLMs are powerful tools for broad natural language applications, are they a good choice for data-intensive tasks as well?</p>
+</section>
+
+<section id="data-volume-and-cost" class="title-slide slide level1 center">
+<h1>Data volume and cost</h1>
+<ul>
+<li>Since business data are sensitive, they are stored in private repositories (such as data warehouses) unknown to LLMs</li>
+<li>To feed data to an LLM, the main possibility is to use the prompt.
+<ul>
+<li>Depending on the LLM, prompts <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">have limits in the #tokens(as of 2024-06)</a> composing input and answer</li>
+<li>The <a href="https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service">OpenAI price calculator in Microsoft Azure (as of 2024-06)</a> estimates that using GPT-4-32K costs around $0.06 per <span class="math inline">\(10^3\)</span> input tokens and $0.12 per <span class="math inline">\(10^3\)</span> output tokens, where 1000 tokens correspond to almost 750 words.
+<ul>
+<li>Prompting a table with <span class="math inline">\(10^5\)</span> tuples (if feasible) could easily cost several dollars per execution.</li>
+</ul></li>
+</ul></li>
+<li>LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content.
+<ul>
+<li>This can overcome the limits and cost of tokens.</li>
+<li>However, if the summary process is incorrect, it will add errors and bias to the final answer.</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="running-algorithms" class="title-slide slide level1 center">
+<h1>Running algorithms</h1>
+<p>Algorithmic tasks such as SQL querying and data mining are better handled by DBMSs and query engines since</p>
+<ul>
+<li>they are optimized for these types of operations (e.g., using R-trees to speed up clustering in Euclidean spaces);</li>
+<li>their answers are correct, consistent, and reproducible;</li>
+<li>they do not have hallucinations.</li>
+</ul>
+<p>At the moment (2024), while (plain) LLMs have many strengths, they are not typically suitable for data-intensive tasks.</p>
+</section>
+
+<section id="llm-based-applications" class="title-slide slide level1 center">
+<h1>LLM-based applications</h1>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>Several LLM-based applications have been deployed to overcome these limitations.</p>
+<ul>
+<li>There are applications for data analysis that generate and interpret code (mainly Python) to analyze datasets and support data scientists in doing analyses.
+<ul>
+<li>Applications can be deployed by LLM providers (e.g., Data Analyst <span class="citation" data-cites="dataanalyst">(<a href="#/references" role="doc-biblioref" onclick="">ChatGPT 2024</a>)</span>)</li>
+<li>or by third-party users (e.g., Data Scientist <span class="citation" data-cites="datascientist">(<a href="#/references" role="doc-biblioref" onclick="">Sekha 2024</a>)</span>).</li>
+</ul></li>
+<li>Intuitively, these applications allow the underlying LLM to invoke functions from external libraries when appropriate (e.g., Python’s pandas, scikit-learn, and scipy) and to generate and execute external code.</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/42d12755-4833-4836-983d-e8442f80372f"></p>
+<figcaption>Data Scientist</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="applying-llms-to-query-results" class="title-slide slide level1 center">
+<h1>Applying LLMs to query results</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div style="font-size:15px!important">
+<table>
+<thead>
+<tr class="header">
+<th>productDepartment</th>
+<th>gender</th>
+<th>quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Produce</td>
+<td>M</td>
+<td>19076</td>
+</tr>
+<tr class="even">
+<td>Produce</td>
+<td>F</td>
+<td>18711</td>
+</tr>
+<tr class="odd">
+<td>Alcoholic Beverages</td>
+<td>F</td>
+<td>16939</td>
+</tr>
+<tr class="even">
+<td>Snack Foods</td>
+<td>M</td>
+<td>16859</td>
+</tr>
+<tr class="odd">
+<td>Snack Foods</td>
+<td>F</td>
+<td>16186</td>
+</tr>
+<tr class="even">
+<td>Alcoholic Beverages</td>
+<td>M</td>
+<td>15399</td>
+</tr>
+<tr class="odd">
+<td>Household</td>
+<td>M</td>
+<td>13757</td>
+</tr>
+<tr class="even">
+<td>Frozen Foods</td>
+<td>M</td>
+<td>13644</td>
+</tr>
+<tr class="odd">
+<td>Household</td>
+<td>F</td>
+<td>13278</td>
+</tr>
+<tr class="even">
+<td>Frozen Foods</td>
+<td>F</td>
+<td>13011</td>
+</tr>
+<tr class="odd">
+<td>Baking Goods</td>
+<td>M</td>
+<td>10404</td>
+</tr>
+<tr class="even">
+<td>Baking Goods</td>
+<td>F</td>
+<td>9841</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>Dairy</td>
+<td>M</td>
+<td>8571</td>
+</tr>
+<tr class="odd">
+<td>Dairy</td>
+<td>F</td>
+<td>8500</td>
+</tr>
+<tr class="even">
+<td>Beverages</td>
+<td>M</td>
+<td>6811</td>
+</tr>
+<tr class="odd">
+<td>Beverages</td>
+<td>F</td>
+<td>6775</td>
+</tr>
+<tr class="even">
+<td>Seafood</td>
+<td>F</td>
+<td>947</td>
+</tr>
+<tr class="odd">
+<td>Seafood</td>
+<td>M</td>
+<td>817</td>
+</tr>
+<tr class="even">
+<td>Carousel</td>
+<td>M</td>
+<td>473</td>
+</tr>
+<tr class="odd">
+<td>Carousel</td>
+<td>F</td>
+<td>368</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="column" style="width:70%;">
+<p>Imagining a session of query results, here follow the prompts of an initial query:</p>
+<blockquote>
+<p>You are a data scientist describing the highlights of query results. Given the following query result in CSV format, return the most interesting quantitative insights describing it. You can use any algorithm to compute the insights (e.g., the ones from scikit-learn). The highlights must be 100 words at most.</p>
+<p>[Query result is added here]</p>
+</blockquote>
+<p>And the one of a refined query obtained by drilling down the previous one (to verify how sales are characterized by gender)</p>
+<blockquote>
+<p>The following is the result of a drill-down of the previous data. Given the result in CSV format, return the most interesting quantitative insights describing it also in relationship with the previous result. You can use any algorithm to compute the insights (e.g., the ones from scikit-learn). The highlights must be 100 words at most.</p>
+<p>[Query result is added here]</p>
+</blockquote>
+</div>
+</div>
+</section>
+
+<section id="applying-llms-to-query-results-1" class="title-slide slide level1 center">
+<h1>Applying LLMs to query results</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div style="font-size:15px!important">
+<table>
+<thead>
+<tr class="header">
+<th>productDepartment</th>
+<th>gender</th>
+<th>quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Produce</td>
+<td>M</td>
+<td>19076</td>
+</tr>
+<tr class="even">
+<td>Produce</td>
+<td>F</td>
+<td>18711</td>
+</tr>
+<tr class="odd">
+<td>Alcoholic Beverages</td>
+<td>F</td>
+<td>16939</td>
+</tr>
+<tr class="even">
+<td>Snack Foods</td>
+<td>M</td>
+<td>16859</td>
+</tr>
+<tr class="odd">
+<td>Snack Foods</td>
+<td>F</td>
+<td>16186</td>
+</tr>
+<tr class="even">
+<td>Alcoholic Beverages</td>
+<td>M</td>
+<td>15399</td>
+</tr>
+<tr class="odd">
+<td>Household</td>
+<td>M</td>
+<td>13757</td>
+</tr>
+<tr class="even">
+<td>Frozen Foods</td>
+<td>M</td>
+<td>13644</td>
+</tr>
+<tr class="odd">
+<td>Household</td>
+<td>F</td>
+<td>13278</td>
+</tr>
+<tr class="even">
+<td>Frozen Foods</td>
+<td>F</td>
+<td>13011</td>
+</tr>
+<tr class="odd">
+<td>Baking Goods</td>
+<td>M</td>
+<td>10404</td>
+</tr>
+<tr class="even">
+<td>Baking Goods</td>
+<td>F</td>
+<td>9841</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>Dairy</td>
+<td>M</td>
+<td>8571</td>
+</tr>
+<tr class="odd">
+<td>Dairy</td>
+<td>F</td>
+<td>8500</td>
+</tr>
+<tr class="even">
+<td>Beverages</td>
+<td>M</td>
+<td>6811</td>
+</tr>
+<tr class="odd">
+<td>Beverages</td>
+<td>F</td>
+<td>6775</td>
+</tr>
+<tr class="even">
+<td>Seafood</td>
+<td>F</td>
+<td>947</td>
+</tr>
+<tr class="odd">
+<td>Seafood</td>
+<td>M</td>
+<td>817</td>
+</tr>
+<tr class="even">
+<td>Carousel</td>
+<td>M</td>
+<td>473</td>
+</tr>
+<tr class="odd">
+<td>Carousel</td>
+<td>F</td>
+<td>368</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="column" style="width:70%;">
+<p><img src="https://github.com/user-attachments/assets/9ec3dbd8-a7ef-49f9-8d78-df8cf96c238b" style="height: 600px !important; max-height: 1000px !important"></p>
+</div>
+</div>
+</section>
+
+<section id="section-2" class="title-slide slide level1 center">
+<h1></h1>
+
+<img data-src="https://imgs.xkcd.com/comics/data_error.png" class="r-stretch quarto-figure-center"><p class="caption">Data Error</p></section>
+
+<section id="additional-issues" class="title-slide slide level1 center">
+<h1>Additional Issues</h1>
+<p><strong>Interpretability</strong></p>
+<p>The process that leads to the computation of the insights and their interest remains hidden and not interpretable to the end-user</p>
+<ul>
+<li>Has the model added some distortion to the data?</li>
+</ul>
+<p><strong>Domain-specific data</strong></p>
+<p>The insights returned by LLM-based applications strongly depend on the context since LLMs also leverage domain knowledge for their “reasoning”</p>
+<ul>
+<li>It is usually recommended to use semantic-rich column names to enhance data analyses.</li>
+<li>This domain knowledge can introduce bias and inconsistencies with the data at hand.</li>
+<li>For very specific domains and data types, a lack of knowledge can cause issues in the interpretation of the result.
+<ul>
+<li>For instance, in precision agriculture, having low temperatures could be bad for the production rates, but good in terms of pest control and water management.</li>
+</ul></li>
+</ul>
+<p><strong>Domain-specific modules</strong></p>
+<p>Should additional modules be necessary to produce domain-specific insights, such modules should be embedded into the LLM through prompting or calls to (external) third-party libraries.</p>
+</section>
+
+<section id="additional-issues-1" class="title-slide slide level1 center">
+<h1>Additional Issues</h1>
+<p><strong>Libraries</strong></p>
+<ul>
+<li>LLMs produce good results with well-known libraries such as Python’s scikit-learn and pandas.</li>
+<li>When less-known libraries are required, LLMs can fail to produce the necessary code.</li>
+</ul>
+<p><strong>Development</strong></p>
+<ul>
+<li>Many LLM-based applications are commercial (or handcrafted) and not associated with research papers.</li>
+<li>Hence, following their development and deeply understanding their capabilities is often hard, also due to a lack of documentation.
+<ul>
+<li>On the one hand, this makes non-empirical comparisons between LLMs unfeasible.</li>
+<li>On the other, exactly reproducing the results of empirical tests may be impossible.</li>
+</ul></li>
+</ul>
+</section>
+
 <section id="references" class="title-slide slide level1 smaller scrollable">
 <h1>References</h1>
 <div class="quarto-auto-generated-content">
@@ -472,11 +1008,32 @@
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-DBLP:conf/fat/BenderGMS21" class="csl-entry" role="listitem">
+Bender, Emily M., Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. <span>“On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?”</span> In <em>Proc. <span>FAccT</span></em>, edited by Madeleine Clare Elish, William Isaac, and Richard S. Zemel, 610–23. <span>ACM</span>. <a href="https://doi.org/10.1145/3442188.3445922">https://doi.org/10.1145/3442188.3445922</a>.
+</div>
+<div id="ref-bowman2023things" class="csl-entry" role="listitem">
+Bowman, Samuel R. 2023. <span>“Eight Things to Know about Large Language Models.”</span> <a href="https://arxiv.org/abs/2304.00612">https://arxiv.org/abs/2304.00612</a>.
+</div>
+<div id="ref-DBLP:conf/nips/BrownMRSKDNSSAA20" class="csl-entry" role="listitem">
+Brown, Tom B. et al. 2020. <span>“Language Models Are Few-Shot Learners.”</span> In <em>Proc. NeurIPS</em>.
+</div>
+<div id="ref-dataanalyst" class="csl-entry" role="listitem">
+ChatGPT. 2024. <span>“Data Analyst.”</span> <a href="https://chatgpt.com/g/g-HMNcP6w7d-data-analyst" class="uri">https://chatgpt.com/g/g-HMNcP6w7d-data-analyst</a>.
+</div>
+<div id="ref-DBLP:conf/adbis/FranciaGGR22" class="csl-entry" role="listitem">
+Francia, Matteo, Enrico Gallinucci, Matteo Golfarelli, and Stefano Rizzi. 2022. <span>“Insight-Based Vocalization of <span>OLAP</span> Sessions.”</span> In <em>Proc. ADBIS</em>, 193–206. Turin, Italy.
+</div>
 <div id="ref-liu2009encyclopedia" class="csl-entry" role="listitem">
 Liu, Ling, and M Tamer Özsu. 2009. <em>Encyclopedia of Database Systems</em>. Vol. 6. Springer New York.
 </div>
+<div id="ref-openai2023gpt4" class="csl-entry" role="listitem">
+OpenAI. 2023. <span>“GPT-4 Technical Report.”</span> <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a>.
+</div>
 <div id="ref-sammut2017encyclopedia" class="csl-entry" role="listitem">
 Sammut, Claude, and Geoffrey I Webb. 2017. <em>Encyclopedia of Machine Learning and Data Mining</em>. Springer Publishing Company, Incorporated.
+</div>
+<div id="ref-datascientist" class="csl-entry" role="listitem">
+Sekha, Phani Chandra. 2024. <span>“Data Scientist.”</span> <a href="https://chatgpt.com/g/g-UgvlRTBjV-data-scientist" class="uri">https://chatgpt.com/g/g-UgvlRTBjV-data-scientist</a>.
 </div>
 <div id="ref-shearer2000crisp" class="csl-entry" role="listitem">
 Shearer, Colin. 2000. <span>“The CRISP-DM Model: The New Blueprint for Data Mining.”</span> <em>Journal of Data Warehousing</em> 5 (4): 13–22.
