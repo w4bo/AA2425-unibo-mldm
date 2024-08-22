@@ -695,6 +695,143 @@
 </table>
 </div>
 </div><div class="column" style="width:70%;">
+<p>Imagining a session of query results, here follow the prompts of an initial query:</p>
+<blockquote>
+<p>You are a data scientist describing the highlights of query results. Given the following query result in CSV format, return the most interesting quantitative insights describing it. You can use any algorithm to compute the insights (e.g., the ones from scikit-learn). The highlights must be 100 words at most.</p>
+<p>[Query result is added here]</p>
+</blockquote>
+<p>And the one of a refined query obtained by drilling down the previous one (to verify how sales are characterized by gender)</p>
+<blockquote>
+<p>The following is the result of a drill-down of the previous data. Given the result in CSV format, return the most interesting quantitative insights describing it also in relationship with the previous result. You can use any algorithm to compute the insights (e.g., the ones from scikit-learn). The highlights must be 100 words at most.</p>
+<p>[Query result is added here]</p>
+</blockquote>
+</div>
+</div>
+</section>
+
+<section id="applying-llms-to-query-results-1" class="title-slide slide level1 center">
+<h1>Applying LLMs to query results</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div style="font-size:15px!important">
+<table>
+<thead>
+<tr class="header">
+<th>productDepartment</th>
+<th>gender</th>
+<th>quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Produce</td>
+<td>M</td>
+<td>19076</td>
+</tr>
+<tr class="even">
+<td>Produce</td>
+<td>F</td>
+<td>18711</td>
+</tr>
+<tr class="odd">
+<td>Alcoholic Beverages</td>
+<td>F</td>
+<td>16939</td>
+</tr>
+<tr class="even">
+<td>Snack Foods</td>
+<td>M</td>
+<td>16859</td>
+</tr>
+<tr class="odd">
+<td>Snack Foods</td>
+<td>F</td>
+<td>16186</td>
+</tr>
+<tr class="even">
+<td>Alcoholic Beverages</td>
+<td>M</td>
+<td>15399</td>
+</tr>
+<tr class="odd">
+<td>Household</td>
+<td>M</td>
+<td>13757</td>
+</tr>
+<tr class="even">
+<td>Frozen Foods</td>
+<td>M</td>
+<td>13644</td>
+</tr>
+<tr class="odd">
+<td>Household</td>
+<td>F</td>
+<td>13278</td>
+</tr>
+<tr class="even">
+<td>Frozen Foods</td>
+<td>F</td>
+<td>13011</td>
+</tr>
+<tr class="odd">
+<td>Baking Goods</td>
+<td>M</td>
+<td>10404</td>
+</tr>
+<tr class="even">
+<td>Baking Goods</td>
+<td>F</td>
+<td>9841</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>Dairy</td>
+<td>M</td>
+<td>8571</td>
+</tr>
+<tr class="odd">
+<td>Dairy</td>
+<td>F</td>
+<td>8500</td>
+</tr>
+<tr class="even">
+<td>Beverages</td>
+<td>M</td>
+<td>6811</td>
+</tr>
+<tr class="odd">
+<td>Beverages</td>
+<td>F</td>
+<td>6775</td>
+</tr>
+<tr class="even">
+<td>Seafood</td>
+<td>F</td>
+<td>947</td>
+</tr>
+<tr class="odd">
+<td>Seafood</td>
+<td>M</td>
+<td>817</td>
+</tr>
+<tr class="even">
+<td>Carousel</td>
+<td>M</td>
+<td>473</td>
+</tr>
+<tr class="odd">
+<td>Carousel</td>
+<td>F</td>
+<td>368</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="column" style="width:70%;">
 <p><img src="https://github.com/user-attachments/assets/9ec3dbd8-a7ef-49f9-8d78-df8cf96c238b" style="height: 600px !important; max-height: 1000px !important"></p>
 </div>
 </div>
