@@ -25,10 +25,10 @@ How would you address this problem?
 >
 > | Min. Temperature | Presence of Water Source | ... | Level of Damage |
 > |------------------|--------------------------|-----|-----------------|
-> | 14               | Close distance           |     | High            |
-> | 14.5             | Medium distance          |     | High            |
-> | 13.8             | Medium distance          |     | Low             |
-> | ...              | ...                      |     | ...             |
+> | 14               | Close distance           | ... | High            |
+> | 14.5             | Medium distance          | ... | High            |
+> | 13.8             | Medium distance          | ... | Low             |
+> | ...              | ...                      | ... | ...             |
 >
 > and to learn a relationship between environmental features and the `Level of Damage`.
 >
