@@ -59,6 +59,26 @@ CRISP-DM breaks down the life cycle of a data mining project into six phases:
 :::
 ::::
 
+# Disclaimer!
+
+:::: {.columns}
+::: {.column width="60%"}
+
+The CRISPDM tells us that *we don't do machine learning for the sake of training machine learning models*
+
+- We have real problems to solve and questions to answer
+- A data scientist must understand the data and the domain before trying any model
+- Machine learning is not a simple copy and paste of code
+- Data mining/Machine learning is not a course on scikit-learn
+
+:::
+::: {.column width="40%"}
+
+![](https://en.meming.world/images/en/a/a3/We_Don%27t_Do_That_Here.jpg)
+
+:::
+::::
+
 # Glossary [@sammut2017encyclopedia]
 
 :::: {.columns}

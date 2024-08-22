@@ -71,6 +71,14 @@ Generally accepted industry timeline standards are [@shearer2000crisp]:
 - only 10 to 20 percent is spent in each of the Modeling, Evaluation, and Business Understanding Phases;
 - and 5 to 10 percent is spent in the Deployment Planning Phase.
 
+# Interdisciplinarity
+
+The process of identifying and delving into the problem to solve
+
+- This is an *interdisciplinary* phase
+- Even if you have good knowledge in the fields of computer and data science...
+- ... maybe you still miss domain knowledge that is fundamental to understand and model the problem
+
 # Case Study: Brown Spot of European Pear
 
 :::: {.columns}
