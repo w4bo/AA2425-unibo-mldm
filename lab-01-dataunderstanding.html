@@ -332,6 +332,14 @@
 <section class="slide level2">
 
 <p><a href="https://colab.research.google.com/github/w4bo/AA2425-unibo-mldm/blob/master/slides/lab-01-dataunderstanding.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+</section>
+<section>
+<section id="business-and-data-understanding" class="title-slide slide level1 center">
+<h1>Business and Data Understanding</h1>
+
+</section>
+<section id="an-introduction-to-pandas" class="slide level2">
+<h2>An Introduction to Pandas</h2>
 <p><strong>Pandas</strong> is the shorthand for ‘Python and Data Analysis’</p>
 <ul>
 <li>It provides a rich set of features for exploring and manipulating data</li>
@@ -343,7 +351,7 @@
 <li>Support to SQL-like operations (join/merge, aggregation, etc.)</li>
 <li>Imputation of missing values</li>
 <li>Manipulation of data shape</li>
-<li>By convention, the package pandas is imported as “pd”</li>
+<li>By convention, the package pandas is imported as <code>pd</code></li>
 </ul>
 <div id="aacb3166" class="cell" data-outputid="40146411-65c2-4956-f33a-ca64920b586c" data-execution_count="62">
 <div class="cell-output cell-output-stdout">
@@ -1242,152 +1250,17 @@
 </div><br><label><b>dtype:</b> int64</label>
 </div>
 </div>
-<div id="66690943" class="cell" data-outputid="6e8a2239-8abc-4506-ccb7-b7d79a6ab2e2" data-execution_count="69">
-<div class="cell-output cell-output-display" data-execution_count="69">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">0</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">a</td>
-<td>-1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">b</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">c</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-
-</div><br><label><b>dtype:</b> int64</label>
-</div>
-</div>
-<div id="eff604a1" class="cell" data-outputid="a64d0e36-0a96-4e71-ccb9-f072b64eea9a" data-execution_count="70">
-<div class="cell-output cell-output-display" data-execution_count="70">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">0</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">a</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">b</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">c</td>
-<td>9</td>
-</tr>
-</tbody>
-</table>
-
-</div><br><label><b>dtype:</b> int64</label>
-</div>
-</div>
-<div id="082224b9" class="cell" data-outputid="69c8efba-0942-43dc-9a56-faddaf5cf42b" data-execution_count="71">
-<div class="cell-output cell-output-display" data-execution_count="71">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">0</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">a</td>
-<td>0.5</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">b</td>
-<td>2.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">c</td>
-<td>1.0</td>
-</tr>
-</tbody>
-</table>
-
-</div><br><label><b>dtype:</b> float64</label>
-</div>
-</div>
 <p>… doing some aggregation</p>
 <div id="b2c64c8e" class="cell" data-outputid="bc6d1ff8-30e0-49a7-a5ad-20cb6db525f3" data-execution_count="72">
 <div class="cell-output cell-output-display" data-execution_count="72">
 <pre><code>4</code></pre>
 </div>
 </div>
-<p>Which transformations can we apply? - <strong>Encoding</strong>: transforming categorical attributes into continuous ones - <strong>Discretization</strong>: transforming continuous attributes into categorical ones - <strong>Normalization</strong>: normalizing continuous attributes such that their values fall in the same range - <strong>Imputation</strong>: imputing missing values - <strong>Rebalancing</strong>: adjusting the class distribution of a dataset (i.e., the ratio between the different classes/categories represented) - <strong>Feature Engineering</strong>: defining the set of relevant attributes (variables, predictors) to be used in model construction</p>
 <h3 id="understanding-data-types">Understanding data types</h3>
 <p>“It is imperative to know the attribute properties to carry out meaningful operations and research with them”</p>
 <p>Why is data type important?</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://user-images.githubusercontent.com/18005592/232748093-a25e8ba7-24d4-4e2b-9e58-1553786cac33.png"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
-<p>Encoding the date 2022-01-01T00:01 into a signed integer <span class="math inline">\(2201010001\)</span></p>
+
+<img data-src="https://user-images.githubusercontent.com/18005592/232748093-a25e8ba7-24d4-4e2b-9e58-1553786cac33.png" class="r-stretch quarto-figure-center"><p class="caption">image</p><p>Encoding the date 2022-01-01T00:01 into a signed integer <span class="math inline">\(2201010001\)</span></p>
 <p>However, a signed integer is a 32-bit datum that represents an integer in the range:</p>
 <p><span class="math inline">\([-2^{31}, 2^{31}-1] = [-2147483648, 2147483647]\)</span></p>
 <p><span class="math inline">\(2201010001 &gt; 2147483647\)</span></p>
@@ -2420,7 +2293,7 @@ memory usage: 328.0+ bytes</code></pre>
   </div>
 </div>
 </div>
-</section>
+</section></section>
 <section>
 <section id="the-housing-case-study" class="title-slide slide level1 center scrollable">
 <h1>The <code>Housing</code> case study</h1>
@@ -3316,7 +3189,7 @@ memory usage: 1.6+ MB</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-24-output-1.png"></p>
+<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-20-output-1.png"></p>
 </figure>
 </div>
 </div>
@@ -3423,7 +3296,7 @@ memory usage: 887.0+ KB</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-27-output-1.png"></p>
+<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-23-output-1.png"></p>
 </figure>
 </div>
 </div>
@@ -3433,7 +3306,7 @@ memory usage: 887.0+ KB</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-28-output-1.png"></p>
+<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-24-output-1.png"></p>
 </figure>
 </div>
 </div>
@@ -3454,7 +3327,7 @@ memory usage: 887.0+ KB</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-29-output-1.png"></p>
+<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-25-output-1.png"></p>
 </figure>
 </div>
 </div>
@@ -3817,7 +3690,7 @@ memory usage: 887.0+ KB</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-31-output-1.png"></p>
+<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-27-output-1.png"></p>
 </figure>
 </div>
 </div>
