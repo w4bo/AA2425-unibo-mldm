@@ -18,9 +18,6 @@ How would you address this problem?
 
 #
 
-:::: {.columns}
-::: {.column width="60%"}
-
 > Ideally, the goal is to build a dataset such as the following
 >
 > | Min. Temperature | Presence of Water Source | ... | Level of Damage |
@@ -34,19 +31,13 @@ How would you address this problem?
 
 What features would you select?
 
+# 
+
 > The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.
-
-In your opinion, what are the pros/cons of this solution?
-
-:::
-::: {.column width="40%"}
 
 ![Emilia Romagna, Italy](https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113)
 
-:::
-::::
-
-
+In your opinion, what are the pros/cons of this solution?
 
 #
 
