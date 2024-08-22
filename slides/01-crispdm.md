@@ -35,7 +35,7 @@ bibliography: refs.bib
 :::
 ::::
 
----
+#
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -69,12 +69,14 @@ The CRISPDM tells us that *we don't do machine learning for the sake of training
 - We have real problems to solve and questions to answer
 - A data scientist must understand the data and the domain before trying any model
 - Machine learning is not a simple copy and paste of code
-- Data mining/Machine learning is not a course on scikit-learn
+    - Code generation can be easily automated and outperform you!
+    - The added value of a data scientist is the understanding of the problem and data
+- Data mining/Machine learning is not a course on `scikit-learn`
 
 :::
 ::: {.column width="40%"}
 
-![](https://en.meming.world/images/en/a/a3/We_Don%27t_Do_That_Here.jpg)
+![Dataset, Data, and Features](https://en.meming.world/images/en/a/a3/We_Don%27t_Do_That_Here.jpg)
 
 :::
 ::::

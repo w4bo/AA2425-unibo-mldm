@@ -55,13 +55,12 @@ Orient yourself in an extremely dinamic and complex world dominated by AI
 
 # Exam
 
-Questions on all (theoretical and practical) aspects of the course
+Questions on **all (theoretical and practical) aspects** of the course
 
-- Be prepared: you have to wait 1 month before trying again (in any case)
+- **Be prepared**: you have to wait 1 month before trying again (in any case)
 - Two separate and independent exam sessions (the other w/ Prof. Golfarelli)
     - The final mark is the average of the two exams
-- Lab contents are included in the evaluation
-- Interaction during the lectures/labs is considered in the final evaluation
+- **Interaction** during the lectures/labs is considered in the final evaluation
 
 No scheduled dates, just come when you are ready
 
@@ -74,11 +73,10 @@ According to the University's regulation
 
 # Assignment
 
-Assignment (more information will come at the end of the lectures):
+More information will come by the end of the lectures
 
 - Either on Machine Learning (ask me) or Data Mining (ask Prof. Golfarelli)
-- You are responsible for your code
-    - If you cannot explain your code and your choices...
+- **You are responsible for your code**. If you cannot explain your code and your choices...
     - ... and/or you copied and pasted it from colleagues or LLMs
     - ... you will need to retake the exam
     - "I do not know how to program" is not a valid excuse!
@@ -87,15 +85,14 @@ Each group must develop an AI system
 
 - Define the problem (of your interest!), the core of your project
 - Define your strategy (algorithms), find data (datasets), ...
-- Compare your strategy with already existing ones (if possibile) → Google, Google Scholar, ...
+- Compare your strategy with already existing ones (check on Google Scholar) ...
 - Describe the insights you extracted from your analysis
 
 Once defined your project:
 
 - Send me an email to discuss the details of your project
-- After my approval, register the group (2 people at maximum) and project here: https://forms.gle/T1hynSuu6LpRGtjw8
-- Now you can start your project!
-  - With Colab, the code must be executable and without errors
+- After my approval, register the group (2 people at maximum) and project here: [https://forms.gle/T1hynSuu6LpRGtjw8](https://forms.gle/T1hynSuu6LpRGtjw8)
+- Now you can start your project on Colab, the code must be executable and without errors
 
 --- 
 
@@ -108,8 +105,6 @@ Once the project is completed AND both members are ready (have studied), the gro
   - Use this template ([https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip](https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip))
   - Tentative sections: 1. Introduction, 2. Related Work, 3. Proposed Method, 4. Results, 5. Conclusions + a section of
 peer-review about group organization and the work done by each member
-
----
 
 At the day of the exam:
 
@@ -125,7 +120,7 @@ You will find all you need on Virtuale
 - Slides
 - and Python notebooks to be opened on Google Colab
 
-However, keeping up the pace with machine learning and data mining is hard
+However, **keeping up the pace with machine learning and data mining is hard**
 
 - There is a rapid development of trends and technologies, and not all of them will survive
 - Books are easily outdated with respect to cutting-edge services and technologies
