@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="01-crispdm_files/libs/clipboard/clipboard.min.js"></script>
-<script src="01-crispdm_files/libs/quarto-html/tabby.min.js"></script>
-<script src="01-crispdm_files/libs/quarto-html/popper.min.js"></script>
-<script src="01-crispdm_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="01-crispdm_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="01-crispdm_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="01-crispdm_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="01-crispdm_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="cs-brownspot_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cs-brownspot_files/libs/quarto-html/tabby.min.js"></script>
+<script src="cs-brownspot_files/libs/quarto-html/popper.min.js"></script>
+<script src="cs-brownspot_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="cs-brownspot_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cs-brownspot_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="cs-brownspot_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="cs-brownspot_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
-  <meta name="author" content="Matteo Francia">
-  <title>crispdm</title>
+  <title>cs-brownspot</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="cs-brownspot_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="cs-brownspot_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,32 +28,12 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
-  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="01-crispdm_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="01-crispdm_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="01-crispdm_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="01-crispdm_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  </style>
+  <link rel="stylesheet" href="cs-brownspot_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="cs-brownspot_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="cs-brownspot_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="cs-brownspot_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="cs-brownspot_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -346,140 +325,66 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Machine Learning and Data Mining</h1>
-  <p class="subtitle">Module 2 (Machine Learning)</p>
 
-<div class="quarto-title-authors">
+<section id="case-study-brown-spot-of-european-pear" class="title-slide slide level1 center">
+<h1>Case Study: Brown Spot of European Pear</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<blockquote>
+<p>Brown spot of European Pear</p>
+<ul>
+<li>A company wants to track the spreading of Brown spot of European pear in Emilia Romagna.</li>
+<li>Brown spots are caused by a fungus (Stemphylium vesicarium) damaging pear fruits and causing economy loss for producers.</li>
+<li>Also, the company wants to find out if there are environmental factors related to the spreading of such fungus.</li>
+</ul>
+</blockquote>
+<p>How would you address this problem?</p>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://agricoltura.regione.emilia-romagna.it/fitosanitario/temi/avversita/schede/avversita-per-nome/immagini-e-documenti/maculatura-bruna-del-pero/sui-frutti-l2019area-necrotica-si-circonda-spesso-di-alone-rossastro"></p>
+<figcaption>Brown Spots</figcaption>
+</figure>
 </div>
-
+</div>
+</div>
 </section>
+
 <section id="section" class="title-slide slide level1 center">
 <h1></h1>
 
-<img data-src="https://imgs.xkcd.com/comics/here_to_help.png" class="r-stretch quarto-figure-center"><p class="caption">Here to Help</p></section>
-
-<section id="crisp-dm" class="title-slide slide level1 center">
-<h1>CRISP-DM</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>CRISP-DM</strong> (CRoss-Industry Standard Process for Data Mining) <span class="citation" data-cites="shearer2000crisp">(<a href="#/references" role="doc-biblioref" onclick="">Shearer 2000</a>)</span></p>
-<blockquote>
-<p>a non-proprietary, documented, and freely available data mining model.</p>
-<p>Developed by industry leaders with input from more than 200 data mining users […] and service providers, CRISP-DM is an <em>industry-, tool-, and application-neutral</em> model.</p>
-<p>This model encourages best practices and offers organizations the structure needed to realize better, faster results from data mining.</p>
-<p>CRISP-DM organizes the data mining process into phases […] that help organizations understand the data mining process and provide a road map to follow while planning and carrying out a data mining project.</p>
+<img data-src="https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113" class="r-stretch quarto-figure-center"><p class="caption">Emilia Romagna, Italy</p><blockquote>
+<p>The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.</p>
 </blockquote>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png"></p>
-<figcaption>CRISP-DM</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<p>In your opinion, what are the pros/cons of this solution?</p>
 </section>
 
-<section id="section-1" class="title-slide slide level1 center scrollable">
+<section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Arrows indicate the most important and frequent dependencies between the phases, while the outer circle symbolizes the cyclical nature of data mining itself and illustrates that the lessons learned during the data mining process and from the deployed solution can trigger new, often more focused business questions.</p>
-<p>CRISP-DM breaks down the life cycle of a data mining project into six phases:</p>
-<ol type="1">
-<li>business understanding,</li>
-<li>data understanding,</li>
-<li>data preparation,</li>
-<li>modeling,</li>
-<li>evaluation,</li>
-<li>and deployment.</li>
-</ol>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png"></p>
-<figcaption>CRISP-DM</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<blockquote>
+<p>Once the employee has collected almost 100 questionnairs, the company company ask us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.</p>
+</blockquote>
+<p>If you were the analyst, what would you do?</p>
 </section>
 
-<section id="disclaimer" class="title-slide slide level1 center">
-<h1>Disclaimer!</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>The CRISP-DM tells us that <em>we don’t do machine learning for the sake of training machine learning models</em></p>
+<section id="section-2" class="title-slide slide level1 center">
+<h1></h1>
+<blockquote>
+<p>To us, it was impossible to apply machine learning techniques to data un paper. We prepared a Google Form where answers could be digitalized.</p>
+<p>The employee would take ~1 month to return us the digitalized questionnaires.</p>
+<p><strong>Issue #1</strong>: some answers where inconsistent with the provided options.</p>
+<p><strong>Issue #2</strong>: what about open questions?</p>
+<p><strong>Issue #3</strong>: what about the trustworthiness of the data? E.g., there are some pesticides/fertilizers whose application is constrained by the Italian/European laws. Can we trust the answers to these questions?</p>
+<p><strong>Issue #4</strong>: we have a dataset of 100 features (assuming for simplicity that each question can be simply turned into an attribute), and a dataset of 100 data.</p>
+</blockquote>
+<p>Outcome?</p>
 <ul>
-<li>We have real problems to solve and questions to answer</li>
-<li>A data scientist must understand the data and the domain before trying any model</li>
-<li>Machine learning is not a simple copy and paste of code
-<ul>
-<li>Code generation can be easily automated and outperform you!</li>
-<li>The added value of a data scientist is the understanding of the problem and data</li>
-</ul></li>
-<li>Data mining/Machine learning is not a course on <code>scikit-learn</code></li>
+<li>This project was missing a proper plan (business+data understanding), and turned out to be a failure for the company.</li>
+<li>Even if we apply ML techniques to the data, the result we get are not statistically relevant.</li>
 </ul>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://en.meming.world/images/en/a/a3/We_Don%27t_Do_That_Here.jpg"></p>
-<figcaption>Dataset, Data, and Features</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-
-<section id="glossary-sammut2017encyclopedia" class="title-slide slide level1 center">
-<h1>Glossary <span class="citation" data-cites="sammut2017encyclopedia">(<a href="#/references" role="doc-biblioref" onclick="">Sammut and Webb 2017</a>)</span></h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Data</strong></p>
-<blockquote>
-<p>Facts and statistics collected together for reference or analysis.</p>
-<p>Synonyms: data point, observation, data sample, instance, tuple, etc.</p>
-</blockquote>
-<p><strong>Dataset (data set)</strong></p>
-<blockquote>
-<p>A collection of data used for some specific purpose.</p>
-</blockquote>
-<p><strong>Feature</strong></p>
-<blockquote>
-<p>Properties of things, ways that we, as humans, might describe them.</p>
-<p>Synonyms: characteristic; attribute; property; trait, etc.</p>
-</blockquote>
-<p><strong>(Database) Query</strong></p>
-<blockquote>
-<p>A request for information</p>
-</blockquote>
-<p><strong>Query Language</strong> <span class="citation" data-cites="liu2009encyclopedia">(<a href="#/references" role="doc-biblioref" onclick="">Liu and Özsu 2009</a>)</span></p>
-<blockquote>
-<p>A query language (e.g.&nbsp;SQL) is a specialized programming language for searching and changing the contents of a database.</p>
-</blockquote>
-</div><div class="column" style="width:40%;">
-<p><img data-src="https://github.com/user-attachments/assets/6b3f38bf-1a0f-4979-b141-854508d5faa9"></p>
-</div>
-</div>
-</section>
-
-<section id="references" class="title-slide slide level1 smaller scrollable">
-<h1>References</h1>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-<p>Matteo Francia - Machine Learning - A.Y. 2024/25</p>
-</div>
-</div>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-liu2009encyclopedia" class="csl-entry" role="listitem">
-Liu, Ling, and M Tamer Özsu. 2009. <em>Encyclopedia of Database Systems</em>. Vol. 6. Springer New York.
-</div>
-<div id="ref-sammut2017encyclopedia" class="csl-entry" role="listitem">
-Sammut, Claude, and Geoffrey I Webb. 2017. <em>Encyclopedia of Machine Learning and Data Mining</em>. Springer Publishing Company, Incorporated.
-</div>
-<div id="ref-shearer2000crisp" class="csl-entry" role="listitem">
-Shearer, Colin. 2000. <span>“The CRISP-DM Model: The New Blueprint for Data Mining.”</span> <em>Journal of Data Warehousing</em> 5 (4): 13–22.
+
 </div>
 </div>
 </section>
@@ -487,19 +392,19 @@ Shearer, Colin. 2000. <span>“The CRISP-DM Model: The New Blueprint for Data Mi
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="01-crispdm_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="cs-brownspot_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="01-crispdm_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="cs-brownspot_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="cs-brownspot_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="cs-brownspot_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="cs-brownspot_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="cs-brownspot_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="01-crispdm_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="cs-brownspot_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="cs-brownspot_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="cs-brownspot_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="cs-brownspot_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

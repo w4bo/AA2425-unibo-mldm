@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="01-crispdm_files/libs/clipboard/clipboard.min.js"></script>
-<script src="01-crispdm_files/libs/quarto-html/tabby.min.js"></script>
-<script src="01-crispdm_files/libs/quarto-html/popper.min.js"></script>
-<script src="01-crispdm_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="01-crispdm_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="01-crispdm_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="01-crispdm_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="01-crispdm_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="cs-vocalization_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cs-vocalization_files/libs/quarto-html/tabby.min.js"></script>
+<script src="cs-vocalization_files/libs/quarto-html/popper.min.js"></script>
+<script src="cs-vocalization_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="cs-vocalization_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cs-vocalization_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="cs-vocalization_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="cs-vocalization_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
-  <meta name="author" content="Matteo Francia">
-  <title>crispdm</title>
+  <title>cs-vocalization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="cs-vocalization_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="cs-vocalization_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,32 +28,12 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
-  <link rel="stylesheet" href="01-crispdm_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="01-crispdm_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="01-crispdm_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="01-crispdm_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="01-crispdm_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  </style>
+  <link rel="stylesheet" href="cs-vocalization_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="cs-vocalization_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="cs-vocalization_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="cs-vocalization_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="cs-vocalization_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -346,140 +325,379 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Machine Learning and Data Mining</h1>
-  <p class="subtitle">Module 2 (Machine Learning)</p>
 
-<div class="quarto-title-authors">
-</div>
-
-</section>
-<section id="section" class="title-slide slide level1 center">
-<h1></h1>
-
-<img data-src="https://imgs.xkcd.com/comics/here_to_help.png" class="r-stretch quarto-figure-center"><p class="caption">Here to Help</p></section>
-
-<section id="crisp-dm" class="title-slide slide level1 center">
-<h1>CRISP-DM</h1>
+<section id="case-study-large-language-models-and-data-science" class="title-slide slide level1 center">
+<h1>Case Study: Large Language Models and Data Science</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><strong>CRISP-DM</strong> (CRoss-Industry Standard Process for Data Mining) <span class="citation" data-cites="shearer2000crisp">(<a href="#/references" role="doc-biblioref" onclick="">Shearer 2000</a>)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>productDepartment</th>
+<th>gender</th>
+<th>quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Produce</td>
+<td>M</td>
+<td>19076</td>
+</tr>
+<tr class="even">
+<td>Produce</td>
+<td>F</td>
+<td>18711</td>
+</tr>
+<tr class="odd">
+<td>Alcoholic Beverages</td>
+<td>F</td>
+<td>16939</td>
+</tr>
+<tr class="even">
+<td>Snack Foods</td>
+<td>M</td>
+<td>16859</td>
+</tr>
+<tr class="odd">
+<td>Snack Foods</td>
+<td>F</td>
+<td>16186</td>
+</tr>
+<tr class="even">
+<td>Alcoholic Beverages</td>
+<td>M</td>
+<td>15399</td>
+</tr>
+<tr class="odd">
+<td>Household</td>
+<td>M</td>
+<td>13757</td>
+</tr>
+<tr class="even">
+<td>Frozen Foods</td>
+<td>M</td>
+<td>13644</td>
+</tr>
+<tr class="odd">
+<td>Household</td>
+<td>F</td>
+<td>13278</td>
+</tr>
+<tr class="even">
+<td>Frozen Foods</td>
+<td>F</td>
+<td>13011</td>
+</tr>
+<tr class="odd">
+<td>Baking Goods</td>
+<td>M</td>
+<td>10404</td>
+</tr>
+<tr class="even">
+<td>Baking Goods</td>
+<td>F</td>
+<td>9841</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>Dairy</td>
+<td>M</td>
+<td>8571</td>
+</tr>
+<tr class="odd">
+<td>Dairy</td>
+<td>F</td>
+<td>8500</td>
+</tr>
+<tr class="even">
+<td>Beverages</td>
+<td>M</td>
+<td>6811</td>
+</tr>
+<tr class="odd">
+<td>Beverages</td>
+<td>F</td>
+<td>6775</td>
+</tr>
+<tr class="even">
+<td>Seafood</td>
+<td>F</td>
+<td>947</td>
+</tr>
+<tr class="odd">
+<td>Seafood</td>
+<td>M</td>
+<td>817</td>
+</tr>
+<tr class="even">
+<td>Carousel</td>
+<td>M</td>
+<td>473</td>
+</tr>
+<tr class="odd">
+<td>Carousel</td>
+<td>F</td>
+<td>368</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:40%;">
 <blockquote>
-<p>a non-proprietary, documented, and freely available data mining model.</p>
-<p>Developed by industry leaders with input from more than 200 data mining users […] and service providers, CRISP-DM is an <em>industry-, tool-, and application-neutral</em> model.</p>
-<p>This model encourages best practices and offers organizations the structure needed to realize better, faster results from data mining.</p>
-<p>CRISP-DM organizes the data mining process into phases […] that help organizations understand the data mining process and provide a road map to follow while planning and carrying out a data mining project.</p>
-</blockquote>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png"></p>
-<figcaption>CRISP-DM</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-
-<section id="section-1" class="title-slide slide level1 center scrollable">
-<h1></h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Arrows indicate the most important and frequent dependencies between the phases, while the outer circle symbolizes the cyclical nature of data mining itself and illustrates that the lessons learned during the data mining process and from the deployed solution can trigger new, often more focused business questions.</p>
-<p>CRISP-DM breaks down the life cycle of a data mining project into six phases:</p>
-<ol type="1">
-<li>business understanding,</li>
-<li>data understanding,</li>
-<li>data preparation,</li>
-<li>modeling,</li>
-<li>evaluation,</li>
-<li>and deployment.</li>
-</ol>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CRISP-DM_Process_Diagram.png/1280px-CRISP-DM_Process_Diagram.png"></p>
-<figcaption>CRISP-DM</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-
-<section id="disclaimer" class="title-slide slide level1 center">
-<h1>Disclaimer!</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>The CRISP-DM tells us that <em>we don’t do machine learning for the sake of training machine learning models</em></p>
+<p>Given a query result, return insights describe the query result.</p>
+<p>This task requires to:</p>
 <ul>
-<li>We have real problems to solve and questions to answer</li>
-<li>A data scientist must understand the data and the domain before trying any model</li>
-<li>Machine learning is not a simple copy and paste of code
-<ul>
-<li>Code generation can be easily automated and outperform you!</li>
-<li>The added value of a data scientist is the understanding of the problem and data</li>
-</ul></li>
-<li>Data mining/Machine learning is not a course on <code>scikit-learn</code></li>
+<li>extract interesting patterns/insights,</li>
+<li>rank them by their interest,</li>
+<li>select the most interesting insights given a limited word/time budget.</li>
 </ul>
+</blockquote>
+<p>How would you do that?</p>
+</div>
+</div>
+</section>
+
+<section id="our-solution-vool" class="title-slide slide level1 center scrollable">
+<h1>Our solution: VOOL</h1>
+<p>For instance, this can has been done in VOOL <span class="citation" data-cites="DBLP:conf/adbis/FranciaGGR22">[@DBLP:conf/adbis/FranciaGGR22]</span> by:</p>
+<ol type="1">
+<li>applying existing ML techniques (modules) in a bag-of-task fashion,</li>
+<li>let each module compute its own insight (in a range that is shared by all modules)</li>
+<li>Compute a knapsack of the patterns extracted on time.</li>
+</ol>
+</section>
+
+<section id="llms" class="title-slide slide level1 center">
+<h1>LLMs</h1>
+<p>Generative AI and Large Language Models (LLMs) <span class="citation" data-cites="DBLP:conf/nips/BrownMRSKDNSSAA20">[@DBLP:conf/nips/BrownMRSKDNSSAA20]</span> <span class="citation" data-cites="openai2023gpt4">[@openai2023gpt4]</span> have recently witnessed a huge hype even in the data science community.</p>
+<ul>
+<li><p>LLMs are autoregressive machine learning models that act as statistical next-word predictors <span class="citation" data-cites="bowman2023things">[@bowman2023things]</span> after being trained on huge datasets <span class="citation" data-cites="DBLP:conf/fat/BenderGMS21">[@DBLP:conf/fat/BenderGMS21]</span>.</p></li>
+<li><p>Applications leveraging LLMs, such as ChatGPT, are usually oriented to general-purpose information retrieval and are not specific for extracting, ranking, and selecting the most interesting insights out of multidimensional query results.</p></li>
+</ul>
+</section>
+
+<section id="limits-of-llms" class="title-slide slide level1 center scrollable">
+<h1>Limits of LLMs</h1>
+<p>Although LLMs are powerful tools for broad natural language applications, they are not always the best choice for data-intensive tasks for two main reasons:</p>
+<p><strong>Data volume and cost</strong></p>
+<ul>
+<li>Since multidimensional data usually contain sensitive business information, they are stored in private repositories (such as data warehouses) unknown to LLMs during their training.</li>
+<li>To feed data to an LLM, the main possibility is to use the prompt.
+<ul>
+<li>Depending on the specific model, prompts have limits in the number of tokens shared between input and answer, with different models <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">having different limits (accessed on 2024-06-20)</a> and pricing
+<ul>
+<li>The <a href="https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service">OpenAI price calculator in Microsoft Azure (accessed 2024-06-20)</a> estimates that using GPT-4-32K costs around $0.06 per <span class="math inline">\(10^3\)</span> input tokens and $0.12 per <span class="math inline">\(10^3\)</span> output tokens (as of 2024-06-20), where 1000 tokens correspond to almost 750 words.</li>
+</ul></li>
+<li>For instance, prompting a table with <span class="math inline">\(10^5\)</span> tuples (if feasible at all) could easily reach the cost of several dollars per execution. on input and output tokens.</li>
+</ul></li>
+<li>Recently, LLMs began to allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content.
+<ul>
+<li>On the one hand, this can overcome the limits and cost of tokens.</li>
+<li>On the other hand, if the summary process is incorrect, it will add errors and bias to the final answer.</li>
+</ul></li>
+</ul>
+<p><strong>Running algorithms</strong></p>
+<ul>
+<li>Algorithmic tasks such as SQL querying and data mining are better handled by DBMSs and query engines since
+<ul>
+<li><ol type="i">
+<li>they are optimized for these types of operations (e.g., using R-trees to speed up clustering in Euclidean spaces);</li>
+</ol></li>
+<li><ol start="2" type="i">
+<li>their answers are correct, consistent, and reproducible;</li>
+</ol></li>
+<li><ol start="3" type="i">
+<li>they do not have hallucinations.</li>
+</ol></li>
+</ul></li>
+</ul>
+<p>At the moment, while (plain) LLMs have many strengths, they are not typically suitable for data-intensive tasks.</p>
+</section>
+
+<section id="llm-based-applications" class="title-slide slide level1 center">
+<h1>LLM-based applications</h1>
+<p>Several LLM-based applications have been deployed to overcome these limitations.</p>
+<ul>
+<li>There are applications for data analysis that are capable of generating and interpreting code (mainly Python), analyzing datasets, and supporting data scientists in doing data elaborations and analyses.
+<ul>
+<li>Applications can be directly deployed by LLM providers (e.g., Data Analyst <span class="citation" data-cites="dataanalyst">[@dataanalyst]</span> by ChatGPT)</li>
+<li>or can be deployed by third-party users (e.g., Data Scientist <span class="citation" data-cites="datascientist">[@datascientist]</span>).</li>
+</ul></li>
+<li>Intuitively, these applications allow the underlying LLM to invoke functions from external libraries when appropriate (e.g., Python’s pandas, scikit-learn, and scipy) and to generate and execute external code.</li>
+<li>Data Scientists and Data Analyst are indeed closer to VOOL than plain LLMs, but they bear the following differences with VOOL:</li>
+</ul>
+</section>
+
+<section id="applying-llms-to-query-results" class="title-slide slide level1 center">
+<h1>Applying LLMs to query results</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<table>
+<thead>
+<tr class="header">
+<th>productDepartment</th>
+<th>gender</th>
+<th>quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Produce</td>
+<td>M</td>
+<td>19076</td>
+</tr>
+<tr class="even">
+<td>Produce</td>
+<td>F</td>
+<td>18711</td>
+</tr>
+<tr class="odd">
+<td>Alcoholic Beverages</td>
+<td>F</td>
+<td>16939</td>
+</tr>
+<tr class="even">
+<td>Snack Foods</td>
+<td>M</td>
+<td>16859</td>
+</tr>
+<tr class="odd">
+<td>Snack Foods</td>
+<td>F</td>
+<td>16186</td>
+</tr>
+<tr class="even">
+<td>Alcoholic Beverages</td>
+<td>M</td>
+<td>15399</td>
+</tr>
+<tr class="odd">
+<td>Household</td>
+<td>M</td>
+<td>13757</td>
+</tr>
+<tr class="even">
+<td>Frozen Foods</td>
+<td>M</td>
+<td>13644</td>
+</tr>
+<tr class="odd">
+<td>Household</td>
+<td>F</td>
+<td>13278</td>
+</tr>
+<tr class="even">
+<td>Frozen Foods</td>
+<td>F</td>
+<td>13011</td>
+</tr>
+<tr class="odd">
+<td>Baking Goods</td>
+<td>M</td>
+<td>10404</td>
+</tr>
+<tr class="even">
+<td>Baking Goods</td>
+<td>F</td>
+<td>9841</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>Dairy</td>
+<td>M</td>
+<td>8571</td>
+</tr>
+<tr class="odd">
+<td>Dairy</td>
+<td>F</td>
+<td>8500</td>
+</tr>
+<tr class="even">
+<td>Beverages</td>
+<td>M</td>
+<td>6811</td>
+</tr>
+<tr class="odd">
+<td>Beverages</td>
+<td>F</td>
+<td>6775</td>
+</tr>
+<tr class="even">
+<td>Seafood</td>
+<td>F</td>
+<td>947</td>
+</tr>
+<tr class="odd">
+<td>Seafood</td>
+<td>M</td>
+<td>817</td>
+</tr>
+<tr class="even">
+<td>Carousel</td>
+<td>M</td>
+<td>473</td>
+</tr>
+<tr class="odd">
+<td>Carousel</td>
+<td>F</td>
+<td>368</td>
+</tr>
+</tbody>
+</table>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://en.meming.world/images/en/a/a3/We_Don%27t_Do_That_Here.jpg"></p>
-<figcaption>Dataset, Data, and Features</figcaption>
+<p><img data-src="https://github.com/user-attachments/assets/9ec3dbd8-a7ef-49f9-8d78-df8cf96c238b"></p>
+<figcaption>Returned insights</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
 
-<section id="glossary-sammut2017encyclopedia" class="title-slide slide level1 center">
-<h1>Glossary <span class="citation" data-cites="sammut2017encyclopedia">(<a href="#/references" role="doc-biblioref" onclick="">Sammut and Webb 2017</a>)</span></h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Data</strong></p>
-<blockquote>
-<p>Facts and statistics collected together for reference or analysis.</p>
-<p>Synonyms: data point, observation, data sample, instance, tuple, etc.</p>
-</blockquote>
-<p><strong>Dataset (data set)</strong></p>
-<blockquote>
-<p>A collection of data used for some specific purpose.</p>
-</blockquote>
-<p><strong>Feature</strong></p>
-<blockquote>
-<p>Properties of things, ways that we, as humans, might describe them.</p>
-<p>Synonyms: characteristic; attribute; property; trait, etc.</p>
-</blockquote>
-<p><strong>(Database) Query</strong></p>
-<blockquote>
-<p>A request for information</p>
-</blockquote>
-<p><strong>Query Language</strong> <span class="citation" data-cites="liu2009encyclopedia">(<a href="#/references" role="doc-biblioref" onclick="">Liu and Özsu 2009</a>)</span></p>
-<blockquote>
-<p>A query language (e.g.&nbsp;SQL) is a specialized programming language for searching and changing the contents of a database.</p>
-</blockquote>
-</div><div class="column" style="width:40%;">
-<p><img data-src="https://github.com/user-attachments/assets/6b3f38bf-1a0f-4979-b141-854508d5faa9"></p>
-</div>
-</div>
+<section id="additional-issues" class="title-slide slide level1 center">
+<h1>Additional Issues</h1>
+<p><strong>Interpretability.</strong></p>
+<p>In LLMs, the process that leads to the computation of the insights and their interest remains hidden and not interpretable to the end-user, who is not aware of how insights are extracted (e.g., if the model has added some distortion to the data before applying a machine learning model).</p>
+<p><strong>Domain-specific data.</strong></p>
+<p>The insights returned by LLM-based applications strongly depend on the context since LLMs also leverage domain knowledge for their ``reasoning’’; hence, it is usually recommended to use semantic-rich column names to enhance data analyses.</p>
+<ul>
+<li>On the one hand, this domain knowledge can introduce bias and inconsistencies with the data at hand.</li>
+<li>On the other hand, for very specific domains and data types, a lack of knowledge can cause issues in the interpretation of the result.</li>
+</ul>
+<p>For instance, in precision agriculture, having low temperatures could be bad for the production rates, but good in terms of pest control and water management.</p>
+<p><strong>Domain-specific modules.</strong></p>
+<p>Should additional modules be necessary to produce domain-specific insights, such modules should be embedded into the LLM through prompting or calls to (external) third-party libraries.</p>
 </section>
 
-<section id="references" class="title-slide slide level1 smaller scrollable">
-<h1>References</h1>
+<section id="additional-issues-1" class="title-slide slide level1 center">
+<h1>Additional Issues</h1>
+<p>We conclude by observing that LLMs are also exposed to a couple of additional issues:</p>
+<p><em>Libraries</em></p>
+<ul>
+<li>LLMs produce good results with well-known libraries such as Python’s scikit-learn and pandas.</li>
+<li>When less-known libraries are required, LLMs can fail to produce the necessary code.</li>
+</ul>
+<p><em>Development</em></p>
+<ul>
+<li>Many LLM-based applications are commercial (or handcrafted) and not associated with research papers.</li>
+<li>Hence, following their development and deeply understanding their capabilities is often hard, also due to a lack of documentation.
+<ul>
+<li>On the one hand, this makes non-empirical comparisons between LLMs unfeasible.</li>
+<li>On the other, exactly reproducing the results of empirical tests may be impossible.</li>
+</ul></li>
+</ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-<p>Matteo Francia - Machine Learning - A.Y. 2024/25</p>
-</div>
-</div>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-liu2009encyclopedia" class="csl-entry" role="listitem">
-Liu, Ling, and M Tamer Özsu. 2009. <em>Encyclopedia of Database Systems</em>. Vol. 6. Springer New York.
-</div>
-<div id="ref-sammut2017encyclopedia" class="csl-entry" role="listitem">
-Sammut, Claude, and Geoffrey I Webb. 2017. <em>Encyclopedia of Machine Learning and Data Mining</em>. Springer Publishing Company, Incorporated.
-</div>
-<div id="ref-shearer2000crisp" class="csl-entry" role="listitem">
-Shearer, Colin. 2000. <span>“The CRISP-DM Model: The New Blueprint for Data Mining.”</span> <em>Journal of Data Warehousing</em> 5 (4): 13–22.
+
 </div>
 </div>
 </section>
@@ -487,19 +705,19 @@ Shearer, Colin. 2000. <span>“The CRISP-DM Model: The New Blueprint for Data Mi
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="01-crispdm_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="cs-vocalization_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="01-crispdm_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="cs-vocalization_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="cs-vocalization_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="cs-vocalization_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="cs-vocalization_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="cs-vocalization_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="01-crispdm_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="01-crispdm_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="cs-vocalization_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="cs-vocalization_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="cs-vocalization_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="cs-vocalization_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
