@@ -31,7 +31,9 @@ How would you address this problem?
 > | ...              | ...                      | ... | ...             |
 >
 > and to learn a relationship between environmental features and the `Level of Damage`.
->
+
+What features would you select?
+
 > The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.
 
 In your opinion, what are the pros/cons of this solution?
