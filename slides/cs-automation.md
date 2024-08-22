@@ -89,12 +89,12 @@ The reviewer #2 found it "good old fashioned AI", and asked us to compare agains
 :::
 ::::
 
-# LLMs
+# Large Language Models (LLMs)
 
-Generative AI and Large Language Models (LLMs) have recently witnessed a huge hype even in the data science community [@DBLP:conf/nips/BrownMRSKDNSSAA20] [@openai2023gpt4]
+Generative AI and LLMs have recently witnessed a huge hype even in the data science community [@DBLP:conf/nips/BrownMRSKDNSSAA20] [@openai2023gpt4]
 
-- LLMs are autoregressive machine learning models that act as statistical next-word predictors [@bowman2023things] after being trained on huge datasets [@DBLP:conf/fat/BenderGMS21].
-- Applications leveraging LLMs, such as ChatGPT, are usually oriented to general-purpose information retrieval and are not specific for extracting, ranking, and selecting the most interesting insights out of multidimensional query results.
+- LLMs are autoregressive machine learning models that act as statistical next-word predictors [@bowman2023things] after being trained on huge datasets [@DBLP:conf/fat/BenderGMS21]
+- Applications leveraging LLMs, such as ChatGPT, are usually oriented to general-purpose information retrieval
 
 LLMs are powerful tools for broad natural language applications, are they a good choice for data-intensive tasks as well?
 
