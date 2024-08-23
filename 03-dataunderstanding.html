@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="03-dataunderstanding_files/libs/clipboard/clipboard.min.js"></script>
 <script src="03-dataunderstanding_files/libs/quarto-html/tabby.min.js"></script>
 <script src="03-dataunderstanding_files/libs/quarto-html/popper.min.js"></script>
 <script src="03-dataunderstanding_files/libs/quarto-html/tippy.umd.min.js"></script>
@@ -345,7 +344,32 @@
   <div class="reveal">
     <div class="slides">
 
-
+<section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#/data-understanding" id="/toc-data-understanding">Data understanding</a></li>
+<li><a href="#/data-collection-or-acquisition" id="/toc-data-collection-or-acquisition">Data collection (or acquisition)</a>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li><a href="#/public-datasets" id="/toc-public-datasets">Public Datasets</a></li>
+<li><a href="#/acquisition-of-a-new-dataset" id="/toc-acquisition-of-a-new-dataset">Acquisition of a new dataset</a></li>
+<li><a href="#/data-annotation" id="/toc-data-annotation">Data Annotation</a></li>
+<li><a href="#/data-annotation-process" id="/toc-data-annotation-process">Data Annotation Process</a></li>
+<li><a href="#/amazon-mechanical-turk" id="/toc-amazon-mechanical-turk">Amazon Mechanical Turk</a></li>
+<li><a href="#/different-ways-of-learning" id="/toc-different-ways-of-learning">Different Ways of Learning</a></li>
+<li><a href="#/open-and-closed-sets" id="/toc-open-and-closed-sets">Open and Closed Sets</a></li>
+<li><a href="#/common-problems-in-data-collection" id="/toc-common-problems-in-data-collection">Common Problems in Data Collection</a></li>
+</ul></li>
+<li><a href="#/describe-the-data" id="/toc-describe-the-data">Describe the Data</a></li>
+<li><a href="#/explore-the-data" id="/toc-explore-the-data">Explore the Data</a></li>
+<li><a href="#/verify-data-quality" id="/toc-verify-data-quality">Verify Data Quality</a></li>
+<li><a href="#/references" id="/toc-references">References</a></li>
+</ul>
+</nav>
+</section>
 <section id="data-understanding" class="title-slide slide level1 center">
 <h1>Data understanding</h1>
 <p>The data understanding phase involves four steps, including the collection of initial data, the description of data, the exploration of data, and the verification of data quality.</p>
@@ -872,58 +896,6 @@ Chowdhury, Mohammad Ziaul Islam, and Tanvir C Turin. 2020. <span>“Variable Sel
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
       });
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {

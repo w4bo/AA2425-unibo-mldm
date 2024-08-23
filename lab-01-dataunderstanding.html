@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="lab-01-dataunderstanding_files/libs/clipboard/clipboard.min.js"></script>
-<script src="lab-01-dataunderstanding_files/libs/quarto-html/tabby.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="lab-01-dataunderstanding_files/libs/quarto-html/tabby.min.js"></script>
 <script src="lab-01-dataunderstanding_files/libs/quarto-html/popper.min.js"></script>
 <script src="lab-01-dataunderstanding_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-01-dataunderstanding_files/libs/quarto-html/tippy.css" rel="stylesheet">
@@ -10,7 +9,7 @@
 <link href="lab-01-dataunderstanding_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
-  <title>Lab: Business and Data Understanding</title>
+  <title>lab-01-dataunderstanding</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,6 +27,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="lab-01-dataunderstanding_files/libs/revealjs/dist/theme/quarto.css">
   <link href="lab-01-dataunderstanding_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -328,17 +392,43 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lab: Business and Data Understanding</h1>
+<section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li></li>
+<li><a href="#/introduction-to-pandas" id="/toc-introduction-to-pandas">Introduction to Pandas</a>
+<ul>
+<li><a href="#/dataframe" id="/toc-dataframe">DataFrame</a></li>
+<li><a href="#/some-operations" id="/toc-some-operations">Some operations</a></li>
+<li><a href="#/series" id="/toc-series">Series</a></li>
+<li><a href="#/doing-some-element-wise-operations" id="/toc-doing-some-element-wise-operations">Doing some element-wise operations</a></li>
+<li><a href="#/doing-some-aggregation" id="/toc-doing-some-aggregation">Doing some aggregation</a></li>
+</ul></li>
+<li><a href="#/business-and-data-understanding" id="/toc-business-and-data-understanding">Business and Data Understanding</a>
+<ul>
+<li><a href="#/understanding-data-types" id="/toc-understanding-data-types">Understanding data types</a></li>
+<li><a href="#/encoding-data-with-the-wrong-type" id="/toc-encoding-data-with-the-wrong-type">Encoding data with the wrong type</a></li>
+<li><a href="#/type-inference" id="/toc-type-inference">Type inference</a></li>
+<li><a href="#/attribute-types" id="/toc-attribute-types">Attribute types</a></li>
+<li><a href="#/the-likert-scale" id="/toc-the-likert-scale">The Likert scale</a></li>
+<li><a href="#/the-likert-scale-1" id="/toc-the-likert-scale-1">The Likert scale</a></li>
+<li><a href="#/data-profiling" id="/toc-data-profiling">Data profiling</a></li>
+<li><a href="#/data-profiling-1" id="/toc-data-profiling-1">Data profiling</a></li>
+</ul></li>
+<li><a href="#/the-california-housing-case-study" id="/toc-the-california-housing-case-study">The <code>California Housing</code> case study</a>
+<ul>
+<li><a href="#/and-now" id="/toc-and-now">… and now?</a></li>
+</ul></li>
 
-<div class="quarto-title-authors">
-</div>
-
+</ul>
+</nav>
 </section>
 <section class="slide level2">
 
 <p><a href="https://colab.research.google.com/github/w4bo/AA2425-unibo-mldm/blob/master/slides/lab-01-dataunderstanding.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 </section>
+<section>
 <section id="introduction-to-pandas" class="title-slide slide level1 center">
 <h1>Introduction to Pandas</h1>
 <p><strong>Pandas</strong> is the shorthand for ‘Python and Data Analysis’</p>
@@ -350,19 +440,47 @@
 <ul>
 <li>Two main data types: Series (e.g., temporal series) and DataFrame (e.g., table)</li>
 <li>Support to SQL-like operations (join/merge, aggregation, etc.)</li>
-<li>Imputation of missing values</li>
-<li>Manipulation of data shape</li>
+<li>Data transformation: imputation of missing values, manipulation of data shape, …</li>
 <li>By convention, the package pandas is imported as <code>pd</code></li>
 </ul>
-<div id="aacb3166" class="cell" data-outputid="de89e76c-077f-4794-f448-2e10c89e7d4e" data-execution_count="1">
+<div id="aacb3166" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:38.820959Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:38.820492Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:39.188973Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:39.188264Z&quot;}" data-outputid="de89e76c-077f-4794-f448-2e10c89e7d4e" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href=""></a><span class="bu">print</span>(pd.__version__)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>2.2.2</code></pre>
 </div>
 </div>
 <p>… plus we will use other libraries</p>
-<p>Pandas relies on DataFrame and Series</p>
-<p><strong>DataFrame</strong>: - Two-dimensional, size-mutable, potentially heterogeneous tabular data. - The primary pandas data structure. - Data structure also contains labeled axes (rows and columns). - Arithmetic operations align on both row and column labels. - Can be thought of as a dict-like container for Series objects. - https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html</p>
-<div id="74c37032" class="cell" data-outputid="45bb3eea-fc45-4c4b-b85b-4e92363a03b5" data-execution_count="3">
+<div id="3932b785" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:39.191612Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:39.191193Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:40.467278Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:40.466665Z&quot;}" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># fast operations on arrays</span></span>
+<span id="cb3-2"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns  <span class="co"># plots</span></span>
+<span id="cb3-3"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># plots</span></span></code></pre></div>
+</details>
+</div>
+</section>
+<section id="dataframe" class="slide level2">
+<h2><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html">DataFrame</a></h2>
+<ul>
+<li>Two-dimensional, size-mutable, potentially heterogeneous tabular data.</li>
+<li>The primary pandas data structure.</li>
+<li>Data structure also contains labeled axes (rows and columns).</li>
+<li>Arithmetic operations align on both row and column labels.</li>
+<li>Can be thought of as a dict-like container for Series objects.</li>
+</ul>
+<div id="74c37032" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:40.470419Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:40.469795Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:40.481471Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:40.480826Z&quot;}" data-outputid="45bb3eea-fc45-4c4b-b85b-4e92363a03b5" data-scrolled="true" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># create a numeric dataframe/table</span></span>
+<span id="cb4-2"><a href=""></a>df <span class="op">=</span> pd.DataFrame([[i <span class="op">+</span> j <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)] <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)],</span>
+<span id="cb4-3"><a href=""></a>                  index<span class="op">=</span>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)],</span>
+<span id="cb4-4"><a href=""></a>                  columns<span class="op">=</span><span class="bu">list</span>(<span class="st">'abcdefghij'</span>))</span>
+<span id="cb4-5"><a href=""></a>df</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 <style scoped="">
@@ -467,7 +585,129 @@
 </div>
 </div>
 </div>
-<p>A <strong>Series</strong> is a sequence of values with the same type</p>
+</section>
+<section id="some-operations" class="slide level2">
+<h2>Some operations</h2>
+<div id="e5cf8058" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:40.483881Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:40.483437Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:40.491981Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:40.491420Z&quot;}" data-outputid="f7338355-f16f-4b8c-a9e8-ad6eb57607be" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co"># Get the headers (i.e., the column names)</span></span>
+<span id="cb5-2"><a href=""></a>df.columns</span>
+<span id="cb5-3"><a href=""></a><span class="co"># Get just the first two rows</span></span>
+<span id="cb5-4"><a href=""></a>df.head(<span class="dv">2</span>)</span>
+<span id="cb5-5"><a href=""></a><span class="co"># Get just the last two rows</span></span>
+<span id="cb5-6"><a href=""></a>df.tail(<span class="dv">2</span>)</span>
+<span id="cb5-7"><a href=""></a><span class="co"># Sort the dataframe by columns</span></span>
+<span id="cb5-8"><a href=""></a>df.sort_values(by<span class="op">=</span>[<span class="st">'a'</span>, <span class="st">'b'</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>])</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">a</th>
+<th data-quarto-table-cell-role="th">b</th>
+<th data-quarto-table-cell-role="th">c</th>
+<th data-quarto-table-cell-role="th">d</th>
+<th data-quarto-table-cell-role="th">e</th>
+<th data-quarto-table-cell-role="th">f</th>
+<th data-quarto-table-cell-role="th">g</th>
+<th data-quarto-table-cell-role="th">h</th>
+<th data-quarto-table-cell-role="th">i</th>
+<th data-quarto-table-cell-role="th">j</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="series" class="slide level2">
+<h2><a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.html">Series</a></h2>
+<p>A sequence of values with the same type</p>
 <ul>
 <li>Each value is associate with a label</li>
 <li>Supported values and label types are the ones from NumPy (float64, int64, etc.)</li>
@@ -475,27 +715,28 @@
 </ul>
 <p>The index of a series is the sequence of labels</p>
 <ul>
-<li>Label are usually numeric or string identifiers</li>
-<li>E.g., the primary key of a database table</li>
-<li>Labels could repeat within the series, but usually do not</li>
+<li>Label are usually numeric or string identifiers (e.g., the primary key of a database table)</li>
+<li>Labels need not be unique but must be a hashable type (both integer- and label-based indexing)</li>
 </ul>
-<p>Technically</p>
-<ul>
-<li>One-dimensional ndarray with axis labels (including time series).</li>
-<li>Labels need not be unique but must be a hashable type (both integer- and label-based indexing).</li>
-<li>Operations between Series (e.g., +, -, /) align values based on their associated index values.</li>
-<li>https://pandas.pydata.org/docs/reference/api/pandas.Series.html</li>
-</ul>
-<div id="205a800c" class="cell" data-outputid="ee7c35e1-e9ca-40ed-b5a3-e58fb5e9e1a4" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div id="205a800c" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:40.494125Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:40.493956Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:40.498809Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:40.498219Z&quot;}" data-outputid="ee7c35e1-e9ca-40ed-b5a3-e58fb5e9e1a4" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>a    1
 b    2
 c    3
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="a4ed958f" class="cell" data-outputid="55e128f0-c560-41ee-f31a-0b2c1dcd6e07" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div id="a4ed958f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:40.500904Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:40.500722Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:40.504996Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:40.504357Z&quot;}" data-outputid="55e128f0-c560-41ee-f31a-0b2c1dcd6e07" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co"># Select a column (i.e., a series) as in a SQL projection</span></span>
+<span id="cb8-2"><a href=""></a>df[<span class="st">'a'</span>]</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>0    0
 1    1
 2    2
@@ -504,8 +745,18 @@ dtype: int64</code></pre>
 Name: a, dtype: int64</code></pre>
 </div>
 </div>
-<div id="694287e9" class="cell" data-outputid="287a47b9-7a40-404a-b2a9-ce8063222114" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="6">
+</section>
+<section id="doing-some-element-wise-operations" class="slide level2">
+<h2>Doing some element-wise operations</h2>
+<p>Operations between Series (e.g., +, -, /) align values based on their associated index values</p>
+<div id="8af0fee7-2e12-4b68-8634-58a26ae19839" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:40.507043Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:40.506879Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:40.514172Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:40.513574Z&quot;}" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="co"># Add another column to the dataframe</span></span>
+<span id="cb10-2"><a href=""></a>df[<span class="st">'k'</span>] <span class="op">=</span> df[<span class="st">'a'</span>] <span class="op">*</span> df[<span class="st">'b'</span>]</span>
+<span id="cb10-3"><a href=""></a>df</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -615,41 +866,44 @@ Name: a, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<p>… doing some element-wise operations</p>
-<div id="50a5bde6" class="cell" data-outputid="c58ad916-7ffe-4fe8-ecb7-f7ec0f3c30aa" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div id="50a5bde6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:40.516184Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:40.516014Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:40.521632Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:40.521065Z&quot;}" data-outputid="c58ad916-7ffe-4fe8-ecb7-f7ec0f3c30aa" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>ser_a <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])</span>
+<span id="cb11-2"><a href=""></a>ser_b <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"b"</span>, <span class="st">"a"</span>, <span class="st">"c"</span>])</span>
+<span id="cb11-3"><a href=""></a>ser_a <span class="op">+</span> ser_b  <span class="co"># +, -, /, *</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>a    3
 b    3
 c    6
 dtype: int64</code></pre>
 </div>
 </div>
-<p>… doing some aggregation</p>
-<div id="b2c64c8e" class="cell" data-outputid="f34e8487-ac46-416f-a5e4-bd79c94e101a" data-execution_count="8">
-<div class="cell-output cell-output-display" data-execution_count="8">
+</section>
+<section id="doing-some-aggregation" class="slide level2">
+<h2>Doing some aggregation</h2>
+<div id="b2c64c8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:40.523704Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:40.523541Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:40.528290Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:40.527707Z&quot;}" data-outputid="f34e8487-ac46-416f-a5e4-bd79c94e101a" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>ser_c <span class="op">=</span> df[<span class="st">"a"</span>]</span>
+<span id="cb13-2"><a href=""></a>ser_c.count()  <span class="co"># =&gt; 5</span></span>
+<span id="cb13-3"><a href=""></a>ser_c.<span class="bu">sum</span>()    <span class="co"># =&gt; 10</span></span>
+<span id="cb13-4"><a href=""></a>ser_c.mean()   <span class="co"># =&gt; 2.0</span></span>
+<span id="cb13-5"><a href=""></a>ser_c.<span class="bu">max</span>()    <span class="co"># =&gt; 4</span></span>
+<span id="cb13-6"><a href=""></a>ser_c.<span class="bu">min</span>()    <span class="co"># =&gt; 0</span></span>
+<span id="cb13-7"><a href=""></a>ser_c.idxmax() <span class="co"># =&gt; 4</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>np.int64(4)</code></pre>
 </div>
 </div>
-</section>
-
-<section>
-<section id="business-and-data-understanding" class="title-slide slide level1 center">
-<h1>Business and Data Understanding</h1>
-
-</section>
-<section id="understanding-data-types" class="slide level2">
-<h2>Understanding data types</h2>
-<p>“It is imperative to know the attribute properties to carry out meaningful operations and research with them”</p>
-<p>Why is data type important?</p>
-
-<img data-src="https://user-images.githubusercontent.com/18005592/232748093-a25e8ba7-24d4-4e2b-9e58-1553786cac33.png" class="r-stretch quarto-figure-center"><p class="caption">image</p><p>Encoding the date 2022-01-01T00:01 into a signed integer <span class="math inline">\(2201010001\)</span></p>
-<p>However, a signed integer is a 32-bit datum that represents an integer in the range:</p>
-<p><span class="math inline">\([-2^{31}, 2^{31}-1] = [-2147483648, 2147483647]\)</span></p>
-<p><span class="math inline">\(2201010001 &gt; 2147483647\)</span></p>
-<p>What are the implications of a data type?</p>
-<p>Pandas automatically infers data types, or they can be specified during creation - Common data types are numeric ones - <code>np.floatN</code> represents floating numbers (e.g., -3.14) - <code>np.intN</code>/<code>np.uintN</code> represent integers with/without sign (-42 and 42) - <code>N</code> is the number of needed bits: 8, 16, 32 o 64 - Other data types - <code>bool</code>: Boolean values - <code>datetime64</code>, timedelta64: timestamp and time intervals - <code>object</code>: mainly used for strings</p>
-<div id="7d53489b" class="cell" data-outputid="97c41b58-041b-4538-c9de-d8315c66f7cd" data-execution_count="9">
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div id="4f74f58d-d995-49d8-ae68-6e3ce7fe6d0e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:40.530378Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:40.530211Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:40.546991Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:40.546364Z&quot;}" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>df.groupby([<span class="st">'a'</span>]).agg([<span class="st">'min'</span>, <span class="st">'max'</span>])</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -660,62 +914,192 @@ dtype: int64</code></pre>
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
         text-align: right;
     }
 </style>
 
 <table class="dataframe" data-quarto-postprocess="true" data-border="1">
 <thead>
-<tr class="header" style="text-align: right;">
+<tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">ID</th>
-<th data-quarto-table-cell-role="th">PriceBin</th>
-<th data-quarto-table-cell-role="th">Date</th>
-<th data-quarto-table-cell-role="th">Quantity</th>
-<th data-quarto-table-cell-role="th">Review</th>
+<th colspan="2" data-quarto-table-cell-role="th" data-halign="left">b</th>
+<th colspan="2" data-quarto-table-cell-role="th" data-halign="left">c</th>
+<th colspan="2" data-quarto-table-cell-role="th" data-halign="left">d</th>
+<th colspan="2" data-quarto-table-cell-role="th" data-halign="left">e</th>
+<th colspan="2" data-quarto-table-cell-role="th" data-halign="left">f</th>
+<th colspan="2" data-quarto-table-cell-role="th" data-halign="left">g</th>
+<th colspan="2" data-quarto-table-cell-role="th" data-halign="left">h</th>
+<th colspan="2" data-quarto-table-cell-role="th" data-halign="left">i</th>
+<th colspan="2" data-quarto-table-cell-role="th" data-halign="left">j</th>
+<th colspan="2" data-quarto-table-cell-role="th" data-halign="left">k</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">max</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">max</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">max</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">max</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">max</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">max</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">max</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">max</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">max</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">max</th>
+</tr>
+<tr class="header">
+<th data-quarto-table-cell-role="th">a</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>Cola</td>
-<td>low</td>
-<td>05/07/2021</td>
-<td>10.0</td>
+<td>1</td>
+<td>1</td>
 <td>2</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>6</td>
+<td>6</td>
+<td>7</td>
+<td>7</td>
+<td>8</td>
+<td>8</td>
+<td>9</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>Bread</td>
-<td>medium</td>
-<td>05/07/2021</td>
-<td>25.0</td>
-<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>6</td>
+<td>6</td>
+<td>7</td>
+<td>7</td>
+<td>8</td>
+<td>8</td>
+<td>9</td>
+<td>9</td>
+<td>10</td>
+<td>10</td>
+<td>2</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>Beer</td>
-<td>high</td>
-<td>06/07/2021</td>
-<td>100.0</td>
 <td>3</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>6</td>
+<td>6</td>
+<td>7</td>
+<td>7</td>
+<td>8</td>
+<td>8</td>
+<td>9</td>
+<td>9</td>
+<td>10</td>
+<td>10</td>
+<td>11</td>
+<td>11</td>
+<td>6</td>
+<td>6</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>Diaper</td>
-<td>high</td>
-<td>06/07/2021</td>
-<td>NaN</td>
 <td>4</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>6</td>
+<td>6</td>
+<td>7</td>
+<td>7</td>
+<td>8</td>
+<td>8</td>
+<td>9</td>
+<td>9</td>
+<td>10</td>
+<td>10</td>
+<td>11</td>
+<td>11</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>Pizza</td>
-<td>medium</td>
-<td>06/07/2021</td>
-<td>25.0</td>
 <td>5</td>
+<td>5</td>
+<td>6</td>
+<td>6</td>
+<td>7</td>
+<td>7</td>
+<td>8</td>
+<td>8</td>
+<td>9</td>
+<td>9</td>
+<td>10</td>
+<td>10</td>
+<td>11</td>
+<td>11</td>
+<td>12</td>
+<td>12</td>
+<td>13</td>
+<td>13</td>
+<td>20</td>
+<td>20</td>
 </tr>
 </tbody>
 </table>
@@ -723,16 +1107,57 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<p>The attribute type determines which operator can be applied to the attribute - Equality, sort, sum, ratio, etc. - It makes sense to compute the average <code>Quantity</code> but not the average <code>ID</code></p>
-<p>Different attribute types</p>
+</section></section>
+<section>
+<section id="business-and-data-understanding" class="title-slide slide level1 center">
+<h1>Business and Data Understanding</h1>
+
+</section>
+<section id="understanding-data-types" class="slide level2">
+<h2>Understanding data types</h2>
+<p>“It is imperative to know the attribute properties to carry out meaningful operations and research with them”</p>
 <ul>
-<li>(Categorical) <strong>Nominal</strong>: can distinguish the values (i.e., check equality)</li>
-<li>(Categorical) <strong>Ordinal</strong>: can distinguish and sort the values</li>
-<li>(Numeric) <strong>Interval</strong>: can distinguish and sort the values, and compute their difference</li>
-<li>(Numeric) <strong>Ratio</strong>: can distinguish and sort the values, and compute their difference and ratio</li>
+<li>Why is data type important?</li>
+<li>What are the implications of a data type?</li>
 </ul>
-<div id="41926ed4" class="cell" data-outputid="81bbc140-b43c-4f32-e2e0-6e717a77972d" data-execution_count="10">
-<div class="cell-output cell-output-display" data-execution_count="10">
+
+<img data-src="https://user-images.githubusercontent.com/18005592/232748093-a25e8ba7-24d4-4e2b-9e58-1553786cac33.png" class="r-stretch quarto-figure-center"><p class="caption">Y2K22 bug</p></section>
+<section id="encoding-data-with-the-wrong-type" class="slide level2">
+<h2>Encoding data with the wrong type</h2>
+<p>Encoding the date 2022-01-01T00:01 into a signed integer <span class="math inline">\(2201010001\)</span></p>
+<p>A signed integer is a 32-bit datum that represents an integer in the range:</p>
+<ul>
+<li>Valid range: <span class="math inline">\([-2^{31}, 2^{31}-1] = [-2147483648, 2147483647]\)</span></li>
+<li>However, <span class="math inline">\(2201010001 &gt; 2147483647\)</span></li>
+</ul>
+<p>See also the <a href="https://en.wikipedia.org/wiki/Year_2000_problem">year 2000 problem</a></p>
+
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Bug_de_l%27an_2000.jpg" class="r-stretch quarto-figure-center"><p class="caption">Y2K</p></section>
+<section id="type-inference" class="slide level2">
+<h2>Type inference</h2>
+<p>Pandas automatically infers data types, or they can be specified during creation</p>
+<ul>
+<li><code>np.floatN</code> represents floating numbers (e.g., -3.14)</li>
+<li><code>np.intN</code>/<code>np.uintN</code> represent integers with/without sign (e.g., -42 and 42)
+<ul>
+<li><code>N</code> is the number of needed bits: 8, 16, 32 o 64</li>
+</ul></li>
+<li><code>bool</code>: Boolean values</li>
+<li><code>datetime64</code>, timedelta64: timestamp and time intervals</li>
+<li><code>object</code>: mainly used for strings</li>
+</ul>
+<div id="7d53489b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:40.549224Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:40.549058Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:40.554551Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:40.553934Z&quot;}" data-outputid="97c41b58-041b-4538-c9de-d8315c66f7cd" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>df <span class="op">=</span> pd.DataFrame([</span>
+<span id="cb16-2"><a href=""></a>    [<span class="st">'Cola'</span>,   <span class="st">'low'</span>,    <span class="st">'05/07/2021'</span>, <span class="dv">10</span>, <span class="dv">2</span>],</span>
+<span id="cb16-3"><a href=""></a>    [<span class="st">'Bread'</span>,  <span class="st">'medium'</span>, <span class="st">'05/07/2021'</span>, <span class="dv">25</span>, <span class="dv">1</span>],</span>
+<span id="cb16-4"><a href=""></a>    [<span class="st">'Beer'</span>,   <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, <span class="dv">100</span>, <span class="dv">3</span>],</span>
+<span id="cb16-5"><a href=""></a>    [<span class="st">'Diaper'</span>, <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, np.nan, <span class="dv">4</span>],</span>
+<span id="cb16-6"><a href=""></a>    [<span class="st">'Pizza'</span>,  <span class="st">'medium'</span>, <span class="st">'06/07/2021'</span>, <span class="dv">25</span>, <span class="dv">5</span>]], columns<span class="op">=</span>[<span class="st">'ID'</span>, <span class="st">'PriceBin'</span>, <span class="st">'Date'</span>, <span class="st">'Quantity'</span>, <span class="st">'Review'</span>])</span>
+<span id="cb16-7"><a href=""></a>df.dtypes</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>ID           object
 PriceBin     object
 Date         object
@@ -741,16 +1166,43 @@ Review        int64
 dtype: object</code></pre>
 </div>
 </div>
-<p>Likert scale:</p>
+</section>
+<section id="attribute-types" class="slide level2">
+<h2>Attribute types</h2>
+<p>The attribute type determines which operator can be applied to the attribute</p>
+<ul>
+<li>Equality, sort, sum, ratio, etc.</li>
+<li>It makes sense to compute the average <code>Quantity</code> but not the average <code>ID</code></li>
+</ul>
+<p>Different attribute types</p>
+<ul>
+<li>(Categorical) <strong>Nominal</strong>: can distinguish the values (i.e., check equality)</li>
+<li>(Categorical) <strong>Ordinal</strong>: can distinguish and sort the values</li>
+<li>(Numeric) <strong>Interval</strong>: can distinguish and sort the values, and compute their difference</li>
+<li>(Numeric) <strong>Ratio</strong>: can distinguish and sort the values, and compute their difference and ratio</li>
+</ul>
+</section>
+<section id="the-likert-scale" class="slide level2">
+<h2>The Likert scale</h2>
 <ul>
 <li><code>[*, **, ***, ****, *****]</code></li>
 <li><code>[1, 2, 3, 4, 5]</code></li>
 </ul>
 <p>What about averaging?</p>
+</section>
+<section id="the-likert-scale-1" class="slide level2">
+<h2>The Likert scale</h2>
 <pre><code>Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn't necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn't necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.</code></pre>
 <p>The Likert scale is widely used in social work research, and is commonly constructed with four to seven points. It is usually treated as an interval scale, but strictly speaking it is an ordinal scale, where arithmetic operations cannot be conducted [1]</p>
 <p>[1] Wu, Huiping, and Shing-On Leung. “Can Likert scales be treated as interval scales?—A simulation study.” Journal of social service research 43.4 (2017): 527-532.</p>
-<div id="4d3c26ed" class="cell" data-outputid="4ab0845e-47d5-40e1-f72e-bb8ca33e95f7" data-execution_count="11">
+</section>
+<section id="data-profiling" class="slide level2">
+<h2>Data profiling</h2>
+<div id="4d3c26ed" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:40.556777Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:40.556587Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:40.562834Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:40.562224Z&quot;}" data-outputid="4ab0845e-47d5-40e1-f72e-bb8ca33e95f7" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>df.info()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 5 entries, 0 to 4
@@ -766,8 +1218,16 @@ dtypes: float64(1), int64(1), object(3)
 memory usage: 332.0+ bytes</code></pre>
 </div>
 </div>
-<div id="4061127e" class="cell" data-outputid="b0361495-a3ad-4caf-a648-ff76fcc16a61" data-execution_count="12">
-<div class="cell-output cell-output-display" data-execution_count="12">
+</section>
+<section id="data-profiling-1" class="slide level2">
+<h2>Data profiling</h2>
+<div id="4061127e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:40.564866Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:40.564681Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:40.576840Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:40.576268Z&quot;}" data-outputid="b0361495-a3ad-4caf-a648-ff76fcc16a61" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="co"># To get some statistics (e.g., count, mean, std, min, etc.)</span></span>
+<span id="cb21-2"><a href=""></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -889,92 +1349,18 @@ memory usage: 332.0+ bytes</code></pre>
 </div>
 </div>
 </div>
-<div id="e5cf8058" class="cell" data-outputid="f7338355-f16f-4b8c-a9e8-ad6eb57607be" data-execution_count="13">
-<div class="cell-output cell-output-display" data-execution_count="13">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">ID</th>
-<th data-quarto-table-cell-role="th">PriceBin</th>
-<th data-quarto-table-cell-role="th">Date</th>
-<th data-quarto-table-cell-role="th">Quantity</th>
-<th data-quarto-table-cell-role="th">Review</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Beer</td>
-<td>high</td>
-<td>06/07/2021</td>
-<td>100.0</td>
-<td>3</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Bread</td>
-<td>medium</td>
-<td>05/07/2021</td>
-<td>25.0</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Pizza</td>
-<td>medium</td>
-<td>06/07/2021</td>
-<td>25.0</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">0</td>
-<td>Cola</td>
-<td>low</td>
-<td>05/07/2021</td>
-<td>10.0</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Diaper</td>
-<td>high</td>
-<td>06/07/2021</td>
-<td>NaN</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
 </section></section>
 <section>
-<section id="the-california-housing-case-study" class="title-slide slide level1 center scrollable">
-<h1>The <code>California Housing</code> case study</h1>
-<p>Check also:</p>
-<ul>
-<li>https://www.kaggle.com/camnugent/california-housing-prices</li>
-<li>https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/</li>
-</ul>
-<p>We will use the California Housing Prices dataset. Our task is to use California census data to forecast housing prices given the population, median income, and median housing price for each block group in California. Block groups are the smallest geographical unit for which the US Census Bureau publishes sample data (a block group typically has a population of 600 to 3,000 people). We will just call them “districts” for short.</p>
-<div id="80970f2e" class="cell" data-outputid="a4db48cb-0758-43c6-9843-7997af93fc24" data-execution_count="14">
+<section id="the-california-housing-case-study" class="title-slide slide level1 center">
+<h1>The <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/"><code>California Housing</code></a> case study</h1>
+<p>Our task is to use California census data to forecast housing prices given the population, median income, and median housing price for each block group in California. Block groups are the smallest geographical unit for which the US Census Bureau publishes sample data (a block group typically has a population of 600 to 3,000 people). We will just call them “districts” for short.</p>
+<div id="80970f2e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:40.578860Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:40.578696Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:41.061182Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:41.060527Z&quot;}" data-outputid="a4db48cb-0758-43c6-9843-7997af93fc24" data-execution_count="14">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="co"># df = pd.read_csv("/content/sample_data/california_housing_train.csv", delimiter=",")</span></span>
+<span id="cb22-2"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/w4bo/handsOnDataPipelines/main/materials/datasets/housing.csv"</span>, delimiter<span class="op">=</span><span class="st">","</span>)</span>
+<span id="cb22-3"><a href=""></a>df</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 <style scoped="">
@@ -1158,13 +1544,23 @@ memory usage: 332.0+ bytes</code></pre>
 </div>
 </div>
 </div>
-<p>… and now?</p>
+</section>
+<section id="and-now" class="slide level2">
+<h2>… and now?</h2>
+</section></section>
+<section>
+<section id="section" class="title-slide slide level1 center scrollable">
+<h1></h1>
 <p>Answer some questions:</p>
 <ul>
 <li>Which attributes (i.e., columns) are contained in the dataset?</li>
 <li>Which is their semantics?</li>
 </ul>
-<div id="9817e68c" class="cell" data-outputid="04c88b14-2f93-4f9a-8106-17618b8d4486" data-execution_count="15">
+<div id="9817e68c" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:41.063414Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:41.063240Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:41.067239Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:41.066615Z&quot;}" data-outputid="04c88b14-2f93-4f9a-8106-17618b8d4486" data-execution_count="15">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>df.columns</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>Index(['longitude', 'latitude', 'housing_median_age', 'total_rooms',
        'total_bedrooms', 'population', 'households', 'median_income',
@@ -1185,7 +1581,15 @@ memory usage: 332.0+ bytes</code></pre>
 <li><code>medianHouseValue</code>: Median house value for households within a block (measured in US Dollars)</li>
 <li><code>oceanProximity</code>: Location of the house w.r.t ocean/sea</li>
 </ol>
-<div id="85441c0b" class="cell" data-outputid="e265693e-cebe-495e-8ffa-b3f52ab87670" data-scrolled="true" data-execution_count="16">
+</section>
+<section id="data-profiling-2" class="slide level2">
+<h2>Data profiling</h2>
+<div id="85441c0b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:41.069393Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:41.069230Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:41.076330Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:41.075742Z&quot;}" data-outputid="e265693e-cebe-495e-8ffa-b3f52ab87670" data-scrolled="true" data-execution_count="16">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a><span class="co"># show some statistics on the dataframe</span></span>
+<span id="cb25-2"><a href=""></a>df.info()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 20640 entries, 0 to 20639
@@ -1206,7 +1610,11 @@ dtypes: float64(9), object(1)
 memory usage: 1.6+ MB</code></pre>
 </div>
 </div>
-<div id="e6a24b3a" class="cell" data-outputid="30083088-720f-4a07-9c72-6b4884882c11" data-execution_count="17">
+<div id="e6a24b3a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:41.078587Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:41.078158Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:41.103865Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:41.103299Z&quot;}" data-outputid="30083088-720f-4a07-9c72-6b4884882c11" data-execution_count="17">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 <style scoped="">
@@ -1389,37 +1797,47 @@ memory usage: 1.6+ MB</code></pre>
 </div>
 </div>
 </div>
-<p>… are you satisfied with the understanding?</p>
-<p>… what about data visualization?</p>
-<p>Can we exploit the nature of the data?</p>
-<div id="H0bU-4jprHm3" class="cell" data-outputid="4a7741c4-e3cf-4e03-9dbc-180e9404d2be" data-execution_count="18">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-19-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>What if we integrate open data?</p>
-<p>Can we exploit the nature of the data… again?</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/w4bo/2024-bbs-dm/assets/18005592/06d9fd78-5856-4119-accb-62de0f54b680"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://user-images.githubusercontent.com/18005592/232756567-b706619a-2cc9-4b45-b78f-5172103e0c3b.png"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
 </section>
+<section id="are-you-satisfied-with-the-understanding" class="slide level2">
+<h2>… are you satisfied with the understanding?</h2>
+</section>
+<section id="what-about-data-visualization" class="slide level2">
+<h2>… what about data visualization?</h2>
+<p>Can we exploit the nature of the data?</p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div id="H0bU-4jprHm3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:41.106272Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:41.105935Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:41.712745Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:41.712086Z&quot;}" data-outputid="4a7741c4-e3cf-4e03-9dbc-180e9404d2be" data-execution_count="18">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>df.plot(kind<span class="op">=</span><span class="st">"scatter"</span>, x<span class="op">=</span><span class="st">"longitude"</span>, y<span class="op">=</span><span class="st">"latitude"</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, s<span class="op">=</span>df[<span class="st">"population"</span>]<span class="op">/</span><span class="dv">100</span>, label<span class="op">=</span><span class="st">"population"</span>, figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">3</span>), c<span class="op">=</span><span class="st">"median_house_value"</span>, cmap<span class="op">=</span><span class="st">"jet"</span>, colorbar<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+</details>
+
+</div>
+<img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-19-output-1.png" class="r-stretch"></section>
+<section id="what-if-we-integrate-open-data" class="slide level2">
+<h2>What if we integrate open data?</h2>
+</section>
+<section id="can-we-exploit-the-nature-of-the-data-again" class="slide level2">
+<h2>Can we exploit the nature of the data… again?</h2>
+
+<img data-src="https://github.com/w4bo/2024-bbs-dm/assets/18005592/06d9fd78-5856-4119-accb-62de0f54b680" class="r-stretch quarto-figure-center"><p class="caption">California, USA</p></section>
+<section id="merging-the-data-sources" class="slide level2">
+<h2>Merging the data sources</h2>
+
+<img data-src="https://user-images.githubusercontent.com/18005592/232756567-b706619a-2cc9-4b45-b78f-5172103e0c3b.png" class="r-stretch"></section>
 <section id="memory-usage" class="slide level2">
 <h2>Memory usage</h2>
 <p>What if I change float64 to float32?</p>
-<div id="8f1e7c90" class="cell" data-outputid="6fd22f6c-86b6-42fb-f315-04e221ee229c" data-execution_count="19">
+<div id="8f1e7c90" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:41.715615Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:41.715117Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:41.726341Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:41.725694Z&quot;}" data-outputid="6fd22f6c-86b6-42fb-f315-04e221ee229c" data-execution_count="19">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>dff <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>)  <span class="co"># copy the dataframe</span></span>
+<span id="cb29-2"><a href=""></a><span class="cf">for</span> x <span class="kw">in</span> df.columns:  <span class="co"># iterate over the columns</span></span>
+<span id="cb29-3"><a href=""></a>    <span class="cf">if</span> dff[x].dtype <span class="op">==</span> <span class="st">'float64'</span>:  <span class="co"># if the column has type `float64`</span></span>
+<span id="cb29-4"><a href=""></a>        dff[x] <span class="op">=</span> dff[x].astype(<span class="st">'float32'</span>)  <span class="co"># ... change it to `float32`</span></span>
+<span id="cb29-5"><a href=""></a>dff.info()  <span class="co"># show some statistics on the dataframe</span></span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 20640 entries, 0 to 20639
@@ -1444,12 +1862,30 @@ memory usage: 887.0+ KB</code></pre>
 <section id="missing-values" class="slide level2">
 <h2>Missing values</h2>
 <p>There are some missing values for <code>total_bedrooms</code>. What should we do?</p>
-<p>Most Machine Learning algorithms cannot work with missing features. We have three options: - Get rid of the corresponding districts (i.e., drop the rows) - <code>df.dropna(subset=["total_bedrooms"])</code> - Get rid of the whole attribute (i.e., drop the columns) - <code>df.drop("total_bedrooms", axis=1</code>) - Set the values to some value (zero, the mean, the median, etc.) - <code>df["total_bedrooms"].fillna(df["total_bedrooms"].median())</code></p>
+<p>Most Machine Learning algorithms cannot work with missing features. We have three main options:</p>
+<ul>
+<li>Get rid of the corresponding districts (i.e., drop the rows)
+<ul>
+<li><code>df.dropna(subset=["total_bedrooms"])</code></li>
+</ul></li>
+<li>Get rid of the whole attribute (i.e., drop the columns)
+<ul>
+<li><code>df.drop("total_bedrooms", axis=1)</code></li>
+</ul></li>
+<li>Set the values to some value (zero, the mean, the median, etc.)
+<ul>
+<li><code>df["total_bedrooms"].fillna(df["total_bedrooms"].median())</code></li>
+</ul></li>
+</ul>
 </section>
 <section id="non-numeric-attributes" class="slide level2">
 <h2>Non-numeric attributes</h2>
-<p><code>ocean_proximity</code> is a text attribute so we cannot compute its median. Some options: - Get rid of the whole attribute. (<code>df.drop("ocean_proximity", axis=1</code>) - Change from categorical to ordinal (e.g., <code>NEAR BAY</code> = 0, <code>INLAND</code> = 1) - Can foresee any problem in this? - ML algorithms will assume that two nearby values are more similar than two distant values. This may be fine in some cases (e.g., for ordered categories such as “bad”, “average”, “good”, “excellent”), but it is obviously not the case for the ocean_proximity column (for example, categories 0 and 4 are clearly more similar than categories 0 and 1). - Change from categorical to one hot encoding - To fix this issue, a common solution is to create one binary attribute per category: one attribute equal to 1 when the category is “&lt;1H OCEAN” (and 0 otherwise), another attribute equal to 1 when the category is “INLAND” (and 0 otherwise), and so on. This is called one-hot encoding, because only one attribute will be equal to 1 (hot), while the others will be 0 (cold). The new attributes are sometimes called dummy attributes</p>
-<div id="3297de8e" class="cell" data-outputid="35f28ff1-8591-4d7f-e767-fd3bd4a992b2" data-execution_count="20">
+<p><code>ocean_proximity</code> is a text attribute, but not all machine libraries can manipulated textual data types.</p>
+<div id="3297de8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:41.728947Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:41.728433Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:41.734082Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:41.733661Z&quot;}" data-outputid="35f28ff1-8591-4d7f-e767-fd3bd4a992b2" data-execution_count="20">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].value_counts()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>ocean_proximity
 &lt;1H OCEAN     9136
@@ -1460,207 +1896,104 @@ ISLAND           5
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="xkOk2VEdVkde" class="cell" data-outputid="1cb46761-f8c9-4f44-83f5-a0340aded4a2" data-execution_count="21">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-22-output-1.png"></p>
-</figure>
+<div id="xkOk2VEdVkde" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:41.736389Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:41.735923Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:41.876895Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:41.876194Z&quot;}" data-outputid="1cb46761-f8c9-4f44-83f5-a0340aded4a2" data-execution_count="21">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].hist()</span></code></pre></div>
+</details>
+
 </div>
+<img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-22-output-1.png" class="r-stretch"></section>
+<section id="visualization" class="slide level2">
+<h2>Visualization</h2>
+<div id="570f14ff" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:41.879460Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:41.879105Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:42.892562Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:42.891885Z&quot;}" data-outputid="36b52c93-1194-4c3c-d623-9e9246e5c489" data-scrolled="true" data-execution_count="22">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb34-2"><a href=""></a><span class="op">%</span>matplotlib inline</span>
+<span id="cb34-3"><a href=""></a>df.hist(bins<span class="op">=</span><span class="dv">50</span>, figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">15</span>))</span>
+<span id="cb34-4"><a href=""></a>plt.show()</span></code></pre></div>
+</details>
+
 </div>
-</div>
-<h3 id="visualization">Visualization</h3>
-<div id="570f14ff" class="cell" data-outputid="36b52c93-1194-4c3c-d623-9e9246e5c489" data-scrolled="true" data-execution_count="22">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-23-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Open questions:</p>
+<img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-23-output-1.png" class="r-stretch"></section>
+<section id="open-questions" class="slide level2">
+<h2>Open questions</h2>
 <ul>
 <li><code>median_income</code> should be in dollars. However, it has a strange range. Why? “you are told that the data has been scaled and capped at 15 (actually 15.0001) for higher median incomes, and at 0.5 (actually 0.4999) for lower median incomes. The numbers represent roughly tens of thousands of dollars. The numbers represent roughly tens of thousands of dollars”</li>
 <li><code>housing_median_age</code> and <code>median_house_value</code> are capped. As to <code>median_house_value</code>, this is a serious problem since it is your target attribute (your labels). Your Machine Learning algorithms may learn that prices never go beyond that limit. You need to check with your client team (the team that will use your system’s output) to see if this is a problem or not. If they tell you that they need precise predictions even beyond 500,000USD, then you have mainly two options: (a) collect proper labels for the districts whose labels were capped, (b) remove those districts from the training set.”</li>
 <li>These attributes have very different scales. Should we scale them?</li>
 <li>Many histograms are tail heavy: they extend much farther to the right of the median than to the left. This may make it a bit harder for some Machine Learning algorithms to detect patterns</li>
 </ul>
-<h3 id="relationships-between-variables">Relationships between variables</h3>
+</section>
+<section id="relationships-between-variables" class="slide level2">
+<h2>Relationships between variables</h2>
 <ul>
 <li>A grid of Axes such that each numeric variable in data will by shared across the y-axes across a single row and the x-axes across a single column</li>
 <li>The diagonal plots are treated differently: a univariate distribution plot is drawn to show the marginal distribution of the data in each column.</li>
 </ul>
-<div id="jFvRyNbGV36l" class="cell" data-outputid="0fcd45f0-398b-4861-e26f-189d1fa8ccc9" data-execution_count="23">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-24-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Check correlations and intervals</p>
-<div id="FYZ7EdT2V8Le" class="cell" data-outputid="04b0cc64-1273-4576-8c6e-ddf3c42b80e3" data-execution_count="24">
-<div class="cell-output cell-output-display" data-execution_count="24">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">longitude</th>
-<th data-quarto-table-cell-role="th">latitude</th>
-<th data-quarto-table-cell-role="th">housing_median_age</th>
-<th data-quarto-table-cell-role="th">total_rooms</th>
-<th data-quarto-table-cell-role="th">total_bedrooms</th>
-<th data-quarto-table-cell-role="th">population</th>
-<th data-quarto-table-cell-role="th">households</th>
-<th data-quarto-table-cell-role="th">median_income</th>
-<th data-quarto-table-cell-role="th">median_house_value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">longitude</td>
-<td>1.0***</td>
-<td>-0.92***</td>
-<td>-0.11***</td>
-<td>0.04***</td>
-<td>0.07***</td>
-<td>0.1***</td>
-<td>0.06***</td>
-<td>-0.02**</td>
-<td>-0.05***</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">latitude</td>
-<td>-0.92***</td>
-<td>1.0***</td>
-<td>0.01</td>
-<td>-0.04***</td>
-<td>-0.07***</td>
-<td>-0.11***</td>
-<td>-0.07***</td>
-<td>-0.08***</td>
-<td>-0.14***</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">housing_median_age</td>
-<td>-0.11***</td>
-<td>0.01</td>
-<td>1.0***</td>
-<td>-0.36***</td>
-<td>-0.32***</td>
-<td>-0.3***</td>
-<td>-0.3***</td>
-<td>-0.12***</td>
-<td>0.11***</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">total_rooms</td>
-<td>0.04***</td>
-<td>-0.04***</td>
-<td>-0.36***</td>
-<td>1.0***</td>
-<td>0.93***</td>
-<td>0.86***</td>
-<td>0.92***</td>
-<td>0.2***</td>
-<td>0.13***</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">total_bedrooms</td>
-<td>0.07***</td>
-<td>-0.07***</td>
-<td>-0.32***</td>
-<td>0.93***</td>
-<td>1.0***</td>
-<td>0.88***</td>
-<td>0.98***</td>
-<td>-0.01</td>
-<td>0.05***</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">population</td>
-<td>0.1***</td>
-<td>-0.11***</td>
-<td>-0.3***</td>
-<td>0.86***</td>
-<td>0.88***</td>
-<td>1.0***</td>
-<td>0.91***</td>
-<td>0.0</td>
-<td>-0.02***</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">households</td>
-<td>0.06***</td>
-<td>-0.07***</td>
-<td>-0.3***</td>
-<td>0.92***</td>
-<td>0.98***</td>
-<td>0.91***</td>
-<td>1.0***</td>
-<td>0.01*</td>
-<td>0.07***</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">median_income</td>
-<td>-0.02**</td>
-<td>-0.08***</td>
-<td>-0.12***</td>
-<td>0.2***</td>
-<td>-0.01</td>
-<td>0.0</td>
-<td>0.01*</td>
-<td>1.0***</td>
-<td>0.69***</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">median_house_value</td>
-<td>-0.05***</td>
-<td>-0.14***</td>
-<td>0.11***</td>
-<td>0.13***</td>
-<td>0.05***</td>
-<td>-0.02***</td>
-<td>0.07***</td>
-<td>0.69***</td>
-<td>1.0***</td>
-</tr>
-</tbody>
-</table>
+<div id="jFvRyNbGV36l" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:42.895333Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:42.894794Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:50.440596Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:50.440033Z&quot;}" data-outputid="0fcd45f0-398b-4861-e26f-189d1fa8ccc9" data-execution_count="23">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb35-1"><a href=""></a>tmp <span class="op">=</span> df[[<span class="st">"median_income"</span>, <span class="st">"housing_median_age"</span>, <span class="st">"median_house_value"</span>, <span class="st">"households"</span>, <span class="st">"population"</span>, <span class="st">"total_rooms"</span>]]</span>
+<span id="cb35-2"><a href=""></a>sns.pairplot(tmp.sample(n<span class="op">=</span><span class="dv">1000</span>, random_state<span class="op">=</span><span class="dv">42</span>), hue<span class="op">=</span><span class="st">'median_house_value'</span>, markers<span class="op">=</span><span class="st">'+'</span>)</span>
+<span id="cb35-3"><a href=""></a>plt.show()</span></code></pre></div>
+</details>
 
 </div>
+<img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-24-output-1.png" class="r-stretch"></section>
+<section id="check-correlations-and-intervals" class="slide level2">
+<h2>Check correlations and intervals</h2>
+<div id="FYZ7EdT2V8Le" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:50.443317Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:50.442945Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:50.450276Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:50.449748Z&quot;}" data-outputid="04b0cc64-1273-4576-8c6e-ddf3c42b80e3" data-execution_count="24">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span>
+<span id="cb36-2"><a href=""></a>rho <span class="op">=</span> df.corr(method<span class="op">=</span><span class="st">'pearson'</span>, numeric_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb36-3"><a href=""></a><span class="co"># pval = df.corr(method=lambda x, y: pearsonr(x, y)[1], numeric_only=True) - np.eye(*rho.shape)</span></span>
+<span id="cb36-4"><a href=""></a><span class="co"># p = pval.map(lambda x: ''.join(['*' for t in [0.01, 0.05, 0.1] if x &lt;= t]))</span></span>
+<span id="cb36-5"><a href=""></a><span class="co"># rho.round(2).astype(str) + p</span></span></code></pre></div>
+</details>
 </div>
+<div id="EmnZ1P4uV9H1" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:50.452546Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:50.452195Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:50.639610Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:50.638928Z&quot;}" data-outputid="a17789f2-b177-426c-95ef-158102588593" data-execution_count="25">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb37-1"><a href=""></a>min_corr <span class="op">=</span> <span class="fl">0.3</span></span>
+<span id="cb37-2"><a href=""></a>kot <span class="op">=</span> rho[(<span class="bu">abs</span>(rho) <span class="op">&gt;=</span> min_corr) <span class="op">&amp;</span> (rho <span class="op">&lt;</span> <span class="dv">1</span>)]</span>
+<span id="cb37-3"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb37-4"><a href=""></a>sns.heatmap(kot, cmap<span class="op">=</span>sns.color_palette(<span class="st">"coolwarm"</span>, as_cmap<span class="op">=</span><span class="va">True</span>))</span></code></pre></div>
+</details>
+
 </div>
-<div id="EmnZ1P4uV9H1" class="cell" data-outputid="a17789f2-b177-426c-95ef-158102588593" data-execution_count="25">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-26-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+<img data-src="lab-01-dataunderstanding_files/figure-revealjs/cell-26-output-1.png" class="r-stretch"></section>
 <section id="exercise-1" class="slide level2">
 <h2>Exercise 1</h2>
-<div id="ef4ed12b" class="cell" data-outputid="be125029-e59c-485d-99ad-e077731c2fb6" data-execution_count="26">
+<div id="ef4ed12b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:50.642237Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:50.641863Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:50.650626Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:50.650036Z&quot;}" data-outputid="be125029-e59c-485d-99ad-e077731c2fb6" data-execution_count="26">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href=""></a>num_df <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>).drop(columns<span class="op">=</span>[<span class="st">"ocean_proximity"</span>])  <span class="co"># do not change this line</span></span>
+<span id="cb38-2"><a href=""></a></span>
+<span id="cb38-3"><a href=""></a><span class="co"># Filling in (i.e., impute) missing values with the median value</span></span>
+<span id="cb38-4"><a href=""></a>num_df[<span class="st">"total_bedrooms"</span>] <span class="op">=</span> <span class="dv">1</span>  <span class="co"># change `1` with the proper solution</span></span>
+<span id="cb38-5"><a href=""></a></span>
+<span id="cb38-6"><a href=""></a><span class="co"># Add a new column: population_per_household = population / households</span></span>
+<span id="cb38-7"><a href=""></a>num_df[<span class="st">"population_per_household"</span>] <span class="op">=</span> <span class="dv">1</span>  <span class="co"># change `1` with the proper solution</span></span>
+<span id="cb38-8"><a href=""></a></span>
+<span id="cb38-9"><a href=""></a><span class="co"># Add a new column: rooms_per_household = total_rooms / households</span></span>
+<span id="cb38-10"><a href=""></a>num_df[<span class="st">"rooms_per_household"</span>] <span class="op">=</span> <span class="dv">1</span>  <span class="co"># change `1` with the proper solution</span></span>
+<span id="cb38-11"><a href=""></a></span>
+<span id="cb38-12"><a href=""></a><span class="co"># Add a new column: bedrooms_per_room = total_bedrooms / total_rooms</span></span>
+<span id="cb38-13"><a href=""></a>num_df[<span class="st">"bedrooms_per_room"</span>] <span class="op">=</span> <span class="dv">1</span>  <span class="co"># change `1` with the proper solution</span></span>
+<span id="cb38-14"><a href=""></a></span>
+<span id="cb38-15"><a href=""></a><span class="co"># Apply standardization to all the numeric columns</span></span>
+<span id="cb38-16"><a href=""></a>num_df <span class="op">=</span> pd.DataFrame()  <span class="co"># change `pd.DataFrame()` with the proper solution</span></span>
+<span id="cb38-17"><a href=""></a></span>
+<span id="cb38-18"><a href=""></a><span class="co"># One hot encode `ocean_proximity` since it is a categorical attribute</span></span>
+<span id="cb38-19"><a href=""></a><span class="co"># change `pd.DataFrame()` with the proper solution (hint: pd.get_dummies)</span></span>
+<span id="cb38-20"><a href=""></a>cat_df <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb38-21"><a href=""></a></span>
+<span id="cb38-22"><a href=""></a>clean_df <span class="op">=</span> pd.concat([num_df, cat_df], axis<span class="op">=</span><span class="dv">1</span>)  <span class="co"># do not change this line</span></span>
+<span id="cb38-23"><a href=""></a>clean_df</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <div>
 <style scoped="">
@@ -1699,6 +2032,12 @@ Name: count, dtype: int64</code></pre>
 <li>Print the mean value per <code>ocean_proximity</code> for every column</li>
 <li>Print the mean, min and max values value per <code>ocean_proximity</code> for every column</li>
 </ol>
+<div id="iURuzXemMzma" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-08-23T10:00:50.652788Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-08-23T10:00:50.652603Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-08-23T10:00:50.655246Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-08-23T10:00:50.654657Z&quot;}" data-execution_count="27">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href=""></a><span class="co"># Write your code here</span></span></code></pre></div>
+</details>
+</div>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
@@ -1938,58 +2277,6 @@ Name: count, dtype: int64</code></pre>
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
       });
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {

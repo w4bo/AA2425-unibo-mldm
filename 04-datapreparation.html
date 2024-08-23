@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="04-datapreparation_files/libs/clipboard/clipboard.min.js"></script>
 <script src="04-datapreparation_files/libs/quarto-html/tabby.min.js"></script>
 <script src="04-datapreparation_files/libs/quarto-html/popper.min.js"></script>
 <script src="04-datapreparation_files/libs/quarto-html/tippy.umd.min.js"></script>
@@ -345,7 +344,22 @@
   <div class="reveal">
     <div class="slides">
 
-
+<section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#/data-preparation" id="/toc-data-preparation">Data Preparation</a></li>
+<li><a href="#/select-data" id="/toc-select-data">Select Data</a></li>
+<li><a href="#/clean-data" id="/toc-clean-data">Clean Data</a></li>
+<li><a href="#/construct-data" id="/toc-construct-data">Construct Data</a></li>
+<li><a href="#/integrate-data" id="/toc-integrate-data">Integrate Data</a></li>
+<li><a href="#/format-data" id="/toc-format-data">Format Data</a></li>
+<li><a href="#/data-variety" id="/toc-data-variety">Data variety</a></li>
+<li><a href="#/main-python-libraries" id="/toc-main-python-libraries">Main Python Libraries</a></li>
+<li><a href="#/references" id="/toc-references">References</a></li>
+</ul>
+</nav>
+</section>
 <section id="data-preparation" class="title-slide slide level1 center">
 <h1>Data Preparation</h1>
 <p>The data preparation phase covers all activities to construct the final data set or the data that will be fed into the modeling tool(s) from the initial raw data.</p>
@@ -673,58 +687,6 @@ Giovanelli, Joseph, Besim Bilalli, and Alberto Abelló Gamazo. 2021. <span>“Ef
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
       });
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="lab-04-datapreparation_files/libs/clipboard/clipboard.min.js"></script>
-<script src="lab-04-datapreparation_files/libs/quarto-html/tabby.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="lab-04-datapreparation_files/libs/quarto-html/tabby.min.js"></script>
 <script src="lab-04-datapreparation_files/libs/quarto-html/popper.min.js"></script>
 <script src="lab-04-datapreparation_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-04-datapreparation_files/libs/quarto-html/tippy.css" rel="stylesheet">
@@ -28,6 +27,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="lab-04-datapreparation_files/libs/revealjs/dist/theme/quarto.css">
   <link href="lab-04-datapreparation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -334,6 +398,42 @@
 <div class="quarto-title-authors">
 </div>
 
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li></li>
+<li><a href="#/integrated-analytics-lab" id="/toc-integrated-analytics-lab">Integrated analytics lab</a>
+<ul>
+<li><a href="#/the-crispdm-model" id="/toc-the-crispdm-model">The CRISPDM model</a></li>
+<li><a href="#/domain-understanding" id="/toc-domain-understanding">Domain understanding</a></li>
+<li><a href="#/data-collection-understanding" id="/toc-data-collection-understanding">Data collection &amp; understanding</a></li>
+<li><a href="#/data-preprocessing" id="/toc-data-preprocessing">Data preprocessing</a>
+<ul>
+<li><a href="#/data-preprocessing" id="/toc-data-variety">Data variety</a></li>
+<li><a href="#/data-preprocessing" id="/toc-relational-data">Relational data</a></li>
+<li><a href="#/data-preprocessing" id="/toc-understanding-data-types">Understanding data types</a></li>
+<li><a href="#/data-preprocessing" id="/toc-data-distribution">Data distribution</a></li>
+<li><a href="#/data-preprocessing" id="/toc-missing-values">Missing values</a></li>
+<li><a href="#/data-preprocessing" id="/toc-feature-engineering">Feature engineering</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#/the-housing-case-study" id="/toc-the-housing-case-study">The <code>Housing</code> case study</a>
+<ul>
+<li><a href="#/visualization" id="/toc-visualization">Visualization</a></li>
+</ul></li>
+</ul>
+</nav>
+</section>
+<section class="slide level2">
+
+<div id="c57e9caa" class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> warnings</span>
+<span id="cb1-2"><a href=""></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span></code></pre></div>
+</details>
+</div>
 </section>
 <section>
 <section id="integrated-analytics-lab" class="title-slide slide level1 center scrollable">
@@ -469,14 +569,35 @@
 <li>By convention, the package pandas is imported as “pd”</li>
 </ul>
 <div id="aacb3166" class="cell" data-outputid="1951f757-e273-4f1b-917e-4efae6d439ce">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href=""></a><span class="bu">print</span>(pd.__version__)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>1.5.3</code></pre>
 </div>
 </div>
 <p>… plus we will use other libraries</p>
+<div id="3932b785" class="cell" data-scrolled="false">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># fast operations on arrays</span></span>
+<span id="cb4-2"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns  <span class="co"># plots</span></span>
+<span id="cb4-3"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># plots</span></span></code></pre></div>
+</details>
+</div>
 <p>Pandas relies on DataFrame and Series</p>
 <p><strong>DataFrame</strong>: - Two-dimensional, size-mutable, potentially heterogeneous tabular data. - The primary pandas data structure. - Data structure also contains labeled axes (rows and columns). - Arithmetic operations align on both row and column labels. - Can be thought of as a dict-like container for Series objects. - https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html</p>
 <div id="74c37032" class="cell" data-outputid="2f9c1daf-d708-4db5-dce3-d9ecce38621c">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co"># create a numeric dataframe/table</span></span>
+<span id="cb5-2"><a href=""></a>df <span class="op">=</span> pd.DataFrame([[i <span class="op">+</span> j <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)] <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)],</span>
+<span id="cb5-3"><a href=""></a>                  index<span class="op">=</span>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)],</span>
+<span id="cb5-4"><a href=""></a>                  columns<span class="op">=</span><span class="bu">list</span>(<span class="st">'abcdefghij'</span>))</span>
+<span id="cb5-5"><a href=""></a>df</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 <style scoped="">
@@ -601,6 +722,10 @@
 <li>https://pandas.pydata.org/docs/reference/api/pandas.Series.html</li>
 </ul>
 <div id="205a800c" class="cell" data-outputid="47cffeeb-f573-4172-a11d-882a38af5288">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>a    1
 b    2
@@ -609,6 +734,11 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div id="a4ed958f" class="cell" data-outputid="cab6ce89-86c4-4761-b6dc-feef9bed5654">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co"># Select a column (i.e., a series) as in a SQL projection</span></span>
+<span id="cb8-2"><a href=""></a>df[<span class="st">'a'</span>]</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>0    0
 1    1
@@ -619,6 +749,12 @@ Name: a, dtype: int64</code></pre>
 </div>
 </div>
 <div id="694287e9" class="cell" data-outputid="39058a53-7aaa-42d3-e3b6-c4fa0687813b">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="co"># Add another column to the dataframe</span></span>
+<span id="cb10-2"><a href=""></a>df[<span class="st">'k'</span>] <span class="op">=</span> df[<span class="st">'a'</span>] <span class="op">*</span> df[<span class="st">'b'</span>]</span>
+<span id="cb10-3"><a href=""></a>df</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 <style scoped="">
@@ -731,6 +867,12 @@ Name: a, dtype: int64</code></pre>
 </div>
 <p>… doing some element-wise operations</p>
 <div id="50a5bde6" class="cell" data-outputid="6de01b5a-6ce6-4b9c-846a-86c357862b0b">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>ser_a <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])</span>
+<span id="cb11-2"><a href=""></a>ser_b <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"b"</span>, <span class="st">"a"</span>, <span class="st">"c"</span>])</span>
+<span id="cb11-3"><a href=""></a>ser_a <span class="op">+</span> ser_b</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>a    3
 b    3
@@ -739,6 +881,10 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div id="66690943" class="cell" data-outputid="211e5131-722c-477f-8895-6234313446ba">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>ser_a <span class="op">-</span> ser_b</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>a   -1
 b    1
@@ -747,6 +893,10 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div id="eff604a1" class="cell" data-outputid="7e34096f-a073-4c86-dae9-0db6ce8ffcab">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>ser_a <span class="op">*</span> ser_b</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>a    2
 b    2
@@ -755,6 +905,10 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div id="082224b9" class="cell" data-outputid="d4392010-a001-436b-8f6d-fe9412f747af">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>ser_a <span class="op">/</span> ser_b</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>a    0.5
 b    2.0
@@ -764,6 +918,16 @@ dtype: float64</code></pre>
 </div>
 <p>… doing some aggregation</p>
 <div id="b2c64c8e" class="cell" data-outputid="24a4f1aa-cb59-423c-82d5-3a9cc4b33eb5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>ser_c <span class="op">=</span> df[<span class="st">"a"</span>]</span>
+<span id="cb19-2"><a href=""></a>ser_c.count()  <span class="co"># =&gt; 5</span></span>
+<span id="cb19-3"><a href=""></a>ser_c.<span class="bu">sum</span>()    <span class="co"># =&gt; 10</span></span>
+<span id="cb19-4"><a href=""></a>ser_c.mean()   <span class="co"># =&gt; 2.0</span></span>
+<span id="cb19-5"><a href=""></a>ser_c.<span class="bu">max</span>()    <span class="co"># =&gt; 4</span></span>
+<span id="cb19-6"><a href=""></a>ser_c.<span class="bu">min</span>()    <span class="co"># =&gt; 0</span></span>
+<span id="cb19-7"><a href=""></a>ser_c.idxmax() <span class="co"># =&gt; 4</span></span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>4</code></pre>
 </div>
@@ -785,6 +949,16 @@ dtype: float64</code></pre>
 <p>What are the implications of a data type?</p>
 <p>Pandas automatically infers data types, or they can be specified during creation - Common data types are numeric ones - <code>np.floatN</code> represents floating numbers (e.g., -3.14) - <code>np.intN</code>/<code>np.uintN</code> represent integers with/without sign (-42 and 42) - <code>N</code> is the number of needed bits: 8, 16, 32 o 64 - Other data types - <code>bool</code>: Boolean values - <code>datetime64</code>, timedelta64: timestamp and time intervals - <code>object</code>: mainly used for strings</p>
 <div id="7d53489b" class="cell" data-outputid="1239ebcd-f0d4-4633-8580-e38db6445c7b">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a>df <span class="op">=</span> pd.DataFrame([</span>
+<span id="cb21-2"><a href=""></a>    [<span class="st">'Cola'</span>,   <span class="st">'low'</span>,    <span class="st">'05/07/2021'</span>, <span class="dv">10</span>, <span class="dv">2</span>],</span>
+<span id="cb21-3"><a href=""></a>    [<span class="st">'Bread'</span>,  <span class="st">'medium'</span>, <span class="st">'05/07/2021'</span>, <span class="dv">25</span>, <span class="dv">1</span>],</span>
+<span id="cb21-4"><a href=""></a>    [<span class="st">'Beer'</span>,   <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, <span class="dv">100</span>, <span class="dv">3</span>],</span>
+<span id="cb21-5"><a href=""></a>    [<span class="st">'Diaper'</span>, <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, np.nan, <span class="dv">4</span>],</span>
+<span id="cb21-6"><a href=""></a>    [<span class="st">'Pizza'</span>,  <span class="st">'medium'</span>, <span class="st">'06/07/2021'</span>, <span class="dv">25</span>, <span class="dv">5</span>]], columns<span class="op">=</span>[<span class="st">'ID'</span>, <span class="st">'PriceBin'</span>, <span class="st">'Date'</span>, <span class="st">'Quantity'</span>, <span class="st">'Review'</span>])</span>
+<span id="cb21-7"><a href=""></a>df</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 <style scoped="">
@@ -868,6 +1042,10 @@ dtype: float64</code></pre>
 <li>(Numeric) <strong>Ratio</strong>: can distinguish and sort the values, and compute their difference and ratio</li>
 </ul>
 <div id="41926ed4" class="cell" data-outputid="f7cde6c8-ff89-45a1-f4f8-e966dd3e460f">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>df.dtypes</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>ID           object
 PriceBin     object
@@ -887,6 +1065,11 @@ dtype: object</code></pre>
 <p>The Likert scale is widely used in social work research, and is commonly constructed with four to seven points. It is usually treated as an interval scale, but strictly speaking it is an ordinal scale, where arithmetic operations cannot be conducted [1]</p>
 <p>[1] Wu, Huiping, and Shing-On Leung. “Can Likert scales be treated as interval scales?—A simulation study.” Journal of social service research 43.4 (2017): 527-532.</p>
 <div id="4d3c26ed" class="cell" data-outputid="19aafab3-3716-473f-b4c4-0191be9d2d92">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a><span class="co"># data profiling</span></span>
+<span id="cb25-2"><a href=""></a>df.info()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 5 entries, 0 to 4
@@ -903,6 +1086,11 @@ memory usage: 328.0+ bytes</code></pre>
 </div>
 </div>
 <div id="4061127e" class="cell" data-outputid="f8129973-442e-4c6a-bd42-a6a6205e7575">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="co"># To get some statistics (e.g., count, mean, std, min, etc.)</span></span>
+<span id="cb27-2"><a href=""></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 <style scoped="">
@@ -1026,6 +1214,20 @@ memory usage: 328.0+ bytes</code></pre>
 </div>
 </div>
 <div id="e5cf8058" class="cell" data-outputid="ddb5df9a-942a-4f13-bcaa-42db1d3b8d90">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="co"># Get the headers (i.e., the column names)</span></span>
+<span id="cb28-2"><a href=""></a>df.columns</span>
+<span id="cb28-3"><a href=""></a></span>
+<span id="cb28-4"><a href=""></a><span class="co"># Get just the first two rows</span></span>
+<span id="cb28-5"><a href=""></a>df.head(<span class="dv">2</span>)</span>
+<span id="cb28-6"><a href=""></a></span>
+<span id="cb28-7"><a href=""></a><span class="co"># Get just the last two rows</span></span>
+<span id="cb28-8"><a href=""></a>df.tail(<span class="dv">2</span>)</span>
+<span id="cb28-9"><a href=""></a></span>
+<span id="cb28-10"><a href=""></a><span class="co"># Sort the dataframe by columns</span></span>
+<span id="cb28-11"><a href=""></a>df.sort_values(by<span class="op">=</span>[<span class="st">'Quantity'</span>, <span class="st">'ID'</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>])</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 <style scoped="">
@@ -1102,16 +1304,31 @@ memory usage: 328.0+ bytes</code></pre>
 </div>
 <h3 id="data-distribution">Data distribution</h3>
 <div id="bff9fa20" class="cell" data-outputid="9cb87830-5f5f-4987-cd50-a77e0a7bf13c">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a><span class="co"># array with distinct values sorted by first appearance</span></span>
+<span id="cb29-2"><a href=""></a>df[<span class="st">"Quantity"</span>].unique()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>array([ 10.,  25., 100.,  nan])</code></pre>
 </div>
 </div>
 <div id="3041345b" class="cell" data-outputid="6d4bcb56-68b7-40c8-99d8-3782e5772e7d">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a><span class="co"># quantity of unique values</span></span>
+<span id="cb31-2"><a href=""></a>df[<span class="st">"Quantity"</span>].nunique()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>3</code></pre>
 </div>
 </div>
 <div id="5f596a69" class="cell" data-outputid="44d8d426-9c8c-4511-de07-b44e7503c563">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href=""></a><span class="co"># return a new series that associates each value with its number of occurrences, sorted by frequency</span></span>
+<span id="cb33-2"><a href=""></a>df[<span class="st">"Quantity"</span>].value_counts()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>25.0     2
 10.0     1
@@ -1120,6 +1337,10 @@ Name: Quantity, dtype: int64</code></pre>
 </div>
 </div>
 <div id="a1d99dac" class="cell" data-outputid="f189c383-1b0e-4bbe-e8cd-3a51396c94f9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb35-1"><a href=""></a>df[<span class="st">"Quantity"</span>].hist(bins<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1158,6 +1379,14 @@ Name: Quantity, dtype: int64</code></pre>
 <p>Which problems arise from missing values?</p></li>
 </ul>
 <div id="5c2f6e66" class="cell" data-outputid="ee49947f-3a97-4bed-b0e8-728d41398e17">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="co"># add the column "isna", True if the value is NaN</span></span>
+<span id="cb38-2"><a href=""></a>df[<span class="st">"isna"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].isna()</span>
+<span id="cb38-3"><a href=""></a><span class="co"># add the column "notna", False if the value is NaN</span></span>
+<span id="cb38-4"><a href=""></a>df[<span class="st">"notna"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].notna()</span>
+<span id="cb38-5"><a href=""></a>df[[<span class="st">"Quantity"</span>, <span class="st">"isna"</span>, <span class="st">"notna"</span>]]</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <div>
 <style scoped="">
@@ -1229,6 +1458,12 @@ Name: Quantity, dtype: int64</code></pre>
 <p>What are the effects?</p>
 <p>What if we have temporal attributes?</p>
 <div id="fba624ad" class="cell" data-outputid="bdf4b6a0-2799-4810-85fe-cbd66ad84458">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href=""></a><span class="co"># fill the missing value with the average</span></span>
+<span id="cb39-2"><a href=""></a>df[<span class="st">"Quantity_imputed"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].fillna(df[<span class="st">"Quantity"</span>].mean())  <span class="co"># fillna replaces NA values</span></span>
+<span id="cb39-3"><a href=""></a>df[[<span class="st">"Quantity"</span>, <span class="st">"Quantity_imputed"</span>]]</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 <style scoped="">
@@ -1286,6 +1521,11 @@ Name: Quantity, dtype: int64</code></pre>
 </div>
 </div>
 <div id="06d6b70f" class="cell" data-scrolled="true" data-outputid="46f4b059-b581-419e-f123-a8305fedb482">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href=""></a><span class="co"># fill the missing value with the previous (not NaN) value</span></span>
+<span id="cb40-2"><a href=""></a>df[<span class="st">"Quantity"</span>].fillna(method<span class="op">=</span><span class="st">"ffill"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>0     10.0
 1     25.0
@@ -1296,6 +1536,11 @@ Name: Quantity, dtype: float64</code></pre>
 </div>
 </div>
 <div id="0e8f5d63" class="cell" data-scrolled="true" data-outputid="58f7b67d-31e5-4f55-9cae-cc61d5ecbf9b">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb42-1"><a href=""></a><span class="co"># fill the missing value with the following (not NaN) value</span></span>
+<span id="cb42-2"><a href=""></a>df[<span class="st">"Quantity"</span>].fillna(method<span class="op">=</span><span class="st">"bfill"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>0     10.0
 1     25.0
@@ -1306,6 +1551,10 @@ Name: Quantity, dtype: float64</code></pre>
 </div>
 </div>
 <div id="1aebd691" class="cell" data-scrolled="true" data-outputid="cbda8cac-b285-455f-a29e-900e3e95fb6b">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb44-1"><a href=""></a>df[<span class="st">"Quantity"</span>].dropna()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>0     10.0
 1     25.0
@@ -1315,6 +1564,10 @@ Name: Quantity, dtype: float64</code></pre>
 </div>
 </div>
 <div id="3ba31db2" class="cell" data-outputid="c89a392a-b772-40d0-bbf8-8092e12ad51a">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb46-1"><a href=""></a>df.dropna()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 <style scoped="">
@@ -1445,6 +1698,12 @@ Name: Quantity, dtype: float64</code></pre>
 </ul>
 <p>We will use the California Housing Prices dataset. Our task is to use California census data to forecast housing prices given the population, median income, and median housing price for each block group in California. Block groups are the smallest geographical unit for which the US Census Bureau publishes sample data (a block group typically has a population of 600 to 3,000 people). We will just call them “districts” for short</p>
 <div id="80970f2e" class="cell" data-outputid="4212b5e3-324c-4441-a730-152b4d0de4ea">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb47-1"><a href=""></a><span class="co"># df = pd.read_csv("datasets/2022-bbs-dsaa-housing.csv", delimiter=",")</span></span>
+<span id="cb47-2"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/w4bo/handsOnDataPipelines/main/materials/datasets/housing.csv"</span>, delimiter<span class="op">=</span><span class="st">","</span>)</span>
+<span id="cb47-3"><a href=""></a>df</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <div>
 <style scoped="">
@@ -1635,6 +1894,10 @@ Name: Quantity, dtype: float64</code></pre>
 <li>Which is their semantics?</li>
 </ul>
 <div id="9817e68c" class="cell" data-outputid="ef951032-c83d-4ce6-c3d1-0e55224b9e36">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb48-1"><a href=""></a>df.columns</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>Index(['longitude', 'latitude', 'housing_median_age', 'total_rooms',
        'total_bedrooms', 'population', 'households', 'median_income',
@@ -1656,6 +1919,11 @@ Name: Quantity, dtype: float64</code></pre>
 <li><code>oceanProximity</code>: Location of the house w.r.t ocean/sea</li>
 </ol>
 <div id="85441c0b" class="cell" data-scrolled="true" data-outputid="724bde85-f9d6-44f6-e000-5bd7d12970ba">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb50-1"><a href=""></a><span class="co"># show some statistics on the dataframe</span></span>
+<span id="cb50-2"><a href=""></a>df.info()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 20640 entries, 0 to 20639
@@ -1677,6 +1945,10 @@ memory usage: 1.6+ MB</code></pre>
 </div>
 </div>
 <div id="e6a24b3a" class="cell" data-outputid="b5e4eb31-e9f0-40ae-8bea-af95f26a66e9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb52-1"><a href=""></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <div>
 <style scoped="">
@@ -1863,6 +2135,10 @@ memory usage: 1.6+ MB</code></pre>
 <p>… what about data visualization?</p>
 <p>Can we exploit the nature of the data?</p>
 <div id="H0bU-4jprHm3" class="cell" data-outputid="a5077a6a-e242-4773-8d66-b353bda8e2e6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb53-1"><a href=""></a>df.plot(kind<span class="op">=</span><span class="st">"scatter"</span>, x<span class="op">=</span><span class="st">"longitude"</span>, y<span class="op">=</span><span class="st">"latitude"</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, s<span class="op">=</span>df[<span class="st">"population"</span>]<span class="op">/</span><span class="dv">100</span>, label<span class="op">=</span><span class="st">"population"</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">7</span>), c<span class="op">=</span><span class="st">"median_house_value"</span>, cmap<span class="op">=</span><span class="st">"jet"</span>, colorbar<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1889,6 +2165,14 @@ memory usage: 1.6+ MB</code></pre>
 <h4 id="memory-usage">Memory usage</h4>
 <p>What if I change float64 to float32?</p>
 <div id="8f1e7c90" class="cell" data-outputid="71906d92-7d07-4c7a-db1c-826dbe0b2052">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb54-1"><a href=""></a>dff <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>)  <span class="co"># copy the dataframe</span></span>
+<span id="cb54-2"><a href=""></a><span class="cf">for</span> x <span class="kw">in</span> df.columns:  <span class="co"># iterate over the columns</span></span>
+<span id="cb54-3"><a href=""></a>    <span class="cf">if</span> dff[x].dtype <span class="op">==</span> <span class="st">'float64'</span>:  <span class="co"># if the column has type `float64`</span></span>
+<span id="cb54-4"><a href=""></a>        dff[x] <span class="op">=</span> dff[x].astype(<span class="st">'float32'</span>)  <span class="co"># ... change it to `float32`</span></span>
+<span id="cb54-5"><a href=""></a>dff.info()  <span class="co"># show some statistics on the dataframe</span></span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 20640 entries, 0 to 20639
@@ -1915,6 +2199,10 @@ memory usage: 887.0+ KB</code></pre>
 <h4 id="non-numeric-attributes">Non-numeric attributes</h4>
 <p><code>ocean_proximity</code> is a text attribute so we cannot compute its median. Some options: - Get rid of the whole attribute. (<code>df.drop("ocean_proximity", axis=1</code>) - Change from categorical to ordinal (e.g., <code>NEAR BAY</code> = 0, <code>INLAND</code> = 1) - Can foresee any problem in this? - ML algorithms will assume that two nearby values are more similar than two distant values. This may be fine in some cases (e.g., for ordered categories such as “bad”, “average”, “good”, “excellent”), but it is obviously not the case for the ocean_proximity column (for example, categories 0 and 4 are clearly more similar than categories 0 and 1). - Change from categorical to one hot encoding - To fix this issue, a common solution is to create one binary attribute per category: one attribute equal to 1 when the category is “&lt;1H OCEAN” (and 0 otherwise), another attribute equal to 1 when the category is “INLAND” (and 0 otherwise), and so on. This is called one-hot encoding, because only one attribute will be equal to 1 (hot), while the others will be 0 (cold). The new attributes are sometimes called dummy attributes</p>
 <div id="3297de8e" class="cell" data-outputid="f09c3e47-3ac0-446f-c791-e194b969a6ff">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb56-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].value_counts()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>&lt;1H OCEAN     9136
 INLAND        6551
@@ -1925,6 +2213,10 @@ Name: ocean_proximity, dtype: int64</code></pre>
 </div>
 </div>
 <div id="xkOk2VEdVkde" class="cell" data-outputid="417e44e3-877b-4ec3-9294-5299ee01df30">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb58-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].hist()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1935,6 +2227,13 @@ Name: ocean_proximity, dtype: int64</code></pre>
 </div>
 <p>Change from categorical to ordinal</p>
 <div id="0efd3a04" class="cell" data-outputid="ff48d802-0c5e-4d86-b7ad-ba299eb7bab0">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb59-1"><a href=""></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OrdinalEncoder</span>
+<span id="cb59-2"><a href=""></a>ordinal_encoder <span class="op">=</span> OrdinalEncoder()</span>
+<span id="cb59-3"><a href=""></a>y <span class="op">=</span> ordinal_encoder.fit_transform(df[[<span class="st">"ocean_proximity"</span>]])</span>
+<span id="cb59-4"><a href=""></a>y</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>array([[3.],
        [3.],
@@ -1947,6 +2246,11 @@ Name: ocean_proximity, dtype: int64</code></pre>
 </div>
 <p>From categorical to one-hot encoding</p>
 <div id="d3db3bf4" class="cell" data-outputid="baf830d6-6ab1-4ae5-ec63-9bd5a74ffb7e">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb61-1"><a href=""></a>y <span class="op">=</span> pd.get_dummies(df[<span class="st">"ocean_proximity"</span>], prefix<span class="op">=</span><span class="st">'ocean_proximity'</span>)</span>
+<span id="cb61-2"><a href=""></a>y</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <div>
 <style scoped="">
@@ -2072,6 +2376,13 @@ Name: ocean_proximity, dtype: int64</code></pre>
 </div>
 <h3 id="visualization">Visualization</h3>
 <div id="570f14ff" class="cell" data-scrolled="true" data-outputid="05959b0e-b289-4b97-935f-da665b4398e0">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb62-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb62-2"><a href=""></a><span class="op">%</span>matplotlib inline</span>
+<span id="cb62-3"><a href=""></a>df.hist(bins<span class="op">=</span><span class="dv">50</span>, figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">15</span>))</span>
+<span id="cb62-4"><a href=""></a>plt.show()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -2093,6 +2404,12 @@ Name: ocean_proximity, dtype: int64</code></pre>
 <li>The diagonal plots are treated differently: a univariate distribution plot is drawn to show the marginal distribution of the data in each column.</li>
 </ul>
 <div id="jFvRyNbGV36l" class="cell" data-outputid="80b8f294-20ba-4e20-d51e-a3c09f6cecaa">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb63-1"><a href=""></a>tmp <span class="op">=</span> df[[<span class="st">"median_income"</span>, <span class="st">"housing_median_age"</span>, <span class="st">"median_house_value"</span>, <span class="st">"households"</span>, <span class="st">"population"</span>, <span class="st">"total_rooms"</span>]]</span>
+<span id="cb63-2"><a href=""></a>sns.pairplot(tmp.sample(n<span class="op">=</span><span class="dv">1000</span>, random_state<span class="op">=</span><span class="dv">42</span>), hue<span class="op">=</span><span class="st">'median_house_value'</span>, markers<span class="op">=</span><span class="st">'+'</span>)</span>
+<span id="cb63-3"><a href=""></a>plt.show()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -2103,6 +2420,14 @@ Name: ocean_proximity, dtype: int64</code></pre>
 </div>
 <p>Check correlations and intervals</p>
 <div id="FYZ7EdT2V8Le" class="cell" data-outputid="1da3f8c2-a83e-4d7d-d93e-9db406096c16">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb64-1"><a href=""></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span>
+<span id="cb64-2"><a href=""></a>rho <span class="op">=</span> df.corr(method<span class="op">=</span><span class="st">'pearson'</span>, numeric_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb64-3"><a href=""></a>pval <span class="op">=</span> df.corr(method<span class="op">=</span><span class="kw">lambda</span> x, y: pearsonr(x, y)[<span class="dv">1</span>], numeric_only<span class="op">=</span><span class="va">True</span>) <span class="op">-</span> np.eye(<span class="op">*</span>rho.shape)</span>
+<span id="cb64-4"><a href=""></a>p <span class="op">=</span> pval.applymap(<span class="kw">lambda</span> x: <span class="st">''</span>.join([<span class="st">'*'</span> <span class="cf">for</span> t <span class="kw">in</span> [<span class="fl">0.01</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>] <span class="cf">if</span> x <span class="op">&lt;=</span> t]))</span>
+<span id="cb64-5"><a href=""></a>rho.<span class="bu">round</span>(<span class="dv">2</span>).astype(<span class="bu">str</span>) <span class="op">+</span> p</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="40">
 <div>
 <style scoped="">
@@ -2250,6 +2575,13 @@ Name: ocean_proximity, dtype: int64</code></pre>
 </div>
 </div>
 <div id="EmnZ1P4uV9H1" class="cell" data-outputid="751a298a-a1a4-44d9-b556-1961f0e4735c">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb65-1"><a href=""></a>min_corr <span class="op">=</span> <span class="fl">0.3</span></span>
+<span id="cb65-2"><a href=""></a>kot <span class="op">=</span> rho[(<span class="bu">abs</span>(rho) <span class="op">&gt;=</span> min_corr) <span class="op">&amp;</span> (rho <span class="op">&lt;</span> <span class="dv">1</span>)]</span>
+<span id="cb65-3"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb65-4"><a href=""></a>sns.heatmap(kot, cmap<span class="op">=</span>sns.color_palette(<span class="st">"coolwarm"</span>, as_cmap<span class="op">=</span><span class="va">True</span>))</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -2266,6 +2598,12 @@ Name: ocean_proximity, dtype: int64</code></pre>
 </ul>
 <h4 id="min-max-normalization">Min-max normalization</h4>
 <div id="e6974275" class="cell" data-outputid="97d29126-3054-4120-8bf2-a61fe43f5103">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb66-1"><a href=""></a>num_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ocean_proximity'</span>, <span class="st">'median_house_value'</span>])</span>
+<span id="cb66-2"><a href=""></a>normalized_df <span class="op">=</span> (num_df <span class="op">-</span> num_df.<span class="bu">min</span>()) <span class="op">/</span> (num_df.<span class="bu">max</span>() <span class="op">-</span> num_df.<span class="bu">min</span>())</span>
+<span id="cb66-3"><a href=""></a>normalized_df</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="42">
 <div>
 <style scoped="">
@@ -2427,6 +2765,12 @@ Name: ocean_proximity, dtype: int64</code></pre>
 </div>
 <h4 id="standardization">Standardization</h4>
 <div id="39239dcf" class="cell" data-outputid="4c25751b-5853-430c-89a7-6b702a4cdfc7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb67-1"><a href=""></a>num_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ocean_proximity'</span>, <span class="st">'median_house_value'</span>])</span>
+<span id="cb67-2"><a href=""></a>normalized_df <span class="op">=</span> (num_df <span class="op">-</span> num_df.mean()) <span class="op">/</span> num_df.std()</span>
+<span id="cb67-3"><a href=""></a>normalized_df</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="43">
 <div>
 <style scoped="">
@@ -2589,6 +2933,32 @@ Name: ocean_proximity, dtype: int64</code></pre>
 <p>This checklist can help you while building your projects - Frame the problem and look at the big picture - ✔ Define the objective in business terms - ✖ How should performance be measured? - Get the data - ✔ List the data you need and how much you need - Explore the data to gain insights - ✔ Create an environment to keep track of your data exploration - ✔ Study each attribute and its characteristics - Prepare the data - ✔ Fix or remove outliers (optional) - ✔ Fill in missing values (e.g., with zero, mean, median…) or drop their rows (or columns) - ✔ Feature selection (optional): drop the attributes that provide no useful information for the task - ✔ Feature engineering, where appropriate: discretize continuous features</p>
 <h4 id="hands-on">Hands on!</h4>
 <div id="ef4ed12b" class="cell" data-outputid="089d02f8-8b87-455a-deb2-8666e1ffcc6c">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb68-1"><a href=""></a>num_df <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>).drop(columns<span class="op">=</span>[<span class="st">"ocean_proximity"</span>])  <span class="co"># do not change this line</span></span>
+<span id="cb68-2"><a href=""></a></span>
+<span id="cb68-3"><a href=""></a><span class="co"># Filling in (i.e., impute) missing values with the median value</span></span>
+<span id="cb68-4"><a href=""></a>num_df[<span class="st">"total_bedrooms"</span>] <span class="op">=</span> <span class="dv">1</span>  <span class="co"># change `1` with the proper solution</span></span>
+<span id="cb68-5"><a href=""></a></span>
+<span id="cb68-6"><a href=""></a><span class="co"># Add a new column: population_per_household = population / households</span></span>
+<span id="cb68-7"><a href=""></a>num_df[<span class="st">"population_per_household"</span>] <span class="op">=</span> <span class="dv">1</span>  <span class="co"># change `1` with the proper solution</span></span>
+<span id="cb68-8"><a href=""></a></span>
+<span id="cb68-9"><a href=""></a><span class="co"># Add a new column: rooms_per_household = total_rooms / households</span></span>
+<span id="cb68-10"><a href=""></a>num_df[<span class="st">"rooms_per_household"</span>] <span class="op">=</span> <span class="dv">1</span>  <span class="co"># change `1` with the proper solution</span></span>
+<span id="cb68-11"><a href=""></a></span>
+<span id="cb68-12"><a href=""></a><span class="co"># Add a new column: bedrooms_per_room = total_bedrooms / total_rooms</span></span>
+<span id="cb68-13"><a href=""></a>num_df[<span class="st">"bedrooms_per_room"</span>] <span class="op">=</span> <span class="dv">1</span>  <span class="co"># change `1` with the proper solution</span></span>
+<span id="cb68-14"><a href=""></a></span>
+<span id="cb68-15"><a href=""></a><span class="co"># Apply standardization to all the numeric columns</span></span>
+<span id="cb68-16"><a href=""></a>num_df <span class="op">=</span> pd.DataFrame()  <span class="co"># change `pd.DataFrame()` with the proper solution</span></span>
+<span id="cb68-17"><a href=""></a></span>
+<span id="cb68-18"><a href=""></a><span class="co"># One hot encode `ocean_proximity` since it is a categorical attribute</span></span>
+<span id="cb68-19"><a href=""></a><span class="co"># change `pd.DataFrame()` with the proper solution (hint: pd.get_dummies)</span></span>
+<span id="cb68-20"><a href=""></a>cat_df <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb68-21"><a href=""></a></span>
+<span id="cb68-22"><a href=""></a>clean_df <span class="op">=</span> pd.concat([num_df, cat_df], axis<span class="op">=</span><span class="dv">1</span>)  <span class="co"># do not change this line</span></span>
+<span id="cb68-23"><a href=""></a>clean_df</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="44">
 <div>
 <style scoped="">
@@ -2856,58 +3226,6 @@ Name: ocean_proximity, dtype: int64</code></pre>
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
       });
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
