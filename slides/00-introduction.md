@@ -1,11 +1,8 @@
 ---
-format:
-  revealjs: 
-    footer: "Matteo Francia - Machine Learning - A.Y. 2024/25"
-bibliography: refs.bib
+author: Matteo Francia
+title: Machine Learning and Data Mining
+subtitle: Module 2 (Machine Learning)
 ---
-
-{{< include _cover.md >}}
 
 #
 
@@ -94,7 +91,7 @@ Once defined your project:
 - After my approval, register the group (2 people at maximum) and project here: [https://forms.gle/T1hynSuu6LpRGtjw8](https://forms.gle/T1hynSuu6LpRGtjw8)
 - Now you can start your project on Colab, the code must be executable and without errors
 
---- 
+# Presenting the Assignment
 
 Once the project is completed AND both members are ready (have studied), the group leader has to:
 

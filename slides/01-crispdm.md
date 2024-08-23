@@ -1,11 +1,8 @@
 ---
-format:
-  revealjs: 
-    footer: "Matteo Francia - Machine Learning - A.Y. 2024/25"
-bibliography: refs.bib
+author: Matteo Francia
+title: Machine Learning and Data Mining (Module 2)
+subtitle: CRISP-DM
 ---
-
-{{< include _cover.md >}}
 
 #
 
