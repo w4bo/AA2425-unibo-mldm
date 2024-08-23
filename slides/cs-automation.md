@@ -104,7 +104,7 @@ LLMs are powerful tools for broad natural language applications, are they a good
 - To feed data to an LLM, the main possibility is to use the prompt.
     - Depending on the LLM, prompts [have limits in the \#tokens (as of 2024-06)](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) composing input and answer
     - The [OpenAI price calculator in Microsoft Azure (as of 2024-06)](https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service) estimates that using GPT-4-32K costs around \$0.06 per $10^3$ input tokens and \$0.12 per $10^3$ output tokens, where 1000 tokens correspond to almost 750 words.
-      - Prompting a table with $10^5$ tuples (if feasible) could easily cost several dollars per execution.
+      - Prompting a table with $10^5$ tuples (if feasible) costs several dollars per execution.
 - LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content. 
     - This can overcome the limits and cost of tokens.
     - However, if the summary process is incorrect, it will add errors and bias to the final answer.

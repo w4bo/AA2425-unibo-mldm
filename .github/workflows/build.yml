@@ -5,10 +5,19 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11' 
       - name: Generate the slides
         run: |
           cd slides 
           docker compose up
+      - name: Generate the slides
+        run: |
+          cd slides 
+          pip install -r requirements.txt
+          chmod +x generate.sh
+          ./generate.sh
       - name: Deploy
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         uses: JamesIves/github-pages-deploy-action@v4.6.3
