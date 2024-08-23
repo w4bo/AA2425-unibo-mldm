@@ -1,9 +1,15 @@
 project:
   output-dir: _site
+  # render:
+  #   - lab-01-dataunderstanding.ipynb
+
+toc: true
 
 format:
   revealjs: 
     theme: [white, slides.scss]
+    menu: true
+    progress: true
     slide-number: true
     default-image-extension: ""
     # navigation-mode: vertical
@@ -14,5 +20,28 @@ format:
     footnotes-hover: true
     scrollable: true
     width: 1100
+    echo: true
+    code-fold: show
+    code-copy: false
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+
   pptx:
     reference-doc: slides.pptx
+  
+  html:
+    code-line-numbers: true
+    code-fold: show
+    code-copy: false
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+
+bibliography:
+  - refs.bib
+
+execute:
+    enabled: false
