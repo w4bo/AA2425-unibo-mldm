@@ -24,6 +24,10 @@ jobs:
         with:
           branch: gh-pages
           folder: slides/_site
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 120
+          
       - name: Install Node
         uses: actions/setup-node@v4.0.3
         with:

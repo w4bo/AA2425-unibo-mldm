@@ -192,7 +192,7 @@ and the one of a subsequent query obtained by drilling down the previous one (to
 :::
 ::::
 
-# Applying LLMs to query results
+# Comparing the results
 
 :::: {.columns}
 ::: {.column width="30%"}
