@@ -27,7 +27,11 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: 120
-          
+      - name: Export pdfs
+        run: |
+          cd slides 
+          chmod +x export2pdf.sh
+          ./export2pdf.sh
       - name: Install Node
         uses: actions/setup-node@v4.0.3
         with:
