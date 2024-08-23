@@ -30,7 +30,7 @@ Data analysts must uncover the primary business objective as well as the related
 
 - For example, the primary business goal could be to retain current customers by predicting when they are prone to move to a competitor.
   - “How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?” or 
-  - “Will lower ATM fees significantly reduce the number of highvalue customers who leave?” A secondary issue might be to determine whether lower fees affect only one particular customer segment.
+  - “Will lower ATM fees significantly reduce the number of high value customers who leave?” A secondary issue might be to determine whether lower fees affect only one particular customer segment.
 
 Finally, a good data analyst always determines the measure of success
 

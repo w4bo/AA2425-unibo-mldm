@@ -47,7 +47,7 @@ Still today, this is one of the most important steps for many companies:
 - Indeed, there are several disciplines focusing on data (Data Science, Data Mining, Big data, ...)
 - However, acquiring data is a time-consuming, investment and knowledge-intensive process
 - In Europe (but now in many areas of the world), there can be problems related to privacy
-    - When is it “right” to protect privacy? When does it become a limit?
+    - When is it "right" to protect privacy? When does it become a limit?
 
 Plus,
 
@@ -91,7 +91,7 @@ Acquiring a new dataset is usually a costly process!
   - Programming or learning to use an acquisition tool
   - Handling of large amounts of data
   - Testing to find any bugs that could compromise the success of the acquisition
-    - Unfrtunately, we often notice them at the end of the process
+    - Unfortunately, we often notice them at the end of the process
   - Acquire new hardware for data collection and storage
 
 - It is necessary to carefully consider whether it is appropriate to acquire a new dataset.
@@ -104,7 +104,7 @@ NB: acquiring a new dataset does not mean acquiring only new data!
 
 Indeed, one of the most relevant aspects is the annotation of the data
 
-- The specific annotation is usually called “label” and is the (semantic) content of the data.
+- The specific annotation is usually called "label" and is the (semantic) content of the data.
 - The label depends on the problem we want to solve and can be numerical or categorical
 - Examples:
   - A person's height prediction → data: joint lengths, label: height (cm)
@@ -115,7 +115,7 @@ Indeed, one of the most relevant aspects is the annotation of the data
 A single data is therefore defined as annotated if it is associated with a label
 
 - Data collected without correct and timely annotation is often useless
-- However, it is also possible to “extract knowledge” from un-annotated data through, for instance, clustering
+- However, it is also possible to "extract knowledge" from un-annotated data through, for instance, clustering
 
 ## Data Annotation Process
 
@@ -130,7 +130,7 @@ The data annotation process can take place in several ways:
   - The quality of the annotations is not always easily controlled
 - *Third parties*: all data is noted by a third party
   - Free of charge: this is the case, for example, in which users barter the free use of some platform with the transfer of their annotated data (for example, photos uploaded - to Facebook accompanied by information regarding the content, the position of the face, or scene acquired).
-  - Paid: there are platforms where is possible to purchase annotation time from third parties (often from “developing countries”). Example: Amazon Mechanical Turk
+  - Paid: there are platforms where is possible to purchase annotation time from third parties (often from "developing countries"). Example: Amazon Mechanical Turk
 
 ## [Amazon Mechanical Turk](https://www.mturk.com/)
 
@@ -155,7 +155,7 @@ We define different types of learning depending on data annotation:
 
 Specific algorithms correspond to each of these areas
 
-- Best performances are usually obtained with supervised trained algorithms
+- Best performances are usually obtained with supervised trained algorithms
 - We will mainly work on fully annotated data → Supervised Learning
 
 :::
@@ -184,8 +184,8 @@ Last aspect to be defined relating to data annotation: **do we know all annotati
 
 Two possible solutions to the open set problem:
 
-- An additional fictitious class is added to the classes (“the rest of the world”, “unknown”)
-  - The so-called “negative examples” are added to the training set
+- An additional fictitious class is added to the classes ("the rest of the world", "unknown")
+  - The so-called "negative examples" are added to the training set
 - You allow the system not to assign the pattern
   - A threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold
 
@@ -197,7 +197,7 @@ Companies usually face common problems:
   - It is almost impossible to acquire all the data
   - Also, physical limitations when the data stream is bigger that the storing capacity
   - Usually, it is necessary to choose which ones to store
-- Sometimes companies have a lot of “old” data in their databases or information systems: 
+- Sometimes companies have a lot of "old" data in their databases or information systems: 
   - They don't know what to do with it
   - Data re-collection on existing data (since data must be clean or something similar)
 - In many business processes it is unclear understanding:
@@ -206,7 +206,7 @@ Companies usually face common problems:
 
 # Describe the Data
 
-During this step, the data analyst examines the “gross” or “surface” properties of the acquired data and reports on the results, examining issues such as the format of the data, the quantity of the data, the number of records and fields in each table, the identities of the fields, and any other surface features of the data.
+During this step, the data analyst examines the "gross" or "surface" properties of the acquired data and reports on the results, examining issues such as the format of the data, the quantity of the data, the number of records and fields in each table, the identities of the fields, and any other surface features of the data.
 
 - The key question to ask is: Does the data acquired satisfy the relevant requirements?
   - For instance, if age is an important field and the data does not reflect the entire age range, it may be wise to collect a different set of data.
