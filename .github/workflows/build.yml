@@ -12,7 +12,7 @@ jobs:
         run: |
           cd slides 
           docker compose up
-      - name: Generate the slides
+      - name: Running the notebooks
         run: |
           cd slides 
           pip install -r requirements.txt
