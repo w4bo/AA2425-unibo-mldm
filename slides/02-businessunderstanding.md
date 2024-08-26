@@ -28,8 +28,8 @@ Understanding a client’s true goal is critical to uncovering the important fac
 Data analysts must uncover the primary business objective as well as the related questions the business would like to address.
 
 - For example, the primary business goal could be to retain current customers by predicting when they are prone to move to a competitor.
-  - “How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?” or 
-  - “Will lower ATM fees significantly reduce the number of high value customers who leave?” A secondary issue might be to determine whether lower fees affect only one particular customer segment.
+  - "How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?" or 
+  - "Will lower ATM fees significantly reduce the number of high value customers who leave?" A secondary issue might be to determine whether lower fees affect only one particular customer segment.
 
 Finally, a good data analyst always determines the measure of success
 
@@ -42,7 +42,7 @@ Data analysts outlines the resources, from personnel to software, that are avail
 
 - Particularly important is discovering what data is available to meet the primary business goal.
 - At this point, the data analyst also should list the assumptions made in the project-assumptions
-  - “To address the business question, a minimum number of customers over age 50 is necessary.”
+  - "To address the business question, a minimum number of customers over age 50 is necessary."
   - The data analyst also should list the project risks, list potential solutions to those risks, create a glossary of business and data mining terms,
 and construct a cost-benefit analysis for the project.
 
@@ -50,7 +50,7 @@ and construct a cost-benefit analysis for the project.
 
 The data mining goal states project objectives in business terms
 
-- “Predict how many widgets a customer will buy given their purchases in the past three years, demographic information (age, salary, city, etc.), and the item price.”
+- "Predict how many widgets a customer will buy given their purchases in the past three years, demographic information (age, salary, city, etc.), and the item price."
 - Success should also be defined in these terms such as achieving a certain level of predictive accuracy.
 
 If the business goal cannot be effectively translated into a data mining goal, *it may be wise to consider redefining the problem*.
