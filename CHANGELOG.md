@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.2...1.0.3) (2024-08-27)
+
+### Bug Fixes
+
+* ci ([4a56a68](https://github.com/w4bo/AA2425-unibo-mldm/commit/4a56a689ef948015fd9992efc49bab7a447c4952))
+
 ## [1.0.2](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.1...1.0.2) (2024-08-27)
 
 ### Bug Fixes
