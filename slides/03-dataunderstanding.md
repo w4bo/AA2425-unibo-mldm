@@ -42,7 +42,7 @@ Several *biases* can occur:
 
 Still today, this is one of the most important steps for many companies:
 
-- «Data is the new oil of the Digital Economy»
+- 'Data is the new oil of the Digital Economy'
 - Indeed, there are several disciplines focusing on data (Data Science, Data Mining, Big data, ...)
 - However, acquiring data is a time-consuming, investment and knowledge-intensive process
 - In Europe (but now in many areas of the world), there can be problems related to privacy
@@ -109,7 +109,7 @@ Indeed, one of the most relevant aspects is the annotation of the data
   - A person's height prediction → data: joint lengths, label: height (cm)
   - Pedestrian Detection → data: images, label: presence of a pedestrian (yes/no)
   - Pedestrian Localization → data: images, label: position of the pedestrain (x, y, w, h)
-  - Audio classification numbers → data: audio sequences, label: number («five»)
+  - Audio classification numbers → data: audio sequences, label: number ('five')
 
 A single data is therefore defined as annotated if it is associated with a label
 
