@@ -1,3 +1,21 @@
+## [1.0.1](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.0...1.0.1) (2024-08-27)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.101 ([eec1856](https://github.com/w4bo/AA2425-unibo-mldm/commit/eec18568287b9cc44dd8e3fe1a5b00df77585baa))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.99 ([14a7c97](https://github.com/w4bo/AA2425-unibo-mldm/commit/14a7c973b2f7aaddf9271dab42c29da80a11f09e))
+* **deps:** update node.js to 20.16 ([a090e7b](https://github.com/w4bo/AA2425-unibo-mldm/commit/a090e7ba2a1008c58f0285eb7d7a97c11dd74621))
+* **deps:** update node.js to 20.17 ([a781786](https://github.com/w4bo/AA2425-unibo-mldm/commit/a781786a66082d33888ee3d16ab4caa523bd6143))
+
+### Bug Fixes
+
+* fixing quotes ([308d0ff](https://github.com/w4bo/AA2425-unibo-mldm/commit/308d0ffae0e842074e0c5f949a6c93438d44f5a7))
+* lab 02 ([6c27fba](https://github.com/w4bo/AA2425-unibo-mldm/commit/6c27fba228c61ad1b457efd784936c09e9982751))
+
+### Build and continuous integration
+
+* **deps:** update jamesives/github-pages-deploy-action action to v4.6.3 ([604577b](https://github.com/w4bo/AA2425-unibo-mldm/commit/604577b3ff40b7346006ae4f99b9dbaa51fe42ab))
+
 ## 1.0.0 (2024-08-20)
 
 
