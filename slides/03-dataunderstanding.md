@@ -205,10 +205,17 @@ Companies usually face common problems:
 
 # Describe the Data
 
-During this step, the data analyst examines the "gross" or "surface" properties of the acquired data and reports on the results, examining issues such as the format of the data, the quantity of the data, the number of records and fields in each table, the identities of the fields, and any other surface features of the data.
+During this step, the data analyst examines the "gross" or "surface" properties of the acquired data and reports on the results, examining issues such as:
 
-- The key question to ask is: Does the data acquired satisfy the relevant requirements?
-  - For instance, if age is an important field and the data does not reflect the entire age range, it may be wise to collect a different set of data.
+- the format of the data,
+- the quantity of the data,
+- the number of records and fields in each table,
+- the identities of the fields,
+- and any other surface features of the data.
+
+The key question to ask is: does the data acquired satisfy the relevant requirements?
+
+- For instance, if age is an important field and the data does not reflect the entire age range, it may be wise to collect a different set of data.
 - This step also provides a basic understanding of the data on which subsequent steps will build.
 
 # Explore the Data
