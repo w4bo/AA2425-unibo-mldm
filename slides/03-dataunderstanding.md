@@ -228,9 +228,9 @@ This task tackles the data mining questions, which can be addressed using queryi
 
 # Verify Data Quality
 
-At this point, the analyst examines the quality of the data, addressing questions such as:
+At this point, the analyst examines the quality of the data [@batini2009methodologies] [@sidi2012data], addressing questions such as:
 
-Some common items to check include:
+Some common data quality issues to check include:
 
 - missing attributes and blank fields;
 - whether all possible values are represented;
