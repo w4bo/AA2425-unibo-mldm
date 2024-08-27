@@ -3,5 +3,6 @@ set -e
 cd _site
 for FILE in *.html; do 
     echo "Processing $PWD/$FILE file...";
-    chrome --headless=new --remote-allow-origins=* --disable-gpu --disable-software-rasterizer --print-to-pdf="$FILE.pdf" "$PWD/$FILE\?print-pdf"
+    # chrome --headless=new --remote-allow-origins=* --disable-gpu --disable-software-rasterizer --print-to-pdf="$FILE.pdf" "$PWD/$FILE\?print-pdf"
+    docker run --rm -v "$(pwd)":/slides -v "$(pwd)":/home/user astefanutti/decktape /home/user/$FILE $FILE.pdf
 done

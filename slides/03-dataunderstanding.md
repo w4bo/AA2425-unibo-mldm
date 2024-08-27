@@ -205,7 +205,12 @@ Companies usually face common problems:
 
 # Describe the Data
 
-During this step, the data analyst examines the "gross" or "surface" properties of the acquired data and reports on the results, examining issues such as:
+The key question to ask is: does the data acquired satisfy the relevant requirements?
+
+- For instance, if age is an important field and the data does not reflect the entire age range, it may be wise to collect a different set of data.
+- This step also provides a basic understanding of the data on which subsequent steps will build.
+
+The data analyst examines the "surface" properties of the acquired data, examining issues such as:
 
 - the format of the data,
 - the quantity of the data,
@@ -213,25 +218,21 @@ During this step, the data analyst examines the "gross" or "surface" properties 
 - the identities of the fields,
 - and any other surface features of the data.
 
-The key question to ask is: does the data acquired satisfy the relevant requirements?
-
-- For instance, if age is an important field and the data does not reflect the entire age range, it may be wise to collect a different set of data.
-- This step also provides a basic understanding of the data on which subsequent steps will build.
-
 # Explore the Data
 
 This task tackles the data mining questions, which can be addressed using querying, visualization, and reporting.
 
 - For instance, a data analyst may query the data to discover the types of products that purchasers in a particular income group usually buy.
-- Or the analyst may run a visualization analysis to uncover potential fraud patterns.
-- The data analyst should then create a data exploration report that outlines first findings, or an initial hypothesis, and the potential impact on the remainder of the project
+- Or the analyst may run a visualization analysis to uncover potential fraud patterns..
+- The data analyst should then create a data exploration report that outlines first findings, or an initial hypothesis
 
 # Verify Data Quality
 
 At this point, the analyst examines the quality of the data, addressing questions such as:
 
-- Is the data complete? Missing values often occur, particularly if the data was collected across long periods of time.
-- Some common items to check include: missing attributes and blank fields;
+Some common items to check include:
+
+- missing attributes and blank fields;
 - whether all possible values are represented;
 - the plausibility of values;
 - the spelling of values;
