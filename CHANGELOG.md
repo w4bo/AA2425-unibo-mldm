@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.1...1.0.2) (2024-08-27)
+
+### Bug Fixes
+
+* lab 3 ([1405b62](https://github.com/w4bo/AA2425-unibo-mldm/commit/1405b625a7a1941dd358319540bb8af571e7a8d6))
+
 ## [1.0.1](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.0...1.0.1) (2024-08-27)
 
 ### Dependency updates
