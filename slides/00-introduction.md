@@ -45,7 +45,7 @@ Developing your own AI system
 - You will be able to make technical considerations about AI
 - Understanding the surrounding AI world in order to:
 
-Orient yourself in an extremely dinamic and complex world dominated by AI
+Orient yourself in an extremely dynamic and complex world dominated by AI
 
 - Make decisions with AI
 - Try to make predictions about AI for your company
