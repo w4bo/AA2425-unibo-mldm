@@ -383,6 +383,16 @@ Matteo Francia
 <li><a href="#/dimensions-of-data-quality-sidi2012data" id="/toc-dimensions-of-data-quality-sidi2012data">Dimensions of Data Quality <span class="citation" data-cites="sidi2012data">(Sidi et al. 2012)</span></a></li>
 <li><a href="#/metrics-of-data-quality-batini2009methodologies" id="/toc-metrics-of-data-quality-batini2009methodologies">Metrics of Data Quality <span class="citation" data-cites="batini2009methodologies">(Batini et al. 2009)</span></a></li>
 </ul></li>
+<li><a href="#/case-study-smart-irrigation" id="/toc-case-study-smart-irrigation">Case Study: Smart Irrigation</a></li>
+<li><a href="#/data-platforms-in-the-agritech-domain" id="/toc-data-platforms-in-the-agritech-domain">Data Platforms in the Agritech Domain</a></li>
+<li><a href="#/smart-irrigation-as-a-case-study" id="/toc-smart-irrigation-as-a-case-study">Smart Irrigation as a Case Study</a></li>
+<li><a href="#/reference-scenario" id="/toc-reference-scenario">Reference Scenario</a></li>
+<li><a href="#/digital-transformation" id="/toc-digital-transformation">Digital Transformation</a></li>
+<li><a href="#/digital-transformation-1" id="/toc-digital-transformation-1">Digital Transformation</a></li>
+<li><a href="#/simulators" id="/toc-simulators">Simulators…</a></li>
+<li><a href="#/vs-sensors" id="/toc-vs-sensors">… vs Sensors</a></li>
+<li><a href="#/sensor-layouts-and-symmetry-assumptions" id="/toc-sensor-layouts-and-symmetry-assumptions">Sensor Layouts and Symmetry Assumptions</a></li>
+<li><a href="#/from-sensors-to-soil-profiles-francia2022multi" id="/toc-from-sensors-to-soil-profiles-francia2022multi">From Sensors to Soil Profiles <span class="citation" data-cites="francia2022multi">(Francia, Giovanelli, and Golfarelli 2022)</span></a></li>
 <li><a href="#/references" id="/toc-references">References</a></li>
 </ul>
 </nav>
@@ -696,6 +706,233 @@ Matteo Francia
 <h2>Metrics of Data Quality <span class="citation" data-cites="batini2009methodologies">(<a href="#/references" role="doc-biblioref" onclick="">Batini et al. 2009</a>)</span></h2>
 
 <img data-src="https://github.com/user-attachments/assets/0724117f-3369-41f7-a277-2bfe1cf5d533" class="r-stretch quarto-figure-center"><p class="caption">Dimensions and Metrics</p></section></section>
+<section id="case-study-smart-irrigation" class="title-slide slide level1 center">
+<h1>Case Study: Smart Irrigation</h1>
+
+</section>
+
+<section id="data-platforms-in-the-agritech-domain" class="title-slide slide level1 center">
+<h1>Data Platforms in the Agritech Domain</h1>
+<p>The synergy of internet of things (IoT) and precision farming is producing valuable applications in the Agritech domain <span class="citation" data-cites="vitali2021crop">(<a href="#/references" role="doc-biblioref" onclick="">Vitali et al. 2021</a>)</span></p>
+<ul>
+<li><strong>Agritech</strong>: use of technology for farming to improve efficiency and profitability</li>
+</ul>
+</section>
+
+<section id="smart-irrigation-as-a-case-study" class="title-slide slide level1 center">
+<h1>Smart Irrigation as a Case Study</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Optimizing soil moisture is crucial for watering and crop performance <span class="citation" data-cites="turkeltaub2016real">(<a href="#/references" role="doc-biblioref" onclick="">Turkeltaub, Kurtzman, and Dahan 2016</a>)</span></p>
+<ul>
+<li><strong>GOAL</strong>: saving water while improving fruit quality (i.e., provide a recommendation of the amount necessary water)</li>
+<li><em>Soils</em> have different water retention</li>
+<li><em>Watering systems</em> have different behaviors (e.g., drippers and sprinklers)</li>
+<li><em>Plants</em> have different water demand (e.g., Kiwi <span class="citation" data-cites="judd1986water">(<a href="#/references" role="doc-biblioref" onclick="">Judd, McAneney, and Trought 1986</a>)</span> vs Grapes)</li>
+<li><em>Sensors</em> produce different measurements with different precisions</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://github.com/user-attachments/assets/6656bc86-dfe8-4d58-a1e7-eebf88a8c71d"></p>
+</div>
+</div>
+</section>
+
+<section id="reference-scenario" class="title-slide slide level1 center">
+<h1>Reference Scenario</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>We consider an orchard where</p>
+<ul>
+<li>Kiwi <em>plants are aligned along rows</em></li>
+<li>Each row has many <em>drippers</em> (e.g., 1 every 60cm)</li>
+<li>Drippers can water a <em>limited soil volume</em></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/3ecb211c-c5ae-4fdf-8870-4449155de0c9"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="digital-transformation" class="title-slide slide level1 center">
+<h1>Digital Transformation</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>(Example) Scenarios of digital transformation in agriculture</p>
+<ul>
+<li>Scenario #1
+<ul>
+<li>The farmer/technician controls the watering system based only on the experience</li>
+<li>No digital data/KPIs/automation</li>
+</ul></li>
+<li>Scenario #2
+<ul>
+<li>The control of the watering system is refined by observing sensor data</li>
+<li>Sensor data is digitalized, no KPIs/automatic</li>
+</ul></li>
+<li>Scenario #3 a decision support system that, knowing how to optimize KPIs, controls the watering system</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/f3931c14-05f2-48f8-aa1f-5a2065c1c3f6"></p>
+<figcaption>Farmer</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="digital-transformation-1" class="title-slide slide level1 center">
+<h1>Digital Transformation</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>(Example) Scenarios of digital transformation in agriculture</p>
+<ul>
+<li>Scenario #1
+<ul>
+<li>The farmer/technician controls the watering system based only on the experience</li>
+<li>No digital data/KPIs/automation</li>
+</ul></li>
+<li>Scenario #2
+<ul>
+<li>The control of the watering system is refined by observing sensor data</li>
+<li>Sensor data is digitalized, no KPIs/automatic</li>
+</ul></li>
+<li>Scenario #3
+<ul>
+<li>A decision support system that, knowing how to optimize KPIs, controls the watering system</li>
+<li>Sensor data is digitalized, automatic KPIs and action</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/ba718451-ac90-41bb-9d56-bf42c65667d2"></p>
+<figcaption>AI</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="simulators" class="title-slide slide level1 center">
+<h1>Simulators…</h1>
+<p>To achieve our goal, it necessary to understand of the soil behaves</p>
+<p>Simulate the soil behavior according to physical models <span class="citation" data-cites="van1980closed">(<a href="#/references" role="doc-biblioref" onclick="">Van Genuchten 1980</a>)</span></p>
+<ul>
+<li>However a fine tuning is required, we need to know/parametrize everything
+<ul>
+<li>Soil (e.g., retention curve, hysteresis <span class="citation" data-cites="pham2005study">(<a href="#/references" role="doc-biblioref" onclick="">Pham, Fredlund, and Barbour 2005</a>)</span>)</li>
+<li>Plant (e.g., roots, LAI)</li>
+<li>Weather conditions (temperature, humidity, wind, precipitations)</li>
+<li>Watering system (e.g., capacity, distance between drippers)</li>
+</ul></li>
+<li>Tuning can take months (of human interactions)!
+<ul>
+<li>Need to collect samples from the field… if some parameter is incorrect we need to trace back</li>
+<li>Need to implement/code all these features into the simulator <span class="citation" data-cites="vsimunek2012hydrus">(<a href="#/references" role="doc-biblioref" onclick="">Šimunek, Van Genuchten, and Šejna 2012</a>)</span> <span class="citation" data-cites="bittelli2015soil">(<a href="#/references" role="doc-biblioref" onclick="">Bittelli, Campbell, and Tomei 2015</a>)</span></li>
+<li>Hyper-parameter tuning with machine learning can help, but it is not a silver bullet</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="vs-sensors" class="title-slide slide level1 center">
+<h1>… vs Sensors</h1>
+<div class="columns">
+<div class="column" style="width:32%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/34d873c7-cef3-40ff-96b7-a8a7cde01d3e"></p>
+<figcaption><span class="citation" data-cites="koyuncu2021construction">(<a href="#/references" role="doc-biblioref" onclick="">Koyuncu, Gunduz, and Koyuncu 2021</a>)</span></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:32%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/35bd797c-6d1a-469b-9334-dbfdbea1107e"></p>
+<figcaption><span class="citation" data-cites="zheng2009spatial">(<a href="#/references" role="doc-biblioref" onclick="">Zheng et al. 2009</a>)</span></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:32%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/a87b3e8e-6afc-451a-b971-9e31052b71d3"></p>
+<figcaption><span class="citation" data-cites="fersch2018synergies">(<a href="#/references" role="doc-biblioref" onclick="">Fersch et al. 2018</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="sensor-layouts-and-symmetry-assumptions" class="title-slide slide level1 center">
+<h1>Sensor Layouts and Symmetry Assumptions</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/3ecb211c-c5ae-4fdf-8870-4449155de0c9"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/535ef33f-3107-4258-adb9-e3686cb327b3"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>If watered volume is symmetric along the row, a 2D sensor grid is sufficient to represent the soil volume</li>
+<li>If moisture variations take place along the row too, a 3D grid of sensors is required
+<ul>
+<li>E.g., too sparse drippers</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="from-sensors-to-soil-profiles-francia2022multi" class="title-slide slide level1 center scrollable">
+<h1>From Sensors to Soil Profiles <span class="citation" data-cites="francia2022multi">(<a href="#/references" role="doc-biblioref" onclick="">Francia, Giovanelli, and Golfarelli 2022</a>)</span></h1>
+<div class="columns">
+<div class="column" style="width:32%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/b0c575e8-b0fe-4726-82a0-a894d53db809"></p>
+<figcaption>Actual soil moisture</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:32%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/e792be94-cbd4-489e-9026-e5c4f80d0a45"></p>
+<figcaption>Sampled data</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:32%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/df2e2a26-8a54-49e1-936d-f8d93f48df55"></p>
+<figcaption>Profile</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>Soil moisture is a continuum in the soil</li>
+<li>Sensors return a discretized representation of soil moisture
+<ul>
+<li>Depending on the number of sensors and on their layout the monitoring accuracy changes</li>
+</ul></li>
+<li>Goal: produce fine-grained soil profiles out of coarse-grained layouts</li>
+</ol>
+</section>
+
 <section id="references" class="title-slide slide level1 smaller scrollable">
 <h1>References</h1>
 <div class="quarto-auto-generated-content">
@@ -707,11 +944,44 @@ Matteo Francia
 <div id="ref-batini2009methodologies" class="csl-entry" role="listitem">
 Batini, Carlo, Cinzia Cappiello, Chiara Francalanci, and Andrea Maurino. 2009. <span>“Methodologies for Data Quality Assessment and Improvement.”</span> <em>ACM Computing Surveys (CSUR)</em> 41 (3): 1–52.
 </div>
+<div id="ref-bittelli2015soil" class="csl-entry" role="listitem">
+Bittelli, Marco, Gaylon S Campbell, and Fausto Tomei. 2015. <em>Soil Physics with Python: Transport in the Soil-Plant-Atmosphere System</em>. OUP Oxford.
+</div>
 <div id="ref-chowdhury2020variable" class="csl-entry" role="listitem">
 Chowdhury, Mohammad Ziaul Islam, and Tanvir C Turin. 2020. <span>“Variable Selection Strategies and Its Importance in Clinical Prediction Modelling.”</span> <em>Family Medicine and Community Health</em> 8 (1).
 </div>
+<div id="ref-fersch2018synergies" class="csl-entry" role="listitem">
+Fersch, Benjamin, Thomas Jagdhuber, Martin Schrön, Ingo Völksch, and Marc Jäger. 2018. <span>“Synergies for Soil Moisture Retrieval Across Scales from Airborne Polarimetric SAR, Cosmic Ray Neutron Roving, and an in Situ Sensor Network.”</span> <em>Water Resources Research</em> 54 (11): 9364–83.
+</div>
+<div id="ref-francia2022multi" class="csl-entry" role="listitem">
+Francia, Matteo, Joseph Giovanelli, and Matteo Golfarelli. 2022. <span>“Multi-Sensor Profiling for Precision Soil-Moisture Monitoring.”</span> <em>Computers and Electronics in Agriculture</em> 197: 106924.
+</div>
+<div id="ref-judd1986water" class="csl-entry" role="listitem">
+Judd, MJ, KJ McAneney, and MCT Trought. 1986. <span>“Water Use by Sheltered Kiwifruit Under Advective Conditions.”</span> <em>New Zealand Journal of Agricultural Research</em> 29 (1): 83–92.
+</div>
+<div id="ref-koyuncu2021construction" class="csl-entry" role="listitem">
+Koyuncu, Hakan, Burak Gunduz, and Baki Koyuncu. 2021. <span>“Construction of 3D Soil Moisture Maps in Agricultural Fields by Using Wireless Sensor Communication.”</span> <em>Gazi University Journal of Science</em> 34 (1): 84–98.
+</div>
+<div id="ref-pham2005study" class="csl-entry" role="listitem">
+Pham, Hung Q, Delwyn G Fredlund, and S Lee Barbour. 2005. <span>“A Study of Hysteresis Models for Soil-Water Characteristic Curves.”</span> <em>Canadian Geotechnical Journal</em> 42 (6): 1548–68.
+</div>
 <div id="ref-sidi2012data" class="csl-entry" role="listitem">
 Sidi, Fatimah, Payam Hassany Shariat Panahy, Lilly Suriani Affendey, Marzanah A Jabar, Hamidah Ibrahim, and Aida Mustapha. 2012. <span>“Data Quality: A Survey of Data Quality Dimensions.”</span> In <em>2012 International Conference on Information Retrieval &amp; Knowledge Management</em>, 300–304. IEEE.
+</div>
+<div id="ref-vsimunek2012hydrus" class="csl-entry" role="listitem">
+Šimunek, J, M Th Van Genuchten, and M Šejna. 2012. <span>“HYDRUS: Model Use, Calibration, and Validation.”</span> <em>Transactions of the ASABE</em> 55 (4): 1263–74.
+</div>
+<div id="ref-turkeltaub2016real" class="csl-entry" role="listitem">
+Turkeltaub, Tuvia, Daniel Kurtzman, and Ofer Dahan. 2016. <span>“Real-Time Monitoring of Nitrate Transport in the Deep Vadose Zone Under a Crop Field–Implications for Groundwater Protection.”</span> <em>Hydrology and Earth System Sciences</em> 20 (8): 3099–3108.
+</div>
+<div id="ref-van1980closed" class="csl-entry" role="listitem">
+Van Genuchten, M Th. 1980. <span>“A Closed-Form Equation for Predicting the Hydraulic Conductivity of Unsaturated Soils.”</span> <em>Soil Science Society of America Journal</em> 44 (5): 892–98.
+</div>
+<div id="ref-vitali2021crop" class="csl-entry" role="listitem">
+Vitali, Giuliano, Matteo Francia, Matteo Golfarelli, and Maurizio Canavari. 2021. <span>“Crop Management with the Iot: An Interdisciplinary Survey.”</span> <em>Agronomy</em> 11 (1): 181.
+</div>
+<div id="ref-zheng2009spatial" class="csl-entry" role="listitem">
+Zheng, Zhong, Fengrong Zhang, Xurong Chai, Zhanqiang Zhu, and Fuyu Ma. 2009. <span>“Spatial Estimation of Soil Moisture and Salinity with Neural Kriging.”</span> In <em>Computer and Computing Technologies in Agriculture II, Volume 2: The Second IFIP International Conference on Computer and Computing Technologies in Agriculture (CCTA2008), October 18-20, 2008, Beijing, China 2</em>, 1227–37. Springer.
 </div>
 </div>
 </section>
