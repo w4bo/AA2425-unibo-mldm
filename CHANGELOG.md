@@ -1,3 +1,9 @@
+## [1.0.9](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.8...1.0.9) (2024-08-28)
+
+### Bug Fixes
+
+* data quality ([819228f](https://github.com/w4bo/AA2425-unibo-mldm/commit/819228fd14de43cdcc6a9838c7891fe4351b775c))
+
 ## [1.0.8](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.7...1.0.8) (2024-08-28)
 
 ### Bug Fixes
