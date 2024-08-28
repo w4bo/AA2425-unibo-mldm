@@ -308,7 +308,7 @@ Data generation and augmentation
     - Weather conditions from ARPAE
     - Different watering patterns (by changing watering intervals and the amount of supplied water)
 - Output
-    - Training set = $(12 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟} \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 4 months = 35 \cdot 10^3 samples$
+    - Training set = $12 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟} \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 4 months = 35 \cdot 10^3 samples$
     - Validation set = same as training set, but we simulate with different weather/irrigation patterns
     - Test set = 4 month from the real field
 - Different weather conditions & watering patterns to enable generalization and avoid overfitting
