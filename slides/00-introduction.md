@@ -166,7 +166,7 @@ Theory
 1. [Data Understanding](https://w4bo.github.io/AA2425-unibo-mldm/03-dataunderstanding)
 1. [Data Preparation](https://w4bo.github.io/AA2425-unibo-mldm/04-datapreparation)
 1. [Modeling](https://w4bo.github.io/AA2425-unibo-mldm/05-modeling)
-1. [Neural Networks](https://w4bo.github.io/AA2425-unibo-mldm/05-modeling)
+1. [Neural Networks](https://w4bo.github.io/AA2425-unibo-mldm/06-neuralnetworks)
 1. [Evaluation](https://w4bo.github.io/AA2425-unibo-mldm/06-evaluation)
 
 Labs
