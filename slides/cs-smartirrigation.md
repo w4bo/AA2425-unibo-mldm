@@ -295,4 +295,199 @@ Given the soil texture as input
 
 ![image](https://github.com/user-attachments/assets/d4d4226e-fd22-42ac-ae4c-90b08b971c58)
 
+# Feature Aware
+
+Data generation and augmentation
+
+- CRITERIA 3D to simulate the hydrological fluxes in the soil following Richard’s equations
+- Inputs
+    - The soil texture
+    - "Default" settings for the kiwi-plant (e.g., shape of the tree roots / LAI)
+    - Watering system based on a single dripper
+    - Weather conditions from ARPAE
+    - Different watering patterns (by changing watering intervals and the amount of supplied water)
+- Output
+    - Training set = $(12 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟} \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 4 months = 35 \cdot 10^3 training samples$
+    - Validation set = same as training set, but we simulate with different weather/irrigation patterns
+    - Test set = 4 month from the real field
+- Different weather conditions & watering patterns to enable generalization and avoid overfitting
+
+# Feature Aware
+
+This is a (multi-output) regression problem
+- The task is to learn the function mapping the input to the continuous output
+- We tried several machine learning models
+    - SVR, Random Forest Regression, Linear Regression, and ANN
+    - (A simple) ANN is the best performing model
+    - The hyper parameters (structure/learning rates) are set through a hyper-parameter tuning process
+        - HyperOpt: state-of-the-art optimization technique to explore the huge search space of hyper-parameters
+
+# Artificial Neural Networks
+
+![image](https://github.com/user-attachments/assets/b3b7641a-bba6-4333-b3e4-8aafdc08fca4)
+
+# Artificial Neural Networks
+
+![image](https://github.com/user-attachments/assets/083d3687-cb10-4c93-80c1-33fef0d0bdb5)
+
+# Feature Aware vs Unaware
+
+:::: {.columns}
+::: {.column width="50%"}
+
+Feature unaware
+
+![image](https://github.com/user-attachments/assets/39bc042a-dc34-4af4-8e6e-d1b025930e1f)
+
+:::
+::: {.column width="50%"}
+
+Feature aware
+
+![image](https://github.com/user-attachments/assets/86103a11-a85b-431f-bbf6-65cb1333f0e5)
+
+:::
+::::
+
+# Evaluation
+
+![image](https://github.com/user-attachments/assets/7a07f057-3297-4cc4-ac05-2cfaf6fda152)
+
+# Evaluation
+
+If I got 4 sensors, what layout should I choose?
+
+![image](https://github.com/user-attachments/assets/eda101bd-308b-4a5b-ac51-4a0be5fd4ecc)
+
+# Evaluation
+
+If I got 4 sensors, what layout should I choose?
+
+:::: {.columns}
+::: {.column width="50%"}
+![image](https://github.com/user-attachments/assets/69a8cc96-1e4d-49b7-9023-5facbe276a0b)
+:::
+::: {.column width="50%"}
+![image](https://github.com/user-attachments/assets/9222e84b-0dd8-4bd2-bf07-15bc91c071cd)
+:::
+::::
+
+# Serving the Data
+
+![image](https://github.com/user-attachments/assets/8571ffda-d6da-49c6-a616-463c3eb9b2ca)
+
+# Descriptive Analytics
+
+Starting from the profile, we derive meaningful visualizations/analysis
+
+- SM variance (left; lighter areas are those where SM varies the most) and average (right)
+
+The charts support both agricultural technicians and farmers
+
+- What is the watered volume? 
+    - This region is typically characterized by watering and high suction by the roots 
+    - Over-watering: high values in the average chart and low values in the variance chart
+- Where is the root suction higher?
+    - A high root suction quickly reduces the moisture in the soil and results in high soil moisture variance
+- How soil moisture dynamics impact on the watered volume?
+    - If, after increasing the water supplied, the profile does not change then the soil disperses water
+
+# Prescriptive Analytics [@quartieri2021effect]
+
+:::: {.columns}
+::: {.column width="50%"}
+
+    IF ((#BlueCells + #LightBlueCells)/(#Cells)<0.5 && (#BlueCells )/(#Cells)<0.25 in the last 12h) && precipitations < 7mm in the last 12h
+    THEN 
+        Recommended water = Evapotranspiration (ET) of the day before
+    ELSE 
+        Do nothing
+
+:::
+::: {.column width="50%"}
+![image](https://github.com/user-attachments/assets/e25c69f8-44a7-4401-a436-3feb0758832a)
+:::
+::::
+
+# Results
+
+![image](https://github.com/user-attachments/assets/7c42fadb-341e-4db4-80ff-06576e6ebee4)
+
+Two irrigation setups during the 2021 campaign (i.e., May/October) within the same orchard
+
+- Managed Row: irrigation is automatically controlled using a 2D installation of 12 sensor
+- Control Row: irrigation is manually controlled by the farmer
+
+Results
+
+- Water management
+    - MR saved 44% of water during the whole campaign
+    - Maximum saving in June and September: for the farmer is harder to estimate the SM level and water requirement
+- Fruit quality
+    - Productivity of vines was unaffected by the irrigation and ranged from 32 to 39 kg/vine (35-44 t/ha)
+    - Fruits from CR appeared greener (hue angle of 105) than fruits from MR (hue angle of 102)
+    - Fruits from CR had lower soluble solid concentration at harvest (12.7 brix) than fruits from MR (15.3 brix)
+    - The gap has been maintained after 2 months of storage (and 1 day of shelf life) 
+        - The soluble solid concentration was 17.4 brix for the MR vs 16.1 brix for the CR
+
+# Future direction: soil moisture profiling
+
+Continual learning to overcome the limitations of the simulation
+
+- Adapting the model after its deployment
+- Use the data that is coming into the production environment and retrain the model based 
+- Fit to unforeseen field conditions
+
+Improving the recommendation
+
+- Sometimes the soil does not behave as expected
+
+Homogeneous water recommendation; however, we need to handle:
+
+- The "water needs" of the plant
+- The phenological growth stages
+- Field conditions
+- Latitude/longitude
+- Availability of water
+
+# Future direction: forecasting
+
+While profiling looks at the current state of soil moisture, how will soil moisture change --- for instance --- in a week?
+
+Forecasting soil moisture
+
+- Soil profiles are snapshots of soil moisture, we should learn from time series of snapshots 
+- Features to consider
+    - Soil conditions
+    - Weather conditions
+    - Type of irrigation
+
+# Future direction: unifying data platform
+
+:::: {.columns}
+::: {.column width="50%"}
+
+Soil monitoring is a possible application of data platforms for precision farming
+
+- Robotics, tractors and implements
+- Satellite images and remote sensing indexes
+- Spatio-temporal analysis
+- And many others!
+
+Research issues
+
+- Shared dictionary. Many sub-domains of precision agriculture, each with its dictionary
+- Data integration. We need a common layer (storage+processing) to access data sources
+- Heterogeneous analytics. Data have multiple natures, spatial and temporal data require ad-hoc techniques 
+
+:::
+::: {.column width="50%"}
+
+![image](https://github.com/user-attachments/assets/f710d9cb-d71c-468d-9b70-582024fe5c6e)
+
+:::
+::::
+
+
+
 # References
