@@ -108,7 +108,7 @@ Indeed, one of the most relevant aspects is the annotation of the data
 - Examples:
   - A person's height prediction → data: joint lengths, label: height (cm)
   - Pedestrian Detection → data: images, label: presence of a pedestrian (yes/no)
-  - Pedestrian Localization → data: images, label: position of the pedestrain (x, y, w, h)
+  - Pedestrian Localization → data: images, label: position of the pedestrian (x, y, w, h)
   - Audio classification numbers → data: audio sequences, label: number ('five')
 
 A single data is therefore defined as annotated if it is associated with a label

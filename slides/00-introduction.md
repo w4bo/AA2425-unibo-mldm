@@ -156,3 +156,23 @@ However, I suggest you to read the book:
 
 :::
 ::::
+
+# Tentative outline
+
+Theory
+
+1. [CRISP-DM](https://w4bo.github.io/AA2425-unibo-mldm/01-crispdm)
+1. [Business Understanding](https://w4bo.github.io/AA2425-unibo-mldm/02-businessunderstanding)
+1. [Data Understanding](https://w4bo.github.io/AA2425-unibo-mldm/03-dataunderstanding)
+1. [Data Preparation](https://w4bo.github.io/AA2425-unibo-mldm/04-datapreparation)
+1. [Modeling](https://w4bo.github.io/AA2425-unibo-mldm/05-modeling)
+1. [Neural Networks](https://w4bo.github.io/AA2425-unibo-mldm/05-modeling)
+1. [Evaluation](https://w4bo.github.io/AA2425-unibo-mldm/06-evaluation)
+
+Labs
+
+1. [Introduction to Colab](https://w4bo.github.io/AA2425-unibo-mldm/lab-00-introduction)
+1. [Data Understanding](https://w4bo.github.io/AA2425-unibo-mldm/lab-01-dataunderstanding)
+1. [Data Preparation](https://w4bo.github.io/AA2425-unibo-mldm/lab-02-datapreparation)
+1. [Modeling (classification)](https://w4bo.github.io/AA2425-unibo-mldm/lab-03-classification)
+1. [Modeling (neural networks)](https://w4bo.github.io/AA2425-unibo-mldm/lab-04-neuralnetworks)
