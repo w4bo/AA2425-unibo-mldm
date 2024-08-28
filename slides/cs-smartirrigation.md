@@ -1,22 +1,23 @@
 # Case Study: Smart Irrigation
 
-# Data Platforms in the Agritech Domain
-
-The synergy of internet of things (IoT) and precision farming is producing valuable applications in the Agritech domain [@vitali2021crop]
-
-- **Agritech**: use of technology for farming to improve efficiency and profitability
-
 # Smart Irrigation as a Case Study
 
 :::: {.columns}
 ::: {.column width="60%"}
 
+The synergy of internet of things (IoT) and precision farming is producing valuable applications in the Agritech domain [@vitali2021crop]
+
+- **Agritech**: use of technology for farming to improve efficiency and profitability
+
+
 Optimizing soil moisture is crucial for watering and crop performance [@turkeltaub2016real]
 
 - **GOAL**: saving water while improving fruit quality (i.e., provide a recommendation of the amount necessary water)
 - *Soils* have different water retention
-- *Watering systems* have different behaviors (e.g., drippers and sprinklers)
-- *Plants* have different water demand (e.g., Kiwi [@judd1986water] vs Grapes)
+- *Watering systems* have different behaviors
+    - Drippers vs sprinklers
+- *Plants* have different water demand
+    - Kiwi [@judd1986water] vs Grapes
 - *Sensors* produce different measurements with different precisions
 
 :::
@@ -53,13 +54,13 @@ We consider an orchard where
 
 (Example) Scenarios of digital transformation in agriculture
 
-- Scenario #1
+- *Scenario #1*
     - The farmer/technician controls the watering system based only on the experience
     - No digital data/KPIs/automation
-- Scenario #2
+- *Scenario #2*
     - The control of the watering system is refined by observing sensor data
     - Sensor data is digitalized, no KPIs/automatic
-- Scenario #3
+- *Scenario #3*
     - A decision support system that, knowing how to optimize KPIs, controls the watering system
     - Sensor data is digitalized, automatic KPIs and action
 
@@ -78,13 +79,13 @@ We consider an orchard where
 
 (Example) Scenarios of digital transformation in agriculture
 
-- Scenario #1
+- *Scenario #1*
     - The farmer/technician controls the watering system based only on the experience
     - No digital data/KPIs/automation
-- Scenario #2
+- *Scenario #2*
     - The control of the watering system is refined by observing sensor data
     - Sensor data is digitalized, no KPIs/automatic
-- Scenario #3
+- *Scenario #3*
     - A decision support system that, knowing how to optimize KPIs, controls the watering system
     - Sensor data is digitalized, automatic KPIs and action
 
@@ -98,18 +99,19 @@ We consider an orchard where
 
 # Simulators...
 
-To achieve our goal, it necessary to understand of the soil behaves
+To achieve our goal, *it necessary to understand of the soil behaves*
 
 Simulate the soil behavior according to physical models [@van1980closed]
 
 - However a fine tuning is required, we need to know/parametrize everything
-    - Soil (e.g., retention curve, hysteresis [@pham2005study])
-    - Plant (e.g., roots, LAI)
-    - Weather conditions (temperature, humidity, wind, precipitations)
-    - Watering system (e.g., capacity, distance between drippers)
+    - *Soil* (e.g., retention curve, hysteresis [@pham2005study])
+    - *Plant* (e.g., roots, LAI)
+    - *Weather* conditions (temperature, humidity, wind, precipitations)
+    - *Watering* system (e.g., capacity, distance between drippers)
 - Tuning can take months (of human interactions)!
-    - Need to collect samples from the field… if some parameter is incorrect we need to trace back
-    - Need to implement/code all these features into the simulator [@vsimunek2012hydrus] [@bittelli2015soil]
+    - Need to collect samples from the field... if some parameter is incorrect we need to trace back
+    - Need to implement/code all physical features into the simulator
+        - E.g., [@vsimunek2012hydrus] implemented in [@bittelli2015soil]
     - Hyper-parameter tuning with machine learning can help, but it is not a silver bullet
 
 # ... vs Sensors
@@ -310,7 +312,7 @@ Data generation and augmentation
 - Output
     - Training set = $12 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟} \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 4 months = 35 \cdot 10^3 samples$
     - Validation set = same as training set, but we simulate with different weather/irrigation patterns
-    - Test set = 4 month from the real field
+    - Test set = 4 months from the real field
 - Different weather conditions & watering patterns to enable generalization and avoid overfitting
 
 # Feature Aware
@@ -395,9 +397,10 @@ The charts support both agricultural technicians and farmers
 :::: {.columns}
 ::: {.column width="50%"}
 
-    IF ((#BlueCells + #LightBlueCells)/(#Cells) < 0.50
-       && (#BlueCells)/(#Cells) < 0.25 in the last 12h)
-       && precipitations < 7mm in the last 12h
+    IF
+       ((#BlueCells + #LightBlueCells)/(#Cells) < 0.50 &&
+       (#BlueCells)/(#Cells) < 0.25 in the last 12h) &&
+       precipitations < 7mm in the last 12h
     THEN 
         Recommended water = Evapotranspiration (ET) of the day before
     ELSE 
