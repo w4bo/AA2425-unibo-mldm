@@ -384,7 +384,6 @@ Matteo Francia
 <li><a href="#/metrics-of-data-quality-batini2009methodologies" id="/toc-metrics-of-data-quality-batini2009methodologies">Metrics of Data Quality <span class="citation" data-cites="batini2009methodologies">(Batini et al. 2009)</span></a></li>
 </ul></li>
 <li><a href="#/case-study-smart-irrigation" id="/toc-case-study-smart-irrigation">Case Study: Smart Irrigation</a></li>
-<li><a href="#/data-platforms-in-the-agritech-domain" id="/toc-data-platforms-in-the-agritech-domain">Data Platforms in the Agritech Domain</a></li>
 <li><a href="#/smart-irrigation-as-a-case-study" id="/toc-smart-irrigation-as-a-case-study">Smart Irrigation as a Case Study</a></li>
 <li><a href="#/reference-scenario" id="/toc-reference-scenario">Reference Scenario</a></li>
 <li><a href="#/digital-transformation" id="/toc-digital-transformation">Digital Transformation</a></li>
@@ -735,24 +734,26 @@ Matteo Francia
 
 </section>
 
-<section id="data-platforms-in-the-agritech-domain" class="title-slide slide level1 center">
-<h1>Data Platforms in the Agritech Domain</h1>
-<p>The synergy of internet of things (IoT) and precision farming is producing valuable applications in the Agritech domain <span class="citation" data-cites="vitali2021crop">(<a href="#/references-1" role="doc-biblioref" onclick="">Vitali et al. 2021</a>)</span></p>
-<ul>
-<li><strong>Agritech</strong>: use of technology for farming to improve efficiency and profitability</li>
-</ul>
-</section>
-
 <section id="smart-irrigation-as-a-case-study" class="title-slide slide level1 center">
 <h1>Smart Irrigation as a Case Study</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
+<p>The synergy of internet of things (IoT) and precision farming is producing valuable applications in the Agritech domain <span class="citation" data-cites="vitali2021crop">(<a href="#/references-1" role="doc-biblioref" onclick="">Vitali et al. 2021</a>)</span></p>
+<ul>
+<li><strong>Agritech</strong>: use of technology for farming to improve efficiency and profitability</li>
+</ul>
 <p>Optimizing soil moisture is crucial for watering and crop performance <span class="citation" data-cites="turkeltaub2016real">(<a href="#/references-1" role="doc-biblioref" onclick="">Turkeltaub, Kurtzman, and Dahan 2016</a>)</span></p>
 <ul>
 <li><strong>GOAL</strong>: saving water while improving fruit quality (i.e., provide a recommendation of the amount necessary water)</li>
 <li><em>Soils</em> have different water retention</li>
-<li><em>Watering systems</em> have different behaviors (e.g., drippers and sprinklers)</li>
-<li><em>Plants</em> have different water demand (e.g., Kiwi <span class="citation" data-cites="judd1986water">(<a href="#/references-1" role="doc-biblioref" onclick="">Judd, McAneney, and Trought 1986</a>)</span> vs Grapes)</li>
+<li><em>Watering systems</em> have different behaviors
+<ul>
+<li>Drippers vs sprinklers</li>
+</ul></li>
+<li><em>Plants</em> have different water demand
+<ul>
+<li>Kiwi <span class="citation" data-cites="judd1986water">(<a href="#/references-1" role="doc-biblioref" onclick="">Judd, McAneney, and Trought 1986</a>)</span> vs Grapes</li>
+</ul></li>
 <li><em>Sensors</em> produce different measurements with different precisions</li>
 </ul>
 </div><div class="column" style="width:40%;">
@@ -788,17 +789,17 @@ Matteo Francia
 <div class="column" style="width:60%;">
 <p>(Example) Scenarios of digital transformation in agriculture</p>
 <ul>
-<li>Scenario #1
+<li><em>Scenario #1</em>
 <ul>
 <li>The farmer/technician controls the watering system based only on the experience</li>
 <li>No digital data/KPIs/automation</li>
 </ul></li>
-<li>Scenario #2
+<li><em>Scenario #2</em>
 <ul>
 <li>The control of the watering system is refined by observing sensor data</li>
 <li>Sensor data is digitalized, no KPIs/automatic</li>
 </ul></li>
-<li>Scenario #3
+<li><em>Scenario #3</em>
 <ul>
 <li>A decision support system that, knowing how to optimize KPIs, controls the watering system</li>
 <li>Sensor data is digitalized, automatic KPIs and action</li>
@@ -821,17 +822,17 @@ Matteo Francia
 <div class="column" style="width:60%;">
 <p>(Example) Scenarios of digital transformation in agriculture</p>
 <ul>
-<li>Scenario #1
+<li><em>Scenario #1</em>
 <ul>
 <li>The farmer/technician controls the watering system based only on the experience</li>
 <li>No digital data/KPIs/automation</li>
 </ul></li>
-<li>Scenario #2
+<li><em>Scenario #2</em>
 <ul>
 <li>The control of the watering system is refined by observing sensor data</li>
 <li>Sensor data is digitalized, no KPIs/automatic</li>
 </ul></li>
-<li>Scenario #3
+<li><em>Scenario #3</em>
 <ul>
 <li>A decision support system that, knowing how to optimize KPIs, controls the watering system</li>
 <li>Sensor data is digitalized, automatic KPIs and action</li>
@@ -850,20 +851,23 @@ Matteo Francia
 
 <section id="simulators" class="title-slide slide level1 center">
 <h1>Simulators…</h1>
-<p>To achieve our goal, it necessary to understand of the soil behaves</p>
+<p>To achieve our goal, <em>it necessary to understand of the soil behaves</em></p>
 <p>Simulate the soil behavior according to physical models <span class="citation" data-cites="van1980closed">(<a href="#/references-1" role="doc-biblioref" onclick="">Van Genuchten 1980</a>)</span></p>
 <ul>
 <li>However a fine tuning is required, we need to know/parametrize everything
 <ul>
-<li>Soil (e.g., retention curve, hysteresis <span class="citation" data-cites="pham2005study">(<a href="#/references-1" role="doc-biblioref" onclick="">Pham, Fredlund, and Barbour 2005</a>)</span>)</li>
-<li>Plant (e.g., roots, LAI)</li>
-<li>Weather conditions (temperature, humidity, wind, precipitations)</li>
-<li>Watering system (e.g., capacity, distance between drippers)</li>
+<li><em>Soil</em> (e.g., retention curve, hysteresis <span class="citation" data-cites="pham2005study">(<a href="#/references-1" role="doc-biblioref" onclick="">Pham, Fredlund, and Barbour 2005</a>)</span>)</li>
+<li><em>Plant</em> (e.g., roots, LAI)</li>
+<li><em>Weather</em> conditions (temperature, humidity, wind, precipitations)</li>
+<li><em>Watering</em> system (e.g., capacity, distance between drippers)</li>
 </ul></li>
 <li>Tuning can take months (of human interactions)!
 <ul>
 <li>Need to collect samples from the field… if some parameter is incorrect we need to trace back</li>
-<li>Need to implement/code all these features into the simulator <span class="citation" data-cites="vsimunek2012hydrus">(<a href="#/references-1" role="doc-biblioref" onclick="">Šimunek, Van Genuchten, and Šejna 2012</a>)</span> <span class="citation" data-cites="bittelli2015soil">(<a href="#/references-1" role="doc-biblioref" onclick="">Bittelli, Campbell, and Tomei 2015</a>)</span></li>
+<li>Need to implement/code all physical features into the simulator
+<ul>
+<li>E.g., <span class="citation" data-cites="vsimunek2012hydrus">(<a href="#/references-1" role="doc-biblioref" onclick="">Šimunek, Van Genuchten, and Šejna 2012</a>)</span> implemented in <span class="citation" data-cites="bittelli2015soil">(<a href="#/references-1" role="doc-biblioref" onclick="">Bittelli, Campbell, and Tomei 2015</a>)</span></li>
+</ul></li>
 <li>Hyper-parameter tuning with machine learning can help, but it is not a silver bullet</li>
 </ul></li>
 </ul>
@@ -1109,7 +1113,7 @@ Matteo Francia
 <ul>
 <li>Training set = <span class="math inline">\(12 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟} \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 4 months = 35 \cdot 10^3 samples\)</span></li>
 <li>Validation set = same as training set, but we simulate with different weather/irrigation patterns</li>
-<li>Test set = 4 month from the real field</li>
+<li>Test set = 4 months from the real field</li>
 </ul></li>
 <li>Different weather conditions &amp; watering patterns to enable generalization and avoid overfitting</li>
 </ul>
@@ -1229,9 +1233,10 @@ Matteo Francia
 <h1>Prescriptive Analytics <span class="citation" data-cites="quartieri2021effect">(<a href="#/references-1" role="doc-biblioref" onclick="">Quartieri et al. 2021</a>)</span></h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<pre><code>IF ((#BlueCells + #LightBlueCells)/(#Cells) &lt; 0.50
-   &amp;&amp; (#BlueCells)/(#Cells) &lt; 0.25 in the last 12h)
-   &amp;&amp; precipitations &lt; 7mm in the last 12h
+<pre><code>IF
+   ((#BlueCells + #LightBlueCells)/(#Cells) &lt; 0.50 &amp;&amp;
+   (#BlueCells)/(#Cells) &lt; 0.25 in the last 12h) &amp;&amp;
+   precipitations &lt; 7mm in the last 12h
 THEN 
     Recommended water = Evapotranspiration (ET) of the day before
 ELSE 
