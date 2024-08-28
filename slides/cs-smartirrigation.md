@@ -49,6 +49,10 @@ Optimizing soil moisture is crucial for watering and crop performance [@turkelta
 
 # Digital Transformation
 
+![image](https://github.com/user-attachments/assets/70b623f5-8d7e-4c98-94e6-1c723deb6420)
+
+# 
+
 :::: {.columns}
 ::: {.column width="60%"}
 
@@ -144,6 +148,8 @@ Simulate the soil behavior according to physical models [@van1980closed]
 
 # Sensor Layouts and Symmetry Assumptions
 
+Competitors rely on a single sensor (or a line of sensors at different depths) and assume that the soil moisture is uniform everywhere 
+
 :::: {.columns}
 ::: {.column width="50%"}
 
@@ -186,7 +192,11 @@ Simulate the soil behavior according to physical models [@van1980closed]
     - Depending on the number of sensors and on their layout the monitoring accuracy changes
 1. Goal: produce fine-grained soil profiles out of coarse-grained layouts
 
-# Overview of the Approach [@francia2022multi]
+# Overview of the Approach 
+
+![image](https://github.com/user-attachments/assets/ac0d5d37-64b9-4454-84bd-60f5bf83d510)
+
+# Monitoring [@francia2022multi]
 
 ![Overview](https://github.com/user-attachments/assets/83118d01-bad4-4b54-8921-d2d1f9d73a3f)
 
@@ -400,7 +410,11 @@ The charts support both agricultural technicians and farmers
 - How soil moisture dynamics impact on the watered volume?
     - If, after increasing the water supplied, the profile does not change then the soil disperses water
 
-# Prescriptive Analytics [@quartieri2021effect]
+# Prescripting [@quartieri2021effect]
+
+![image](https://github.com/user-attachments/assets/43aaaae7-7e5a-4400-af7d-8ffd884a2162)
+
+# Simple Rule (2021)
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -420,14 +434,27 @@ The charts support both agricultural technicians and farmers
 :::
 ::::
 
-# Results
+# Test Setup
 
 Two irrigation setups during the 2021 campaign (i.e., May/October) within the same orchard
 
 - *Managed Row*: irrigation is automatically controlled using a 2D installation of 12 sensor
 - *Control Row*: irrigation is manually controlled by the farmer
 
-Results
+:::: {.columns}
+::: {.column width="50%"}
+
+![Managed Row](https://github.com/user-attachments/assets/6f648d9d-5c3e-4c24-b0e4-9ce30a6ec90d)
+
+:::
+::: {.column width="50%"}
+
+![Control Row](https://github.com/user-attachments/assets/cb80c32b-f892-4283-86a6-bae0793a0613)
+
+:::
+::::
+
+# Results
 
 - **Water management**
     - MR saved 44% of water during the whole campaign
@@ -438,6 +465,37 @@ Results
     - Fruits from CR had lower soluble solid concentration at harvest (12.7 brix) than fruits from MR (15.3 brix)
     - The gap has been maintained after 2 months of storage (and 1 day of shelf life) 
         - The soluble solid concentration was 17.4 brix for the MR vs 16.1 brix for the CR
+
+
+# Control System
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Single wing*
+
+![image](https://github.com/user-attachments/assets/d3eed7d0-8001-47b2-a66d-d6ba16aa26db)
+
+![image](https://github.com/user-attachments/assets/cb80c32b-f892-4283-86a6-bae0793a0613)
+
+:::
+::: {.column width="50%"}
+
+**Double wing**
+
+![image](https://github.com/user-attachments/assets/e4307c5b-e813-4699-9022-4b0e145f04f5)
+
+![image](https://github.com/user-attachments/assets/4c832868-2913-4f33-bf6f-bfcaf639e0ad)
+
+:::
+::::
+
+# Single Wing vs Double Wing
+
+
+![image](https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e)
+
+![image](https://github.com/user-attachments/assets/d3eed7d0-8001-47b2-a66d-d6ba16aa26db)
 
 # Future direction: soil moisture profiling
 
