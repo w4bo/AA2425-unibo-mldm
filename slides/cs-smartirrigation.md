@@ -84,7 +84,8 @@ We consider an orchard where
     - The control of the watering system is refined by observing sensor data
     - Sensor data is digitalized, no KPIs/automatic
 - Scenario #3
-    a decision support system that, knowing how to optimize KPIs, controls the watering system
+    - A decision support system that, knowing how to optimize KPIs, controls the watering system
+    - Sensor data is digitalized, automatic KPIs and action
 
 :::
 ::: {.column width="40%"}
