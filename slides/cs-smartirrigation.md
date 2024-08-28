@@ -469,6 +469,12 @@ Two irrigation setups during the 2021 campaign (i.e., May/October) within the sa
 
 # Control System
 
+![image](https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e)
+
+![image](https://github.com/user-attachments/assets/d3eed7d0-8001-47b2-a66d-d6ba16aa26db)
+
+# Single Wing vs Double Wing
+
 :::: {.columns}
 ::: {.column width="50%"}
 
@@ -490,12 +496,6 @@ Two irrigation setups during the 2021 campaign (i.e., May/October) within the sa
 :::
 ::::
 
-# Single Wing vs Double Wing
-
-
-![image](https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e)
-
-![image](https://github.com/user-attachments/assets/d3eed7d0-8001-47b2-a66d-d6ba16aa26db)
 
 # Future direction: soil moisture profiling
 
