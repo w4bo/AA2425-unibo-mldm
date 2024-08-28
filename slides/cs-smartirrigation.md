@@ -31,18 +31,18 @@ Optimizing soil moisture is crucial for watering and crop performance [@turkelta
 # Reference Scenario
 
 :::: {.columns}
-::: {.column width="60%"}
+::: {.column width="50%"}
 
-We consider an orchard where 
+![Kiwi orchard](https://github.com/user-attachments/assets/51ddbda5-791f-4a27-b3e8-0249e68b4be7)
+
+:::
+::: {.column width="50%"}
+
+![Model of the orchard](https://github.com/user-attachments/assets/3ecb211c-c5ae-4fdf-8870-4449155de0c9)
 
 - Kiwi *plants are aligned along rows*
 - Each row has many *drippers* (e.g., 1 every 60cm)
 - Drippers can water a *limited soil volume*
-
-:::
-::: {.column width="40%"}
-
-![image](https://github.com/user-attachments/assets/3ecb211c-c5ae-4fdf-8870-4449155de0c9)
 
 :::
 ::::
@@ -133,6 +133,14 @@ Simulate the soil behavior according to physical models [@van1980closed]
 
 :::
 ::::
+
+#
+
+![image](https://github.com/user-attachments/assets/27db3d71-a7fc-47d1-b1ef-5026afcf72f4)
+
+# Open Field vs Simulator
+
+![image](https://github.com/user-attachments/assets/0dc1575b-bdae-4805-a8fe-f19a6a9f7092)
 
 # Sensor Layouts and Symmetry Assumptions
 
