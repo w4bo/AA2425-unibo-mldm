@@ -174,3 +174,125 @@ Simulate the soil behavior according to physical models [@van1980closed]
 1. Sensors return a discretized representation of soil moisture
     - Depending on the number of sensors and on their layout the monitoring accuracy changes
 1. Goal: produce fine-grained soil profiles out of coarse-grained layouts
+
+# Overview of the Approach
+
+![Overview](https://github.com/user-attachments/assets/83118d01-bad4-4b54-8921-d2d1f9d73a3f)
+
+# Data Collection
+
+:::: {.columns}
+::: {.column width="60%"}
+
+Setup
+
+- We install a 2D/3D grid of sensors
+
+For instance, in the 2D setting 
+
+- 4 columns of sensors are located across the row (e.g., 0/30/60/90cm)
+    - The column (0, *) is under the dripper
+- Each columns has 3 sensors located at 3 depths (e.g., 20/40/60cm)
+
+
+:::
+::: {.column width="40%"}
+
+![image](https://github.com/user-attachments/assets/90034743-1c3a-46b6-9408-93f2644703f1)
+
+:::
+::::
+
+# Data Collection
+
+In the 2D setting (3 x 4 gypsum block sensors)
+
+- Sample soil moisture-sensor data every 15 minutes
+- Collect dripper and weather data  (humidity, temperature, solar radiation, wind) every hour
+
+How many data does each monitored field produces every season?
+
+$(12 \cdot 4 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟}+5 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟}) \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 5 \frac{𝑚𝑜𝑛𝑡ℎ}{𝑦𝑒𝑎𝑟} = 200 \cdot 10^3 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{𝑦𝑒𝑎𝑟}$
+
+We monitored 6 fields for 2 years
+
+$200 \cdot 10^3 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{𝑦𝑒𝑎𝑟} \cdot 2 𝑦𝑒𝑎𝑟𝑠 \cdot 6= 2.4 \cdot 10^6 𝑠𝑎𝑚𝑝𝑙𝑒𝑠$
+
+We should consider accessory data for storage and optimization structures
+
+- In two years, we collected/generated 16GB data (as of 2022-08-30)
+- In four years, we collected/generated 64GB data (as of 2024-08-30)
+
+# Processing
+
+:::: {.columns}
+::: {.column width="60%"}
+
+Feature unaware (FU)
+
+- Plug-and-play 
+- Create a linear interpolation of the real-time sensor data
+
+Feature aware (FA)
+
+- Require time for data collection and training/testing
+- Create an interpolation of the real-time sensor data through machine learning
+:::
+::: {.column width="40%"}
+
+![image](https://github.com/user-attachments/assets/6397b84c-b1ec-4ce9-979f-a1e688d5c2d1)
+
+:::
+::::
+
+# Feature Unaware
+
+:::: {.columns}
+::: {.column width="60%"}
+
+Feature unaware (FU)
+
+- Plug-and-play 
+- Create a linear interpolation of the real-time sensor data
+
+:::
+::: {.column width="40%"}
+
+![image](https://github.com/user-attachments/assets/bb91b88a-440c-42b6-8729-ff9af7ee40c2)
+
+:::
+::::
+
+# Feature Unaware
+
+![image](https://github.com/user-attachments/assets/8d6fbc76-edd5-4a63-9a19-d035c432fa9d)
+
+# Feature Aware
+
+:::: {.columns}
+::: {.column width="60%"}
+
+Feature aware
+
+- Create an interpolation of the real-time sensor data through machine learning
+- Offline pipeline
+
+Given the soil texture as input
+
+- Simulate different patterns of SM to produce a dataset of simulated SM
+- Train a machine learning model on such data
+- Deploy the model to estimate the soil profile
+
+:::
+::: {.column width="40%"}
+
+![image](https://github.com/user-attachments/assets/80848360-0e67-48c9-b70a-5468ca21951e)
+
+:::
+::::
+
+# Feature Aware
+
+![image](https://github.com/user-attachments/assets/d4d4226e-fd22-42ac-ae4c-90b08b971c58)
+
+# References
