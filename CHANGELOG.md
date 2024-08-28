@@ -1,3 +1,13 @@
+## [1.0.7](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.6...1.0.7) (2024-08-28)
+
+### Dependency updates
+
+* **deps:** update dependency notebook to v7.2.2 ([015eea7](https://github.com/w4bo/AA2425-unibo-mldm/commit/015eea77ed85d4ceaacc6d5cc2865dece3c04a47))
+
+### Bug Fixes
+
+* add tentative outline ([d3ac96e](https://github.com/w4bo/AA2425-unibo-mldm/commit/d3ac96e3ecbc07cb3812430fc99676013897f7d2))
+
 ## [1.0.6](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.5...1.0.6) (2024-08-27)
 
 ### Bug Fixes
