@@ -469,18 +469,18 @@ Two irrigation setups during the 2021 campaign (i.e., May/October) within the sa
 
 # Control System
 
-![image](https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e)
+![image](https://github.com/user-attachments/assets/43aaaae7-7e5a-4400-af7d-8ffd884a2162)
 
-![image](https://github.com/user-attachments/assets/d3eed7d0-8001-47b2-a66d-d6ba16aa26db)
+![image](https://github.com/user-attachments/assets/e4307c5b-e813-4699-9022-4b0e145f04f5)
 
 # Single Wing vs Double Wing
 
 :::: {.columns}
 ::: {.column width="50%"}
 
-**Single wing*
+**Single wing**
 
-![image](https://github.com/user-attachments/assets/d3eed7d0-8001-47b2-a66d-d6ba16aa26db)
+![image](https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e)
 
 ![image](https://github.com/user-attachments/assets/cb80c32b-f892-4283-86a6-bae0793a0613)
 
@@ -489,7 +489,7 @@ Two irrigation setups during the 2021 campaign (i.e., May/October) within the sa
 
 **Double wing**
 
-![image](https://github.com/user-attachments/assets/e4307c5b-e813-4699-9022-4b0e145f04f5)
+![image](https://github.com/user-attachments/assets/d3eed7d0-8001-47b2-a66d-d6ba16aa26db)
 
 ![image](https://github.com/user-attachments/assets/4c832868-2913-4f33-bf6f-bfcaf639e0ad)
 
