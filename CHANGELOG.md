@@ -1,3 +1,9 @@
+## [1.0.12](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.11...1.0.12) (2024-08-28)
+
+### Bug Fixes
+
+* add watering cs ([fa8bf21](https://github.com/w4bo/AA2425-unibo-mldm/commit/fa8bf210f1e192d746b5b2fbc625e693d385d35a))
+
 ## [1.0.11](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.10...1.0.11) (2024-08-28)
 
 ### Bug Fixes
