@@ -135,10 +135,12 @@ Simulate the soil behavior according to physical models [@van1980closed]
 :::: {.columns}
 ::: {.column width="50%"}
 
+![image](https://github.com/user-attachments/assets/3ecb211c-c5ae-4fdf-8870-4449155de0c9)
+
 :::
 ::: {.column width="50%"}
 
-![Symmetry Assumptions](https://github.com/user-attachments/assets/00856965-4270-4d73-92b6-407cf536bfb3)
+![image](https://github.com/user-attachments/assets/535ef33f-3107-4258-adb9-e3686cb327b3)
 
 :::
 ::::
