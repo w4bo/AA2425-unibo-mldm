@@ -60,7 +60,8 @@ We consider an orchard where
     - The control of the watering system is refined by observing sensor data
     - Sensor data is digitalized, no KPIs/automatic
 - Scenario #3
-    a decision support system that, knowing how to optimize KPIs, controls the watering system
+    - A decision support system that, knowing how to optimize KPIs, controls the watering system
+    - Sensor data is digitalized, automatic KPIs and action
 
 :::
 ::: {.column width="40%"}
@@ -70,7 +71,7 @@ We consider an orchard where
 :::
 ::::
 
-# Digital Transformation
+#
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -150,7 +151,7 @@ Simulate the soil behavior according to physical models [@van1980closed]
 - If moisture variations take place along the row too, a 3D grid of sensors is required
     - E.g., too sparse drippers
 
-# From Sensors to Soil Profiles [@francia2022multi]
+# From Sensors to Soil Profiles
 
 :::: {.columns}
 ::: {.column width="32%"}
@@ -175,7 +176,7 @@ Simulate the soil behavior according to physical models [@van1980closed]
     - Depending on the number of sensors and on their layout the monitoring accuracy changes
 1. Goal: produce fine-grained soil profiles out of coarse-grained layouts
 
-# Overview of the Approach
+# Overview of the Approach [@francia2022multi]
 
 ![Overview](https://github.com/user-attachments/assets/83118d01-bad4-4b54-8921-d2d1f9d73a3f)
 
@@ -307,7 +308,7 @@ Data generation and augmentation
     - Weather conditions from ARPAE
     - Different watering patterns (by changing watering intervals and the amount of supplied water)
 - Output
-    - Training set = $(12 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟} \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 4 months = 35 \cdot 10^3 training samples$
+    - Training set = $(12 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟} \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 4 months = 35 \cdot 10^3 samples$
     - Validation set = same as training set, but we simulate with different weather/irrigation patterns
     - Test set = 4 month from the real field
 - Different weather conditions & watering patterns to enable generalization and avoid overfitting
@@ -315,6 +316,7 @@ Data generation and augmentation
 # Feature Aware
 
 This is a (multi-output) regression problem
+
 - The task is to learn the function mapping the input to the continuous output
 - We tried several machine learning models
     - SVR, Random Forest Regression, Linear Regression, and ANN
@@ -335,16 +337,12 @@ This is a (multi-output) regression problem
 :::: {.columns}
 ::: {.column width="50%"}
 
-Feature unaware
-
-![image](https://github.com/user-attachments/assets/39bc042a-dc34-4af4-8e6e-d1b025930e1f)
+![Feature unaware](https://github.com/user-attachments/assets/39bc042a-dc34-4af4-8e6e-d1b025930e1f)
 
 :::
 ::: {.column width="50%"}
 
-Feature aware
-
-![image](https://github.com/user-attachments/assets/86103a11-a85b-431f-bbf6-65cb1333f0e5)
+![Feature aware](https://github.com/user-attachments/assets/86103a11-a85b-431f-bbf6-65cb1333f0e5)
 
 :::
 ::::
@@ -397,7 +395,9 @@ The charts support both agricultural technicians and farmers
 :::: {.columns}
 ::: {.column width="50%"}
 
-    IF ((#BlueCells + #LightBlueCells)/(#Cells)<0.5 && (#BlueCells )/(#Cells)<0.25 in the last 12h) && precipitations < 7mm in the last 12h
+    IF ((#BlueCells + #LightBlueCells)/(#Cells) < 0.50
+       && (#BlueCells)/(#Cells) < 0.25 in the last 12h)
+       && precipitations < 7mm in the last 12h
     THEN 
         Recommended water = Evapotranspiration (ET) of the day before
     ELSE 
@@ -411,19 +411,17 @@ The charts support both agricultural technicians and farmers
 
 # Results
 
-![image](https://github.com/user-attachments/assets/7c42fadb-341e-4db4-80ff-06576e6ebee4)
-
 Two irrigation setups during the 2021 campaign (i.e., May/October) within the same orchard
 
-- Managed Row: irrigation is automatically controlled using a 2D installation of 12 sensor
-- Control Row: irrigation is manually controlled by the farmer
+- *Managed Row*: irrigation is automatically controlled using a 2D installation of 12 sensor
+- *Control Row*: irrigation is manually controlled by the farmer
 
 Results
 
-- Water management
+- **Water management**
     - MR saved 44% of water during the whole campaign
     - Maximum saving in June and September: for the farmer is harder to estimate the SM level and water requirement
-- Fruit quality
+- **Fruit quality**
     - Productivity of vines was unaffected by the irrigation and ranged from 32 to 39 kg/vine (35-44 t/ha)
     - Fruits from CR appeared greener (hue angle of 105) than fruits from MR (hue angle of 102)
     - Fruits from CR had lower soluble solid concentration at harvest (12.7 brix) than fruits from MR (15.3 brix)
@@ -487,7 +485,5 @@ Research issues
 
 :::
 ::::
-
-
 
 # References
