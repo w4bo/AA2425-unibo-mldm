@@ -228,7 +228,7 @@ This task tackles the data mining questions, which can be addressed using queryi
 
 # Verify Data Quality
 
-At this point, the analyst examines the quality of the data [@batini2009methodologies] [@sidi2012data], addressing questions such as:
+At this point, the analyst examines the quality of the data, addressing questions such as:
 
 Some common data quality issues to check include:
 
@@ -239,5 +239,25 @@ Some common data quality issues to check include:
 - and whether attributes with different values have similar meanings (e.g., low fat, diet).
 
 The data analyst also should review any attributes that may give answers that conflict with common sense (e.g., teenagers with high income).
+
+## Dimensions of Data Quality [@sidi2012data]
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![Some dimensions](https://github.com/user-attachments/assets/64417f65-acb0-4c77-a5cc-89522e5703a4)
+
+:::
+::: {.column width="50%"}
+
+![Some dimensions](https://github.com/user-attachments/assets/4c7dc682-84a6-4a23-9896-134ffbe80a82)
+
+:::
+::::
+
+## Metrics of Data Quality [@batini2009methodologies]
+
+![Dimensions and Metrics](https://github.com/user-attachments/assets/0724117f-3369-41f7-a277-2bfe1cf5d533)
 
 # References
