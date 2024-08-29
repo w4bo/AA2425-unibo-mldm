@@ -449,8 +449,12 @@ Pros/Cons
 
 ![PID](https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png)
 
+**PID** 
+
 - A control loop mechanism employing feedback
-- A **PID** continuously calculates an error value $e(t)$ as the difference between a desired setpoint (SP) and a measured process variable (PV)
+- Continuously calculates an error value $e(t)$ as the difference between a desired setpoint (SP) and a measured process variable (PV)
+    - $e(t) = r(t) - y(t)$
+- Applies a correction based on proportional, integral, and derivative terms
 
 # 
 
