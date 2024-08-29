@@ -382,6 +382,7 @@
 <li><a href="#/prescripting-quartieri2021effect" id="/toc-prescripting-quartieri2021effect">Prescripting <span class="citation" data-cites="quartieri2021effect">(Quartieri et al. 2021)</span></a></li>
 <li><a href="#/watering-advice-2021-2022" id="/toc-watering-advice-2021-2022">Watering Advice (2021-2022)</a></li>
 <li><a href="#/automated-watering-2023-2024" id="/toc-automated-watering-2023-2024">Automated Watering (2023-2024)</a></li>
+
 <li><a href="#/test-setup" id="/toc-test-setup">Test Setup</a></li>
 <li><a href="#/results" id="/toc-results">Results</a></li>
 <li><a href="#/control-system" id="/toc-control-system">Control System</a></li>
@@ -962,12 +963,17 @@ ELSE
 
 <section id="automated-watering-2023-2024" class="title-slide slide level1 center">
 <h1>Automated Watering (2023-2024)</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<ul>
+
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png" class="r-stretch quarto-figure-center"><p class="caption">PID</p><ul>
 <li>A control loop mechanism employing feedback</li>
 <li>A <strong>PID</strong> continuously calculates an error value <span class="math inline">\(e(t)\)</span> as the difference between a desired setpoint (SP) and a measured process variable (PV)</li>
-<li>Then, it applies a correction based on 3 terms:
+</ul>
+</section>
+
+<section id="section-3" class="title-slide slide level1 center">
+<h1></h1>
+
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png" class="r-stretch quarto-figure-center"><p class="caption">PID</p><p>It applies a correction based on 3 terms:</p>
 <ul>
 <li><em>P</em>: proportional to the *current value of the <span class="math inline">\(SP − PV\)</span> error <span class="math inline">\(e(t)\)</span>
 <ul>
@@ -986,26 +992,16 @@ ELSE
 <li>Adds stability to the system by damping the response and reducing overshoot and oscillations</li>
 <li>It acts like a brake, slowing down the response as the system nears the setpoint.</li>
 </ul></li>
-</ul></li>
 </ul>
 <p>We leverage a PID (Proportional–Integral–Derivative) controller</p>
 <p><span class="math inline">\(u(t)=K_{p}e(t)+K_{i}\int_{0}^{t} e(\tau)\mathrm{d}\tau + K_{d}{\frac{\mathrm{d}e(t)}{\mathrm{d}t}}\)</span></p>
 <ul>
 <li><span class="math inline">\(K_p, K_i, K_d\)</span> are non-negative coefficients for the proportional, integral, and derivative terms respectively
 <ul>
-<li>A higher <span class="math inline">\(K_p\)</span>​ reduces the error faster but may lead to overshoot (going past the desired setpoint).</li>
+<li>A higher <span class="math inline">\(K_p\)</span>​ reduces the error faster but may lead to overshoot (going past the desired setpoint)</li>
+<li>Constants can usually be initially entered knowing the type of application, but they are tuned by observing the system response</li>
 </ul></li>
-<li>Constants can usually be initially entered knowing the type of application, but they are normally refined, or tuned, by introducing a setpoint change and observing the system response</li>
 </ul>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png"></p>
-<figcaption>PID</figcaption>
-</figure>
-</div>
-</div>
-</div>
 </section>
 
 <section id="test-setup" class="title-slide slide level1 center">
