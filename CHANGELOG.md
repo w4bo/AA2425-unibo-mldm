@@ -1,3 +1,13 @@
+## [1.0.13](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.12...1.0.13) (2024-08-29)
+
+### Dependency updates
+
+* **deps:** update dependency jupyter to v1.1.0 ([c89d28d](https://github.com/w4bo/AA2425-unibo-mldm/commit/c89d28d782bfe5279cee5d4c85e93bacf89ab0e2))
+
+### Bug Fixes
+
+* add watering cs ([5f696a0](https://github.com/w4bo/AA2425-unibo-mldm/commit/5f696a0f9b87bb16e1d73fe5fe94a2337da0baee))
+
 ## [1.0.12](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.11...1.0.12) (2024-08-28)
 
 ### Bug Fixes
