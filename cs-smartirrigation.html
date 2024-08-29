@@ -973,7 +973,7 @@ ELSE
 <section id="section-3" class="title-slide slide level1 center">
 <h1></h1>
 
-<img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png" class="r-stretch quarto-figure-center"><p class="caption">PID</p><p>It applies a correction based on 3 terms:</p>
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png" class="r-stretch quarto-figure-center"><p class="caption">PID</p><p>Correction is based on 3 terms:</p>
 <ul>
 <li><em>P</em>: proportional to the *current value of the <span class="math inline">\(SP − PV\)</span> error <span class="math inline">\(e(t)\)</span>
 <ul>
@@ -984,22 +984,21 @@ ELSE
 <li>The Integral term ensures that even small, persistent errors are eventually corrected
 <ul>
 <li>Imagine that the desired temperature is 60%, but the system is stuck at 57%</li>
-<li>The Proportional term (alone) might not be strong enough to bring the system to exactly 60%, leaving a small steady-state error</li>
+<li>P (alone) might not be strong enough to bring the system to exactly 60%, leaving a small steady-state error</li>
 </ul></li>
 </ul></li>
 <li><em>D</em>: estimate of the future trend of the <span class="math inline">\(e(t)\)</span> based on its current rate of change
 <ul>
-<li>Adds stability to the system by damping the response and reducing overshoot and oscillations</li>
-<li>It acts like a brake, slowing down the response as the system nears the setpoint.</li>
+<li>Adds stability to the system by damping the response and reducing oscillations</li>
+<li>It acts like a brake, slowing down the response as the system nears the SP</li>
 </ul></li>
 </ul>
-<p>We leverage a PID (Proportional–Integral–Derivative) controller</p>
 <p><span class="math inline">\(u(t)=K_{p}e(t)+K_{i}\int_{0}^{t} e(\tau)\mathrm{d}\tau + K_{d}{\frac{\mathrm{d}e(t)}{\mathrm{d}t}}\)</span></p>
 <ul>
 <li><span class="math inline">\(K_p, K_i, K_d\)</span> are non-negative coefficients for the proportional, integral, and derivative terms respectively
 <ul>
-<li>A higher <span class="math inline">\(K_p\)</span>​ reduces the error faster but may lead to overshoot (going past the desired setpoint)</li>
-<li>Constants can usually be initially entered knowing the type of application, but they are tuned by observing the system response</li>
+<li>A higher <span class="math inline">\(K_p\)</span>​ reduces the error faster but may lead to overshoot (going past the desired SP)</li>
+<li>Constants are initially entered knowing the type of application and tuned by observing the system response</li>
 </ul></li>
 </ul>
 </section>
