@@ -447,38 +447,36 @@ Pros/Cons
 
 # Automated Watering (2023-2024)
 
-:::: {.columns}
-::: {.column width="60%"}
+![PID](https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png)
 
 - A control loop mechanism employing feedback
 - A **PID** continuously calculates an error value $e(t)$ as the difference between a desired setpoint (SP) and a measured process variable (PV)
-- Then, it applies a correction based on 3 terms:
-    - *P*: proportional to the *current value of the $SP − PV$ error $e(t)$
-        - If SP=PV, do not apply correction based on the current value
-    - *I*: integrates the past values of $e(t)$ over time to eliminate the residual error
-        - The Integral term ensures that even small, persistent errors are eventually corrected
-            - Imagine that the desired temperature is 60%, but the system is stuck at 57%
-            - The Proportional term (alone) might not be strong enough to bring the system to exactly 60%, leaving a small steady-state error
-    - *D*: estimate of the future trend of the $e(t)$ based on its current rate of change
-        - Adds stability to the system by damping the response and reducing overshoot and oscillations
-        - It acts like a brake, slowing down the response as the system nears the setpoint. 
+
+# 
+
+![PID](https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png)
+
+It applies a correction based on 3 terms:
+
+- *P*: proportional to the *current value of the $SP − PV$ error $e(t)$
+    - If SP=PV, do not apply correction based on the current value
+- *I*: integrates the past values of $e(t)$ over time to eliminate the residual error
+    - The Integral term ensures that even small, persistent errors are eventually corrected
+        - Imagine that the desired temperature is 60%, but the system is stuck at 57%
+        - The Proportional term (alone) might not be strong enough to bring the system to exactly 60%, leaving a small steady-state error
+- *D*: estimate of the future trend of the $e(t)$ based on its current rate of change
+    - Adds stability to the system by damping the response and reducing overshoot and oscillations
+    - It acts like a brake, slowing down the response as the system nears the setpoint. 
 
 We leverage a PID (Proportional–Integral–Derivative) controller
 
 $u(t)=K_{p}e(t)+K_{i}\int_{0}^{t} e(\tau)\mathrm{d}\tau + K_{d}{\frac{\mathrm{d}e(t)}{\mathrm{d}t}}$
 
 - $K_p, K_i, K_d$ are non-negative coefficients for the proportional, integral, and derivative terms respectively
-    - A higher $K_p$​ reduces the error faster but may lead to overshoot (going past the desired setpoint).
+    - A higher $K_p$​ reduces the error faster but may lead to overshoot (going past the desired setpoint)
+    - Constants can usually be initially entered knowing the type of application, but they are tuned by observing the system response
 
-- Constants can usually be initially entered knowing the type of application, but they are normally refined, or tuned, by introducing a setpoint change and observing the system response
 
-:::
-::: {.column width="40%"}
-
-![PID](https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png)
-
-:::
-::::
 
 # Test Setup
 
