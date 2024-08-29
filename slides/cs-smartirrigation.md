@@ -456,7 +456,7 @@ Pros/Cons
 
 ![PID](https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png)
 
-Correction is based on 3 terms:
+Correction is based on 3 terms: $u(t)=K_{p}e(t)+K_{i}\int_{0}^{t} e(\tau)\mathrm{d}\tau + K_{d}{\frac{\mathrm{d}e(t)}{\mathrm{d}t}}$
 
 - *P*: proportional to the *current value of the $SP − PV$ error $e(t)$
     - If SP=PV, do not apply correction based on the current value
@@ -467,9 +467,6 @@ Correction is based on 3 terms:
 - *D*: estimate of the future trend of the $e(t)$ based on its current rate of change
     - Adds stability to the system by damping the response and reducing oscillations
     - It acts like a brake, slowing down the response as the system nears the SP
-
-$u(t)=K_{p}e(t)+K_{i}\int_{0}^{t} e(\tau)\mathrm{d}\tau + K_{d}{\frac{\mathrm{d}e(t)}{\mathrm{d}t}}$
-
 - $K_p, K_i, K_d$ are non-negative coefficients for the proportional, integral, and derivative terms respectively
     - A higher $K_p$​ reduces the error faster but may lead to overshoot (going past the desired SP)
     - Constants are initially entered knowing the type of application and tuned by observing the system response
