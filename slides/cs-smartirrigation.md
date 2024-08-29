@@ -456,27 +456,23 @@ Pros/Cons
 
 ![PID](https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png)
 
-It applies a correction based on 3 terms:
+Correction is based on 3 terms:
 
 - *P*: proportional to the *current value of the $SP − PV$ error $e(t)$
     - If SP=PV, do not apply correction based on the current value
 - *I*: integrates the past values of $e(t)$ over time to eliminate the residual error
     - The Integral term ensures that even small, persistent errors are eventually corrected
         - Imagine that the desired temperature is 60%, but the system is stuck at 57%
-        - The Proportional term (alone) might not be strong enough to bring the system to exactly 60%, leaving a small steady-state error
+        - P (alone) might not be strong enough to bring the system to exactly 60%, leaving a small steady-state error
 - *D*: estimate of the future trend of the $e(t)$ based on its current rate of change
-    - Adds stability to the system by damping the response and reducing overshoot and oscillations
-    - It acts like a brake, slowing down the response as the system nears the setpoint. 
-
-We leverage a PID (Proportional–Integral–Derivative) controller
+    - Adds stability to the system by damping the response and reducing oscillations
+    - It acts like a brake, slowing down the response as the system nears the SP
 
 $u(t)=K_{p}e(t)+K_{i}\int_{0}^{t} e(\tau)\mathrm{d}\tau + K_{d}{\frac{\mathrm{d}e(t)}{\mathrm{d}t}}$
 
 - $K_p, K_i, K_d$ are non-negative coefficients for the proportional, integral, and derivative terms respectively
-    - A higher $K_p$​ reduces the error faster but may lead to overshoot (going past the desired setpoint)
-    - Constants can usually be initially entered knowing the type of application, but they are tuned by observing the system response
-
-
+    - A higher $K_p$​ reduces the error faster but may lead to overshoot (going past the desired SP)
+    - Constants are initially entered knowing the type of application and tuned by observing the system response
 
 # Test Setup
 
