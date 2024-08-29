@@ -98,6 +98,7 @@ Optimizing soil moisture is crucial for watering and crop performance [@turkelta
 
 ![AI](https://github.com/user-attachments/assets/ba718451-ac90-41bb-9d56-bf42c65667d2)
 
+![AI vs ML](https://s3.ap-southeast-1.amazonaws.com/files-scs-prod/public%2Fimages%2F1605842918803-AI+vs+ML+vs+DL.png)
 :::
 ::::
 
@@ -414,10 +415,13 @@ The charts support both agricultural technicians and farmers
 
 ![image](https://github.com/user-attachments/assets/43aaaae7-7e5a-4400-af7d-8ffd884a2162)
 
-# Simple Rule (2021)
+# Watering Advice (2021-2022)
+
 
 :::: {.columns}
 ::: {.column width="50%"}
+
+Given the following algorithm
 
     IF
        ((#BlueCells + #LightBlueCells)/(#Cells) < 0.50 &&
@@ -428,9 +432,51 @@ The charts support both agricultural technicians and farmers
     ELSE 
         Do nothing
 
+we provide advices (recommendations) to technicians, who use (and adjust) the advice according their experience.
+
+Pros/Cons
+
+- [+] it relies on the experience of the technician
+- [-] does not scale out to many fields; controlling 6 fields entails lot of work
+
 :::
 ::: {.column width="50%"}
 ![image](https://github.com/user-attachments/assets/e25c69f8-44a7-4401-a436-3feb0758832a)
+:::
+::::
+
+# Automated Watering (2023-2024)
+
+:::: {.columns}
+::: {.column width="60%"}
+
+- A control loop mechanism employing feedback
+- A **PID** continuously calculates an error value $e(t)$ as the difference between a desired setpoint (SP) and a measured process variable (PV)
+- Then, it applies a correction based on 3 terms:
+    - *P*: proportional to the *current value of the $SP − PV$ error $e(t)$
+        - If SP=PV, do not apply correction based on the current value
+    - *I*: integrates the past values of $e(t)$ over time to eliminate the residual error
+        - The Integral term ensures that even small, persistent errors are eventually corrected
+            - Imagine that the desired temperature is 60%, but the system is stuck at 57%
+            - The Proportional term (alone) might not be strong enough to bring the system to exactly 60%, leaving a small steady-state error
+    - *D*: estimate of the future trend of the $e(t)$ based on its current rate of change
+        - Adds stability to the system by damping the response and reducing overshoot and oscillations
+        - It acts like a brake, slowing down the response as the system nears the setpoint. 
+
+We leverage a PID (Proportional–Integral–Derivative) controller
+
+$u(t)=K_{p}e(t)+K_{i}\int_{0}^{t} e(\tau)\mathrm{d}\tau + K_{d}{\frac{\mathrm{d}e(t)}{\mathrm{d}t}}$
+
+- $K_p, K_i, K_d$ are non-negative coefficients for the proportional, integral, and derivative terms respectively
+    - A higher $K_p$​ reduces the error faster but may lead to overshoot (going past the desired setpoint).
+
+- Constants can usually be initially entered knowing the type of application, but they are normally refined, or tuned, by introducing a setpoint change and observing the system response
+
+:::
+::: {.column width="40%"}
+
+![PID](https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png)
+
 :::
 ::::
 
