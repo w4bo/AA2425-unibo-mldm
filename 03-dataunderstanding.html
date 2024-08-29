@@ -415,7 +415,8 @@ Matteo Francia
 <li><a href="#/serving-the-data" id="/toc-serving-the-data">Serving the Data</a></li>
 <li><a href="#/descriptive-analytics" id="/toc-descriptive-analytics">Descriptive Analytics</a></li>
 <li><a href="#/prescripting-quartieri2021effect" id="/toc-prescripting-quartieri2021effect">Prescripting <span class="citation" data-cites="quartieri2021effect">(Quartieri et al. 2021)</span></a></li>
-<li><a href="#/simple-rule-2021" id="/toc-simple-rule-2021">Simple Rule (2021)</a></li>
+<li><a href="#/watering-advice-2021-2022" id="/toc-watering-advice-2021-2022">Watering Advice (2021-2022)</a></li>
+<li><a href="#/automated-watering-2023-2024" id="/toc-automated-watering-2023-2024">Automated Watering (2023-2024)</a></li>
 <li><a href="#/test-setup" id="/toc-test-setup">Test Setup</a></li>
 <li><a href="#/results" id="/toc-results">Results</a></li>
 <li><a href="#/control-system" id="/toc-control-system">Control System</a></li>
@@ -863,6 +864,12 @@ Matteo Francia
 <figcaption>AI</figcaption>
 </figure>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://s3.ap-southeast-1.amazonaws.com/files-scs-prod/public%2Fimages%2F1605842918803-AI+vs+ML+vs+DL.png"></p>
+<figcaption>AI vs ML</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1268,10 +1275,11 @@ Matteo Francia
 
 <img data-src="https://github.com/user-attachments/assets/43aaaae7-7e5a-4400-af7d-8ffd884a2162" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
 
-<section id="simple-rule-2021" class="title-slide slide level1 center">
-<h1>Simple Rule (2021)</h1>
+<section id="watering-advice-2021-2022" class="title-slide slide level1 center">
+<h1>Watering Advice (2021-2022)</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
+<p>Given the following algorithm</p>
 <pre><code>IF
    ((#BlueCells + #LightBlueCells)/(#Cells) &lt; 0.50 &amp;&amp;
    (#BlueCells)/(#Cells) &lt; 0.25 in the last 12h) &amp;&amp;
@@ -1280,11 +1288,65 @@ THEN
     Recommended water = Evapotranspiration (ET) of the day before
 ELSE 
     Do nothing</code></pre>
+<p>we provide advices (recommendations) to technicians, who use (and adjust) the advice according their experience.</p>
+<p>Pros/Cons</p>
+<ul>
+<li>[+] it relies on the experience of the technician</li>
+<li>[-] does not scale out to many fields; controlling 6 fields entails lot of work</li>
+</ul>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://github.com/user-attachments/assets/e25c69f8-44a7-4401-a436-3feb0758832a"></p>
 <figcaption>image</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="automated-watering-2023-2024" class="title-slide slide level1 center">
+<h1>Automated Watering (2023-2024)</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>A control loop mechanism employing feedback</li>
+<li>A <strong>PID</strong> continuously calculates an error value <span class="math inline">\(e(t)\)</span> as the difference between a desired setpoint (SP) and a measured process variable (PV)</li>
+<li>Then, it applies a correction based on 3 terms:
+<ul>
+<li><em>P</em>: proportional to the *current value of the <span class="math inline">\(SP − PV\)</span> error <span class="math inline">\(e(t)\)</span>
+<ul>
+<li>If SP=PV, do not apply correction based on the current value</li>
+</ul></li>
+<li><em>I</em>: integrates the past values of <span class="math inline">\(e(t)\)</span> over time to eliminate the residual error
+<ul>
+<li>The Integral term ensures that even small, persistent errors are eventually corrected
+<ul>
+<li>Imagine that the desired temperature is 60%, but the system is stuck at 57%</li>
+<li>The Proportional term (alone) might not be strong enough to bring the system to exactly 60%, leaving a small steady-state error</li>
+</ul></li>
+</ul></li>
+<li><em>D</em>: estimate of the future trend of the <span class="math inline">\(e(t)\)</span> based on its current rate of change
+<ul>
+<li>Adds stability to the system by damping the response and reducing overshoot and oscillations</li>
+<li>It acts like a brake, slowing down the response as the system nears the setpoint.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>We leverage a PID (Proportional–Integral–Derivative) controller</p>
+<p><span class="math inline">\(u(t)=K_{p}e(t)+K_{i}\int_{0}^{t} e(\tau)\mathrm{d}\tau + K_{d}{\frac{\mathrm{d}e(t)}{\mathrm{d}t}}\)</span></p>
+<ul>
+<li><span class="math inline">\(K_p, K_i, K_d\)</span> are non-negative coefficients for the proportional, integral, and derivative terms respectively
+<ul>
+<li>A higher <span class="math inline">\(K_p\)</span>​ reduces the error faster but may lead to overshoot (going past the desired setpoint).</li>
+</ul></li>
+<li>Constants can usually be initially entered knowing the type of application, but they are normally refined, or tuned, by introducing a setpoint change and observing the system response</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png"></p>
+<figcaption>PID</figcaption>
 </figure>
 </div>
 </div>
