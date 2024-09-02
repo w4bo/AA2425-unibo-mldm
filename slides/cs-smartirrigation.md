@@ -537,6 +537,283 @@ Two irrigation setups during the 2021 campaign (i.e., May/October) within the sa
 :::
 ::::
 
+# Water consumption
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>measure</th>
+      <th colspan="3" halign="left">Irrigation volume ($m^3 ha^{-1}$)</th>
+      <th colspan="2" halign="left">Performance</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Row</th>
+      <th>T0</th>
+      <th>T1</th>
+      <th>T2</th>
+      <th>T1</th>
+      <th>T2</th>
+    </tr>
+    <tr>
+      <th>Field</th>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">C1</th>
+      <th>2021</th>
+      <td>3790.0</td>
+      <td>2112.0</td>
+      <td>3382.0</td>
+      <td>-0.44</td>
+      <td>-0.11</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>3059.0</td>
+      <td>2300.0</td>
+      <td>3420.0</td>
+      <td>-0.25</td>
+      <td>0.12</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>3595.0</td>
+      <td>2256.0</td>
+      <td>4453.0</td>
+      <td>-0.37</td>
+      <td>0.24</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">C2</th>
+      <th>2022</th>
+      <td>1182.0</td>
+      <td>922.0</td>
+      <td>NaN</td>
+      <td>-0.22</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>1921.0</td>
+      <td>1496.0</td>
+      <td>NaN</td>
+      <td>-0.22</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+# Fruit quality
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>measure</th>
+      <th colspan="3" halign="left">Color (H angle)</th>
+      <th colspan="3" halign="left">Dry mass (%)</th>
+      <th colspan="3" halign="left">Hardness (kg)</th>
+      <th colspan="3" halign="left">RSR (° brix)</th>
+      <th colspan="3" halign="left">Size (mm)</th>
+      <th colspan="3" halign="left">Weight (g)</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Row</th>
+      <th>T0</th>
+      <th>T1</th>
+      <th>T2</th>
+      <th>T0</th>
+      <th>T1</th>
+      <th>T2</th>
+      <th>T0</th>
+      <th>T1</th>
+      <th>T2</th>
+      <th>T0</th>
+      <th>T1</th>
+      <th>T2</th>
+      <th>T0</th>
+      <th>T1</th>
+      <th>T2</th>
+      <th>T0</th>
+      <th>T1</th>
+      <th>T2</th>
+    </tr>
+    <tr>
+      <th>Field</th>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">C1</th>
+      <th>2021</th>
+      <td>105.0</td>
+      <td>102.0</td>
+      <td>103.0</td>
+      <td>17.2</td>
+      <td>18.4</td>
+      <td>18.8</td>
+      <td>4.07</td>
+      <td>3.15</td>
+      <td>4.05</td>
+      <td>12.7</td>
+      <td>15.3</td>
+      <td>13.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>116.0</td>
+      <td>116.0</td>
+      <td>107.0</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>104.0</td>
+      <td>103.0</td>
+      <td>105.0</td>
+      <td>18.6</td>
+      <td>18.9</td>
+      <td>17.8</td>
+      <td>5.20</td>
+      <td>4.70</td>
+      <td>4.80</td>
+      <td>10.5</td>
+      <td>11.7</td>
+      <td>8.9</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>117.0</td>
+      <td>122.0</td>
+      <td>119.0</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>104.6</td>
+      <td>102.9</td>
+      <td>104.9</td>
+      <td>17.4</td>
+      <td>18.2</td>
+      <td>17.2</td>
+      <td>5.50</td>
+      <td>5.20</td>
+      <td>5.61</td>
+      <td>10.1</td>
+      <td>11.6</td>
+      <td>8.8</td>
+      <td>55.0</td>
+      <td>55.3</td>
+      <td>55.3</td>
+      <td>143.0</td>
+      <td>143.0</td>
+      <td>155.0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">C2</th>
+      <th>2022</th>
+      <td>101.5</td>
+      <td>103.9</td>
+      <td>NaN</td>
+      <td>18.7</td>
+      <td>17.7</td>
+      <td>NaN</td>
+      <td>4.20</td>
+      <td>4.90</td>
+      <td>NaN</td>
+      <td>13.7</td>
+      <td>10.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>107.0</td>
+      <td>111.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>105.9</td>
+      <td>108.0</td>
+      <td>NaN</td>
+      <td>17.3</td>
+      <td>17.0</td>
+      <td>NaN</td>
+      <td>5.46</td>
+      <td>5.25</td>
+      <td>NaN</td>
+      <td>8.8</td>
+      <td>9.4</td>
+      <td>NaN</td>
+      <td>54.8</td>
+      <td>54.4</td>
+      <td>NaN</td>
+      <td>135.0</td>
+      <td>128.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+# Benefits 
+
+Uncountable:
+
+- Crop sustainability
+- Smaller environmental footprint: less water and fertilizers
+
+Countable
+
+- Faster and more dynamic intervention in the control of irrigation
+- More accurate approximation of soil dynamics
+
+Money:
+
+- Fewer management issues
+- Fewer fertilizers
+- Smaller irrigation amount
+- Similar (or even better) quality of the product
+
+# Some numbers
+
+|                  | T0 | T1 |
+|------------------|----|----|
+| Superficie  (ha) |  5 |  5 |
+| Potenza Elettropompa  (kw/h) | 10 | 10 |
+| Costo Kilowattora | 0.5 | 0.5 |
+| Consumo (m3) |  3790 | 2112 |
+| N Gocciolatori da 4l/h  (ha) | 3344 | 3344 |
+| Consumo m3/h | 14 | 14 |
+| Ore accensione pompa (h/ha) | 274 | 157 |
+| Costo Energia Elettrica | €  6,850 | € 3,925 € |
+
 
 # Future direction: soil moisture profiling
 
