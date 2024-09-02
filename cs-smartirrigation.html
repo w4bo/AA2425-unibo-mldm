@@ -9,7 +9,8 @@
 <link href="cs-smartirrigation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
-  <title>cs-smartirrigation</title>
+  <meta name="author" content="Matteo Francia">
+  <title>Soil Moisture Modeling and Assessment</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -344,23 +345,34 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="TOC">
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Soil Moisture Modeling and Assessment</h1>
+  <p class="subtitle">A Case Study</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Matteo Francia 
+</div>
+</div>
+</div>
+
+</section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#/case-study-smart-irrigation" id="/toc-case-study-smart-irrigation">Case Study: Smart Irrigation</a></li>
-<li><a href="#/smart-irrigation-as-a-case-study" id="/toc-smart-irrigation-as-a-case-study">Smart Irrigation as a Case Study</a></li>
+<li><a href="#/smart-irrigation" id="/toc-smart-irrigation">Smart Irrigation</a></li>
 <li><a href="#/reference-scenario" id="/toc-reference-scenario">Reference Scenario</a></li>
-<li><a href="#/digital-transformation" id="/toc-digital-transformation">Digital Transformation</a></li>
 
-
+<li><a href="#/digital-transformation-1" id="/toc-digital-transformation-1">Digital Transformation</a></li>
+<li><a href="#/digital-transformation-and-ai" id="/toc-digital-transformation-and-ai">Digital Transformation and AI</a></li>
 <li><a href="#/simulators" id="/toc-simulators">Simulators…</a></li>
 <li><a href="#/vs-sensors" id="/toc-vs-sensors">… vs Sensors</a></li>
 
-<li><a href="#/open-field-vs-simulator" id="/toc-open-field-vs-simulator">Open Field vs Simulator</a></li>
+
+<li><a href="#/overview-of-the-approach" id="/toc-overview-of-the-approach">Overview of the Approach</a></li>
 <li><a href="#/sensor-layouts-and-symmetry-assumptions" id="/toc-sensor-layouts-and-symmetry-assumptions">Sensor Layouts and Symmetry Assumptions</a></li>
 <li><a href="#/from-sensors-to-soil-profiles" id="/toc-from-sensors-to-soil-profiles">From Sensors to Soil Profiles</a></li>
-<li><a href="#/overview-of-the-approach" id="/toc-overview-of-the-approach">Overview of the Approach</a></li>
 <li><a href="#/monitoring-francia2022multi" id="/toc-monitoring-francia2022multi">Monitoring <span class="citation" data-cites="francia2022multi">(Francia, Giovanelli, and Golfarelli 2022)</span></a></li>
 <li><a href="#/data-collection" id="/toc-data-collection">Data Collection</a></li>
 <li><a href="#/data-collection-1" id="/toc-data-collection-1">Data Collection</a></li>
@@ -384,13 +396,10 @@
 <li><a href="#/automated-watering-2023-2024" id="/toc-automated-watering-2023-2024">Automated Watering (2023-2024)</a></li>
 
 <li><a href="#/test-setup" id="/toc-test-setup">Test Setup</a></li>
-<li><a href="#/results" id="/toc-results">Results</a></li>
-<li><a href="#/control-system" id="/toc-control-system">Control System</a></li>
-<li><a href="#/single-wing-vs-double-wing" id="/toc-single-wing-vs-double-wing">Single Wing vs Double Wing</a></li>
+<li><a href="#/qualitative-comparison-t0-vs-t1" id="/toc-qualitative-comparison-t0-vs-t1">Qualitative comparison: T0 vs T1</a></li>
 <li><a href="#/water-consumption" id="/toc-water-consumption">Water consumption</a></li>
 <li><a href="#/fruit-quality" id="/toc-fruit-quality">Fruit quality</a></li>
-<li><a href="#/benefits" id="/toc-benefits">Benefits</a></li>
-<li><a href="#/some-numbers" id="/toc-some-numbers">Some numbers</a></li>
+<li><a href="#/results" id="/toc-results">Results</a></li>
 <li><a href="#/future-direction-soil-moisture-profiling" id="/toc-future-direction-soil-moisture-profiling">Future direction: soil moisture profiling</a></li>
 <li><a href="#/future-direction-forecasting" id="/toc-future-direction-forecasting">Future direction: forecasting</a></li>
 <li><a href="#/future-direction-unifying-data-platform" id="/toc-future-direction-unifying-data-platform">Future direction: unifying data platform</a></li>
@@ -398,13 +407,8 @@
 </ul>
 </nav>
 </section>
-<section id="case-study-smart-irrigation" class="title-slide slide level1 center">
-<h1>Case Study: Smart Irrigation</h1>
-
-</section>
-
-<section id="smart-irrigation-as-a-case-study" class="title-slide slide level1 center">
-<h1>Smart Irrigation as a Case Study</h1>
+<section id="smart-irrigation" class="title-slide slide level1 center">
+<h1>Smart Irrigation</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>The synergy of internet of things (IoT) and precision farming is producing valuable applications in the Agritech domain <span class="citation" data-cites="vitali2021crop">(<a href="#/references" role="doc-biblioref" onclick="">Vitali et al. 2021</a>)</span></p>
@@ -448,22 +452,19 @@
 <figcaption>Model of the orchard</figcaption>
 </figure>
 </div>
+</div>
+</div>
 <ul>
 <li>Kiwi <em>plants are aligned along rows</em></li>
 <li>Each row has many <em>drippers</em> (e.g., 1 every 60cm)</li>
 <li>Drippers can water a <em>limited soil volume</em></li>
 </ul>
-</div>
-</div>
 </section>
 
-<section id="digital-transformation" class="title-slide slide level1 center">
+
+
+<section id="digital-transformation-1" class="title-slide slide level1 center">
 <h1>Digital Transformation</h1>
-
-<img data-src="https://github.com/user-attachments/assets/70b623f5-8d7e-4c98-94e6-1c723deb6420" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-
-<section id="section" class="title-slide slide level1 center">
-<h1></h1>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>(Example) Scenarios of digital transformation in agriculture</p>
@@ -495,8 +496,8 @@
 </div>
 </section>
 
-<section id="section-1" class="title-slide slide level1 center">
-<h1></h1>
+<section id="digital-transformation-and-ai" class="title-slide slide level1 center">
+<h1>Digital Transformation and AI</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>(Example) Scenarios of digital transformation in agriculture</p>
@@ -518,12 +519,6 @@
 </ul></li>
 </ul>
 </div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/user-attachments/assets/ba718451-ac90-41bb-9d56-bf42c65667d2"></p>
-<figcaption>AI</figcaption>
-</figure>
-</div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://s3.ap-southeast-1.amazonaws.com/files-scs-prod/public%2Fimages%2F1605842918803-AI+vs+ML+vs+DL.png"></p>
@@ -586,15 +581,14 @@
 </div>
 </section>
 
-<section id="section-2" class="title-slide slide level1 center">
-<h1></h1>
 
-<img data-src="https://github.com/user-attachments/assets/27db3d71-a7fc-47d1-b1ef-5026afcf72f4" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
 
-<section id="open-field-vs-simulator" class="title-slide slide level1 center">
-<h1>Open Field vs Simulator</h1>
 
-<img data-src="https://github.com/user-attachments/assets/0dc1575b-bdae-4805-a8fe-f19a6a9f7092" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
+
+<section id="overview-of-the-approach" class="title-slide slide level1 center">
+<h1>Overview of the Approach</h1>
+
+<img data-src="https://github.com/user-attachments/assets/ac0d5d37-64b9-4454-84bd-60f5bf83d510" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
 
 <section id="sensor-layouts-and-symmetry-assumptions" class="title-slide slide level1 center">
 <h1>Sensor Layouts and Symmetry Assumptions</h1>
@@ -660,11 +654,6 @@
 <li>Goal: produce fine-grained soil profiles out of coarse-grained layouts</li>
 </ol>
 </section>
-
-<section id="overview-of-the-approach" class="title-slide slide level1 center">
-<h1>Overview of the Approach</h1>
-
-<img data-src="https://github.com/user-attachments/assets/ac0d5d37-64b9-4454-84bd-60f5bf83d510" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
 
 <section id="monitoring-francia2022multi" class="title-slide slide level1 center">
 <h1>Monitoring <span class="citation" data-cites="francia2022multi">(<a href="#/references" role="doc-biblioref" onclick="">Francia, Giovanelli, and Golfarelli 2022</a>)</span></h1>
@@ -812,9 +801,9 @@
 </ul></li>
 <li>Output
 <ul>
-<li>Training set = <span class="math inline">\(12 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟} \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 4 months = 35 \cdot 10^3 samples\)</span></li>
-<li>Validation set = same as training set, but we simulate with different weather/irrigation patterns</li>
-<li>Test set = 4 months from the real field</li>
+<li><em>Training set</em> = <span class="math inline">\(12 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟} \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 4 months = 35 \cdot 10^3 samples\)</span></li>
+<li><em>Validation set</em> = same as training set, but we simulate with different weather/irrigation patterns</li>
+<li><em>Test set</em> = 4 months from the real field</li>
 </ul></li>
 <li>Different weather conditions &amp; watering patterns to enable generalization and avoid overfitting</li>
 </ul>
@@ -971,7 +960,7 @@ ELSE
 <img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png" class="r-stretch quarto-figure-center"><p class="caption">PID</p><p><strong>PID</strong></p>
 <ul>
 <li>A control loop mechanism employing feedback</li>
-<li>Continuously calculates an error value <span class="math inline">\(e(t)\)</span> as the difference between a desired setpoint (SP) and a measured process variable (PV)
+<li>Calculates an error value <span class="math inline">\(e(t)\)</span> as the difference between a desired setpoint (SP) and a measured process variable (PV)
 <ul>
 <li><span class="math inline">\(e(t) = r(t) - y(t)\)</span></li>
 </ul></li>
@@ -979,7 +968,7 @@ ELSE
 </ul>
 </section>
 
-<section id="section-3" class="title-slide slide level1 center">
+<section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
 
 <img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png" class="r-stretch quarto-figure-center"><p class="caption">PID</p><p>Correction is based on 3 terms: <span class="math inline">\(u(t)=K_{p}e(t)+K_{i}\int_{0}^{t} e(\tau)\mathrm{d}\tau + K_{d}{\frac{\mathrm{d}e(t)}{\mathrm{d}t}}\)</span></p>
@@ -1011,53 +1000,57 @@ ELSE
 
 <section id="test-setup" class="title-slide slide level1 center">
 <h1>Test Setup</h1>
-<p>Two irrigation setups during the 2021 campaign (i.e., May/October) within the same orchard</p>
+<p>Two irrigation setups during the 2021-2024 campaigns (i.e., May/October) within the same orchard</p>
 <ul>
-<li><em>Managed Row</em>: irrigation is automatically controlled using a 2D installation of 12 sensor</li>
-<li><em>Control Row</em>: irrigation is manually controlled by the farmer</li>
+<li><em>Control Row (T0)</em>: irrigation is manually controlled by the farmer</li>
+<li><em>Managed Row (T*)</em>: irrigation is automatically controlled using a 2D installation of 12 sensor</li>
 </ul>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e"></p>
+<figcaption>Single Wing</figcaption>
+</figure>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://github.com/user-attachments/assets/6f648d9d-5c3e-4c24-b0e4-9ce30a6ec90d"></p>
-<figcaption>Managed Row</figcaption>
+<figcaption>Control Row (T0)</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e"></p>
+<figcaption>Single Wing</figcaption>
+</figure>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://github.com/user-attachments/assets/cb80c32b-f892-4283-86a6-bae0793a0613"></p>
-<figcaption>Control Row</figcaption>
+<figcaption>Managed Row (T1)</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/d3eed7d0-8001-47b2-a66d-d6ba16aa26db"></p>
+<figcaption>Double Wing</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/user-attachments/assets/4c832868-2913-4f33-bf6f-bfcaf639e0ad"></p>
+<figcaption>Managed Row (T2)</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
 
-<section id="results" class="title-slide slide level1 center">
-<h1>Results</h1>
-<ul>
-<li><strong>Water management</strong>
-<ul>
-<li>MR saved 44% of water during the whole campaign</li>
-<li>Maximum saving in June and September: for the farmer is harder to estimate the SM level and water requirement</li>
-</ul></li>
-<li><strong>Fruit quality</strong>
-<ul>
-<li>Productivity of vines was unaffected by the irrigation and ranged from 32 to 39 kg/vine (35-44 t/ha)</li>
-<li>Fruits from CR appeared greener (hue angle of 105) than fruits from MR (hue angle of 102)</li>
-<li>Fruits from CR had lower soluble solid concentration at harvest (12.7 brix) than fruits from MR (15.3 brix)</li>
-<li>The gap has been maintained after 2 months of storage (and 1 day of shelf life)
-<ul>
-<li>The soluble solid concentration was 17.4 brix for the MR vs 16.1 brix for the CR</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-
-<section id="control-system" class="title-slide slide level1 center">
-<h1>Control System</h1>
+<section id="qualitative-comparison-t0-vs-t1" class="title-slide slide level1 center">
+<h1>Qualitative comparison: T0 vs T1</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://github.com/user-attachments/assets/43aaaae7-7e5a-4400-af7d-8ffd884a2162"></p>
@@ -1069,41 +1062,6 @@ ELSE
 <p><img data-src="https://github.com/user-attachments/assets/e4307c5b-e813-4699-9022-4b0e145f04f5"></p>
 <figcaption>image</figcaption>
 </figure>
-</div>
-</section>
-
-<section id="single-wing-vs-double-wing" class="title-slide slide level1 center">
-<h1>Single Wing vs Double Wing</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Single wing</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/user-attachments/assets/cb80c32b-f892-4283-86a6-bae0793a0613"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<p><strong>Double wing</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/user-attachments/assets/d3eed7d0-8001-47b2-a66d-d6ba16aa26db"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/user-attachments/assets/4c832868-2913-4f33-bf6f-bfcaf639e0ad"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
-</div>
 </div>
 </section>
 
@@ -1229,49 +1187,6 @@ C1
 0.24
 </td>
 </tr>
-<tr>
-<th rowspan="2" valign="top">
-C2
-</th>
-<th>
-2022
-</th>
-<td>
-1182.0
-</td>
-<td>
-922.0
-</td>
-<td>
-NaN
-</td>
-<td>
--0.22
-</td>
-<td>
-NaN
-</td>
-</tr>
-<tr>
-<th>
-2023
-</th>
-<td>
-1921.0
-</td>
-<td>
-1496.0
-</td>
-<td>
-NaN
-</td>
-<td>
--0.22
-</td>
-<td>
-NaN
-</td>
-</tr>
 </tbody>
 </table>
 </section>
@@ -1299,9 +1214,6 @@ Hardness (kg)
 RSR (° brix)
 </th>
 <th colspan="3" halign="left">
-Size (mm)
-</th>
-<th colspan="3" halign="left">
 Weight (g)
 </th>
 </tr>
@@ -1310,15 +1222,6 @@ Weight (g)
 </th>
 <th>
 Row
-</th>
-<th>
-T0
-</th>
-<th>
-T1
-</th>
-<th>
-T2
 </th>
 <th>
 T0
@@ -1403,12 +1306,6 @@ Year
 </th>
 <th>
 </th>
-<th>
-</th>
-<th>
-</th>
-<th>
-</th>
 </tr>
 </thead>
 <tbody>
@@ -1454,15 +1351,6 @@ C1
 </td>
 <td>
 13.7
-</td>
-<td>
-NaN
-</td>
-<td>
-NaN
-</td>
-<td>
-NaN
 </td>
 <td>
 116.0
@@ -1515,15 +1403,6 @@ NaN
 8.9
 </td>
 <td>
-NaN
-</td>
-<td>
-NaN
-</td>
-<td>
-NaN
-</td>
-<td>
 117.0
 </td>
 <td>
@@ -1574,15 +1453,6 @@ NaN
 8.8
 </td>
 <td>
-55.0
-</td>
-<td>
-55.3
-</td>
-<td>
-55.3
-</td>
-<td>
 143.0
 </td>
 <td>
@@ -1592,154 +1462,44 @@ NaN
 155.0
 </td>
 </tr>
-<tr>
-<th rowspan="2" valign="top">
-C2
-</th>
-<th>
-2022
-</th>
-<td>
-101.5
-</td>
-<td>
-103.9
-</td>
-<td>
-NaN
-</td>
-<td>
-18.7
-</td>
-<td>
-17.7
-</td>
-<td>
-NaN
-</td>
-<td>
-4.20
-</td>
-<td>
-4.90
-</td>
-<td>
-NaN
-</td>
-<td>
-13.7
-</td>
-<td>
-10.8
-</td>
-<td>
-NaN
-</td>
-<td>
-NaN
-</td>
-<td>
-NaN
-</td>
-<td>
-NaN
-</td>
-<td>
-107.0
-</td>
-<td>
-111.0
-</td>
-<td>
-NaN
-</td>
-</tr>
-<tr>
-<th>
-2023
-</th>
-<td>
-105.9
-</td>
-<td>
-108.0
-</td>
-<td>
-NaN
-</td>
-<td>
-17.3
-</td>
-<td>
-17.0
-</td>
-<td>
-NaN
-</td>
-<td>
-5.46
-</td>
-<td>
-5.25
-</td>
-<td>
-NaN
-</td>
-<td>
-8.8
-</td>
-<td>
-9.4
-</td>
-<td>
-NaN
-</td>
-<td>
-54.8
-</td>
-<td>
-54.4
-</td>
-<td>
-NaN
-</td>
-<td>
-135.0
-</td>
-<td>
-128.0
-</td>
-<td>
-NaN
-</td>
-</tr>
 </tbody>
 </table>
 </section>
 
-<section id="benefits" class="title-slide slide level1 center">
-<h1>Benefits</h1>
-<p>Uncountable:</p>
+<section id="results" class="title-slide slide level1 center">
+<h1>Results</h1>
+<div class="columns">
+<div class="column" style="width:66%;">
+<p><em>Uncountable</em>:</p>
 <ul>
-<li>Crop sustainability</li>
-<li>Smaller environmental footprint: less water and fertilizers</li>
+<li>Crop sustainability &amp; smaller environmental footprint</li>
 </ul>
-<p>Countable</p>
+<p><em>Countable</em>:</p>
 <ul>
 <li>Faster and more dynamic intervention in the control of irrigation</li>
 <li>More accurate approximation of soil dynamics</li>
 </ul>
-<p>Money:</p>
+<p><em>Money</em>:</p>
 <ul>
 <li>Fewer management issues</li>
-<li>Fewer fertilizers</li>
-<li>Smaller irrigation amount</li>
-<li>Similar (or even better) quality of the product</li>
+<li>Smaller irrigation amount
+<ul>
+<li>MR saved 44% of water during the whole campaign</li>
+<li>Max. saving in Jun and Sep: for the farmer is harder to estimate water demand</li>
+</ul></li>
+<li>Comparable (or even better) quality of the product; e.g.&nbsp;in 2021:
+<ul>
+<li>Productivity of vines was unaffected by irrigation (32-39 kg/vine; 35-44 t/ha)</li>
+<li>CR’s fruits appeared greener (H angle 105) than fruits from MR (H angle 102)</li>
+<li>CR’s fruits solid concentration (12.7 brix) &lt; MR’s fruits (15.3 brix)
+<ul>
+<li>Gap maintained after 2 months of storage (and 1 day of shelf life)</li>
+<li>17.4 brix for MR vs 16.1 brix for CR</li>
+</ul></li>
+</ul></li>
 </ul>
-</section>
-
-<section id="some-numbers" class="title-slide slide level1 center">
-<h1>Some numbers</h1>
+</div><div class="column" style="width:34%;">
+<div style="font-size: 18px">
 <table>
 <thead>
 <tr class="header">
@@ -1750,47 +1510,50 @@ NaN
 </thead>
 <tbody>
 <tr class="odd">
-<td>Superficie (ha)</td>
+<td>Surface (<span class="math inline">\(ha\)</span>)</td>
 <td>5</td>
 <td>5</td>
 </tr>
 <tr class="even">
-<td>Potenza Elettropompa (kw/h)</td>
+<td>Pump consumption (KWh)</td>
 <td>10</td>
 <td>10</td>
 </tr>
 <tr class="odd">
-<td>Costo Kilowattora</td>
-<td>0.5</td>
-<td>0.5</td>
+<td>Cost KWh</td>
+<td>0.5€</td>
+<td>0.5€</td>
 </tr>
 <tr class="even">
-<td>Consumo (m3)</td>
+<td>Irrigation volume (<span class="math inline">\(\frac{m^3}{ha}\)</span>)</td>
 <td>3790</td>
 <td>2112</td>
 </tr>
 <tr class="odd">
-<td>N Gocciolatori da 4l/h (ha)</td>
+<td>#Drippers 4<span class="math inline">\(\frac{l}{h}\)</span> (per <span class="math inline">\(ha\)</span>)</td>
 <td>3344</td>
 <td>3344</td>
 </tr>
 <tr class="even">
-<td>Consumo m3/h</td>
+<td>Water consumption (<span class="math inline">\(\frac{m^3}{h}\)</span>)</td>
 <td>14</td>
 <td>14</td>
 </tr>
 <tr class="odd">
-<td>Ore accensione pompa (h/ha)</td>
+<td>Pump working hours (<span class="math inline">\(\frac{h}{ha}\)</span>)</td>
 <td>274</td>
 <td>157</td>
 </tr>
 <tr class="even">
-<td>Costo Energia Elettrica</td>
-<td>€ 6,850</td>
-<td>€ 3,925 €</td>
+<td>Energy costs</td>
+<td>6850€</td>
+<td>3925€</td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
 </section>
 
 <section id="future-direction-soil-moisture-profiling" class="title-slide slide level1 center">
