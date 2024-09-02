@@ -1,6 +1,10 @@
-# Case Study: Smart Irrigation
+---
+author: Matteo Francia
+title: Soil Moisture Modeling and Assessment
+subtitle: A Case Study
+---
 
-# Smart Irrigation as a Case Study
+# Smart Irrigation
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -40,18 +44,18 @@ Optimizing soil moisture is crucial for watering and crop performance [@turkelta
 
 ![Model of the orchard](https://github.com/user-attachments/assets/3ecb211c-c5ae-4fdf-8870-4449155de0c9)
 
+:::
+::::
+
 - Kiwi *plants are aligned along rows*
 - Each row has many *drippers* (e.g., 1 every 60cm)
 - Drippers can water a *limited soil volume*
 
-:::
-::::
-
-# Digital Transformation
+# Digital Transformation {visibility="hidden"}
 
 ![image](https://github.com/user-attachments/assets/70b623f5-8d7e-4c98-94e6-1c723deb6420)
 
-# 
+# Digital Transformation
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -76,7 +80,7 @@ Optimizing soil moisture is crucial for watering and crop performance [@turkelta
 :::
 ::::
 
-#
+# Digital Transformation and AI
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -95,8 +99,6 @@ Optimizing soil moisture is crucial for watering and crop performance [@turkelta
 
 :::
 ::: {.column width="40%"}
-
-![AI](https://github.com/user-attachments/assets/ba718451-ac90-41bb-9d56-bf42c65667d2)
 
 ![AI vs ML](https://s3.ap-southeast-1.amazonaws.com/files-scs-prod/public%2Fimages%2F1605842918803-AI+vs+ML+vs+DL.png)
 :::
@@ -139,13 +141,17 @@ Simulate the soil behavior according to physical models [@van1980closed]
 :::
 ::::
 
-#
+# {visibility="hidden"}
 
 ![image](https://github.com/user-attachments/assets/27db3d71-a7fc-47d1-b1ef-5026afcf72f4)
 
-# Open Field vs Simulator
+# Open Field vs Simulator {visibility="hidden"}
 
 ![image](https://github.com/user-attachments/assets/0dc1575b-bdae-4805-a8fe-f19a6a9f7092)
+
+# Overview of the Approach 
+
+![image](https://github.com/user-attachments/assets/ac0d5d37-64b9-4454-84bd-60f5bf83d510)
 
 # Sensor Layouts and Symmetry Assumptions
 
@@ -192,10 +198,6 @@ Competitors rely on a single sensor (or a line of sensors at different depths) a
 1. Sensors return a discretized representation of soil moisture
     - Depending on the number of sensors and on their layout the monitoring accuracy changes
 1. Goal: produce fine-grained soil profiles out of coarse-grained layouts
-
-# Overview of the Approach 
-
-![image](https://github.com/user-attachments/assets/ac0d5d37-64b9-4454-84bd-60f5bf83d510)
 
 # Monitoring [@francia2022multi]
 
@@ -329,9 +331,9 @@ Data generation and augmentation
     - Weather conditions from ARPAE
     - Different watering patterns (by changing watering intervals and the amount of supplied water)
 - Output
-    - Training set = $12 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟} \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 4 months = 35 \cdot 10^3 samples$
-    - Validation set = same as training set, but we simulate with different weather/irrigation patterns
-    - Test set = 4 months from the real field
+    - *Training set* = $12 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟} \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 4 months = 35 \cdot 10^3 samples$
+    - *Validation set* = same as training set, but we simulate with different weather/irrigation patterns
+    - *Test set* = 4 months from the real field
 - Different weather conditions & watering patterns to enable generalization and avoid overfitting
 
 # Feature Aware
@@ -452,7 +454,7 @@ Pros/Cons
 **PID** 
 
 - A control loop mechanism employing feedback
-- Continuously calculates an error value $e(t)$ as the difference between a desired setpoint (SP) and a measured process variable (PV)
+- Calculates an error value $e(t)$ as the difference between a desired setpoint (SP) and a measured process variable (PV)
     - $e(t) = r(t) - y(t)$
 - Applies a correction based on proportional, integral, and derivative terms
 
@@ -477,65 +479,40 @@ Correction is based on 3 terms: $u(t)=K_{p}e(t)+K_{i}\int_{0}^{t} e(\tau)\mathrm
 
 # Test Setup
 
-Two irrigation setups during the 2021 campaign (i.e., May/October) within the same orchard
+Two irrigation setups during the 2021-2024 campaigns (i.e., May/October) within the same orchard
 
-- *Managed Row*: irrigation is automatically controlled using a 2D installation of 12 sensor
-- *Control Row*: irrigation is manually controlled by the farmer
+- *Control Row (T0)*: irrigation is manually controlled by the farmer
+- *Managed Row (T\*)*: irrigation is automatically controlled using a 2D installation of 12 sensor
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="33%"}
 
-![Managed Row](https://github.com/user-attachments/assets/6f648d9d-5c3e-4c24-b0e4-9ce30a6ec90d)
+![Single Wing](https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e)
+
+![Control Row (T0)](https://github.com/user-attachments/assets/6f648d9d-5c3e-4c24-b0e4-9ce30a6ec90d)
 
 :::
-::: {.column width="50%"}
+::: {.column width="33%"}
 
-![Control Row](https://github.com/user-attachments/assets/cb80c32b-f892-4283-86a6-bae0793a0613)
+![Single Wing](https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e)
+
+![Managed Row (T1)](https://github.com/user-attachments/assets/cb80c32b-f892-4283-86a6-bae0793a0613)
+
+:::
+::: {.column width="33%"}
+
+![Double Wing](https://github.com/user-attachments/assets/d3eed7d0-8001-47b2-a66d-d6ba16aa26db)
+
+![Managed Row (T2)](https://github.com/user-attachments/assets/4c832868-2913-4f33-bf6f-bfcaf639e0ad)
 
 :::
 ::::
 
-# Results
-
-- **Water management**
-    - MR saved 44% of water during the whole campaign
-    - Maximum saving in June and September: for the farmer is harder to estimate the SM level and water requirement
-- **Fruit quality**
-    - Productivity of vines was unaffected by the irrigation and ranged from 32 to 39 kg/vine (35-44 t/ha)
-    - Fruits from CR appeared greener (hue angle of 105) than fruits from MR (hue angle of 102)
-    - Fruits from CR had lower soluble solid concentration at harvest (12.7 brix) than fruits from MR (15.3 brix)
-    - The gap has been maintained after 2 months of storage (and 1 day of shelf life) 
-        - The soluble solid concentration was 17.4 brix for the MR vs 16.1 brix for the CR
-
-
-# Control System
+# Qualitative comparison: T0 vs T1
 
 ![image](https://github.com/user-attachments/assets/43aaaae7-7e5a-4400-af7d-8ffd884a2162)
 
 ![image](https://github.com/user-attachments/assets/e4307c5b-e813-4699-9022-4b0e145f04f5)
-
-# Single Wing vs Double Wing
-
-:::: {.columns}
-::: {.column width="50%"}
-
-**Single wing**
-
-![image](https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e)
-
-![image](https://github.com/user-attachments/assets/cb80c32b-f892-4283-86a6-bae0793a0613)
-
-:::
-::: {.column width="50%"}
-
-**Double wing**
-
-![image](https://github.com/user-attachments/assets/d3eed7d0-8001-47b2-a66d-d6ba16aa26db)
-
-![image](https://github.com/user-attachments/assets/4c832868-2913-4f33-bf6f-bfcaf639e0ad)
-
-:::
-::::
 
 # Water consumption
 
@@ -592,23 +569,6 @@ Two irrigation setups during the 2021 campaign (i.e., May/October) within the sa
       <td>-0.37</td>
       <td>0.24</td>
     </tr>
-    <tr>
-      <th rowspan="2" valign="top">C2</th>
-      <th>2022</th>
-      <td>1182.0</td>
-      <td>922.0</td>
-      <td>NaN</td>
-      <td>-0.22</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2023</th>
-      <td>1921.0</td>
-      <td>1496.0</td>
-      <td>NaN</td>
-      <td>-0.22</td>
-      <td>NaN</td>
-    </tr>
   </tbody>
 </table>
 
@@ -623,15 +583,11 @@ Two irrigation setups during the 2021 campaign (i.e., May/October) within the sa
       <th colspan="3" halign="left">Dry mass (%)</th>
       <th colspan="3" halign="left">Hardness (kg)</th>
       <th colspan="3" halign="left">RSR (° brix)</th>
-      <th colspan="3" halign="left">Size (mm)</th>
       <th colspan="3" halign="left">Weight (g)</th>
     </tr>
     <tr>
       <th></th>
       <th>Row</th>
-      <th>T0</th>
-      <th>T1</th>
-      <th>T2</th>
       <th>T0</th>
       <th>T1</th>
       <th>T2</th>
@@ -666,9 +622,6 @@ Two irrigation setups during the 2021 campaign (i.e., May/October) within the sa
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -687,9 +640,6 @@ Two irrigation setups during the 2021 campaign (i.e., May/October) within the sa
       <td>12.7</td>
       <td>15.3</td>
       <td>13.7</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>116.0</td>
       <td>116.0</td>
       <td>107.0</td>
@@ -708,9 +658,6 @@ Two irrigation setups during the 2021 campaign (i.e., May/October) within the sa
       <td>10.5</td>
       <td>11.7</td>
       <td>8.9</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>117.0</td>
       <td>122.0</td>
       <td>119.0</td>
@@ -729,91 +676,61 @@ Two irrigation setups during the 2021 campaign (i.e., May/October) within the sa
       <td>10.1</td>
       <td>11.6</td>
       <td>8.8</td>
-      <td>55.0</td>
-      <td>55.3</td>
-      <td>55.3</td>
       <td>143.0</td>
       <td>143.0</td>
       <td>155.0</td>
     </tr>
-    <tr>
-      <th rowspan="2" valign="top">C2</th>
-      <th>2022</th>
-      <td>101.5</td>
-      <td>103.9</td>
-      <td>NaN</td>
-      <td>18.7</td>
-      <td>17.7</td>
-      <td>NaN</td>
-      <td>4.20</td>
-      <td>4.90</td>
-      <td>NaN</td>
-      <td>13.7</td>
-      <td>10.8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>107.0</td>
-      <td>111.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2023</th>
-      <td>105.9</td>
-      <td>108.0</td>
-      <td>NaN</td>
-      <td>17.3</td>
-      <td>17.0</td>
-      <td>NaN</td>
-      <td>5.46</td>
-      <td>5.25</td>
-      <td>NaN</td>
-      <td>8.8</td>
-      <td>9.4</td>
-      <td>NaN</td>
-      <td>54.8</td>
-      <td>54.4</td>
-      <td>NaN</td>
-      <td>135.0</td>
-      <td>128.0</td>
-      <td>NaN</td>
-    </tr>
   </tbody>
 </table>
 
-# Benefits 
 
-Uncountable:
 
-- Crop sustainability
-- Smaller environmental footprint: less water and fertilizers
 
-Countable
+# Results 
+
+:::: {.columns}
+::: {.column width="66%"}
+
+*Uncountable*:
+
+- Crop sustainability & smaller environmental footprint
+
+*Countable*:
 
 - Faster and more dynamic intervention in the control of irrigation
 - More accurate approximation of soil dynamics
 
-Money:
+*Money*:
 
 - Fewer management issues
-- Fewer fertilizers
 - Smaller irrigation amount
-- Similar (or even better) quality of the product
+    - MR saved 44% of water during the whole campaign
+    - Max. saving in Jun and Sep: for the farmer is harder to estimate water demand
+- Comparable (or even better) quality of the product; e.g. in 2021:
+    - Productivity of vines was unaffected by irrigation (32-39 kg/vine; 35-44 t/ha)
+    - CR's fruits appeared greener (H angle 105) than fruits from MR (H angle 102)
+    - CR's fruits solid concentration (12.7 brix) < MR's fruits (15.3 brix)
+        - Gap maintained after 2 months of storage (and 1 day of shelf life) 
+        - 17.4 brix for MR vs 16.1 brix for CR
+:::
+::: {.column width="34%"}
 
-# Some numbers
+<div style="font-size: 18px">
 
-|                  | T0 | T1 |
-|------------------|----|----|
-| Superficie  (ha) |  5 |  5 |
-| Potenza Elettropompa  (kw/h) | 10 | 10 |
-| Costo Kilowattora | 0.5 | 0.5 |
-| Consumo (m3) |  3790 | 2112 |
-| N Gocciolatori da 4l/h  (ha) | 3344 | 3344 |
-| Consumo m3/h | 14 | 14 |
-| Ore accensione pompa (h/ha) | 274 | 157 |
-| Costo Energia Elettrica | €  6,850 | € 3,925 € |
+|                                       | T0    | T1 |
+|------------------                     |----   |----|
+| Surface ($ha$)                        |  5    |  5    |
+| Pump consumption (KWh)                | 10    | 10    |
+| Cost KWh                              | 0.5€  | 0.5€  |
+| Irrigation volume ($\frac{m^3}{ha}$)  |  3790 | 2112  |
+| \#Drippers 4$\frac{l}{h}$ (per $ha$)  | 3344  | 3344  |
+| Water consumption ($\frac{m^3}{h}$)   | 14    | 14    |
+| Pump working hours ($\frac{h}{ha}$)   | 274   | 157   |
+| Energy costs                          | 6850€ | 3925€ |
 
+</div>
+:::
+::::
 
 # Future direction: soil moisture profiling
 

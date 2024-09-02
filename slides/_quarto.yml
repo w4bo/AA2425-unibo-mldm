@@ -1,7 +1,7 @@
 project:
   output-dir: _site
-  # render:
-  #   - lab-01-dataunderstanding.ipynb
+  render:
+    - cs-smartirrigation.md
 
 toc: true
 
