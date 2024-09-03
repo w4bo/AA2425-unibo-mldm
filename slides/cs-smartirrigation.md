@@ -27,7 +27,7 @@ Optimizing soil moisture is crucial for watering and crop performance [@turkelta
 :::
 ::: {.column width="40%"}
 
-![](https://github.com/user-attachments/assets/6656bc86-dfe8-4d58-a1e7-eebf88a8c71d)
+<img src="https://github.com/user-attachments/assets/a1c9c6ae-3a56-405b-bbff-4d3922b27a9d" style="max-height: 450px !important"></img>
 
 :::
 ::::
@@ -53,9 +53,9 @@ Optimizing soil moisture is crucial for watering and crop performance [@turkelta
 
 # Digital Transformation {visibility="hidden"}
 
-![image](https://github.com/user-attachments/assets/70b623f5-8d7e-4c98-94e6-1c723deb6420)
+![](https://github.com/user-attachments/assets/70b623f5-8d7e-4c98-94e6-1c723deb6420)
 
-# Digital Transformation
+# Digital Transformation {visibility="hidden"}
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -80,7 +80,7 @@ Optimizing soil moisture is crucial for watering and crop performance [@turkelta
 :::
 ::::
 
-# Digital Transformation and AI
+# Digital Transformation and AI {visibility="hidden"}
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -104,7 +104,7 @@ Optimizing soil moisture is crucial for watering and crop performance [@turkelta
 :::
 ::::
 
-# Simulators...
+# Simulators... {visibility="hidden"}
 
 To achieve our goal, *it necessary to understand of the soil behaves*
 
@@ -121,7 +121,7 @@ Simulate the soil behavior according to physical models [@van1980closed]
         - E.g., [@vsimunek2012hydrus] implemented in [@bittelli2015soil]
     - Hyper-parameter tuning with machine learning can help, but it is not a silver bullet
 
-# ... vs Sensors
+# ... vs Sensors {visibility="hidden"}
 
 :::: {.columns}
 ::: {.column width="32%"}
@@ -143,15 +143,15 @@ Simulate the soil behavior according to physical models [@van1980closed]
 
 # {visibility="hidden"}
 
-![image](https://github.com/user-attachments/assets/27db3d71-a7fc-47d1-b1ef-5026afcf72f4)
+![](https://github.com/user-attachments/assets/27db3d71-a7fc-47d1-b1ef-5026afcf72f4)
 
 # Open Field vs Simulator {visibility="hidden"}
 
-![image](https://github.com/user-attachments/assets/0dc1575b-bdae-4805-a8fe-f19a6a9f7092)
+![](https://github.com/user-attachments/assets/0dc1575b-bdae-4805-a8fe-f19a6a9f7092)
 
 # Overview of the Approach 
 
-![image](https://github.com/user-attachments/assets/ac0d5d37-64b9-4454-84bd-60f5bf83d510)
+![](https://github.com/user-attachments/assets/ac0d5d37-64b9-4454-84bd-60f5bf83d510)
 
 # Sensor Layouts and Symmetry Assumptions
 
@@ -160,12 +160,12 @@ Competitors rely on a single sensor (or a line of sensors at different depths) a
 :::: {.columns}
 ::: {.column width="50%"}
 
-![image](https://github.com/user-attachments/assets/3ecb211c-c5ae-4fdf-8870-4449155de0c9)
+![](https://github.com/user-attachments/assets/3ecb211c-c5ae-4fdf-8870-4449155de0c9)
 
 :::
 ::: {.column width="50%"}
 
-![image](https://github.com/user-attachments/assets/535ef33f-3107-4258-adb9-e3686cb327b3)
+![](https://github.com/user-attachments/assets/535ef33f-3107-4258-adb9-e3686cb327b3)
 
 :::
 ::::
@@ -174,7 +174,7 @@ Competitors rely on a single sensor (or a line of sensors at different depths) a
 - If moisture variations take place along the row too, a 3D grid of sensors is required
     - E.g., too sparse drippers
 
-# From Sensors to Soil Profiles
+# Monitoring: From Sensors to Soil Profiles [@francia2022multi]
 
 :::: {.columns}
 ::: {.column width="32%"}
@@ -199,7 +199,7 @@ Competitors rely on a single sensor (or a line of sensors at different depths) a
     - Depending on the number of sensors and on their layout the monitoring accuracy changes
 1. Goal: produce fine-grained soil profiles out of coarse-grained layouts
 
-# Monitoring [@francia2022multi]
+# 
 
 ![Overview](https://github.com/user-attachments/assets/83118d01-bad4-4b54-8921-d2d1f9d73a3f)
 
@@ -218,16 +218,20 @@ For instance, in the 2D setting
     - The column (0, *) is under the dripper
 - Each columns has 3 sensors located at 3 depths (e.g., 20/40/60cm)
 
+Dataset
+
+- *In two years, we collected 16GB data (as of 2022-08-30)*
+- *In four years, we collected 64GB data (as of 2024-08-30)*
 
 :::
 ::: {.column width="40%"}
 
-![image](https://github.com/user-attachments/assets/90034743-1c3a-46b6-9408-93f2644703f1)
+![](https://github.com/user-attachments/assets/90034743-1c3a-46b6-9408-93f2644703f1)
 
 :::
 ::::
 
-# Data Collection
+# Data Collection {visibility="hidden"}
 
 In the 2D setting (3 x 4 gypsum block sensors)
 
@@ -240,68 +244,53 @@ $(12 \cdot 4 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟}+5 \frac{𝑠�
 
 We monitored 6 fields for 2 years
 
-$200 \cdot 10^3 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{𝑦𝑒𝑎𝑟} \cdot 2 𝑦𝑒𝑎𝑟𝑠 \cdot 6= 2.4 \cdot 10^6 𝑠𝑎𝑚𝑝𝑙𝑒𝑠$
+$(200 \cdot 10^3 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{𝑦𝑒𝑎𝑟} \cdot 2 𝑦𝑒𝑎𝑟) \cdot 6= 2.4 \cdot 10^6 𝑠𝑎𝑚𝑝𝑙𝑒𝑠$
 
 We should consider accessory data for storage and optimization structures
 
-- In two years, we collected/generated 16GB data (as of 2022-08-30)
-- In four years, we collected/generated 64GB data (as of 2024-08-30)
+Dataset
+
+- *In two years, we collected 16GB data (as of 2022-08-30)*
+- *In four years, we collected 64GB data (as of 2024-08-30)*
 
 # Processing
 
 :::: {.columns}
 ::: {.column width="60%"}
 
-Feature unaware (FU)
+**Feature unaware (FU)**
 
 - Plug-and-play 
 - Create a linear interpolation of the real-time sensor data
 
-Feature aware (FA)
+**Feature aware (FA)**
 
 - Require time for data collection and training/testing
 - Create an interpolation of the real-time sensor data through machine learning
+
 :::
 ::: {.column width="40%"}
 
-![image](https://github.com/user-attachments/assets/6397b84c-b1ec-4ce9-979f-a1e688d5c2d1)
+![](https://github.com/user-attachments/assets/6397b84c-b1ec-4ce9-979f-a1e688d5c2d1)
 
 :::
 ::::
 
 # Feature Unaware
-
-:::: {.columns}
-::: {.column width="60%"}
-
-Feature unaware (FU)
 
 - Plug-and-play 
 - Create a linear interpolation of the real-time sensor data
 
-:::
-::: {.column width="40%"}
-
-![image](https://github.com/user-attachments/assets/bb91b88a-440c-42b6-8729-ff9af7ee40c2)
-
-:::
-::::
-
-# Feature Unaware
-
-![image](https://github.com/user-attachments/assets/8d6fbc76-edd5-4a63-9a19-d035c432fa9d)
+![Feature Unaware Profiling](https://github.com/user-attachments/assets/8d6fbc76-edd5-4a63-9a19-d035c432fa9d)
 
 # Feature Aware
 
 :::: {.columns}
 ::: {.column width="60%"}
 
-Feature aware
+- Interpolate real-time sensor data through machine learning
 
-- Create an interpolation of the real-time sensor data through machine learning
-- Offline pipeline
-
-Given the soil texture as input
+*Offline pipeline*, given the soil texture as input...
 
 - Simulate different patterns of SM to produce a dataset of simulated SM
 - Train a machine learning model on such data
@@ -310,94 +299,94 @@ Given the soil texture as input
 :::
 ::: {.column width="40%"}
 
-![image](https://github.com/user-attachments/assets/80848360-0e67-48c9-b70a-5468ca21951e)
+![](https://github.com/user-attachments/assets/80848360-0e67-48c9-b70a-5468ca21951e)
 
 :::
 ::::
 
-# Feature Aware
-
-![image](https://github.com/user-attachments/assets/d4d4226e-fd22-42ac-ae4c-90b08b971c58)
-
-# Feature Aware
+# Feature Aware: Crop Simulator
 
 Data generation and augmentation
 
-- CRITERIA 3D to simulate the hydrological fluxes in the soil following Richard’s equations
+- **CRITERIA 3D** to simulate the hydrological fluxes in the soil following Richard’s equations
 - Inputs
-    - The soil texture
-    - "Default" settings for the kiwi-plant (e.g., shape of the tree roots / LAI)
-    - Watering system based on a single dripper
-    - Weather conditions from ARPAE
-    - Different watering patterns (by changing watering intervals and the amount of supplied water)
+    - The *soil texture*
+    - "Default" settings for the *kiwi-plant* (e.g., shape of the tree roots / LAI)
+    - *Watering system* based on a single dripper
+    - *Weather conditions* from ARPAE
+    - Different *watering patterns* (by changing watering intervals and the amount of supplied water)
 - Output
     - *Training set* = $12 \frac{𝑠𝑎𝑚𝑝𝑙𝑒𝑠}{ℎ𝑜𝑢𝑟} \cdot 24 \frac{ℎ𝑜𝑢𝑟}{𝑑𝑎𝑦} \cdot 30 \frac{𝑑𝑎𝑦}{𝑚𝑜𝑛𝑡ℎ} \cdot 4 months = 35 \cdot 10^3 samples$
     - *Validation set* = same as training set, but we simulate with different weather/irrigation patterns
     - *Test set* = 4 months from the real field
 - Different weather conditions & watering patterns to enable generalization and avoid overfitting
 
-# Feature Aware
+# Feature Aware: Machine Learning
 
-This is a (multi-output) regression problem
+![](https://github.com/user-attachments/assets/d4d4226e-fd22-42ac-ae4c-90b08b971c58)
 
-- The task is to learn the function mapping the input to the continuous output
+This is a **(multi-output) regression problem**
+
+- The task is to *learn the function mapping the input to the continuous output*
 - We tried several machine learning models
     - SVR, Random Forest Regression, Linear Regression, and ANN
-    - (A simple) ANN is the best performing model
-    - The hyper parameters (structure/learning rates) are set through a hyper-parameter tuning process
-        - HyperOpt: state-of-the-art optimization technique to explore the huge search space of hyper-parameters
+    - *(A simple) ANN is the best performing model*
 
 # Artificial Neural Networks
 
-![image](https://github.com/user-attachments/assets/b3b7641a-bba6-4333-b3e4-8aafdc08fca4)
+![ANN](https://github.com/user-attachments/assets/b3b7641a-bba6-4333-b3e4-8aafdc08fca4)
+
+The hyper parameters (structure/learning rates) are set through a hyper-parameter tuning process
+
+- *HyperOpt*: state-of-the-art optimization technique to explore the huge search space of hyper-parameters
 
 # Artificial Neural Networks
 
-![image](https://github.com/user-attachments/assets/083d3687-cb10-4c93-80c1-33fef0d0bdb5)
+![ANN and Hyper-parameters](https://github.com/user-attachments/assets/083d3687-cb10-4c93-80c1-33fef0d0bdb5)
 
 # Feature Aware vs Unaware
 
 :::: {.columns}
 ::: {.column width="50%"}
 
-![Feature unaware](https://github.com/user-attachments/assets/39bc042a-dc34-4af4-8e6e-d1b025930e1f)
+![Feature Unaware](https://github.com/user-attachments/assets/39bc042a-dc34-4af4-8e6e-d1b025930e1f)
 
 :::
 ::: {.column width="50%"}
 
-![Feature aware](https://github.com/user-attachments/assets/86103a11-a85b-431f-bbf6-65cb1333f0e5)
+![Feature Aware](https://github.com/user-attachments/assets/86103a11-a85b-431f-bbf6-65cb1333f0e5)
 
 :::
 ::::
 
 # Evaluation
 
-![image](https://github.com/user-attachments/assets/7a07f057-3297-4cc4-ac05-2cfaf6fda152)
+![Comparing FA and FU](https://github.com/user-attachments/assets/7a07f057-3297-4cc4-ac05-2cfaf6fda152)
 
-# Evaluation
+# Evaluation {visibility="hidden"}
 
 If I got 4 sensors, what layout should I choose?
 
-![image](https://github.com/user-attachments/assets/eda101bd-308b-4a5b-ac51-4a0be5fd4ecc)
+![](https://github.com/user-attachments/assets/eda101bd-308b-4a5b-ac51-4a0be5fd4ecc)
 
-# Evaluation
+# Evaluation {visibility="hidden"}
 
 If I got 4 sensors, what layout should I choose?
 
 :::: {.columns}
 ::: {.column width="50%"}
-![image](https://github.com/user-attachments/assets/69a8cc96-1e4d-49b7-9023-5facbe276a0b)
+![](https://github.com/user-attachments/assets/69a8cc96-1e4d-49b7-9023-5facbe276a0b)
 :::
 ::: {.column width="50%"}
-![image](https://github.com/user-attachments/assets/9222e84b-0dd8-4bd2-bf07-15bc91c071cd)
+![](https://github.com/user-attachments/assets/9222e84b-0dd8-4bd2-bf07-15bc91c071cd)
 :::
 ::::
 
-# Serving the Data
+# Serving the Data {visibility="hidden"}
 
-![image](https://github.com/user-attachments/assets/8571ffda-d6da-49c6-a616-463c3eb9b2ca)
+![](https://github.com/user-attachments/assets/8571ffda-d6da-49c6-a616-463c3eb9b2ca)
 
-# Descriptive Analytics
+# Descriptive Analytics {visibility="hidden"}
 
 Starting from the profile, we derive meaningful visualizations/analysis
 
@@ -413,12 +402,21 @@ The charts support both agricultural technicians and farmers
 - How soil moisture dynamics impact on the watered volume?
     - If, after increasing the water supplied, the profile does not change then the soil disperses water
 
-# Prescripting [@quartieri2021effect]
+# Prescripting
 
-![image](https://github.com/user-attachments/assets/43aaaae7-7e5a-4400-af7d-8ffd884a2162)
+The technician sets an optimal soil moisture and the system must reach it
 
-# Watering Advice (2021-2022)
+:::: {.columns}
+::: {.column width="50%"}
+![](https://github.com/user-attachments/assets/e25c69f8-44a7-4401-a436-3feb0758832a)
+:::
+::: {.column width="50%"}
+![](https://github.com/user-attachments/assets/43aaaae7-7e5a-4400-af7d-8ffd884a2162)
+:::
+::::
 
+
+# Watering Advice (2021-2022) [@quartieri2021effect]
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -434,16 +432,14 @@ Given the following algorithm
     ELSE 
         Do nothing
 
-we provide advices (recommendations) to technicians, who use (and adjust) the advice according their experience.
+We provide advices (recommendations) to technicians, who use (and adjust) the advice according their experience.
 
-Pros/Cons
-
-- [+] it relies on the experience of the technician
-- [-] does not scale out to many fields; controlling 6 fields entails lot of work
+- *Pro*: it relies on the experience of the technician
+- *Con*: does not scale out to many fields; controlling 6 fields entails lot of work
 
 :::
 ::: {.column width="50%"}
-![image](https://github.com/user-attachments/assets/e25c69f8-44a7-4401-a436-3feb0758832a)
+![](https://github.com/user-attachments/assets/e25c69f8-44a7-4401-a436-3feb0758832a)
 :::
 ::::
 
@@ -451,10 +447,9 @@ Pros/Cons
 
 ![PID](https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/PID_en.svg/400px-PID_en.svg.png)
 
-**PID** 
+**PID**, a control loop mechanism employing feedback
 
-- A control loop mechanism employing feedback
-- Calculates an error value $e(t)$ as the difference between a desired setpoint (SP) and a measured process variable (PV)
+- Calculates an error $e(t)$ as the difference between a desired setpoint (SP) and a measured process variable (PV)
     - $e(t) = r(t) - y(t)$
 - Applies a correction based on proportional, integral, and derivative terms
 
@@ -464,15 +459,14 @@ Pros/Cons
 
 Correction is based on 3 terms: $u(t)=K_{p}e(t)+K_{i}\int_{0}^{t} e(\tau)\mathrm{d}\tau + K_{d}{\frac{\mathrm{d}e(t)}{\mathrm{d}t}}$
 
-- *P*: proportional to the *current value of the $SP − PV$ error $e(t)$
-    - If SP=PV, do not apply correction based on the current value
-- *I*: integrates the past values of $e(t)$ over time to eliminate the residual error
-    - The Integral term ensures that even small, persistent errors are eventually corrected
-        - Imagine that the desired temperature is 60%, but the system is stuck at 57%
+- **P**: proportional to the *current value* of the $SP − PV$ error $e(t)$
+- **I**: integrates the *past values* of $e(t)$ over time to eliminate the residual error
+    - Ensures that even small, persistent errors are eventually corrected
+        - Imagine that the desired soil moisture is 60%, but the system is stuck at 57%
         - P (alone) might not be strong enough to bring the system to exactly 60%, leaving a small steady-state error
-- *D*: estimate of the future trend of the $e(t)$ based on its current rate of change
+- **D**: estimate of *the future trend* of $e(t)$ based on its current rate of change
     - Adds stability to the system by damping the response and reducing oscillations
-    - It acts like a brake, slowing down the response as the system nears the SP
+    - Acts like a brake, slowing down the response as the system nears the SP
 - $K_p, K_i, K_d$ are non-negative coefficients for the proportional, integral, and derivative terms respectively
     - A higher $K_p$​ reduces the error faster but may lead to overshoot (going past the desired SP)
     - Constants are initially entered knowing the type of application and tuned by observing the system response
@@ -482,10 +476,12 @@ Correction is based on 3 terms: $u(t)=K_{p}e(t)+K_{i}\int_{0}^{t} e(\tau)\mathrm
 Two irrigation setups during the 2021-2024 campaigns (i.e., May/October) within the same orchard
 
 - *Control Row (T0)*: irrigation is manually controlled by the farmer
-- *Managed Row (T\*)*: irrigation is automatically controlled using a 2D installation of 12 sensor
+- *Managed Row (T1 and T2)*: irrigation is automatically controlled using a 2D installation of 12 sensor
 
 :::: {.columns}
 ::: {.column width="33%"}
+
+**T0**
 
 ![Single Wing](https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e)
 
@@ -494,12 +490,16 @@ Two irrigation setups during the 2021-2024 campaigns (i.e., May/October) within 
 :::
 ::: {.column width="33%"}
 
+**T1**
+
 ![Single Wing](https://github.com/user-attachments/assets/5cb9c2a0-61cb-4532-8d43-15f5ce0cdb7e)
 
 ![Managed Row (T1)](https://github.com/user-attachments/assets/cb80c32b-f892-4283-86a6-bae0793a0613)
 
 :::
 ::: {.column width="33%"}
+
+**T2**
 
 ![Double Wing](https://github.com/user-attachments/assets/d3eed7d0-8001-47b2-a66d-d6ba16aa26db)
 
@@ -508,20 +508,16 @@ Two irrigation setups during the 2021-2024 campaigns (i.e., May/October) within 
 :::
 ::::
 
-# Qualitative comparison: T0 vs T1
-
-![image](https://github.com/user-attachments/assets/43aaaae7-7e5a-4400-af7d-8ffd884a2162)
-
-![image](https://github.com/user-attachments/assets/e4307c5b-e813-4699-9022-4b0e145f04f5)
-
 # Water consumption
+
+![T0 vs T1](https://github.com/user-attachments/assets/e4307c5b-e813-4699-9022-4b0e145f04f5)
 
 <table border="1" class="dataframe">
   <thead>
     <tr>
       <th></th>
-      <th>measure</th>
-      <th colspan="3" halign="left">Irrigation volume ($m^3 ha^{-1}$)</th>
+      <th></th>
+      <th colspan="3" halign="left">Irrigation volume ($\frac{m^3}{ha}$)</th>
       <th colspan="2" halign="left">Performance</th>
     </tr>
     <tr>
@@ -547,38 +543,40 @@ Two irrigation setups during the 2021-2024 campaigns (i.e., May/October) within 
     <tr>
       <th rowspan="3" valign="top">C1</th>
       <th>2021</th>
-      <td>3790.0</td>
-      <td>2112.0</td>
-      <td>3382.0</td>
-      <td>-0.44</td>
-      <td>-0.11</td>
+      <td>*3790*</td>
+      <td>2112</td>
+      <td>3382</td>
+      <td>**-44%**</td>
+      <td>-11%</td>
     </tr>
     <tr>
       <th>2022</th>
-      <td>3059.0</td>
-      <td>2300.0</td>
-      <td>3420.0</td>
-      <td>-0.25</td>
-      <td>0.12</td>
+      <td>*3059*</td>
+      <td>2300</td>
+      <td>3420</td>
+      <td>**-25%**</td>
+      <td>+12%</td>
     </tr>
     <tr>
       <th>2023</th>
-      <td>3595.0</td>
-      <td>2256.0</td>
-      <td>4453.0</td>
-      <td>-0.37</td>
-      <td>0.24</td>
+      <td>*3595*</td>
+      <td>2256</td>
+      <td>4453</td>
+      <td>**-37%**</td>
+      <td>+24%</td>
     </tr>
   </tbody>
 </table>
 
-# Fruit quality
+Fruit quality results are discussed in [@quartieri2021effect] and [@baldi2023smart]
+
+# Fruit quality {visibility="hidden"}
 
 <table border="1" class="dataframe">
   <thead>
     <tr>
       <th></th>
-      <th>measure</th>
+      <th></th>
       <th colspan="3" halign="left">Color (H angle)</th>
       <th colspan="3" halign="left">Dry mass (%)</th>
       <th colspan="3" halign="left">Hardness (kg)</th>
@@ -683,30 +681,27 @@ Two irrigation setups during the 2021-2024 campaigns (i.e., May/October) within 
   </tbody>
 </table>
 
-
-
-
 # Results 
 
 :::: {.columns}
 ::: {.column width="66%"}
 
-*Uncountable*:
+**Uncountable**:
 
 - Crop sustainability & smaller environmental footprint
 
-*Countable*:
+**Countable**:
 
 - Faster and more dynamic intervention in the control of irrigation
 - More accurate approximation of soil dynamics
 
-*Money*:
+**Money**:
 
-- Fewer management issues
-- Smaller irrigation amount
+- *Fewer management issues*
+- *Smaller irrigation amount*
     - MR saved 44% of water during the whole campaign
     - Max. saving in Jun and Sep: for the farmer is harder to estimate water demand
-- Comparable (or even better) quality of the product; e.g. in 2021:
+- *Comparable (or even better) quality of the product*; e.g. in 2021:
     - Productivity of vines was unaffected by irrigation (32-39 kg/vine; 35-44 t/ha)
     - CR's fruits appeared greener (H angle 105) than fruits from MR (H angle 102)
     - CR's fruits solid concentration (12.7 brix) < MR's fruits (15.3 brix)
@@ -717,22 +712,22 @@ Two irrigation setups during the 2021-2024 campaigns (i.e., May/October) within 
 
 <div style="font-size: 18px">
 
-|                                       | T0    | T1 |
-|------------------                     |----   |----|
-| Surface ($ha$)                        |  5    |  5    |
-| Pump consumption (KWh)                | 10    | 10    |
-| Cost KWh                              | 0.5€  | 0.5€  |
-| Irrigation volume ($\frac{m^3}{ha}$)  |  3790 | 2112  |
-| \#Drippers 4$\frac{l}{h}$ (per $ha$)  | 3344  | 3344  |
-| Water consumption ($\frac{m^3}{h}$)   | 14    | 14    |
-| Pump working hours ($\frac{h}{ha}$)   | 274   | 157   |
-| Energy costs                          | 6850€ | 3925€ |
+|                                       | T0        | T1        |
+|------------------                     |----       |----       |
+| Surface ($ha$)                        |  5        |  5        |
+| Pump consumption (KWh)                | 10        | 10        |
+| Cost KWh                              | 0.5€      | 0.5€      |
+| Irrigation volume ($\frac{m^3}{ha}$)  |  3790     | 2112      |
+| \#Drippers 4$\frac{l}{h}$ (per $ha$)  | 3344      | 3344      |
+| Water consumption ($\frac{m^3}{h}$)   | 14        | 14        |
+| Pump working hours ($\frac{h}{ha}$)   | 274       | 157       |
+| *Energy costs*                        | **6850€** | **3925€** |
 
 </div>
 :::
 ::::
 
-# Future direction: soil moisture profiling
+# Future direction: soil moisture profiling {visibility="hidden"}
 
 Continual learning to overcome the limitations of the simulation
 
@@ -754,17 +749,20 @@ Homogeneous water recommendation; however, we need to handle:
 
 # Future direction: forecasting
 
-While profiling looks at the current state of soil moisture, how will soil moisture change --- for instance --- in a week?
+**Remote observations**
 
-Forecasting soil moisture
+- How can we integrate in-situ soil profiles with satellite observations?
 
-- Soil profiles are snapshots of soil moisture, we should learn from time series of snapshots 
-- Features to consider
-    - Soil conditions
-    - Weather conditions
-    - Type of irrigation
+**Forecasting**
 
-# Future direction: unifying data platform
+- While profiling looks at the current state of soil moisture, how will soil moisture change --- for instance --- in a week?
+    - Soil profiles are snapshots of soil moisture, we should learn from time series of snapshots 
+    - Features to consider
+        - Soil conditions
+        - Weather conditions
+        - Type of irrigation
+
+# Future direction: unifying data platform {visibility="hidden"}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -785,7 +783,7 @@ Research issues
 :::
 ::: {.column width="50%"}
 
-![image](https://github.com/user-attachments/assets/f710d9cb-d71c-468d-9b70-582024fe5c6e)
+![](https://github.com/user-attachments/assets/f710d9cb-d71c-468d-9b70-582024fe5c6e)
 
 :::
 ::::

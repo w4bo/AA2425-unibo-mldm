@@ -1,9 +1,9 @@
 project:
   output-dir: _site
-  render:
-    - cs-smartirrigation.md
+  # render:
+  #   - cs-smartirrigation.md
 
-toc: true
+# toc: true
 
 format:
   revealjs: 
