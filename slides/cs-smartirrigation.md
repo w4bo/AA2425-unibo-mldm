@@ -1,5 +1,5 @@
 ---
-author: Matteo Francia
+author: Matteo Francia <br/> DISI --- University of Bologna <br/> m.francia@unibo.it
 title: Soil Moisture Modeling and Assessment
 subtitle: A Case Study
 ---

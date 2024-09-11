@@ -73,9 +73,10 @@ According to the University's regulation
 More information will come by the end of the lectures
 
 - Either on Machine Learning (ask me) or Data Mining (ask Prof. Golfarelli)
-- **You are responsible for your code**. If you cannot explain your code and your choices...
-    - ... and/or you copied and pasted it from colleagues or LLMs
-    - ... you will need to retake the exam
+- **You are responsible for your code**
+    - **If you cannot explain your code and your choices**...
+    - ... **and/or you copied and pasted it from colleagues or LLMs**
+    - ... you will retake the exam
     - "I do not know how to program" is not a valid excuse!
 
 Each group must develop an AI system
