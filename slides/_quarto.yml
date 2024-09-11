@@ -1,6 +1,6 @@
 project:
   output-dir: _site
-  render:
+  # render:
     # - 00-ml.md
     # - cs-smartirrigation.md
     # - cs-automation.md
