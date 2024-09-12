@@ -340,7 +340,8 @@ Matteo Francia
 </section>
 <section id="machine-learning" class="title-slide slide level1 center">
 <h1>Machine Learning</h1>
-<p>Definition by Tom Mitchell (1998):</p>
+<p>Definition by Tom Mitchell (1998)</p>
+<blockquote>
 <p>Machine Learning is the study of algorithms that</p>
 <ul>
 <li>Improve their performance <span class="math inline">\(P\)</span></li>
@@ -348,6 +349,7 @@ Matteo Francia
 <li>With experience <span class="math inline">\(E\)</span></li>
 <li>A well-defined learning task is given by <span class="math inline">\(&lt;P, T, E&gt;\)</span></li>
 </ul>
+</blockquote>
 </section>
 
 <section id="classical-programming-vs-machine-learning" class="title-slide slide level1 center">
@@ -372,25 +374,35 @@ Matteo Francia
 <p><strong>T</strong>ask: <span class="math inline">\(Z = X + Y\)</span></p>
 </section>
 
-<section id="calculator-programming" class="title-slide slide level1 center">
-<h1>Calculator: Programming</h1>
+<section id="classical-programming" class="title-slide slide level1 center">
+<h1>Classical Programming</h1>
 
 <img src="./img/ml3.svg" class="center r-stretch"></section>
 
-<section id="calculator-machine-learning" class="title-slide slide level1 center">
-<h1>Calculator: Machine Learning</h1>
+<section id="machine-learning-1" class="title-slide slide level1 center">
+<h1>Machine Learning</h1>
 <p><strong>E</strong>xperience: training data</p>
 
 <img src="./img/ml4.svg" class="center r-stretch"></section>
 
-<section id="section" class="title-slide slide level1 center">
-<h1></h1>
+<section id="testing-the-model" class="title-slide slide level1 center">
+<h1>Testing the Model</h1>
 <p><strong>P</strong>erformance: checking accurate predictions</p>
 
 <img src="./img/ml5.svg" class="center r-stretch"></section>
 
-<section id="section-1" class="title-slide slide level1 center">
+<section id="section" class="title-slide slide level1 center">
 <h1></h1>
+
+<img data-src="https://imgs.xkcd.com/comics/machine_learning.png" class="r-stretch quarto-figure-center"><p class="caption">What is machine learning?</p></section>
+
+<section id="implementing-a-machine-learning-algorithm" class="title-slide slide level1 center">
+<h1>Implementing a Machine Learning Algorithm</h1>
+
+<img src="./img/ml7.svg" class="center r-stretch"></section>
+
+<section id="example-of-a-decision-tree" class="title-slide slide level1 center">
+<h1>Example of a Decision Tree</h1>
 
 <img src="./img/ml6.svg" class="center r-stretch"></section>
 
@@ -399,19 +411,15 @@ Matteo Francia
 
 </section>
 
-<section id="the-perfect-model" class="title-slide slide level1 center">
-<h1>The Perfect Model</h1>
-
-</section>
-
-<section id="in-2d" class="title-slide slide level1 center">
-<h1>… in 2D</h1>
+<section id="the-perfect-model-in-2d" class="title-slide slide level1 center">
+<h1>The Perfect Model … in 2D</h1>
 <p><span class="math inline">\(Z = X + Y\)</span></p>
 
 <img src="./img/LinearRegression-2d.svg" class="center r-stretch"></section>
 
-<section id="in-3d" class="title-slide slide level1 center">
-<h1>… in 3D</h1>
+<section id="the-perfect-model-in-3d" class="title-slide slide level1 center">
+<h1>The Perfect Model … in 3D</h1>
+<p><span class="math inline">\(Z = X + Y\)</span></p>
 
 <img src="./img/LinearRegression-3d.svg" class="center r-stretch"></section>
 
@@ -420,18 +428,21 @@ Matteo Francia
 
 <img src="./img/SmallDecisionTreeRegressor-dt.svg" class="center r-stretch"></section>
 
-<section id="section-2" class="title-slide slide level1 center">
-<h1></h1>
+<section id="small-decision-tree-in-2d" class="title-slide slide level1 center">
+<h1>(Small) Decision Tree… in 2D</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Predicting the test data</p>
+<p><img src="./img/SmallDecisionTreeRegressor-test-2d.svg" class="center"></p>
+</div><div class="column" style="width:50%;">
+<p>Predicting the whole data</p>
+<p><img src="./img/SmallDecisionTreeRegressor-2d.svg" class="center"></p>
+</div>
+</div>
+</section>
 
-<img src="./img/SmallDecisionTreeRegressor-test-2d.svg" class="center r-stretch"></section>
-
-<section id="section-3" class="title-slide slide level1 center">
-<h1></h1>
-
-<img src="./img/SmallDecisionTreeRegressor-2d.svg" class="center r-stretch"></section>
-
-<section id="section-4" class="title-slide slide level1 center">
-<h1></h1>
+<section id="small-decision-tree-in-3d" class="title-slide slide level1 center">
+<h1>(Small) Decision Tree… in 3D</h1>
 
 <img src="./img/SmallDecisionTreeRegressor-3d.svg" class="center r-stretch"></section>
 
@@ -440,21 +451,23 @@ Matteo Francia
 
 <img src="./img/DecisionTreeRegressor-dt.svg" class="center r-stretch"></section>
 
-<section id="section-5" class="title-slide slide level1 center">
-<h1></h1>
+<section id="bigger-decision-tree-in-3d" class="title-slide slide level1 center">
+<h1>(Bigger) Decision Tree… in 3D</h1>
 
 <img src="./img/DecisionTreeRegressor-3d.svg" class="center r-stretch"></section>
 
 <section id="linear-regression" class="title-slide slide level1 center">
 <h1>Linear Regression</h1>
-<p>Model: <span class="math inline">\(Z = \alpha X + \beta Y + \epsilon\)</span></p>
+<p><strong>Model</strong>: <span class="math inline">\(Z = \alpha X + \beta Y + \epsilon\)</span></p>
+<ul>
+<li><span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> can be fitted (learned) using <em><a href="https://en.wikipedia.org/wiki/Ordinary_least_squares">ordinary least squares (OLS)</a></em></li>
+<li>Best fit?</li>
+</ul>
 
-<img src="./img/LinearRegression-3d.svg" class="center r-stretch"><p>Best fit?</p>
-</section>
+<img src="./img/LinearRegression-3d.svg" class="center r-stretch"></section>
 
-<section id="section-6" class="title-slide slide level1 center">
-<h1></h1>
-<p>Best fit?</p>
+<section id="best-fit" class="title-slide slide level1 center">
+<h1>Best fit?</h1>
 <p><span class="math inline">\(Z = X + Y\)</span></p>
 <ul>
 <li><span class="math inline">\(\alpha = 1\)</span></li>
@@ -465,13 +478,27 @@ Matteo Francia
 
 <section id="neural-network" class="title-slide slide level1 center">
 <h1>Neural Network</h1>
-<p>Model of a single neuron: <span class="math inline">\(Z = w_1 X + w_2 Y + b\)</span></p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Model</strong> (of a single perceptron): <span class="math inline">\(Z = w_1 X + w_2 Y + b\)</span></p>
 <ul>
-<li>Linear activation function</li>
+<li>More formally, <span class="math inline">\(f(x) = h(W \cdot X + b)\)</span>
+<ul>
+<li><span class="math inline">\(h\)</span>: activation function (e.g., <em>linear</em>, relu, and sigmoid)</li>
+<li><span class="math inline">\(W = (w_1, w_2, ...)\)</span>: vector of weights</li>
+<li><span class="math inline">\(X = (x_1, x_2, ...)\)</span>: vector of inputs, <span class="math inline">\(b\)</span>: bias (shift)</li>
+</ul></li>
+<li>The model is generally fitted (learned) using <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a>
+<ul>
 <li>Best fit? <span class="math inline">\(w_1 = 1, w_2 = 1, b=0\)</span></li>
+<li>The model fits to: <span class="math inline">\(w_1 = 1.27, w_2 = 0.62, b=0.56\)</span></li>
+</ul></li>
 </ul>
-
-<img src="./img/NeuralNetwork20epoch-3d.svg" class="center r-stretch"><p>However, the model fits to: <span class="math inline">\(w_1 = 1.2674654, w_2 = 0.61564773, b=0.5552879\)</span></p>
+</div><div class="column" style="width:40%;">
+<p><img src="./img/percettrone.svg" class="center"></p>
+</div>
+</div>
+<p><img src="./img/NeuralNetwork20epoch-3d.svg" class="center"></p>
 </section>
 
 <section id="automl-flaml" class="title-slide slide level1 center">
