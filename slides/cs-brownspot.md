@@ -4,6 +4,8 @@ title: Failing a Machine Learning Project
 subtitle: Brown Spot of European Pear
 ---
 
+# Brown spot of European Pear
+
 :::: {.columns}
 ::: {.column width="60%"}
 
