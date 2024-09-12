@@ -260,6 +260,4 @@ The data analyst also should review any attributes that may give answers that co
 
 ![Dimensions and Metrics](https://github.com/user-attachments/assets/0724117f-3369-41f7-a277-2bfe1cf5d533)
 
-{{< include cs-smartirrigation.md >}}
-
 # References
