@@ -69,7 +69,7 @@ Three years long project
 
 - Goal: help growers in protecting crops
 - A network of monitoring traps has been deployed throughout Emilia-Romagna
-    - Monitoring 145, 168, and 101 farms in 2020-2022 (and currently in 2023)
+    - Monitoring 145, 168, and 101 farms in 2020-2022 (and also in 2023 and 2024)
 - A big data platform has been implemented
     - Real-time pest surveillance
     - Understanding about seasonal invasion dynamics and the main factors contributing to its spread

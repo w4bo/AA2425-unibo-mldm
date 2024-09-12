@@ -1,4 +1,8 @@
-# Case Study: Brown Spot of European Pear
+---
+author: Matteo Francia <br/> DISI --- University of Bologna <br/> m.francia@unibo.it
+title: Failing a Machine Learning Project
+subtitle: Brown Spot of European Pear
+---
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -41,7 +45,7 @@ In your opinion, what are the pros/cons of this solution?
 
 #
 
-> Once the employee has collected almost 100 questionnairs, the company company ask us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.
+> Once the employee has collected almost 100 questionnaires, the company company ask us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.
 
 If you were the analyst, what would you do?
 

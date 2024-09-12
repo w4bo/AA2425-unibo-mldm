@@ -1,8 +1,7 @@
 ---
-format:
-  revealjs: 
-    footer: "Matteo Francia - Machine Learning - A.Y. 2024/25"
-bibliography: refs.bib
+author: Matteo Francia <br/> DISI --- University of Bologna <br/> m.francia@unibo.it
+title: Automation in Machine Learning
+subtitle: Always a good option?
 ---
 
 # Case Study: Data Science and Automation
