@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="00-ml_files/libs/quarto-html/tabby.min.js"></script>
-<script src="00-ml_files/libs/quarto-html/popper.min.js"></script>
-<script src="00-ml_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="00-ml_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="00-ml_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="00-ml_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="00-ml_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="cs-cimice_files/libs/quarto-html/tabby.min.js"></script>
+<script src="cs-cimice_files/libs/quarto-html/popper.min.js"></script>
+<script src="cs-cimice_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="cs-cimice_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cs-cimice_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="cs-cimice_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="cs-cimice_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
-  <meta name="author" content="Matteo Francia">
-  <title>Machine Learning and Data Mining (Module 2)</title>
+  <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
+  <title>Exploiting data for territorial monitoring</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="00-ml_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="00-ml_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="cs-cimice_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="cs-cimice_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,11 +29,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="00-ml_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="00-ml_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="00-ml_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="00-ml_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="00-ml_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="cs-cimice_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="cs-cimice_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="cs-cimice_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="cs-cimice_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="cs-cimice_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -326,235 +326,144 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Machine Learning and Data Mining (Module 2)</h1>
-  <p class="subtitle">Fundamentals of Machine Learning</p>
+  <h1 class="title">Exploiting data for territorial monitoring</h1>
+  <p class="subtitle">The “Cimice.Net” Case Study</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Matteo Francia 
+Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it 
 </div>
 </div>
 </div>
 
 </section>
-<section id="machine-learning" class="title-slide slide level1 center">
-<h1>Machine Learning</h1>
-<p>Definition by Tom Mitchell (1998)</p>
-<blockquote>
-<p>Machine Learning is the study of algorithms that</p>
+<section id="un-sistema-di-telemetria-per-lortofrutta" class="title-slide slide level1 center">
+<h1>Un sistema di telemetria per l’ortofrutta</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Gli impatti del cambiamento climatico sono talmente rapidi che quello che è successo l’anno passato non è più vero oggi. Abbiamo bisogno di intervenire rapidamente e prendere decisioni basate sulle evidenze e non solo sulla storia</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/cimice/controlroom.png"></p>
+</div>
+</div>
+</section>
+
+<section id="la-piattaforma-agro.big.data.science" class="title-slide slide level1 center">
+<h1>La piattaforma Agro.Big.Data.Science</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Una piattaforma modulare per raccogliere, analizzare e visualizzare dati eterogenei dal campo e nella fase di post raccolta</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/cimice/abds.svg"></p>
+</div>
+</div>
+</section>
+
+<section id="la-piattaforma-agro.big.data.science-1" class="title-slide slide level1 center">
+<h1>La piattaforma Agro.Big.Data.Science</h1>
+
+<img src="./img/cimice/durezza.png" class="center r-stretch"></section>
+
+<section id="cimice.net" class="title-slide slide level1 center">
+<h1>Cimice.Net</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The brown marmorated stink bug (Halyomorpha halys) is an insect pest species causing economic damages to several agricultural commodities</p>
 <ul>
-<li>Improve their performance <span class="math inline">\(P\)</span></li>
-<li>At some task <span class="math inline">\(T\)</span></li>
-<li>With experience <span class="math inline">\(E\)</span></li>
-<li>A well-defined learning task is given by <span class="math inline">\(&lt;P, T, E&gt;\)</span></li>
+<li>A data-driven approach to support the application of Integrated Pest Management strategies against H. halys</li>
 </ul>
-</blockquote>
-</section>
-
-<section id="classical-programming-vs-machine-learning" class="title-slide slide level1 center">
-<h1>Classical Programming vs Machine Learning</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/00-ml/ml1.svg"></p>
-<figcaption>Classical Programming</figcaption>
-</figure>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/cimice/cimice.png"></p>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/00-ml/ml2.svg"></p>
-<figcaption>Machine Learning</figcaption>
-</figure>
 </div>
 </section>
-
-<section id="a-simple-example-calculator" class="title-slide slide level1 center">
-<h1>A Simple Example: Calculator</h1>
-<p>Create a calculator that computes the sum of two numbers</p>
-<p><strong>T</strong>ask: <span class="math inline">\(Z = X + Y\)</span></p>
-</section>
-
-<section id="classical-programming" class="title-slide slide level1 center">
-<h1>Classical Programming</h1>
-
-<img src="./img/00-ml/ml3.svg" class="center r-stretch"></section>
-
-<section id="machine-learning-1" class="title-slide slide level1 center">
-<h1>Machine Learning</h1>
-<p><strong>E</strong>xperience: training data</p>
-
-<img src="./img/00-ml/ml4.svg" class="center r-stretch"></section>
-
-<section id="testing-the-model" class="title-slide slide level1 center">
-<h1>Testing the Model</h1>
-<p><strong>P</strong>erformance: checking accurate predictions</p>
-
-<img src="./img/00-ml/ml5.svg" class="center r-stretch"></section>
 
 <section id="section" class="title-slide slide level1 center">
 <h1></h1>
-
-<img data-src="https://imgs.xkcd.com/comics/machine_learning.png" class="r-stretch quarto-figure-center"><p class="caption">What is machine learning?</p></section>
-
-<section id="implementing-a-machine-learning-algorithm" class="title-slide slide level1 center">
-<h1>Implementing a Machine Learning Algorithm</h1>
-
-<img src="./img/00-ml/ml7.svg" class="center r-stretch"></section>
-
-<section id="example-of-a-decision-tree" class="title-slide slide level1 center">
-<h1>Example of a Decision Tree</h1>
-
-<img src="./img/00-ml/ml6.svg" class="center r-stretch"></section>
-
-<section id="choosing-the-right-ml-model" class="title-slide slide level1 center">
-<h1>Choosing the “Right” ML model</h1>
-
-</section>
-
-<section id="the-perfect-model-in-2d" class="title-slide slide level1 center">
-<h1>The Perfect Model … in 2D</h1>
-<p><span class="math inline">\(Z = X + Y\)</span></p>
-
-<img src="./img/00-ml/LinearRegression-2d.svg" class="center r-stretch"></section>
-
-<section id="the-perfect-model-in-3d" class="title-slide slide level1 center">
-<h1>The Perfect Model … in 3D</h1>
-<p><span class="math inline">\(Z = X + Y\)</span></p>
-
-<img src="./img/00-ml/LinearRegression-3d.svg" class="center r-stretch"></section>
-
-<section id="small-decision-tree" class="title-slide slide level1 center">
-<h1>(Small) Decision Tree</h1>
-
-<img src="./img/00-ml/SmallDecisionTreeRegressor-dt.svg" class="center r-stretch"></section>
-
-<section id="small-decision-tree-in-2d" class="title-slide slide level1 center">
-<h1>(Small) Decision Tree… in 2D</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Predicting the test data</p>
-<p><img src="./img/00-ml/SmallDecisionTreeRegressor-test-2d.svg" class="center"></p>
+<p>Three years long project</p>
+<ul>
+<li>Goal: help growers in protecting crops</li>
+<li>A network of monitoring traps has been deployed throughout Emilia-Romagna
+<ul>
+<li>Monitoring 145, 168, and 101 farms in 2020-2022 (and currently in 2023)</li>
+</ul></li>
+<li>A big data platform has been implemented
+<ul>
+<li>Real-time pest surveillance</li>
+<li>Understanding about seasonal invasion dynamics and the main factors contributing to its spread</li>
+<li>Find relationships between spreading and environmental factors</li>
+</ul></li>
+</ul>
 </div><div class="column" style="width:50%;">
-<p>Predicting the whole data</p>
-<p><img src="./img/00-ml/SmallDecisionTreeRegressor-2d.svg" class="center"></p>
+<p><img data-src="./img/cimice/trap.png"></p>
+<p><img data-src="./img/cimice/timeline.png"></p>
 </div>
 </div>
 </section>
 
-<section id="small-decision-tree-in-3d" class="title-slide slide level1 center">
-<h1>(Small) Decision Tree… in 3D</h1>
-
-<img src="./img/00-ml/SmallDecisionTreeRegressor-3d.svg" class="center r-stretch"></section>
-
-<section id="bigger-decision-tree" class="title-slide slide level1 center">
-<h1>(Bigger) Decision Tree</h1>
-
-<img src="./img/00-ml/DecisionTreeRegressor-dt.svg" class="center r-stretch"></section>
-
-<section id="bigger-decision-tree-in-3d" class="title-slide slide level1 center">
-<h1>(Bigger) Decision Tree… in 3D</h1>
-
-<img src="./img/00-ml/DecisionTreeRegressor-3d.svg" class="center r-stretch"></section>
-
-<section id="linear-regression" class="title-slide slide level1 center">
-<h1>Linear Regression</h1>
-<p><strong>Model</strong>: <span class="math inline">\(Z = \alpha X + \beta Y + \epsilon\)</span></p>
-<ul>
-<li><span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> can be fitted (learned) using <em><a href="https://en.wikipedia.org/wiki/Ordinary_least_squares">ordinary least squares (OLS)</a></em></li>
-<li>Best fit?</li>
-</ul>
-
-<img src="./img/00-ml/LinearRegression-3d.svg" class="center r-stretch"></section>
-
-<section id="best-fit" class="title-slide slide level1 center">
-<h1>Best fit?</h1>
-<p><span class="math inline">\(Z = X + Y\)</span></p>
-<ul>
-<li><span class="math inline">\(\alpha = 1\)</span></li>
-<li><span class="math inline">\(\beta = 1\)</span></li>
-<li><span class="math inline">\(\epsilon = 0\)</span></li>
-</ul>
-</section>
-
-<section id="neural-network" class="title-slide slide level1 center">
-<h1>Neural Network</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Model</strong> (of a single perceptron): <span class="math inline">\(Z = w_1 X + w_2 Y + b\)</span></p>
-<ul>
-<li>More formally, <span class="math inline">\(f(x) = h(W \cdot X + b)\)</span>
-<ul>
-<li><span class="math inline">\(h\)</span>: activation function (e.g., <em>linear</em>, relu, and sigmoid)</li>
-<li><span class="math inline">\(W = (w_1, w_2, ...)\)</span>: vector of weights</li>
-<li><span class="math inline">\(X = (x_1, x_2, ...)\)</span>: vector of inputs, <span class="math inline">\(b\)</span>: bias (shift)</li>
-</ul></li>
-<li>The model is generally fitted (learned) using <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a>
-<ul>
-<li>Best fit? <span class="math inline">\(w_1 = 1, w_2 = 1, b=0\)</span></li>
-<li>The model fits to: <span class="math inline">\(w_1 = 1.27, w_2 = 0.62, b=0.56\)</span></li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:40%;">
-<p><img src="./img/00-ml/percettrone.svg" class="center"></p>
-</div>
-</div>
-<p><img src="./img/00-ml/NeuralNetwork20epoch-3d.svg" class="center"></p>
-</section>
-
-<section id="automl-flaml" class="title-slide slide level1 center">
-<h1>AutoML (FLAML)</h1>
-<pre><code>[flaml.automl.logger: 09-11 15:38:38] {2219} INFO - iteration 79, current learner lgbm
-[flaml.automl.logger: 09-11 15:38:38] {2392} INFO -  at 9.6s,   estimator lgbm's best error=0.0017, best estimator lgbm's best error=0.0017
-[flaml.automl.logger: 09-11 15:38:38] {2219} INFO - iteration 80, current learner rf
-[flaml.automl.logger: 09-11 15:38:38] {2392} INFO -  at 9.8s,   estimator rf's best error=0.0661,   best estimator lgbm's best error=0.0017
-[flaml.automl.logger: 09-11 15:38:38] {2219} INFO - iteration 81, current learner lgbm
-[flaml.automl.logger: 09-11 15:38:39] {2392} INFO -  at 9.9s,   estimator lgbm's best error=0.0017, best estimator lgbm's best error=0.0017
-[flaml.automl.logger: 09-11 15:38:39] {2219} INFO - iteration 82, current learner xgb_limitdepth
-[flaml.automl.logger: 09-11 15:38:39] {2392} INFO -  at 10.0s,  estimator xgb_limitdepth's best error=0.6172,   best estimator lgbm's best error=0.0017
-[flaml.automl.logger: 09-11 15:38:39] {2628} INFO - retrain lgbm for 0.0s
-[flaml.automl.logger: 09-11 15:38:39] {2631} INFO - retrained model: LGBMRegressor(colsample_bytree=0.5101095085840595,
-            learning_rate=0.8020558621295225, max_bin=511,
-            min_child_samples=2, n_estimators=1, n_jobs=-1, num_leaves=19,
-            reg_alpha=0.015771773712678253, reg_lambda=0.0009765625,
-            verbose=-1)
-[flaml.automl.logger: 09-11 15:38:39] {1931} INFO - fit succeeded
-[flaml.automl.logger: 09-11 15:38:39] {1932} INFO - Time taken to find the best model: 9.509054183959961
-
-R^2 score on training data: 1.0000</code></pre>
-
-<img src="./img/00-ml/AutoML-3d.svg" class="center r-stretch"></section>
-
-<section id="generalization" class="title-slide slide level1 center">
-<h1>Generalization</h1>
-<p>What if we ask the model the result of 12 + 12?</p>
+<section id="section-1" class="title-slide slide level1 center">
+<h1></h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img src="./img/00-ml/SmallDecisionTreeRegressor-2d.svg" class="center" style="height: 400px !important"></p>
+<p>The acquisition of data concerning the installation and monitoring of traps have been aided by CASE (Collaborative Agro SEnsing)</p>
+<ul>
+<li>Dynamic questionnaire application for on-field data crowdsourcing in the agricultural domain</li>
+<li>Facilitate and standardize the communications between on-field operators with first-hand visuals of a given field/orchard and the technicians needing a 360-degrees view of all fields/orchards for real-time monitoring, operational oversight, coordination, and analytical purposes</li>
+</ul>
 </div><div class="column" style="width:50%;">
-<p><img src="./img/00-ml/DecisionTreeRegressor-ext-2d.svg" class="center" style="height: 450px !important; width: 450 !important"></p>
+<p><img data-src="./img/cimice/tableau.png"></p>
 </div>
 </div>
 </section>
 
-<section id="generalization-decision-tree" class="title-slide slide level1 center">
-<h1>Generalization: Decision Tree</h1>
+<section id="collaborative-agro-sensing" class="title-slide slide level1 center">
+<h1>Collaborative Agro SEnsing</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="./img/cimice/case1.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/cimice/case2.png"></p>
+</div>
+</div>
+</section>
 
-<img src="./img/00-ml/DecisionTreeRegressor-ext-3d.svg" class="center r-stretch"></section>
+<section id="section-2" class="title-slide slide level1 center">
+<h1></h1>
 
-<section id="generalization-ann" class="title-slide slide level1 center">
-<h1>Generalization: ANN</h1>
+<img src="./img/cimice/case3.png" class="center r-stretch"></section>
 
-<img src="./img/00-ml/NeuralNetwork20epoch-ext-3d.svg" class="center r-stretch"></section>
+<section id="section-3" class="title-slide slide level1 center">
+<h1></h1>
 
-<section id="generalization-automl" class="title-slide slide level1 center">
-<h1>Generalization: AutoML</h1>
+<img src="./img/cimice/case4.png" class="center r-stretch"></section>
 
-<img src="./img/00-ml/AutoML-ext-3d.svg" class="center r-stretch"></section>
+<section id="section-4" class="title-slide slide level1 center">
+<h1></h1>
 
-<section id="generalization-linear-regression" class="title-slide slide level1 center">
-<h1>Generalization: Linear Regression</h1>
+<img src="./img/cimice/case5.png" class="center r-stretch"></section>
 
-<img src="./img/00-ml/LinearRegression-ext-3d.svg" class="center r-stretch"><div class="quarto-auto-generated-content">
+<section id="section-5" class="title-slide slide level1 center">
+<h1></h1>
+
+<img src="./img/cimice/case8.png" class="center r-stretch"></section>
+
+<section id="section-6" class="title-slide slide level1 center">
+<h1></h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="./img/cimice/case6.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/cimice/case7.png"></p>
+</div>
+</div>
+</section>
+
+<section id="live" class="title-slide slide level1 center">
+<h1><a href="https://big.csr.unibo.it/cimice/">Live!</a></h1>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Machine Learning - A.Y. 2024/25</p>
 </div>
@@ -564,19 +473,19 @@ R^2 score on training data: 1.0000</code></pre>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="00-ml_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="cs-cimice_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="00-ml_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="00-ml_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="00-ml_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="00-ml_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="00-ml_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="cs-cimice_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="cs-cimice_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="cs-cimice_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="cs-cimice_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="cs-cimice_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="00-ml_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="00-ml_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="00-ml_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="00-ml_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="cs-cimice_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="cs-cimice_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="cs-cimice_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="cs-cimice_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
