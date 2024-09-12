@@ -7,7 +7,6 @@ subtitle: WeLASER
 # [WeLASER](https://cordis.europa.eu/project/id/101000256)
 
 :::: {.columns}
-
 ::: {.column width="50%"}
 
 ![](./img/welaser/overview.png)
@@ -32,7 +31,10 @@ The increased use of pesticides and fertilizers damages the environment, destroy
 
 <img src="./img/welaser/iot2.png" class="center">
 
-# Requirements
+# Data Platform
+
+:::: {.columns}
+::: {.column width="50%"}
 
 A modular data platform for precision agriculture
 
@@ -45,6 +47,14 @@ A modular data platform for precision agriculture
     - Querying the collected data through well-known languages and APIs
     - Dashboards of KPIs
 - ...
+
+:::
+::: {.column width="50%"}
+
+![](./img/welaser/dp.png)
+
+:::
+::::
 
 # AI and Machine Learning
 
