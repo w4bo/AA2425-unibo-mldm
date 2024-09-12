@@ -36,14 +36,14 @@ The increased use of pesticides and fertilizers damages the environment, destroy
 :::: {.columns}
 ::: {.column width="50%"}
 
-A modular data platform for precision agriculture
+A modular **data platform** for precision agriculture
 
-- Collecting data from heterogeneous sources (e.g., MQTT devices and robots)
-- Augmenting data with externally available knowledge (e.g., Open Street Map open data)
-- Maintaining digital twins
-- Building a unifying data model supporting precision agriculture
-- Managing meta-data supporting effective data access and management (e.g., access data depending on the geographical location)
-- Enabling heterogenous data fruition
+- *Collecting data* from heterogeneous sources (e.g., MQTT devices and robots)
+- *Augmenting data* with externally available knowledge (e.g., Open Street Map open data)
+- Maintaining *digital twins*
+- *Building a unifying data model* supporting precision agriculture
+- *Managing meta-data* supporting effective data access and management (e.g., access data depending on the geographical location)
+- Enabling *heterogenous data fruition*
     - Querying the collected data through well-known languages and APIs
     - Dashboards of KPIs
 - ...
