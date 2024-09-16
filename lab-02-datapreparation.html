@@ -396,34 +396,27 @@
 <section class="slide level2">
 
 <p><a href="https://colab.research.google.com/github/w4bo/AA2425-unibo-mldm/blob/master/slides/lab-02-datapreparation.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-<div id="c57e9caa" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:11.232626Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:11.232206Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:11.237850Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:11.237348Z&quot;}" data-execution_count="1">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> warnings</span>
-<span id="cb1-2"><a href=""></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span></code></pre></div>
-</details>
-</div>
 </section>
 <section>
 <section id="data-preparation" class="title-slide slide level1 center">
 <h1>Data Preparation</h1>
-<div id="aacb3166" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:11.240049Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:11.239717Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.129198Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.128578Z&quot;}" data-outputid="b5a2676f-2628-4a0a-ad6d-7c83404bd998" data-execution_count="2">
+<div id="aacb3166" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:36.136459Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:36.136295Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.035606Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.035033Z&quot;}" data-outputid="6d82288e-1a47-4674-a7d3-6500cf9f04d1" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># fast operations on arrays</span></span>
-<span id="cb2-3"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns  <span class="co"># plots</span></span>
-<span id="cb2-4"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># plots</span></span>
-<span id="cb2-5"><a href=""></a></span>
-<span id="cb2-6"><a href=""></a>df <span class="op">=</span> pd.DataFrame([</span>
-<span id="cb2-7"><a href=""></a>    [<span class="st">'Cola'</span>,   <span class="st">'low'</span>,    <span class="st">'05/07/2021'</span>, <span class="dv">10</span>, <span class="dv">2</span>],</span>
-<span id="cb2-8"><a href=""></a>    [<span class="st">'Bread'</span>,  <span class="st">'medium'</span>, <span class="st">'05/07/2021'</span>, <span class="dv">25</span>, <span class="dv">1</span>],</span>
-<span id="cb2-9"><a href=""></a>    [<span class="st">'Beer'</span>,   <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, <span class="dv">100</span>, <span class="dv">3</span>],</span>
-<span id="cb2-10"><a href=""></a>    [<span class="st">'Diaper'</span>, <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, np.nan, <span class="dv">4</span>],</span>
-<span id="cb2-11"><a href=""></a>    [<span class="st">'Pizza'</span>,  <span class="st">'medium'</span>, <span class="st">'06/07/2021'</span>, <span class="dv">25</span>, <span class="dv">5</span>]], columns<span class="op">=</span>[<span class="st">'ID'</span>, <span class="st">'PriceBin'</span>, <span class="st">'Date'</span>, <span class="st">'Quantity'</span>, <span class="st">'Review'</span>])</span>
-<span id="cb2-12"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># fast operations on arrays</span></span>
+<span id="cb1-3"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns  <span class="co"># plots</span></span>
+<span id="cb1-4"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># plots</span></span>
+<span id="cb1-5"><a href=""></a></span>
+<span id="cb1-6"><a href=""></a>df <span class="op">=</span> pd.DataFrame([</span>
+<span id="cb1-7"><a href=""></a>    [<span class="st">'Cola'</span>,   <span class="st">'low'</span>,    <span class="st">'05/07/2021'</span>, <span class="dv">10</span>, <span class="dv">2</span>],</span>
+<span id="cb1-8"><a href=""></a>    [<span class="st">'Bread'</span>,  <span class="st">'medium'</span>, <span class="st">'05/07/2021'</span>, <span class="dv">25</span>, <span class="dv">1</span>],</span>
+<span id="cb1-9"><a href=""></a>    [<span class="st">'Beer'</span>,   <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, <span class="dv">100</span>, <span class="dv">3</span>],</span>
+<span id="cb1-10"><a href=""></a>    [<span class="st">'Diaper'</span>, <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, np.nan, <span class="dv">4</span>],</span>
+<span id="cb1-11"><a href=""></a>    [<span class="st">'Pizza'</span>,  <span class="st">'medium'</span>, <span class="st">'06/07/2021'</span>, <span class="dv">25</span>, <span class="dv">5</span>]], columns<span class="op">=</span>[<span class="st">'ID'</span>, <span class="st">'PriceBin'</span>, <span class="st">'Date'</span>, <span class="st">'Quantity'</span>, <span class="st">'Review'</span>])</span>
+<span id="cb1-12"><a href=""></a>df</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -497,36 +490,48 @@
 </div>
 </div>
 </div>
-<p>Which transformations can we apply? - <strong>Encoding</strong>: transforming categorical attributes into continuous ones - <strong>Discretization</strong>: transforming continuous attributes into categorical ones - <strong>Normalization</strong>: normalizing continuous attributes such that their values fall in the same range - <strong>Imputation</strong>: imputing missing values - <strong>Rebalancing</strong>: adjusting the class distribution of a dataset (i.e., the ratio between the different classes/categories represented) - <strong>Feature Engineering</strong>: defining the set of relevant attributes (variables, predictors) to be used in model construction</p>
 </section>
-<h3 id="data-distribution">Data distribution</h3>
-<div id="bff9fa20" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.131770Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.131383Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.135603Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.135050Z&quot;}" data-outputid="5b6840ef-9c76-4658-a4b2-fee389d9f867" data-execution_count="3">
+<section id="what-transformations-can-we-apply" class="slide level2">
+<h2>What transformations can we apply?</h2>
+<ul>
+<li><strong>Encoding</strong>: transforming categorical attributes into continuous ones</li>
+<li><strong>Discretization</strong>: transforming continuous attributes into categorical ones</li>
+<li><strong>Normalization</strong>: normalizing continuous attributes such that their values fall in the same range</li>
+<li><strong>Imputation</strong>: imputing missing values</li>
+<li><strong>Rebalancing</strong>: adjusting the class distribution of a dataset (i.e., the ratio between the different classes/categories represented)</li>
+<li><strong>Feature Engineering</strong>: defining the set of relevant attributes (variables, predictors) to be used in model construction</li>
+</ul>
+</section></section>
+<section>
+<section id="data-distribution" class="title-slide slide level1 center">
+<h1>Data distribution</h1>
+<div id="bff9fa20" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.038181Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.037690Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.041897Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.041430Z&quot;}" data-outputid="739c6259-428c-4018-b542-419bf9733f1a" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="co"># array with distinct values sorted by first appearance</span></span>
-<span id="cb3-2"><a href=""></a>df[<span class="st">"Quantity"</span>].unique()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="co"># array with distinct values sorted by first appearance</span></span>
+<span id="cb2-2"><a href=""></a>df[<span class="st">"Quantity"</span>].unique()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>array([ 10.,  25., 100.,  nan])</code></pre>
 </div>
 </div>
-<div id="3041345b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.137868Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.137408Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.141056Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.140529Z&quot;}" data-outputid="01f3547a-1e0b-42cf-e6a0-184fb5600c5b" data-execution_count="4">
+<div id="3041345b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.044166Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.043760Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.047215Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.046784Z&quot;}" data-outputid="03cf3d32-e761-42ab-c44e-0bee001b1a10" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co"># quantity of unique values</span></span>
-<span id="cb5-2"><a href=""></a>df[<span class="st">"Quantity"</span>].nunique()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># quantity of unique values</span></span>
+<span id="cb4-2"><a href=""></a>df[<span class="st">"Quantity"</span>].nunique()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>3</code></pre>
 </div>
 </div>
-<div id="5f596a69" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.143342Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.142926Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.147860Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.147425Z&quot;}" data-outputid="ebcf6c1e-6808-4be9-fd5d-52cb682a7df2" data-execution_count="5">
+<div id="5f596a69" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.049277Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.048955Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.053491Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.053045Z&quot;}" data-outputid="47be88b8-164b-4a18-b43f-f20d27568ad1" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="co"># return a new series that associates each value with its number of occurrences, sorted by frequency</span></span>
-<span id="cb7-2"><a href=""></a>df[<span class="st">"Quantity"</span>].value_counts()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="co"># return a new series that associates each value with its number of occurrences, sorted by frequency</span></span>
+<span id="cb6-2"><a href=""></a>df[<span class="st">"Quantity"</span>].value_counts()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>Quantity
 25.0     2
 10.0     1
@@ -534,39 +539,32 @@
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="a1d99dac" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.149724Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.149530Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.258940Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.258370Z&quot;}" data-outputid="74ba8981-a626-4e79-c5d9-ad944b60e903" data-execution_count="6">
+<div id="a1d99dac" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.055540Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.055242Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.163358Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.162883Z&quot;}" data-outputid="a643086a-bec0-4717-c801-2d6132f09508" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>df[<span class="st">"Quantity"</span>].hist(bins<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>df[<span class="st">"Quantity"</span>].hist(bins<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lab-02-datapreparation_files/figure-revealjs/cell-7-output-1.png"></p>
-</figure>
+
 </div>
-</div>
-</div>
-<p>Which problems can cause skewed distributions?</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
+<img data-src="lab-02-datapreparation_files/figure-revealjs/cell-6-output-1.png" class="r-stretch"></section>
+<section id="skewed-distributions" class="slide level2">
+<h2>Skewed distributions</h2>
+
+<img data-src="https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png" class="r-stretch quarto-figure-center"><p class="caption">image</p><p>What problems can arise with skewed distributions?</p>
+</section>
+<section id="sequences-of-transformations" class="slide level2">
+<h2>Sequences of transformations</h2>
 <p>Things are even more complex when applying sequences of transformations</p>
 <ul>
 <li>E.g., normalization should be applied before rebalancing since rebalancing (e.g., by resampling) alters average and standard deviations</li>
 <li>E.g., applying feature engineering before/after rebalancing produces different results which depends on the dataset and the algorithm</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://user-images.githubusercontent.com/18005592/232754117-8a84fde5-bce2-41b1-a003-7dfa0b63f980.png"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
-<p>More an art than a science - … At least for now</p>
-<h3 id="missing-values">Missing values</h3>
+
+<img data-src="https://user-images.githubusercontent.com/18005592/232754117-8a84fde5-bce2-41b1-a003-7dfa0b63f980.png" class="r-stretch quarto-figure-center"><p class="caption">image</p><p>More an art than a science - … At least for now</p>
+</section></section>
+<section>
+<section id="missing-values" class="title-slide slide level1 center">
+<h1>Missing values</h1>
 <p>Datasets often show missing values - E.g., they are not applicable (e.g., date of death) or unknown - A series can have missing values, referred to as <code>NA</code> (Not Available) - Numeric attributes: <code>NA</code> is <code>np.nan</code> (Not a Number) - <code>nan</code> is never equal, greater, or lower than other values (nor itself)</p>
 <pre><code>    np.nan == np.nan
     False</code></pre>
@@ -576,16 +574,19 @@ Name: count, dtype: int64</code></pre>
   nan</code></pre>
 <p>Which problems arise from missing values?</p></li>
 </ul>
-<div id="5c2f6e66" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.261117Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.260933Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.269190Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.268724Z&quot;}" data-outputid="8f1f1b09-8c85-4829-9f11-8d999459be4a" data-execution_count="7">
+</section>
+<section id="isna" class="slide level2">
+<h2><code>isna</code></h2>
+<div id="5c2f6e66" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.165636Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.165270Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.173164Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.172611Z&quot;}" data-outputid="5fd6a227-7a4c-4123-c162-0944d0687b0d" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co"># add the column "isna", True if the value is NaN</span></span>
-<span id="cb12-2"><a href=""></a>df[<span class="st">"isna"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].isna()</span>
-<span id="cb12-3"><a href=""></a><span class="co"># add the column "notna", False if the value is NaN</span></span>
-<span id="cb12-4"><a href=""></a>df[<span class="st">"notna"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].notna()</span>
-<span id="cb12-5"><a href=""></a>df[[<span class="st">"Quantity"</span>, <span class="st">"isna"</span>, <span class="st">"notna"</span>]]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="co"># add the column "isna", True if the value is NaN</span></span>
+<span id="cb11-2"><a href=""></a>df[<span class="st">"isna"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].isna()</span>
+<span id="cb11-3"><a href=""></a><span class="co"># add the column "notna", False if the value is NaN</span></span>
+<span id="cb11-4"><a href=""></a>df[<span class="st">"notna"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].notna()</span>
+<span id="cb11-5"><a href=""></a>df[[<span class="st">"Quantity"</span>, <span class="st">"isna"</span>, <span class="st">"notna"</span>]]</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -647,7 +648,9 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<h4 id="imputing-missing-values">Imputing missing values</h4>
+</section>
+<section id="imputing-missing-values" class="slide level2">
+<h2>Imputing missing values</h2>
 <p>Several strategies</p>
 <ul>
 <li>Replace <code>nan</code> with average or median values</li>
@@ -655,14 +658,14 @@ Name: count, dtype: int64</code></pre>
 </ul>
 <p>What are the effects?</p>
 <p>What if we have temporal attributes?</p>
-<div id="fba624ad" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.271162Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.270988Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.278082Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.277589Z&quot;}" data-outputid="cad6dcb7-7d1e-49ca-db48-a6cb354a69ef" data-execution_count="8">
+<div id="fba624ad" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.175261Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.174945Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.181704Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.181167Z&quot;}" data-outputid="e7cfe545-497f-4381-9411-152012c46700" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># fill the missing value with the average</span></span>
-<span id="cb13-2"><a href=""></a>df[<span class="st">"Quantity_imputed"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].fillna(df[<span class="st">"Quantity"</span>].mean())  <span class="co"># fillna replaces NA values</span></span>
-<span id="cb13-3"><a href=""></a>df[[<span class="st">"Quantity"</span>, <span class="st">"Quantity_imputed"</span>]]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co"># fill the missing value with the average</span></span>
+<span id="cb12-2"><a href=""></a>df[<span class="st">"Quantity_imputed"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].fillna(df[<span class="st">"Quantity"</span>].mean())  <span class="co"># fillna replaces NA values</span></span>
+<span id="cb12-3"><a href=""></a>df[[<span class="st">"Quantity"</span>, <span class="st">"Quantity_imputed"</span>]]</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -718,13 +721,13 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="06d6b70f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.280141Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.279761Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.284265Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.283709Z&quot;}" data-outputid="4b2c57e6-592c-434c-eb35-47557d527546" data-scrolled="true" data-execution_count="9">
+<div id="06d6b70f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.183791Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.183477Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.187806Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.187270Z&quot;}" data-outputid="1614da09-7e3e-4169-97ee-b449d683f795" data-scrolled="true" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="co"># fill the missing value with the previous (not NaN) value</span></span>
-<span id="cb14-2"><a href=""></a>df[<span class="st">"Quantity"</span>].fillna(method<span class="op">=</span><span class="st">"ffill"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># fill the missing value with the previous (not NaN) value</span></span>
+<span id="cb13-2"><a href=""></a>df[<span class="st">"Quantity"</span>].ffill()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>0     10.0
 1     25.0
 2    100.0
@@ -733,13 +736,13 @@ Name: count, dtype: int64</code></pre>
 Name: Quantity, dtype: float64</code></pre>
 </div>
 </div>
-<div id="0e8f5d63" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.286433Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.286113Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.290234Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.289799Z&quot;}" data-outputid="39307c1e-f282-4d8b-a6c9-d26e2546ca65" data-scrolled="true" data-execution_count="10">
+<div id="0e8f5d63" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.189850Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.189551Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.193751Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.193204Z&quot;}" data-outputid="d54f245a-c604-44ba-c46a-561a7bbb792b" data-scrolled="true" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="co"># fill the missing value with the following (not NaN) value</span></span>
-<span id="cb16-2"><a href=""></a>df[<span class="st">"Quantity"</span>].fillna(method<span class="op">=</span><span class="st">"bfill"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="co"># fill the missing value with the following (not NaN) value</span></span>
+<span id="cb15-2"><a href=""></a>df[<span class="st">"Quantity"</span>].bfill()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>0     10.0
 1     25.0
 2    100.0
@@ -748,12 +751,12 @@ Name: Quantity, dtype: float64</code></pre>
 Name: Quantity, dtype: float64</code></pre>
 </div>
 </div>
-<div id="1aebd691" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.292165Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.291899Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.296329Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.295770Z&quot;}" data-outputid="957cd776-e647-4426-c024-b97604a13760" data-scrolled="true" data-execution_count="11">
+<div id="1aebd691" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.195996Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.195517Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.199828Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.199298Z&quot;}" data-outputid="2b43d7bb-c729-4a90-bff0-0c5e5c142cb7" data-scrolled="true" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>df[<span class="st">"Quantity"</span>].dropna()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>df[<span class="st">"Quantity"</span>].dropna()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>0     10.0
 1     25.0
 2    100.0
@@ -761,12 +764,12 @@ Name: Quantity, dtype: float64</code></pre>
 Name: Quantity, dtype: float64</code></pre>
 </div>
 </div>
-<div id="3ba31db2" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.298353Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.298048Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.306169Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.305577Z&quot;}" data-outputid="4ad6c8a5-1b26-4ca9-a371-d38ad5e1c712" data-execution_count="12">
+<div id="3ba31db2" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.201800Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.201498Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.209517Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.208960Z&quot;}" data-outputid="7960fed3-8e65-462c-edbc-4dcb782a807b" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>df.dropna()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>df.dropna()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -847,10 +850,15 @@ Name: Quantity, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-<h3 id="feature-engineering">Feature engineering</h3>
+</section></section>
+<section>
+<section id="feature-engineering" class="title-slide slide level1 center">
+<h1>Feature engineering</h1>
 <p>Feature engineering, in data science, refers to manipulation — addition, deletion, combination, mutation — of your data set to improve machine learning model training, leading to better performance and greater accuracy.</p>
 <p>We focus on <strong>feature selection</strong></p>
-<h4 id="feature-selection">Feature selection</h4>
+</section>
+<section id="feature-selection" class="slide level2">
+<h2>Feature selection</h2>
 <p>Feature selection is the process of selecting a subset of relevant features (variables, predictors) for use in model construction</p>
 <ul>
 <li><em>Search technique</em> for proposing new feature subsets</li>
@@ -861,6 +869,9 @@ Name: Quantity, dtype: float64</code></pre>
 <li>This is an exhaustive search of the space, and is computationally intractable for all but the smallest of feature sets</li>
 <li>Main categories of feature selection algorithms: wrappers, filters and embedded methods</li>
 </ul>
+</section>
+<section id="wappers-and-filters" class="slide level2">
+<h2>Wappers and filters</h2>
 <p><em>Wrapper methods</em> use a predictive model to score feature subsets</p>
 <ul>
 <li>Each new subset is used to train a model, which is tested on a hold-out set</li>
@@ -874,6 +885,9 @@ Name: Quantity, dtype: float64</code></pre>
 <li>Filters are usually less computationally intensive than wrappers, but they produce a feature set which is not tuned to a specific type of predictive model</li>
 <li>Filter methods have also been used as a preprocessing step for wrapper methods, allowing a wrapper to be used on larger problems</li>
 </ul>
+</section>
+<section id="embedded-methods" class="slide level2">
+<h2>Embedded methods</h2>
 <p><em>Embedded methods</em> perform feature selection as part of the model construction process</p>
 <ul>
 <li>The exemplar of this approach is the LASSO method for constructing a linear model, which penalizes the regression coefficients with an L1 penalty, shrinking many of them to zero</li>
@@ -884,7 +898,8 @@ Name: Quantity, dtype: float64</code></pre>
 <li>The lasso method assumes that the coefficients of the linear model are sparse, meaning that few of them are non-zero.</li>
 </ul>
 <p>[1] Katrutsa, Alexandr, and Vadim Strijov. “Comprehensive study of feature selection methods to solve multicollinearity problem according to evaluation criteria.” Expert Systems with Applications 76 (2017): 1-11.</p>
-<p>[2] Chan, Jireh Yi-Le, et al.&nbsp;“Mitigating the multicollinearity problem and its machine learning approach: a review.” Mathematics 10.8 (2022): 1283.</p></section>
+<p>[2] Chan, Jireh Yi-Le, et al.&nbsp;“Mitigating the multicollinearity problem and its machine learning approach: a review.” Mathematics 10.8 (2022): 1283.</p>
+</section></section>
 <section>
 <section id="the-housing-case-study" class="title-slide slide level1 center">
 <h1>The <code>Housing</code> case study</h1>
@@ -892,14 +907,14 @@ Name: Quantity, dtype: float64</code></pre>
 </section>
 <section id="setup" class="slide level2">
 <h2>Setup</h2>
-<div id="80970f2e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.308499Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.308188Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.410451Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.409896Z&quot;}" data-outputid="56d09739-5960-478d-d15f-cf68419a5a17" data-execution_count="13">
+<div id="80970f2e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.211879Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.211575Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.295198Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.294695Z&quot;}" data-outputid="c46e5eab-b34e-4632-b460-21dc61620b9e" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="co"># df = pd.read_csv("datasets/2022-bbs-dsaa-housing.csv", delimiter=",")</span></span>
-<span id="cb21-2"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/w4bo/handsOnDataPipelines/main/materials/datasets/housing.csv"</span>, delimiter<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb21-3"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="co"># df = pd.read_csv("datasets/2022-bbs-dsaa-housing.csv", delimiter=",")</span></span>
+<span id="cb20-2"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/w4bo/handsOnDataPipelines/main/materials/datasets/housing.csv"</span>, delimiter<span class="op">=</span><span class="st">","</span>)</span>
+<span id="cb20-3"><a href=""></a>df</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1082,12 +1097,14 @@ Name: Quantity, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-<p>… and now?</p>
-<div id="85441c0b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.412672Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.412348Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.419757Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.419295Z&quot;}" data-outputid="0cbde1ce-8ee1-4e00-e8ed-17143cc9cb2c" data-scrolled="true" data-execution_count="14">
+</section>
+<section id="profiling" class="slide level2">
+<h2>Profiling</h2>
+<div id="85441c0b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.297264Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.296971Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.303974Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.303535Z&quot;}" data-outputid="d52859ef-bc78-4a8b-8fbe-32ae81feae9b" data-scrolled="true" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="co"># show some statistics on the dataframe</span></span>
-<span id="cb22-2"><a href=""></a>df.info()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="co"># show some statistics on the dataframe</span></span>
+<span id="cb21-2"><a href=""></a>df.info()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -1109,12 +1126,15 @@ dtypes: float64(9), object(1)
 memory usage: 1.6+ MB</code></pre>
 </div>
 </div>
-<div id="e6a24b3a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.421768Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.421436Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.446626Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.446175Z&quot;}" data-outputid="aa37663e-c19f-4b66-94f8-6f9ab3767aab" data-execution_count="15">
+</section>
+<section id="profiling-1" class="slide level2">
+<h2>Profiling</h2>
+<div id="e6a24b3a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.306066Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.305662Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.331093Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.330541Z&quot;}" data-outputid="a818ab1e-ce30-4bf7-8f7d-0921aaa3717c" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1308,7 +1328,7 @@ memory usage: 1.6+ MB</code></pre>
 </ul></li>
 <li>Get rid of the whole attribute (i.e., drop the columns)
 <ul>
-<li><code>df.drop("total_bedrooms", axis=1</code>)</li>
+<li><code>df.drop("total_bedrooms", axis=1)</code></li>
 </ul></li>
 <li>Set the values to some value (zero, the mean, the median, etc.)
 <ul>
@@ -1319,12 +1339,12 @@ memory usage: 1.6+ MB</code></pre>
 <section id="non-numeric-attributes" class="slide level2">
 <h2>Non-numeric attributes</h2>
 <p><code>ocean_proximity</code> is a text attribute so we cannot compute its median. Some options: - Get rid of the whole attribute. (<code>df.drop("ocean_proximity", axis=1</code>) - Change from categorical to ordinal (e.g., <code>NEAR BAY</code> = 0, <code>INLAND</code> = 1) - Can foresee any problem in this? - ML algorithms will assume that two nearby values are more similar than two distant values. This may be fine in some cases (e.g., for ordered categories such as ‘bad’, ‘average’, ‘good’, ‘excellent’), but it is obviously not the case for the ocean_proximity column (for example, categories 0 and 4 are clearly more similar than categories 0 and 1). - Change from categorical to one hot encoding - To fix this issue, a common solution is to create one binary attribute per category: one attribute equal to 1 when the category is ‘&lt;1H OCEAN’ (and 0 otherwise), another attribute equal to 1 when the category is ‘INLAND’ (and 0 otherwise), and so on. This is called one-hot encoding, because only one attribute will be equal to 1 (hot), while the others will be 0 (cold). The new attributes are sometimes called dummy attributes</p>
-<div id="3297de8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.448828Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.448528Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.453660Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.453131Z&quot;}" data-outputid="99bf4b54-26f6-4b00-d394-70841c7f298c" data-execution_count="16">
+<div id="3297de8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.333153Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.332990Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.337947Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.337420Z&quot;}" data-outputid="30ad923c-9758-4f95-ce51-e884828afd5a" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].value_counts()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].value_counts()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>ocean_proximity
 &lt;1H OCEAN     9136
 INLAND        6551
@@ -1334,29 +1354,25 @@ ISLAND           5
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="xkOk2VEdVkde" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.455675Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.455351Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.537770Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.537196Z&quot;}" data-outputid="aa7c4f2e-8f21-4ef0-9785-a66471f9a827" data-execution_count="17">
+<div id="xkOk2VEdVkde" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.339957Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.339789Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.421286Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.420737Z&quot;}" data-outputid="7a3fd4af-0eb7-4c4a-90da-00254ff73cc5" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].hist()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].hist()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lab-02-datapreparation_files/figure-revealjs/cell-18-output-1.png"></p>
-</figure>
+
 </div>
-</div>
-</div>
-<p>Change from categorical to ordinal</p>
-<div id="0efd3a04" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.540134Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.539595Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.858781Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.858204Z&quot;}" data-outputid="8b4221c3-d86d-4e52-febe-da4c1fb0d00d" data-execution_count="18">
+<img data-src="lab-02-datapreparation_files/figure-revealjs/cell-17-output-1.png" class="r-stretch"></section>
+<section id="encoding-ordinal" class="slide level2">
+<h2>Encoding: ordinal</h2>
+<div id="0efd3a04" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.423192Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.423026Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.600153Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.599637Z&quot;}" data-outputid="d06abec3-f367-4ae5-df37-2f17a623cd13" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OrdinalEncoder</span>
-<span id="cb28-2"><a href=""></a>ordinal_encoder <span class="op">=</span> OrdinalEncoder()</span>
-<span id="cb28-3"><a href=""></a>y <span class="op">=</span> ordinal_encoder.fit_transform(df[[<span class="st">"ocean_proximity"</span>]])</span>
-<span id="cb28-4"><a href=""></a>y</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OrdinalEncoder</span>
+<span id="cb27-2"><a href=""></a>ordinal_encoder <span class="op">=</span> OrdinalEncoder()</span>
+<span id="cb27-3"><a href=""></a>y <span class="op">=</span> ordinal_encoder.fit_transform(df[[<span class="st">"ocean_proximity"</span>]])</span>
+<span id="cb27-4"><a href=""></a>y</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>array([[3.],
        [3.],
        [3.],
@@ -1366,14 +1382,16 @@ Name: count, dtype: int64</code></pre>
        [1.]])</code></pre>
 </div>
 </div>
-<p>From categorical to one-hot encoding</p>
-<div id="d3db3bf4" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.861030Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.860623Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.869703Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.869106Z&quot;}" data-outputid="95fe4b48-1f34-4db9-cbd1-fad1975ab000" data-execution_count="19">
+</section>
+<section id="encoding-one-hot-encoding" class="slide level2">
+<h2>Encoding: one-hot encoding</h2>
+<div id="d3db3bf4" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.602255Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.602013Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.610621Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.610185Z&quot;}" data-outputid="84131802-05a5-485d-d0ce-690f960478f6" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a>y <span class="op">=</span> pd.get_dummies(df[<span class="st">"ocean_proximity"</span>], prefix<span class="op">=</span><span class="st">'ocean_proximity'</span>)</span>
-<span id="cb30-2"><a href=""></a>y</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>y <span class="op">=</span> pd.get_dummies(df[<span class="st">"ocean_proximity"</span>], prefix<span class="op">=</span><span class="st">'ocean_proximity'</span>)</span>
+<span id="cb29-2"><a href=""></a>y</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1496,183 +1514,23 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<p>Are the relationships between variables?</p>
-<ul>
-<li>A grid of Axes such that each numeric variable in data will by shared across the y-axes across a single row and the x-axes across a single column</li>
-<li>The diagonal plots are treated differently: a univariate distribution plot is drawn to show the marginal distribution of the data in each column.</li>
-</ul>
-<div id="FYZ7EdT2V8Le" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.871844Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.871529Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:12.918497Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:12.918022Z&quot;}" data-outputid="d2f2ba47-67cd-4d7a-809d-ec5ac2ad9799" data-execution_count="20">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span>
-<span id="cb31-2"><a href=""></a>rho <span class="op">=</span> df.corr(method<span class="op">=</span><span class="st">'pearson'</span>, numeric_only<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb31-3"><a href=""></a>pval <span class="op">=</span> df.corr(method<span class="op">=</span><span class="kw">lambda</span> x, y: pearsonr(x, y)[<span class="dv">1</span>], numeric_only<span class="op">=</span><span class="va">True</span>) <span class="op">-</span> np.eye(<span class="op">*</span>rho.shape)</span>
-<span id="cb31-4"><a href=""></a>p <span class="op">=</span> pval.applymap(<span class="kw">lambda</span> x: <span class="st">''</span>.join([<span class="st">'*'</span> <span class="cf">for</span> t <span class="kw">in</span> [<span class="fl">0.01</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>] <span class="cf">if</span> x <span class="op">&lt;=</span> t]))</span>
-<span id="cb31-5"><a href=""></a>rho.<span class="bu">round</span>(<span class="dv">2</span>).astype(<span class="bu">str</span>) <span class="op">+</span> p</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="20">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">longitude</th>
-<th data-quarto-table-cell-role="th">latitude</th>
-<th data-quarto-table-cell-role="th">housing_median_age</th>
-<th data-quarto-table-cell-role="th">total_rooms</th>
-<th data-quarto-table-cell-role="th">total_bedrooms</th>
-<th data-quarto-table-cell-role="th">population</th>
-<th data-quarto-table-cell-role="th">households</th>
-<th data-quarto-table-cell-role="th">median_income</th>
-<th data-quarto-table-cell-role="th">median_house_value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">longitude</td>
-<td>1.0***</td>
-<td>-0.92***</td>
-<td>-0.11***</td>
-<td>0.04***</td>
-<td>0.07***</td>
-<td>0.1***</td>
-<td>0.06***</td>
-<td>-0.02**</td>
-<td>-0.05***</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">latitude</td>
-<td>-0.92***</td>
-<td>1.0***</td>
-<td>0.01</td>
-<td>-0.04***</td>
-<td>-0.07***</td>
-<td>-0.11***</td>
-<td>-0.07***</td>
-<td>-0.08***</td>
-<td>-0.14***</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">housing_median_age</td>
-<td>-0.11***</td>
-<td>0.01</td>
-<td>1.0***</td>
-<td>-0.36***</td>
-<td>-0.32***</td>
-<td>-0.3***</td>
-<td>-0.3***</td>
-<td>-0.12***</td>
-<td>0.11***</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">total_rooms</td>
-<td>0.04***</td>
-<td>-0.04***</td>
-<td>-0.36***</td>
-<td>1.0***</td>
-<td>0.93***</td>
-<td>0.86***</td>
-<td>0.92***</td>
-<td>0.2***</td>
-<td>0.13***</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">total_bedrooms</td>
-<td>0.07***</td>
-<td>-0.07***</td>
-<td>-0.32***</td>
-<td>0.93***</td>
-<td>1.0***</td>
-<td>0.88***</td>
-<td>0.98***</td>
-<td>-0.01</td>
-<td>0.05***</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">population</td>
-<td>0.1***</td>
-<td>-0.11***</td>
-<td>-0.3***</td>
-<td>0.86***</td>
-<td>0.88***</td>
-<td>1.0***</td>
-<td>0.91***</td>
-<td>0.0</td>
-<td>-0.02***</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">households</td>
-<td>0.06***</td>
-<td>-0.07***</td>
-<td>-0.3***</td>
-<td>0.92***</td>
-<td>0.98***</td>
-<td>0.91***</td>
-<td>1.0***</td>
-<td>0.01*</td>
-<td>0.07***</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">median_income</td>
-<td>-0.02**</td>
-<td>-0.08***</td>
-<td>-0.12***</td>
-<td>0.2***</td>
-<td>-0.01</td>
-<td>0.0</td>
-<td>0.01*</td>
-<td>1.0***</td>
-<td>0.69***</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">median_house_value</td>
-<td>-0.05***</td>
-<td>-0.14***</td>
-<td>0.11***</td>
-<td>0.13***</td>
-<td>0.05***</td>
-<td>-0.02***</td>
-<td>0.07***</td>
-<td>0.69***</td>
-<td>1.0***</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div id="EmnZ1P4uV9H1" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:12.920512Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:12.920239Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:13.105313Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:13.104737Z&quot;}" data-outputid="060f73ae-7241-47a8-9467-8f6c79ac0ec4" data-execution_count="21">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>min_corr <span class="op">=</span> <span class="fl">0.3</span></span>
-<span id="cb32-2"><a href=""></a>kot <span class="op">=</span> rho[(<span class="bu">abs</span>(rho) <span class="op">&gt;=</span> min_corr) <span class="op">&amp;</span> (rho <span class="op">&lt;</span> <span class="dv">1</span>)]</span>
-<span id="cb32-3"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
-<span id="cb32-4"><a href=""></a>sns.heatmap(kot, cmap<span class="op">=</span>sns.color_palette(<span class="st">"coolwarm"</span>, as_cmap<span class="op">=</span><span class="va">True</span>))</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lab-02-datapreparation_files/figure-revealjs/cell-22-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
+<section id="correlation" class="slide level2">
+<h2>Correlation</h2>
+<p>Are there relationships between variables?</p>
+<div id="EmnZ1P4uV9H1" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.612530Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.612365Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.802334Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.801825Z&quot;}" data-outputid="abdf5e64-89d5-436c-ec9a-bd2fa031257f" data-execution_count="19">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span>
+<span id="cb30-2"><a href=""></a>rho <span class="op">=</span> df.corr(method<span class="op">=</span><span class="st">'pearson'</span>, numeric_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb30-3"><a href=""></a>min_corr <span class="op">=</span> <span class="fl">0.3</span></span>
+<span id="cb30-4"><a href=""></a>kot <span class="op">=</span> rho[(<span class="bu">abs</span>(rho) <span class="op">&gt;=</span> min_corr) <span class="op">&amp;</span> (rho <span class="op">&lt;</span> <span class="dv">1</span>)]</span>
+<span id="cb30-5"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb30-6"><a href=""></a>sns.heatmap(kot, cmap<span class="op">=</span>sns.color_palette(<span class="st">"coolwarm"</span>, as_cmap<span class="op">=</span><span class="va">True</span>))</span></code></pre></div>
+</details>
+
+</div>
+<img data-src="lab-02-datapreparation_files/figure-revealjs/cell-20-output-1.png" class="r-stretch"></section>
 <section id="scaling-attributes" class="slide level2">
 <h2>Scaling attributes</h2>
 <p>Attributes have very different scales. Should we scale them?</p>
@@ -1680,15 +1538,17 @@ Name: count, dtype: int64</code></pre>
 <li>Normalization is good to use when you know that the distribution of your data does not follow a Gaussian distribution. This can be useful in algorithms that do not assume any distribution of the data like K-Nearest Neighbors and Neural Networks.</li>
 <li>Standardization, on the other hand, can be helpful in cases where the data follows a Gaussian distribution. However, this does not have to be necessarily true. Unlike normalization, standardization does not have a bounding range. So, even if you have outliers in your data, they will not be affected by standardization.</li>
 </ul>
-<h3 id="min-max-normalization">Min-max normalization</h3>
-<div id="e6974275" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:13.107537Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:13.107320Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:13.120244Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:13.119700Z&quot;}" data-outputid="db7f6d97-dd53-4e19-9522-03c189aa8174" data-execution_count="22">
+</section>
+<section id="min-max-normalization" class="slide level2">
+<h2>Min-max normalization</h2>
+<div id="e6974275" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.804380Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.804209Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.816785Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.816325Z&quot;}" data-outputid="0ef434b7-d800-4a66-e4c5-6472184c5e7f" data-execution_count="20">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>num_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ocean_proximity'</span>, <span class="st">'median_house_value'</span>])</span>
-<span id="cb33-2"><a href=""></a>normalized_df <span class="op">=</span> (num_df <span class="op">-</span> num_df.<span class="bu">min</span>()) <span class="op">/</span> (num_df.<span class="bu">max</span>() <span class="op">-</span> num_df.<span class="bu">min</span>())</span>
-<span id="cb33-3"><a href=""></a>normalized_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a>num_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ocean_proximity'</span>, <span class="st">'median_house_value'</span>])</span>
+<span id="cb31-2"><a href=""></a>normalized_df <span class="op">=</span> (num_df <span class="op">-</span> num_df.<span class="bu">min</span>()) <span class="op">/</span> (num_df.<span class="bu">max</span>() <span class="op">-</span> num_df.<span class="bu">min</span>())</span>
+<span id="cb31-3"><a href=""></a>normalized_df</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1847,15 +1707,17 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<h3 id="standardization">Standardization</h3>
-<div id="39239dcf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-13T10:52:13.122588Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-13T10:52:13.122169Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-13T10:52:13.187137Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-13T10:52:13.186575Z&quot;}" data-outputid="d1dbef40-73d4-42b8-c4f4-c2de725ffc0d" data-execution_count="23">
+</section>
+<section id="standardization" class="slide level2">
+<h2>Standardization</h2>
+<div id="39239dcf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-16T09:47:37.818865Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-16T09:47:37.818454Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-16T09:47:37.872401Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-16T09:47:37.871870Z&quot;}" data-outputid="fc25e8f5-c409-4293-9c0c-099152226109" data-execution_count="21">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href=""></a>num_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ocean_proximity'</span>, <span class="st">'median_house_value'</span>])</span>
-<span id="cb34-2"><a href=""></a>normalized_df <span class="op">=</span> (num_df <span class="op">-</span> num_df.mean()) <span class="op">/</span> num_df.std()</span>
-<span id="cb34-3"><a href=""></a>normalized_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>num_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ocean_proximity'</span>, <span class="st">'median_house_value'</span>])</span>
+<span id="cb32-2"><a href=""></a>normalized_df <span class="op">=</span> (num_df <span class="op">-</span> num_df.mean()) <span class="op">/</span> num_df.std()</span>
+<span id="cb32-3"><a href=""></a>normalized_df</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
