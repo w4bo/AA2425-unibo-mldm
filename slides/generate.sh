@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 # for FILE in *.ipynb; do 
-for FILE in "lab-01-dataunderstanding.ipynb" "lab-02-datapreparation.ipynb"; do 
+for FILE in "lab-01-dataunderstanding.ipynb" "lab-02-housing.ipynb" "lab-03-datapreparation.ipynb" "lab-04-housing.ipynb" "lab-05-ml.ipynb" "lab-06-housing.ipynb"; do 
     echo "Processing $FILE file...";
     filename=$(basename -- "$FILE")
     extension="${filename##*.}"
