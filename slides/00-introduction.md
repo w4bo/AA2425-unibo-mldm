@@ -16,6 +16,11 @@ Matteo Francia, Ph.D.
 - Assistant Professor (junior) @ DISI, UniBO
 - www: [https://www.unibo.it/sitoweb/m.francia/en](https://www.unibo.it/sitoweb/m.francia/en)
 
+Teaching
+
+- [DTM] Big Data and Cloud Platforms (Module 2)
+- [DTM] Machine Learning and Data Mining (Module 2)
+
 Research topics
 
 - Big data / database / machine learning
@@ -27,89 +32,93 @@ Research topics
 
 # Table of Contents and Course Goals
 
-Hands-on machine learning
+Hands-on *machine learning* (module 2, 24 hours)
 
-- Introduction to the CRISP-DM methodology
-- Theory and practice of the main steps of machine learning pipelines
-    - Labs will be every two weeks
-    - Python libraries for machine learning (mainly Pandas and sk-learn)
+- Theory, practice, and case studies of the main steps of tge CRISP-DM methodology
+  - (Tentative) Labs will be every two weeks
+  - Python libraries for machine learning (mainly `pandas` and `scikit-learn`)
 
-Learning the working knowledge for the Artificial Intelligence field
+*Learning the working knowledge for the Artificial Intelligence field*
 
 - You must know the right terms and paradigms behind AI
 - You must know what AI is and how it works
 
-Developing your own AI system
+Goals
 
-- You will be able to develop your (simple) own project based on AI
-- You will be able to make technical considerations about AI
-- Understanding the surrounding AI world in order to:
+- *Develop your own (simple) project* based on AI
+- *Make technical considerations* about AI
+- *Understanding the surrounding AI world*
+  - Orient yourself in an extremely dynamic and complex world dominated by AI
+  - Make decisions with AI
+  - Try to make predictions about AI for your company
 
-Orient yourself in an extremely dynamic and complex world dominated by AI
-
-- Make decisions with AI
-- Try to make predictions about AI for your company
-
-# Exam
+# (Oral) Exam
 
 Questions on **all (theoretical and practical) aspects** of the course
 
 - **Be prepared**: you have to wait 1 month before trying again (in any case)
 - Two separate and independent exam sessions (the other w/ Prof. Golfarelli)
-    - The final mark is the average of the two exams
+  - The final mark is the average of the two exams
 - **Interaction** during the lectures/labs is considered in the final evaluation
 
-No scheduled dates, just come when you are ready
+No scheduled dates, just **book when you are ready**
 
 - At least one week in advance
+- Use the [Booking](https://outlook.office365.com/owa/calendar/DTMMachineLearningModule@live.unibo.it/bookings/s/VXKOGV3sS02dofzMZtOpHQ2) page
 
 According to the University's regulation
 
 - Exams must be in presence
 - Cannot refuse a grade more than once
 
-# Assignment
+At the day of the exam (~30 minutes per person):
 
-More information will come by the end of the lectures
+- 3 questions on different topics about the whole program
+- (Optional) Presentation & discussion with slides about a final assignment (10/15 minutes)
+- Final mark of the exam will be averaged with the Data Mining module
 
-- Either on Machine Learning (ask me) or Data Mining (ask Prof. Golfarelli)
-- **You are responsible for your code**
-    - **If you cannot explain your code and your choices**...
-    - ... **and/or you copied and pasted it from colleagues or LLMs**
-    - ... you will retake the exam
-    - "I do not know how to program" is not a valid excuse!
+# Assignment (Machine Learning)
 
-Each group must develop an AI system
+Either on Machine Learning (ask me) or Data Mining (ask Prof. Golfarelli)
 
-- Define the problem (of your interest!), the core of your project
-- Define your strategy (algorithms), find data (datasets), ...
-- Compare your strategy with already existing ones (check on Google Scholar) ...
-- Describe the insights you extracted from your analysis
+Develop an AI system in a group of 2 people (at maximum)
+
+1. Define the problem (of your interest!), the core of your project
+1. Define your strategy (algorithms), find data (datasets), ...
+1. Compare your strategy with already existing ones (check on Google Scholar) ...
+1. Describe the insights you extracted from your analysis
+
+**You are responsible for your code** ("I do not know how to program" is not a valid excuse!)
+
+- **If you cannot explain your code and your choices**...
+- ... **and/or you copied and pasted it from colleagues or LLMs**
+- ... you will retake the exam
 
 Once defined your project:
 
-- Send me an email to discuss the details of your project
-- After my approval, register the group (2 people at maximum) and project here: [https://forms.gle/T1hynSuu6LpRGtjw8](https://forms.gle/T1hynSuu6LpRGtjw8)
-- Now you can start your project on Colab, the code must be executable and without errors
+1. Send me an email to discuss the details of your project
+1. After my approval, register the group (2 people at maximum) and project here: [https://forms.gle/T1hynSuu6LpRGtjw8](https://forms.gle/T1hynSuu6LpRGtjw8)
+1. Now you can start your project on Google Colab
 
 # Presenting the Assignment
 
-Once the project is completed AND both members are ready (have studied), the group leader has to:
+Once the project is completed
 
-- Contact me and define an appointment for the exam
-- Send the project code (e.g. the link of the Github repo)
-- Send a 6 pages paper about the project:
+- Write a 6-page paper about the project
   - Use Latex ([https://www.overleaf.com/](https://www.overleaf.com/))
   - Use this template ([https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip](https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip))
-  - Tentative sections: 1. Introduction, 2. Related Work, 3. Proposed Method, 4. Results, 5. Conclusions + a section of
-peer-review about group organization and the work done by each member
+  - Sections:
+    1. Introduction (~1 page; including group organization and the work done by each member)
+    2. Related Work (~1 page; what others have done or which techniques can be applied)
+    3. Proposed Method (~2.5 pages; what did you do and how)
+    4. Results (~1 page; results and insights)
+    5. Conclusions (~0.5 pages; summary)
+- Upload the paper, assignment, and presentation into a Github repo
+  - The assignment must be executable on Google Colab without errors
+- Share (with me) the Github repo
 
-At the day of the exam:
+**When both members have studied and all the material is ready, both members must book the exam in the same day**
 
-- Presentation with slides about the project (10/15 minutes)
-- Discussion about the paper
-- Oral questions about the whole program
-- Final mark of the exam will be averaged with the Data Mining module
 
 # Teaching material
 
@@ -160,6 +169,9 @@ However, I suggest you to read the book:
 
 # Tentative outline
 
+:::: {.columns}
+::: {.column width="60%"}
+
 Theory
 
 1. [CRISP-DM](https://w4bo.github.io/AA2425-unibo-mldm/01-crispdm)
@@ -172,8 +184,16 @@ Theory
 
 Labs
 
-1. [Introduction to Colab](https://w4bo.github.io/AA2425-unibo-mldm/lab-00-introduction)
+1. [Introduction to Google Colab](https://w4bo.github.io/AA2425-unibo-mldm/lab-00-introduction)
 1. [Data Understanding](https://w4bo.github.io/AA2425-unibo-mldm/lab-01-dataunderstanding)
 1. [Data Preparation](https://w4bo.github.io/AA2425-unibo-mldm/lab-02-datapreparation)
 1. [Modeling (classification)](https://w4bo.github.io/AA2425-unibo-mldm/lab-03-classification)
 1. [Modeling (neural networks)](https://w4bo.github.io/AA2425-unibo-mldm/lab-04-neuralnetworks)
+
+:::
+::: {.column width="40%"}
+
+![CRISP-DM](./img/crispdm.png)
+
+:::
+::::

@@ -1,11 +1,13 @@
 project:
   output-dir: _site
-  # render:
-    # - 00-ml.md
-    # - cs-smartirrigation.md
-    # - cs-automation.md
-
-# toc: true
+  render:
+  #   - cs-cimice.md
+  #   - cs-welaser.md
+    - 00-ml.md
+    - 00-introduction.md
+    - 01-crispdm.md
+  #   # - cs-smartirrigation.md
+  #   # - cs-automation.md
 
 format:
   revealjs: 

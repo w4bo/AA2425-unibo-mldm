@@ -23,9 +23,11 @@ To understand which data should later be analyzed, and how, it is vital for data
 
 # Determine the Business Objectives
 
-Understanding a client’s true goal is critical to uncovering the important factors involved in the planned project—and to ensuring that the project does not result in producing the right answers to the wrong questions.
+Understanding a client’s true goal is critical to uncovering the important factors involved in the project
 
-Data analysts must uncover the primary business objective as well as the related questions the business would like to address.
+- ... and ensuring that the project does not produce the right answers to the wrong questions
+
+Data analysts must uncover the primary business objective as well as the related questions the business would like to address
 
 - For example, the primary business goal could be to retain current customers by predicting when they are prone to move to a competitor.
   - "How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?" or 
