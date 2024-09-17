@@ -27,7 +27,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="00-ml_files/libs/revealjs/dist/theme/quarto.css">
   <link href="00-ml_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="00-ml_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -328,7 +348,7 @@
 <section id="data-mining" class="title-slide slide level1 center">
 <h1>Data Mining</h1>
 <blockquote>
-<p><strong>Data mining</strong> <span class="citation" data-cites="chakrabarti2006data">(<a href="" role="doc-biblioref" onclick="return false;"><strong>chakrabarti2006data?</strong></a>)</span></p>
+<p><strong>Data mining</strong> <span class="citation" data-cites="chakrabarti2006data">(<a href="#/generalization-linear-regression" role="doc-biblioref" onclick="">Chakrabarti et al. 2006</a>)</span></p>
 <ul>
 <li>… Is the process of extracting and discovering patterns in large data sets</li>
 <li>… Involving methods at the intersection of machine learning, statistics, and database systems.</li>
@@ -341,7 +361,7 @@
 <section id="machine-learning" class="title-slide slide level1 center">
 <h1>Machine Learning</h1>
 <blockquote>
-<p><strong>Machine Learning</strong> <span class="citation" data-cites="mitchell1997machine">(<a href="" role="doc-biblioref" onclick="return false;"><strong>mitchell1997machine?</strong></a>)</span> is the study of algorithms that</p>
+<p><strong>Machine Learning</strong> <span class="citation" data-cites="mitchell1997machine">(<a href="#/generalization-linear-regression" role="doc-biblioref" onclick="">Mitchell and Mitchell 1997</a>)</span> is the study of algorithms that</p>
 <ul>
 <li>Improve their performance <span class="math inline">\(P\)</span></li>
 <li>At some task <span class="math inline">\(T\)</span></li>
@@ -579,12 +599,20 @@ R^2 score on training data: 1.0000</code></pre>
 
 <img src="./img/00-ml/AutoML-ext-3d.svg" class="center r-stretch"></section>
 
-<section id="generalization-linear-regression" class="title-slide slide level1 center">
+<section id="generalization-linear-regression" class="title-slide slide level1 smaller scrollable">
 <h1>Generalization: Linear Regression</h1>
 
 <img src="./img/00-ml/LinearRegression-ext-3d.svg" class="center r-stretch"><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Machine Learning - A.Y. 2024/25</p>
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-chakrabarti2006data" class="csl-entry" role="listitem">
+Chakrabarti, Soumen, Martin Ester, Usama Fayyad, Johannes Gehrke, Jiawei Han, Shinichi Morishita, Gregory Piatetsky-Shapiro, and Wei Wang. 2006. <span>“Data Mining Curriculum: A Proposal (Version 1.0).”</span> <em>Intensive Working Group of ACM SIGKDD Curriculum Committee</em> 140: 1–10.
+</div>
+<div id="ref-mitchell1997machine" class="csl-entry" role="listitem">
+Mitchell, Tom M, and Tom M Mitchell. 1997. <em>Machine Learning</em>. Vol. 1. 9. McGraw-hill New York.
 </div>
 </div>
 </section>
