@@ -1,6 +1,4 @@
 ---
-author: Matteo Francia
-title: Machine Learning and Data Mining (Module 2)
 subtitle: Business understanding
 ---
 
@@ -80,6 +78,6 @@ The process of identifying and delving into the problem to solve
 - Even if you have good knowledge in the fields of computer and data science...
 - ... maybe you still miss domain knowledge that is fundamental to understand and model the problem
 
-{{< include cs-brownspot.md >}}
+{{< include _cs-brownspot.md >}}
 
 # References

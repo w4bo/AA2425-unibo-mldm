@@ -1,6 +1,4 @@
 ---
-author: Matteo Francia
-title: Machine Learning and Data Mining
 subtitle: Module 2 (Machine Learning)
 ---
 
@@ -150,8 +148,8 @@ Slides and notes are sufficient to prepare the final exam
 
 However, I suggest you to read the book:
 
-- Title: Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow
-- Author: Aurélien Géron
+- *Title*: Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow
+- *Author*: Aurélien Géron
 - Some notes about the book:
   - The book is intended as a support
   - The book is available for free in the library

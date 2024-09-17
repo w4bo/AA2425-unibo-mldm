@@ -1,8 +1,8 @@
 ---
-author: Matteo Francia
-title: Machine Learning and Data Mining (Module 2)
-subtitle: CRISP-DM
+subtitle: Data Mining, Machine Learning, and CRISP-DM
 ---
+
+{{< include _00-ml.md >}}
 
 #
 
@@ -120,4 +120,4 @@ The CRISP-DM tells us that *we don't do machine learning for the sake of trainin
 :::
 ::::
 
-{{< include cs-automation.md >}}
+{{< include _cs-automation.md >}}
