@@ -425,9 +425,11 @@
 <ol start="3" type="1">
 <li>Use existing datasets from the web</li>
 </ol>
-<h3 id="read-the-existing-data">Read the existing data</h3>
+</section>
+<section id="read-the-existing-data" class="slide level2">
+<h2>Read the existing data</h2>
 <p><code>open(&lt;path&gt;, &lt;mode&gt;)</code>: open the file located in the <code>path</code>, for reading, writing, ect. depending by the <code>mode</code>.</p>
-<div id="cell-4" class="cell" data-outputid="14c95bce-e3de-4c3c-c091-d81508183d67" data-execution_count="1">
+<div id="cell-4" class="cell" data-outputid="54a903c5-fa98-49a8-e75f-840c7e5ea9d9" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>file_path <span class="op">=</span> <span class="st">'/content/sample_data/california_housing_train.csv'</span></span>
@@ -439,7 +441,9 @@
 <pre><code>Read 17001 lines</code></pre>
 </div>
 </div>
-<h3 id="upload-new-data">Upload new data</h3>
+</section>
+<section id="upload-new-data" class="slide level2">
+<h2>Upload new data</h2>
 <div id="cell-6" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
@@ -447,8 +451,10 @@
 <span id="cb3-2"><a href=""></a><span class="co"># uploaded = files.upload()  # uncomment this line to open the prompt to upload the dataset</span></span></code></pre></div>
 </details>
 </div>
-<h3 id="import-data-from-the-web">Import data from the web</h3>
-<div id="cell-8" class="cell" data-outputid="45e0517c-cf2e-4243-b8de-04740cfde9ad" data-execution_count="3">
+</section>
+<section id="import-data-from-the-web" class="slide level2">
+<h2>Import data from the web</h2>
+<div id="cell-8" class="cell" data-outputid="89b99ff7-c01d-441b-eddf-de3d7203516f" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># prompt: import the california housing pricedataset from kaggle into a pandas dataframe</span></span>
@@ -465,7 +471,7 @@
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>rm: cannot remove 'iris.zip': No such file or directory
---2024-09-17 10:42:57--  https://archive.ics.uci.edu/static/public/53/iris.zip
+--2024-09-17 13:13:02--  https://archive.ics.uci.edu/static/public/53/iris.zip
 Resolving archive.ics.uci.edu (archive.ics.uci.edu)... 128.195.10.252
 Connecting to archive.ics.uci.edu (archive.ics.uci.edu)|128.195.10.252|:443... connected.
 HTTP request sent, awaiting response... 200 OK
@@ -474,7 +480,7 @@ Saving to: ‘iris.zip’
 
 iris.zip                [ &lt;=&gt;                ]   3.65K  --.-KB/s    in 0s      
 
-2024-09-17 10:42:57 (548 MB/s) - ‘iris.zip’ saved [3738]
+2024-09-17 13:13:03 (470 MB/s) - ‘iris.zip’ saved [3738]
 
 Archive:  iris.zip
   inflating: iris/Index              
@@ -484,6 +490,9 @@ Archive:  iris.zip
 Read 151 lines</code></pre>
 </div>
 </div>
+</section>
+<section id="strings-and-lists" class="slide level2">
+<h2>Strings and lists</h2>
 <p>Tools for managing strings and lists:</p>
 <ul>
 <li><code>strip()</code>: removes both the leading and the trailing characters.</li>
@@ -501,7 +510,7 @@ Read 151 lines</code></pre>
 <li><code>a[:-2]   # everything except the last two items</code></li>
 <li><code>a[::-1]    # all items in the array, reversed</code></li>
 </ul>
-<div id="cell-10" class="cell" data-outputid="08ac042b-0c7d-4892-9145-1a00788c02d1" data-execution_count="4">
+<div id="cell-10" class="cell" data-outputid="201fd127-a13f-4dae-dc63-0e19a87f908a" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>lines[:<span class="dv">5</span>]</span></code></pre></div>
@@ -514,7 +523,7 @@ Read 151 lines</code></pre>
  '5.0,3.6,1.4,0.2,Iris-setosa\n']</code></pre>
 </div>
 </div>
-<div id="cell-11" class="cell" data-outputid="143afe3c-3b2c-4913-a18f-f107f2bca533" data-execution_count="5">
+<div id="cell-11" class="cell" data-outputid="54efadb4-6067-4e4d-b6c5-f4a5cd1f0374" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="cf">for</span> line <span class="kw">in</span> lines[:<span class="dv">2</span>]:</span>
@@ -545,9 +554,12 @@ Data: ['4.9', '3.0', '1.4'] Label: Iris-setosa
 ---</code></pre>
 </div>
 </div>
+</section>
+<section id="changing-data-types" class="slide level2">
+<h2>Changing data types</h2>
 <p>Note that the element in the list are strings. We must convert these strings in integers (<code>int</code>). These integers are then saved in a list.</p>
 <p><strong>Tools</strong>: - List comprehension: <code>[expression for item in list]</code></p>
-<div id="cell-13" class="cell" data-outputid="e1c40ec7-6d7a-4640-d7a3-61b71353f5e0" data-execution_count="6">
+<div id="cell-13" class="cell" data-outputid="30442771-1d83-4c45-f61a-b553373b40ca" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="bu">print</span>(<span class="st">'Type of the data:'</span>, <span class="bu">type</span>(data[<span class="dv">0</span>]))</span>
@@ -563,7 +575,9 @@ Type of the data: [&lt;class 'float'&gt;, &lt;class 'float'&gt;, &lt;class 'floa
 <pre><code>[4.9, 3.0, 1.4]</code></pre>
 </div>
 </div>
-<h3 id="exercise">Exercise</h3>
+</section>
+<section id="exercise" class="slide level2 scrollable">
+<h2>Exercise</h2>
 <ol type="1">
 <li>Read the content of the file <code>iris.data</code></li>
 <li><strong>Accumulate</strong> the data and the labels in two different lists, named <code>dataset</code> and <code>labels</code></li>
