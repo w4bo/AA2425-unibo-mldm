@@ -429,7 +429,7 @@
 <section id="read-the-existing-data" class="slide level2">
 <h2>Read the existing data</h2>
 <p><code>open(&lt;path&gt;, &lt;mode&gt;)</code>: open the file located in the <code>path</code>, for reading, writing, ect. depending by the <code>mode</code>.</p>
-<div id="cell-4" class="cell" data-outputid="54a903c5-fa98-49a8-e75f-840c7e5ea9d9" data-execution_count="1">
+<div id="cell-4" class="cell" data-outputid="54a903c5-fa98-49a8-e75f-840c7e5ea9d9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>file_path <span class="op">=</span> <span class="st">'/content/sample_data/california_housing_train.csv'</span></span>
@@ -444,7 +444,7 @@
 </section>
 <section id="upload-new-data" class="slide level2">
 <h2>Upload new data</h2>
-<div id="cell-6" class="cell" data-execution_count="2">
+<div id="cell-6" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">from</span> google.colab <span class="im">import</span> files</span>
@@ -454,20 +454,18 @@
 </section>
 <section id="import-data-from-the-web" class="slide level2">
 <h2>Import data from the web</h2>
-<div id="cell-8" class="cell" data-outputid="89b99ff7-c01d-441b-eddf-de3d7203516f" data-execution_count="3">
+<div id="cell-8" class="cell" data-outputid="89b99ff7-c01d-441b-eddf-de3d7203516f">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># prompt: import the california housing pricedataset from kaggle into a pandas dataframe</span></span>
-<span id="cb4-2"><a href=""></a></span>
-<span id="cb4-3"><a href=""></a><span class="op">!</span>rm <span class="op">-</span>rf iris<span class="op">/</span> <span class="op">||</span> true</span>
-<span id="cb4-4"><a href=""></a><span class="op">!</span>rm iris.<span class="bu">zip</span> <span class="op">||</span> true</span>
-<span id="cb4-5"><a href=""></a><span class="op">!</span>wget https:<span class="op">//</span>archive.ics.uci.edu<span class="op">/</span>static<span class="op">/</span>public<span class="op">/</span><span class="dv">53</span><span class="op">/</span>iris.<span class="bu">zip</span></span>
-<span id="cb4-6"><a href=""></a><span class="op">!</span>unzip iris.<span class="bu">zip</span> <span class="op">-</span>d iris</span>
-<span id="cb4-7"><a href=""></a></span>
-<span id="cb4-8"><a href=""></a>file_path <span class="op">=</span> <span class="st">'/content/iris/iris.data'</span></span>
-<span id="cb4-9"><a href=""></a><span class="cf">with</span> <span class="bu">open</span>(file_path, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
-<span id="cb4-10"><a href=""></a>    lines <span class="op">=</span> f.readlines()</span>
-<span id="cb4-11"><a href=""></a><span class="bu">print</span>(<span class="st">'Read </span><span class="sc">{}</span><span class="st"> lines'</span>.<span class="bu">format</span>(<span class="bu">len</span>(lines)))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="op">!</span>rm <span class="op">-</span>rf iris<span class="op">/</span> <span class="op">||</span> true</span>
+<span id="cb4-2"><a href=""></a><span class="op">!</span>rm iris.<span class="bu">zip</span> <span class="op">||</span> true</span>
+<span id="cb4-3"><a href=""></a><span class="op">!</span>wget https:<span class="op">//</span>archive.ics.uci.edu<span class="op">/</span>static<span class="op">/</span>public<span class="op">/</span><span class="dv">53</span><span class="op">/</span>iris.<span class="bu">zip</span></span>
+<span id="cb4-4"><a href=""></a><span class="op">!</span>unzip iris.<span class="bu">zip</span> <span class="op">-</span>d iris</span>
+<span id="cb4-5"><a href=""></a></span>
+<span id="cb4-6"><a href=""></a>file_path <span class="op">=</span> <span class="st">'/content/iris/iris.data'</span></span>
+<span id="cb4-7"><a href=""></a><span class="cf">with</span> <span class="bu">open</span>(file_path, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
+<span id="cb4-8"><a href=""></a>    lines <span class="op">=</span> f.readlines()</span>
+<span id="cb4-9"><a href=""></a><span class="bu">print</span>(<span class="st">'Read </span><span class="sc">{}</span><span class="st"> lines'</span>.<span class="bu">format</span>(<span class="bu">len</span>(lines)))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>rm: cannot remove 'iris.zip': No such file or directory
@@ -510,7 +508,7 @@ Read 151 lines</code></pre>
 <li><code>a[:-2]   # everything except the last two items</code></li>
 <li><code>a[::-1]    # all items in the array, reversed</code></li>
 </ul>
-<div id="cell-10" class="cell" data-outputid="201fd127-a13f-4dae-dc63-0e19a87f908a" data-execution_count="4">
+<div id="cell-10" class="cell" data-outputid="201fd127-a13f-4dae-dc63-0e19a87f908a">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>lines[:<span class="dv">5</span>]</span></code></pre></div>
@@ -523,7 +521,7 @@ Read 151 lines</code></pre>
  '5.0,3.6,1.4,0.2,Iris-setosa\n']</code></pre>
 </div>
 </div>
-<div id="cell-11" class="cell" data-outputid="54efadb4-6067-4e4d-b6c5-f4a5cd1f0374" data-execution_count="5">
+<div id="cell-11" class="cell" data-outputid="54efadb4-6067-4e4d-b6c5-f4a5cd1f0374">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="cf">for</span> line <span class="kw">in</span> lines[:<span class="dv">2</span>]:</span>
@@ -559,7 +557,7 @@ Data: ['4.9', '3.0', '1.4'] Label: Iris-setosa
 <h2>Changing data types</h2>
 <p>Note that the element in the list are strings. We must convert these strings in integers (<code>int</code>). These integers are then saved in a list.</p>
 <p><strong>Tools</strong>: - List comprehension: <code>[expression for item in list]</code></p>
-<div id="cell-13" class="cell" data-outputid="30442771-1d83-4c45-f61a-b553373b40ca" data-execution_count="6">
+<div id="cell-13" class="cell" data-outputid="30442771-1d83-4c45-f61a-b553373b40ca">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="bu">print</span>(<span class="st">'Type of the data:'</span>, <span class="bu">type</span>(data[<span class="dv">0</span>]))</span>
@@ -591,7 +589,7 @@ Type of the data: [&lt;class 'float'&gt;, &lt;class 'float'&gt;, &lt;class 'floa
 <p>The lists should look like</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>dataset <span class="op">=</span> [[<span class="fl">5.1</span>,<span class="fl">3.5</span>,<span class="fl">1.4</span>,<span class="fl">0.2</span>], [<span class="fl">4.9</span>,<span class="fl">3.0</span>,<span class="fl">1.4</span>,<span class="fl">0.2</span>], ...]</span>
 <span id="cb14-2"><a href=""></a>labels <span class="op">=</span> [<span class="st">'Iris-setosa'</span>, <span class="st">'Iris-setosa'</span>, ...]</span></code></pre></div>
-<div id="cell-15" class="cell" data-execution_count="7">
+<div id="cell-15" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="co"># write the code here</span></span></code></pre></div>

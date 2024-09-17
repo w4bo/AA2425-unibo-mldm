@@ -404,7 +404,7 @@
 </section>
 <section id="setup" class="slide level2">
 <h2>Setup</h2>
-<div id="80970f2e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:52:18.056364Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:52:18.056188Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:52:18.579625Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:52:18.579085Z&quot;}" data-outputid="70c7bea0-42a4-4522-c3be-b93c7c73aaf8" data-execution_count="1">
+<div id="80970f2e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:59:06.701347Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:59:06.700920Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:59:06.991836Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:59:06.991308Z&quot;}" data-outputid="70c7bea0-42a4-4522-c3be-b93c7c73aaf8" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -598,7 +598,7 @@
 </section>
 <section id="profiling" class="slide level2">
 <h2>Profiling</h2>
-<div id="85441c0b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:52:18.581891Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:52:18.581471Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:52:18.588653Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:52:18.588198Z&quot;}" data-outputid="c6f47f84-b96c-48e1-ca6c-f7e9ab33b9e4" data-scrolled="true" data-execution_count="2">
+<div id="85441c0b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:59:06.993929Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:59:06.993558Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:59:07.000999Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:59:07.000552Z&quot;}" data-outputid="c6f47f84-b96c-48e1-ca6c-f7e9ab33b9e4" data-scrolled="true" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="co"># show some statistics on the dataframe</span></span>
@@ -627,7 +627,7 @@ memory usage: 1.6+ MB</code></pre>
 </section>
 <section id="profiling-1" class="slide level2">
 <h2>Profiling</h2>
-<div id="e6a24b3a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:52:18.590491Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:52:18.590162Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:52:18.616090Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:52:18.615637Z&quot;}" data-outputid="f1a6306f-b11c-4051-9a75-4d4fa7880ef1" data-execution_count="3">
+<div id="e6a24b3a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:59:07.002872Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:59:07.002534Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:59:07.029019Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:59:07.028534Z&quot;}" data-outputid="f1a6306f-b11c-4051-9a75-4d4fa7880ef1" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
@@ -849,7 +849,7 @@ memory usage: 1.6+ MB</code></pre>
 <li>To fix this issue, a common solution is to create one binary attribute per category: one attribute equal to 1 when the category is ‘&lt;1H OCEAN’ (and 0 otherwise), another attribute equal to 1 when the category is ‘INLAND’ (and 0 otherwise), and so on. This is called one-hot encoding, because only one attribute will be equal to 1 (hot), while the others will be 0 (cold). The new attributes are sometimes called dummy attributes</li>
 </ul></li>
 </ul>
-<div id="3297de8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:52:18.617918Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:52:18.617545Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:52:18.622480Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:52:18.622045Z&quot;}" data-outputid="5cdc69b5-eaa1-48dc-9ff5-35385ed116d5" data-execution_count="4">
+<div id="3297de8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:59:07.031059Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:59:07.030716Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:59:07.035885Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:59:07.035324Z&quot;}" data-outputid="5cdc69b5-eaa1-48dc-9ff5-35385ed116d5" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].value_counts()</span></code></pre></div>
@@ -864,7 +864,7 @@ ISLAND           5
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="xkOk2VEdVkde" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:52:18.624100Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:52:18.623926Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:52:19.007524Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:52:19.007023Z&quot;}" data-outputid="c5ee0dfa-1180-4755-c960-6b2a493b2952" data-execution_count="5">
+<div id="xkOk2VEdVkde" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:59:07.037641Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:59:07.037233Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:59:07.430241Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:59:07.429670Z&quot;}" data-outputid="c5ee0dfa-1180-4755-c960-6b2a493b2952" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].hist()</span></code></pre></div>
@@ -874,7 +874,7 @@ Name: count, dtype: int64</code></pre>
 <img data-src="lab-04-housing_files/figure-revealjs/cell-6-output-1.png" class="r-stretch"></section>
 <section id="encoding-ordinal" class="slide level2">
 <h2>Encoding: ordinal</h2>
-<div id="0efd3a04" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:52:19.009407Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:52:19.009192Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:52:19.455491Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:52:19.454983Z&quot;}" data-outputid="46c553ff-0bc4-4d20-87be-8672188c0bfb" data-execution_count="6">
+<div id="0efd3a04" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:59:07.432509Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:59:07.432063Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:59:08.029946Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:59:08.029375Z&quot;}" data-outputid="46c553ff-0bc4-4d20-87be-8672188c0bfb" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OrdinalEncoder</span>
@@ -895,7 +895,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="encoding-one-hot-encoding" class="slide level2">
 <h2>Encoding: one-hot encoding</h2>
-<div id="d3db3bf4" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:52:19.457632Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:52:19.457213Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:52:19.466228Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:52:19.465798Z&quot;}" data-outputid="e4286681-47f1-4e2b-f56c-5996c1eedb92" data-execution_count="7">
+<div id="d3db3bf4" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:59:08.032023Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:59:08.031606Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:59:08.040737Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:59:08.040277Z&quot;}" data-outputid="e4286681-47f1-4e2b-f56c-5996c1eedb92" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>y <span class="op">=</span> pd.get_dummies(df[<span class="st">"ocean_proximity"</span>], prefix<span class="op">=</span><span class="st">'ocean_proximity'</span>)</span>
@@ -1028,7 +1028,7 @@ Name: count, dtype: int64</code></pre>
 <section id="correlation" class="slide level2">
 <h2>Correlation</h2>
 <p>Are there relationships between variables?</p>
-<div id="EmnZ1P4uV9H1" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:52:19.468076Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:52:19.467740Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:52:19.772214Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:52:19.771648Z&quot;}" data-outputid="ac123b61-c70a-4df4-89ee-b1cd65c4287c" data-execution_count="8">
+<div id="EmnZ1P4uV9H1" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:59:08.042621Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:59:08.042263Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:59:08.357576Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:59:08.356879Z&quot;}" data-outputid="ac123b61-c70a-4df4-89ee-b1cd65c4287c" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -1054,7 +1054,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="min-max-normalization" class="slide level2">
 <h2>Min-max normalization</h2>
-<div id="e6974275" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:52:19.774316Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:52:19.773868Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:52:19.788003Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:52:19.787553Z&quot;}" data-outputid="75561b5c-6de3-4eac-9c12-0c3c77bb1f70" data-execution_count="9">
+<div id="e6974275" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:59:08.360017Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:59:08.359562Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:59:08.375085Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:59:08.374609Z&quot;}" data-outputid="75561b5c-6de3-4eac-9c12-0c3c77bb1f70" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>num_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ocean_proximity'</span>, <span class="st">'median_house_value'</span>])</span>
@@ -1223,7 +1223,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="standardization" class="slide level2">
 <h2>Standardization</h2>
-<div id="39239dcf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:52:19.789901Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:52:19.789491Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:52:19.822082Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:52:19.821631Z&quot;}" data-outputid="4b6180fd-9938-480b-cca4-3bbb302e851e" data-execution_count="10">
+<div id="39239dcf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:59:08.377003Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:59:08.376613Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:59:08.393927Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:59:08.393241Z&quot;}" data-outputid="4b6180fd-9938-480b-cca4-3bbb302e851e" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>num_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ocean_proximity'</span>, <span class="st">'median_house_value'</span>])</span>
@@ -1400,7 +1400,7 @@ Name: count, dtype: int64</code></pre>
 <li>Apply standardization to all the numeric columns</li>
 <li>One hot encode <code>ocean_proximity</code> since it is a categorical attribute</li>
 </ol>
-<div id="_mET6uViex1b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:52:19.823806Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:52:19.823487Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:52:19.826076Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:52:19.825523Z&quot;}" data-execution_count="11">
+<div id="_mET6uViex1b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-09-17T14:59:08.395988Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-09-17T14:59:08.395647Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-09-17T14:59:08.398988Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-09-17T14:59:08.398405Z&quot;}" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="co"># Write your code here</span></span></code></pre></div>
