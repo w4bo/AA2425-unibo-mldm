@@ -180,15 +180,14 @@ Theory
 1. [Data Preparation](https://w4bo.github.io/AA2425-unibo-mldm/04-datapreparation)
 1. [Modeling](https://w4bo.github.io/AA2425-unibo-mldm/05-modeling)
 1. [Neural Networks](https://w4bo.github.io/AA2425-unibo-mldm/06-neuralnetworks)
-1. [Evaluation](https://w4bo.github.io/AA2425-unibo-mldm/06-evaluation)
 
 Labs
 
 1. [Introduction to Google Colab](https://w4bo.github.io/AA2425-unibo-mldm/lab-00-introduction)
-1. [Data Understanding](https://w4bo.github.io/AA2425-unibo-mldm/lab-01-dataunderstanding)
-1. [Data Preparation](https://w4bo.github.io/AA2425-unibo-mldm/lab-02-datapreparation)
-1. [Modeling (classification)](https://w4bo.github.io/AA2425-unibo-mldm/lab-03-classification)
-1. [Modeling (neural networks)](https://w4bo.github.io/AA2425-unibo-mldm/lab-04-neuralnetworks)
+1. [Data Understanding](https://w4bo.github.io/AA2425-unibo-mldm/lab-01-dataunderstanding) + [Housing](https://w4bo.github.io/AA2425-unibo-mldm/lab-02-housing)
+1. [Data Preparation](https://w4bo.github.io/AA2425-unibo-mldm/lab-03-datapreparation) + [Housing](https://w4bo.github.io/AA2425-unibo-mldm/lab-04-housing)
+1. [Modeling (classification)](https://w4bo.github.io/AA2425-unibo-mldm/lab-05-classification) + [Housing](https://w4bo.github.io/AA2425-unibo-mldm/lab-06-housing)
+1. [Modeling (neural networks)](https://w4bo.github.io/AA2425-unibo-mldm/lab-07-neuralnetworks)
 
 :::
 ::: {.column width="40%"}
