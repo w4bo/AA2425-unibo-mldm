@@ -9,8 +9,7 @@
 <link href="00-ml_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
-  <meta name="author" content="Matteo Francia">
-  <title>Machine Learning and Data Mining (Module 2)</title>
+  <title>ml</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -325,24 +324,24 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Machine Learning and Data Mining (Module 2)</h1>
-  <p class="subtitle">Fundamentals of Machine Learning</p>
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Matteo Francia 
-</div>
-</div>
-</div>
+<section id="data-mining" class="title-slide slide level1 center">
+<h1>Data Mining</h1>
+<blockquote>
+<p><strong>Data mining</strong> <span class="citation" data-cites="chakrabarti2006data">(<a href="" role="doc-biblioref" onclick="return false;"><strong>chakrabarti2006data?</strong></a>)</span></p>
+<ul>
+<li>… Is the process of extracting and discovering patterns in large data sets</li>
+<li>… Involving methods at the intersection of machine learning, statistics, and database systems.</li>
+<li>It is an interdisciplinary subfield of computer science and statistics</li>
+</ul>
+</blockquote>
 
-</section>
+<img data-src="./img/00-ml/data-mining-Venn-diagram.png" class="r-stretch quarto-figure-center"><p class="caption">AI, Data Mining, and Machine Learning</p></section>
+
 <section id="machine-learning" class="title-slide slide level1 center">
 <h1>Machine Learning</h1>
-<p>Definition by Tom Mitchell (1998)</p>
 <blockquote>
-<p>Machine Learning is the study of algorithms that</p>
+<p><strong>Machine Learning</strong> <span class="citation" data-cites="mitchell1997machine">(<a href="" role="doc-biblioref" onclick="return false;"><strong>mitchell1997machine?</strong></a>)</span> is the study of algorithms that</p>
 <ul>
 <li>Improve their performance <span class="math inline">\(P\)</span></li>
 <li>At some task <span class="math inline">\(T\)</span></li>
@@ -381,6 +380,16 @@ Matteo Francia
 
 <section id="machine-learning-1" class="title-slide slide level1 center">
 <h1>Machine Learning</h1>
+<p>(Supervised) Machine learning is usually divided into two steps:</p>
+<ul>
+<li>Train with <strong>E</strong>xperience (training set)</li>
+<li>Generalize to unseen data (test set) and evaluate the <strong>P</strong>erformance</li>
+<li>Training and test sets are not overlapping (they do not share the same data)</li>
+</ul>
+</section>
+
+<section id="training-the-model" class="title-slide slide level1 center">
+<h1>Training the model</h1>
 <p><strong>E</strong>xperience: training data</p>
 
 <img src="./img/00-ml/ml4.svg" class="center r-stretch"></section>
@@ -404,7 +413,11 @@ Matteo Francia
 <section id="example-of-a-decision-tree" class="title-slide slide level1 center">
 <h1>Example of a Decision Tree</h1>
 
-<img src="./img/00-ml/ml6.svg" class="center r-stretch"></section>
+<img src="./img/00-ml/ml6.svg" class="center r-stretch"><ul>
+<li>Such rules are learned from the data</li>
+<li>They are not explicitly programmed by the data analyst</li>
+</ul>
+</section>
 
 <section id="choosing-the-right-ml-model" class="title-slide slide level1 center">
 <h1>Choosing the “Right” ML model</h1>
