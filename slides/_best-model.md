@@ -167,3 +167,5 @@ What if we ask the models the result of 12 + 12?
 # Generalization: Linear Regression
 
 <img src="./img/00-ml/LinearRegression-ext-3d.svg" class="center">
+
+# References

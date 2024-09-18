@@ -1,4 +1,5 @@
 ---
+title: Data Mining and Machine Learning
 subtitle: Module 2 (Machine Learning)
 ---
 
