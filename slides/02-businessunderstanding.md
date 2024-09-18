@@ -64,15 +64,26 @@ Ask and refine sharp questions that are relevant, specific, and unambiguous.
 
 # 
 
-If the business goal cannot be effectively translated into a data mining goal, *it may be wise to consider redefining the problem*
+:::: {.columns}
+::: {.column width="50%"}
 
-The metrics must be SMART:
+The metrics must be **SMART**:
 
 - *S*pecific
 - *M*easurable
 - *A*chievable
 - *R*elevant
 - *T*ime-bound
+
+:::
+::: {.column width="50%"}
+
+![SMART metrics](./img/businessunderstanding/smart.png)
+
+:::
+::::
+
+If the business goal cannot be effectively translated into a data mining goal, *it may be wise to consider redefining the problem*
 
 > Success may be measured by reducing lost customers by 10% or by achieving a better understanding of the customer base
 >
