@@ -48,6 +48,7 @@ If you were the analyst, what would you do?
 #
 
 > To us, it was impossible to apply machine learning techniques to data on paper.
+>
 > We prepared a Google Form where answers could be digitalized.
 > 
 > The employee would take ~1 month to return the digitalized questionnaires.

@@ -6,75 +6,98 @@ subtitle: Business understanding
 
 (*Perhaps the most important/hard phase of any data mining project* [@shearer2000crisp])
 
-The initial business understanding phase focuses on
+The **business understanding** phase focuses on
 
-- understanding the project objectives from a business perspective,
-- converting this knowledge into a data mining problem definition,
-- and then developing a preliminary plan designed to achieve the objectives.
+1. determine the *business objectives*
+2. assessing the *context of the analysis*
+3. determining and *translating objectives into data mining goals*
+4. producing the *project plan*
 
-To understand which data should later be analyzed, and how, it is vital for data mining practitioners to fully understand:
-
-1. business objectives,
-2. assessing the situation,
-3. determining the data mining goals,
-4. and producing the project plan.
+This is essential also to understand which data should later be analyzed and how
 
 # Determine the Business Objectives
 
-Understanding a client’s true goal is critical to uncovering the important factors involved in the project
+**Understanding a client's true goal** is critical to uncovering the important factors involved in the project
 
-- ... and ensuring that the project does not produce the right answers to the wrong questions
+- Data analysts must uncover the primary business objective as well as the related questions the business would like to address
+- Ensure that the project *does not produce the right answers to the wrong questions*
+- Beware of *setting unattainable goals*
+- Make sure that each *success criterion relates to at least one of the specified business objectives*
 
-Data analysts must uncover the primary business objective as well as the related questions the business would like to address
-
-- For example, the primary business goal could be to retain current customers by predicting when they are prone to move to a competitor.
-  - "How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?" or 
-  - "Will lower ATM fees significantly reduce the number of high-value customers who leave?" A secondary issue might be to determine whether lower fees affect only one particular customer segment.
-
-Finally, a good data analyst always determines the measure of success
-
-- Success may be measured by reducing lost customers by 10 percent or simply by achieving a better understanding of the customer base
-- Data analysts should beware of setting unattainable goals and should make sure that each success criterion relates to at least one of the specified business objectives
+> The business goal could be to retain current customers by predicting when they are prone to move to a competitor
+> 
+> - "How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?" 
+> - "Will lower ATM fees significantly reduce the number of high-value customers who leave?"
 
 # Assess the Situation
 
-Data analysts outline the resources, from personnel to software, that are available to accomplish the data mining project.
+**Outline the available resources** to accomplish the data mining project, from personnel to software
 
-- Particularly important is discovering what data is available to meet the primary business goal.
-- At this point, the data analyst also should list the assumptions made in the project assumptions
-  - "To address the business question, a minimum number of customers over age 50 is necessary."
-  - The data analyst also should list the project risks, list potential solutions to those risks, create a glossary of business and data mining terms,
-and construct a cost-benefit analysis for the project.
+- *Discover what data is available* to meet the primary business goal
+  - Do you have data that's relevant to the question?
+    - Do you have measures of the target and features that are related to the target?
+    - Do you have an accurate measure of your model target and the features of interest?
+  - An existing system might not have the data it needs to address a problem and achieve a project goal
+    - Find external data sources or update your systems to collect new data
+
+> To address the business question, a minimum number of customers over age 50 is necessary
+
+- List the *project risks and potential solutions* to those risks
+- List the *assumptions* made in the project
+- Create a *glossary of business and data mining terms*
+  - This is essential in interdisciplinary teams!
+- Construct a *cost-benefit analysis* for the project
 
 # Determine the Data Mining Goals
 
-The data mining goal states project objectives in business terms
+Formulate **project objectives in business terms**
 
-- "Predict how many widgets a customer will buy given their purchases in the past three years, demographic information (age, salary, city, etc.), and the item price."
-- Success should also be defined in these terms such as achieving a certain level of predictive accuracy.
+Ask and refine sharp questions that are relevant, specific, and unambiguous.
 
-If the business goal cannot be effectively translated into a data mining goal, *it may be wise to consider redefining the problem*.
+- Data science is a process that *uses numbers to answer such questions*
+- You typically use data science or machine learning to answer *five types of questions*
+  1.  How much or how many? (regression)
+  1.  Which category? (classification)
+  1.  Which group? (clustering)
+  1.  Is this unusual? (anomaly detection)
+  1.  Which option should be taken? (recommendation)
+
+# 
+
+If the business goal cannot be effectively translated into a data mining goal, *it may be wise to consider redefining the problem*
+
+The metrics must be SMART:
+
+- *S*pecific
+- *M*easurable
+- *A*chievable
+- *R*elevant
+- *T*ime-bound
+
+> Success may be measured by reducing lost customers by 10% or by achieving a better understanding of the customer base
+>
+> Success should also be defined in these terms such as achieving a certain level of predictive accuracy
 
 # Produce a Project Plan
 
-The project plan describes the intended plan for achieving the data mining goals, including:
+**Describe the intended plan for achieving the goals**, including:
 
-- outlining specific steps and a proposed timeline,
-- an assessment of potential risks,
-- and an initial assessment of the tools and techniques needed to support the project.
+- outlining specific steps and a proposed timeline
+- an assessment of potential risks
+- and an initial assessment of the tools and techniques needed to support the project
 
 Generally accepted industry timeline standards are [@shearer2000crisp]:
 
-- 50 to 70 percent of the time and effort in a data mining project involves the Data Preparation Phase;
-- 20 to 30 percent involves the Data Understanding Phase;
-- only 10 to 20 percent is spent in each of the Modeling, Evaluation, and Business Understanding Phases;
-- and 5 to 10 percent is spent in the Deployment Planning Phase.
+- 50 to 70 percent of the time and effort in a data mining project involves the *Data Preparation Phase*;
+- 20 to 30 percent involves the *Data Understanding Phase*;
+- only 10 to 20 percent is spent in each of the *Modeling, Evaluation, and Business Understanding Phases*;
+- and 5 to 10 percent is spent in the *Deployment Planning Phase*.
 
-# Interdisciplinarity
+# Special Mention: Interdisciplinarity
 
-The process of identifying and delving into the problem to solve
+Identifying and delving into the problem to solve
 
-- This is an *interdisciplinary* phase
+- Is an **interdisciplinary** phase
 - Even if you have good knowledge in the fields of computer and data science...
 - ... maybe you still miss domain knowledge that is fundamental to understanding and modeling the problem
 
