@@ -1,5 +1,4 @@
 ---
-title: Data Mining and Machine Learning
 subtitle: Data Mining, Machine Learning, and CRISP-DM
 ---
 
