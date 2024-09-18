@@ -361,79 +361,121 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="business-understanding" class="title-slide slide level1 center scrollable">
 <h1>Business understanding</h1>
 <p>(<em>Perhaps the most important/hard phase of any data mining project</em> <span class="citation" data-cites="shearer2000crisp">(<a href="#/references" role="doc-biblioref" onclick="">Shearer 2000</a>)</span>)</p>
-<p>The initial business understanding phase focuses on</p>
-<ul>
-<li>understanding the project objectives from a business perspective,</li>
-<li>converting this knowledge into a data mining problem definition,</li>
-<li>and then developing a preliminary plan designed to achieve the objectives.</li>
-</ul>
-<p>To understand which data should later be analyzed, and how, it is vital for data mining practitioners to fully understand:</p>
+<p>The <strong>business understanding</strong> phase focuses on</p>
 <ol type="1">
-<li>business objectives,</li>
-<li>assessing the situation,</li>
-<li>determining the data mining goals,</li>
-<li>and producing the project plan.</li>
+<li>determine the <em>business objectives</em></li>
+<li>assessing the <em>context of the analysis</em></li>
+<li>determining and <em>translating objectives into data mining goals</em></li>
+<li>producing the <em>project plan</em></li>
 </ol>
+<p>This is essential also to understand which data should later be analyzed and how</p>
 </section>
 
 <section id="determine-the-business-objectives" class="title-slide slide level1 center">
 <h1>Determine the Business Objectives</h1>
-<p>Understanding a client’s true goal is critical to uncovering the important factors involved in the project</p>
+<p><strong>Understanding a client’s true goal</strong> is critical to uncovering the important factors involved in the project</p>
 <ul>
-<li>… and ensuring that the project does not produce the right answers to the wrong questions</li>
+<li>Data analysts must uncover the primary business objective as well as the related questions the business would like to address</li>
+<li>Ensure that the project <em>does not produce the right answers to the wrong questions</em></li>
+<li>Beware of <em>setting unattainable goals</em></li>
+<li>Make sure that each <em>success criterion relates to at least one of the specified business objectives</em></li>
 </ul>
-<p>Data analysts must uncover the primary business objective as well as the related questions the business would like to address</p>
+<blockquote>
+<p>The business goal could be to retain current customers by predicting when they are prone to move to a competitor</p>
 <ul>
-<li>For example, the primary business goal could be to retain current customers by predicting when they are prone to move to a competitor. &nbsp; - “How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?” or &nbsp; - “Will lower ATM fees significantly reduce the number of high-value customers who leave?” A secondary issue might be to determine whether lower fees affect only one particular customer segment.</li>
+<li>“How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?”</li>
+<li>“Will lower ATM fees significantly reduce the number of high-value customers who leave?”</li>
 </ul>
-<p>Finally, a good data analyst always determines the measure of success</p>
-<ul>
-<li>Success may be measured by reducing lost customers by 10 percent or simply by achieving a better understanding of the customer base</li>
-<li>Data analysts should beware of setting unattainable goals and should make sure that each success criterion relates to at least one of the specified business objectives</li>
-</ul>
+</blockquote>
 </section>
 
 <section id="assess-the-situation" class="title-slide slide level1 center">
 <h1>Assess the Situation</h1>
-<p>Data analysts outline the resources, from personnel to software, that are available to accomplish the data mining project.</p>
+<p><strong>Outline the available resources</strong> to accomplish the data mining project, from personnel to software</p>
 <ul>
-<li>Particularly important is discovering what data is available to meet the primary business goal.</li>
-<li>At this point, the data analyst also should list the assumptions made in the project assumptions &nbsp; - “To address the business question, a minimum number of customers over age 50 is necessary.” &nbsp; - The data analyst also should list the project risks, list potential solutions to those risks, create a glossary of business and data mining terms, and construct a cost-benefit analysis for the project.</li>
+<li><em>Discover what data is available</em> to meet the primary business goal
+<ul>
+<li>Do you have data that’s relevant to the question?
+<ul>
+<li>Do you have measures of the target and features that are related to the target?</li>
+<li>Do you have an accurate measure of your model target and the features of interest?</li>
+</ul></li>
+<li>An existing system might not have the data it needs to address a problem and achieve a project goal
+<ul>
+<li>Find external data sources or update your systems to collect new data</li>
+</ul></li>
+</ul></li>
+</ul>
+<blockquote>
+<p>To address the business question, a minimum number of customers over age 50 is necessary</p>
+</blockquote>
+<ul>
+<li>List the <em>project risks and potential solutions</em> to those risks</li>
+<li>List the <em>assumptions</em> made in the project</li>
+<li>Create a <em>glossary of business and data mining terms</em>
+<ul>
+<li>This is essential in interdisciplinary teams!</li>
+</ul></li>
+<li>Construct a <em>cost-benefit analysis</em> for the project</li>
 </ul>
 </section>
 
-<section id="determine-the-data-mining-goals" class="title-slide slide level1 center">
+<section id="determine-the-data-mining-goals" class="title-slide slide level1 center scrollable">
 <h1>Determine the Data Mining Goals</h1>
-<p>The data mining goal states project objectives in business terms</p>
+<p>Formulate <strong>project objectives in business terms</strong></p>
+<p>Ask and refine sharp questions that are relevant, specific, and unambiguous.</p>
 <ul>
-<li>“Predict how many widgets a customer will buy given their purchases in the past three years, demographic information (age, salary, city, etc.), and the item price.”</li>
-<li>Success should also be defined in these terms such as achieving a certain level of predictive accuracy.</li>
+<li>Data science is a process that <em>uses numbers to answer such questions</em></li>
+<li>You typically use data science or machine learning to answer <em>five types of questions</em>
+<ol type="1">
+<li>How much or how many? (regression)</li>
+<li>Which category? (classification)</li>
+<li>Which group? (clustering)</li>
+<li>Is this unusual? (anomaly detection)</li>
+<li>Which option should be taken? (recommendation)</li>
+</ol></li>
 </ul>
-<p>If the business goal cannot be effectively translated into a data mining goal, <em>it may be wise to consider redefining the problem</em>.</p>
+</section>
+
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+<p>If the business goal cannot be effectively translated into a data mining goal, <em>it may be wise to consider redefining the problem</em></p>
+<p>The metrics must be SMART:</p>
+<ul>
+<li><em>S</em>pecific</li>
+<li><em>M</em>easurable</li>
+<li><em>A</em>chievable</li>
+<li><em>R</em>elevant</li>
+<li><em>T</em>ime-bound</li>
+</ul>
+<blockquote>
+<p>Success may be measured by reducing lost customers by 10% or by achieving a better understanding of the customer base</p>
+<p>Success should also be defined in these terms such as achieving a certain level of predictive accuracy</p>
+</blockquote>
 </section>
 
 <section id="produce-a-project-plan" class="title-slide slide level1 center">
 <h1>Produce a Project Plan</h1>
-<p>The project plan describes the intended plan for achieving the data mining goals, including:</p>
+<p><strong>Describe the intended plan for achieving the goals</strong>, including:</p>
 <ul>
-<li>outlining specific steps and a proposed timeline,</li>
-<li>an assessment of potential risks,</li>
-<li>and an initial assessment of the tools and techniques needed to support the project.</li>
+<li>outlining specific steps and a proposed timeline</li>
+<li>an assessment of potential risks</li>
+<li>and an initial assessment of the tools and techniques needed to support the project</li>
 </ul>
 <p>Generally accepted industry timeline standards are <span class="citation" data-cites="shearer2000crisp">(<a href="#/references" role="doc-biblioref" onclick="">Shearer 2000</a>)</span>:</p>
 <ul>
-<li>50 to 70 percent of the time and effort in a data mining project involves the Data Preparation Phase;</li>
-<li>20 to 30 percent involves the Data Understanding Phase;</li>
-<li>only 10 to 20 percent is spent in each of the Modeling, Evaluation, and Business Understanding Phases;</li>
-<li>and 5 to 10 percent is spent in the Deployment Planning Phase.</li>
+<li>50 to 70 percent of the time and effort in a data mining project involves the <em>Data Preparation Phase</em>;</li>
+<li>20 to 30 percent involves the <em>Data Understanding Phase</em>;</li>
+<li>only 10 to 20 percent is spent in each of the <em>Modeling, Evaluation, and Business Understanding Phases</em>;</li>
+<li>and 5 to 10 percent is spent in the <em>Deployment Planning Phase</em>.</li>
 </ul>
 </section>
 
-<section id="interdisciplinarity" class="title-slide slide level1 center">
-<h1>Interdisciplinarity</h1>
-<p>The process of identifying and delving into the problem to solve</p>
+<section id="special-mention-interdisciplinarity" class="title-slide slide level1 center">
+<h1>Special Mention: Interdisciplinarity</h1>
+<p>Identifying and delving into the problem to solve</p>
 <ul>
-<li>This is an <em>interdisciplinary</em> phase</li>
+<li>Is an <strong>interdisciplinary</strong> phase</li>
 <li>Even if you have good knowledge in the fields of computer and data science…</li>
 <li>… maybe you still miss domain knowledge that is fundamental to understanding and modeling the problem</li>
 </ul>
@@ -463,7 +505,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="section" class="title-slide slide level1 center">
+<section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
 <blockquote>
 <p>Ideally, the goal is to build a dataset such as the following</p>
@@ -508,7 +550,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>What features would you select?</p>
 </section>
 
-<section id="section-1" class="title-slide slide level1 center">
+<section id="section-2" class="title-slide slide level1 center">
 <h1></h1>
 <blockquote>
 <p>The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.</p>
@@ -517,7 +559,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <img data-src="https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113" class="r-stretch quarto-figure-center"><p class="caption">Emilia Romagna, Italy</p><p>In your opinion, what are the pros/cons of this solution?</p>
 </section>
 
-<section id="section-2" class="title-slide slide level1 center">
+<section id="section-3" class="title-slide slide level1 center">
 <h1></h1>
 <blockquote>
 <p>Once the employee had collected almost 100 questionnaires, the company asked us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.</p>
@@ -525,10 +567,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>If you were the analyst, what would you do?</p>
 </section>
 
-<section id="section-3" class="title-slide slide level1 center">
+<section id="section-4" class="title-slide slide level1 center">
 <h1></h1>
 <blockquote>
-<p>To us, it was impossible to apply machine learning techniques to data on paper. We prepared a Google Form where answers could be digitalized.</p>
+<p>To us, it was impossible to apply machine learning techniques to data on paper.</p>
+<p>We prepared a Google Form where answers could be digitalized.</p>
 <p>The employee would take ~1 month to return the digitalized questionnaires.</p>
 <p><strong>Issue #1</strong>: some answers were inconsistent with the provided options.</p>
 <p><strong>Issue #2</strong>: what about open questions?</p>
