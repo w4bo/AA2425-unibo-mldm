@@ -2,10 +2,6 @@
 subtitle: Module 2 (Machine Learning)
 ---
 
-#
-
-![What is machine learning?](https://imgs.xkcd.com/comics/machine_learning.png)
-
 # Hi!
 
 Matteo Francia, Ph.D.
