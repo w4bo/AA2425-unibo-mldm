@@ -1,5 +1,5 @@
 ---
-subtitle: Data understanding
+subtitle: Data Understanding
 ---
 
 # Data understanding
@@ -15,14 +15,11 @@ The **data understanding** phase of CRISP-DM involves taking a closer look at th
 
 # Data collection (or acquisition)
 
-*Data collection* is the process of gathering and measuring information on targeted variables in an established system
+**Data collection** is the process of *gathering information on targeted variables* in an established system
 
-- The goal is to capture evidence that allows data analysis to formulate credible answers to the questions that have been posed
-
-Here a data analyst acquires the necessary data, including loading and integrating this data if necessary.
-
+- Capture evidence that allows data analysis to formulate credible answers to the questions that have been posed
 - The analyst should make sure to report problems and solutions to aid with future replications of the project.
-- For instance, data may have to be collected from several different sources, and some of these sources may have a lag time.
+- Data may have to be collected from several different sources, and some of these sources may have a lag time.
 
 The analyst then proceeds to
 
@@ -50,30 +47,31 @@ Several *biases* can occur:
 
 # Is data the new oil?
 
-- There are several disciplines focusing on data (e.g., Data Science, Data Mining, Big Data)
+The more data we have, the more analysis we can do (however, more data != smarter data)
+
+- There are several disciplines focusing on data (e.g., Data Science, Data Mining, Big Data, Business Intelligence)
 - In Europe (but now in many areas of the world), there can be problems related to privacy
     - When is it "right" to protect privacy?
     - When does it become a limit?
 
-Plus,
+Acquiring data is a time-consuming, investment, and knowledge-intensive process
 
-- Acquiring data is a time-consuming, investment and knowledge-intensive process
-- How much is *enough*?
+- How much data is *enough*?
 
 #
 
 Rule of thumb: *one in ten/twenty* [@chowdhury2020variable]
 
-> There is no set rule as to the number of variables to include in a prediction model as it often depends on several factors. The ‘one in ten rule’, a rule that stipulates for how many variables/parameters can be estimated from a data set, is quite popular in traditional clinical prediction modelling strategy (eg, logistic regression and survival models). According to this rule, one variable can be considered in a model for every 10 events
+> There is no set rule as to the number of variables to include in a prediction model as it often depends on several factors. The ‘one in ten rule’, a rule that stipulates how many variables/parameters can be estimated from a data set, is quite popular in traditional clinical prediction modeling strategies (e.g., logistic regression and survival models). According to this rule, one variable can be considered in a model for every 10 events
 
-## Public Datasets
+# Public Datasets
 
 We can get data mainly in two ways:
 
-1. By using publicly available data (datasets or databases) → someone collected them for us!
+1. By using *publicly available data* (datasets or databases) → someone collected them for us!
     - They can be free or for a fee
     - The quality of the data made available must be checked
-1. By acquiring a new set of data, but why?
+1. By *acquiring a new set of data*, but why?
     - It is not certain that public data well represent the problem we want to solve
     - We want to acquire specific data and thus generate specific expertise for the company (know-how)
     - We are forced to acquire data that due to their sensitive nature would not otherwise be available (privacy issues)
@@ -82,68 +80,94 @@ We can get data mainly in two ways:
 Many universities publicly release their datasets:
 
 - There are no requirements related to profit or non-disclosure agreement (NDA)
-  - It is a consolidated practice in the world of research
   - It is the basis of the scientific method, in particular for the reproducibility of the results obtained
   - I release my data so that others can conduct my own experiments and verify my results
   - Examples: [https://www.image-net.org/](https://www.image-net.org/) 
 
 Some platforms make datasets available for competitions, such as [Kaggle](https://www.kaggle.com/datasets) and [others](https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62) 
 
-## Acquisition of a new dataset
+# Example of a public dataset: the Iris dataset
+
+![](./img/dataunderstanding/iris.jpg)
+
+The [Iris dataset](https://www.kaggle.com/datasets/uciml/iris) is public data that was used in R.A. Fisher's classic 1936 paper [@fisher1936use]
+
+- It can also be found on the [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/).
+- It includes 3 iris species (Setosa, Virginica, and Versicolor) with 50 samples each
+- It characterizes flowers with some properties about each flower 
+    1. `SepalLengthCm`
+    1. `SepalWidthCm`
+    1. `PetalLengthCm`
+    1. `PetalWidthCm`
+    1. `Species`
+
+# Example of a public dataset: the Iris dataset
+
+Used in classification problems where the goal is to predict the species of Iris flowers based on their features
+
+- It is a simple dataset, it is easy to distinguish the different flowers and does not need data preparation
+
+<img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center">
+
+# Acquisition of a new dataset
 
 Acquiring a new dataset is usually a costly process!
 
-- Investment of time and money for:
+- *Investment of time and money* for:
   - Programming or learning to use an acquisition tool
-  - Handling of large amounts of data
+  - Handling of *large amounts of data*
   - Testing to find any bugs that could compromise the success of the acquisition
     - Unfortunately, we often notice them at the end of the process
-  - Acquire new hardware for data collection and storage
+  - *Acquire new hardware* for data collection and storage
 
-- It is necessary to carefully consider whether it is appropriate to acquire a new dataset.
-  - Considerations not only in engineering, but also in management and economics.
-  - Future needs must be foreseen in advance.
+It is necessary to carefully consider whether it is appropriate to acquire a new dataset
 
-## Data Annotation
+- Considerations not only in engineering but also in management and economics aspects
+- Future needs must be foreseen in advance
 
-NB: acquiring a new dataset does not mean acquiring only new data!
+# Data Annotation
 
-Indeed, one of the most relevant aspects is the annotation of the data
+*Acquiring a new dataset does not mean acquiring only new data!*
 
-- The specific annotation is usually called "label" and is the (semantic) content of the data.
-- The label depends on the problem we want to solve and can be numerical or categorical
+Indeed, one of the most relevant aspects is the **annotation of the data**
+
+> What would we do with the Iris dataset if we do not have the labels of each flower?
+
+The specific annotation is usually called a "label" and is the (semantic) content of the data.
+
+- A single data is therefore defined as *annotated* if it is associated with a label
+- The *label* depends on the problem we want to solve and *can be numerical or categorical*
 - Examples:
   - A person's height prediction → data: joint lengths, label: height (cm)
   - Pedestrian Detection → data: images, label: presence of a pedestrian (yes/no)
   - Pedestrian Localization → data: images, label: position of the pedestrian (x, y, w, h)
   - Audio classification numbers → data: audio sequences, label: number ('five')
 
-A single data is therefore defined as annotated if it is associated with a label
+Data collected without correct and timely annotation is often useless
 
-- Data collected without correct and timely annotation is often useless
 - However, it is also possible to "extract knowledge" from un-annotated data through, for instance, clustering
 
-## Data Annotation Process
+# Data Annotation Process
 
 The data annotation process can take place in several ways:
 
 - *Manual*: each data is manually annotated
-  - Long and expensive process
+  - A long and expensive process
   - The quality of the annotations is usually controllable and high
   - This is not always an applicable process (for example, is it possible to annotate a dataset with 1M of images?)
 - *Automatic*: each data is automatically annotated, using specific tools
   - It is based on particular a priori knowledge (for example, all images acquired in a dog shelter depict dogs).
   - The quality of the annotations is not always easily controlled
 - *Third parties*: all data is noted by a third party
-  - Free of charge: this is the case, for example, in which users barter the free use of some platform with the transfer of their annotated data (for example, photos uploaded - to Facebook accompanied by information regarding the content, the position of the face, or scene acquired).
-  - Paid: there are platforms where is possible to purchase annotation time from third parties (often from "developing countries"). Example: Amazon Mechanical Turk
+  - *Free of charge*: this is the case, for example, in which users barter the free use of some platform with the transfer of their annotated data (for example, photos uploaded - to Facebook accompanied by information regarding the content, the position of the face, or scene acquired).
+  - *Paid*: there are platforms where is possible to purchase annotation time from third parties (often from "developing countries"). Example: Amazon Mechanical Turk
 
-## [Amazon Mechanical Turk](https://www.mturk.com/)
+# [Amazon Mechanical Turk](https://www.mturk.com/)
 
-![Amazon Mechanical Turk](https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70)
+<img src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="center">
 
 
-## Different Ways of Learning
+# Different Ways of Learning
 
 :::: {.columns}
 
@@ -174,7 +198,7 @@ Specific algorithms correspond to each of these areas
 :::
 ::::
 
-## Open and Closed Sets
+# Open and Closed Sets
 
 Last aspect to be defined relating to data annotation: **do we know all annotations**?
 
@@ -183,7 +207,7 @@ Last aspect to be defined relating to data annotation: **do we know all annotati
 - The most common case in machine learning benchmarks
 - Ideal condition, but not always suitable for real-world systems
 
-*Open Set*: the patterns to be classified can belong to none of known classes. 
+*Open Set*: the patterns to be classified can belong to none of the known classes. 
 
 - More realistic condition, but more challenging
 - Example: classify all fruits into {pears, bananas}
@@ -195,13 +219,13 @@ Two possible solutions to the open set problem:
 - You allow the system not to assign the pattern
   - A threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold
 
-## Common Problems in Data Collection
+# Common Problems in Data Collection
 
 Companies usually face common problems: 
 
 - The business process produces huge amounts of data
   - It is almost impossible to acquire all the data
-  - Also, physical limitations when the data stream is bigger that the storing capacity
+  - Also, physical limitations when the data stream is bigger than the storing capacity
   - Usually, it is necessary to choose which ones to store
 - Sometimes companies have a lot of "old" data in their databases or information systems: 
   - They don't know what to do with it
@@ -214,24 +238,70 @@ Companies usually face common problems:
 
 The key question to ask is: does the data acquired satisfy the relevant requirements?
 
-- For instance, if age is an important field and the data does not reflect the entire age range, it may be wise to collect a different set of data.
-- This step also provides a basic understanding of the data on which subsequent steps will build.
+- This step also provides a basic understanding of the data on which subsequent steps will be built.
+- For instance, if age is important and the data does not reflect the entire age range, it may be wise to collect a different dataset
 
 The data analyst examines the "surface" properties of the acquired data, examining issues such as:
 
-- the format of the data,
-- the quantity of the data,
-- the number of records and fields in each table,
-- the identities of the fields,
-- and any other surface features of the data.
+- the *format* of the data,
+- the *quantity* of the data,
+- the *number of records and fields* in each table,
+- the *identities* of the fields,
+- and any other *surface features of the data*.
+
+#
+
+Plain Iris dataset
+
+> | Id | SepalLengthCm | SepalWidthCm | PetalLengthCm | PetalWidthCm | Species     |
+> |-------:|----------------:|---------------:|----------------:|---------------:|:------------|
+> | 1 | 5.1 | 3.5 | 1.4 | 0.2 | Iris-setosa |
+> | 2 | 4.9 | 3   | 1.4 | 0.2 | Iris-setosa |
+> | 3 | 4.7 | 3.2 | 1.3 | 0.2 | Iris-setosa |
+> | 4 | 4.6 | 3.1 | 1.5 | 0.2 | Iris-setosa |
+> | 5 | 5   | 3.6 | 1.4 | 0.2 | Iris-setosa |
+> | ... | ... | ... | ... | ... | ... |
+
+Example of profiling the schema of the data in Iris
+ 
+>     RangeIndex: 150 entries, 0 to 149
+>     Data columns (total 5 columns):
+>     #   Column             Non-Null Count  Dtype  
+>     --- ------             --------------  -----  
+>     0   sepal length (cm)  150 non-null    float64
+>     1   sepal width (cm)   150 non-null    float64
+>     2   petal length (cm)  150 non-null    float64
+>     3   petal width (cm)   150 non-null    float64
+>     4   species            150 non-null    object 
+>     dtypes: float64(4), object(1)
+>     memory usage: 6.0+ KB
+
+#
+
+Example of profiling the distribution of the data in Iris
+
+> |       | Id | SepalLengthCm | SepalWidthCm | PetalLengthCm | PetalWidthCm |
+> |:------|---------:|----------------:|---------------:|----------------:|---------------:|
+> | count | 150      | 150        | 150        | 150       | 150        |
+> | mean  | 75.5    | 5.84333  | 3.054    | 3.75867 | 1.19867  |
+> | std   | 43.4454 | 0.828066 | 0.433594 | 1.76442 | 0.763161 |
+> | min   | 1      | 4.3      | 2        | 1       | 0.1      |
+> | 25%   | 38.25   | 5.1      | 2.8      | 1.6     | 0.3      |
+> | 50%   | 75.5    | 5.8      | 3        | 4.35    | 1.3      |
+> | 75%   | 112.75   | 6.4      | 3.3      | 5.1     | 1.8      |
+> | max   | 150      | 7.9      | 4.4      | 6.9     | 2.5      |
+
 
 # Explore the Data
 
 This task tackles the data mining questions, which can be addressed using querying, visualization, and reporting.
 
-- For instance, a data analyst may query the data to discover the types of products that purchasers in a particular income group usually buy.
-- Or the analyst may run a visualization analysis to uncover potential fraud patterns..
-- The data analyst should then create a data exploration report that outlines first findings, or an initial hypothesis
+- Create a data exploration report that outlines first findings, or an initial hypothesis
+- For instance, query the data to discover the types of products that purchasers in a particular income group usually buy
+
+> 2D visualization of the Iris dataset
+>
+> <img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center">
 
 # Verify Data Quality
 
@@ -239,32 +309,33 @@ At this point, the analyst examines the quality of the data, addressing question
 
 Some common data quality issues to check include:
 
-- missing attributes and blank fields;
-- whether all possible values are represented;
-- the plausibility of values;
-- the spelling of values;
+- *missing values* or attributes;
+- whether *all possible values are represented*;
+- the *plausibility of values*;
+  - E.g., review any attributes that may give answers that conflict with common sense (e.g., teenagers with high income)
+- the *spelling* of values;
 - and whether attributes with different values have similar meanings (e.g., low fat, diet).
 
-The data analyst also should review any attributes that may give answers that conflict with common sense (e.g., teenagers with high income).
+> Nothing to worry about in Iris
 
-## Dimensions of Data Quality [@sidi2012data]
+# Dimensions of Data Quality [@sidi2012data]
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 
-![Some dimensions](https://github.com/user-attachments/assets/64417f65-acb0-4c77-a5cc-89522e5703a4)
+<img src="https://github.com/user-attachments/assets/64417f65-acb0-4c77-a5cc-89522e5703a4" style="max-height: 450px !important" class="center">
 
 :::
 ::: {.column width="50%"}
 
-![Some dimensions](https://github.com/user-attachments/assets/4c7dc682-84a6-4a23-9896-134ffbe80a82)
+<img src="https://github.com/user-attachments/assets/4c7dc682-84a6-4a23-9896-134ffbe80a82" style="max-height: 450px !important" class="center">
 
 :::
 ::::
 
-## Metrics of Data Quality [@batini2009methodologies]
+# Metrics of Data Quality [@batini2009methodologies]
 
-![Dimensions and Metrics](https://github.com/user-attachments/assets/0724117f-3369-41f7-a277-2bfe1cf5d533)
+<img src="https://github.com/user-attachments/assets/0724117f-3369-41f7-a277-2bfe1cf5d533" style="max-height: 450px !important" class="center">
 
 # References
