@@ -4,11 +4,18 @@ subtitle: Data understanding
 
 # Data understanding
 
-The data understanding phase involves four steps, including the collection of initial data, the description of data, the exploration of data, and the verification of data quality.
+The data understanding phase of CRISP-DM involves taking a closer look at the data available for mining
+
+- This step is critical in avoiding unexpected problems during the next phase--data preparation--which is typically the longest part of a project
+- The data understanding phase involves four steps, including:
+    1. collection of initial data
+    1. description of data
+    1. exploration of data, and
+    1. verification of data quality
 
 # Data collection (or acquisition)
 
-Data collection is the process of gathering and measuring information on targeted variables in an established system
+*Data collection* is the process of gathering and measuring information on targeted variables in an established system
 
 - The goal is to capture evidence that allows data analysis to formulate credible answers to the questions that have been posed
 

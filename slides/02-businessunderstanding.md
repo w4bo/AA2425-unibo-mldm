@@ -48,6 +48,33 @@ This is essential also to understand which data should later be analyzed and how
   - This is essential in interdisciplinary teams!
 - Construct a *cost-benefit analysis* for the project
 
+#
+
+Things are more complex in a company (*this is the added value of DTM!*)
+
+*Determine the Organizational Structure*
+
+1. Identify key individuals in the organization (also to provide domain expertise)
+1. Identify business units that will be affected by the data mining project
+
+*Describe Problem Area*
+
+1. Identify the problem area, such as marketing, customer care, or business development.
+1. Describe the problem in general terms
+1. Clarify the prerequisites of the project
+  - What are the motivations behind the project?
+  - Does the business already use data mining?
+1. Check on the status of the data mining project within the business group
+  - Has the effort been approved, or does data mining need to be "advertised" as a key technology for the business group?
+1. If necessary, prepare informational presentations on data mining to your organization
+
+*Describe Current Solution*
+
+1. Describe any solutions currently used to address the business problem
+1. Describe the advantages and disadvantages of the current solution
+
+
+
 # Determine the Data Mining Goals
 
 Formulate **project objectives in business terms**
