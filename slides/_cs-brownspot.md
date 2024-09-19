@@ -22,10 +22,10 @@
 >
 > | *Field*  | *AVG. Temperature* | *Presence of Water Source* | ... | **Level of Damage** |
 > |----------|--------------------|----------------------------|-----|---------------------|
-> | Field\#1 | 14                 | Close distance             | ... | High                |
-> | Field\#2 | 14.5               | Medium distance            | ... | Medium              |
-> | Field\#3 | 13.8               | Medium distance            | ... | Low                 |
-> | Field\#4 | ...                | ...                        | ... | ...                 |
+> | Field\#1 | 14                 | Close distance             | ... | High                |
+> | Field\#2 | 14.5               | Medium distance            | ... | Medium              |
+> | Field\#3 | 13.8               | Medium distance            | ... | Low                 |
+> | Field\#4 | ...                | ...                        | ... | ...                 |
 >
 > and to learn relationships between *environmental features* and **Level of Damage** (the target of the analysis).
 
@@ -38,10 +38,10 @@
 >
 > | *Field*  | *AVG. Temperature* | *Presence of Water Source* | ... | **Level of Damage** |
 > |----------|--------------------|----------------------------|-----|---------------------|
-> | Field\#1 | 14                 | Close distance             | ... | High                |
-> | Field\#2 | 14.5               | Medium distance            | ... | Medium              |
-> | Field\#3 | 13.8               | Medium distance            | ... | Low                 |
-> | Field\#4 | ...                | ...                        | ... | ...                 |
+> | Field\#1 | 14                 | Close distance             | ... | High                |
+> | Field\#2 | 14.5               | Medium distance            | ... | Medium              |
+> | Field\#3 | 13.8               | Medium distance            | ... | Low                 |
+> | Field\#4 | ...                | ...                        | ... | ...                 |
 >
 > and to learn relationships between *environmental features* and **Level of Damage** (the target of the analysis).
 > 
