@@ -518,20 +518,22 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="section-1" class="title-slide slide level1 center">
-<h1></h1>
+<section id="determine-the-business-objectives-1" class="title-slide slide level1 center">
+<h1>Determine the Business Objectives</h1>
 <blockquote>
 <p>Ideally, the goal is to build a dataset such as the following</p>
 <table>
 <colgroup>
-<col style="width: 26%">
-<col style="width: 38%">
-<col style="width: 6%">
-<col style="width: 28%">
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 33%">
+<col style="width: 5%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th><em>VG. Temperature</em></th>
+<th><em>Field</em></th>
+<th><em>AVG. Temperature</em></th>
 <th><em>Presence of Water Source</em></th>
 <th>…</th>
 <th><strong>Level of Damage</strong></th>
@@ -539,24 +541,28 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
+<td>Field#1</td>
 <td>14 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
 <td>Close distance &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
 <td>…</td>
 <td>High &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
 </tr>
 <tr class="even">
+<td>Field#2</td>
 <td>14.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
 <td>Medium distance &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
 <td>…</td>
-<td>High &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+<td>Medium &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
 </tr>
 <tr class="odd">
+<td>Field#3</td>
 <td>13.8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
 <td>Medium distance &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
 <td>…</td>
 <td>Low &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
 </tr>
 <tr class="even">
+<td>Field#4</td>
 <td>… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
 <td>… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
 <td>…</td>
@@ -564,16 +570,77 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 </tbody>
 </table>
-<p>and to learn relationships between environmental features and the <code>Level of Damage</code>.</p>
+<p>and to learn relationships between <em>environmental features</em> and <strong>Level of Damage</strong> (the target of the analysis).</p>
 </blockquote>
 <ul>
-<li>How can we collect the data?</li>
 <li>What features would you collect?</li>
+<li>How do we translate this problem into metric?</li>
 </ul>
 </section>
 
-<section id="section-2" class="title-slide slide level1 center">
-<h1></h1>
+<section id="determine-the-data-mining-goal" class="title-slide slide level1 center">
+<h1>Determine the Data Mining Goal</h1>
+<blockquote>
+<table>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 33%">
+<col style="width: 5%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><em>Field</em></th>
+<th><em>AVG. Temperature</em></th>
+<th><em>Presence of Water Source</em></th>
+<th>…</th>
+<th><strong>Level of Damage</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Field#1</td>
+<td>14 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+<td>Close distance &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+<td>…</td>
+<td>High &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+</tr>
+<tr class="even">
+<td>Field#2</td>
+<td>14.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+<td>Medium distance &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+<td>…</td>
+<td>Medium &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+</tr>
+<tr class="odd">
+<td>Field#3</td>
+<td>13.8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+<td>Medium distance &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+<td>…</td>
+<td>Low &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+</tr>
+<tr class="even">
+<td>Field#4</td>
+<td>… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+<td>… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+<td>…</td>
+<td>… &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>and to learn relationships between <em>environmental features</em> and <strong>Level of Damage</strong> (the target of the analysis).</p>
+<p>In simple words, can we identify features that allows us to predict an accurate level of damage?</p>
+</blockquote>
+<p>Metrics: predict the level of damage with high <em>accuracy</em></p>
+<ul>
+<li>How would you define accuracy?</li>
+<li>How can we collect the data?</li>
+</ul>
+</section>
+
+<section id="assess-the-situation-how-can-we-collect-the-data" class="title-slide slide level1 center">
+<h1>Assess the Situation: how can we collect the data?</h1>
 <blockquote>
 <p>The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.</p>
 </blockquote>
@@ -581,18 +648,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <img data-src="https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113" class="r-stretch quarto-figure-center"><p class="caption">Emilia Romagna, Italy</p><ul>
 <li>In your opinion, what are the pros/cons of this solution?</li>
 </ul>
-</section>
-
-<section id="section-3" class="title-slide slide level1 center">
-<h1></h1>
 <blockquote>
 <p>Once the employee had collected almost 100 questionnaires, the company asked us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.</p>
 </blockquote>
 <p>If you were the analyst, what would you do?</p>
 </section>
 
-<section id="section-4" class="title-slide slide level1 center">
-<h1></h1>
+<section id="if-you-were-the-analyst-what-would-you-do" class="title-slide slide level1 center">
+<h1>If you were the analyst, what would you do?</h1>
 <blockquote>
 <p>To us, it was impossible to apply machine learning techniques to data on paper.</p>
 <p>We prepared a Google Form where answers could be digitalized.</p>
