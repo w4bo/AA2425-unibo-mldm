@@ -28,7 +28,7 @@ format:
     preview-links: auto
     reference-location: document
     footnotes-hover: true
-    scrollable: true
+    scrollable: false
     width: 1100
     echo: true
     code-fold: show
