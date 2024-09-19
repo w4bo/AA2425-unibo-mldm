@@ -30,10 +30,12 @@
 > and to learn relationships between *environmental features* and **Level of Damage** (the target of the analysis).
 
 - What features would you collect?
-- How do we translate this problem into metric?
+- How do we translate this problem into a *quantitative metric*?
 
 # Determine the Data Mining Goal 
 
+> Ideally, the goal is to build a dataset such as the following
+>
 > | *Field*  | *AVG. Temperature* | *Presence of Water Source* | ... | **Level of Damage** |
 > |----------|--------------------|----------------------------|-----|---------------------|
 > | Field\#1 | 14                 | Close distance             | ... | High                |
@@ -43,7 +45,7 @@
 >
 > and to learn relationships between *environmental features* and **Level of Damage** (the target of the analysis).
 > 
-> In simple words, can we identify features that allows us to predict an accurate level of damage?
+> In other words, can we identify features that allows us to predict an accurate level of damage?
 
 Metrics: predict the level of damage with high *accuracy*
 
@@ -57,6 +59,8 @@ Metrics: predict the level of damage with high *accuracy*
 ![Emilia Romagna, Italy](https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113)
 
 - In your opinion, what are the pros/cons of this solution?
+
+# 
 
 > Once the employee had collected almost 100 questionnaires, the company asked us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.
 
