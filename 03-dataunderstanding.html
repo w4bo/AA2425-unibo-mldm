@@ -347,7 +347,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Machine Learning and Data Mining (Module 2)</h1>
-  <p class="subtitle">Data understanding</p>
+  <p class="subtitle">Data Understanding</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -375,14 +375,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="data-collection-or-acquisition" class="title-slide slide level1 center">
 <h1>Data collection (or acquisition)</h1>
-<p><em>Data collection</em> is the process of gathering and measuring information on targeted variables in an established system</p>
+<p><strong>Data collection</strong> is the process of <em>gathering information on targeted variables</em> in an established system</p>
 <ul>
-<li>The goal is to capture evidence that allows data analysis to formulate credible answers to the questions that have been posed</li>
-</ul>
-<p>Here a data analyst acquires the necessary data, including loading and integrating this data if necessary.</p>
-<ul>
+<li>Capture evidence that allows data analysis to formulate credible answers to the questions that have been posed</li>
 <li>The analyst should make sure to report problems and solutions to aid with future replications of the project.</li>
-<li>For instance, data may have to be collected from several different sources, and some of these sources may have a lag time.</li>
+<li>Data may have to be collected from several different sources, and some of these sources may have a lag time.</li>
 </ul>
 <p>The analyst then proceeds to</p>
 <ul>
@@ -414,39 +411,39 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="is-data-the-new-oil" class="title-slide slide level1 center">
 <h1>Is data the new oil?</h1>
+<p>The more data we have, the more analysis we can do (however, more data != smarter data)</p>
 <ul>
-<li>There are several disciplines focusing on data (e.g., Data Science, Data Mining, Big Data)</li>
+<li>There are several disciplines focusing on data (e.g., Data Science, Data Mining, Big Data, Business Intelligence)</li>
 <li>In Europe (but now in many areas of the world), there can be problems related to privacy
 <ul>
 <li>When is it “right” to protect privacy?</li>
 <li>When does it become a limit?</li>
 </ul></li>
 </ul>
-<p>Plus,</p>
+<p>Acquiring data is a time-consuming, investment, and knowledge-intensive process</p>
 <ul>
-<li>Acquiring data is a time-consuming, investment and knowledge-intensive process</li>
-<li>How much is <em>enough</em>?</li>
+<li>How much data is <em>enough</em>?</li>
 </ul>
 </section>
 
-<section>
 <section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
 <p>Rule of thumb: <em>one in ten/twenty</em> <span class="citation" data-cites="chowdhury2020variable">(<a href="#/references" role="doc-biblioref" onclick="">Chowdhury and Turin 2020</a>)</span></p>
 <blockquote>
-<p>There is no set rule as to the number of variables to include in a prediction model as it often depends on several factors. The ‘one in ten rule’, a rule that stipulates for how many variables/parameters can be estimated from a data set, is quite popular in traditional clinical prediction modelling strategy (eg, logistic regression and survival models). According to this rule, one variable can be considered in a model for every 10 events</p>
+<p>There is no set rule as to the number of variables to include in a prediction model as it often depends on several factors. The ‘one in ten rule’, a rule that stipulates how many variables/parameters can be estimated from a data set, is quite popular in traditional clinical prediction modeling strategies (e.g., logistic regression and survival models). According to this rule, one variable can be considered in a model for every 10 events</p>
 </blockquote>
 </section>
-<section id="public-datasets" class="slide level2 scrollable">
-<h2>Public Datasets</h2>
+
+<section id="public-datasets" class="title-slide slide level1 center scrollable">
+<h1>Public Datasets</h1>
 <p>We can get data mainly in two ways:</p>
 <ol type="1">
-<li>By using publicly available data (datasets or databases) → someone collected them for us!
+<li>By using <em>publicly available data</em> (datasets or databases) → someone collected them for us!
 <ul>
 <li>They can be free or for a fee</li>
 <li>The quality of the data made available must be checked</li>
 </ul></li>
-<li>By acquiring a new set of data, but why?
+<li>By <em>acquiring a new set of data</em>, but why?
 <ul>
 <li>It is not certain that public data well represent the problem we want to solve</li>
 <li>We want to acquire specific data and thus generate specific expertise for the company (know-how)</li>
@@ -458,7 +455,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>There are no requirements related to profit or non-disclosure agreement (NDA)
 <ul>
-<li>It is a consolidated practice in the world of research</li>
 <li>It is the basis of the scientific method, in particular for the reproducibility of the results obtained</li>
 <li>I release my data so that others can conduct my own experiments and verify my results</li>
 <li>Examples: <a href="https://www.image-net.org/">https://www.image-net.org/</a></li>
@@ -466,34 +462,67 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>Some platforms make datasets available for competitions, such as <a href="https://www.kaggle.com/datasets">Kaggle</a> and <a href="https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62">others</a></p>
 </section>
-<section id="acquisition-of-a-new-dataset" class="slide level2">
-<h2>Acquisition of a new dataset</h2>
+
+<section id="example-of-a-public-dataset-the-iris-dataset" class="title-slide slide level1 center scrollable">
+<h1>Example of a public dataset: the Iris dataset</h1>
+
+<img data-src="./img/dataunderstanding/iris.jpg" class="r-stretch"><p>The <a href="https://www.kaggle.com/datasets/uciml/iris">Iris dataset</a> is public data that was used in R.A. Fisher’s classic 1936 paper <span class="citation" data-cites="fisher1936use">(<a href="#/references" role="doc-biblioref" onclick="">Fisher 1936</a>)</span></p>
+<ul>
+<li>It can also be found on the <a href="http://archive.ics.uci.edu/ml/">UCI Machine Learning Repository</a>.</li>
+<li>It includes 3 iris species (Setosa, Virginica, and Versicolor) with 50 samples each</li>
+<li>It characterizes flowers with some properties about each flower
+<ol type="1">
+<li><code>SepalLengthCm</code></li>
+<li><code>SepalWidthCm</code></li>
+<li><code>PetalLengthCm</code></li>
+<li><code>PetalWidthCm</code></li>
+<li><code>Species</code></li>
+</ol></li>
+</ul>
+</section>
+
+<section id="example-of-a-public-dataset-the-iris-dataset-1" class="title-slide slide level1 center">
+<h1>Example of a public dataset: the Iris dataset</h1>
+<p>Used in classification problems where the goal is to predict the species of Iris flowers based on their features</p>
+<ul>
+<li>It is a simple dataset, it is easy to distinguish the different flowers and does not need data preparation</li>
+</ul>
+<p><img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center"></p>
+</section>
+
+<section id="acquisition-of-a-new-dataset" class="title-slide slide level1 center">
+<h1>Acquisition of a new dataset</h1>
 <p>Acquiring a new dataset is usually a costly process!</p>
 <ul>
-<li>Investment of time and money for:
+<li><em>Investment of time and money</em> for:
 <ul>
 <li>Programming or learning to use an acquisition tool</li>
-<li>Handling of large amounts of data</li>
+<li>Handling of <em>large amounts of data</em></li>
 <li>Testing to find any bugs that could compromise the success of the acquisition
 <ul>
 <li>Unfortunately, we often notice them at the end of the process</li>
 </ul></li>
-<li>Acquire new hardware for data collection and storage</li>
-</ul></li>
-<li>It is necessary to carefully consider whether it is appropriate to acquire a new dataset.
-<ul>
-<li>Considerations not only in engineering, but also in management and economics.</li>
-<li>Future needs must be foreseen in advance.</li>
+<li><em>Acquire new hardware</em> for data collection and storage</li>
 </ul></li>
 </ul>
-</section>
-<section id="data-annotation" class="slide level2">
-<h2>Data Annotation</h2>
-<p>NB: acquiring a new dataset does not mean acquiring only new data!</p>
-<p>Indeed, one of the most relevant aspects is the annotation of the data</p>
+<p>It is necessary to carefully consider whether it is appropriate to acquire a new dataset</p>
 <ul>
-<li>The specific annotation is usually called “label” and is the (semantic) content of the data.</li>
-<li>The label depends on the problem we want to solve and can be numerical or categorical</li>
+<li>Considerations not only in engineering but also in management and economics aspects</li>
+<li>Future needs must be foreseen in advance</li>
+</ul>
+</section>
+
+<section id="data-annotation" class="title-slide slide level1 center">
+<h1>Data Annotation</h1>
+<p><em>Acquiring a new dataset does not mean acquiring only new data!</em></p>
+<p>Indeed, one of the most relevant aspects is the <strong>annotation of the data</strong></p>
+<blockquote>
+<p>What would we do with the Iris dataset if we do not have the labels of each flower?</p>
+</blockquote>
+<p>The specific annotation is usually called a “label” and is the (semantic) content of the data.</p>
+<ul>
+<li>A single data is therefore defined as <em>annotated</em> if it is associated with a label</li>
+<li>The <em>label</em> depends on the problem we want to solve and <em>can be numerical or categorical</em></li>
 <li>Examples:
 <ul>
 <li>A person’s height prediction → data: joint lengths, label: height (cm)</li>
@@ -502,19 +531,19 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Audio classification numbers → data: audio sequences, label: number (‘five’)</li>
 </ul></li>
 </ul>
-<p>A single data is therefore defined as annotated if it is associated with a label</p>
+<p>Data collected without correct and timely annotation is often useless</p>
 <ul>
-<li>Data collected without correct and timely annotation is often useless</li>
 <li>However, it is also possible to “extract knowledge” from un-annotated data through, for instance, clustering</li>
 </ul>
 </section>
-<section id="data-annotation-process" class="slide level2">
-<h2>Data Annotation Process</h2>
+
+<section id="data-annotation-process" class="title-slide slide level1 center">
+<h1>Data Annotation Process</h1>
 <p>The data annotation process can take place in several ways:</p>
 <ul>
 <li><em>Manual</em>: each data is manually annotated
 <ul>
-<li>Long and expensive process</li>
+<li>A long and expensive process</li>
 <li>The quality of the annotations is usually controllable and high</li>
 <li>This is not always an applicable process (for example, is it possible to annotate a dataset with 1M of images?)</li>
 </ul></li>
@@ -525,17 +554,19 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 <li><em>Third parties</em>: all data is noted by a third party
 <ul>
-<li>Free of charge: this is the case, for example, in which users barter the free use of some platform with the transfer of their annotated data (for example, photos uploaded - to Facebook accompanied by information regarding the content, the position of the face, or scene acquired).</li>
-<li>Paid: there are platforms where is possible to purchase annotation time from third parties (often from “developing countries”). Example: Amazon Mechanical Turk</li>
+<li><em>Free of charge</em>: this is the case, for example, in which users barter the free use of some platform with the transfer of their annotated data (for example, photos uploaded - to Facebook accompanied by information regarding the content, the position of the face, or scene acquired).</li>
+<li><em>Paid</em>: there are platforms where is possible to purchase annotation time from third parties (often from “developing countries”). Example: Amazon Mechanical Turk</li>
 </ul></li>
 </ul>
 </section>
-<section id="amazon-mechanical-turk" class="slide level2">
-<h2><a href="https://www.mturk.com/">Amazon Mechanical Turk</a></h2>
 
-<img data-src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="r-stretch quarto-figure-center"><p class="caption">Amazon Mechanical Turk</p></section>
-<section id="different-ways-of-learning" class="slide level2">
-<h2>Different Ways of Learning</h2>
+<section id="amazon-mechanical-turk" class="title-slide slide level1 center">
+<h1><a href="https://www.mturk.com/">Amazon Mechanical Turk</a></h1>
+
+<img src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="center r-stretch"></section>
+
+<section id="different-ways-of-learning" class="title-slide slide level1 center">
+<h1>Different Ways of Learning</h1>
 <div class="columns">
 <div class="column" style="width:65%;">
 <p>We define different types of learning depending on data annotation:</p>
@@ -571,15 +602,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </section>
-<section id="open-and-closed-sets" class="slide level2">
-<h2>Open and Closed Sets</h2>
+
+<section id="open-and-closed-sets" class="title-slide slide level1 center">
+<h1>Open and Closed Sets</h1>
 <p>Last aspect to be defined relating to data annotation: <strong>do we know all annotations</strong>?</p>
 <p><em>Closed Set</em>: it is assumed that the pattern to be classified belongs to one of the known classes.</p>
 <ul>
 <li>The most common case in machine learning benchmarks</li>
 <li>Ideal condition, but not always suitable for real-world systems</li>
 </ul>
-<p><em>Open Set</em>: the patterns to be classified can belong to none of known classes.</p>
+<p><em>Open Set</em>: the patterns to be classified can belong to none of the known classes.</p>
 <ul>
 <li>More realistic condition, but more challenging</li>
 <li>Example: classify all fruits into {pears, bananas}</li>
@@ -596,14 +628,15 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 </ul>
 </section>
-<section id="common-problems-in-data-collection" class="slide level2">
-<h2>Common Problems in Data Collection</h2>
+
+<section id="common-problems-in-data-collection" class="title-slide slide level1 center">
+<h1>Common Problems in Data Collection</h1>
 <p>Companies usually face common problems:</p>
 <ul>
 <li>The business process produces huge amounts of data
 <ul>
 <li>It is almost impossible to acquire all the data</li>
-<li>Also, physical limitations when the data stream is bigger that the storing capacity</li>
+<li>Also, physical limitations when the data stream is bigger than the storing capacity</li>
 <li>Usually, it is necessary to choose which ones to store</li>
 </ul></li>
 <li>Sometimes companies have a lot of “old” data in their databases or information systems:
@@ -617,72 +650,257 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Which data is (really) useful for the business</li>
 </ul></li>
 </ul>
-</section></section>
+</section>
+
 <section id="describe-the-data" class="title-slide slide level1 center">
 <h1>Describe the Data</h1>
 <p>The key question to ask is: does the data acquired satisfy the relevant requirements?</p>
 <ul>
-<li>For instance, if age is an important field and the data does not reflect the entire age range, it may be wise to collect a different set of data.</li>
-<li>This step also provides a basic understanding of the data on which subsequent steps will build.</li>
+<li>This step also provides a basic understanding of the data on which subsequent steps will be built.</li>
+<li>For instance, if age is important and the data does not reflect the entire age range, it may be wise to collect a different dataset</li>
 </ul>
 <p>The data analyst examines the “surface” properties of the acquired data, examining issues such as:</p>
 <ul>
-<li>the format of the data,</li>
-<li>the quantity of the data,</li>
-<li>the number of records and fields in each table,</li>
-<li>the identities of the fields,</li>
-<li>and any other surface features of the data.</li>
+<li>the <em>format</em> of the data,</li>
+<li>the <em>quantity</em> of the data,</li>
+<li>the <em>number of records and fields</em> in each table,</li>
+<li>the <em>identities</em> of the fields,</li>
+<li>and any other <em>surface features of the data</em>.</li>
 </ul>
+</section>
+
+<section id="section-2" class="title-slide slide level1 center">
+<h1></h1>
+<p>Plain Iris dataset</p>
+<blockquote>
+<table>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 19%">
+<col style="width: 18%">
+<col style="width: 19%">
+<col style="width: 18%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Id</th>
+<th style="text-align: right;">SepalLengthCm</th>
+<th style="text-align: right;">SepalWidthCm</th>
+<th style="text-align: right;">PetalLengthCm</th>
+<th style="text-align: right;">PetalWidthCm</th>
+<th style="text-align: left;">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">Iris-setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">Iris-setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">Iris-setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">Iris-setosa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">Iris-setosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: left;">…</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>Example of profiling the schema of the data in Iris</p>
+<blockquote>
+<pre><code>RangeIndex: 150 entries, 0 to 149
+Data columns (total 5 columns):
+#   Column             Non-Null Count  Dtype  
+--- ------             --------------  -----  
+0   sepal length (cm)  150 non-null    float64
+1   sepal width (cm)   150 non-null    float64
+2   petal length (cm)  150 non-null    float64
+3   petal width (cm)   150 non-null    float64
+4   species            150 non-null    object 
+dtypes: float64(4), object(1)
+memory usage: 6.0+ KB</code></pre>
+</blockquote>
+</section>
+
+<section id="section-3" class="title-slide slide level1 center">
+<h1></h1>
+<p>Example of profiling the distribution of the data in Iris</p>
+<blockquote>
+<table>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 20%">
+<col style="width: 19%">
+<col style="width: 20%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Id</th>
+<th style="text-align: right;">SepalLengthCm</th>
+<th style="text-align: right;">SepalWidthCm</th>
+<th style="text-align: right;">PetalLengthCm</th>
+<th style="text-align: right;">PetalWidthCm</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">count</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mean</td>
+<td style="text-align: right;">75.5</td>
+<td style="text-align: right;">5.84333</td>
+<td style="text-align: right;">3.054</td>
+<td style="text-align: right;">3.75867</td>
+<td style="text-align: right;">1.19867</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">std</td>
+<td style="text-align: right;">43.4454</td>
+<td style="text-align: right;">0.828066</td>
+<td style="text-align: right;">0.433594</td>
+<td style="text-align: right;">1.76442</td>
+<td style="text-align: right;">0.763161</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">min</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">25%</td>
+<td style="text-align: right;">38.25</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: right;">0.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">50%</td>
+<td style="text-align: right;">75.5</td>
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4.35</td>
+<td style="text-align: right;">1.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">75%</td>
+<td style="text-align: right;">112.75</td>
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">1.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">max</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">7.9</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">6.9</td>
+<td style="text-align: right;">2.5</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 </section>
 
 <section id="explore-the-data" class="title-slide slide level1 center">
 <h1>Explore the Data</h1>
 <p>This task tackles the data mining questions, which can be addressed using querying, visualization, and reporting.</p>
 <ul>
-<li>For instance, a data analyst may query the data to discover the types of products that purchasers in a particular income group usually buy.</li>
-<li>Or the analyst may run a visualization analysis to uncover potential fraud patterns..</li>
-<li>The data analyst should then create a data exploration report that outlines first findings, or an initial hypothesis</li>
+<li>Create a data exploration report that outlines first findings, or an initial hypothesis</li>
+<li>For instance, query the data to discover the types of products that purchasers in a particular income group usually buy</li>
 </ul>
+<blockquote>
+<p>2D visualization of the Iris dataset</p>
+<p><img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center"></p>
+</blockquote>
 </section>
 
-<section>
 <section id="verify-data-quality" class="title-slide slide level1 center">
 <h1>Verify Data Quality</h1>
 <p>At this point, the analyst examines the quality of the data, addressing questions such as:</p>
 <p>Some common data quality issues to check include:</p>
 <ul>
-<li>missing attributes and blank fields;</li>
-<li>whether all possible values are represented;</li>
-<li>the plausibility of values;</li>
-<li>the spelling of values;</li>
+<li><em>missing values</em> or attributes;</li>
+<li>whether <em>all possible values are represented</em>;</li>
+<li>the <em>plausibility of values</em>;
+<ul>
+<li>E.g., review any attributes that may give answers that conflict with common sense (e.g., teenagers with high income)</li>
+</ul></li>
+<li>the <em>spelling</em> of values;</li>
 <li>and whether attributes with different values have similar meanings (e.g., low fat, diet).</li>
 </ul>
-<p>The data analyst also should review any attributes that may give answers that conflict with common sense (e.g., teenagers with high income).</p>
+<blockquote>
+<p>Nothing to worry about in Iris</p>
+</blockquote>
 </section>
-<section id="dimensions-of-data-quality-sidi2012data" class="slide level2">
-<h2>Dimensions of Data Quality <span class="citation" data-cites="sidi2012data">(<a href="#/references" role="doc-biblioref" onclick=""><strong>sidi2012data?</strong></a>)</span></h2>
+
+<section id="dimensions-of-data-quality-sidi2012data" class="title-slide slide level1 center">
+<h1>Dimensions of Data Quality <span class="citation" data-cites="sidi2012data">(<a href="#/references" role="doc-biblioref" onclick="">Sidi et al. 2012</a>)</span></h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/user-attachments/assets/64417f65-acb0-4c77-a5cc-89522e5703a4"></p>
-<figcaption>Some dimensions</figcaption>
-</figure>
-</div>
+<p><img src="https://github.com/user-attachments/assets/64417f65-acb0-4c77-a5cc-89522e5703a4" style="max-height: 450px !important" class="center"></p>
 </div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/user-attachments/assets/4c7dc682-84a6-4a23-9896-134ffbe80a82"></p>
-<figcaption>Some dimensions</figcaption>
-</figure>
-</div>
+<p><img src="https://github.com/user-attachments/assets/4c7dc682-84a6-4a23-9896-134ffbe80a82" style="max-height: 450px !important" class="center"></p>
 </div>
 </div>
 </section>
-<section id="metrics-of-data-quality-batini2009methodologies" class="slide level2">
-<h2>Metrics of Data Quality <span class="citation" data-cites="batini2009methodologies">(<a href="#/references" role="doc-biblioref" onclick=""><strong>batini2009methodologies?</strong></a>)</span></h2>
 
-<img data-src="https://github.com/user-attachments/assets/0724117f-3369-41f7-a277-2bfe1cf5d533" class="r-stretch quarto-figure-center"><p class="caption">Dimensions and Metrics</p></section></section>
+<section id="metrics-of-data-quality-batini2009methodologies" class="title-slide slide level1 center">
+<h1>Metrics of Data Quality <span class="citation" data-cites="batini2009methodologies">(<a href="#/references" role="doc-biblioref" onclick="">Batini et al. 2009</a>)</span></h1>
+<p><img src="https://github.com/user-attachments/assets/0724117f-3369-41f7-a277-2bfe1cf5d533" style="max-height: 450px !important" class="center"></p>
+</section>
+
 <section id="references" class="title-slide slide level1 smaller scrollable">
 <h1>References</h1>
 <div class="quarto-auto-generated-content">
@@ -691,8 +909,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-batini2009methodologies" class="csl-entry" role="listitem">
+Batini, Carlo, Cinzia Cappiello, Chiara Francalanci, and Andrea Maurino. 2009. <span>“Methodologies for Data Quality Assessment and Improvement.”</span> <em>ACM Computing Surveys (CSUR)</em> 41 (3): 1–52.
+</div>
 <div id="ref-chowdhury2020variable" class="csl-entry" role="listitem">
 Chowdhury, Mohammad Ziaul Islam, and Tanvir C Turin. 2020. <span>“Variable Selection Strategies and Its Importance in Clinical Prediction Modelling.”</span> <em>Family Medicine and Community Health</em> 8 (1).
+</div>
+<div id="ref-fisher1936use" class="csl-entry" role="listitem">
+Fisher, Ronald A. 1936. <span>“The Use of Multiple Measurements in Taxonomic Problems.”</span> <em>Annals of Eugenics</em> 7 (2): 179–88.
+</div>
+<div id="ref-sidi2012data" class="csl-entry" role="listitem">
+Sidi, Fatimah, Payam Hassany Shariat Panahy, Lilly Suriani Affendey, Marzanah A Jabar, Hamidah Ibrahim, and Aida Mustapha. 2012. <span>“Data Quality: A Survey of Data Quality Dimensions.”</span> In <em>2012 International Conference on Information Retrieval &amp; Knowledge Management</em>, 300–304. IEEE.
 </div>
 </div>
 </section>
