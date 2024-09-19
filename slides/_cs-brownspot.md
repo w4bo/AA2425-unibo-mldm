@@ -7,9 +7,9 @@
 > 
 > - A company wants to track the spreading of the Brown spot of European pear in Emilia Romagna.
 > - Brown spots are caused by a fungus (Stemphylium vesicarium) damaging pear fruits and causing economic loss for producers.
-> - Also, the company wants to find out if there are environmental factors related to the spreading of such fungus.
+> - Also, the company wants to find out if there are environmental factors related to the spreading of such fungus and the level of damage.
 
-How would you address this problem?
+- How would you address this problem?
 :::
 ::: {.column width="40%"}
 ![Brown Spots](https://agricoltura.regione.emilia-romagna.it/fitosanitario/temi/avversita/schede/avversita-per-nome/immagini-e-documenti/maculatura-bruna-del-pero/sui-frutti-l2019area-necrotica-si-circonda-spesso-di-alone-rossastro)
@@ -20,16 +20,17 @@ How would you address this problem?
 
 > Ideally, the goal is to build a dataset such as the following
 >
-> | Min. Temperature | Presence of Water Source | ... | Level of Damage |
-> |------------------|--------------------------|-----|-----------------|
-> | 14               | Close distance           | ... | High            |
-> | 14.5             | Medium distance          | ... | High            |
-> | 13.8             | Medium distance          | ... | Low             |
-> | ...              | ...                      | ... | ...             |
+> | *VG. Temperature* | *Presence of Water Source* | ... | **Level of Damage** |
+> |-------------------|----------------------------|-----|---------------------|
+> | 14                | Close distance             | ... | High                |
+> | 14.5              | Medium distance            | ... | High                |
+> | 13.8              | Medium distance            | ... | Low                 |
+> | ...               | ...                        | ... | ...                 |
 >
 > and to learn relationships between environmental features and the `Level of Damage`.
 
-What features would you select?
+- How can we collect the data?
+- What features would you collect?
 
 # 
 
@@ -37,7 +38,7 @@ What features would you select?
 
 ![Emilia Romagna, Italy](https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113)
 
-In your opinion, what are the pros/cons of this solution?
+- In your opinion, what are the pros/cons of this solution?
 
 #
 
