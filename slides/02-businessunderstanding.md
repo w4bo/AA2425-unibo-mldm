@@ -66,7 +66,7 @@ Things are more complex in a company (*this is the added value of DTM!*)
   - Does the business already use data mining?
 1. Check on the status of the data mining project within the business group
   - Has the effort been approved, or does data mining need to be "advertised" as a key technology for the business group?
-1. If necessary, prepare informational presentations on data mining to your organization
+1. If necessary, prepare informational presentations on data mining for your organization
 
 *Describe Current Solution*
 
@@ -83,11 +83,11 @@ Ask and refine sharp questions that are relevant, specific, and unambiguous.
 
 - Data science is a process that *uses numbers to answer such questions*
 - You typically use data science or machine learning to answer *five types of questions*
-  1.  How much or how many? (regression)
-  1.  Which category? (classification)
-  1.  Which group? (clustering)
-  1.  Is this unusual? (anomaly detection)
-  1.  Which option should be taken? (recommendation)
+  1. How much or how many? (regression)
+  1. Which category? (classification)
+  1. Which group? (clustering)
+  1. Is this unusual? (anomaly detection)
+  1. Which option should be taken? (recommendation)
 
 # 
 
