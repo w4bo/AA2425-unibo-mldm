@@ -1,12 +1,12 @@
 project:
   output-dir: _site
-  render:
+  # render:
   #   - cs-cimice.md
   #   - cs-welaser.md
   #   - 00-introduction.md
   #   - 01-crispdm.md
-    - 02-businessunderstanding.md
-    - 03-dataunderstanding.md
+  #  - 02-businessunderstanding.md
+  #  - 03-dataunderstanding.md
   #   # - cs-automation.md
   preview:
     host: 0.0.0.0
