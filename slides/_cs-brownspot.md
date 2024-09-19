@@ -16,23 +16,41 @@
 :::
 ::::
 
-#
+# Determine the Business Objectives
 
 > Ideally, the goal is to build a dataset such as the following
 >
-> | *VG. Temperature* | *Presence of Water Source* | ... | **Level of Damage** |
-> |-------------------|----------------------------|-----|---------------------|
-> | 14                | Close distance             | ... | High                |
-> | 14.5              | Medium distance            | ... | High                |
-> | 13.8              | Medium distance            | ... | Low                 |
-> | ...               | ...                        | ... | ...                 |
+> | *Field*  | *AVG. Temperature* | *Presence of Water Source* | ... | **Level of Damage** |
+> |----------|--------------------|----------------------------|-----|---------------------|
+> | Field\#1 | 14                 | Close distance             | ... | High                |
+> | Field\#2 | 14.5               | Medium distance            | ... | Medium              |
+> | Field\#3 | 13.8               | Medium distance            | ... | Low                 |
+> | Field\#4 | ...                | ...                        | ... | ...                 |
 >
-> and to learn relationships between environmental features and the `Level of Damage`.
+> and to learn relationships between *environmental features* and **Level of Damage** (the target of the analysis).
 
-- How can we collect the data?
 - What features would you collect?
+- How do we translate this problem into metric?
 
-# 
+# Determine the Data Mining Goal 
+
+> | *Field*  | *AVG. Temperature* | *Presence of Water Source* | ... | **Level of Damage** |
+> |----------|--------------------|----------------------------|-----|---------------------|
+> | Field\#1 | 14                 | Close distance             | ... | High                |
+> | Field\#2 | 14.5               | Medium distance            | ... | Medium              |
+> | Field\#3 | 13.8               | Medium distance            | ... | Low                 |
+> | Field\#4 | ...                | ...                        | ... | ...                 |
+>
+> and to learn relationships between *environmental features* and **Level of Damage** (the target of the analysis).
+> 
+> In simple words, can we identify features that allows us to predict an accurate level of damage?
+
+Metrics: predict the level of damage with high *accuracy*
+
+- How would you define accuracy?
+- How can we collect the data?
+
+# Assess the Situation: how can we collect the data?
 
 > The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.
 
@@ -40,13 +58,11 @@
 
 - In your opinion, what are the pros/cons of this solution?
 
-#
-
 > Once the employee had collected almost 100 questionnaires, the company asked us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.
 
 If you were the analyst, what would you do?
 
-#
+# If you were the analyst, what would you do?
 
 > To us, it was impossible to apply machine learning techniques to data on paper.
 >
