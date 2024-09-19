@@ -1,13 +1,18 @@
 project:
   output-dir: _site
-  # render:
+  render:
   #   - cs-cimice.md
   #   - cs-welaser.md
-  #  - 00-ml.md
-  #  - 00-introduction.md
-  #  - 01-crispdm.md
-  #   # - cs-smartirrigation.md
+  #   - 00-introduction.md
+  #   - 01-crispdm.md
+    - 02-businessunderstanding.md
+    - 03-dataunderstanding.md
   #   # - cs-automation.md
+  preview:
+    host: 0.0.0.0
+    port: 6778
+    browser: false
+    watch-inputs: true
 
 format:
   revealjs: 

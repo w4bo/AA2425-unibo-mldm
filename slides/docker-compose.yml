@@ -6,6 +6,8 @@ services:
     image: w4bo/quarto-slides:1.0.23
     hostname: build-quarto
     container_name: build-quarto
+    ports:
+      - "6778:6778"
     volumes:
       - ./:/data
     command: ["/bin/bash", "/data/build.sh"]

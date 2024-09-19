@@ -4,14 +4,14 @@ subtitle: Data understanding
 
 # Data understanding
 
-The data understanding phase of CRISP-DM involves taking a closer look at the data available for mining
+The **data understanding** phase of CRISP-DM involves taking a closer look at the data available for mining
 
-- This step is critical in avoiding unexpected problems during the next phase--data preparation--which is typically the longest part of a project
+- This step is critical in preventing problems during data preparation, which is typically the longest part of a project
 - The data understanding phase involves four steps, including:
-    1. collection of initial data
-    1. description of data
-    1. exploration of data, and
-    1. verification of data quality
+    1. *collection* of initial data
+    1. *description* of data
+    1. *exploration* of data, and
+    1. *verification* of data quality
 
 # Data collection (or acquisition)
 
@@ -27,10 +27,15 @@ Here a data analyst acquires the necessary data, including loading and integrati
 The analyst then proceeds to
 
 - increase familiarity with the data,
-- to identify data quality problems, to discover initial insights into the data,
-- or to detect interesting subsets to form hypotheses about hidden information.
+- identify data quality problems, 
+- discover initial insights into the data,
+- detect interesting subsets to form hypotheses about hidden information
 
----
+#
+
+> "If you torture the data long enough, it will confess to anything"
+>
+> Ronald H. Coase
 
 Several *biases* can occur:
 
@@ -43,24 +48,21 @@ Several *biases* can occur:
 - **Publication**: Tendency for researchers or journals to publish studies with positive or significant results while neglecting to publish studies with null or negative results
 - ... and many others
 
---- 
+# Is data the new oil?
 
-Still today, this is one of the most important steps for many companies:
-
-- 'Data is the new oil of the Digital Economy'
-- Indeed, there are several disciplines focusing on data (Data Science, Data Mining, Big data, ...)
-- However, acquiring data is a time-consuming, investment and knowledge-intensive process
+- There are several disciplines focusing on data (e.g., Data Science, Data Mining, Big Data)
 - In Europe (but now in many areas of the world), there can be problems related to privacy
-    - When is it "right" to protect privacy? When does it become a limit?
+    - When is it "right" to protect privacy?
+    - When does it become a limit?
 
 Plus,
 
-- You should consider a tradeoff between time/costs
+- Acquiring data is a time-consuming, investment and knowledge-intensive process
 - How much is *enough*?
 
----
+#
 
-Rule of thumb: one in ten/twenty [@chowdhury2020variable]
+Rule of thumb: *one in ten/twenty* [@chowdhury2020variable]
 
 > There is no set rule as to the number of variables to include in a prediction model as it often depends on several factors. The ‘one in ten rule’, a rule that stipulates for how many variables/parameters can be estimated from a data set, is quite popular in traditional clinical prediction modelling strategy (eg, logistic regression and survival models). According to this rule, one variable can be considered in a model for every 10 events
 
