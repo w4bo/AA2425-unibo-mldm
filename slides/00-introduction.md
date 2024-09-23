@@ -54,6 +54,7 @@ Questions on **all (theoretical and practical) aspects** of the course
 - Two separate and independent exam sessions (the other w/ Prof. Golfarelli)
   - The final mark is the average of the two exams
 - **Interaction** during the lectures/labs is considered in the final evaluation
+- The final mark of the exam will be averaged with the Data Mining module
 
 No scheduled dates, just **book when you are ready**
 
@@ -68,14 +69,13 @@ According to the University's regulation
 On the day of the exam (~30 minutes per person):
 
 - 3 questions on different topics about the whole program
-- (Optional) Presentation & discussion with slides about a final assignment (10/15 minutes)
-The final mark of the exam will be averaged with the Data Mining module
+    - *If you do the final assignment on Machine Learning*, the first question will be a presentation & discussion with slides about your assignment (10/15 minutes)
 
-# Assignment (Machine Learning)
+# Final Assignment (Machine Learning)
 
-Either on Machine Learning (ask me) or Data Mining (ask Prof. Golfarelli)
+You can choose to do an assignment either on Machine Learning (ask me) or Data Mining (ask Prof. Golfarelli)
 
-Develop an AI system in a group of 2 people (at maximum)
+The assignment on Machine Learning is about developing an AI system in a group of 2 people (at maximum)
 
 1. Define the problem (of your interest!), the core of your project
 1. Define your strategy (algorithms), find data (datasets), ...
