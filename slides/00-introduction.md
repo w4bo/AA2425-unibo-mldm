@@ -113,7 +113,6 @@ Once the project is completed
 
 **When both members have studied and all the material is ready, both members must book the exam on the same day**
 
-
 # Teaching material
 
 You will find all you need on Virtuale
@@ -160,6 +159,14 @@ However, I suggest you to read the book:
 
 :::
 ::::
+
+# Office hours
+
+- Lectures start/end 10 minutes later/earlier than the time stated in the teaching calendar
+- You can ask questions before/after each lecture
+- ... or send an email to book an appointment
+
+If you need help for coding and labs, *you can ask the tutor*!
 
 # Tentative outline
 
