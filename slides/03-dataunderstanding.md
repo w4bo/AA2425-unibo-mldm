@@ -266,17 +266,17 @@ Plain Iris dataset
 
 Example of profiling the schema of the data in Iris
  
-> RangeIndex: 150 entries, 0 to 149
-> Data columns (total 5 columns):
-> #   Column             Non-Null Count  Dtype  
-> --- ------             --------------  -----  
-> 0   sepal length (cm)  150 non-null    float64
-> 1   sepal width (cm)   150 non-null    float64
-> 2   petal length (cm)  150 non-null    float64
-> 3   petal width (cm)   150 non-null    float64
-> 4   species            150 non-null    object 
-> dtypes: float64(4), object(1)
-> memory usage: 6.0+ KB
+>     RangeIndex: 150 entries, 0 to 149
+>     Data columns (total 5 columns):
+>     #   Column             Non-Null Count  Dtype  
+>     --- ------             --------------  -----  
+>     0   sepal length (cm)  150 non-null    float64
+>     1   sepal width (cm)   150 non-null    float64
+>     2   petal length (cm)  150 non-null    float64
+>     3   petal width (cm)   150 non-null    float64
+>     4   species            150 non-null    object 
+>     dtypes: float64(4), object(1)
+>     memory usage: 6.0+ KB
 
 # Iris
 
