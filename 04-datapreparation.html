@@ -357,50 +357,119 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 
 </section>
-<section id="data-preparation" class="title-slide slide level1 center">
-<h1>Data Preparation</h1>
-<p>The data preparation phase covers all activities to construct the final data set or the data that will be fed into the modeling tool(s) from the initial raw data.</p>
-<p>Data (preparation) preprocessing plays a key role in a data analytics process and avoids “Garbage in, garbage out” <span class="citation" data-cites="giovanelli2021effective">(<a href="#/references" role="doc-biblioref" onclick="">Giovanelli, Bilalli, and Abelló Gamazo 2021</a>)</span></p>
+<section id="data-preparation-aka-data-pre-processing" class="title-slide slide level1 center">
+<h1>Data Preparation (aka <em>data pre-processing</em>)</h1>
+<p>The <strong>data preparation</strong> phase covers all activities to construct the dataset that will be fed into the modeling tools from the initial data</p>
+
+<img data-src="./img/datapreprocessing/pipeline.svg" class="r-stretch quarto-figure-center"><p class="caption">Data pipeline</p><p>It plays a key role in a data analytics process and <em>avoids “garbage in, garbage out”</em></p>
 <ul>
-<li>A broad range of activities; from correcting errors to selecting the most relevant features</li>
-<li>There are no pre-defined rules on the impact of pre-processing transformations</li>
-<li>Data scientists cannot easily foresee the impact of pipeline prototypes</li>
-</ul>
-<p>“Garbage in, garbage out” is particularly applicable to data mining and machine learning</p>
+<li><em>A broad range of activities</em>; from correcting errors to selecting the most relevant features
 <ul>
 <li>Out-of-range values (e.g., Income: −100)</li>
-<li>Impossible data combinations (e.g., Exam mark: 15, Exam result: Passed)</li>
+<li>Impossible data combinations (e.g., <code>Exam mark</code>: 15, <code>Exam result</code>: Passed)</li>
 <li>Missing values</li>
 <li>Inconsistent data among multiple sources</li>
-<li>More?</li>
+</ul></li>
+<li>There are <em>no pre-defined rules</em> on the impact of pre-processing transformations</li>
+<li>Data scientists <em>cannot easily foresee the impact of pipeline prototypes</em></li>
 </ul>
-<p>The five steps in data preparation are the selection of data, the cleansing of data, the construction of data, the integration of data, and the formatting of data.</p>
+</section>
+
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+<p>Data pre-processing includes <span class="citation" data-cites="shearer2000crisp">(<a href="#/references" role="doc-biblioref" onclick="">Shearer 2000</a>)</span> data</p>
+<ol type="1">
+<li><em>selection</em></li>
+<li><em>cleansing</em></li>
+<li><em>construction</em></li>
+<li><em>integration</em></li>
+<li><em>formatting</em></li>
+</ol>
 </section>
 
 <section id="select-data" class="title-slide slide level1 center">
 <h1>Select Data</h1>
-<p>Deciding on the data that will be used for the analysis is based on several criteria, including its relevance to the data mining goals, as well as quality and technical constraints such as limits on data volume or data types. For instance, while an individual’s address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated. Part of the data selection process should involve explaining why certain data was included or excluded. It is also a good idea to decide if one or more attributes are more important than others are.</p>
+<p>Deciding on the data that will be used for the analysis is based on several criteria, including</p>
+<ul>
+<li>its relevance to the data mining goals</li>
+<li>quality and technical constraints such as limits on data volume or data types</li>
+</ul>
+<p>Part of the data selection process should involve explaining why certain data was included or excluded</p>
+<ul>
+<li>It is also a good idea to decide if one or more attributes are more important than others are</li>
+</ul>
+<blockquote>
+<p>For instance, while an individual’s address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated.</p>
+</blockquote>
 </section>
 
 <section id="clean-data" class="title-slide slide level1 center">
 <h1>Clean Data</h1>
-<p>Without clean data, the results of a data mining analysis are in question. Thus at this stage, the data analyst must either select clean subsets of data or incorporate more ambitious techniques such as estimating missing data through modeling analyses. At this point, data analysts should make sure they outline how they addressed each quality problem reported in the earlier “Verify Data Quality” step.</p>
+<p><em>Without clean data, the results of a data mining analysis are in question.</em></p>
+<p>The data analyst must</p>
+<ul>
+<li>select clean subsets of data or incorporate techniques such as estimating missing data through modeling analyses</li>
+<li>make sure they outline how they addressed each quality problem reported in the earlier “Verify Data Quality” step</li>
+</ul>
 </section>
 
 <section id="construct-data" class="title-slide slide level1 center">
 <h1>Construct Data</h1>
-<p>After the data is cleaned, the data analyst should undertake data preparation operations such as developing entirely new records or producing derived attributes. An example of a new record would be the creation of an empty purchase record for customers who made no purchases during the past year. Derived attributes, in contrast, are new attributes that are constructed from existing attributes, such as Area = Length x Width. These derived attributes should only be added if they ease the model process or facilitate the modeling algorithm, not just to reduce the number of input attributes. For instance, perhaps “income per head” is a better/easier attribute to use than “income per household.” Another type of derived attribute is single-attribute transformations, usually performed to fit the needs of the modeling tools. These transformations may be necessary to transform ranges to symbolic fields (e.g., ages to age bands), or symbolic fields (“definitely yes,” “yes,” “don’t know,” “no”) to numeric values. Modeling tools or algorithms often require these transformations.</p>
+<p>The data analyst could undertake operations such as developing entirely new records or producing derived attributes.</p>
+<ul>
+<li><em>Derived attributes should only be added if they ease the the modeling algorithm</em>
+<ul>
+<li>… and not just to reduce the number of input attributes</li>
+</ul></li>
+<li>Transformations may be necessary to <em>transform ranges to symbolic fields</em> (e.g., ages to age bands)
+<ul>
+<li>… <em>or symbolic fields (“definitely yes”, “yes”, “don’t know”, “no”) to numeric values</em></li>
+</ul></li>
+</ul>
+<blockquote>
+<p>A new record would be the creation of an empty purchase record for customers who made no purchases during the past year.</p>
+<p>A derived attribute is <code>area</code> = <code>length</code> x <code>width</code>.</p>
+<p>A derived attribute is <code>income per head</code> which could be easier to use than <code>income per household</code>.</p>
+</blockquote>
 </section>
 
 <section id="integrate-data" class="title-slide slide level1 center">
 <h1>Integrate Data</h1>
-<p>Integrating data involves combining information from multiple tables or records to create new records or values. With table-based data, an analyst can join two or more tables that have different information about the same objects. For instance, a retail chain has one table with information about each store’s general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from previous year), and another table with information about the demographics of the surrounding area. Each of these tables contains one record for each store. These tables can be merged together into a new table with one record for each store, combining fields from the source tables.</p>
-<p>Data integration also covers aggregations. Aggregations refer to operations where new values are computed by summarizing information from multiple records and/or tables. For example, an aggregation could include converting a table of customer purchases, where there is one record for each purchase, into a new table where there is one record for each customer. The table’s fields could include the number of purchases, the average purchase amount, the percent of orders charged to credit cards, the percent of items under promotion, etc.</p>
+<p><strong>Integration</strong> involves <em>combining information from multiple tables</em> or records to create new records or values.</p>
+<ul>
+<li>With table-based data, an analyst can join two or more tables that have different information about the same objects.</li>
+</ul>
+<blockquote>
+<p>For instance, a retail chain has one table with information about each store’s general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from previous year), and another table with information about the demographics of the surrounding area.</p>
+<p>Each of these tables contains one record for each store.</p>
+<p>These tables can be merged together into a new table with one record for each store, combining fields from the source tables.</p>
+</blockquote>
+</section>
+
+<section id="section-1" class="title-slide slide level1 center">
+<h1></h1>
+<p>Data integration also covers <em>aggregations</em>.</p>
+<ul>
+<li>Aggregations computes new values by summarizing information from multiple records and/or tables.</li>
+</ul>
+<blockquote>
+<p>For example, an aggregation could include converting a table of customer purchases, where there is one record for each purchase, into a new table where there is one record for each customer.</p>
+<p>The table’s fields could include the number of purchases, the average purchase amount, the percent of orders charged to credit cards, the percent of items under promotion, etc.</p>
+</blockquote>
 </section>
 
 <section id="format-data" class="title-slide slide level1 center">
 <h1>Format Data</h1>
-<p>In some cases, the data analyst will change the format or design of the data. These changes might be simple—for example, removing illegal characters from strings or trimming them to a maximum length—or they may be more complex, such as those involving a reorganization of the information. Sometimes these changes are needed to make the data suitable for a specific modeling tool. In other instances, the changes are needed to pose the necessary data mining questions.</p>
+<p>In some cases, the data analyst will <em>change the format of the data</em>.</p>
+<ul>
+<li>Sometimes these changes are needed to make the data suitable for a specific modeling tool.</li>
+<li>In other instances, the changes are needed to pose the necessary data mining questions.</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Simple: removing illegal characters from strings or trimming them to a maximum length</li>
+<li>More complex: reorganization of the information (e.g., <em>from normalized to flat tables</em>)</li>
+</ul>
 </section>
 
 <section id="data-variety" class="title-slide slide level1 center">
@@ -446,8 +515,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-giovanelli2021effective" class="csl-entry" role="listitem">
-Giovanelli, Joseph, Besim Bilalli, and Alberto Abelló Gamazo. 2021. <span>“Effective Data Pre-Processing for AutoML.”</span> In <em>Proceedings of the 23rd International Workshop on Design, Optimization, Languages and Analytical Processing of Big Data (DOLAP): Co-Located with the 24th International Conference on Extending Database Technology and the 24th International Conference on Database Theory (EDBT/ICDT 2021): Nicosia, Cyprus, March 23, 2021</em>, 1–10. CEUR-WS. org.
+<div id="ref-shearer2000crisp" class="csl-entry" role="listitem">
+Shearer, Colin. 2000. <span>“The CRISP-DM Model: The New Blueprint for Data Mining.”</span> <em>Journal of Data Warehousing</em> 5 (4): 13–22.
 </div>
 </div>
 </section>
