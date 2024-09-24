@@ -2,7 +2,7 @@
 subtitle: Business understanding
 ---
 
-# Business understanding
+# Business Understanding
 
 (*Perhaps the most important/hard phase of any data mining project* [@shearer2000crisp])
 
