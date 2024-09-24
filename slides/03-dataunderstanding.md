@@ -249,7 +249,7 @@ The data analyst examines the "surface" properties of the acquired data, examini
 - the *identities* of the fields,
 - and any other *surface features of the data*.
 
-#
+# Iris
 
 Plain Iris dataset
 
@@ -261,6 +261,8 @@ Plain Iris dataset
 > | 4 | 4.6 | 3.1 | 1.5 | 0.2 | Iris-setosa |
 > | 5 | 5   | 3.6 | 1.4 | 0.2 | Iris-setosa |
 > | ... | ... | ... | ... | ... | ... |
+
+# Iris
 
 Example of profiling the schema of the data in Iris
  
@@ -276,7 +278,7 @@ Example of profiling the schema of the data in Iris
 >     dtypes: float64(4), object(1)
 >     memory usage: 6.0+ KB
 
-#
+# Iris
 
 Example of profiling the distribution of the data in Iris
 
@@ -291,9 +293,40 @@ Example of profiling the distribution of the data in Iris
 > | 75%   | 112.75   | 6.4      | 3.3      | 5.1     | 1.8      |
 > | max   | 150      | 7.9      | 4.4      | 6.9     | 2.5      |
 
-#
+# Iris
 
-![Box plot](./img/dataunderstanding/iris-boxplot.svg)
+:::: {.columns}
+::: {.column width="50%"}
+
+In descriptive statistics, a **box plot** shows graphically the locality, spread and skewness groups of numerical data
+
+A boxplot is a standardized way of displaying the dataset based on the five-number summary:
+
+1. *Minimum* (Q0 or 0th percentile): the lowest data point
+1. *First quartile* (Q1 or 25th percentile)
+1. *Median* (Q2 or 50th percentile): the middle value 
+1. *Third quartile* (Q3 or 75th percentile)
+1. *Maximum* (Q4 or 100th percentile): the highest data point
+
+*Interquartile range*: $\text{IQR}=Q_{3}-Q_{1}$ 
+
+Graphical elements
+
+- The *box* is drawn from Q1 to Q3
+- *Whiskers* are based on the $1.5 \cdot IQR$ value
+  - A whisker is drawn up to the largest/lowest observed data point from the dataset that falls within this distance
+  - The whisker lengths can look unequal
+- All other points outside the whiskers are plotted as *outliers*
+
+:::
+::: {.column width="50%"}
+
+> Iris data
+>
+> ![Box plot](./img/dataunderstanding/iris-boxplot.svg)
+
+:::
+:::: 
 
 # Explore the Data
 
@@ -306,17 +339,23 @@ This task tackles the data mining questions, which can be addressed using queryi
 >
 > <img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center">
 
-# 
+# Iris
+
+Value distribution vs `species`
 
 :::: {.columns}
 ::: {.column width="50%"}
 
-![](./img/dataunderstanding/petal_length-boxplot.svg)
+> `petal_length` vs `species`
+>
+> ![](./img/dataunderstanding/petal_length-boxplot.svg)
 
 :::
 ::: {.column width="50%"}
 
-![](./img/dataunderstanding/sepal_length-boxplot.svg)
+> `sepal_length` vs `species`
+> 
+> ![](./img/dataunderstanding/sepal_length-boxplot.svg)
 
 :::
 :::: 
@@ -328,11 +367,15 @@ At this point, the analyst examines the quality of the data, addressing question
 Some common data quality issues to check include:
 
 - *missing values* or attributes;
+  - E.g., unknown date of death (is it missing? is the person alive?)
 - whether *all possible values are represented*;
-- the *plausibility of values*;
-  - E.g., review any attributes that may give answers that conflict with common sense (e.g., teenagers with high income)
-- the *spelling* of values;
-- and whether attributes with different values have similar meanings (e.g., low fat, diet).
+  - E.g., all age groups are contained in the dataset
+- the *plausibility of values*, review any attributes that may give answers that conflict with common sense;
+  - E.g., teenagers with high income
+- whether attributes with different values have *similar meanings*;
+  - E.g., `low fat` and `diet`
+- the *spelling* of values.
+  - E.g., `law fat` or `low fat`?
 
 > Nothing to worry about in Iris
 
