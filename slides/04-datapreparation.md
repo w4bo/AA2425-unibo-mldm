@@ -54,7 +54,7 @@ The data analyst must
 
 The data analyst could undertake operations such as developing entirely new records or producing derived attributes.
 
-- *Derived attributes should only be added if they ease the the modeling algorithm*
+- *Derived attributes should only be added if they ease the modeling algorithm*
     - ... and not just to reduce the number of input attributes
 - Transformations may be necessary to *transform ranges to symbolic fields* (e.g., ages to age bands)
     - ... *or symbolic fields ("definitely yes", "yes", "don't know", "no") to numeric values*
@@ -71,7 +71,7 @@ The data analyst could undertake operations such as developing entirely new reco
 
 - With table-based data, an analyst can join two or more tables that have different information about the same objects.
 
-> For instance, a retail chain has one table with information about each store's general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from previous year), and another table with information about the demographics of the surrounding area.
+> For instance, a retail chain has one table with information about each store's general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from the previous year), and another table with information about the demographics of the surrounding area.
 >
 > Each of these tables contains one record for each store.
 >
@@ -81,11 +81,11 @@ The data analyst could undertake operations such as developing entirely new reco
 
 Data integration also covers *aggregations*.
 
-- Aggregations computes new values by summarizing information from multiple records and/or tables.
+- Aggregation computes new values by summarizing information from multiple records and/or tables.
 
 > For example, an aggregation could include converting a table of customer purchases, where there is one record for each purchase, into a new table where there is one record for each customer.
 >
-> The table's fields could include the number of purchases, the average purchase amount, the percent of orders charged to credit cards, the percent of items under promotion, etc.
+> The table's fields could include the number of purchases, the average purchase amount, the percentage of orders charged to credit cards, the percentage of items under promotion, etc.
 
 # Format Data
 
