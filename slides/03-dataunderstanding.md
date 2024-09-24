@@ -160,7 +160,7 @@ The data annotation process can take place in several ways:
   - The quality of the annotations is not always easily controlled
 - *Third parties*: all data is noted by a third party
   - *Free of charge*: this is the case, for example, in which users barter the free use of some platform with the transfer of their annotated data (for example, photos uploaded - to Facebook accompanied by information regarding the content, the position of the face, or scene acquired).
-  - *Paid*: there are platforms where is possible to purchase annotation time from third parties (often from "developing countries"). Example: Amazon Mechanical Turk
+  - *Paid*: there are platforms where it is possible to purchase annotation time from third parties (often from "developing countries"). Example: Amazon Mechanical Turk
 
 # [Amazon Mechanical Turk](https://www.mturk.com/)
 
@@ -200,7 +200,7 @@ Specific algorithms correspond to each of these areas
 
 # Open and Closed Sets
 
-Last aspect to be defined relating to data annotation: **do we know all annotations**?
+The last aspect to be defined relating to data annotation: **do we know all annotations**?
 
 *Closed Set*: it is assumed that the pattern to be classified belongs to one of the known classes.
 
@@ -266,17 +266,17 @@ Plain Iris dataset
 
 Example of profiling the schema of the data in Iris
  
->     RangeIndex: 150 entries, 0 to 149
->     Data columns (total 5 columns):
->     #   Column             Non-Null Count  Dtype  
->     --- ------             --------------  -----  
->     0   sepal length (cm)  150 non-null    float64
->     1   sepal width (cm)   150 non-null    float64
->     2   petal length (cm)  150 non-null    float64
->     3   petal width (cm)   150 non-null    float64
->     4   species            150 non-null    object 
->     dtypes: float64(4), object(1)
->     memory usage: 6.0+ KB
+> RangeIndex: 150 entries, 0 to 149
+> Data columns (total 5 columns):
+> #   Column             Non-Null Count  Dtype  
+> --- ------             --------------  -----  
+> 0   sepal length (cm)  150 non-null    float64
+> 1   sepal width (cm)   150 non-null    float64
+> 2   petal length (cm)  150 non-null    float64
+> 3   petal width (cm)   150 non-null    float64
+> 4   species            150 non-null    object 
+> dtypes: float64(4), object(1)
+> memory usage: 6.0+ KB
 
 # Iris
 
@@ -298,7 +298,7 @@ Example of profiling the distribution of the data in Iris
 :::: {.columns}
 ::: {.column width="50%"}
 
-In descriptive statistics, a **box plot** shows graphically the locality, spread and skewness groups of numerical data
+In descriptive statistics, a **box plot** shows graphically the locality, spread, and skewness groups of numerical data
 
 A boxplot is a standardized way of displaying the dataset based on the five-number summary:
 
@@ -332,7 +332,7 @@ Graphical elements
 
 This task tackles the data mining questions, which can be addressed using querying, visualization, and reporting.
 
-- Create a data exploration report that outlines first findings, or an initial hypothesis
+- Create a data exploration report that outlines the first findings, or an initial hypothesis
 - For instance, query the data to discover the types of products that purchasers in a particular income group usually buy
 
 > 2D visualization of the Iris dataset
@@ -367,7 +367,7 @@ At this point, the analyst examines the quality of the data, addressing question
 Some common data quality issues to check include:
 
 - *missing values* or attributes;
-  - E.g., unknown date of death (is it missing? is the person alive?)
+  - E.g., unknown date of death (Is it missing? Is the person alive?)
 - whether *all possible values are represented*;
   - E.g., all age groups are contained in the dataset
 - the *plausibility of values*, review any attributes that may give answers that conflict with common sense;
