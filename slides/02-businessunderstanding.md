@@ -73,8 +73,6 @@ Things are more complex in a company (*this is the added value of DTM!*)
 1. Describe any solutions currently used to address the business problem
 1. Describe the advantages and disadvantages of the current solution
 
-
-
 # Determine the Data Mining Goals
 
 Formulate **project objectives in business terms**

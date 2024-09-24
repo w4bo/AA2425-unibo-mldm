@@ -20,13 +20,13 @@ It plays a key role in a data analytics process and *avoids "garbage in, garbage
 
 #
 
-Data pre-processing includes the 
+Data pre-processing includes [@shearer2000crisp] data 
 
-1. *selection* of data
-1. *cleansing* of data
-1. *construction* of data
-1. *integration* of data
-1. *formatting* of data
+1. *selection*
+1. *cleansing*
+1. *construction*
+1. *integration*
+1. *formatting*
 
 # Select Data
 
@@ -63,7 +63,7 @@ The data analyst could undertake operations such as developing entirely new reco
 >
 > A derived attribute is `area` = `length` x `width`.
 >
-> A derived attribute is `income per head` which could be easier to use than `income per household.` 
+> A derived attribute is `income per head` which could be easier to use than `income per household`. 
 
 # Integrate Data
 
@@ -89,10 +89,15 @@ Data integration also covers *aggregations*.
 
 # Format Data
 
-In some cases, the data analyst will change the format or design of the data.
-These changes might be simple—for example, removing illegal characters from strings or trimming them to a maximum length—or they may be more complex, such as those involving a reorganization of the information.
-Sometimes these changes are needed to make the data suitable for a specific modeling tool.
-In other instances, the changes are needed to pose the necessary data mining questions.
+In some cases, the data analyst will *change the format of the data*.
+
+- Sometimes these changes are needed to make the data suitable for a specific modeling tool.
+- In other instances, the changes are needed to pose the necessary data mining questions.
+
+Examples:
+
+- Simple: removing illegal characters from strings or trimming them to a maximum length
+- More complex: reorganization of the information (e.g., *from normalized to flat tables*)
 
 # Data variety
 
