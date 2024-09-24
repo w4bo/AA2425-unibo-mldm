@@ -117,7 +117,7 @@ Considering `(volume, variety, velocity, veracity)`, we focus on the `(*, struct
     - E.g., a product for market basket analysis
 - Each column is an **attribute** (or feature) characterizing each object
     - All values within a column have the same type (i.e., all values belong to the same attribute domain)
-    - E.g., the attributes ID (int), ProductName (str), or Price (float)
+    - E.g., the attributes `ID` (int), `ProductName` (str), or `Price` (float)
     
 We need proper tools (e.g., libraries) to manage such data
 

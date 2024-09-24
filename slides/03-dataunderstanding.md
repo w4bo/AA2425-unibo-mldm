@@ -291,6 +291,9 @@ Example of profiling the distribution of the data in Iris
 > | 75%   | 112.75   | 6.4      | 3.3      | 5.1     | 1.8      |
 > | max   | 150      | 7.9      | 4.4      | 6.9     | 2.5      |
 
+#
+
+![Box plot](./img/dataunderstanding/iris-boxplot.svg)
 
 # Explore the Data
 
@@ -302,6 +305,21 @@ This task tackles the data mining questions, which can be addressed using queryi
 > 2D visualization of the Iris dataset
 >
 > <img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center">
+
+# 
+
+:::: {.columns}
+::: {.column width="50%"}
+
+![](./img/dataunderstanding/petal_length-boxplot.svg)
+
+:::
+::: {.column width="50%"}
+
+![](./img/dataunderstanding/sepal_length-boxplot.svg)
+
+:::
+:::: 
 
 # Verify Data Quality
 
