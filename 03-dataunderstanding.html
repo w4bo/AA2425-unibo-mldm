@@ -668,8 +668,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="section-2" class="title-slide slide level1 center">
-<h1></h1>
+<section id="iris" class="title-slide slide level1 center">
+<h1>Iris</h1>
 <p>Plain Iris dataset</p>
 <blockquote>
 <table>
@@ -743,6 +743,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tbody>
 </table>
 </blockquote>
+</section>
+
+<section id="iris-1" class="title-slide slide level1 center">
+<h1>Iris</h1>
 <p>Example of profiling the schema of the data in Iris</p>
 <blockquote>
 <pre><code>RangeIndex: 150 entries, 0 to 149
@@ -759,8 +763,8 @@ memory usage: 6.0+ KB</code></pre>
 </blockquote>
 </section>
 
-<section id="section-3" class="title-slide slide level1 center">
-<h1></h1>
+<section id="iris-2" class="title-slide slide level1 center">
+<h1>Iris</h1>
 <p>Example of profiling the distribution of the data in Iris</p>
 <blockquote>
 <table>
@@ -852,10 +856,43 @@ memory usage: 6.0+ KB</code></pre>
 </blockquote>
 </section>
 
-<section id="section-4" class="title-slide slide level1 center">
-<h1></h1>
-
-<img data-src="./img/dataunderstanding/iris-boxplot.svg" class="r-stretch quarto-figure-center"><p class="caption">Box plot</p></section>
+<section id="iris-3" class="title-slide slide level1 center">
+<h1>Iris</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>In descriptive statistics, a <strong>box plot</strong> shows graphically the locality, spread and skewness groups of numerical data</p>
+<p>A boxplot is a standardized way of displaying the dataset based on the five-number summary:</p>
+<ol type="1">
+<li><em>Minimum</em> (Q0 or 0th percentile): the lowest data point</li>
+<li><em>First quartile</em> (Q1 or 25th percentile)</li>
+<li><em>Median</em> (Q2 or 50th percentile): the middle value</li>
+<li><em>Third quartile</em> (Q3 or 75th percentile)</li>
+<li><em>Maximum</em> (Q4 or 100th percentile): the highest data point</li>
+</ol>
+<p><em>Interquartile range</em>: <span class="math inline">\(\text{IQR}=Q_{3}-Q_{1}\)</span></p>
+<p>Graphical elements</p>
+<ul>
+<li>The <em>box</em> is drawn from Q1 to Q3</li>
+<li><em>Whiskers</em> are based on the <span class="math inline">\(1.5 \cdot IQR\)</span> value
+<ul>
+<li>A whisker is drawn up to the largest/lowest observed data point from the dataset that falls within this distance</li>
+<li>The whisker lengths can look unequal</li>
+</ul></li>
+<li>All other points outside the whiskers are plotted as <em>outliers</em></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<blockquote>
+<p>Iris data</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/dataunderstanding/iris-boxplot.svg"></p>
+<figcaption>Box plot</figcaption>
+</figure>
+</div>
+</blockquote>
+</div>
+</div>
+</section>
 
 <section id="explore-the-data" class="title-slide slide level1 center">
 <h1>Explore the Data</h1>
@@ -870,13 +907,20 @@ memory usage: 6.0+ KB</code></pre>
 </blockquote>
 </section>
 
-<section id="section-5" class="title-slide slide level1 center">
-<h1></h1>
+<section id="iris-4" class="title-slide slide level1 center">
+<h1>Iris</h1>
+<p>Value distribution vs <code>species</code></p>
 <div class="columns">
 <div class="column" style="width:50%;">
+<blockquote>
+<p><code>petal_length</code> vs <code>species</code></p>
 <p><img data-src="./img/dataunderstanding/petal_length-boxplot.svg"></p>
+</blockquote>
 </div><div class="column" style="width:50%;">
+<blockquote>
+<p><code>sepal_length</code> vs <code>species</code></p>
 <p><img data-src="./img/dataunderstanding/sepal_length-boxplot.svg"></p>
+</blockquote>
 </div>
 </div>
 </section>
@@ -886,14 +930,26 @@ memory usage: 6.0+ KB</code></pre>
 <p>At this point, the analyst examines the quality of the data, addressing questions such as:</p>
 <p>Some common data quality issues to check include:</p>
 <ul>
-<li><em>missing values</em> or attributes;</li>
-<li>whether <em>all possible values are represented</em>;</li>
-<li>the <em>plausibility of values</em>;
+<li><em>missing values</em> or attributes;
 <ul>
-<li>E.g., review any attributes that may give answers that conflict with common sense (e.g., teenagers with high income)</li>
+<li>E.g., unknown date of death (is it missing? is the person alive?)</li>
 </ul></li>
-<li>the <em>spelling</em> of values;</li>
-<li>and whether attributes with different values have similar meanings (e.g., low fat, diet).</li>
+<li>whether <em>all possible values are represented</em>;
+<ul>
+<li>E.g., all age groups are contained in the dataset</li>
+</ul></li>
+<li>the <em>plausibility of values</em>, review any attributes that may give answers that conflict with common sense;
+<ul>
+<li>E.g., teenagers with high income</li>
+</ul></li>
+<li>whether attributes with different values have <em>similar meanings</em>;
+<ul>
+<li>E.g., <code>low fat</code> and <code>diet</code></li>
+</ul></li>
+<li>the <em>spelling</em> of values.
+<ul>
+<li>E.g., <code>law fat</code> or <code>low fat</code>?</li>
+</ul></li>
 </ul>
 <blockquote>
 <p>Nothing to worry about in Iris</p>
