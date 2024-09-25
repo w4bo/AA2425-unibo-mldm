@@ -29,8 +29,8 @@ Research topics
 Hands-on *machine learning* (module 2, 24 hours)
 
 - Theory, practice, and case studies of the main steps of the CRISP-DM methodology
-  - (Tentative) Labs will be every two weeks
-  - Python libraries for machine learning (mainly `pandas` and `scikit-learn`)
+  - (Tentative) Labs will be every two weeks
+  - Python libraries for machine learning (mainly `pandas` and `scikit-learn`)
 
 *Learning the working knowledge for the Artificial Intelligence field*
 
@@ -42,9 +42,9 @@ Goals
 - *Develop your own (simple) project* based on AI
 - *Make technical considerations* about AI
 - *Understanding the surrounding AI world*
-  - Orient yourself in an extremely dynamic and complex world dominated by AI
-  - Make decisions with AI
-  - Try to make predictions about AI for your company
+  - Orient yourself in an extremely dynamic and complex world dominated by AI
+  - Make decisions with AI
+  - Try to make predictions about AI for your company
 
 # (Oral) Exam
 
@@ -52,7 +52,7 @@ Questions on **all (theoretical and practical) aspects** of the course
 
 - **Be prepared**: you have to wait 1 month before trying again (in any case)
 - Two separate and independent exam sessions (the other w/ Prof. Golfarelli)
-  - The final mark is the average of the two exams
+  - The final mark is the average of the two exams
 - **Interaction** during the lectures/labs is considered in the final evaluation
 - The final mark of the exam will be averaged with the Data Mining module
 
@@ -99,16 +99,16 @@ Once defined your project:
 Once the project is completed
 
 - Write a 6-page paper about the project
-  - Use Latex ([https://www.overleaf.com/](https://www.overleaf.com/))
-  - Use this template ([https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip](https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip))
-  - Sections:
-    1. Introduction (~1 page; including group organization and the work done by each member)
-    2. Related Work (~1 page; what others have done or which techniques can be applied)
-    3. Proposed Method (~2.5 pages; what did you do and how)
-    4. Results (~1 page; results and insights)
-    5. Conclusions (~0.5 pages; summary)
+  - Use Latex ([https://www.overleaf.com/](https://www.overleaf.com/))
+  - Use this template ([https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip](https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip))
+  - Sections:
+    1. Introduction (~1 page; including group organization and the work done by each member)
+    2. Related Work (~1 page; what others have done or which techniques can be applied)
+    3. Proposed Method (~2.5 pages; what did you do and how)
+    4. Results (~1 page; results and insights)
+    5. Conclusions (~0.5 pages; summary)
 - Upload the paper, assignment, and presentation into a Github repo
-  - The assignment must be executable on Google Colab without errors
+  - The assignment must be executable on Google Colab without errors
 - Share (with me) the Github repo
 
 **When both members have studied and all the material is ready, both members must book the exam on the same day**
@@ -146,11 +146,11 @@ However, I suggest you to read the book:
 - *Title*: Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow
 - *Author*: Aurélien Géron
 - Some notes about the book:
-  - The book is intended as a support
-  - The book is available for free in the library
-  - The book is pretty huge (about 800 pages)
-  - Carefully check the summary and select our topics
-  - If you want, you can read the other parts to take inspiration (not requested for the final exam)
+  - The book is intended as a support
+  - The book is available for free in the library
+  - The book is pretty huge (about 800 pages)
+  - Carefully check the summary and select our topics
+  - If you want, you can read the other parts to take inspiration (not requested for the final exam)
 
 :::
 ::: {.column width="40%"}
