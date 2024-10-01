@@ -408,11 +408,34 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <p><a href="https://colab.research.google.com/github/w4bo/AA2425-unibo-mldm/blob/master/slides/lab-01-dataunderstanding.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 </section>
+<section id="main-python-libraries-for-data-analysis" class="title-slide slide level1 center">
+<h1>Main Python libraries for data analysis</h1>
+<p><strong>Relational data</strong> are usually collected in <strong>tabular</strong> format (e.g., csv files)</p>
+<ul>
+<li>Each row is an <strong>observation</strong> (instance or tuple)
+<ul>
+<li>An object of the analysis</li>
+<li>E.g., a product for market basket analysis</li>
+</ul></li>
+<li>Each column is an <strong>attribute</strong> (or feature) characterizing each object
+<ul>
+<li>All values within a column have the same type (i.e., all values belong to the same attribute domain)</li>
+<li>E.g., the attributes <code>ID</code> (int), <code>ProductName</code> (str), or <code>Price</code> (float)</li>
+</ul></li>
+</ul>
+<p>We need proper tools (e.g., libraries) to manage such data</p>
+</section>
+
+<section id="the-library-ecosystem" class="title-slide slide level1 center">
+<h1>The library ecosystem</h1>
+
+<img data-src="https://github.com/w4bo/img-dump/assets/18005592/72869b67-6a16-4a5a-a8a4-8d8e10c2633d" class="r-stretch quarto-figure-center"><p class="caption">Library ecosystem</p></section>
+
 <section id="introduction-to-pandas" class="title-slide slide level1 center">
 <h1>Introduction to Pandas</h1>
 <p><strong>Pandas</strong> is the shorthand for ‘Python and Data Analysis’</p>
 <ul>
-<li>It provides a rich set of features for exploring and manipulating data</li>
+<li>It provides a rich set of features for exploring and manipulating <em>(multidimensional) tabular data</em></li>
 <li><a href="https://pandas.pydata.org/">https://pandas.pydata.org/</a></li>
 </ul>
 <p>pandas (Python) is a solution for the manipulation of relational data</p>
@@ -421,7 +444,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Support to SQL-like operations (join/merge, aggregation, etc.)</li>
 <li>Data transformation: imputation of missing values, manipulation of data shape, et.</li>
 </ul>
-<div id="aacb3166" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:23.580613Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:23.580445Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:23.921530Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:23.921000Z&quot;}" data-outputid="de89e76c-077f-4794-f448-2e10c89e7d4e" data-execution_count="1">
+<div id="aacb3166" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:43.490693Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:43.490528Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:43.841239Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:43.840665Z&quot;}" data-outputid="de89e76c-077f-4794-f448-2e10c89e7d4e" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># By convention, the package pandas is imported as `pd`</span></span>
@@ -441,7 +464,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Seaborn: <a href="https://seaborn.pydata.org/">https://seaborn.pydata.org/</a></li>
 <li>Matplotlib: <a href="https://matplotlib.org/">https://matplotlib.org/</a></li>
 </ul>
-<div id="3932b785" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:23.923594Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:23.923184Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.169788Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.169298Z&quot;}" data-execution_count="2">
+<div id="3932b785" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:43.843302Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:43.842935Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.840481Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.839938Z&quot;}" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># operations on arrays</span></span>
@@ -459,7 +482,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Arithmetic operations align on both row and column labels.</li>
 <li>Can be thought of as a dict-like container for Series objects.</li>
 </ul>
-<div id="74c37032" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.172076Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.171647Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.182393Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.181968Z&quot;}" data-outputid="45bb3eea-fc45-4c4b-b85b-4e92363a03b5" data-scrolled="true" data-execution_count="3">
+<div id="74c37032" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.843054Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.842567Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.854975Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.854128Z&quot;}" data-outputid="45bb3eea-fc45-4c4b-b85b-4e92363a03b5" data-scrolled="true" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># create a numeric dataframe/table</span></span>
@@ -575,7 +598,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section id="some-operations" class="slide level2">
 <h2>Some operations</h2>
-<div id="e5cf8058" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.184183Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.183851Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.191619Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.191203Z&quot;}" data-outputid="f7338355-f16f-4b8c-a9e8-ad6eb57607be" data-execution_count="4">
+<div id="e5cf8058" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.857352Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.857006Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.866561Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.865917Z&quot;}" data-outputid="f7338355-f16f-4b8c-a9e8-ad6eb57607be" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co"># Get the headers (i.e., the column names)</span></span>
@@ -705,7 +728,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Label are usually numeric or string identifiers (e.g., the primary key of a database table)</li>
 <li>Labels need not be unique but must be a hashable type (both integer- and label-based indexing)</li>
 </ul>
-<div id="205a800c" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.193322Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.192999Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.197092Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.196679Z&quot;}" data-outputid="ee7c35e1-e9ca-40ed-b5a3-e58fb5e9e1a4" data-execution_count="5">
+<div id="205a800c" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.868561Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.868210Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.873615Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.873045Z&quot;}" data-outputid="ee7c35e1-e9ca-40ed-b5a3-e58fb5e9e1a4" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])</span></code></pre></div>
@@ -717,7 +740,7 @@ c    3
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="a4ed958f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.198847Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.198503Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.202371Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.201831Z&quot;}" data-outputid="55e128f0-c560-41ee-f31a-0b2c1dcd6e07" data-execution_count="6">
+<div id="a4ed958f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.875399Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.875117Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.879777Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.878769Z&quot;}" data-outputid="55e128f0-c560-41ee-f31a-0b2c1dcd6e07" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co"># Select a column (i.e., a series) as in a SQL projection</span></span>
@@ -736,7 +759,7 @@ Name: a, dtype: int64</code></pre>
 <section id="doing-some-element-wise-operations" class="title-slide slide level1 center">
 <h1>Doing some element-wise operations</h1>
 <p>Operations between Series (e.g., +, -, /) align values based on their associated index values</p>
-<div id="8af0fee7-2e12-4b68-8634-58a26ae19839" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.204093Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.203947Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.211087Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.210629Z&quot;}" data-outputid="44762d8c-a2cd-46d7-ede2-161edaa90c77" data-execution_count="7">
+<div id="8af0fee7-2e12-4b68-8634-58a26ae19839" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.882046Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.881694Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.890767Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.890116Z&quot;}" data-outputid="44762d8c-a2cd-46d7-ede2-161edaa90c77" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="co"># Add another column to the dataframe</span></span>
@@ -853,7 +876,7 @@ Name: a, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="50a5bde6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.212803Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.212450Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.217952Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.217375Z&quot;}" data-outputid="c58ad916-7ffe-4fe8-ecb7-f7ec0f3c30aa" data-execution_count="8">
+<div id="50a5bde6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.892888Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.892516Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.898982Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.898374Z&quot;}" data-outputid="c58ad916-7ffe-4fe8-ecb7-f7ec0f3c30aa" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>ser_a <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])</span>
@@ -871,7 +894,7 @@ dtype: int64</code></pre>
 
 <section id="filtering-the-data" class="title-slide slide level1 center">
 <h1>Filtering the data</h1>
-<div id="3e8bbab0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.219799Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.219469Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.226368Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.225927Z&quot;}" data-execution_count="9">
+<div id="3e8bbab0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.900860Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.900522Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.908639Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.908044Z&quot;}" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>df[df[<span class="st">'a'</span>] <span class="op">&gt;</span> <span class="dv">2</span>]  <span class="co"># filter the entire dataframe</span></span></code></pre></div>
@@ -944,7 +967,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="85083d76" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.228032Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.227713Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.232003Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.231440Z&quot;}" data-execution_count="10">
+<div id="85083d76" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.910697Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.910227Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.916121Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.915506Z&quot;}" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>df[df[<span class="st">'a'</span>] <span class="op">&gt;</span> <span class="dv">2</span>][<span class="st">'a'</span>]  <span class="co"># filter and select the column 'a'</span></span></code></pre></div>
@@ -959,7 +982,7 @@ Name: a, dtype: int64</code></pre>
 
 <section id="doing-some-aggregation" class="title-slide slide level1 center">
 <h1>Doing some aggregation</h1>
-<div id="b2c64c8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.233530Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.233373Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.237828Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.237375Z&quot;}" data-outputid="f34e8487-ac46-416f-a5e4-bd79c94e101a" data-execution_count="11">
+<div id="b2c64c8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.918160Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.917669Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.922657Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.922207Z&quot;}" data-outputid="f34e8487-ac46-416f-a5e4-bd79c94e101a" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>ser_c <span class="op">=</span> df[<span class="st">"a"</span>]</span>
@@ -974,7 +997,7 @@ Name: a, dtype: int64</code></pre>
 <pre><code>np.int64(4)</code></pre>
 </div>
 </div>
-<div id="4f74f58d-d995-49d8-ae68-6e3ce7fe6d0e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.239290Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.239135Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.259260Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.258706Z&quot;}" data-outputid="e103511b-c049-44e4-e494-e0256500b82d" data-execution_count="12">
+<div id="4f74f58d-d995-49d8-ae68-6e3ce7fe6d0e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.924322Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.924149Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.947295Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.946807Z&quot;}" data-outputid="e103511b-c049-44e4-e494-e0256500b82d" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>df.groupby([<span class="st">'a'</span>]).agg([<span class="st">'mean'</span>, <span class="st">'count'</span>])</span></code></pre></div>
@@ -1198,7 +1221,7 @@ Name: a, dtype: int64</code></pre>
 <li><code>datetime64</code>, timedelta64: timestamp and time intervals</li>
 <li><code>object</code>: mainly used for strings</li>
 </ul>
-<div id="7d53489b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.261181Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.260792Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.266244Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.265676Z&quot;}" data-outputid="97c41b58-041b-4538-c9de-d8315c66f7cd" data-execution_count="13">
+<div id="7d53489b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.949020Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.948839Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.955487Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.954888Z&quot;}" data-outputid="97c41b58-041b-4538-c9de-d8315c66f7cd" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>df <span class="op">=</span> pd.DataFrame([</span>
@@ -1259,7 +1282,7 @@ dtype: object</code></pre>
 
 <section id="data-profiling" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
-<div id="4d3c26ed" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.268144Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.267985Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.273682Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.273217Z&quot;}" data-outputid="4ab0845e-47d5-40e1-f72e-bb8ca33e95f7" data-execution_count="14">
+<div id="4d3c26ed" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.957983Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.957544Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.965195Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.964618Z&quot;}" data-outputid="4ab0845e-47d5-40e1-f72e-bb8ca33e95f7" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>df.info()</span></code></pre></div>
@@ -1283,7 +1306,7 @@ memory usage: 332.0+ bytes</code></pre>
 
 <section id="data-profiling-1" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
-<div id="4061127e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.275246Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.275088Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.287149Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.286592Z&quot;}" data-outputid="b0361495-a3ad-4caf-a648-ff76fcc16a61" data-execution_count="15">
+<div id="4061127e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.967240Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.966802Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:47.980594Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:47.979704Z&quot;}" data-outputid="b0361495-a3ad-4caf-a648-ff76fcc16a61" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="co"># To get some statistics (e.g., count, mean, std, min, etc.)</span></span>
@@ -1415,7 +1438,7 @@ memory usage: 332.0+ bytes</code></pre>
 
 <section id="plotting-the-data-distribution-histogram-numeric" class="title-slide slide level1 center">
 <h1>Plotting the data distribution: histogram (numeric)</h1>
-<div id="411d3ecf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.288853Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.288531Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.577810Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.577334Z&quot;}" data-execution_count="16">
+<div id="411d3ecf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:47.983027Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:47.982527Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:48.312956Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:48.312389Z&quot;}" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>df.hist(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>), bins<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, grid<span class="op">=</span><span class="va">False</span>)</span>
@@ -1427,7 +1450,7 @@ memory usage: 332.0+ bytes</code></pre>
 
 <section id="plotting-the-data-distribution-boxplots-numeric" class="title-slide slide level1 center">
 <h1>Plotting the data distribution: boxplots (numeric)</h1>
-<div id="a3cfe38f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.579682Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.579392Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.684191Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.683683Z&quot;}" data-execution_count="17">
+<div id="a3cfe38f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:48.315118Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:48.314742Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:48.429171Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:48.428558Z&quot;}" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
@@ -1445,7 +1468,7 @@ memory usage: 332.0+ bytes</code></pre>
 
 <section id="plotting-the-data-distribution-histogram-categorical" class="title-slide slide level1 center">
 <h1>Plotting the data distribution: histogram (categorical)</h1>
-<div id="0f8ddde6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.686004Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.685831Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.958568Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.958077Z&quot;}" data-execution_count="18">
+<div id="0f8ddde6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:48.431775Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:48.431388Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:48.734351Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:48.733763Z&quot;}" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="co"># Select only the categorical columns (non-numeric)</span></span>
@@ -1480,7 +1503,7 @@ memory usage: 332.0+ bytes</code></pre>
 <li>Sort the DataFrame by Age in descending order. Hint: Use <code>df.sort_values()</code>, see the <a href="http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html">documentation</a></li>
 <li>Export the final DataFrame to a CSV file. Hint: Use <code>df.to_csv()</code>, see the <a href="http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html">documentation</a>.</li>
 </ol>
-<div id="1e4187e7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:25.960345Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:25.960174Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:25.962840Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:25.962277Z&quot;}" data-execution_count="19">
+<div id="1e4187e7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T12:36:48.737160Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T12:36:48.736629Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T12:36:48.739373Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T12:36:48.738925Z&quot;}" data-execution_count="19">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="co"># write your code here</span></span></code></pre></div>
