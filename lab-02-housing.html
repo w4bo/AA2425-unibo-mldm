@@ -408,11 +408,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <p><a href="https://colab.research.google.com/github/w4bo/AA2425-unibo-mldm/blob/master/slides/lab-02-housing.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 </section>
-<section>
 <section id="the-california-housing-case-study" class="title-slide slide level1 center">
 <h1>The <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/"><code>California Housing</code></a> case study</h1>
 <p>Our task is to use California census data to forecast housing prices given the population, median income, and median housing price for each block group in California. Block groups are the smallest geographical unit for which the US Census Bureau publishes sample data (a block group typically has a population of 600 to 3,000 people). We will just call them “districts” for short.</p>
-<div id="80970f2e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:26.662549Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:26.662395Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:27.148873Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:27.148271Z&quot;}" data-outputid="587cfb9c-3001-4d5a-8aa5-819ce7247549" data-execution_count="1">
+<div id="80970f2e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:28.354881Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:28.354469Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:29.050337Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:29.049784Z&quot;}" data-outputid="587cfb9c-3001-4d5a-8aa5-819ce7247549" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -605,16 +604,19 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </section>
-<section id="and-now" class="slide level2">
-<h2>… and now?</h2>
+
+<section id="and-now" class="title-slide slide level1 center">
+<h1>… and now?</h1>
+
 </section>
-<section id="answer-some-questions" class="slide level2">
-<h2>Answer some questions:</h2>
+
+<section id="answer-some-questions" class="title-slide slide level1 center">
+<h1>Answer some questions:</h1>
 <ul>
 <li>Which attributes (i.e., columns) are contained in the dataset?</li>
 <li>Which is their semantics?</li>
 </ul>
-<div id="9817e68c" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:27.150760Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:27.150582Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:27.154691Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:27.154244Z&quot;}" data-outputid="7a505de0-d4f0-42d0-f781-bb4abd8f8fce" data-execution_count="2">
+<div id="9817e68c" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:29.052323Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:29.051976Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:29.055594Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:29.055159Z&quot;}" data-outputid="7a505de0-d4f0-42d0-f781-bb4abd8f8fce" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>df.columns</span></code></pre></div>
@@ -640,9 +642,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><code>oceanProximity</code>: Location of the house w.r.t ocean/sea</li>
 </ol>
 </section>
-<section id="data-profiling" class="slide level2">
-<h2>Data profiling</h2>
-<div id="85441c0b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:27.156334Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:27.156166Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:27.163565Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:27.163108Z&quot;}" data-outputid="2f22dd7b-0b6b-4f6f-ef8c-b317a0b6c28c" data-scrolled="true" data-execution_count="3">
+
+<section id="data-profiling" class="title-slide slide level1 center">
+<h1>Data profiling</h1>
+<div id="85441c0b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:29.057470Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:29.057151Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:29.064492Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:29.063941Z&quot;}" data-outputid="2f22dd7b-0b6b-4f6f-ef8c-b317a0b6c28c" data-scrolled="true" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># show some statistics on the dataframe</span></span>
@@ -668,7 +671,11 @@ dtypes: float64(9), object(1)
 memory usage: 1.6+ MB</code></pre>
 </div>
 </div>
-<div id="e6a24b3a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:27.165177Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:27.165010Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:27.191518Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:27.191056Z&quot;}" data-outputid="14d781ec-eb1f-4e59-d475-cc3a39f7e5cb" data-execution_count="4">
+</section>
+
+<section id="data-profiling-1" class="title-slide slide level1 center">
+<h1>Data profiling</h1>
+<div id="e6a24b3a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:29.066202Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:29.065868Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:29.091531Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:29.091123Z&quot;}" data-outputid="14d781ec-eb1f-4e59-d475-cc3a39f7e5cb" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
@@ -856,38 +863,46 @@ memory usage: 1.6+ MB</code></pre>
 </div>
 </div>
 </section>
-<section id="are-you-satisfied-with-the-understanding" class="slide level2">
-<h2>… are you satisfied with the understanding?</h2>
+
+<section id="are-you-satisfied-with-the-understanding" class="title-slide slide level1 center">
+<h1>… are you satisfied with the understanding?</h1>
+
 </section>
-<section id="what-about-data-visualization" class="slide level2">
-<h2>… what about data visualization?</h2>
+
+<section>
+<section id="what-about-data-visualization" class="title-slide slide level1 center">
+<h1>… what about data visualization?</h1>
 <p>Can we exploit the nature of the data?</p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
-<div id="H0bU-4jprHm3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:27.193267Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:27.193097Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:28.101656Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:28.101171Z&quot;}" data-outputid="9bf8d9ae-213a-4873-ff38-a202193c9066" data-execution_count="5">
+<div id="H0bU-4jprHm3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:29.093383Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:29.093053Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:29.974975Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:29.974461Z&quot;}" data-outputid="9bf8d9ae-213a-4873-ff38-a202193c9066" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>df.plot(kind<span class="op">=</span><span class="st">"scatter"</span>, x<span class="op">=</span><span class="st">"longitude"</span>, y<span class="op">=</span><span class="st">"latitude"</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, s<span class="op">=</span>df[<span class="st">"population"</span>]<span class="op">/</span><span class="dv">100</span>, label<span class="op">=</span><span class="st">"population"</span>, figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">3</span>), c<span class="op">=</span><span class="st">"median_house_value"</span>, cmap<span class="op">=</span><span class="st">"jet"</span>, colorbar<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 
 </div>
-<img data-src="lab-02-housing_files/figure-revealjs/cell-6-output-1.png" class="r-stretch"></section>
-<section id="what-if-we-integrate-open-data" class="slide level2">
-<h2>What if we integrate open data?</h2>
+<img data-src="lab-02-housing_files/figure-revealjs/cell-6-output-1.png" class="r-stretch"></section></section>
+<section id="what-if-we-integrate-open-data" class="title-slide slide level1 center">
+<h1>What if we integrate open data?</h1>
+
 </section>
-<section id="can-we-exploit-the-nature-of-the-data-again" class="slide level2">
-<h2>Can we exploit the nature of the data… again?</h2>
+
+<section id="can-we-exploit-the-nature-of-the-data-again" class="title-slide slide level1 center">
+<h1>Can we exploit the nature of the data… again?</h1>
 
 <img data-src="https://github.com/w4bo/2024-bbs-dm/assets/18005592/06d9fd78-5856-4119-accb-62de0f54b680" class="r-stretch quarto-figure-center"><p class="caption">California, USA</p></section>
-<section id="merging-the-data-sources" class="slide level2">
-<h2>Merging the data sources</h2>
+
+<section id="merging-the-data-sources" class="title-slide slide level1 center">
+<h1>Merging the data sources</h1>
 
 <img data-src="https://user-images.githubusercontent.com/18005592/232756567-b706619a-2cc9-4b45-b78f-5172103e0c3b.png" class="r-stretch"></section>
-<section id="memory-usage" class="slide level2">
-<h2>Memory usage</h2>
+
+<section id="memory-usage" class="title-slide slide level1 center">
+<h1>Memory usage</h1>
 <p>What if I change float64 to float32?</p>
-<div id="8f1e7c90" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:28.104098Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:28.103674Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:28.114385Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:28.113959Z&quot;}" data-outputid="42de86f8-33bc-4b32-ba59-df1d5f761ac8" data-execution_count="6">
+<div id="8f1e7c90" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:29.977251Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:29.976834Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:29.987424Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:29.986989Z&quot;}" data-outputid="42de86f8-33bc-4b32-ba59-df1d5f761ac8" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>dff <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>)  <span class="co"># copy the dataframe</span></span>
@@ -917,15 +932,17 @@ memory usage: 887.0+ KB</code></pre>
 </div>
 </div>
 </section>
-<section id="missing-values" class="slide level2">
-<h2>Missing values</h2>
+
+<section id="missing-values" class="title-slide slide level1 center">
+<h1>Missing values</h1>
 <p>There are some missing values for <code>total_bedrooms</code>. What should we do?</p>
 <p>Most Machine Learning algorithms cannot work with missing features.</p>
 </section>
-<section id="non-numeric-attributes" class="slide level2">
-<h2>Non-numeric attributes</h2>
+
+<section id="non-numeric-attributes" class="title-slide slide level1 center">
+<h1>Non-numeric attributes</h1>
 <p><code>ocean_proximity</code> is a text attribute, but not all machine libraries can manipulated textual data types.</p>
-<div id="3297de8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:28.116334Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:28.115999Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:28.121231Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:28.120648Z&quot;}" data-outputid="3e206562-51ff-44be-d06d-d1f44a268887" data-execution_count="7">
+<div id="3297de8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:29.989341Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:29.989018Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:29.994108Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:29.993636Z&quot;}" data-outputid="3e206562-51ff-44be-d06d-d1f44a268887" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].value_counts()</span></code></pre></div>
@@ -940,7 +957,11 @@ ISLAND           5
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="xkOk2VEdVkde" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:28.123130Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:28.122802Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:28.205456Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:28.204867Z&quot;}" data-outputid="aa85d542-74b5-4601-bd74-e1af0e45bf08" data-execution_count="8">
+</section>
+
+<section id="non-numeric-attributes-1" class="title-slide slide level1 center">
+<h1>Non-numeric attributes</h1>
+<div id="xkOk2VEdVkde" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:29.995798Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:29.995450Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:30.077324Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:30.076838Z&quot;}" data-outputid="aa85d542-74b5-4601-bd74-e1af0e45bf08" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].hist()</span></code></pre></div>
@@ -948,9 +969,10 @@ Name: count, dtype: int64</code></pre>
 
 </div>
 <img data-src="lab-02-housing_files/figure-revealjs/cell-9-output-1.png" class="r-stretch"></section>
-<section id="visualization" class="slide level2">
-<h2>Visualization</h2>
-<div id="570f14ff" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:28.207308Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:28.206986Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:29.193928Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:29.193387Z&quot;}" data-outputid="76614232-7bd6-452f-df80-a8da248f923b" data-scrolled="true" data-execution_count="9">
+
+<section id="visualization" class="title-slide slide level1 center">
+<h1>Visualization</h1>
+<div id="570f14ff" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:30.079157Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:30.078846Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:31.086396Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:31.085791Z&quot;}" data-outputid="76614232-7bd6-452f-df80-a8da248f923b" data-scrolled="true" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -961,8 +983,9 @@ Name: count, dtype: int64</code></pre>
 
 </div>
 <img data-src="lab-02-housing_files/figure-revealjs/cell-10-output-1.png" class="r-stretch"></section>
-<section id="open-questions" class="slide level2">
-<h2>Open questions</h2>
+
+<section id="open-questions" class="title-slide slide level1 center">
+<h1>Open questions</h1>
 <ul>
 <li><code>median_income</code> should be in dollars. However, it has a strange range. Why? “you are told that the data has been scaled and capped at 15 (actually 15.0001) for higher median incomes, and at 0.5 (actually 0.4999) for lower median incomes. The numbers represent roughly tens of thousands of dollars. The numbers represent roughly tens of thousands of dollars”</li>
 <li><code>housing_median_age</code> and <code>median_house_value</code> are capped. As to <code>median_house_value</code>, this is a serious problem since it is your target attribute (your labels). Your Machine Learning algorithms may learn that prices never go beyond that limit. You need to check with your client team (the team that will use your system’s output) to see if this is a problem or not. If they tell you that they need precise predictions even beyond 500,000USD, then you have mainly two options: (a) collect proper labels for the districts whose labels were capped, (b) remove those districts from the training set.”</li>
@@ -970,13 +993,14 @@ Name: count, dtype: int64</code></pre>
 <li>Many histograms are tail heavy: they extend much farther to the right of the median than to the left. This may make it a bit harder for some Machine Learning algorithms to detect patterns</li>
 </ul>
 </section>
-<section id="relationships-between-variables" class="slide level2">
-<h2>Relationships between variables</h2>
+
+<section id="relationships-between-variables" class="title-slide slide level1 center">
+<h1>Relationships between variables</h1>
 <ul>
-<li>A grid of Axes such that each numeric variable in data will by shared across the y-axes across a single row and the x-axes across a single column</li>
-<li>The diagonal plots are treated differently: a univariate distribution plot is drawn to show the marginal distribution of the data in each column.</li>
+<li>Each numeric variable in data will by shared across the y-axes across a single row and the x-axes across a single column</li>
+<li>The diagonal plots are treated differently: univariate distribution plots show the marginal distributions of the data</li>
 </ul>
-<div id="jFvRyNbGV36l" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:29.195944Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:29.195607Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:37.077838Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:37.077218Z&quot;}" data-outputid="84be7606-9a80-42ba-b9de-668d9fbd44b9" data-execution_count="10">
+<div id="jFvRyNbGV36l" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:31.088500Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:31.088195Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:38.925996Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:38.925445Z&quot;}" data-outputid="84be7606-9a80-42ba-b9de-668d9fbd44b9" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -988,191 +1012,73 @@ Name: count, dtype: int64</code></pre>
 
 </div>
 <img data-src="lab-02-housing_files/figure-revealjs/cell-11-output-1.png" class="r-stretch"></section>
-<section id="pareto-frontier" class="slide level2">
-<h2>Pareto frontier</h2>
+
+<section id="pareto-frontier" class="title-slide slide level1 center">
+<h1>Pareto frontier</h1>
 <p>Which blocks represent a good tradeof between cost and number of rooms?</p>
-<div id="C9bXE2GlhUBo" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:37.080144Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:37.079607Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:38.099511Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:38.098913Z&quot;}" data-outputid="1148cda6-a41b-4158-fe01-551524b3d0aa" data-execution_count="11">
-<div class="cell-output cell-output-stdout">
-<pre><code>Requirement already satisfied: paretoset in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (1.2.4)
-Requirement already satisfied: black in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (24.8.0)
-Requirement already satisfied: flake8 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (7.1.1)
-Requirement already satisfied: ipython in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (8.27.0)
-Requirement already satisfied: matplotlib in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (3.9.2)
-Requirement already satisfied: mypy in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (1.11.2)
-Requirement already satisfied: nbsphinx in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (0.9.5)
-Requirement already satisfied: numba in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (0.60.0)
-Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (2.0.2)
-Requirement already satisfied: numpydoc in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (1.8.0)
-Requirement already satisfied: pandas in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (2.2.3)
-Requirement already satisfied: pep8 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (1.7.1)
-Requirement already satisfied: pytest in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (8.3.3)
-Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (65.5.0)
-Requirement already satisfied: sphinx in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (8.0.2)
-Requirement already satisfied: recommonmark in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (0.7.1)
-Requirement already satisfied: myst-parser in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from paretoset) (4.0.0)
-Requirement already satisfied: click&gt;=8.0.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from black-&gt;paretoset) (8.1.7)
-Requirement already satisfied: mypy-extensions&gt;=0.4.3 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from black-&gt;paretoset) (1.0.0)
-Requirement already satisfied: packaging&gt;=22.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from black-&gt;paretoset) (24.1)
-Requirement already satisfied: pathspec&gt;=0.9.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from black-&gt;paretoset) (0.12.1)
-Requirement already satisfied: platformdirs&gt;=2 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from black-&gt;paretoset) (4.3.6)
-Requirement already satisfied: mccabe&lt;0.8.0,&gt;=0.7.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from flake8-&gt;paretoset) (0.7.0)
-Requirement already satisfied: pycodestyle&lt;2.13.0,&gt;=2.12.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from flake8-&gt;paretoset) (2.12.1)
-Requirement already satisfied: pyflakes&lt;3.3.0,&gt;=3.2.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from flake8-&gt;paretoset) (3.2.0)
-Requirement already satisfied: decorator in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from ipython-&gt;paretoset) (5.1.1)
-Requirement already satisfied: jedi&gt;=0.16 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from ipython-&gt;paretoset) (0.19.1)
-Requirement already satisfied: matplotlib-inline in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from ipython-&gt;paretoset) (0.1.7)
-Requirement already satisfied: prompt-toolkit&lt;3.1.0,&gt;=3.0.41 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from ipython-&gt;paretoset) (3.0.48)
-Requirement already satisfied: pygments&gt;=2.4.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from ipython-&gt;paretoset) (2.18.0)
-Requirement already satisfied: stack-data in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from ipython-&gt;paretoset) (0.6.3)
-Requirement already satisfied: traitlets&gt;=5.13.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from ipython-&gt;paretoset) (5.14.3)
-Requirement already satisfied: typing-extensions&gt;=4.6 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from ipython-&gt;paretoset) (4.12.2)
-Requirement already satisfied: pexpect&gt;4.3 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from ipython-&gt;paretoset) (4.9.0)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from matplotlib-&gt;paretoset) (1.3.0)
-Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from matplotlib-&gt;paretoset) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from matplotlib-&gt;paretoset) (4.54.1)
-Requirement already satisfied: kiwisolver&gt;=1.3.1 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from matplotlib-&gt;paretoset) (1.4.7)
-Requirement already satisfied: pillow&gt;=8 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from matplotlib-&gt;paretoset) (10.4.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from matplotlib-&gt;paretoset) (3.1.4)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from matplotlib-&gt;paretoset) (2.9.0.post0)
-Requirement already satisfied: docutils&lt;0.22,&gt;=0.19 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from myst-parser-&gt;paretoset) (0.21.2)
-Requirement already satisfied: jinja2 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from myst-parser-&gt;paretoset) (3.1.4)
-Requirement already satisfied: markdown-it-py~=3.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from myst-parser-&gt;paretoset) (3.0.0)
-Requirement already satisfied: mdit-py-plugins&gt;=0.4.1,~=0.4 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from myst-parser-&gt;paretoset) (0.4.2)
-Requirement already satisfied: pyyaml in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from myst-parser-&gt;paretoset) (6.0.2)
-Requirement already satisfied: sphinxcontrib-applehelp in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from sphinx-&gt;paretoset) (2.0.0)
-Requirement already satisfied: sphinxcontrib-devhelp in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from sphinx-&gt;paretoset) (2.0.0)
-Requirement already satisfied: sphinxcontrib-jsmath in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from sphinx-&gt;paretoset) (1.0.1)
-Requirement already satisfied: sphinxcontrib-htmlhelp&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from sphinx-&gt;paretoset) (2.1.0)
-Requirement already satisfied: sphinxcontrib-serializinghtml&gt;=1.1.9 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from sphinx-&gt;paretoset) (2.0.0)
-Requirement already satisfied: sphinxcontrib-qthelp in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from sphinx-&gt;paretoset) (2.0.0)
-Requirement already satisfied: snowballstemmer&gt;=2.2 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from sphinx-&gt;paretoset) (2.2.0)
-Requirement already satisfied: babel&gt;=2.13 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from sphinx-&gt;paretoset) (2.16.0)
-Requirement already satisfied: alabaster&gt;=0.7.14 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from sphinx-&gt;paretoset) (1.0.0)
-Requirement already satisfied: imagesize&gt;=1.3 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from sphinx-&gt;paretoset) (1.4.1)
-Requirement already satisfied: requests&gt;=2.30.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from sphinx-&gt;paretoset) (2.32.3)
-Requirement already satisfied: nbconvert!=5.4,&gt;=5.3 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbsphinx-&gt;paretoset) (7.16.4)
-Requirement already satisfied: nbformat in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbsphinx-&gt;paretoset) (5.10.4)
-Requirement already satisfied: llvmlite&lt;0.44,&gt;=0.43.0dev0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from numba-&gt;paretoset) (0.43.0)
-Requirement already satisfied: tabulate&gt;=0.8.10 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from numpydoc-&gt;paretoset) (0.9.0)
-Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from pandas-&gt;paretoset) (2024.2)
-Requirement already satisfied: tzdata&gt;=2022.7 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from pandas-&gt;paretoset) (2024.2)
-Requirement already satisfied: iniconfig in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from pytest-&gt;paretoset) (2.0.0)
-Requirement already satisfied: pluggy&lt;2,&gt;=1.5 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from pytest-&gt;paretoset) (1.5.0)
-Requirement already satisfied: commonmark&gt;=0.8.1 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from recommonmark-&gt;paretoset) (0.9.1)
-Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;paretoset) (0.8.4)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from jinja2-&gt;myst-parser-&gt;paretoset) (2.1.5)
-Requirement already satisfied: mdurl~=0.1 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from markdown-it-py~=3.0-&gt;myst-parser-&gt;paretoset) (0.1.2)
-Requirement already satisfied: beautifulsoup4 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (4.12.3)
-Requirement already satisfied: bleach!=5.0.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (6.1.0)
-Requirement already satisfied: defusedxml in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (0.7.1)
-Requirement already satisfied: jupyter-core&gt;=4.7 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (5.7.2)
-Requirement already satisfied: jupyterlab-pygments in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (0.3.0)
-Requirement already satisfied: mistune&lt;4,&gt;=2.0.3 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (3.0.2)
-Requirement already satisfied: nbclient&gt;=0.5.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (0.10.0)
-Requirement already satisfied: pandocfilters&gt;=1.4.1 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (1.5.1)
-Requirement already satisfied: tinycss2 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (1.3.0)
-Requirement already satisfied: fastjsonschema&gt;=2.15 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbformat-&gt;nbsphinx-&gt;paretoset) (2.20.0)
-Requirement already satisfied: jsonschema&gt;=2.6 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbformat-&gt;nbsphinx-&gt;paretoset) (4.23.0)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from pexpect&gt;4.3-&gt;ipython-&gt;paretoset) (0.7.0)
-Requirement already satisfied: wcwidth in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from prompt-toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython-&gt;paretoset) (0.2.13)
-Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib-&gt;paretoset) (1.16.0)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from requests&gt;=2.30.0-&gt;sphinx-&gt;paretoset) (3.3.2)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from requests&gt;=2.30.0-&gt;sphinx-&gt;paretoset) (3.10)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from requests&gt;=2.30.0-&gt;sphinx-&gt;paretoset) (2.2.3)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from requests&gt;=2.30.0-&gt;sphinx-&gt;paretoset) (2024.8.30)
-Requirement already satisfied: executing&gt;=1.2.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;paretoset) (2.1.0)
-Requirement already satisfied: asttokens&gt;=2.1.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;paretoset) (2.4.1)
-Requirement already satisfied: pure-eval in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from stack-data-&gt;ipython-&gt;paretoset) (0.2.3)
-Requirement already satisfied: webencodings in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from bleach!=5.0.0-&gt;nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (0.5.1)
-Requirement already satisfied: attrs&gt;=22.2.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from jsonschema&gt;=2.6-&gt;nbformat-&gt;nbsphinx-&gt;paretoset) (24.2.0)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from jsonschema&gt;=2.6-&gt;nbformat-&gt;nbsphinx-&gt;paretoset) (2023.12.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from jsonschema&gt;=2.6-&gt;nbformat-&gt;nbsphinx-&gt;paretoset) (0.35.1)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from jsonschema&gt;=2.6-&gt;nbformat-&gt;nbsphinx-&gt;paretoset) (0.20.0)
-Requirement already satisfied: jupyter-client&gt;=6.1.12 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from nbclient&gt;=0.5.0-&gt;nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (8.6.3)
-Requirement already satisfied: soupsieve&gt;1.2 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from beautifulsoup4-&gt;nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (2.6)
-Requirement already satisfied: pyzmq&gt;=23.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (26.2.0)
-Requirement already satisfied: tornado&gt;=6.2 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert!=5.4,&gt;=5.3-&gt;nbsphinx-&gt;paretoset) (6.4.1)</code></pre>
-</div>
-</div>
-<div id="U_q70SWYhXQI" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:38.101934Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:38.101512Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:38.254479Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:38.253990Z&quot;}" data-outputid="c27adae9-3828-48a4-84ff-f3710452dd13" data-execution_count="12">
+<div id="U_q70SWYhXQI" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:39.976835Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:39.976621Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:40.134468Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:40.133978Z&quot;}" data-outputid="c27adae9-3828-48a4-84ff-f3710452dd13" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb16-2"><a href=""></a>df.plot.scatter(x<span class="op">=</span><span class="st">'median_house_value'</span>, y<span class="op">=</span><span class="st">'total_bedrooms'</span>, ax<span class="op">=</span>ax)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb15-2"><a href=""></a>df.plot.scatter(x<span class="op">=</span><span class="st">'median_house_value'</span>, y<span class="op">=</span><span class="st">'total_bedrooms'</span>, ax<span class="op">=</span>ax)</span></code></pre></div>
 </details>
 
 </div>
 <img data-src="lab-02-housing_files/figure-revealjs/cell-13-output-1.png" class="r-stretch"></section>
-<section id="skyline" class="slide level2">
-<h2>Skyline</h2>
+
+<section id="skyline" class="title-slide slide level1 center">
+<h1>Skyline</h1>
 <p>The <strong>skyline operator</strong>: optimization problem that computes the Pareto optimum on tuples with multiple dimensions</p>
 <ul>
-<li>The name skyline comes from the view on Manhattan from the Hudson River, where those buildings can be seen that are not hidden by any other: a building is visible if it is not dominated by a building that is taller or closer to the river (two dimensions, distance to the river minimized, height maximized).</li>
-<li>Selecting a hotel for a holiday. The user wants the hotel to be both cheap and close to the beach. However, hotels that are close to the beach may also be expensive. The skyline operator only presents those hotels that are not worse than any other hotel in both price and distance to the beach.</li>
+<li><em>Skyline</em> comes from the view on Manhattan from the Hudson River. A building is visible if it is not dominated by a building that is taller or closer to the river (two dimensions, distance to the river minimized, height maximized).</li>
+<li>Users want hotels for a holidays to be cheap and close to the beach. However, hotels that are close to the beach are expensive.</li>
 </ul>
 <p>Formally, a tuple <strong>dominates</strong> another if it is at least as good in all dimensions and better in at least one dimension.</p>
-<div id="0_KF0LBDhab3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:38.256485Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:38.256132Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:40.267358Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:40.266666Z&quot;}" data-outputid="8303d6be-33f4-4d76-c891-3278b0be3212" data-execution_count="13">
+
+<img data-src="https://img.andrewprokos.com/NYC-SKYLINE-FR-JC-PANORAMA-1100PX-500x170@2x.jpg" class="r-stretch quarto-figure-center"><p class="caption">NY Skyline</p></section>
+
+<section id="pareto-frontier-1" class="title-slide slide level1 center">
+<h1>Pareto frontier</h1>
+<div id="0_KF0LBDhab3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:40.136401Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:40.136227Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:42.069587Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:42.069007Z&quot;}" data-outputid="8303d6be-33f4-4d76-c891-3278b0be3212" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="im">from</span> paretoset <span class="im">import</span> paretoset</span>
-<span id="cb17-2"><a href=""></a></span>
-<span id="cb17-3"><a href=""></a>mask <span class="op">=</span> paretoset(df[[<span class="st">"median_house_value"</span>, <span class="st">"total_bedrooms"</span>]], sense<span class="op">=</span>[<span class="st">"min"</span>, <span class="st">"max"</span>])</span>
-<span id="cb17-4"><a href=""></a>df[mask].plot.scatter(x<span class="op">=</span><span class="st">'median_house_value'</span>, y<span class="op">=</span><span class="st">'total_bedrooms'</span>, ax<span class="op">=</span>ax, c<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb17-5"><a href=""></a>fig</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="im">from</span> paretoset <span class="im">import</span> paretoset</span>
+<span id="cb16-2"><a href=""></a></span>
+<span id="cb16-3"><a href=""></a>mask <span class="op">=</span> paretoset(df[[<span class="st">"median_house_value"</span>, <span class="st">"total_bedrooms"</span>]], sense<span class="op">=</span>[<span class="st">"min"</span>, <span class="st">"max"</span>])</span>
+<span id="cb16-4"><a href=""></a>df[mask].plot.scatter(x<span class="op">=</span><span class="st">'median_house_value'</span>, y<span class="op">=</span><span class="st">'total_bedrooms'</span>, ax<span class="op">=</span>ax, c<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb16-5"><a href=""></a>fig</span></code></pre></div>
 </details>
 
 </div>
 <img data-src="lab-02-housing_files/figure-revealjs/cell-14-output-1.png" class="r-stretch"></section>
-<section id="in-3d" class="slide level2">
-<h2>… in 3D</h2>
-<p>Which blocks represent a good tradeof between cost, and number of rooms?</p>
-<div id="9zsJ3a8Ghc8h" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:40.269498Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:40.269267Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:40.931904Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:40.931253Z&quot;}" data-outputid="86fbff57-ebe3-4d49-f80b-0f23c1c9b69f" data-execution_count="14">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb18-2"><a href=""></a>df.plot.scatter(x<span class="op">=</span><span class="st">"housing_median_age"</span>, y<span class="op">=</span><span class="st">"total_bedrooms"</span>, c<span class="op">=</span><span class="st">"median_house_value"</span>, ax<span class="op">=</span>ax)</span></code></pre></div>
-</details>
 
-</div>
-<img data-src="lab-02-housing_files/figure-revealjs/cell-15-output-1.png" class="r-stretch"></section>
-<section id="pareto-frontier-in-3d" class="slide level2">
-<h2>Pareto frontier in 3D</h2>
-<div id="a0WvmuFKheqf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:40.933836Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:40.933654Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:41.267440Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:41.266822Z&quot;}" data-outputid="2a64231e-8ccb-4300-ff2e-ef4d47512f1a" data-execution_count="15">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>mask <span class="op">=</span> paretoset(df[[<span class="st">"housing_median_age"</span>, <span class="st">"total_bedrooms"</span>, <span class="st">"median_house_value"</span>]], sense<span class="op">=</span>[<span class="st">"min"</span>, <span class="st">"max"</span>, <span class="st">"min"</span>])</span>
-<span id="cb19-2"><a href=""></a>df[mask].plot.scatter(x<span class="op">=</span><span class="st">"housing_median_age"</span>, y<span class="op">=</span><span class="st">"total_bedrooms"</span>, ax<span class="op">=</span>ax, c<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb19-3"><a href=""></a>fig</span></code></pre></div>
-</details>
-
-</div>
-<img data-src="lab-02-housing_files/figure-revealjs/cell-16-output-1.png" class="r-stretch"></section>
-<section id="exercise-1" class="slide level2">
-<h2>Exercise 1</h2>
+<section id="exercise-1" class="title-slide slide level1 center">
+<h1>Exercise 1</h1>
 <ol type="1">
 <li>For each <code>ocean_proximity</code>, return the number of blocks</li>
 <li>Return the <code>ocean_proximity</code> with the highest number of blocks</li>
 <li>Print the mean value per <code>ocean_proximity</code> for every column</li>
 <li>Print the mean, min and max values value per <code>ocean_proximity</code> for every column</li>
 </ol>
-<div id="iURuzXemMzma" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:41.269272Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:41.269093Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:41.271634Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:41.271157Z&quot;}" data-execution_count="16">
+<div id="iURuzXemMzma" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:43.018945Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:43.018774Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:43.021459Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:43.020890Z&quot;}" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="co"># Write your code here</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="co"># Write your code here</span></span></code></pre></div>
 </details>
 </div>
 </section>
-<section id="exercise-2" class="slide level2">
-<h2>Exercise 2</h2>
+
+<section id="exercise-2" class="title-slide slide level1 center">
+<h1>Exercise 2</h1>
 <ol type="1">
 <li>Add a new column: <code>population_per_household = population / households</code></li>
 <li>Add a new column: <code>rooms_per_household = total_rooms / households</code></li>
 <li>Add a new column: <code>bedrooms_per_room = total_bedrooms / total_rooms</code></li>
 </ol>
-<div id="ef4ed12b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:36:41.273270Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:36:41.273106Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:36:41.275306Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:36:41.274841Z&quot;}" data-execution_count="17">
+<div id="ef4ed12b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-01T10:55:43.023059Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-01T10:55:43.022899Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-01T10:55:43.025155Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-01T10:55:43.024718Z&quot;}" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="co"># Write your code here</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a><span class="co"># Write your code here</span></span></code></pre></div>
 </details>
 </div>
 <div class="quarto-auto-generated-content">
@@ -1180,7 +1086,7 @@ Requirement already satisfied: tornado&gt;=6.2 in /opt/hostedtoolcache/Python/3.
 <p>Matteo Francia - Machine Learning and Data Mining (Module 2) - A.Y. 2024/25</p>
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
