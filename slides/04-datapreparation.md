@@ -103,30 +103,4 @@ Examples:
 
 ![image](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*YejjU_69ffDyrC0z-X9jYQ.jpeg)
 
-# Main Python Libraries
-
-Considering `(volume, variety, velocity, veracity)`, we focus on the `(*, structured, batch, *)` scenario
-
-:::: {.columns}
-::: {.column width="65%"}
-
-**Relational data** are usually collected in **tabular** format (e.g., csv files)
-
-- Each row is an **observation** (instance or tuple)
-    - An object of the analysis
-    - E.g., a product for market basket analysis
-- Each column is an **attribute** (or feature) characterizing each object
-    - All values within a column have the same type (i.e., all values belong to the same attribute domain)
-    - E.g., the attributes `ID` (int), `ProductName` (str), or `Price` (float)
-    
-We need proper tools (e.g., libraries) to manage such data
-
-:::
-::: {.column width="35%"}
-
-![Library ecosystem](https://github.com/w4bo/img-dump/assets/18005592/72869b67-6a16-4a5a-a8a4-8d8e10c2633d)
-
-:::
-::::
-
 # References
