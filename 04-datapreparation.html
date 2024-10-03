@@ -359,7 +359,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section id="data-preparation-aka-data-pre-processing" class="title-slide slide level1 center">
 <h1>Data Preparation (aka <em>data pre-processing</em>)</h1>
-<p>The <strong>data preparation</strong> phase covers all activities to construct the dataset that will be fed into the modeling tools from the initial data</p>
+<p>The <strong>data preparation</strong> phase covers all activities to construct the dataset fed into the modeling tools from the initial data.</p>
 
 <img data-src="./img/datapreprocessing/pipeline.svg" class="r-stretch quarto-figure-center"><p class="caption">Data pipeline</p><p>It plays a key role in a data analytics process and <em>avoids “garbage in, garbage out”</em></p>
 <ul>
@@ -394,18 +394,18 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>its relevance to the data mining goals</li>
 <li>quality and technical constraints such as limits on data volume or data types</li>
 </ul>
-<p>Part of the data selection process should involve explaining why certain data was included or excluded</p>
+<p>Part of the data selection process should involve explaining why certain data was included or excluded.</p>
 <ul>
-<li>It is also a good idea to decide if one or more attributes are more important than others are</li>
+<li>It is also a good idea to decide if one or more attributes are more important than others</li>
 </ul>
 <blockquote>
 <p>For instance, while an individual’s address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated.</p>
 </blockquote>
 </section>
 
-<section id="clean-data" class="title-slide slide level1 center">
-<h1>Clean Data</h1>
-<p><em>Without clean data, the results of a data mining analysis are in question.</em></p>
+<section id="clean-data-or-data-cleansing" class="title-slide slide level1 center">
+<h1>Clean Data (or data cleansing)</h1>
+<p><em>Without clean data, the results of a data mining analysis are in question</em>.</p>
 <p>The data analyst must</p>
 <ul>
 <li>select clean subsets of data or incorporate techniques such as estimating missing data through modeling analyses</li>
@@ -413,8 +413,39 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
+<section id="imputation-of-missing-values" class="title-slide slide level1 center">
+<h1>Imputation of missing values</h1>
+<p><strong>Imputation</strong> is the process of replacing missing data with substituted values.</p>
+<p><em>Listwise deletion</em> (complete case) deletes data with missing values</p>
+<ul>
+<li>If data are missing at random, listwise deletion does not add any bias, but it decreases the sample size</li>
+<li>Otherwise, listwise deletion will introduce bias because the remaining data are not representative of the original sample</li>
+</ul>
+<p><em>Pairwise deletion</em> deletes data when it is missing a variable required for a particular analysis</p>
+<ul>
+<li>… but includes that data in analyses for which all required variables are present</li>
+</ul>
+<p><em>Hot-deck imputation</em>: the information donors come from the same dataset as the recipients</p>
+<ul>
+<li>One form of hot-deck imputation is called “last observation carried forward”
+<ul>
+<li>Sort a dataset according to any number of variables, thus creating an ordered dataset</li>
+<li>Finds a missing value and uses the value immediately before the data that are missing to impute the missing value</li>
+</ul></li>
+</ul>
+<p><em>Cold-deck imputation</em> replaces missing values with values from similar data in different datasets</p>
+<p><em>Mean substitution</em> replaces missing values with the mean of that variable for all other cases</p>
+<ul>
+<li>Mean imputation attenuates any correlations involving the variable(s) that are imputed
+<ul>
+<li>There is no relationship between the imputed variable and any other measured variables.</li>
+<li>Mean imputation can be carried out within classes (i.e.&nbsp;categories such as gender)</li>
+</ul></li>
+</ul>
+</section>
+
 <section id="construct-data" class="title-slide slide level1 center">
-<h1>Construct Data</h1>
+<h1>Construct data</h1>
 <p>The data analyst could undertake operations such as developing entirely new records or producing derived attributes.</p>
 <ul>
 <li><em>Derived attributes should only be added if they ease the modeling algorithm</em>
@@ -431,6 +462,48 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>A derived attribute is <code>area</code> = <code>length</code> x <code>width</code>.</p>
 <p>A derived attribute is <code>income per head</code> which could be easier to use than <code>income per household</code>.</p>
 </blockquote>
+</section>
+
+<section id="feature-encoding" class="title-slide slide level1 center">
+<h1>Feature encoding</h1>
+<p><strong>Encoding</strong> is the process of converting categorical variables into numeric features.</p>
+<ul>
+<li>Most machine learning algorithms, like linear regression, support vector machines, and logistic regression, require input data to be numeric because they use numerical computations to learn the model.</li>
+<li>These algorithms are not inherently capable of interpreting categorical data.</li>
+<li>Some implementations of decision tree-based algorithms can directly handle categorical data.</li>
+</ul>
+<p>Categorical features can be <em>nominal</em> or <em>ordinal</em>.</p>
+<ul>
+<li><em>Nominal features</em> (e.g., colors) don’t have a defined ranking or inherent order.</li>
+<li><em>Ordinal features</em> (e.g., size) have an inherent order or ranking</li>
+</ul>
+<p><em>One hot encoding</em> and <em>ordinal encoding</em> are the most common methods to transform categorical variables into numerical features.</p>
+</section>
+
+<section id="feature-encoding-ordinal-encoding" class="title-slide slide level1 center">
+<h1>Feature encoding: ordinal encoding</h1>
+<p><strong>Ordinal encoding</strong> replaces each category with an integer value.</p>
+<ul>
+<li>These numbers are, in general, assigned arbitrarily.</li>
+<li>Ordinal encoding is a preferred option when the categorical variable has an inherent order.</li>
+<li>Examples include the variable size, with values ‘small’, ‘medium’, and ‘large’.</li>
+</ul>
+</section>
+
+<section id="feature-encoding-one-hot-encoding" class="title-slide slide level1 center">
+<h1>Feature encoding: one-hot encoding</h1>
+<p><strong>One-hot encoding (OHE)</strong> replaces categorical variables by <em>a set of binary variables</em></p>
+<ul>
+<li>each representing one of the unique categories in the variable.</li>
+<li>The binary variable takes the value 1 if the observation shows the category, or alternatively, 0.</li>
+</ul>
+<p>One hot encoding is particularly suitable for linear models because it treats each category independently.</p>
+<ul>
+<li>However, OHE increases the dimensionality of the dataset, as it adds a new variable per category.</li>
+<li>It may not be suitable for encoding high cardinality features, as it can drastically increase the dimensionality of the dataset.</li>
+<li>To prevent a massive increase of the feature space, we can one-hot encode only the most frequent categories in the variable.</li>
+<li>… less frequent values are treated collectively and represented as 0s in all the binary variables.</li>
+</ul>
 </section>
 
 <section id="integrate-data" class="title-slide slide level1 center">
@@ -458,6 +531,80 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </blockquote>
 </section>
 
+<section id="data-integration" class="title-slide slide level1 center">
+<h1>Data integration</h1>
+<p><strong>Data integration</strong> combines data residing in different sources and provides users with a unified view of them.</p>
+<p><em>Primary key-based integration</em> combines multiple sources based on matching unique identifiers (primary keys).</p>
+<ul>
+<li>This method works when both datasets have a well-defined and consistent schema with common key fields.</li>
+</ul>
+<p><em>Semantic integration</em> focuses on understanding the meaning of the data from different sources to combine it effectively.</p>
+<ul>
+<li>The goal is to merge data that may use different names, terminologies, or structures to describe the same concepts.</li>
+<li>Data is integrated based on semantic meaning rather than structural similarities.</li>
+<li>It involves the use of ontologies or data dictionaries to map similar concepts across datasets, ensuring consistency.</li>
+<li>It requires understanding the context, meaning, and relationships within the data.
+<ul>
+<li>For instance, spatial data can be easily integrated into maps</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="section-2" class="title-slide slide level1 center">
+<h1></h1>
+<table>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 43%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Aspect</strong></th>
+<th><strong>Semantic Integration</strong></th>
+<th><strong>Primary Key-based Integration</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Approach</em></td>
+<td>Based on meaning and understanding of the data.</td>
+<td>Based on matching unique keys (e.g., customer ID).</td>
+</tr>
+<tr class="even">
+<td><em>Suitability</em></td>
+<td>Ideal for heterogeneous data with different terminologies or structures.</td>
+<td>Ideal when datasets have common, well-defined keys.</td>
+</tr>
+<tr class="odd">
+<td><em>Complexity</em></td>
+<td>More complex due to the need to interpret and align meanings.</td>
+<td>Simpler, relies on exact key matches.</td>
+</tr>
+<tr class="even">
+<td><em>Flexibility</em></td>
+<td>Can integrate data with different schemas or representations.</td>
+<td>Less flexible, requires shared primary key fields.</td>
+</tr>
+<tr class="odd">
+<td><em>Challenges</em></td>
+<td>Requires mapping of concepts, and understanding of domain semantics.</td>
+<td>Limited to datasets that share a key, difficult without common keys.</td>
+</tr>
+<tr class="even">
+<td><em>Typical Tools</em></td>
+<td>Ontologies, semantic data models, and dictionaries.</td>
+<td>Relational databases, SQL joins, foreign key relationships.</td>
+</tr>
+<tr class="odd">
+<td><em>Use Cases</em></td>
+<td>Integrating data from different domains (e.g., healthcare and education).</td>
+<td>Merging data with unique keys (e.g., employee IDs).</td>
+</tr>
+</tbody>
+</table>
+</section>
+
 <section id="format-data" class="title-slide slide level1 center">
 <h1>Format Data</h1>
 <p>In some cases, the data analyst will <em>change the format of the data</em>.</p>
@@ -465,17 +612,168 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Sometimes these changes are needed to make the data suitable for a specific modeling tool.</li>
 <li>In other instances, the changes are needed to pose the necessary data mining questions.</li>
 </ul>
-<p>Examples:</p>
+
+<img data-src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*YejjU_69ffDyrC0z-X9jYQ.jpeg" class="r-stretch quarto-figure-center"><p class="caption">image</p><p>Examples:</p>
 <ul>
 <li>Simple: removing illegal characters from strings or trimming them to a maximum length</li>
 <li>More complex: reorganization of the information (e.g., <em>from normalized to flat tables</em>)</li>
 </ul>
 </section>
 
-<section id="data-variety" class="title-slide slide level1 center">
-<h1>Data variety</h1>
+<section id="dimensionality-reduction" class="title-slide slide level1 center">
+<h1>Dimensionality reduction</h1>
+<p><strong>Dimensionality reduction</strong> is the transformation of data from a high-dimensional space into a low-dimensional space</p>
+<ul>
+<li>Working in high-dimensional spaces can be undesirable for many reasons</li>
+<li>Raw data are often sparse as a consequence of the curse of dimensionality</li>
+<li>Dimensionality reduction can be used for noise reduction, data visualization, cluster analysis, or as an intermediate step to facilitate other analyses</li>
+</ul>
+<p>The main approaches can also be divided into <em>feature selection</em> and <em>feature extraction</em>.</p>
+</section>
 
-<img data-src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*YejjU_69ffDyrC0z-X9jYQ.jpeg" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
+<section id="feature-selection" class="title-slide slide level1 center">
+<h1>Feature selection</h1>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><strong>Feature selection</strong> approaches try to find a subset of the input variables</p>
+<p><em>Filter</em> strategy: select variables regardless of the model</p>
+<ul>
+<li>Based only on general features like the correlation with the variable to predict</li>
+</ul>
+<p><em>Wrapper</em> strategy</p>
+<ul>
+<li>Methods include forward selection, backward elimination, and exhaustive search</li>
+</ul>
+<p><em>Embedded</em> strategy</p>
+<ul>
+<li>Add/remove features while building the model based on prediction errors</li>
+<li>A learning algorithm takes advantage of its own variable selection process and performs feature selection and classification simultaneously</li>
+</ul>
+</div><div class="column" style="width:34%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Filter_Methode.png"></p>
+<figcaption>Filter</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/0/04/Feature_selection_Wrapper_Method.png"></p>
+<figcaption>Wrapper</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Feature_selection_Embedded_Method.png"></p>
+<figcaption>Embedded</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="feature-selection-filter-strategy" class="title-slide slide level1 center">
+<h1>Feature selection: Filter strategy</h1>
+<p><em>Variance threshold</em></p>
+<ul>
+<li>Use a variance threshold to remove any features that have little to no variation in their values.</li>
+<li>Features with low variance do not contribute much information to a model.</li>
+<li>Since variance can only be calculated on numeric values, this method only works on quantitative features.</li>
+</ul>
+<p><em>Pearson’s correlation</em>: measures the linear relationship between two numeric variables</p>
+<ul>
+<li>A coefficient close to 1 represents a positive correlation, -1 a negative correlation, and 0 no correlation</li>
+<li>Correlation between features:
+<ul>
+<li>When two features are highly correlated with one another, then keeping just one to be used in the model will be enough because otherwise, they provide duplicate information.</li>
+<li>The second variable would only be redundant and serve to contribute unnecessary noise.</li>
+</ul></li>
+<li>Correlation between feature and target:
+<ul>
+<li>If a feature is not very correlated with the target variable, such as having a coefficient of between -0.3 and 0.3, then it may not be very predictive and can potentially be filtered out.</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="feature-selection-wrapper-strategy" class="title-slide slide level1 center">
+<h1>Feature selection: Wrapper strategy</h1>
+<p><em>Backward elimination</em></p>
+<p>We start with the full model (including all the independent variables) and then incrementally remove the most insignificant feature.</p>
+<p>This process repeats again and again until we have the final set of significant features.</p>
+<ol type="1">
+<li>Choose a significance level (e.g., SL = 0.05 with a 95% confidence).</li>
+<li>Fit a full model including all the features.</li>
+<li>Consider the feature with the highest p-value.
+<ul>
+<li>If the p-value &lt; terminate the process.</li>
+</ul></li>
+<li>Remove the feature which is under consideration.</li>
+<li>Fit a model without this feature. Repeat the entire process from Step 3.</li>
+</ol>
+</section>
+
+<section id="feature-selection-embedded-strategy" class="title-slide slide level1 center">
+<h1>Feature selection: Embedded strategy</h1>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><em>Least Absolute Shrinkage and Selection Operator (LASSO)</em></p>
+<ul>
+<li>The objective of linear regression is typically to minimize the sum of squared errors (SSE) between predicted and actual values.</li>
+<li>Lasso adds a penalty proportional to the absolute values of the coefficients.</li>
+</ul>
+<p><span class="math inline">\(min(\sum_{i=1}^n​(y_i​ - \hat{y}_i​)^2+ \lambda \sum_{j=1}^p​ ∣\beta_j​∣)\)</span></p>
+<ul>
+<li><span class="math inline">\(y_i\)</span>​ is the actual value, <span class="math inline">\(\hat{y}_i\)</span>​ is the predicted value,</li>
+<li><span class="math inline">\(\beta_j\)</span>​ are the coefficients of the model,</li>
+<li><span class="math inline">\(\lambda\)</span> is the regularization parameter controlling the penalty’s strength.</li>
+</ul>
+<p>Lasso performs automatic feature selection.</p>
+<ul>
+<li>By shrinking some coefficients to 0, Lasso removes irrelevant features</li>
+</ul>
+<p>The optimal <span class="math inline">\(\lambda\)</span> can be determined with cross-validation techniques.</p>
+</div><div class="column" style="width:34%;">
+<p><img data-src="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/d2/a9/4-1_model-complexity-bias-variance.component.complex-narrative-xl.ts=1723041862502.png/content/adobe-cms/us/en/topics/lasso-regression/jcr:content/root/table_of_contents/body/content_section_styled/content-section-body/complex_narrative_1723597861/items/content_group_1333297271/image"></p>
+</div>
+</div>
+</section>
+
+<section id="feature-extraction-or-feature-projection" class="title-slide slide level1 center">
+<h1>Feature extraction (or feature projection)</h1>
+<p><strong>Feature projection</strong> transforms the data from the high-dimensional space to a space of fewer dimensions</p>
+<ul>
+<li>The data transformation may be linear, as in principal component analysis (PCA)</li>
+<li>… but many nonlinear dimensionality reduction techniques also exist</li>
+</ul>
+<p><em>Principal component analysis (PCA)</em> is a linear dimensionality reduction technique.</p>
+<ul>
+<li>PCA aims to preserve as much of the data’s variance as possible in fewer dimensions</li>
+<li>Variance measures of how much the data points differ from the mean of the dataset</li>
+<li>The data is linearly transformed onto a new coordinate system such that the directions (<em>principal components</em>) capturing the largest variation in the data can be easily identified</li>
+<li>The first principal component captures the highest variance, the second component captures the second highest, and so on.</li>
+</ul>
+<p>Computing PCA</p>
+<ul>
+<li>PCA is sensitive to the scale of the data, the first step is usually to standardize the features (mean = 0, standard deviation = 1) to ensure that all features contribute equally to the analysis.</li>
+<li>Then, compute the covariance Matrix
+<ul>
+<li>Eigenvectors represent the directions of the principal components.</li>
+<li>Eigenvalues represent the magnitude of variance in the direction of the corresponding eigenvector.</li>
+</ul></li>
+<li>The eigenvector with the largest eigenvalue is the first principal component, and so on.</li>
+</ul>
+</section>
+
+<section id="overlapping-with-business-intelligence-and-data-warehousing" class="title-slide slide level1 center">
+<h1>Overlapping with business intelligence and data warehousing</h1>
+<p><em>ETL (Extract, Transform, Load)</em> is one of the most widely used data integration techniques in data warehousing.</p>
+<ul>
+<li><em>Extract</em>: Pull data from multiple sources (e.g., databases, APIs, flat files).</li>
+<li><em>Transform</em>: Clean, standardize, and transform the data into the desired format.</li>
+<li><em>Load</em>: Load the transformed data into a target database or data warehouse.</li>
+</ul>
+<p><em>ELT (Extract, Load, Transform)</em> loads data into a storage system (like a data lake) and then transforms within the storage system.</p>
+</section>
 
 <section id="references" class="title-slide slide level1 smaller scrollable">
 <h1>References</h1>
