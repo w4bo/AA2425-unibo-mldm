@@ -285,7 +285,6 @@ The data analyst could undertake operations such as developing entirely new reco
 
 *Encoding* may be necessary to transform *or symbolic fields ("definitely yes", "yes", "don't know", "no") to numeric values*
 
-
 # Feature encoding
 
 **Encoding** is the process of converting categorical variables into numeric features.
@@ -380,6 +379,36 @@ OHE increases the dimensionality of the dataset and it may not be suitable for e
 - To prevent a massive increase of the feature space, we can one-hot encode only the most frequent categories in the variable.
 - ... less frequent values are treated collectively and represented as 0s in all the binary variables.
 
+# Feature scaling (or data normalization)
+
+**Feature scaling** is a method used to normalize the range of independent variables or features of data
+
+- Since the range of values of raw data varies widely, in some machine learning algorithms objective functions will not work properly without normalization.
+- If one of the features has a broad range of values, the distance will be governed by this particular feature.
+- For example, many classifiers calculate the distance between two points by the Euclidean distance.
+    - $d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{n}-q_{n})^{2}}}$
+    - Consider a dataset with two features `years` $\in [0, 120]$ and `income` $\in [0, 100000]$
+    - Given four points
+        - $p_1=($`years` = 50, `income` = 10000$)$
+        - $p_2=($`years` = 50, `income` = 11000$)$, $d(p_1,p_2)=1000$
+        - $p_3=($`years` = 60, `income` = 10000$)$, $d(p_1,p_3)=10$
+        - $p_4=($`years` = 60, `income` = 11000$)$, $d(p_1,p_4)=1000.05$
+
+# Feature scaling
+
+*Min-max normalization* rescales the features in $[0, b]$ (tipically $[0, 1]$)
+
+- $x'=a+{\frac {(x-{\text{min}}(x))(b-a)}{{\text{max}}(x)-{\text{min}}(x)}}$
+
+*Standardization* makes the values of each feature in the data have zero-mean and unit-variance
+
+- $\displaystyle x'={\frac {x-{\bar {x}}}{\sigma }}$
+
+*Robust scaling*, also known as standardization using median and interquartile range (IQR), is designed to be robust to outliers
+
+- $x'={\frac {x-Q_{2}(x)}{Q_{3}(x)-Q_{1}(x)}}$
+
+![](./img/datapreprocessing/normalized.svg)
 
 # Integrate Data
 
@@ -528,7 +557,6 @@ The main approaches can also be divided into *feature selection* and *feature ex
 # Feature selection
 
 :::: {.columns}
-
 ::: {.column width="65%"}
 
 **Feature selection** approaches try to find a subset of the input variables
@@ -562,18 +590,67 @@ The main approaches can also be divided into *feature selection* and *feature ex
 
 *Variance threshold*
 
-- Use a variance threshold to remove any features that have little to no variation in their values.
+- Mean: $\mu =\sum _{i=1}^{n}x_{i}$, Variance: $Var(X)={\frac {1}{n}}\sum _{i=1}^{n}(x_{i}-\mu )^{2}$
 - Features with low variance do not contribute much information to a model.
+- Use a variance threshold to remove any features that have little to no variation in their values.
 - Since variance can only be calculated on numeric values, this method only works on quantitative features.
+
+:::: {.columns}
+::: {.column width="33%"}
+
+> Before selection
+>
+> | `StoreId` |`sales` |`PostalCode` |
+> |-----------|--------|--------|
+> | 1         | 1000   | 47522 |
+> | 2         | 1500 | 47522 |
+> | 3         | 1000  |  47522 |
+:::
+::: {.column width="33%"}
+
+> Compute variance
+>
+> $VAR($`StoreId`$)=0.67$
+>
+> $VAR($`sales`$)=55555.56$
+>
+> $VAR($`PostalCode`$)=0$ 
+
+:::
+::: {.column width="33%"}
+
+> After selection ($VAR(X) > 0.6$)
+>
+> | `StoreId` |`sales` |
+> |-----------|--------|
+> | 1         | 1000   |
+> | 2         | 1500   |
+> | 3         | 1000   |
+
+:::
+::::
+
+# Feature selection: Filter strategy
+
+:::: {.columns}
+::: {.column width="60%"}
 
 *Pearson's correlation*: measures the linear relationship between two numeric variables
 
 - A coefficient close to 1 represents a positive correlation, -1 a negative correlation, and 0 no correlation
-- Correlation between features:
-    - When two features are highly correlated with one another, then keeping just one to be used in the model will be enough because otherwise, they provide duplicate information.
+- *Correlation between features*:
+    - When two features are highly correlated with one another, then keeping just one to be used in the model will be enough
     - The second variable would only be redundant and serve to contribute unnecessary noise.
-- Correlation between feature and target:
+- *Correlation between feature and target*:
     - If a feature is not very correlated with the target variable, such as having a coefficient of between -0.3 and 0.3, then it may not be very predictive and can potentially be filtered out.
+
+:::
+::: {.column width="40%"}
+
+![](https://www.w3schools.com/datascience/img_stat_heatmap.png)
+
+:::
+::::
 
 # Feature selection: Wrapper strategy
 
@@ -593,7 +670,6 @@ This process repeats again and again until we have the final set of significant 
 # Feature selection: Embedded strategy
 
 :::: {.columns}
-
 ::: {.column width="65%"}
 
 Linear regression model: $\hat{y}_i = \beta_1 x_1 + \beta_2 x_2 + ... + \beta_p x_p$
@@ -616,7 +692,6 @@ Lasso performs automatic feature selection.
 The optimal $\lambda$ can be determined with cross-validation techniques.
 
 :::
-
 ::: {.column width="34%"}
 
 ![Linear regression](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Linear_least_squares_example2.svg/1024px-Linear_least_squares_example2.svg.png)
@@ -647,6 +722,41 @@ Computing PCA
     - Eigenvectors represent the directions of the principal components.
     - Eigenvalues represent the magnitude of variance in the direction of the corresponding eigenvector.
 - The eigenvector with the largest eigenvalue is the first principal component, and so on.
+
+# PCA on the Iris dataset
+
+:::: {.columns}
+::: {.column width="60%"}
+
+Iris contains 4 features, we cannot plot it directly
+
+1. `petal_length`
+1. `petal_width`
+1. `sepal_length`
+1. `sepal_width`
+
+![](./img/datapreprocessing/pca.svg)
+
+:::
+::: {.column width="40%"}
+
+| Principal Component | Explained Variance |
+|---------------------|--------------------|
+| PC 1                | 92.46%             |
+| PC 2                | 5.31%              |
+| PC 3                | 1.71%              |
+
+Feature Relevance for 3 Components:
+
+| Feature             | PC 1  | PC 2  | PC 3  |
+|---------------------|-------|-------|-------|
+| Sepal Length (cm)    | 0.361 | 0.657 | -0.582|
+| Sepal Width (cm)     | -0.085| 0.730 | 0.598 |
+| Petal Length (cm)    | 0.857 | -0.173| 0.076 |
+| Petal Width (cm)     | 0.358 | -0.075| 0.546 |
+
+:::
+::::
 
 # Overlapping with business intelligence and data warehousing
 
