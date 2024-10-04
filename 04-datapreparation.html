@@ -392,7 +392,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Deciding on the data that will be used for the analysis is based on several criteria, including</p>
 <ul>
 <li>its relevance to the data mining goals</li>
-<li>quality and technical constraints such as limits on data volume or data types</li>
+<li>quality and technical constraints such as GDPR or limits on data volume or data types</li>
 </ul>
 <p>Part of the data selection process should involve explaining why certain data was included or excluded.</p>
 <ul>
@@ -400,7 +400,47 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <blockquote>
 <p>For instance, while an individual’s address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated.</p>
+<p>To learn how sales are characterized by store <code>type</code> you do not need to consider the <code>StoreId</code></p>
+<table>
+<thead>
+<tr class="header">
+<th><del><code>StoreId</code></del></th>
+<th><code>type</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>grocery</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>S2</td>
+<td>supermarket</td>
+<td>1500</td>
+</tr>
+<tr class="odd">
+<td>S3</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
 </blockquote>
+</section>
+
+<section id="what-personal-data-is-considered-sensitive" class="title-slide slide level1 center">
+<h1><a href="https://commission.europa.eu/law/law-topic/data-protection/reform/rules-business-and-organisations/legal-grounds-processing-data/sensitive-data/what-personal-data-considered-sensitive_en">What personal data is considered sensitive</a>?</h1>
+<p>The following personal data is considered ‘sensitive’ and is subject to specific processing conditions:</p>
+<ul>
+<li>personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs;</li>
+<li>trade-union membership;</li>
+<li>genetic data, biometric data processed solely to identify a human being;</li>
+<li>health-related data;</li>
+<li>data concerning a person’s sex life or sexual orientation.</li>
+</ul>
+<p>See <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&amp;from=EN#d1e1489-1-1">article 4</a></p>
 </section>
 
 <section id="clean-data-or-data-cleansing" class="title-slide slide level1 center">
@@ -421,10 +461,67 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>If data are missing at random, listwise deletion does not add any bias, but it decreases the sample size</li>
 <li>Otherwise, listwise deletion will introduce bias because the remaining data are not representative of the original sample</li>
 </ul>
+<div class="columns">
+<div class="column" style="width:49%;">
+<blockquote>
+<p>Before cleaning</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>type</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td></td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>S2</td>
+<td>supermarket</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>S3</td>
+<td>grocery</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div><div class="column" style="width:49%;">
+<blockquote>
+<p>After cleaning</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>type</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S3</td>
+<td>grocery</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
 <p><em>Pairwise deletion</em> deletes data when it is missing a variable required for a particular analysis</p>
 <ul>
 <li>… but includes that data in analyses for which all required variables are present</li>
 </ul>
+</section>
+
+<section id="imputation-of-missing-values-1" class="title-slide slide level1 center">
+<h1>Imputation of missing values</h1>
 <p><em>Hot-deck imputation</em>: the information donors come from the same dataset as the recipients</p>
 <ul>
 <li>One form of hot-deck imputation is called “last observation carried forward”
@@ -433,15 +530,232 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Finds a missing value and uses the value immediately before the data that are missing to impute the missing value</li>
 </ul></li>
 </ul>
+<div class="columns">
+<div class="column" style="width:49%;">
+<blockquote>
+<p>Before cleaning</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>Date</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-04</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>S1</td>
+<td>2024-10-05</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>S2</td>
+<td>2024-10-04</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div><div class="column" style="width:49%;">
+<blockquote>
+<p>After cleaning (sort by <code>StoreId</code> and <code>Date</code>)</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>Date</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-04</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>S1</td>
+<td>2024-10-05</td>
+<td><em>1000</em></td>
+</tr>
+<tr class="odd">
+<td><strong>S2</strong></td>
+<td>2024-10-04</td>
+<td><em>1000</em></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
 <p><em>Cold-deck imputation</em> replaces missing values with values from similar data in different datasets</p>
+</section>
+
+<section id="imputation-of-missing-values-2" class="title-slide slide level1 center">
+<h1>Imputation of missing values</h1>
 <p><em>Mean substitution</em> replaces missing values with the mean of that variable for all other cases</p>
 <ul>
 <li>Mean imputation attenuates any correlations involving the variable(s) that are imputed
 <ul>
 <li>There is no relationship between the imputed variable and any other measured variables.</li>
-<li>Mean imputation can be carried out within classes (i.e.&nbsp;categories such as gender)</li>
+<li>Mean imputation can be carried out within classes (i.e.&nbsp;categories, such as gender)</li>
 </ul></li>
 </ul>
+<div class="columns">
+<div class="column" style="width:49%;">
+<blockquote>
+<p>Before cleaning</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>Date</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-04</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>S1</td>
+<td>2024-10-05</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-06</td>
+<td>2000</td>
+</tr>
+<tr class="even">
+<td>S2</td>
+<td>2024-10-04</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>S2</td>
+<td>2024-10-05</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div><div class="column" style="width:49%;">
+<blockquote>
+<p>After cleaning (average by <code>StoreId</code>)</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>Date</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-04</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>S1</td>
+<td>2024-10-05</td>
+<td><em>1500</em></td>
+</tr>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-06</td>
+<td>2000</td>
+</tr>
+<tr class="even">
+<td>S2</td>
+<td>2024-10-04</td>
+<td><em>1000</em></td>
+</tr>
+<tr class="odd">
+<td>S2</td>
+<td>2024-10-05</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
+</section>
+
+<section id="outlier-removal" class="title-slide slide level1 center">
+<h1>Outlier removal</h1>
+<p><strong>Outlier removal</strong> is the process of eliminating data points that deviate significantly from the rest of the dataset</p>
+<ul>
+<li>An <em>outlier</em> is a data point that differs significantly from other observations</li>
+<li>Outliers can occur by chance or measurement error, or that the population has a heavy-tailed distribution</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:49%;">
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Standard_deviation_diagram_micro.svg/1920px-Standard_deviation_diagram_micro.svg.png"></p>
+</div><div class="column" style="width:25%;">
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Empirical_rule_histogram.svg/1024px-Empirical_rule_histogram.svg.png"></p>
+</div>
+</div>
+<p>In the case of normally distributed data, the <em>three sigma rule</em> means that:</p>
+<ul>
+<li>Nearly all values (99.7%) lie within three standard deviations of the mean
+<ul>
+<li>Roughly 1 in 22 observations will differ by twice the standard deviation or more from the mean,</li>
+<li>… and 1 in 370 will deviate by three times the standard deviation.</li>
+</ul></li>
+<li>If the sample size is only 100, however, just three such outliers are already reason for concern.</li>
+</ul>
+</section>
+
+<section id="outlier-removal-1" class="title-slide slide level1 center">
+<h1>Outlier removal</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Other methods flag outliers based on measures such as interquartile range.</p>
+<p>For example, if <span class="math inline">\(Q_{1}\)</span> and <span class="math inline">\(Q_{3}\)</span> are the lower and upper quartiles respectively, then one could define an outlier to be any observation outside the range:</p>
+<ul>
+<li><span class="math inline">\([Q_{1}-k(Q_{3}-Q_{1}),Q_{3}+k(Q_{3}-Q_{1})]\)</span> for some nonnegative <span class="math inline">\(k\)</span></li>
+<li>John Tukey proposed <span class="math inline">\(k=1.5\)</span> to indicate an “outlier” <span class="math inline">\(k=3\)</span> to indicate data that is “far out”</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Boxplot_vs_PDF.svg/800px-Boxplot_vs_PDF.svg.png"></p>
+</div>
+</div>
+</section>
+
+<section id="outlier-removal-2" class="title-slide slide level1 center">
+<h1>Outlier removal</h1>
+<p><strong>Isolation Forest</strong> <span class="citation" data-cites="liu2008isolation">(<a href="#/references" role="doc-biblioref" onclick="">Liu, Ting, and Zhou 2008</a>)</span> is an algorithm for data anomaly detection using binary trees</p>
+<ul>
+<li>Because anomalies are few and different from other data, they can be isolated using few partitions.</li>
+<li>Unlike decision tree algorithms, it uses only path length to output an anomaly score, and does not use leaf node statistics of class distribution or target value.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Isolating_a_Non-Anomalous_Point.png"></p>
+<figcaption>Inlier</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Isolating_an_Anomalous_Point.png"></p>
+<figcaption>Outlier</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 <section id="construct-data" class="title-slide slide level1 center">
@@ -452,23 +766,87 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>… and not just to reduce the number of input attributes</li>
 </ul></li>
-<li>Transformations may be necessary to <em>transform ranges to symbolic fields</em> (e.g., ages to age bands)
-<ul>
-<li>… <em>or symbolic fields (“definitely yes”, “yes”, “don’t know”, “no”) to numeric values</em></li>
-</ul></li>
 </ul>
 <blockquote>
-<p>A new record would be the creation of an empty purchase record for customers who made no purchases during the past year.</p>
 <p>A derived attribute is <code>area</code> = <code>length</code> x <code>width</code>.</p>
 <p>A derived attribute is <code>income per head</code> which could be easier to use than <code>income per household</code>.</p>
 </blockquote>
+<p><em>Binning</em> may be necessary to <em>transform ranges to symbolic fields</em> (e.g., ages to age bands)</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<blockquote>
+<p>Before binning</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>Date</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-04</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>S1</td>
+<td>2024-10-05</td>
+<td>1500</td>
+</tr>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-06</td>
+<td>2000</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div><div class="column" style="width:49%;">
+<blockquote>
+<p>After binning (every 1000€)</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>Date</code></th>
+<th><code>sales</code></th>
+<th><code>sales_bin</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-04</td>
+<td>1000</td>
+<td>[1000-2000)</td>
+</tr>
+<tr class="even">
+<td>S1</td>
+<td>2024-10-05</td>
+<td>1500</td>
+<td>[1000-2000)</td>
+</tr>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-06</td>
+<td>2000</td>
+<td>[2000-3000)</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
+<p><em>Encoding</em> may be necessary to transform <em>or symbolic fields (“definitely yes”, “yes”, “don’t know”, “no”) to numeric values</em></p>
 </section>
 
 <section id="feature-encoding" class="title-slide slide level1 center">
 <h1>Feature encoding</h1>
 <p><strong>Encoding</strong> is the process of converting categorical variables into numeric features.</p>
 <ul>
-<li>Most machine learning algorithms, like linear regression, support vector machines, and logistic regression, require input data to be numeric because they use numerical computations to learn the model.</li>
+<li>Most machine learning algorithms, like linear regression and support vector machines, require input data to be numeric because they use numerical computations to learn the model.</li>
 <li>These algorithms are not inherently capable of interpreting categorical data.</li>
 <li>Some implementations of decision tree-based algorithms can directly handle categorical data.</li>
 </ul>
@@ -486,21 +864,170 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>These numbers are, in general, assigned arbitrarily.</li>
 <li>Ordinal encoding is a preferred option when the categorical variable has an inherent order.</li>
-<li>Examples include the variable size, with values ‘small’, ‘medium’, and ‘large’.</li>
 </ul>
+<blockquote>
+<p>Examples include the variable <code>size</code>, with values “small”, “medium”, and “large”.</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:49%;">
+<blockquote>
+<p>Before encoding</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>ProductId</code></th>
+<th><code>size</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P1</td>
+<td>small</td>
+</tr>
+<tr class="even">
+<td>P2</td>
+<td>medium</td>
+</tr>
+<tr class="odd">
+<td>P3</td>
+<td>large</td>
+</tr>
+<tr class="even">
+<td>P4</td>
+<td>small</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div><div class="column" style="width:49%;">
+<blockquote>
+<p>After encoding (small = 0, medium = 1, large = 2)</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>ProductId</code></th>
+<th><code>size</code></th>
+<th><code>size_enc</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P1</td>
+<td>small</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>P2</td>
+<td>medium</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>P3</td>
+<td>large</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>P4</td>
+<td>small</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
 </section>
 
 <section id="feature-encoding-one-hot-encoding" class="title-slide slide level1 center">
 <h1>Feature encoding: one-hot encoding</h1>
-<p><strong>One-hot encoding (OHE)</strong> replaces categorical variables by <em>a set of binary variables</em></p>
+<p><strong>One-hot encoding (OHE)</strong> replaces categorical variables by <em>a set of binary variables</em> (each representing a category in the variable)</p>
 <ul>
-<li>each representing one of the unique categories in the variable.</li>
 <li>The binary variable takes the value 1 if the observation shows the category, or alternatively, 0.</li>
+<li>One hot encoding treats each category independently.</li>
 </ul>
-<p>One hot encoding is particularly suitable for linear models because it treats each category independently.</p>
+<blockquote>
+<p>Examples include the variable <code>color</code>, with values “red”, “green”, and “blue”.</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:49%;">
+<blockquote>
+<p>Before encoding</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>ProductId</code></th>
+<th><code>color</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P1</td>
+<td>red</td>
+</tr>
+<tr class="even">
+<td>P2</td>
+<td>green</td>
+</tr>
+<tr class="odd">
+<td>P3</td>
+<td>blue</td>
+</tr>
+<tr class="even">
+<td>P4</td>
+<td>red</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div><div class="column" style="width:49%;">
+<blockquote>
+<p>After encoding</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>ProductId</code></th>
+<th><code>color</code></th>
+<th><code>red</code></th>
+<th><code>green</code></th>
+<th><code>blue</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P1</td>
+<td>red</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>P2</td>
+<td>green</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>P3</td>
+<td>blue</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>P4</td>
+<td>red</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
+<p>OHE increases the dimensionality of the dataset and it may not be suitable for encoding high cardinality features.</p>
 <ul>
-<li>However, OHE increases the dimensionality of the dataset, as it adds a new variable per category.</li>
-<li>It may not be suitable for encoding high cardinality features, as it can drastically increase the dimensionality of the dataset.</li>
 <li>To prevent a massive increase of the feature space, we can one-hot encode only the most frequent categories in the variable.</li>
 <li>… less frequent values are treated collectively and represented as 0s in all the binary variables.</li>
 </ul>
@@ -514,21 +1041,94 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <blockquote>
 <p>For instance, a retail chain has one table with information about each store’s general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from the previous year), and another table with information about the demographics of the surrounding area.</p>
-<p>Each of these tables contains one record for each store.</p>
-<p>These tables can be merged together into a new table with one record for each store, combining fields from the source tables.</p>
+<p>These tables can be merged together into a new table with one record for each store.</p>
 </blockquote>
-</section>
-
-<section id="section-1" class="title-slide slide level1 center">
-<h1></h1>
-<p>Data integration also covers <em>aggregations</em>.</p>
-<ul>
-<li>Aggregation computes new values by summarizing information from multiple records and/or tables.</li>
-</ul>
+<div class="columns">
+<div class="column" style="width:30%;">
 <blockquote>
-<p>For example, an aggregation could include converting a table of customer purchases, where there is one record for each purchase, into a new table where there is one record for each customer.</p>
-<p>The table’s fields could include the number of purchases, the average purchase amount, the percentage of orders charged to credit cards, the percentage of items under promotion, etc.</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>type</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>grocery</td>
+</tr>
+<tr class="even">
+<td>S2</td>
+<td>supermarket</td>
+</tr>
+<tr class="odd">
+<td>S3</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
 </blockquote>
+</div><div class="column" style="width:3%;">
+<p>+</p>
+</div><div class="column" style="width:30%;">
+<blockquote>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>S2</td>
+<td>1500</td>
+</tr>
+<tr class="odd">
+<td>S3</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div><div class="column" style="width:3%;">
+<p>=</p>
+</div><div class="column" style="width:30%;">
+<blockquote>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>type</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>grocery</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>S2</td>
+<td>supermarket</td>
+<td>1500</td>
+</tr>
+<tr class="odd">
+<td>S3</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
 </section>
 
 <section id="data-integration" class="title-slide slide level1 center">
@@ -550,8 +1150,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="section-2" class="title-slide slide level1 center">
-<h1></h1>
+<section id="semantic-integration-vs-primary-key-based-integration" class="title-slide slide level1 center">
+<h1>Semantic Integration vs Primary Key-based Integration</h1>
 <table>
 <colgroup>
 <col style="width: 16%">
@@ -591,18 +1191,87 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>Requires mapping of concepts, and understanding of domain semantics.</td>
 <td>Limited to datasets that share a key, difficult without common keys.</td>
 </tr>
+</tbody>
+</table>
+</section>
+
+<section id="aggregation" class="title-slide slide level1 center">
+<h1>Aggregation</h1>
+<p><strong>Aggregation</strong> computes new values by summarizing information from multiple records and/or tables.</p>
+<blockquote>
+<p>For example, converting a table of product purchases, where there is one record for each purchase, into a new table where there is one record for each store.</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:49%;">
+<blockquote>
+<p>Before aggregation (detailed data)</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>ProductId</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>P1</td>
+<td>750</td>
+</tr>
 <tr class="even">
-<td><em>Typical Tools</em></td>
-<td>Ontologies, semantic data models, and dictionaries.</td>
-<td>Relational databases, SQL joins, foreign key relationships.</td>
+<td>S2</td>
+<td>P1</td>
+<td>250</td>
 </tr>
 <tr class="odd">
-<td><em>Use Cases</em></td>
-<td>Integrating data from different domains (e.g., healthcare and education).</td>
-<td>Merging data with unique keys (e.g., employee IDs).</td>
+<td>S3</td>
+<td>P2</td>
+<td>…</td>
 </tr>
 </tbody>
 </table>
+</blockquote>
+</div><div class="column" style="width:49%;">
+<blockquote>
+<p>After aggregation (sum sales by store)</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>S2</td>
+<td>1500</td>
+</tr>
+<tr class="odd">
+<td>S3</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
+<p>Pay attention to the <em>aggregation operator</em>!</p>
+<ul>
+<li>Correct: sum of sums
+<ul>
+<li><span class="math inline">\((1 + 2) + (3 + 4) = 1 + 2 + 3 + 4 = 10\)</span></li>
+</ul></li>
+<li>Wrong: average of averages
+<ul>
+<li><span class="math inline">\(avg(avg(1, 2), avg(3, 4, 5)) = avg(1.5, 4) = 2.75\)</span></li>
+<li><span class="math inline">\(avg(1, 2, 3, 4, 5) = 3\)</span></li>
+</ul></li>
+</ul>
 </section>
 
 <section id="format-data" class="title-slide slide level1 center">
@@ -716,16 +1385,22 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Feature selection: Embedded strategy</h1>
 <div class="columns">
 <div class="column" style="width:65%;">
+<p>Linear regression model: <span class="math inline">\(\hat{y}_i = \beta_1 x_1 + \beta_2 x_2 + ... + \beta_p x_p\)</span></p>
+<ul>
+<li>Goal is minimizing the sum of squared errors between predicted/actual values</li>
+<li><span class="math inline">\(min(\sum_{i=1}^n​(y_i​ - \hat{y}_i​)^2)\)</span>
+<ul>
+<li><span class="math inline">\(y_i\)</span>​ (red) is the actual value, <span class="math inline">\(\hat{y}_i\)</span>​ is the predicted value (blue)</li>
+</ul></li>
+</ul>
 <p><em>Least Absolute Shrinkage and Selection Operator (LASSO)</em></p>
 <ul>
-<li>The objective of linear regression is typically to minimize the sum of squared errors (SSE) between predicted and actual values.</li>
 <li>Lasso adds a penalty proportional to the absolute values of the coefficients.</li>
-</ul>
-<p><span class="math inline">\(min(\sum_{i=1}^n​(y_i​ - \hat{y}_i​)^2+ \lambda \sum_{j=1}^p​ ∣\beta_j​∣)\)</span></p>
+<li><span class="math inline">\(min(\sum_{i=1}^n​(y_i​ - \hat{y}_i​)^2+ \lambda \sum_{j=1}^p​ ∣\beta_j​∣)\)</span>
 <ul>
-<li><span class="math inline">\(y_i\)</span>​ is the actual value, <span class="math inline">\(\hat{y}_i\)</span>​ is the predicted value,</li>
 <li><span class="math inline">\(\beta_j\)</span>​ are the coefficients of the model,</li>
 <li><span class="math inline">\(\lambda\)</span> is the regularization parameter controlling the penalty’s strength.</li>
+</ul></li>
 </ul>
 <p>Lasso performs automatic feature selection.</p>
 <ul>
@@ -733,6 +1408,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>The optimal <span class="math inline">\(\lambda\)</span> can be determined with cross-validation techniques.</p>
 </div><div class="column" style="width:34%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Linear_least_squares_example2.svg/1024px-Linear_least_squares_example2.svg.png"></p>
+<figcaption>Linear regression</figcaption>
+</figure>
+</div>
 <p><img data-src="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/d2/a9/4-1_model-complexity-bias-variance.component.complex-narrative-xl.ts=1723041862502.png/content/adobe-cms/us/en/topics/lasso-regression/jcr:content/root/table_of_contents/body/content_section_styled/content-section-body/complex_narrative_1723597861/items/content_group_1333297271/image"></p>
 </div>
 </div>
@@ -783,6 +1464,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-liu2008isolation" class="csl-entry" role="listitem">
+Liu, Fei Tony, Kai Ming Ting, and Zhi-Hua Zhou. 2008. <span>“Isolation Forest.”</span> In <em>2008 Eighth Ieee International Conference on Data Mining</em>, 413–22. IEEE.
+</div>
 <div id="ref-shearer2000crisp" class="csl-entry" role="listitem">
 Shearer, Colin. 2000. <span>“The CRISP-DM Model: The New Blueprint for Data Mining.”</span> <em>Journal of Data Warehousing</em> 5 (4): 13–22.
 </div>
