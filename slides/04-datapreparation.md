@@ -33,13 +33,33 @@ Data pre-processing includes [@shearer2000crisp] data
 Deciding on the data that will be used for the analysis is based on several criteria, including
 
 - its relevance to the data mining goals
-- quality and technical constraints such as limits on data volume or data types
+- quality and technical constraints such as GDPR or limits on data volume or data types
 
 Part of the data selection process should involve explaining why certain data was included or excluded.
 
 - It is also a good idea to decide if one or more attributes are more important than others
 
 > For instance, while an individual's address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated.
+>
+> To learn how sales are characterized by store `type` you do not need to consider the `StoreId` 
+>
+> | ~~`StoreId`~~ | `type` |`sales` |
+> |-----------|--------|--------|
+> |S1         | grocery   | 1000   |
+> |S2         | supermarket | 1500 |
+> |S3         | ...  | ...  | 
+
+# [What personal data is considered sensitive](https://commission.europa.eu/law/law-topic/data-protection/reform/rules-business-and-organisations/legal-grounds-processing-data/sensitive-data/what-personal-data-considered-sensitive_en)?
+
+The following personal data is considered ‘sensitive’ and is subject to specific processing conditions:
+
+- personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs;
+- trade-union membership;
+- genetic data, biometric data processed solely to identify a human being;
+- health-related data;
+- data concerning a person’s sex life or sexual orientation.
+
+See [article 4](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN#d1e1489-1-1)
 
 # Clean Data (or data cleansing)
 
@@ -59,9 +79,34 @@ The data analyst must
 - If data are missing at random, listwise deletion does not add any bias, but it decreases the sample size
 - Otherwise, listwise deletion will introduce bias because the remaining data are not representative of the original sample
 
+:::: {.columns}
+::: {.column width="49%"}
+
+> Before cleaning
+>
+> | `StoreId` | `type` |`sales` |
+> |-----------|--------|--------|
+> |S1         |    | 1000   |
+> |S2         | supermarket |  |
+> |S3         | grocery  | 100  | 
+
+:::
+::: {.column width="49%"}
+
+> After cleaning
+>
+> | `StoreId` | `type` |`sales` |
+> |-----------|--------|--------|
+> |S3         | grocery  | 100  | 
+
+:::
+::::
+
 *Pairwise deletion* deletes data when it is missing a variable required for a particular analysis
 
 - ... but includes that data in analyses for which all required variables are present
+
+# Imputation of missing values
 
 *Hot-deck imputation*: the information donors come from the same dataset as the recipients
 
@@ -69,13 +114,136 @@ The data analyst must
     - Sort a dataset according to any number of variables, thus creating an ordered dataset
     - Finds a missing value and uses the value immediately before the data that are missing to impute the missing value
 
+:::: {.columns}
+::: {.column width="49%"}
+
+> Before cleaning
+>
+> | `StoreId` | `Date` |`sales` |
+> |-----------|--------|--------|
+> |S1         | 2024-10-04 | 1000   |
+> |S1         | 2024-10-05 |  |
+> |S2         | 2024-10-04 |  | 
+
+:::
+::: {.column width="49%"}
+
+> After cleaning (sort by `StoreId` and `Date`)
+>
+> | `StoreId` | `Date` |`sales` |
+> |-----------|--------|--------|
+> |S1         | 2024-10-04 | 1000   |
+> |S1         | 2024-10-05 | *1000* |
+> |**S2**         | 2024-10-04 | *1000* | 
+
+:::
+::::
+
 *Cold-deck imputation* replaces missing values with values from similar data in different datasets
+
+# Imputation of missing values
 
 *Mean substitution* replaces missing values with the mean of that variable for all other cases
 
 - Mean imputation attenuates any correlations involving the variable(s) that are imputed
     - There is no relationship between the imputed variable and any other measured variables.
-    - Mean imputation can be carried out within classes (i.e. categories such as gender)
+    - Mean imputation can be carried out within classes (i.e. categories, such as gender)
+
+:::: {.columns}
+::: {.column width="49%"}
+
+> Before cleaning
+>
+> | `StoreId` | `Date` |`sales` |
+> |-----------|--------|--------|
+> |S1         | 2024-10-04 | 1000   |
+> |S1         | 2024-10-05 |  |
+> |S1         | 2024-10-06 | 2000 |
+> |S2         | 2024-10-04 |  | 
+> |S2         | 2024-10-05 | 1000 | 
+
+:::
+::: {.column width="49%"}
+
+> After cleaning (average by `StoreId`)
+>
+> | `StoreId` | `Date` |`sales` |
+> |-----------|--------|--------|
+> |S1         | 2024-10-04 | 1000   |
+> |S1         | 2024-10-05 | *1500* |
+> |S1         | 2024-10-06 | 2000 |
+> |S2         | 2024-10-04 | *1000* | 
+> |S2         | 2024-10-05 | 1000 | 
+
+:::
+::::
+
+# Outlier removal
+
+**Outlier removal** is the process of eliminating data points that deviate significantly from the rest of the dataset
+
+- An *outlier* is a data point that differs significantly from other observations
+- Outliers can occur by chance or measurement error, or that the population has a heavy-tailed distribution
+
+:::: {.columns}
+::: {.column width="49%"}
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Standard_deviation_diagram_micro.svg/1920px-Standard_deviation_diagram_micro.svg.png)
+
+:::
+::: {.column width="25%"}
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Empirical_rule_histogram.svg/1024px-Empirical_rule_histogram.svg.png)
+
+:::
+::::
+
+In the case of normally distributed data, the *three sigma rule* means that:
+
+- Nearly all values (99.7%) lie within three standard deviations of the mean
+    - Roughly 1 in 22 observations will differ by twice the standard deviation or more from the mean,
+    - ... and 1 in 370 will deviate by three times the standard deviation.
+- If the sample size is only 100, however, just three such outliers are already reason for concern.
+
+# Outlier removal
+
+:::: {.columns}
+::: {.column width="60%"}
+
+Other methods flag outliers based on measures such as interquartile range.
+
+For example, if $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles respectively, then one could define an outlier to be any observation outside the range:
+
+- $[Q_{1}-k(Q_{3}-Q_{1}),Q_{3}+k(Q_{3}-Q_{1})]$ for some nonnegative $k$
+- John Tukey proposed $k=1.5$ to indicate an "outlier" $k=3$ to indicate data that is "far out"
+
+:::
+::: {.column width="40%"}
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Boxplot_vs_PDF.svg/800px-Boxplot_vs_PDF.svg.png)
+
+:::
+::::
+
+# Outlier removal
+
+**Isolation Forest** [@liu2008isolation] is an algorithm for data anomaly detection using binary trees
+
+- Because anomalies are few and different from other data, they can be isolated using few partitions.
+- Unlike decision tree algorithms, it uses only path length to output an anomaly score, and does not use leaf node statistics of class distribution or target value. 
+
+:::: {.columns}
+::: {.column width="49%"}
+
+![Inlier](https://upload.wikimedia.org/wikipedia/commons/c/ce/Isolating_a_Non-Anomalous_Point.png)
+
+:::
+::: {.column width="49%"}
+
+![Outlier](https://upload.wikimedia.org/wikipedia/commons/f/ff/Isolating_an_Anomalous_Point.png)
+
+:::
+::::
 
 # Construct data
 
@@ -83,20 +251,46 @@ The data analyst could undertake operations such as developing entirely new reco
 
 - *Derived attributes should only be added if they ease the modeling algorithm*
     - ... and not just to reduce the number of input attributes
-- Transformations may be necessary to *transform ranges to symbolic fields* (e.g., ages to age bands)
-    - ... *or symbolic fields ("definitely yes", "yes", "don't know", "no") to numeric values*
 
-> A new record would be the creation of an empty purchase record for customers who made no purchases during the past year.
->
 > A derived attribute is `area` = `length` x `width`.
 >
 > A derived attribute is `income per head` which could be easier to use than `income per household`. 
+
+*Binning* may be necessary to *transform ranges to symbolic fields* (e.g., ages to age bands)
+
+:::: {.columns}
+::: {.column width="49%"}
+
+> Before binning
+>
+> | `StoreId` | `Date` |`sales` |
+> |-----------|--------|--------|
+> |S1         | 2024-10-04 | 1000 |
+> |S1         | 2024-10-05 | 1500 |
+> |S1         | 2024-10-06 | 2000 |
+
+:::
+::: {.column width="49%"}
+
+> After binning (every 1000€)
+>
+> | `StoreId` | `Date`     |`sales` |`sales_bin` |
+> |-----------|--------    |--------|--------|
+> |S1         | 2024-10-04 | 1000 | \[1000-2000\) |
+> |S1         | 2024-10-05 | 1500 | \[1000-2000\) |
+> |S1         | 2024-10-06 | 2000 | \[2000-3000\) |
+
+:::
+::::
+
+*Encoding* may be necessary to transform *or symbolic fields ("definitely yes", "yes", "don't know", "no") to numeric values*
+
 
 # Feature encoding
 
 **Encoding** is the process of converting categorical variables into numeric features.
 
-- Most machine learning algorithms, like linear regression, support vector machines, and logistic regression, require input data to be numeric because they use numerical computations to learn the model.
+- Most machine learning algorithms, like linear regression and support vector machines, require input data to be numeric because they use numerical computations to learn the model.
 - These algorithms are not inherently capable of interpreting categorical data.
 - Some implementations of decision tree-based algorithms can directly handle categorical data.
 
@@ -113,21 +307,79 @@ Categorical features can be *nominal* or *ordinal*.
 
 - These numbers are, in general, assigned arbitrarily. 
 - Ordinal encoding is a preferred option when the categorical variable has an inherent order.
-- Examples include the variable size, with values ‘small’, ‘medium’, and ‘large’.
+
+> Examples include the variable `size`, with values "small", "medium", and "large".
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+> Before encoding
+>
+> | `ProductId` | `size` |
+> |-------------|--------|
+> |P1           | small  |
+> |P2           | medium |
+> |P3           | large  |
+> |P4           | small  |
+
+:::
+::: {.column width="49%"}
+
+> After encoding (small = 0, medium = 1, large = 2)
+>
+> | `ProductId` | `size` | `size_enc` |
+> |-------------|--------|--------|
+> |P1           | small  | 0  |
+> |P2           | medium | 1  |
+> |P3           | large  | 2  |
+> |P4           | small  | 0  |
+
+:::
+::::
 
 # Feature encoding: one-hot encoding
 
-**One-hot encoding (OHE)** replaces categorical variables by *a set of binary variables*
+**One-hot encoding (OHE)** replaces categorical variables by *a set of binary variables* (each representing a category in the variable)
 
-- each representing one of the unique categories in the variable.
 - The binary variable takes the value 1 if the observation shows the category, or alternatively, 0.
+- One hot encoding treats each category independently.
 
-One hot encoding is particularly suitable for linear models because it treats each category independently.
+> Examples include the variable `color`, with values "red", "green", and "blue".
 
-- However, OHE increases the dimensionality of the dataset, as it adds a new variable per category. 
-- It may not be suitable for encoding high cardinality features, as it can drastically increase the dimensionality of the dataset.
+:::: {.columns}
+
+::: {.column width="49%"}
+
+> Before encoding
+>
+> | `ProductId` | `color` |
+> |-------------|--------|
+> |P1           | red  |
+> |P2           | green |
+> |P3           | blue  |
+> |P4           | red  |
+
+:::
+::: {.column width="49%"}
+
+> After encoding
+>
+> | `ProductId` | `color` | `red` | `green` | `blue` |
+> |-------------|--------|--------|--------|--------|
+> |P1           | red   | 1  | 0  | 0  |
+> |P2           | green | 0  | 1  | 0  |
+> |P3           | blue  | 0  | 0  | 1  |
+> |P4           | red   | 1  | 0  | 0  |
+
+:::
+::::
+
+OHE increases the dimensionality of the dataset and it may not be suitable for encoding high cardinality features.
+
 - To prevent a massive increase of the feature space, we can one-hot encode only the most frequent categories in the variable.
 - ... less frequent values are treated collectively and represented as 0s in all the binary variables.
+
 
 # Integrate Data
 
@@ -137,19 +389,51 @@ One hot encoding is particularly suitable for linear models because it treats ea
 
 > For instance, a retail chain has one table with information about each store's general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from the previous year), and another table with information about the demographics of the surrounding area.
 >
-> Each of these tables contains one record for each store.
+> These tables can be merged together into a new table with one record for each store.
 >
-> These tables can be merged together into a new table with one record for each store, combining fields from the source tables.
 
-# 
 
-Data integration also covers *aggregations*.
+:::: {.columns}
 
-- Aggregation computes new values by summarizing information from multiple records and/or tables.
+::: {.column width="30%"}
 
-> For example, an aggregation could include converting a table of customer purchases, where there is one record for each purchase, into a new table where there is one record for each customer.
->
-> The table's fields could include the number of purchases, the average purchase amount, the percentage of orders charged to credit cards, the percentage of items under promotion, etc.
+> | `StoreId` | `type` |
+> |-----------|--------|
+> |S1         | grocery   |
+> |S2         | supermarket |
+> |S3         | ...  |
+
+:::
+::: {.column width="3%"}
+
+\+
+
+:::
+::: {.column width="30%"}
+
+> | `StoreId` |`sales` |
+> |-----------|--------|
+> |S1         | 1000   |
+> |S2         | 1500 |
+> |S3         | ...  | 
+
+:::
+::: {.column width="3%"}
+
+=
+
+:::
+::: {.column width="30%"}
+
+> | `StoreId` | `type` |`sales` |
+> |-----------|--------|--------|
+> |S1         | grocery   | 1000   |
+> |S2         | supermarket | 1500 |
+> |S3         | ...  | ...  | 
+
+:::
+::::
+
 
 # Data integration
 
@@ -167,7 +451,7 @@ Data integration also covers *aggregations*.
 - It requires understanding the context, meaning, and relationships within the data.
     - For instance, spatial data can be easily integrated into maps
 
-#
+# Semantic Integration vs Primary Key-based Integration
 
 | **Aspect**            | **Semantic Integration**                                  | **Primary Key-based Integration**                      |
 |-----------------------|-----------------------------------------------------------|-------------------------------------------------------|
@@ -176,8 +460,46 @@ Data integration also covers *aggregations*.
 | *Complexity*          | More complex due to the need to interpret and align meanings. | Simpler, relies on exact key matches.                 |
 | *Flexibility*         | Can integrate data with different schemas or representations. | Less flexible, requires shared primary key fields.     |
 | *Challenges*          | Requires mapping of concepts, and understanding of domain semantics. | Limited to datasets that share a key, difficult without common keys. |
-| *Typical Tools*       | Ontologies, semantic data models, and dictionaries.        | Relational databases, SQL joins, foreign key relationships. |
-| *Use Cases*           | Integrating data from different domains (e.g., healthcare and education). | Merging data with unique keys (e.g., employee IDs).    |
+
+# Aggregation
+
+**Aggregation** computes new values by summarizing information from multiple records and/or tables.
+
+> For example, converting a table of product purchases, where there is one record for each purchase, into a new table where there is one record for each store.
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+> Before aggregation (detailed data)
+>
+> | `StoreId` | `ProductId` |`sales` |
+> |-----------|-------------|--------|
+> |S1         | P1 | 750   |
+> |S2         | P1 | 250 |
+> |S3         | P2 | ...  |
+
+:::
+::: {.column width="49%"}
+
+> After aggregation (sum sales by store)
+>
+> | `StoreId` |`sales` |
+> |-----------|--------|
+> |S1         | 1000   |
+> |S2         | 1500 |
+> |S3         | ...  | 
+
+:::
+::::
+
+Pay attention to the *aggregation operator*!
+
+- Correct: sum of sums
+    - $(1 + 2) + (3 + 4) = 1 + 2 + 3 + 4 = 10$
+- Wrong: average of averages
+    - $avg(avg(1, 2), avg(3, 4, 5)) = avg(1.5, 4) = 2.75$
+    - $avg(1, 2, 3, 4, 5) = 3$
 
 # Format Data
 
@@ -224,9 +546,7 @@ The main approaches can also be divided into *feature selection* and *feature ex
 - Add/remove features while building the model based on prediction errors
 - A learning algorithm takes advantage of its own variable selection process and performs feature selection and classification simultaneously
 
-
 :::
-
 ::: {.column width="34%"}
 
 ![Filter](https://upload.wikimedia.org/wikipedia/commons/2/2c/Filter_Methode.png)
@@ -276,16 +596,18 @@ This process repeats again and again until we have the final set of significant 
 
 ::: {.column width="65%"}
 
+Linear regression model: $\hat{y}_i = \beta_1 x_1 + \beta_2 x_2 + ... + \beta_p x_p$
+
+- Goal is minimizing the sum of squared errors between predicted/actual values
+- $min(\sum_{i=1}^n​(y_i​ - \hat{y}_i​)^2)$
+    - $y_i$​ (red) is the actual value, $\hat{y}_i$​ is the predicted value (blue)
+
 *Least Absolute Shrinkage and Selection Operator (LASSO)*
 
-- The objective of linear regression is typically to minimize the sum of squared errors (SSE) between predicted and actual values.
 - Lasso adds a penalty proportional to the absolute values of the coefficients.
-
-$min(\sum_{i=1}^n​(y_i​ - \hat{y}_i​)^2+ \lambda \sum_{j=1}^p​ ∣\beta_j​∣)$
-
-- $y_i$​ is the actual value, $\hat{y}_i$​ is the predicted value,
-- $\beta_j$​ are the coefficients of the model,
-- $\lambda$ is the regularization parameter controlling the penalty's strength.
+- $min(\sum_{i=1}^n​(y_i​ - \hat{y}_i​)^2+ \lambda \sum_{j=1}^p​ ∣\beta_j​∣)$
+    - $\beta_j$​ are the coefficients of the model,
+    - $\lambda$ is the regularization parameter controlling the penalty's strength.
 
 Lasso performs automatic feature selection. 
 
@@ -296,6 +618,8 @@ The optimal $\lambda$ can be determined with cross-validation techniques.
 :::
 
 ::: {.column width="34%"}
+
+![Linear regression](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Linear_least_squares_example2.svg/1024px-Linear_least_squares_example2.svg.png)
 
 ![](https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/d2/a9/4-1_model-complexity-bias-variance.component.complex-narrative-xl.ts=1723041862502.png/content/adobe-cms/us/en/topics/lasso-regression/jcr:content/root/table_of_contents/body/content_section_styled/content-section-body/complex_narrative_1723597861/items/content_group_1333297271/image)
 
@@ -333,5 +657,6 @@ Computing PCA
 - *Load*: Load the transformed data into a target database or data warehouse.
 
 *ELT (Extract, Load, Transform)* loads data into a storage system (like a data lake) and then transforms within the storage system.
+
 
 # References
