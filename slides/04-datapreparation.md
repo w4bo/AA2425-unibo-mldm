@@ -398,15 +398,15 @@ OHE increases the dimensionality of the dataset and it may not be suitable for e
 
 *Min-max normalization* rescales the features in $[0, b]$ (tipically $[0, 1]$)
 
-- $x'=a+{\frac {(x-{\text{min}}(x))(b-a)}{{\text{max}}(x)-{\text{min}}(x)}}$
+- $x'=a+{\frac{(x-{\text{min}}(x))(b-a)}{{\text{max}}(x)-{\text{min}}(x)}}$
 
 *Standardization* makes the values of each feature in the data have zero-mean and unit-variance
 
-- $\displaystyle x'={\frac {x-{\bar {x}}}{\sigma }}$
+- $\displaystyle x'={\frac{x-{\bar {x}}}{\sigma }}$
 
 *Robust scaling*, also known as standardization using median and interquartile range (IQR), is designed to be robust to outliers
 
-- $x'={\frac {x-Q_{2}(x)}{Q_{3}(x)-Q_{1}(x)}}$
+- $x'={\frac{x-Q_{2}(x)}{Q_{3}(x)-Q_{1}(x)}}$
 
 ![](./img/datapreprocessing/normalized.svg)
 
@@ -590,7 +590,7 @@ The main approaches can also be divided into *feature selection* and *feature ex
 
 *Variance threshold*
 
-- Mean: $\mu =\sum _{i=1}^{n}x_{i}$, Variance: $Var(X)={\frac {1}{n}}\sum _{i=1}^{n}(x_{i}-\mu )^{2}$
+- Mean: $\mu = \frac{1}{n} \sum _{i=1}^{n}x_{i}$, Variance: $Var(X)={\frac{1}{n}}\sum _{i=1}^{n}(x_{i}-\mu )^{2}$
 - Features with low variance do not contribute much information to a model.
 - Use a variance threshold to remove any features that have little to no variation in their values.
 - Since variance can only be calculated on numeric values, this method only works on quantitative features.
