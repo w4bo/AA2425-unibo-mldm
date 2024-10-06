@@ -451,7 +451,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 </ul>
 <p>Check also: - https://scikit-learn.org/stable/index.html - https://scikit-learn.org/stable/modules/tree.html</p>
-<div id="80e1c257" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-04T15:24:01.525179Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-04T15:24:01.525004Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-04T15:24:02.160840Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-04T15:24:02.160274Z&quot;}" data-outputid="19814ad4-7ef0-47a6-c339-2729b5be8854" data-execution_count="1">
+<div id="80e1c257" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-06T12:52:31.604290Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-06T12:52:31.603946Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-06T12:52:32.223129Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-06T12:52:32.222567Z&quot;}" data-outputid="19814ad4-7ef0-47a6-c339-2729b5be8854" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> sklearn <span class="im">as</span> sk</span>
@@ -523,7 +523,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 </ul>
 <p>How do we - distinguish target and feature columns? - build test and training sets?</p>
-<div id="Y-nsPIhDQe89" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-04T15:24:02.162870Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-04T15:24:02.162646Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-04T15:24:02.207103Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-04T15:24:02.206510Z&quot;}" data-outputid="d019e408-35e4-4d21-d78a-9b92b6784e2a" data-execution_count="2">
+<div id="Y-nsPIhDQe89" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-06T12:52:32.225339Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-06T12:52:32.224903Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-06T12:52:32.268869Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-06T12:52:32.268410Z&quot;}" data-outputid="d019e408-35e4-4d21-d78a-9b92b6784e2a" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
@@ -661,7 +661,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section id="profiling" class="slide level2">
 <h2>Profiling</h2>
-<div id="ohmh7Kc8Nvm7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-04T15:24:02.209115Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-04T15:24:02.208673Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-04T15:24:02.215311Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-04T15:24:02.214746Z&quot;}" data-outputid="3a9f740a-1006-4b5d-9d44-ff192314d6a1" data-execution_count="3">
+<div id="ohmh7Kc8Nvm7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-06T12:52:32.270747Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-06T12:52:32.270366Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-06T12:52:32.276619Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-06T12:52:32.276207Z&quot;}" data-outputid="3a9f740a-1006-4b5d-9d44-ff192314d6a1" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>df.info()</span></code></pre></div>
@@ -684,7 +684,7 @@ memory usage: 6.0+ KB</code></pre>
 </section>
 <section id="training-and-test-sets-1" class="slide level2">
 <h2>Training and test sets</h2>
-<div id="fOKkpeA2NeEs" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-04T15:24:02.217190Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-04T15:24:02.216842Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-04T15:24:02.242246Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-04T15:24:02.241803Z&quot;}" data-execution_count="4">
+<div id="fOKkpeA2NeEs" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-06T12:52:32.278177Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-06T12:52:32.278008Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-06T12:52:32.303911Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-06T12:52:32.303451Z&quot;}" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="co"># Split the data into training and test sets</span></span>
@@ -702,7 +702,7 @@ memory usage: 6.0+ KB</code></pre>
 <section>
 <section id="doing-machine-learning" class="title-slide slide level1 center">
 <h1>Doing Machine Learning</h1>
-<div id="qRGDyke9OGij" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-04T15:24:02.244281Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-04T15:24:02.243888Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-04T15:24:02.288884Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-04T15:24:02.288439Z&quot;}" data-outputid="28adc7ac-dafc-4623-98c5-dda0795d6ca5" data-execution_count="5">
+<div id="qRGDyke9OGij" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-06T12:52:32.305955Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-06T12:52:32.305576Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-06T12:52:32.351241Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-06T12:52:32.350758Z&quot;}" data-outputid="28adc7ac-dafc-4623-98c5-dda0795d6ca5" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="co"># Import the model</span></span>
@@ -721,7 +721,7 @@ memory usage: 6.0+ KB</code></pre>
 </section>
 <section id="showing-the-model" class="slide level2">
 <h2>Showing the model</h2>
-<div id="TCYt3BziRjqK" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-04T15:24:02.290860Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-04T15:24:02.290485Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-04T15:24:02.764574Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-04T15:24:02.764084Z&quot;}" data-outputid="a5c6ce55-6e0d-4504-e4c8-408382791a1d" data-execution_count="6">
+<div id="TCYt3BziRjqK" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-06T12:52:32.353074Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-06T12:52:32.352863Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-06T12:52:32.818273Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-06T12:52:32.817666Z&quot;}" data-outputid="a5c6ce55-6e0d-4504-e4c8-408382791a1d" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="im">from</span> sklearn.tree <span class="im">import</span> plot_tree</span>
@@ -736,7 +736,7 @@ memory usage: 6.0+ KB</code></pre>
 <section>
 <section id="check-the-relevant-features" class="title-slide slide level1 center">
 <h1>Check the relevant features</h1>
-<div id="JV7m4ZKqPaJm" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-04T15:24:02.766509Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-04T15:24:02.766131Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-04T15:24:02.773388Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-04T15:24:02.772956Z&quot;}" data-outputid="efeb6271-4cec-4fcb-b621-84f298272ad7" data-execution_count="7">
+<div id="JV7m4ZKqPaJm" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-06T12:52:32.820497Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-06T12:52:32.820052Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-06T12:52:32.827381Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-06T12:52:32.826895Z&quot;}" data-outputid="efeb6271-4cec-4fcb-b621-84f298272ad7" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># Feature importance</span></span>
@@ -802,7 +802,7 @@ memory usage: 6.0+ KB</code></pre>
 </section>
 <section id="feature-importance-petal-length-and-petal-witdth" class="slide level2">
 <h2>Feature importance: petal length and petal witdth</h2>
-<div id="8h4GlwOOPlz3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-04T15:24:02.775205Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-04T15:24:02.774855Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-04T15:24:02.902734Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-04T15:24:02.902254Z&quot;}" data-outputid="a3ff9957-5136-4fe3-d3e0-dc7a7ddf2bfe" data-execution_count="8">
+<div id="8h4GlwOOPlz3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-06T12:52:32.828969Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-06T12:52:32.828814Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-06T12:52:32.958290Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-06T12:52:32.957690Z&quot;}" data-outputid="a3ff9957-5136-4fe3-d3e0-dc7a7ddf2bfe" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="co"># Get the two features with the highest importance</span></span>
@@ -825,7 +825,7 @@ memory usage: 6.0+ KB</code></pre>
 <img data-src="lab-05-ml_files/figure-revealjs/cell-9-output-1.png" class="r-stretch"></section>
 <section id="feature-importance-sepal-length-and-sepal-witdth" class="slide level2">
 <h2>Feature importance: sepal length and sepal witdth</h2>
-<div id="nFNaqWIOT-Rd" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-04T15:24:02.904584Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-04T15:24:02.904312Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-04T15:24:03.036146Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-04T15:24:03.035537Z&quot;}" data-outputid="e57d7a46-c26b-4bfc-c956-f67944b26ada" data-execution_count="9">
+<div id="nFNaqWIOT-Rd" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-06T12:52:32.960294Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-06T12:52:32.959871Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-06T12:52:33.093883Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-06T12:52:33.093284Z&quot;}" data-outputid="e57d7a46-c26b-4bfc-c956-f67944b26ada" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>plot(df, clf, feature_importance_df[<span class="st">'Feature'</span>].iloc[<span class="dv">2</span>:].tolist())</span></code></pre></div>
@@ -835,7 +835,7 @@ memory usage: 6.0+ KB</code></pre>
 <img data-src="lab-05-ml_files/figure-revealjs/cell-10-output-1.png" class="r-stretch"></section>
 <section id="feature-importance-pca" class="slide level2">
 <h2>Feature importance: PCA</h2>
-<div id="b2PwczK6TGSx" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-04T15:24:03.037981Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-04T15:24:03.037649Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-04T15:24:03.182274Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-04T15:24:03.181782Z&quot;}" data-outputid="69c5a88f-a511-4cae-dcff-afded0dcab50" data-execution_count="10">
+<div id="b2PwczK6TGSx" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-06T12:52:33.095738Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-06T12:52:33.095432Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-06T12:52:33.242089Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-06T12:52:33.241649Z&quot;}" data-outputid="69c5a88f-a511-4cae-dcff-afded0dcab50" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
@@ -856,7 +856,7 @@ memory usage: 6.0+ KB</code></pre>
 </details>
 
 </div>
-<img data-src="lab-05-ml_files/figure-revealjs/cell-11-output-1.png" class="r-stretch"><div id="j1A_FYsgXPEc" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-04T15:24:03.184095Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-04T15:24:03.183733Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-04T15:24:03.190397Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-04T15:24:03.189945Z&quot;}" data-outputid="329a560e-b3bc-4cb4-fec4-823c6398a357" data-execution_count="11">
+<img data-src="lab-05-ml_files/figure-revealjs/cell-11-output-1.png" class="r-stretch"><div id="j1A_FYsgXPEc" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-06T12:52:33.243727Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-06T12:52:33.243560Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-06T12:52:33.250174Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-06T12:52:33.249609Z&quot;}" data-outputid="329a560e-b3bc-4cb4-fec4-823c6398a357" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>pd.DataFrame(pca.components_, columns<span class="op">=</span>X.columns, index<span class="op">=</span>[<span class="st">'PC1'</span>, <span class="st">'PC2'</span>])</span></code></pre></div>
