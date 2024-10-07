@@ -170,7 +170,6 @@ The data annotation process can take place in several ways:
 # Different Ways of Learning
 
 :::: {.columns}
-
 ::: {.column width="65%"}
 
 We define different types of learning depending on data annotation:
