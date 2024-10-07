@@ -691,6 +691,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
+<section id="skewed-distributions" class="title-slide slide level1 center">
+<h1>Skewed distributions</h1>
+
+<img data-src="https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png" class="r-stretch quarto-figure-center"><p class="caption">image</p><p>What problems can arise with skewed distributions?</p>
+</section>
+
 <section id="outlier-removal" class="title-slide slide level1 center">
 <h1>Outlier removal</h1>
 <p><strong>Outlier removal</strong> is the process of eliminating data points that deviate significantly from the rest of the dataset</p>
@@ -954,6 +960,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>[1] Wu, Huiping, and Shing-On Leung. “Can Likert scales be treated as interval scales?—A simulation study.” Journal of social service research 43.4 (2017): 527-532.</p>
 </section>
 
+<section>
 <section id="feature-encoding-one-hot-encoding" class="title-slide slide level1 center">
 <h1>Feature encoding: one-hot encoding</h1>
 <p><strong>One-hot encoding (OHE)</strong> replaces categorical variables by <em>a set of binary variables</em> (each representing a category in the variable)</p>
@@ -1048,7 +1055,21 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>… less frequent values are treated collectively and represented as 0s in all the binary variables.</li>
 </ul>
 </section>
+<section id="encoding-data-with-the-wrong-type" class="slide level2">
+<h2>Encoding data with the wrong type</h2>
 
+<img data-src="https://user-images.githubusercontent.com/18005592/232748093-a25e8ba7-24d4-4e2b-9e58-1553786cac33.png" class="r-stretch quarto-figure-center"><p class="caption">Y2K22 bug</p></section>
+<section id="encoding-data-with-the-wrong-type-1" class="slide level2">
+<h2>Encoding data with the wrong type</h2>
+<p>Encoding the date 2022-01-01T00:01 into a signed integer <span class="math inline">\(2201010001\)</span></p>
+<p>A signed integer is a 32-bit datum that represents an integer in the range:</p>
+<ul>
+<li>Valid range: <span class="math inline">\([-2^{31}, 2^{31}-1] = [-2147483648, 2147483647]\)</span></li>
+<li>However, <span class="math inline">\(2201010001 &gt; 2147483647\)</span></li>
+</ul>
+<p>See also the <a href="https://en.wikipedia.org/wiki/Year_2000_problem">year 2000 problem</a></p>
+
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Bug_de_l%27an_2000.jpg" class="r-stretch quarto-figure-center"><p class="caption">Y2K</p></section></section>
 <section id="feature-scaling-or-data-normalization" class="title-slide slide level1 center">
 <h1>Feature scaling (or data normalization)</h1>
 <p><strong>Feature scaling</strong> is a method used to normalize the range of independent variables or features of data</p>
@@ -1354,7 +1375,38 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>The main approaches can also be divided into <em>feature selection</em> and <em>feature extraction</em>.</p>
 </section>
 
+<section id="feature-engineering" class="title-slide slide level1 center">
+<h1>Feature engineering</h1>
+<p>Feature engineering, in data science, refers to manipulation — addition, deletion, combination, mutation — of your data set to improve machine learning model training, leading to better performance and greater accuracy.</p>
+</section>
+
 <section id="feature-selection" class="title-slide slide level1 center">
+<h1>Feature selection</h1>
+<p><strong>Feature selection</strong> is the process of selecting a subset of relevant features (variables, predictors) for use in model construction</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Simplest algorithm is to test each possible subset of features finding the one which minimizes the error rate</p>
+<ul>
+<li>This is an exhaustive search of the space, and is computationally intractable for all but the smallest of feature sets</li>
+</ul>
+<p>If <span class="math inline">\(S\)</span> is a finite set of features with the cardinality <span class="math inline">\(|S| = n\)</span>, then the number of all the subsets of <span class="math inline">\(S\)</span> is <span class="math inline">\(|P(S)| = 2^n - 1\)</span> (we do not consider the empty set)</p>
+<ul>
+<li>With three features: <span class="math inline">\(2^3=8\)</span></li>
+<li>With four features: <span class="math inline">\(2^4=16\)</span></li>
+<li>With ten features: <span class="math inline">\(2^{10}=1024\)</span></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Hasse_diagram_of_powerset_of_3.svg/1280px-Hasse_diagram_of_powerset_of_3.svg.png"></p>
+</div>
+</div>
+<p>Feature selection approaches are characterized by</p>
+<ul>
+<li><em>Search technique</em> for proposing new feature subsets</li>
+<li><em>Evaluation measure</em> which scores the different feature subsets</li>
+</ul>
+</section>
+
+<section id="feature-selection-1" class="title-slide slide level1 center">
 <h1>Feature selection</h1>
 <div class="columns">
 <div class="column" style="width:65%;">
@@ -1497,6 +1549,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="feature-selection-wrapper-strategy" class="title-slide slide level1 center">
 <h1>Feature selection: Wrapper strategy</h1>
+<p>Each new feature subset is used to train a model, which is tested on a hold-out set</p>
+<ul>
+<li>Counting the number of mistakes made on that hold-out set (the error rate of the model) gives the score for that subset</li>
+<li>As wrapper methods train a new model for each subset, they are very computationally intensive but provide good results</li>
+<li><em>Stepwise regression</em> adds the best feature (or deletes the worst feature) at each round</li>
+</ul>
 <p><em>Backward elimination</em></p>
 <p>We start with the full model (including all the independent variables) and then incrementally remove the most insignificant feature.</p>
 <p>This process repeats again and again until we have the final set of significant features.</p>
@@ -1548,6 +1606,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><img data-src="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/d2/a9/4-1_model-complexity-bias-variance.component.complex-narrative-xl.ts=1723041862502.png/content/adobe-cms/us/en/topics/lasso-regression/jcr:content/root/table_of_contents/body/content_section_styled/content-section-body/complex_narrative_1723597861/items/content_group_1333297271/image"></p>
 </div>
 </div>
+<p>[1] Katrutsa, Alexandr, and Vadim Strijov. “Comprehensive study of feature selection methods to solve multicollinearity problem according to evaluation criteria.” Expert Systems with Applications 76 (2017): 1-11.</p>
+<p>[2] Chan, Jireh Yi-Le, et al.&nbsp;“Mitigating the multicollinearity problem and its machine learning approach: a review.” Mathematics 10.8 (2022): 1283.</p>
 </section>
 
 <section id="feature-extraction-or-feature-projection" class="title-slide slide level1 center">
@@ -1650,6 +1710,20 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </div>
 </div>
+</section>
+
+<section id="sequences-of-transformations" class="title-slide slide level1 center">
+<h1>Sequences of transformations</h1>
+<p>Things are even more complex when applying sequences of transformations</p>
+<ul>
+<li>E.g., normalization should be applied before rebalancing since rebalancing can alter average and standard deviations</li>
+<li>E.g., applying feature engineering before/after rebalancing produces different results depending on the dataset and algorithm</li>
+</ul>
+
+<img data-src="https://user-images.githubusercontent.com/18005592/232754117-8a84fde5-bce2-41b1-a003-7dfa0b63f980.png" class="r-stretch quarto-figure-center"><p class="caption">image</p><p>More an art than a science</p>
+<ul>
+<li>… At least for now</li>
+</ul>
 </section>
 
 <section id="overlapping-with-business-intelligence-and-data-warehousing" class="title-slide slide level1 center">
