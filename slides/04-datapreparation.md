@@ -178,6 +178,12 @@ The data analyst must
 :::
 ::::
 
+# Skewed distributions
+
+![image](https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png)
+
+What problems can arise with skewed distributions?
+
 # Outlier removal
 
 **Outlier removal** is the process of eliminating data points that deviate significantly from the rest of the dataset
@@ -394,6 +400,24 @@ OHE increases the dimensionality of the dataset and it may not be suitable for e
 - To prevent a massive increase of the feature space, we can one-hot encode only the most frequent categories in the variable.
 - ... less frequent values are treated collectively and represented as 0s in all the binary variables.
 
+## Encoding data with the wrong type
+
+![Y2K22 bug](https://user-images.githubusercontent.com/18005592/232748093-a25e8ba7-24d4-4e2b-9e58-1553786cac33.png)
+
+## Encoding data with the wrong type
+
+Encoding the date 2022-01-01T00:01 into a signed integer $2201010001$
+
+A signed integer is a 32-bit datum that represents an integer in the range:
+
+- Valid range: $[-2^{31}, 2^{31}-1] = [-2147483648, 2147483647]$
+- However, $2201010001 > 2147483647$
+
+See also the [year 2000 problem](https://en.wikipedia.org/wiki/Year_2000_problem)
+
+![Y2K](https://upload.wikimedia.org/wikipedia/commons/f/fb/Bug_de_l%27an_2000.jpg)
+
+
 # Feature scaling (or data normalization)
 
 **Feature scaling** is a method used to normalize the range of independent variables or features of data
@@ -512,7 +536,6 @@ OHE increases the dimensionality of the dataset and it may not be suitable for e
 > For example, converting a table of product purchases, where there is one record for each purchase, into a new table where there is one record for each store.
 
 :::: {.columns}
-
 ::: {.column width="49%"}
 
 > Before aggregation (detailed data)
@@ -568,6 +591,40 @@ Examples:
 - Dimensionality reduction can be used for noise reduction, data visualization, cluster analysis, or as an intermediate step to facilitate other analyses
 
 The main approaches can also be divided into *feature selection* and *feature extraction*.
+
+# Feature engineering
+
+Feature engineering, in data science, refers to manipulation — addition, deletion, combination, mutation — of your data set to improve machine learning model training, leading to better performance and greater accuracy.
+
+# Feature selection 
+
+**Feature selection** is the process of selecting a subset of relevant features (variables, predictors) for use in model construction
+
+:::: {.columns}
+::: {.column width="60%"}
+
+Simplest algorithm is to test each possible subset of features finding the one which minimizes the error rate
+
+- This is an exhaustive search of the space, and is computationally intractable for all but the smallest of feature sets
+
+If $S$ is a finite set of features with the cardinality $|S| = n$, then the number of all the subsets of $S$ is $|P(S)| = 2^n - 1$ (we do not consider the empty set)
+
+- With three features: $2^3=8$
+- With four features: $2^4=16$
+- With ten features: $2^{10}=1024$
+
+:::
+::: {.column width="40%"}
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Hasse_diagram_of_powerset_of_3.svg/1280px-Hasse_diagram_of_powerset_of_3.svg.png)
+
+:::
+::::
+
+Feature selection approaches are characterized by
+
+- *Search technique* for proposing new feature subsets
+- *Evaluation measure* which scores the different feature subsets
 
 # Feature selection
 
@@ -669,6 +726,12 @@ The main approaches can also be divided into *feature selection* and *feature ex
 
 # Feature selection: Wrapper strategy
 
+Each new feature subset is used to train a model, which is tested on a hold-out set
+
+- Counting the number of mistakes made on that hold-out set (the error rate of the model) gives the score for that subset
+- As wrapper methods train a new model for each subset, they are very computationally intensive but provide good results
+- *Stepwise regression* adds the best feature (or deletes the worst feature) at each round
+
 *Backward elimination*
 
 We start with the full model (including all the independent variables) and then incrementally remove the most insignificant feature.
@@ -715,6 +778,11 @@ The optimal $\lambda$ can be determined with cross-validation techniques.
 
 :::
 ::::
+
+[1] Katrutsa, Alexandr, and Vadim Strijov. "Comprehensive study of feature selection methods to solve multicollinearity problem according to evaluation criteria." Expert Systems with Applications 76 (2017): 1-11.
+
+[2] Chan, Jireh Yi-Le, et al. "Mitigating the multicollinearity problem and its machine learning approach: a review." Mathematics 10.8 (2022): 1283.
+
 
 # Feature extraction (or feature projection)
 
@@ -773,6 +841,19 @@ Feature Relevance for 3 Components:
 :::
 ::::
 
+# Sequences of transformations
+
+Things are even more complex when applying sequences of transformations
+
+- E.g., normalization should be applied before rebalancing since rebalancing can alter average and standard deviations
+- E.g., applying feature engineering before/after rebalancing produces different results depending on the dataset and algorithm
+
+![image](https://user-images.githubusercontent.com/18005592/232754117-8a84fde5-bce2-41b1-a003-7dfa0b63f980.png)
+
+More an art than a science
+
+- ... At least for now
+
 # Overlapping with business intelligence and data warehousing
 
 *ETL (Extract, Transform, Load)* is one of the most widely used data integration techniques in data warehousing.
@@ -782,6 +863,5 @@ Feature Relevance for 3 Components:
 - *Load*: Load the transformed data into a target database or data warehouse.
 
 *ELT (Extract, Load, Transform)* loads data into a storage system (like a data lake) and then transforms within the storage system.
-
 
 # References
