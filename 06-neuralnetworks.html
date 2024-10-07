@@ -28,7 +28,92 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="06-neuralnetworks_files/libs/revealjs/dist/theme/quarto.css">
   <link href="06-neuralnetworks_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="06-neuralnetworks_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -337,16 +422,689 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 
 </section>
-<section id="neural-networks" class="title-slide slide level1 center">
-<h1>Neural Networks</h1>
-
+<section id="recalling-the-machine-learning-pipeline" class="title-slide slide level1 center">
+<h1>Recalling the Machine Learning pipeline</h1>
+<ul>
+<li>In these slides we focus on the model, the real “heart” of the AI in our system</li>
+<li>It is one of the most delicate and decisive elements of the entire process:
+<ul>
+<li>Here, with the word “model”, we refer to the “mechanism” with which input data are transformed into outputs</li>
+<li>Usually, this “mechanism” is based on math, geometry, statistics,…</li>
+<li>Remember that the other steps are also important: even with the best classifier available if I use “dirty” (not correctly pre-processed) or insignificant input data, the system will perform poorly.</li>
+</ul></li>
+</ul>
 </section>
 
-<section id="references" class="title-slide slide level1 center">
-<h1>References</h1>
-<div class="quarto-auto-generated-content">
+<section id="definitions" class="title-slide slide level1 center">
+<h1>Definitions</h1>
+<p><strong>Deep Learning</strong>: a discipline, similar to ML, that allows you to avoid the problematic phase of feature extraction (also) with high-dimensional input.</p>
+<ul>
+<li>Essentially, it is based on <em>Neural Networks</em>.</li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model51.jpg" class="r-stretch quarto-figure-center"><p class="caption">Deep Learning</p><p>Feature extraction requires human intervention.</p>
+<ul>
+<li>… Often, this is the weak link in the chain!</li>
+</ul>
+</section>
+
+<section id="neural-networks" class="title-slide slide level1 center">
+<h1>Neural Networks</h1>
+<p><em>Neural Networks</em> (NNs): the key idea is to imitate, as far as possible, nature.</p>
+<ul>
+<li>In particular, we try to imitate the neurons of the human brain (an <em>incredible</em> and <em>powerful</em> machine!)</li>
+<li><em>Networks</em> since neurons are connected through each other</li>
+<li>Several scientific studies reported the structure of the biological neuron:</li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model52.png" class="r-stretch"><ul>
+<li>The axon primarily carries nerve signals away from the soma (from left to right)</li>
+<li>Cell body: this is where signals are «aggregated»</li>
+<li>Dendrites: this is where the majority of input to the neuron occurs from other cells</li>
+</ul>
+</section>
+
+<section id="artificial-neuron" class="title-slide slide level1 center">
+<h1>Artificial Neuron</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>The first scheme about the neuron has been introduced by <span class="citation" data-cites="mcculloch1943logical">(<a href="#/the-end-of-our-ai-journey" role="doc-biblioref" onclick="">McCulloch and Pitts 1943</a>)</span></li>
+<li>The first Artificial Neuron (AN) has been introduced by <em>Rosenblatt</em> in 1957</li>
+<li>In the artificial neuron, there are:
+<ul>
+<li><em>Inputs</em>: in our case, they are digital numbers! (not an analog signal)</li>
+<li>Inputs are <em>weighted</em> (signals are not all equally important)</li>
+<li>Inputs are <em>merged</em> with a sum function (plus a <em>bias</em>)</li>
+<li>An <em>activation function</em> is used to generate the final output:
+<ul>
+<li>Also the human brain <em>filters inputs</em>, so it would be impossible to always take everything into account.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/neuralnetworks/3%20Model53.png"></p>
+</div>
+</div>
+</section>
+
+<section id="activation-functions" class="title-slide slide level1 center">
+<h1>Activation functions</h1>
+<p>Activation functions define the output of the neuron given an input or set of inputs:</p>
+<ul>
+<li>They are a sort of switches of the artificial neuron.</li>
+<li>They output a small value for small inputs, and a larger value if its inputs exceed a threshold.</li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model55.png" class="r-stretch"><p>See also <a href="https://medium.com/@shrutijadon/survey-on-activation-functions-for-deep-learning-9689331ba092">Activation Functions</a></p>
+</section>
+
+<section id="an-example-of-a-working-an" class="title-slide slide level1 center">
+<h1>An example of a working AN</h1>
+<blockquote>
+<p>Will I pass the Machine Learning exam?</p>
+<p><img data-src="./img/neuralnetworks/slide54.png"></p>
+</blockquote>
+</section>
+
+<section id="linear-vs-non-linear-problems" class="title-slide slide level1 center">
+<h1>Linear vs Non-linear problems</h1>
+<ul>
+<li>Unfortunately, a single AN can solve only linear problems!</li>
+<li>The solution is to use more ANs organized on different layers → Multi-Layer Perceptron (MLP)
+<ul>
+<li>It is not so easy, since this introduces several mathematical problems</li>
+<li>Besides, we greatly improve the computational load</li>
+</ul></li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model56.png" class="r-stretch"></section>
+
+<section id="artificial-neural-networks" class="title-slide slide level1 center">
+<h1>Artificial Neural Networks</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Groups of artificial neurons are organized in different layers → Neural Networks!</li>
+<li>Typically, are present:
+<ul>
+<li>An input layer (input of the network)</li>
+<li>An output layer (output of the network)</li>
+<li>One or more hidden layer (s)</li>
+</ul></li>
+<li>Each neuron is fully connected with those of the next level.</li>
+<li>Again, we try to imitate the hierarchical nature of our neurons:
+<ul>
+<li>We have “only” about ten levels between the retina and the actuator muscles.</li>
+<li>Otherwise, we would be too slow to react to stimuli.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/neuralnetworks/56a.png"></p>
+<p><img data-src="./img/neuralnetworks/56b.png"></p>
+</div>
+</div>
+</section>
+
+<section id="ann-typologies" class="title-slide slide level1 center">
+<h1>ANN typologies</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Feedforward:
+<ul>
+<li>The connections connect the neurons of one level with the neurons of the next level</li>
+<li>Backward connections or connections to the same level are not allowed</li>
+<li>It is by far the most used type of network.</li>
+</ul></li>
+<li>Recurrent:
+<ul>
+<li>Feedback connections are expected (generally towards neurons of the same level, but also backward)</li>
+<li>More suitable for the management of sequences because they have a (short-term) memory effect</li>
+</ul></li>
+<li>In our course, we will use only FF NN!</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/neuralnetworks/3%20Model59.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model60.png"></p>
+</div>
+</div>
+</section>
+
+<section id="neural-networks-training" class="title-slide slide level1 center">
+<h1>Neural Networks training</h1>
+<ul>
+<li>General considerations about Neural Network architectures:
+<ul>
+<li>Greater number of hidden layers (therefore neurons) → better performance</li>
+<li>Greater number of hidden layers (therefore neurons) → need for more training data</li>
+<li>Greater number of hidden layers (therefore neurons) → greater computational load</li>
+</ul></li>
+<li>How is it possible to train a neural network?
+<ul>
+<li>Training a neural network is extremely complicated, but we can use specific frameworks:</li>
+<li>The same happens in Machine Learning, in which we can use the <em>Scikit-Learn</em> library to train our own classifiers.</li>
+</ul></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="./img/neuralnetworks/3%20Model61.png"></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="./img/neuralnetworks/3%20Model62.png"></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="./img/neuralnetworks/3%20Model63.png"></p>
+</div>
+</div>
+</section>
+
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+<p>Do you remember the example of how we learn to play the guitar?</p>
+
+<img data-src="./img/neuralnetworks/3%20Model64.png" class="r-stretch"></section>
+
+<section id="neural-networks-training-intuition" class="title-slide slide level1 center">
+<h1>Neural Networks training: intuition</h1>
+<p>The same happens with Neural Networks.</p>
+
+<img data-src="./img/neuralnetworks/3%20Model65.png" class="r-stretch"></section>
+
+<section id="dnn-training" class="title-slide slide level1 center">
+<h1>DNN Training</h1>
+<p>Training a NN means minimizing the loss/cost function.</p>
+<p>The cost function:</p>
+<ul>
+<li>It is a mathematical formulation of the learning goal</li>
+<li>Measures the error between the prediction and the ground truth (label)</li>
+<li>Presents the performance (or error) in the form of a single real number</li>
+</ul>
+<p>Loss functions for the classification task:</p>
+<ul>
+<li>Cross Entropy indicates the distance between what the model believes the output distribution should be, and what the original distribution really is.</li>
+<li>Binary Cross Entropy (BCE): <span class="math inline">\(Loss = -y_i \cdot log (\hat{y}_i) - (1 - y_i) \cdot log(1 - \hat{y}_i)\)</span>
+<ul>
+<li>Where: <span class="math inline">\(\hat{y}_i\)</span> is the i-th scalar value in the model output (prediction), <span class="math inline">\(y_i\)</span> is the corresponding target (label) value</li>
+<li><span class="math inline">\(-y_i \cdot log (\hat{y}_i)\)</span> cancels out if the target is 0</li>
+<li><span class="math inline">\((1 - y_i) \cdot log(1 - \hat{y}_i)\)</span> cancels out if the target is 1</li>
+</ul></li>
+<li>Categorical Cross Entropy (CCE): <span class="math inline">\(Loss = -\sum_i y_i log(\hat{y}_i)\)</span>
+<ul>
+<li>Where: <span class="math inline">\(\hat{y}_i\)</span> is the i-th scalar value in the model output (prediction), <span class="math inline">\(y_i\)</span> is the corresponding target (label) value</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="softmax-classification" class="title-slide slide level1 center">
+<h1>Softmax classification</h1>
+<p>In order to use the <em>Cross Entropy</em> loss, the output layer must output probabilities.</p>
+<p>Then, we can use <em>softmax</em> layer that takes an <em>n</em>-dimensional vector of real numbers and transforms it into a vector of real numbers in range (0,1) which adds up to 1.</p>
+<ul>
+<li>Softmax is a continuously differentiable function.</li>
+<li>The Softmax activation function determines the final probability value of each class <span class="math inline">\(p_i = \frac{e^{a_k}}{\sum_{k=1}^n e^{a_k}}\)</span></li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model66.png" class="r-stretch"><p>See also:</p>
+<ul>
+<li><a href="https://peterroelants.github.io/posts/cross-entropy-softmax/">https://peterroelants.github.io/posts/cross-entropy-softmax/</a></li>
+<li><a href="https://www.analyticsvidhya.com/blog/2021/04/introduction-to-softmax-for-neural-network/">https://www.analyticsvidhya.com/blog/2021/04/introduction-to-softmax-for-neural-network</a></li>
+</ul>
+</section>
+
+<section id="cross-entropy" class="title-slide slide level1 center">
+<h1>Cross Entropy</h1>
+<p><img data-src="./img/neuralnetworks/3%20Model67.jpg"></p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="./img/neuralnetworks/3%20Model68.png"></p>
+<p><span class="math inline">\(CCE = -log_2 0.755 = 0.3677\)</span></p>
+</div><div class="column" style="width:33%;">
+<p>After some iterations…</p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="./img/neuralnetworks/3%20Model69.jpg"></p>
+<p><span class="math inline">\(CCE = -log_2 0.0938 = 0.0923\)</span></p>
+<p><em>The loss function is decreased!</em></p>
+</div>
+</div>
+<p><a href="https://towardsdatascience.com/cross-entropy-loss-function-f38c4ec8643e">https://towardsdatascience.com/cross-entropy-loss-function-f38c4ec8643e</a></p>
+</section>
+
+<section id="dnn-training-1" class="title-slide slide level1 center">
+<h1>DNN Training</h1>
+<p>How to minimize the loss?</p>
+
+<img data-src="./img/neuralnetworks/3%20Model53.png" class="r-stretch"><p>Adjusting (change) the weights and the bias of every neuron</p>
+<p><a href="https://medium.com/analytics-vidhya/backpropagation-for-dummies-e069410fa585">https://medium.com/analytics-vidhya/backpropagation-for-dummies-e069410fa585</a></p>
+</section>
+
+<section id="dnn-training-2" class="title-slide slide level1 center">
+<h1>DNN Training</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Different optimizers:</p>
+<ul>
+<li>Vanilla Gradient Descent
+<ul>
+<li>Computes the gradient of the cost function w.r.t. to the parameters for the entire training dataset</li>
+<li>Not suggested for huge training dataset → Slow and computationally expensive algorithm</li>
+</ul></li>
+<li>Stochastic Gradient Descent (SGD)
+<ul>
+<li>For each iteration, a sample of data (<em>batch</em>) is selected</li>
+<li>Gradients are computed on each iteration</li>
+<li>The path taken by the algorithm to reach the minima is usually noisier</li>
+<li>It requires several hyperparameters</li>
+</ul></li>
+<li>Adam
+<ul>
+<li>A <em>stochastic gradient descent</em> method</li>
+<li>Fewer parameters than SGD</li>
+<li>Computationally efficient, has little memory requirement</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/neuralnetworks/3%20Model71.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model72.jpg"></p>
+</div>
+</div>
+</section>
+
+<section id="how-to-compute-gradients" class="title-slide slide level1 center">
+<h1>How to compute gradients</h1>
+<ul>
+<li>Simple case: the network has only 1 layer
+<ul>
+<li>We can apply a simple gradient descent technique, <em>i.e.</em> the delta rule (or <em>Widrow-Hoff Rule</em>) on the <em>Perceptron</em>
+<ul>
+<li><span class="math inline">\(\Delta w_{ij} = \eta (\hat{y}_i - y_i)g'(h_j)x_i\)</span></li>
+</ul></li>
+<li>Alpha learning rate, <span class="math inline">\(g(x)\)</span> is the activation function, <span class="math inline">\(y_i\)</span> is the target output, <span class="math inline">\(h\)</span> is the weighted sum of inputs, <span class="math inline">\(\hat{y}_i\)</span> is the actual output and <span class="math inline">\(x\)</span> is the input</li>
+</ul></li>
+<li>But with one or more hidden layers, it is not possible to apply the Delta rule!
+<ul>
+<li>We need an additional mechanism → backpropagation</li>
+<li>Delta rule is a special case of the more general backpropagation algorithm</li>
+<li>Remember that hidden layers are fundamental for Deep Learning!</li>
+<li>Without backpropagation we cannot propagate the error, computed on the loss function, to the input of the network → the introduction of backpropagation has been fundamental in order to train DNNs!</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="backpropagation" class="title-slide slide level1 center">
+<h1>Backpropagation</h1>
+<p>How to compute gradients? (<span class="math inline">\(\frac{\delta L}{\delta w}\)</span>)?</p>
+<ul>
+<li>The problem with DNNs is that we have hidden layers, the loss functions depend on “hidden parameters” (𝑤) but we are able to observe only the output.</li>
+<li>We can then use an algorithm to compute the gradients of the loss functions with respect to all its parameters called backpropagation, a procedure based on the chain rule
+<ul>
+<li><span class="math inline">\(\frac{d_z}{d_x} = \frac{d_z}{d_y} \frac{d_y}{d_z}\)</span></li>
+<li><span class="math inline">\(z=f(g(x))\)</span></li>
+<li><span class="math inline">\(y=g(x)\)</span></li>
+</ul></li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model73.png" class="r-stretch quarto-figure-center"><p class="caption">Chain rule</p></section>
+
+<section id="backpropagation-1" class="title-slide slide level1 center">
+<h1>Backpropagation</h1>
+<ul>
+<li>Backpropagation is a local process. Neurons are completely unaware of the complete topology of the network in which they are embedded.
+<ul>
+<li>Remember: we cannot directly compute the derivative of the loss function with respect to the output of the network (it is not «visible» from hidden layers!)</li>
+<li>We can apply the <em>backpropagation</em> and the <em>chain rule </em> to propagate the derivative of the loss function up to the inputs of the network.</li>
+</ul></li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model74.png" class="r-stretch quarto-figure-center"><p class="caption">Chain rule</p><p>It proceeds backward w.r.t the flow of computations performed to compute the loss itself (hence the name).</p>
+</section>
+
+<section id="optimization-procedure-a-visual-guide" class="title-slide slide level1 center">
+<h1>Optimization procedure: a visual guide</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/neuralnetworks/3%20Model75.gif"></p>
+<figcaption>Gradient descent</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ol type="1">
+<li>This surface is the solution space of the loss function
+<ul>
+<li>low values → low error</li>
+</ul></li>
+<li>Starting point
+<ul>
+<li>Output of the NN with initial (random) weights</li>
+</ul></li>
+<li>Global minimum
+<ul>
+<li>The desired goal point!</li>
+</ul></li>
+<li>The learning procedure is performed in an iterative manner, step by step. Following the gradient, the optimizers look for the (global) minimum</li>
+<li>Each step is proportional to the learning rate adopted</li>
+<li>Local minimum
+<ul>
+<li>The loss function of DL models usually has many local minima. The solution obtained by the final iteration may only locally minimize the loss function.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+</section>
+
+<section id="dnn-training-summarizing" class="title-slide slide level1 center">
+<h1>DNN training: summarizing</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li>Loss function → desired goal of the NN
+<ul>
+<li><em>How</em>?</li>
+</ul></li>
+<li>Minimize loss function → moving close to the goal
+<ul>
+<li><em>What does it mean in practice?</em></li>
+</ul></li>
+<li>Adjusting weights (and bias) of the NN
+<ul>
+<li><em>Through</em></li>
+</ul></li>
+<li>Gradient Descent → Optimizers
+<ul>
+<li>Parameters:
+<ul>
+<li>Learning rate</li>
+<li>Batch size</li>
+<li>…</li>
+</ul></li>
+<li><em>Based on</em></li>
+</ul></li>
+<li>Backpropagation + Chain Rule
+<ul>
+<li><em>Therefore</em></li>
+</ul></li>
+<li>The loss function must be derivable !!</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/neuralnetworks/3%20Model76.png"></p>
+<p>The choice of the right value of the learning rate is important!</p>
+</div>
+</div>
+</section>
+
+<section id="terminology-in-dnn-training" class="title-slide slide level1 center">
+<h1>Terminology in DNN training</h1>
+<ul>
+<li><strong>Batch (size)</strong>: the hyperparameter of gradient descent that controls the number of training samples to work through before the model’s internal parameters are updated.
+<ul>
+<li>Typically batch size is a multiple of the power of two (16, 32, 64,…)</li>
+<li>Too small batch size can compromise the stability of the learning phase</li>
+<li>The larger the batch size, the more video memory is used! (check your GPU specs)</li>
+<li>Empirically, the batch size may be (at least) equal to the number of classes</li>
+</ul></li>
+<li><strong>Iteration</strong>: #iterations = the size of the training set / the batch size</li>
+<li><strong>Epoch</strong>: the learning procedure is applied to the entire training dataset:
+<ul>
+<li>One epoch means that each sample in the training has had an opportunity to update the weights</li>
+<li>An epoch is comprised of one or more batches (or iterations).</li>
+<li>The number of epochs is traditionally large (10, 100, 1000,…)</li>
+</ul></li>
+</ul>
+<p><a href="https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/">https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/</a></p>
+</section>
+
+<section id="learning-curves" class="title-slide slide level1 center">
+<h1>Learning Curves</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>It is common to create line plots that show epochs along the <em>x</em>-axis and the loss value of the model on the <em>y</em>-axis.</p>
+<ul>
+<li>2 plots (usually overlapped):
+<ul>
+<li>One for the training</li>
+<li>One for the validation</li>
+</ul></li>
+<li>These plots are called learning curves.</li>
+<li>Loss values (this is an error, then low values are ok for us!)</li>
+<li>These plots can help to diagnose whether the model has over-learned (<em>overfitting</em>), under-learned (<em>underfitting</em>), or suitably fits the training dataset.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/neuralnetworks/3%20Model77.png"></p>
+<ul>
+<li>Usually, at the beginning of the learning, the value of the loss function drops rapidly</li>
+<li>Starting of the overfitting</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="mlp-in-scikit-learn" class="title-slide slide level1 center">
+<h1><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html">MLP</a> in Scikit-Learn</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>sklearn.neural_network.MLPClassifier(</span>
+<span id="cb1-2"><a href=""></a> hidden<span class="op">*</span>layer<span class="op">*</span>sizes<span class="op">=</span>(<span class="dv">100</span>,),</span>
+<span id="cb1-3"><a href=""></a>    activation<span class="op">=</span><span class="st">'relu’,</span></span>
+<span id="cb1-4"><a href=""></a><span class="er">    solver='adam’,</span></span>
+<span id="cb1-5"><a href=""></a> batch<span class="op">*</span>size<span class="op">=</span><span class="st">'auto’,</span></span>
+<span id="cb1-6"><a href=""></a><span class="er"> learning*rate='constant’,</span></span>
+<span id="cb1-7"><a href=""></a>    <span class="bu">max</span><span class="op">*</span><span class="bu">iter</span><span class="op">=</span><span class="dv">200</span>,</span>
+<span id="cb1-8"><a href=""></a>    shuffle<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-9"><a href=""></a> ...</span>
+<span id="cb1-10"><a href=""></a>)</span></code></pre></div>
+</section>
+
+<section id="developing-ai-systems" class="title-slide slide level1 center">
+<h1>Developing AI systems</h1>
+<ul>
+<li>It is not just important how well a particular classifier works</li>
+<li>Related choices are also very important, which concern not only technical aspects but also managerial aspects, since:
+<ul>
+<li>They affect the project development time</li>
+<li>They affect the amount of resources invested</li>
+<li>They affect the need for developers</li>
+</ul></li>
+<li>We will quickly reflect on the following questions:
+<ul>
+<li>How to develop an AI system?</li>
+<li>When is it better to use Machine Learning? And Deep Learning?</li>
+<li>What about hardware for AI?</li>
+</ul></li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model103.png" class="r-stretch"></section>
+
+<section id="how-to-develop-an-ai-project" class="title-slide slide level1 center">
+<h1>How to develop an AI project?</h1>
+<ul>
+<li>We have seen what are the main steps necessary for the realization of an AI project
+<ul>
+<li>Data</li>
+<li>Data Processing (and feature extraction)</li>
+<li>Model training</li>
+<li>Prediction analysis (through metrics)</li>
+</ul></li>
+<li>However, there are other important considerations:
+<ul>
+<li>When to address a problem through ML?</li>
+<li>When to address a problem through DL?</li>
+<li>What are the hardware resources needed?</li>
+<li>What are the software resources needed?</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="machine-learning-vs-deep-learning" class="title-slide slide level1 center">
+<h1>Machine Learning vs Deep Learning</h1>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Element</th>
+<th style="text-align: center;">Machine Learning</th>
+<th style="text-align: center;">Deep Learning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Data</td>
+<td style="text-align: center;">Large data<br>(~ hundreds)</td>
+<td style="text-align: center;">Huge data<br>(~ thousands)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Accuracy</td>
+<td style="text-align: center;">High accuracy</td>
+<td style="text-align: center;">Best accuracy<br>(esp.&nbsp;high-dimensional data)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Training time</td>
+<td style="text-align: center;">Less time<br>(~minutes)</td>
+<td style="text-align: center;">Large Time<br>(~hours, days)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Required hardware</td>
+<td style="text-align: center;">CPU</td>
+<td style="text-align: center;">GPU</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Features</td>
+<td style="text-align: center;">Manual</td>
+<td style="text-align: center;">Learned</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Interpretability</td>
+<td style="text-align: center;">Good</td>
+<td style="text-align: center;">Low</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section id="machine-learning-vs-deep-learning-1" class="title-slide slide level1 center">
+<h1>Machine Learning vs Deep Learning</h1>
+<p>The superiority of DL approaches over other Machine Learning algorithms manifests itself when large (huge) quantities of training data are available.</p>
+
+<img data-src="./img/neuralnetworks/93.png" class="r-stretch"></section>
+
+<section id="hardware-for-deep-learning" class="title-slide slide level1 center">
+<h1>Hardware for Deep Learning</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>The training of neural networks, especially if they are deep, requires specialized hardware:
+<ul>
+<li>Before starting a project with DL, you need to ask if the company/lab has the necessary hardware</li>
+</ul></li>
+<li>Having one or more GPUs available is today a fundamental factor:
+<ul>
+<li>GPUs are essential for parallelizing (and therefore speeding up) calculations.</li>
+<li>As seen, the deeper a network is, the more computational load is introduced</li>
+</ul></li>
+<li>To date, the only usable GPUs are produced by Nvidia, a company that dominates the market:
+<ul>
+<li>Google has started a competition by introducing TPU (<em>Tensor Processor Unit</em>) on the market, but they are not yet widespread and used</li>
+<li>The parallelization of the calculations is possible thanks to the CUDA libraries (<em>Compute Unified Device Architecture</em>, the true core business of Nvidia)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/neuralnetworks/3%20Model105.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model106.png"></p>
+</div>
+</div>
+</section>
+
+<section id="training-dnns" class="title-slide slide level1 center">
+<h1>Training DNNs…</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="./img/neuralnetworks/3%20Model107.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/neuralnetworks/95.png"></p>
+</div>
+</div>
+</section>
+
+<section id="hardware-purchase-for-dl" class="title-slide slide level1 center">
+<h1>Hardware purchase for DL</h1>
+<ul>
+<li>In-house solution: the company buys the necessary hardware, it is the direct owner
+<ul>
+<li>Pros:
+<ul>
+<li>Extreme freedom of use of hardware</li>
+<li>In the long run, it tends to have lower costs</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>Hardware maintenance is required → company needs specialized technicians</li>
+<li>Hardware ages (quickly) → necessary investments over time</li>
+<li>For large numbers of GPUs:
+<ul>
+<li>It is necessary to have specific server rooms → temperature and access control</li>
+<li>High energy consumption → consumption of the latest generation GPU: ~450W (!)</li>
+</ul></li>
+<li>The GPU market is quite expensive and volatile:
+<ul>
+<li>Very few companies involved in the production process → TMSC</li>
+<li>Semiconductor shortage</li>
+<li>External elements influence the market: mining, wars,…</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+
+<section id="hardware-for-dl-in-house-vs-external-solutions" class="title-slide slide level1 center">
+<h1>Hardware for DL: in-house vs external solutions</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>External solution: the hardware is rented through the <em>PaaS</em> paradigm (Cloud)
+<ul>
+<li>Pros:
+<ul>
+<li>Hardware maintenance is NOT required</li>
+<li>NO investment over time is required for hardware upgrades</li>
+<li>Dedicated server rooms are NOT required, energy consumption is not borne by the company</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>In the long run, it tends to have higher costs</li>
+<li>Cons already seen for cloud-based solutions:
+<ul>
+<li>Vendor <em>lock-in</em> → it is difficult to escape from the service provider</li>
+<li>Who really owns the data?</li>
+<li>Privacy issues</li>
+</ul></li>
+</ul></li>
+<li>Examples:
+<ul>
+<li><a href="https://cloud.google.com/products/calculator/">https://cloud.google.com/products/calculator/</a></li>
+<li><a href="https://www.leadergpu.com/#chose-best">https://www.leadergpu.com/#chose-best</a></li>
+<li><a href="https://buomsoo-kim.github.io/colab/2020/03/15/Google-newly-launches-colab-pro.md/">https://buomsoo-kim.github.io/colab/2020/03/15/Google-newly-launches-colab-pro.md/</a></li>
+<li><a href="https://calculator.aws/#/addService/EC2">https://calculator.aws/#/addService/EC2</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/neuralnetworks/3%20Model108.png"></p>
+</div>
+</div>
+</section>
+
+<section id="the-end-of-our-ai-journey" class="title-slide slide level1 smaller scrollable">
+<h1>The end(?) of our AI journey</h1>
+
+<img data-src="./img/neuralnetworks/98.png" class="r-stretch"><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Machine Learning and Data Mining (Module 2) - A.Y. 2024/25</p>
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-mcculloch1943logical" class="csl-entry" role="listitem">
+McCulloch, Warren S, and Walter Pitts. 1943. <span>“A Logical Calculus of the Ideas Immanent in Nervous Activity.”</span> <em>The Bulletin of Mathematical Biophysics</em> 5: 115–33.
 </div>
 </div>
 </section>

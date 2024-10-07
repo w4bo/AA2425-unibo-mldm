@@ -337,9 +337,943 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 
 </section>
-<section id="modeling" class="title-slide slide level1 center">
-<h1>Modeling</h1>
+<section class="slide level2">
 
+<p>DATA ACQUISITION</p>
+</section>
+<section id="machine-learning-tasks" class="title-slide slide level1 center">
+<h1>3.1 Machine Learning Tasks</h1>
+
+</section>
+
+<section id="classification" class="title-slide slide level1 center">
+<h1>Classification</h1>
+<p>Regression Clustering</p>
+</section>
+
+<section id="machine-learning-tasks-1" class="title-slide slide level1 center">
+<h1>Machine Learning tasks</h1>
+<ul>
+<li>There are different tasks in ML → depending on the output that we want:
+<ul>
+<li>Classification , regression and clustering</li>
+</ul></li>
+<li>Classification :
+<ul>
+<li>Given a specific input, the model ( <em>classifier</em> ) outputs a class (pattern → class) .
+<ul>
+<li>If there are only 2 classes, we call the problem binary classification</li>
+<li>If there are multiple classes (&gt;2), we call the problem multi-class classification</li>
+</ul></li>
+<li>What is a class (the output of the classification task)?
+<ul>
+<li>A data set having common properties</li>
+<li>The concept of class is related with the concept of “label” previously introduced
+<ul>
+<li>Different labels can be grouped in a single class.</li>
+</ul></li>
+<li>The concept of class is semantic , since it strictly depends by the working context
+<ul>
+<li>Examples:
+<ul>
+<li>Classification of italian letters → 21 classes</li>
+<li>Classification of italian/indian alphabets → 2 classes</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>→ In our exercises, we will tackle classification tasks.</li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model2.jpg" class="r-stretch"></section>
+
+<section id="machine-learning-tasks-classification" class="title-slide slide level1 center">
+<h1>Machine Learning tasks: Classification</h1>
+<p><img data-src="./img/neuralnetworks/3%20Model3.png"></p>
+<ul>
+<li>Spam Detection
+<ul>
+<li>Data: email texts</li>
+<li>Classes/labels: yes/no (spam)</li>
+</ul></li>
+<li>Credit Card Fraud Detection
+<ul>
+<li>Data: list of the bank operations</li>
+<li>Classes/labels: yes/no (fraud)</li>
+</ul></li>
+<li>Face Recognition
+<ul>
+<li>Data: images</li>
+<li>Classes/labels: identity</li>
+</ul></li>
+<li>Medical diagnosys
+<ul>
+<li>Data: x-ray images</li>
+<li>Classes/labels: benign/malignant (tumor)</li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model4.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model5.jpg"></p>
+</section>
+
+<section id="machine-learning-tasks-2" class="title-slide slide level1 center">
+<h1>Machine Learning tasks</h1>
+<ul>
+<li>Regression :
+<ul>
+<li>Given a specific input, the model ( <em>regressor</em> ) outputs a continuous value (data → value )</li>
+<li>You can see a regression task as a classification task with a (very) high number of classes.</li>
+<li>Usually, regression models != classification models</li>
+</ul></li>
+<li>Examples of regression tasks:
+<ul>
+<li>Estimation of a person’s height based on weight</li>
+<li>Estimation of the sale prices for apartments in the real estate market</li>
+<li>Risk estimation for insurance companies</li>
+<li>Energy prediction produced by a photovoltaic system</li>
+<li>Health costs prediction models</li>
+</ul></li>
+</ul>
+<p>How many modules?</p>
+<p>Latitude, longitude</p>
+<p>Orientation (w.r.t sun)</p>
+<p>…</p>
+
+<img data-src="./img/neuralnetworks/3%20Model6.jpg" class="r-stretch"></section>
+
+<section id="machine-learning-tasks-regression" class="title-slide slide level1 center">
+<h1>Machine Learning tasks: Regression</h1>
+<p>You can see the growth percentiles as a tool to perform regression in order to predict, for instance, the future height or weight.</p>
+<p>How much pasta should I put if I have 5 guests (2 adults and 3 children)?</p>
+<p><img data-src="./img/neuralnetworks/3%20Model7.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model8.jpg"></p>
+</section>
+
+<section id="machine-learning-tasks-3" class="title-slide slide level1 center">
+<h1>Machine Learning tasks</h1>
+<p><img data-src="./img/neuralnetworks/3%20Model9.png"></p>
+<ul>
+<li>Clustering :
+<ul>
+<li>Identify groups ( <em>clusters</em> ) of data with similar characteristics .</li>
+<li>Clustering is often applied in an unsupervised learning setting, in which the patterns are not labeled and/or the classes of the problem are not known in advance.</li>
+<li>Usually, the unsupervised nature of the problem makes it more complex than classification.</li>
+<li>Often, even the number of clusters is not known a priori.</li>
+<li>The clusters identified can be used as classes.</li>
+<li>Clustering examples:
+<ul>
+<li>Marketing → definition of user groups based on consumption</li>
+<li>Genetics → grouping of individuals based on DNA analogies</li>
+<li>Bioinformatics → partitioning of genes into groups with similar characteristics</li>
+<li>Vision → unsupervised segmentation</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model10.png"></p>
+</section>
+
+<section id="machine-learning-tasks-clustering" class="title-slide slide level1 center">
+<h1>Machine Learning tasks: Clustering</h1>
+
+<img data-src="./img/neuralnetworks/3%20Model11.png" class="r-stretch"></section>
+
+<section id="machine-learning-tasks-4" class="title-slide slide level1 center">
+<h1>Machine Learning tasks</h1>
+<ul>
+<li>For the Artificial Vision domain, we can identify even more specific problems:
+<ul>
+<li>Classification : (as before)</li>
+<li>Localization : classification + object position in the image (through a <em>bounding box</em> )</li>
+<li>Detection : multiple object classification + localization (through more <em>bounding</em> _ boxes_ )</li>
+<li>Segmentation : each pixel in the image is classified</li>
+</ul></li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model12.png" class="r-stretch"></section>
+
+<section id="example-of-segmentation" class="title-slide slide level1 center">
+<h1>Example of Segmentation</h1>
+
+<img data-src="./img/neuralnetworks/3%20Model13.jpg" class="r-stretch"><p><a href="https://youtu.be/X8vSk8R_zTA">https://youtu.be/X8vSk8R_zTA</a></p>
+</section>
+
+<section id="classification-through-a-set-of-explicitly-programmed-instructions" class="title-slide slide level1 center">
+<h1>3.2 Classification through a set of explicitly programmed instructions</h1>
+
+</section>
+
+<section id="pattern-recognition" class="title-slide slide level1 center">
+<h1>Pattern Recognition</h1>
+<p>Expert Systems</p>
+</section>
+
+<section id="definitions" class="title-slide slide level1 center">
+<h1>Definitions</h1>
+<p>Pattern Recognition : the discipline that studies the recognition of patterns (“data samples”) even with pre-programmed algorithms (not able to learn automatically).</p>
+<p>No learning phase!</p>
+<p>The “model” is a set of hand-crafted instructions ( <em>if-then-else</em> paradigm)</p>
+<p>Actually, the term Pattern Recognition is generally used to refer AI algorithms</p>
+<p>DATA ACQUISITION</p>
+</section>
+
+<section id="explicitly-programmed-instructions" class="title-slide slide level1 center">
+<h1>Explicitly programmed instructions</h1>
+<ul>
+<li>Technique similar to the <em>Expert Systems </em> developed in the ’80s (→ AI History)
+<ul>
+<li>A first form of Artificial Intelligence.</li>
+<li>The ability of a calculator to perform (simple) calculations on large amounts of data is exploited.</li>
+</ul></li>
+<li>The programmer develops a series of instructions to solve a specific problem:
+<ul>
+<li>These instructions are typically based on if-then-else statements</li>
+<li>A strong prior knowledge of the problem is required
+<ul>
+<li>In our case*: how to understand only from coordinates if the shape is a square, rectangle, triangle or rhombus?</li>
+</ul></li>
+</ul></li>
+<li>What are the tasks that can be faced with the <em>explicitly programmed instructions</em> ?
+<ul>
+<li>The conditions are stable and known a priori → constrained industrial environments</li>
+<li>There are mathematical formulas to model the problem</li>
+<li>The problem must be limited in dimensionality and “not too complex”</li>
+<li>…</li>
+</ul></li>
+<li>With the <em>Euclid</em> _ _ dataset</li>
+</ul>
+</section>
+
+<section id="examples" class="title-slide slide level1 center">
+<h1>Examples</h1>
+<p>Anomaly prediction with</p>
+<p>explicitly programmed instructions</p>
+<p>Fit / Unfit prediction with</p>
+<p>explicitly programmed instructions</p>
+<p><img data-src="./img/neuralnetworks/3%20Model14.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model15.png"></p>
+<ul>
+<li>We observe anomalies when the value:
+<ul>
+<li>Is greater than a given threshold.</li>
+<li>We can define the threshold as the mean value of the last 3 peaks.</li>
+<li>The rate of change of the function is too fast.</li>
+<li>…</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="explicitly-programmed-instructions-1" class="title-slide slide level1 center">
+<h1>Explicitly programmed instructions</h1>
+<ul>
+<li>General considerations about PR:
+<ul>
+<li>It can achieve a high degree of success:
+<ul>
+<li>If a priori knowledge is adequate → In our case, we have geometrics knowledge</li>
+<li>Dimensionality of the problem is limited → In our case, only few coordinates (6 - 8)</li>
+<li>The test domain is similar to what was assumed when defining the instructions</li>
+</ul></li>
+<li>The developed solution will inevitably be (too) specific :
+<ul>
+<li>In our case: what happens if a new <em>trapezoid</em> class is introduced?</li>
+</ul></li>
+</ul></li>
+<li>Technical considerations about PR:
+<ul>
+<li>There is not a real learning phase → no training data is needed, all data for val/test.</li>
+<li>It is possible to understand why the developed system fails in classification.</li>
+<li>If the problem becomes complicated, the programming time increases.</li>
+<li>The code risks becoming unmanageable due to:
+<ul>
+<li>High complexity and number of innested statements</li>
+<li>Length of the code</li>
+<li>Too specific functions</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model16.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model17.png"></p>
+</section>
+
+<section id="limits-of-programmed-instructions" class="title-slide slide level1 center">
+<h1>Limits of programmed instructions</h1>
+<ul>
+<li>Task: Face Detection → Is there a face in the image?
+<ul>
+<li>Image → high dimensionality (128 x 128 x 3 = ~50k values)</li>
+<li>It is easy for humans to “define” what a face is, but for a computer?
+<ul>
+<li>What is an eye? A nose? A mouth?</li>
+<li>Assuming we can define these facial elements, what rules can we write?</li>
+<li><em>“A face consists in two eyes with under a nose and again under a mouth”</em></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model18.jpg"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model19.jpg"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model20.jpg"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model21.jpg"></p>
+<p>Here maybe we can identify a face</p>
+<p><img data-src="./img/neuralnetworks/3%20Model22.jpg"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model23.png"></p>
+<p>Other high-complexity problems:</p>
+<p>Classification of traffic light light</p>
+<p>Classification of road signs</p>
+<ul>
+<li>In short, solving these problems with instructions is very complex, if not impossible</li>
+<li>The level of generalization of the proposed solution would be very limited</li>
+<li>It is necessary, when needed , to address the problems with other paradigms!
+<ul>
+<li>The machine has to learn by itself how to solve a problem!</li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model24.jpg"></p>
+</section>
+
+<section id="classification-with-machine-learning" class="title-slide slide level1 center">
+<h1>3.3 Classification with Machine Learning</h1>
+
+</section>
+
+<section id="the-machine-learns-by-itself-how-to-solve-a-problem" class="title-slide slide level1 center">
+<h1>The machine learns by itself how to solve a problem</h1>
+
+</section>
+
+<section id="how-can-machine-learn" class="title-slide slide level1 center">
+<h1>How can machine learn?</h1>
+<ul>
+<li>A machine can learn :
+<ul>
+<li>From data!</li>
+<li>For that reason, data is so relevant today.</li>
+</ul></li>
+<li>Also humans can learn from data :
+<ul>
+<li>Currently, we can program machines that <em>imitate</em> this way of learning of humas</li>
+<li>Remember that humans learn in many different (and efficient) ways, we only (badly) imitate just one.</li>
+</ul></li>
+<li>“Learning from data” is similar to humans learning to play a musical instrument (humans → machines):
+<ul>
+<li>I must observe how a chord is created → annotated data</li>
+<li>I have to repeat the chord several times → iterative learning process</li>
+<li>Someone has to tell me if I’m repeating it well → loss function</li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model25.png"></p>
+<ul>
+<li>From a practical point of view, these are the required steps:
+<ul>
+<li>We get the annotated data (we are in the Supervised Learning setting)</li>
+<li>We pre-process data , making them suitable for the algorithm we want to use</li>
+<li>We iteratively train a classifier</li>
+<li>We measure the performance of the implemented solution</li>
+</ul></li>
+<li>We are going to use the <em>scikit-learn</em> library, developed for ML</li>
+<li>Now we just have to introduce (some) classifier models :
+<ul>
+<li>We will not study clustering (already seen at <em>Data Mining</em> )</li>
+<li>You have already seen some classifiers at <em>Data Mining</em></li>
+</ul></li>
+<li>We will see how to measure system performance</li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model26.png"></p>
+</section>
+
+<section id="support-vector-machines" class="title-slide slide level1 center">
+<h1>3.3.1 Support Vector Machines</h1>
+
+</section>
+
+<section id="svms" class="title-slide slide level1 center">
+<h1>SVMs</h1>
+
+</section>
+
+<section id="support-vector-machines-svms" class="title-slide slide level1 center">
+<h1>Support Vector Machines (SVMs)</h1>
+<ul>
+<li>A supervised learning method used for classification , regression and outliers’ detection.
+<ul>
+<li>Effective in high dimensional spaces.</li>
+<li>Still effective in cases where number of dimensions is greater than the number of samples.</li>
+</ul></li>
+<li>Key ideas of SVMs (linear case):
+<ul>
+<li>Classification → linearly separate patterns</li>
+</ul></li>
+</ul>
+<p>Hyperplanes , they are a decision surface</p>
+<p>Which separating hyperplane?</p>
+<p>In general, lots of possible solutions for a,b,c (an infinite number!)</p>
+<p>SVM finds an optimal solution!</p>
+<ul>
+<li>SVMs maximize the margin between support vectors</li>
+<li>The decision function is fully specified by a (usually very small) subset of training samples, the support vectors.</li>
+<li>This becomes a <em>Quadratic programming </em> problem that is easy to solve by standard methods
+<ul>
+<li><em>Lagrange</em> multipliers</li>
+</ul></li>
+<li>Support vectors , the data points that lie closest</li>
+<li>to the decision surface (or hyperplane).
+<ul>
+<li>These are data points most difficult to classify</li>
+<li>They directly influence the optimum location of the decision surface</li>
+<li>They are the elements of the training set that would change the position of the dividing hyperplane if removed</li>
+</ul></li>
+</ul>
+<p>If you are interested in mathematical details: <a href="https://web.mit.edu/6.034/wwwbob/svm-notes-long-08.pdf">https://web.mit.edu/6.034/wwwbob/svm-notes-long-08.pdf</a></p>
+<ul>
+<li>What if patterms are not linearly separable?
+<ul>
+<li>The idea is to gain linearly separation by mapping the data to a higher dimensional space</li>
+<li>The mapping procedure is realized through a kernel function</li>
+</ul></li>
+<li>What if we have more than 2 classes?
+<ul>
+<li>One- Against -One : classifiers trained on all possible class couples; a pattern is tested by each classifier that asisgn a vote; the class with the majority of votes is taken ( <em>majority</em> _ vote rule_ ).</li>
+<li>One- Against - All : one SVM trained for each class (in which the secon class is the set of the other classes). At testing time, the SVM that has the better margin decides the final class.</li>
+</ul></li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model27.png" class="r-stretch"><p><a href="https://en.wikipedia.org/wiki/Kernel_method">https://en.wikipedia.org/wiki/Kernel_method</a></p>
+</section>
+
+<section id="hands-on-svms" class="title-slide slide level1 center">
+<h1>Hands on SVMs</h1>
+<ul>
+<li>Linear or non-linear kernel?
+<ul>
+<li>If the dimensionality of the space is very high ( <em>e.g.,</em> 5000 features), linear SVM is generally used</li>
+<li>For low dimensionality ( <em>e.g.,</em> 20 features) the primary choice is non-linear SVM with RBF kernel</li>
+<li>For medium dimensionality ( <em>e.g.,</em> 200 features) both types are generally tried</li>
+<li>Remember, the hyperparameters are calibrated on a separate validation set, or through cross validation</li>
+</ul></li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model28.png" class="r-stretch"><p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html">https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html</a></p>
+</section>
+
+<section id="decision-trees" class="title-slide slide level1 center">
+<h1>3.3.2 Decision Trees</h1>
+
+</section>
+
+<section id="dts" class="title-slide slide level1 center">
+<h1>DTs</h1>
+
+</section>
+
+<section id="decision-tree" class="title-slide slide level1 center">
+<h1>Decision Tree</h1>
+<p>Tree-like model to perform the final classification.</p>
+<p>Decision trees are commonly used in <em>operational research</em> , specifically in <em>decision analysis</em> .</p>
+<p><img data-src="./img/neuralnetworks/3%20Model29.png"></p>
+<p>Try to define when a data point belongs to class 1 (blue) or class 2 (green)</p>
+<p>Probably, you just evaluated a decision tree in your head</p>
+<p><img data-src="./img/neuralnetworks/3%20Model30.png"></p>
+<p><a href="https://victorzhou.com/blog/intro-to-random-forests/">https://victorzhou.com/blog/intro-to-random-forests/</a></p>
+<ul>
+<li>What happen if we add a class?
+<ul>
+<li>Our old decision tree doesn’t work so well anymore!</li>
+<li>We need to add another decision node</li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model31.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model32.png"></p>
+<p><em>Intermediate </em> <em>Nodes</em></p>
+</section>
+
+<section id="decision-tree-training" class="title-slide slide level1 center">
+<h1>Decision Tree: training</h1>
+<ul>
+<li>The root node:
+<ul>
+<li>We want a decision node that makes a “good” split → separating different classes as much as possible .</li>
+<li>But how do we quantify how good a split is? → we need a measure → <em>Gini index, entropy, information gain</em> , …</li>
+<li>Different possible algorithms ( <em>ID3</em> , <em>C4.5</em> and <em>CART</em> ) that recursively evaluating different features and using at each node the feature that best splits the data.</li>
+</ul></li>
+<li>The second node:
+<ul>
+<li>Let’s (arbitrarily) go to the left branch</li>
+<li>We’re now only using the data that would that “belong” to the left branch</li>
+<li>We just do the same thing as in the root node!</li>
+<li>We apply this procedure to all the other nodes</li>
+</ul></li>
+<li>The predicted category would be the category on the leaf node</li>
+<li>When to stop the training?
+<ul>
+<li>When the selected measure is not further increased</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="ensemble-methods" class="title-slide slide level1 center">
+<h1>3.3.3 Ensemble Methods</h1>
+
+</section>
+
+<section id="bagging-random-forest" class="title-slide slide level1 center">
+<h1>Bagging → Random Forest</h1>
+<p>Boosting → Adaboost</p>
+</section>
+
+<section id="ensemble-methods-combine-linear-classifiers" class="title-slide slide level1 center">
+<h1>Ensemble methods: combine linear classifiers</h1>
+<ul>
+<li>A multi-classifier is an approach where several classifiers are used together :
+<ul>
+<li>In parallel</li>
+<li>In cascade</li>
+</ul></li>
+<li>It has been shown the use of combinations of classifiers can strongly improve performance
+<ul>
+<li>In practice, investing (a lot of) time in “extremely” optimizing a single classifier is generally not convenient.</li>
+</ul></li>
+<li>The combination is effective only when individual classifiers are (at least partially) independent :
+<ul>
+<li>Using different features, different algorithms for feature extraction, different classification algorithms, …</li>
+<li>Unfortunately, it is very difficult to have real independence between classifiers</li>
+</ul></li>
+<li>Two approaches:
+<ul>
+<li>Bagging : I train the same classification algorithm on different portions of the training set</li>
+<li>Boosting : I focus the training on incorrectly classified patterns</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="bagging-vs-boosting" class="title-slide slide level1 center">
+<h1>Bagging vs Boosting</h1>
+
+<img data-src="./img/neuralnetworks/3%20Model33.png" class="r-stretch"><p>random sampling with replacement</p>
+<p>Image credits: <a href="https://pub.towardsai.net/bagging-vs-boosting-the-power-of-ensemble-methods-in-machine-learning-6404e33524e6">https://pub.towardsai.net/bagging-vs-boosting-the-power-of-ensemble-methods-in-machine-learning-6404e33524e6</a></p>
+</section>
+
+<section id="ensemble-methods-1" class="title-slide slide level1 center">
+<h1>Ensemble methods</h1>
+<p><img data-src="./img/neuralnetworks/3%20Model34.png"></p>
+<ul>
+<li>How to merge decisions of the individual classifiers :</li>
+<li>Decision level
+<ul>
+<li>Majority vote rule
+<ul>
+<li>Each classifier votes for a class.</li>
+<li>The pattern is assigned to the highest rated class.</li>
+</ul></li>
+<li>Borda count
+<ul>
+<li>Each classifier produces a ranking of the classes</li>
+<li>The rankings are converted into scores .</li>
+<li>The class with the highest final score is the one chosen.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model35.png"></p>
+<p><a href="https://en.wikipedia.org/wiki/Borda_count">https://en.wikipedia.org/wiki/Borda_count</a></p>
+<ul>
+<li>Confidence level
+<ul>
+<li>Each classifier outputs a confidence value , and these values are merged with different function: <em>sum</em> , <em>product</em> , <em>min</em> , <em>max</em> , …</li>
+<li>Weighted sum : the sum of the confidence values is performed by weighing the different classifiers according to their degree of skill.</li>
+</ul></li>
+<li>NB : in practice, the <em>sum</em> is often preferable to the product as it is more robust .
+<ul>
+<li>Indeed, in the <em>product</em> it is sufficient that a single classifier indicates zero confidence to bring the confidence of the multi classifier to zero!</li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model36.jpg"></p>
+</section>
+
+<section id="random-forest" class="title-slide slide level1 center">
+<h1>Random Forest</h1>
+<ul>
+<li>Proposed in 2001, based on bagging</li>
+<li>The single classifier is a Decision Tree (DT):
+<ul>
+<li>Hundreds or even thousands of DTs for each forest</li>
+</ul></li>
+<li>2 types of bagging:
+<ul>
+<li>Data bagging : RF repeatedly selects a random sample with replacement of the training set and fits trees to these samples.</li>
+<li>Feature bagging : in each decision node, the choice of the best feature on which to partition is not made on the entire set of 𝑑 feature (dimensionality of the patterns), but on a random subset.</li>
+</ul></li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model37.png" class="r-stretch"></section>
+
+<section id="adaboost" class="title-slide slide level1 center">
+<h1>Adaboost</h1>
+<p>*Another version of the algorithm is with data sampling (if wrongly classified) with replacement</p>
+</section>
+
+<section id="classification-with-machine-learning-and-feature-descriptors" class="title-slide slide level1 center">
+<h1>3.4 Classification with Machine Learning and Feature Descriptors</h1>
+
+</section>
+
+<section id="histogram-of-oriented-gradients" class="title-slide slide level1 center">
+<h1>Histogram of Oriented Gradients</h1>
+<p>Local Binary Patterns</p>
+</section>
+
+<section id="feature-descriptors" class="title-slide slide level1 center">
+<h1>Feature Descriptors</h1>
+<ul>
+<li>The learning phase is complex with high- dimensionality data as images</li>
+<li>For instance, what if in input we have RGB images ?</li>
+<li>A first solution could be to “unroll” each image and to use each pixel’s value as input value:
+<ul>
+<li>The input dimensionality explodes: 224 x 224 x 3 = ~150k values !</li>
+<li>The classifier receives too many values, it is not trivial understand what is important and what no</li>
+</ul></li>
+<li>A second solution is to introduce a new step in the machine learning paradigm:</li>
+</ul>
+<p><em>Human </em></p>
+<p><em>intervention</em></p>
+<p><img data-src="./img/neuralnetworks/3%20Model38.jpg"></p>
+<p>0,25</p>
+<p>0,366</p>
+<p>1,25</p>
+<p>…</p>
+<p><img data-src="./img/neuralnetworks/3%20Model39.png"></p>
+<p>High dimensional data</p>
+<p>(image)</p>
+<p>How to extract useful information in a “compact” way?</p>
+<p>Feature Descriptor</p>
+<p>(FD)</p>
+</section>
+
+<section id="feature-extraction" class="title-slide slide level1 center">
+<h1>Feature Extraction</h1>
+<p>Feature Extraction : the extraction procedure of features from data</p>
+<p>Feature/Feature Descriptor : an <em>n</em> -dimensional vector of numerical features that represent (in a <em>discriminative </em> way) some object (used as input data).</p>
+<p>Actually, the terms <em>feature</em> and <em>data</em> are often interchangeable</p>
+<p>DATA ACQUISITION</p>
+<p>FEATURE EXTRACTION</p>
+</section>
+
+<section id="definitions-1" class="title-slide slide level1 center">
+<h1>Definitions</h1>
+<ul>
+<li>Data : the elements contained in a set ( <em>dataset</em> ) that we are going to use in our algorithm
+<ul>
+<li>Each element can named as <em>data point</em> , <em>observation</em> , <em>data sample, data</em> .</li>
+</ul></li>
+<li>Feature : individual characteristics or attributes used to describe and represent data points.
+<ul>
+<li>Also, the variables or properties that capture information about the data</li>
+<li>The number of features is referred as dimensionality (!= the number of data)
+<ul>
+<li>If the dimensionality is 2, it is easy to plot and visualize the feature distribution</li>
+</ul></li>
+<li>Examples:
+<ul>
+<li>In a dataset of housing prices, features could include the number of bedrooms, location, and number of bathrooms.</li>
+<li>In a dataset of geometric shapes, features include the coordinates of the vertices of each shape</li>
+<li>In a dataset of people, features could include only the height and the weight of each person.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model40.png" class="r-stretch"></section>
+
+<section id="example-of-feature-descriptor" class="title-slide slide level1 center">
+<h1>Example of Feature Descriptor</h1>
+<ul>
+<li>Object A geometric shape</li>
+<li>Data Array of values (coordinates, diagonals, …)</li>
+<li>Feature Descriptor
+<ul>
+<li>A (sub)set of the coordinates</li>
+<li>A «new value» that we can compute from coordinates</li>
+<li>…</li>
+</ul></li>
+<li>Object An image</li>
+<li>Data Matrix of values (pixels)</li>
+<li>Feature Descriptor
+<ul>
+<li>Unrolled or a subset of pixels</li>
+<li>A «new value» that we can compute from pixels</li>
+<li>…</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="histogram-of-oriented-gradients-hog" class="title-slide slide level1 center">
+<h1>Histogram of Oriented Gradients (HOG)</h1>
+<ul>
+<li>A visual feature descriptor (work with images)</li>
+<li>Good to describe the shape of an object!</li>
+<li>HOG provides the edge direction:
+<ul>
+<li>The whole image is divided into smaller regions</li>
+<li>For each region, the edge directions are calculated
+<ul>
+<li>Edge → curves at which the brightness changes sharply</li>
+<li>Direction → angle and magnitude of edges</li>
+</ul></li>
+<li>All these directions are provided through a histogram</li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model41.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model42.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model43.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model44.jpg"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model45.jpg"></p>
+<p><a href="https://www.vlfeat.org/overview/hog.html">https://www.vlfeat.org/overview/hog.html</a></p>
+<p>hog(img, orientations =8, pixels_per_cell =(4, 4), cells_per_block =(1, 1))</p>
+<p><img data-src="./img/neuralnetworks/3%20Model46.png"></p>
+</section>
+
+<section id="local-binary-pattern-lbp" class="title-slide slide level1 center">
+<h1>Local Binary Pattern (LBP)</h1>
+<ul>
+<li>A visual feature descriptor (work with images)</li>
+<li>Good to describe the texture of the surfaces!</li>
+<li>Texture → visual surface appearance
+<ul>
+<li>2 elements:
+<ul>
+<li>Local spatial patterns
+<ul>
+<li>The 3x3 neighborhood of each pixel is thresholded with the center value</li>
+</ul></li>
+<li>Gray scale contrast measure</li>
+</ul></li>
+<li>They are computed on different cells of the image</li>
+<li>It has been extended to use neighborhoods of different sizes</li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model47.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model48.jpg"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model49.png"></p>
+<ul>
+<li>local_binary_pattern(img, P =100, R =5)
+<ul>
+<li>P: the number of points in a circularly symmetric neighborhood to consider.</li>
+<li>R: the radius of the circle which allows us to account for different scales.</li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model50.jpg"></p>
+<p><a href="https://pyimagesearch.com/2015/12/07/local-binary-patterns-with-python-opencv/">https://pyimagesearch.com/2015/12/07/local-binary-patterns-with-python-opencv/</a></p>
+</section>
+
+<section id="convolutional-neural-networks" class="title-slide slide level1 center">
+<h1>3.5.1 Convolutional Neural Networks</h1>
+
+</section>
+
+<section id="cnns-the-real-core-of-the-current-ai-revolution" class="title-slide slide level1 center">
+<h1>CNNs: the real «core» of the current AI revolution</h1>
+
+</section>
+
+<section id="convolutional-neural-networks-cnns" class="title-slide slide level1 center">
+<h1>Convolutional Neural Networks (CNNs)</h1>
+<ul>
+<li>CNNs are particular Neural Networks specifically designed to process images
+<ul>
+<li>MLPs don’t scale well to full images</li>
+<li>Instead of flatting input 3D data (let’s define as 3D also 1 channel images → ex. 224x224x1)…</li>
+<li><em>…what about reshaping neurons in 3D?</em></li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model78.jpg"></p>
+<p>3D</p>
+<p>Input image</p>
+<p>(224x224x1)</p>
+<p>3D</p>
+<p>Neurons</p>
+<p>(3x3x1)</p>
+<ul>
+<li>Unlike MLPs, CNN layers have neurons arranged in 3 dimensions:
+<ul>
+<li>Width (W)</li>
+<li>Height (H)</li>
+<li>Depth (C) → usually, greater than 1</li>
+</ul></li>
+<li>How is possible to “connect” the 3D input with the smaller <em>kernel</em> (the “3D neuron set”)?
+<ul>
+<li>Through a mathematical operation called convolution!</li>
+<li>The convolution is applied with a sliding-window process</li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model79.jpg"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model80.jpg"></p>
+<p><a href="https://en.wikipedia.org/wiki/Convolution">https://en.wikipedia.org/wiki/Convolution</a></p>
+</section>
+
+<section id="convolution-with-images" class="title-slide slide level1 center">
+<h1>Convolution with images</h1>
+<ul>
+<li>The convolution is the core building block of convolutional neural networks.
+<ul>
+<li>Each kernel is convolved with the input volume thus producing a 2D feature map</li>
+<li>Usually, depth &gt; 1 → more kernels → <em>one feature map</em> for each kernel is produced</li>
+<li>The output volume is then made up by stacking all activation maps produced one on the top of the other</li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model81.gif"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model82.png"></p>
+<p>2x0 + 2x0 + 0x01x1 + 2x-1 + 1x0</p>
+<p>2x1 + 1x1 + 1x-1</p>
+<p>Output</p>
+<p>( <em>Feature </em> <em>Map</em>)</p>
+<p><a href="https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks">https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks</a></p>
+<ul>
+<li>Now the learnable weights (of the MLP) are grouped in the kernel!
+<ul>
+<li>Each cell can be viewed as a single weight to learn</li>
+</ul></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model83.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model84.png"></p>
+<p>1 channel image (7x7x1)</p>
+<p>2 kernels (also called filters)</p>
+<p>1 bias for each kernel</p>
+<p>2 feature maps produced</p>
+<p>3 channel image (7x7x3)</p>
+<p>2 kernels (also called filters) applied on each channel</p>
+<p>1 bias for each kernel</p>
+<p>2 feature maps produced</p>
+<p><a href="https://cs231n.github.io/convolutional-networks/">https://cs231n.github.io/convolutional-networks/</a></p>
+</section>
+
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+<p><img data-src="./img/neuralnetworks/3%20Model85.png"></p>
+<p>Esempio di kernel che evidenzia i contorni di una immagine.</p>
+<p><img data-src="./img/neuralnetworks/3%20Model86.png"></p>
+<p>Esempio di kernel che produce un effetto embossed.</p>
+<p><img data-src="./img/neuralnetworks/3%20Model87.png"></p>
+<p>Esempi di kernel che produce un effetto blur</p>
+</section>
+
+<section id="cnn-architecture" class="title-slide slide level1 center">
+<h1>CNN Architecture</h1>
+<p>A “traditional” CNN is made up by a whole bunch of layers stacked one on the top of the other:</p>
+
+<img data-src="./img/neuralnetworks/3%20Model88.png" class="r-stretch"><p>Fully Connected layers (MLP)</p>
+<p>2D convolution</p>
+<p>layers</p>
+<p>Feature extractor</p>
+</section>
+
+<section id="convolutional-layer" class="title-slide slide level1 center">
+<h1>Convolutional layer</h1>
+<ul>
+<li>Convolutional layers learn to extract various types of visual information in a hierarchical manner
+<ul>
+<li>In the layers close to the input, CNNs learn filters to extract “simple” visual information</li>
+<li>In the layers placed in depth, the filters extract semantically complex visual information</li>
+</ul></li>
+<li>The interesting thing is that this mechanism seems similar to what happens in our brain, where the visual cortex processes information by different layers.</li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model89.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model90.png"></p>
+</section>
+
+<section id="section-1" class="title-slide slide level1 center">
+<h1></h1>
+
+<img data-src="./img/neuralnetworks/3%20Model91.png" class="r-stretch"></section>
+
+<section id="convolutional-layer-1" class="title-slide slide level1 center">
+<h1>Convolutional layer</h1>
+<p>Moreover, it has been experimentally verified that some learned filters are similar to the neurological stimuli of the animal brain!</p>
+<p><img data-src="./img/neuralnetworks/3%20Model92.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model93.png"></p>
+<p>In a similar way, CNNs learns filters that provide a high response ( <em>i.e.</em> numeric value) with oriented edges!</p>
+<p><em>Hubel</em> and <em>Wiesel</em> discovered oriented edges cause high responses in one specific cell of the visual cortex. The edge must be in certain position and orientation.</p>
+<p><img data-src="./img/neuralnetworks/3%20Model94.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model95.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model96.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model97.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model98.jpg"></p>
+<p>High response on edges</p>
+<p>Hubel, D.H., Wiesel, T.N.: <em>Receptive fields of single </em> <em>neurones</em> * in the cat’s * <em>striatecortex</em>. The Journal of physiology (1959)</p>
+</section>
+
+<section id="pooling-layer" class="title-slide slide level1 center">
+<h1>Pooling layer</h1>
+<ul>
+<li>Pooling layers spatially subsample the input volume.</li>
+<li>Pooling layers are widely used for a number of reasons:
+<ul>
+<li>Gain robustness to exact location of the features</li>
+<li>Reduce computational (memory) cost</li>
+<li>Help preventing overfitting</li>
+<li>Increase receptive field of following layers</li>
+</ul></li>
+<li>Many different functions could be used: <em>max</em> (most used), <em>average</em>,…</li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model99.wmf" class="r-stretch"></section>
+
+<section id="other-layers" class="title-slide slide level1 center">
+<h1>Other Layers</h1>
+<ul>
+<li>Activation layer → see <em>activation </em> <em>functions</em></li>
+<li>Flatten layer
+<ul>
+<li>Usually exploited to connect the 3D Feature Extractor to the 1D classifier</li>
+<li>In input, there is a set of 3D feature maps (for instance, 12x12x64)</li>
+<li>The 2D input is «unrolled», to fit the 1D input of the first fully connected layer</li>
+<li>12x12x64 → 9216</li>
+</ul></li>
+<li>It is possibile to use other techniques to join the Feature Extractor and the classifier, e.g.&nbsp;the <em>Global </em> <em>Average</em> * Pooling * <em>layer</em></li>
+</ul>
+<p><img data-src="./img/neuralnetworks/3%20Model100.png"></p>
+<p><img data-src="./img/neuralnetworks/3%20Model101.png"></p>
+</section>
+
+<section id="cnn-architectures-the-layer-organization" class="title-slide slide level1 center">
+<h1>CNN architectures: the layer organization</h1>
+<ul>
+<li>More complex CNN architectures have recently been demonstrated to perform better than the traditional conv → ReLU → pooling stack architecture.</li>
+<li>These architectures usually feature different graph topologies and much more intricate connectivity structures</li>
+<li>However, these advanced architectures are out of the scope of these lectures.</li>
+<li>In our exercitations, we are going to use well-known architectures proposed in literature:
+<ul>
+<li>VGG1</li>
+<li>ResNet2</li>
+<li>AlexNet3 *…</li>
+</ul></li>
+<li>All these architectures can be used pre-trained (already trained on datasets like ImageNet)</li>
+</ul>
+
+<img data-src="./img/neuralnetworks/3%20Model102.png" class="r-stretch"><ol type="1">
+<li><p><a href="https://arxiv.org/abs/1409.1556">https://arxiv.org/abs/1409.1556</a></p></li>
+<li><p><a href="https://arxiv.org/abs/1512.03385">https://arxiv.org/abs/1512.03385</a></p></li>
+<li><p><a href="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html">https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html</a></p></li>
+</ol>
+</section>
+
+<section id="different-ways-to-train-cnns" class="title-slide slide level1 center">
+<h1>Different ways to train CNNs</h1>
+<ul>
+<li>From scratch
+<ul>
+<li>The network is trained from “0”, only with an initialization of the weights</li>
+<li>Large amount of data training required</li>
+<li>Usually long and complex training procedure</li>
+</ul></li>
+<li>Pre-trained
+<ul>
+<li>A previously trained network is used</li>
+<li>The output is defined by the previous training</li>
+<li>When trained on excellent datasets, excellent performance</li>
+</ul></li>
+<li>Fine- tuned
+<ul>
+<li>A previously trained network is used</li>
+<li>I keep “freezed” (unchanged) the Feature Extractor</li>
+<li>I made changes to the Classifier (e.g.&nbsp;change the number of classes)</li>
+</ul></li>
+</ul>
 </section>
 
 <section id="references" class="title-slide slide level1 center">

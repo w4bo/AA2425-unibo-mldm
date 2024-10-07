@@ -408,10 +408,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <p><a href="https://colab.research.google.com/github/w4bo/AA2425-unibo-mldm/blob/master/slides/lab-03-datapreparation.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 </section>
-<section>
 <section id="data-preparation" class="title-slide slide level1 center">
 <h1>Data Preparation</h1>
-<div id="aacb3166" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T09:48:11.700475Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T09:48:11.700305Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T09:48:12.621114Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T09:48:12.620517Z&quot;}" data-outputid="6d82288e-1a47-4674-a7d3-6500cf9f04d1" data-execution_count="1">
+<div id="aacb3166" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:39.807550Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:39.807387Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:40.699058Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:40.698467Z&quot;}" data-outputid="6d82288e-1a47-4674-a7d3-6500cf9f04d1" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -420,11 +419,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb1-4"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># plots</span></span>
 <span id="cb1-5"><a href=""></a></span>
 <span id="cb1-6"><a href=""></a>df <span class="op">=</span> pd.DataFrame([</span>
-<span id="cb1-7"><a href=""></a>    [<span class="st">'Cola'</span>,   <span class="st">'low'</span>,    <span class="st">'05/07/2021'</span>, <span class="dv">10</span>, <span class="dv">2</span>],</span>
-<span id="cb1-8"><a href=""></a>    [<span class="st">'Bread'</span>,  <span class="st">'medium'</span>, <span class="st">'05/07/2021'</span>, <span class="dv">25</span>, <span class="dv">1</span>],</span>
-<span id="cb1-9"><a href=""></a>    [<span class="st">'Beer'</span>,   <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, <span class="dv">100</span>, <span class="dv">3</span>],</span>
-<span id="cb1-10"><a href=""></a>    [<span class="st">'Diaper'</span>, <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, np.nan, <span class="dv">4</span>],</span>
-<span id="cb1-11"><a href=""></a>    [<span class="st">'Pizza'</span>,  <span class="st">'medium'</span>, <span class="st">'06/07/2021'</span>, <span class="dv">25</span>, <span class="dv">5</span>]], columns<span class="op">=</span>[<span class="st">'ID'</span>, <span class="st">'PriceBin'</span>, <span class="st">'Date'</span>, <span class="st">'Quantity'</span>, <span class="st">'Review'</span>])</span>
+<span id="cb1-7"><a href=""></a>    [<span class="dv">100</span>,   <span class="st">'low'</span>,    <span class="st">'05/07/2021'</span>, <span class="dv">10</span>, <span class="dv">2</span>],</span>
+<span id="cb1-8"><a href=""></a>    [<span class="dv">101</span>,  <span class="st">'medium'</span>, <span class="st">'05/07/2021'</span>, <span class="dv">25</span>, <span class="dv">1</span>],</span>
+<span id="cb1-9"><a href=""></a>    [<span class="dv">102</span>,   <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, <span class="dv">100</span>, <span class="dv">3</span>],</span>
+<span id="cb1-10"><a href=""></a>    [<span class="dv">103</span>, <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, np.nan, <span class="dv">4</span>],</span>
+<span id="cb1-11"><a href=""></a>    [<span class="dv">104</span>,  <span class="st">'medium'</span>, <span class="st">'06/07/2021'</span>, <span class="dv">25</span>, <span class="dv">5</span>]], columns<span class="op">=</span>[<span class="st">'ID'</span>, <span class="st">'PriceBin'</span>, <span class="st">'Date'</span>, <span class="st">'Quantity'</span>, <span class="st">'Review'</span>])</span>
 <span id="cb1-12"><a href=""></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="1">
@@ -457,7 +456,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>Cola</td>
+<td>100</td>
 <td>low</td>
 <td>05/07/2021</td>
 <td>10.0</td>
@@ -465,7 +464,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>Bread</td>
+<td>101</td>
 <td>medium</td>
 <td>05/07/2021</td>
 <td>25.0</td>
@@ -473,7 +472,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>Beer</td>
+<td>102</td>
 <td>high</td>
 <td>06/07/2021</td>
 <td>100.0</td>
@@ -481,7 +480,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>Diaper</td>
+<td>103</td>
 <td>high</td>
 <td>06/07/2021</td>
 <td>NaN</td>
@@ -489,7 +488,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>Pizza</td>
+<td>104</td>
 <td>medium</td>
 <td>06/07/2021</td>
 <td>25.0</td>
@@ -502,8 +501,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </section>
-<section id="what-transformations-can-we-apply" class="slide level2">
-<h2>What transformations can we apply?</h2>
+
+<section id="what-transformations-can-we-apply" class="title-slide slide level1 center">
+<h1>What transformations can we apply?</h1>
 <ul>
 <li><strong>Encoding</strong>: transforming categorical attributes into continuous ones</li>
 <li><strong>Discretization</strong>: transforming continuous attributes into categorical ones</li>
@@ -512,11 +512,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><strong>Rebalancing</strong>: adjusting the class distribution of a dataset (i.e., the ratio between the different classes/categories represented)</li>
 <li><strong>Feature Engineering</strong>: defining the set of relevant attributes (variables, predictors) to be used in model construction</li>
 </ul>
-</section></section>
-<section>
+</section>
+
 <section id="data-distribution" class="title-slide slide level1 center">
 <h1>Data distribution</h1>
-<div id="bff9fa20" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T09:48:12.623358Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T09:48:12.622846Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T09:48:12.627251Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T09:48:12.626685Z&quot;}" data-outputid="739c6259-428c-4018-b542-419bf9733f1a" data-execution_count="2">
+<div id="bff9fa20" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:40.701264Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:40.700805Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:40.705096Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:40.704538Z&quot;}" data-outputid="739c6259-428c-4018-b542-419bf9733f1a" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="co"># array with distinct values sorted by first appearance</span></span>
@@ -526,7 +526,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <pre><code>array([ 10.,  25., 100.,  nan])</code></pre>
 </div>
 </div>
-<div id="3041345b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T09:48:12.629080Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T09:48:12.628762Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T09:48:12.632528Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T09:48:12.631919Z&quot;}" data-outputid="03cf3d32-e761-42ab-c44e-0bee001b1a10" data-execution_count="3">
+<div id="3041345b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:40.706780Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:40.706456Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:40.710090Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:40.709550Z&quot;}" data-outputid="03cf3d32-e761-42ab-c44e-0bee001b1a10" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># quantity of unique values</span></span>
@@ -536,7 +536,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <pre><code>3</code></pre>
 </div>
 </div>
-<div id="5f596a69" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T09:48:12.634560Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T09:48:12.633995Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T09:48:12.638998Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T09:48:12.638557Z&quot;}" data-outputid="47be88b8-164b-4a18-b43f-f20d27568ad1" data-execution_count="4">
+</section>
+
+<section id="data-distribution-1" class="title-slide slide level1 center">
+<h1>Data distribution</h1>
+<div id="5f596a69" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:40.711861Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:40.711457Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:40.716148Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:40.715609Z&quot;}" data-outputid="47be88b8-164b-4a18-b43f-f20d27568ad1" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="co"># return a new series that associates each value with its number of occurrences, sorted by frequency</span></span>
@@ -550,45 +554,31 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="a1d99dac" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T09:48:12.640704Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T09:48:12.640418Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T09:48:12.753182Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T09:48:12.752623Z&quot;}" data-outputid="a643086a-bec0-4717-c801-2d6132f09508" data-execution_count="5">
+<div id="a1d99dac" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:40.717848Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:40.717515Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:40.809035Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:40.808536Z&quot;}" data-outputid="a643086a-bec0-4717-c801-2d6132f09508" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>df[<span class="st">"Quantity"</span>].hist(bins<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
+<span id="cb8-2"><a href=""></a>df[<span class="st">"Quantity"</span>].hist(bins<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div>
 </details>
 
 </div>
 <img data-src="lab-03-datapreparation_files/figure-revealjs/cell-6-output-1.png" class="r-stretch"></section>
-<section id="skewed-distributions" class="slide level2">
-<h2>Skewed distributions</h2>
 
-<img data-src="https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png" class="r-stretch quarto-figure-center"><p class="caption">image</p><p>What problems can arise with skewed distributions?</p>
-</section>
-<section id="sequences-of-transformations" class="slide level2">
-<h2>Sequences of transformations</h2>
-<p>Things are even more complex when applying sequences of transformations</p>
-<ul>
-<li>E.g., normalization should be applied before rebalancing since rebalancing (e.g., by resampling) alters average and standard deviations</li>
-<li>E.g., applying feature engineering before/after rebalancing produces different results which depends on the dataset and the algorithm</li>
-</ul>
-
-<img data-src="https://user-images.githubusercontent.com/18005592/232754117-8a84fde5-bce2-41b1-a003-7dfa0b63f980.png" class="r-stretch quarto-figure-center"><p class="caption">image</p><p>More an art than a science - … At least for now</p>
-</section></section>
-<section>
 <section id="missing-values" class="title-slide slide level1 center">
 <h1>Missing values</h1>
-<p>Datasets often show missing values - E.g., they are not applicable (e.g., date of death) or unknown - A series can have missing values, referred to as <code>NA</code> (Not Available) - Numeric attributes: <code>NA</code> is <code>np.nan</code> (Not a Number) - <code>nan</code> is never equal, greater, or lower than other values (nor itself)</p>
-<pre><code>    np.nan == np.nan
-    False</code></pre>
+<p>Datasets often show missing values</p>
 <ul>
+<li><p>E.g., they are not applicable (e.g., date of death) or unknown</p></li>
+<li><p>A series can have missing values, referred to as <code>NA</code> (Not Available)</p></li>
+<li><p>Numeric attributes: <code>NA</code> is <code>np.nan</code> (Not a Number)</p></li>
+<li><p><code>nan</code> is never equal, greater, or lower than other values (nor itself)</p>
+<pre><code>  np.nan == np.nan
+  False</code></pre></li>
 <li><p>Numeric expressions with <code>nan</code> return <code>nan</code></p>
 <pre><code>  2 * np.nan – 1
-  nan</code></pre>
-<p>Which problems arise from missing values?</p></li>
+  nan</code></pre></li>
 </ul>
-</section>
-<section id="isna" class="slide level2">
-<h2><code>isna</code></h2>
-<div id="5c2f6e66" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T09:48:12.755468Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T09:48:12.755117Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T09:48:12.763446Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T09:48:12.762988Z&quot;}" data-outputid="5fd6a227-7a4c-4123-c162-0944d0687b0d" data-execution_count="6">
+<div id="5c2f6e66" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:40.810998Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:40.810819Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:40.819005Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:40.818433Z&quot;}" data-outputid="5fd6a227-7a4c-4123-c162-0944d0687b0d" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="co"># add the column "isna", True if the value is NaN</span></span>
@@ -660,21 +650,32 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </section>
-<section id="imputing-missing-values" class="slide level2">
-<h2>Imputing missing values</h2>
+
+<section>
+<section id="imputing-missing-values" class="title-slide slide level1 center">
+<h1>Imputing missing values</h1>
 <p>Several strategies</p>
 <ul>
 <li>Replace <code>nan</code> with average or median values</li>
 <li>Dropping rows/columns with nans</li>
+<li>Backward/forward fill</li>
 </ul>
-<p>What are the effects?</p>
-<p>What if we have temporal attributes?</p>
-<div id="fba624ad" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T09:48:12.765318Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T09:48:12.764956Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T09:48:12.771764Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T09:48:12.771342Z&quot;}" data-outputid="e7cfe545-497f-4381-9411-152012c46700" data-execution_count="7">
+<p>Questions:</p>
+<ul>
+<li>What are the effects of imputation?</li>
+<li>What if we have temporal attributes?</li>
+</ul>
+</section>
+<section id="filling-the-values" class="slide level2">
+<h2>Filling the values</h2>
+<div id="fba624ad" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:40.820809Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:40.820642Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:40.829894Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:40.829324Z&quot;}" data-outputid="e7cfe545-497f-4381-9411-152012c46700" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co"># fill the missing value with the average</span></span>
-<span id="cb12-2"><a href=""></a>df[<span class="st">"Quantity_imputed"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].fillna(df[<span class="st">"Quantity"</span>].mean())  <span class="co"># fillna replaces NA values</span></span>
-<span id="cb12-3"><a href=""></a>df[[<span class="st">"Quantity"</span>, <span class="st">"Quantity_imputed"</span>]]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>df[<span class="st">"Quantity_mean"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].fillna(df[<span class="st">"Quantity"</span>].mean())  <span class="co"># fill the missing value with the average</span></span>
+<span id="cb12-2"><a href=""></a>df[<span class="st">"Quantity_ffill"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].ffill()  <span class="co"># fill the missing value with the previous (not NaN) value</span></span>
+<span id="cb12-3"><a href=""></a>df[<span class="st">"Quantity_bfill"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].bfill()  <span class="co"># fill the missing value with the following (not NaN) value</span></span>
+<span id="cb12-4"><a href=""></a>imputed_df <span class="op">=</span> df[[x <span class="cf">for</span> x <span class="kw">in</span> df.columns <span class="cf">if</span> <span class="st">"Quantity"</span> <span class="kw">in</span> x]]</span>
+<span id="cb12-5"><a href=""></a>imputed_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -697,7 +698,9 @@ Name: count, dtype: int64</code></pre>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th">Quantity</th>
-<th data-quarto-table-cell-role="th">Quantity_imputed</th>
+<th data-quarto-table-cell-role="th">Quantity_mean</th>
+<th data-quarto-table-cell-role="th">Quantity_ffill</th>
+<th data-quarto-table-cell-role="th">Quantity_bfill</th>
 </tr>
 </thead>
 <tbody>
@@ -705,9 +708,13 @@ Name: count, dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">0</td>
 <td>10.0</td>
 <td>10.0</td>
+<td>10.0</td>
+<td>10.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
+<td>25.0</td>
+<td>25.0</td>
 <td>25.0</td>
 <td>25.0</td>
 </tr>
@@ -715,14 +722,20 @@ Name: count, dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">2</td>
 <td>100.0</td>
 <td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>NaN</td>
 <td>40.0</td>
+<td>100.0</td>
+<td>25.0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
+<td>25.0</td>
+<td>25.0</td>
 <td>25.0</td>
 <td>25.0</td>
 </tr>
@@ -732,53 +745,228 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="06d6b70f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T09:48:12.773596Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T09:48:12.773167Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T09:48:12.777778Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T09:48:12.777205Z&quot;}" data-outputid="1614da09-7e3e-4169-97ee-b449d683f795" data-scrolled="true" data-execution_count="8">
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div id="fc236145" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:40.831599Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:40.831269Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:40.843144Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:40.842611Z&quot;}" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># fill the missing value with the previous (not NaN) value</span></span>
-<span id="cb13-2"><a href=""></a>df[<span class="st">"Quantity"</span>].ffill()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>imputed_df.describe()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>0     10.0
-1     25.0
-2    100.0
-3    100.0
-4     25.0
-Name: Quantity, dtype: float64</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Quantity</th>
+<th data-quarto-table-cell-role="th">Quantity_mean</th>
+<th data-quarto-table-cell-role="th">Quantity_ffill</th>
+<th data-quarto-table-cell-role="th">Quantity_bfill</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>4.000000</td>
+<td>5.000000</td>
+<td>5.000000</td>
+<td>5.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>40.000000</td>
+<td>40.000000</td>
+<td>52.000000</td>
+<td>37.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>40.620192</td>
+<td>35.178118</td>
+<td>44.243644</td>
+<td>35.812009</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>10.000000</td>
+<td>10.000000</td>
+<td>10.000000</td>
+<td>10.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>21.250000</td>
+<td>25.000000</td>
+<td>25.000000</td>
+<td>25.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>25.000000</td>
+<td>25.000000</td>
+<td>25.000000</td>
+<td>25.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>43.750000</td>
+<td>40.000000</td>
+<td>100.000000</td>
+<td>25.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>100.000000</td>
+<td>100.000000</td>
+<td>100.000000</td>
+<td>100.000000</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
-<div id="0e8f5d63" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T09:48:12.779719Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T09:48:12.779166Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T09:48:12.783749Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T09:48:12.783200Z&quot;}" data-outputid="d54f245a-c604-44ba-c46a-561a7bbb792b" data-scrolled="true" data-execution_count="9">
+</div>
+<div id="a726926a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:40.845075Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:40.844675Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:41.199166Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:41.198693Z&quot;}" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="co"># fill the missing value with the following (not NaN) value</span></span>
-<span id="cb15-2"><a href=""></a>df[<span class="st">"Quantity"</span>].bfill()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">2</span>))</span>
+<span id="cb14-2"><a href=""></a>imputed_df.hist(layout<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">4</span>), ax<span class="op">=</span>ax)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>0     10.0
-1     25.0
-2    100.0
-3     25.0
-4     25.0
-Name: Quantity, dtype: float64</code></pre>
+<pre><code>array([[&lt;Axes: title={'center': 'Quantity'}&gt;,
+        &lt;Axes: title={'center': 'Quantity_mean'}&gt;,
+        &lt;Axes: title={'center': 'Quantity_ffill'}&gt;,
+        &lt;Axes: title={'center': 'Quantity_bfill'}&gt;]], dtype=object)</code></pre>
 </div>
+
 </div>
-<div id="1aebd691" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T09:48:12.785560Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T09:48:12.785221Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T09:48:12.789684Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T09:48:12.789123Z&quot;}" data-outputid="2b43d7bb-c729-4a90-bff0-0c5e5c142cb7" data-scrolled="true" data-execution_count="10">
+<img data-src="lab-03-datapreparation_files/figure-revealjs/cell-10-output-2.png" class="r-stretch"></section>
+<section id="dropping-values" class="slide level2">
+<h2>Dropping values</h2>
+<div id="1aebd691" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:41.201070Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:41.200903Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:41.209868Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:41.209406Z&quot;}" data-outputid="2b43d7bb-c729-4a90-bff0-0c5e5c142cb7" data-scrolled="true" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>df[<span class="st">"Quantity"</span>].dropna()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>df.drop(columns<span class="op">=</span>[<span class="st">"Quantity"</span>])  <span class="co"># drop the `Quantity` column</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>0     10.0
-1     25.0
-2    100.0
-4     25.0
-Name: Quantity, dtype: float64</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ID</th>
+<th data-quarto-table-cell-role="th">PriceBin</th>
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th">Review</th>
+<th data-quarto-table-cell-role="th">isna</th>
+<th data-quarto-table-cell-role="th">notna</th>
+<th data-quarto-table-cell-role="th">Quantity_mean</th>
+<th data-quarto-table-cell-role="th">Quantity_ffill</th>
+<th data-quarto-table-cell-role="th">Quantity_bfill</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>100</td>
+<td>low</td>
+<td>05/07/2021</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>10.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>101</td>
+<td>medium</td>
+<td>05/07/2021</td>
+<td>1</td>
+<td>False</td>
+<td>True</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>25.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>102</td>
+<td>high</td>
+<td>06/07/2021</td>
+<td>3</td>
+<td>False</td>
+<td>True</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>103</td>
+<td>high</td>
+<td>06/07/2021</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>40.0</td>
+<td>100.0</td>
+<td>25.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>104</td>
+<td>medium</td>
+<td>06/07/2021</td>
+<td>5</td>
+<td>False</td>
+<td>True</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>25.0</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
-<div id="3ba31db2" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T09:48:12.791494Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T09:48:12.791060Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T09:48:12.799431Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T09:48:12.798966Z&quot;}" data-outputid="7960fed3-8e65-462c-edbc-4dcb782a807b" data-execution_count="11">
+</div>
+<div id="3ba31db2" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:41.211481Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:41.211317Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:41.221846Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:41.221289Z&quot;}" data-outputid="7960fed3-8e65-462c-edbc-4dcb782a807b" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>df.dropna()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>df.dropna()  <span class="co"># drop all rows with missing values in any column</span></span>
+<span id="cb17-2"><a href=""></a>df.dropna(subset<span class="op">=</span>[<span class="st">"Quantity"</span>])  <span class="co"># drop all rows with missing values in the column `Quantity`</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
@@ -807,13 +995,15 @@ Name: Quantity, dtype: float64</code></pre>
 <th data-quarto-table-cell-role="th">Review</th>
 <th data-quarto-table-cell-role="th">isna</th>
 <th data-quarto-table-cell-role="th">notna</th>
-<th data-quarto-table-cell-role="th">Quantity_imputed</th>
+<th data-quarto-table-cell-role="th">Quantity_mean</th>
+<th data-quarto-table-cell-role="th">Quantity_ffill</th>
+<th data-quarto-table-cell-role="th">Quantity_bfill</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>Cola</td>
+<td>100</td>
 <td>low</td>
 <td>05/07/2021</td>
 <td>10.0</td>
@@ -821,10 +1011,12 @@ Name: Quantity, dtype: float64</code></pre>
 <td>False</td>
 <td>True</td>
 <td>10.0</td>
+<td>10.0</td>
+<td>10.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>Bread</td>
+<td>101</td>
 <td>medium</td>
 <td>05/07/2021</td>
 <td>25.0</td>
@@ -832,10 +1024,12 @@ Name: Quantity, dtype: float64</code></pre>
 <td>False</td>
 <td>True</td>
 <td>25.0</td>
+<td>25.0</td>
+<td>25.0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>Beer</td>
+<td>102</td>
 <td>high</td>
 <td>06/07/2021</td>
 <td>100.0</td>
@@ -843,16 +1037,20 @@ Name: Quantity, dtype: float64</code></pre>
 <td>False</td>
 <td>True</td>
 <td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">4</td>
-<td>Pizza</td>
+<td>104</td>
 <td>medium</td>
 <td>06/07/2021</td>
 <td>25.0</td>
 <td>5</td>
 <td>False</td>
 <td>True</td>
+<td>25.0</td>
+<td>25.0</td>
 <td>25.0</td>
 </tr>
 </tbody>
@@ -862,85 +1060,484 @@ Name: Quantity, dtype: float64</code></pre>
 </div>
 </div>
 </section></section>
-<section>
-<section id="encoding" class="title-slide slide level1 center">
-<h1>Encoding</h1>
+<section id="encoding-pricebin" class="title-slide slide level1 center">
+<h1>Encoding: <code>PriceBin</code></h1>
+<div id="0e7fa165" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:41.223761Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:41.223438Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:41.511141Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:41.510641Z&quot;}" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OrdinalEncoder</span>
+<span id="cb18-2"><a href=""></a></span>
+<span id="cb18-3"><a href=""></a>encoder <span class="op">=</span> OrdinalEncoder(categories<span class="op">=</span>[[<span class="st">'low'</span>, <span class="st">'medium'</span>, <span class="st">'high'</span>]])  <span class="co"># Apply Ordinal Encoding to `PriceBin``, define the order of the categories</span></span>
+<span id="cb18-4"><a href=""></a>df[<span class="st">'PriceBin_encoded'</span>] <span class="op">=</span> encoder.fit_transform(df[[<span class="st">'PriceBin'</span>]])</span>
+<span id="cb18-5"><a href=""></a>df</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<img data-src="https://user-images.githubusercontent.com/18005592/232748093-a25e8ba7-24d4-4e2b-9e58-1553786cac33.png" class="r-stretch quarto-figure-center"><p class="caption">Y2K22 bug</p></section>
-<section id="encoding-data-with-the-wrong-type" class="slide level2">
-<h2>Encoding data with the wrong type</h2>
-<p>Encoding the date 2022-01-01T00:01 into a signed integer <span class="math inline">\(2201010001\)</span></p>
-<p>A signed integer is a 32-bit datum that represents an integer in the range:</p>
-<ul>
-<li>Valid range: <span class="math inline">\([-2^{31}, 2^{31}-1] = [-2147483648, 2147483647]\)</span></li>
-<li>However, <span class="math inline">\(2201010001 &gt; 2147483647\)</span></li>
-</ul>
-<p>See also the <a href="https://en.wikipedia.org/wiki/Year_2000_problem">year 2000 problem</a></p>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<img data-src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Bug_de_l%27an_2000.jpg" class="r-stretch quarto-figure-center"><p class="caption">Y2K</p></section></section>
-<section>
-<section id="feature-engineering" class="title-slide slide level1 center">
-<h1>Feature engineering</h1>
-<p>Feature engineering, in data science, refers to manipulation — addition, deletion, combination, mutation — of your data set to improve machine learning model training, leading to better performance and greater accuracy.</p>
-<p>We focus on <strong>feature selection</strong></p>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ID</th>
+<th data-quarto-table-cell-role="th">PriceBin</th>
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th">Quantity</th>
+<th data-quarto-table-cell-role="th">Review</th>
+<th data-quarto-table-cell-role="th">isna</th>
+<th data-quarto-table-cell-role="th">notna</th>
+<th data-quarto-table-cell-role="th">Quantity_mean</th>
+<th data-quarto-table-cell-role="th">Quantity_ffill</th>
+<th data-quarto-table-cell-role="th">Quantity_bfill</th>
+<th data-quarto-table-cell-role="th">PriceBin_encoded</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>100</td>
+<td>low</td>
+<td>05/07/2021</td>
+<td>10.0</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>101</td>
+<td>medium</td>
+<td>05/07/2021</td>
+<td>25.0</td>
+<td>1</td>
+<td>False</td>
+<td>True</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>102</td>
+<td>high</td>
+<td>06/07/2021</td>
+<td>100.0</td>
+<td>3</td>
+<td>False</td>
+<td>True</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>2.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>103</td>
+<td>high</td>
+<td>06/07/2021</td>
+<td>NaN</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>40.0</td>
+<td>100.0</td>
+<td>25.0</td>
+<td>2.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>104</td>
+<td>medium</td>
+<td>06/07/2021</td>
+<td>25.0</td>
+<td>5</td>
+<td>False</td>
+<td>True</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>What about dates?</p>
 </section>
-<section id="feature-selection" class="slide level2">
-<h2>Feature selection</h2>
-<p>Feature selection is the process of selecting a subset of relevant features (variables, predictors) for use in model construction</p>
-<ul>
-<li><em>Search technique</em> for proposing new feature subsets</li>
-<li><em>Evaluation measure</em> which scores the different feature subsets</li>
-</ul>
-<p>Simplest algorithm is to test each possible subset of features finding the one which minimizes the error rate</p>
-<ul>
-<li>This is an exhaustive search of the space, and is computationally intractable for all but the smallest of feature sets</li>
-<li>Main categories of feature selection algorithms: wrappers, filters and embedded methods</li>
-</ul>
+
+<section id="encoding-date" class="title-slide slide level1 center">
+<h1>Encoding: <code>Date</code></h1>
+<div id="4c87578a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:41.513180Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:41.512762Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:41.524524Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:41.524090Z&quot;}" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>df[<span class="st">'Date'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%m/</span><span class="sc">%d</span><span class="st">/%Y'</span>)  <span class="co"># Setting the date format is essential!</span></span>
+<span id="cb19-2"><a href=""></a>df[<span class="st">'Date_unix'</span>] <span class="op">=</span> df[<span class="st">'Date'</span>].astype(<span class="bu">int</span>) <span class="op">//</span> <span class="dv">10</span><span class="op">**</span><span class="dv">9</span>  <span class="co"># Convert to seconds since epoch</span></span>
+<span id="cb19-3"><a href=""></a>df</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ID</th>
+<th data-quarto-table-cell-role="th">PriceBin</th>
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th">Quantity</th>
+<th data-quarto-table-cell-role="th">Review</th>
+<th data-quarto-table-cell-role="th">isna</th>
+<th data-quarto-table-cell-role="th">notna</th>
+<th data-quarto-table-cell-role="th">Quantity_mean</th>
+<th data-quarto-table-cell-role="th">Quantity_ffill</th>
+<th data-quarto-table-cell-role="th">Quantity_bfill</th>
+<th data-quarto-table-cell-role="th">PriceBin_encoded</th>
+<th data-quarto-table-cell-role="th">Date_unix</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>100</td>
+<td>low</td>
+<td>2021-05-07</td>
+<td>10.0</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>0.0</td>
+<td>1620345600</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>101</td>
+<td>medium</td>
+<td>2021-05-07</td>
+<td>25.0</td>
+<td>1</td>
+<td>False</td>
+<td>True</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>1.0</td>
+<td>1620345600</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>102</td>
+<td>high</td>
+<td>2021-06-07</td>
+<td>100.0</td>
+<td>3</td>
+<td>False</td>
+<td>True</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>2.0</td>
+<td>1623024000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>103</td>
+<td>high</td>
+<td>2021-06-07</td>
+<td>NaN</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>40.0</td>
+<td>100.0</td>
+<td>25.0</td>
+<td>2.0</td>
+<td>1623024000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>104</td>
+<td>medium</td>
+<td>2021-06-07</td>
+<td>25.0</td>
+<td>5</td>
+<td>False</td>
+<td>True</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>1.0</td>
+<td>1623024000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 </section>
-<section id="wappers-and-filters" class="slide level2">
-<h2>Wappers and filters</h2>
-<p><em>Wrapper methods</em> use a predictive model to score feature subsets</p>
-<ul>
-<li>Each new subset is used to train a model, which is tested on a hold-out set</li>
-<li>Counting the number of mistakes made on that hold-out set (the error rate of the model) gives the score for that subset</li>
-<li>As wrapper methods train a new model for each subset, they are very computationally intensive, but usually provide good results</li>
-<li><em>Stepwise regression</em> adds the best feature (or deletes the worst feature) at each round</li>
-</ul>
-<p><em>Filter methods</em> use a proxy measure instead of the error rate to score a feature subset</p>
-<ul>
-<li>This measure is chosen to be fast to compute, while still capturing the usefulness of the feature set (mutual information, Pearson correlation)</li>
-<li>Filters are usually less computationally intensive than wrappers, but they produce a feature set which is not tuned to a specific type of predictive model</li>
-<li>Filter methods have also been used as a preprocessing step for wrapper methods, allowing a wrapper to be used on larger problems</li>
-</ul>
+
+<section id="data-integration" class="title-slide slide level1 center">
+<h1>Data integration</h1>
+<div id="2ec92bdf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:41.526078Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:41.525913Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:41.531472Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:41.531037Z&quot;}" data-execution_count="14">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>products_df <span class="op">=</span> pd.DataFrame({<span class="st">'ProductID'</span>: [<span class="dv">100</span>, <span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">104</span>], <span class="st">'ProductName'</span>: [<span class="st">'Cola'</span>, <span class="st">'Bread'</span>, <span class="st">'Beer'</span>, <span class="st">'Diaper'</span>, <span class="st">'Pizza'</span>]})</span>
+<span id="cb20-2"><a href=""></a>products_df</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ProductID</th>
+<th data-quarto-table-cell-role="th">ProductName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>100</td>
+<td>Cola</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>101</td>
+<td>Bread</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>102</td>
+<td>Beer</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>103</td>
+<td>Diaper</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>104</td>
+<td>Pizza</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="acfbcf36" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:41.533290Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:41.532903Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:41.544523Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:41.543960Z&quot;}" data-execution_count="15">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a>products_df <span class="op">=</span> products_df.rename({<span class="st">"ProductID"</span>: <span class="st">"ID"</span>}, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb21-2"><a href=""></a>combined_df <span class="op">=</span> pd.merge(df, products_df, on<span class="op">=</span><span class="st">'ID'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb21-3"><a href=""></a>combined_df</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ID</th>
+<th data-quarto-table-cell-role="th">PriceBin</th>
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th">Quantity</th>
+<th data-quarto-table-cell-role="th">Review</th>
+<th data-quarto-table-cell-role="th">isna</th>
+<th data-quarto-table-cell-role="th">notna</th>
+<th data-quarto-table-cell-role="th">Quantity_mean</th>
+<th data-quarto-table-cell-role="th">Quantity_ffill</th>
+<th data-quarto-table-cell-role="th">Quantity_bfill</th>
+<th data-quarto-table-cell-role="th">PriceBin_encoded</th>
+<th data-quarto-table-cell-role="th">Date_unix</th>
+<th data-quarto-table-cell-role="th">ProductName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>100</td>
+<td>low</td>
+<td>2021-05-07</td>
+<td>10.0</td>
+<td>2</td>
+<td>False</td>
+<td>True</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>0.0</td>
+<td>1620345600</td>
+<td>Cola</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>101</td>
+<td>medium</td>
+<td>2021-05-07</td>
+<td>25.0</td>
+<td>1</td>
+<td>False</td>
+<td>True</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>1.0</td>
+<td>1620345600</td>
+<td>Bread</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>102</td>
+<td>high</td>
+<td>2021-06-07</td>
+<td>100.0</td>
+<td>3</td>
+<td>False</td>
+<td>True</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>2.0</td>
+<td>1623024000</td>
+<td>Beer</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>103</td>
+<td>high</td>
+<td>2021-06-07</td>
+<td>NaN</td>
+<td>4</td>
+<td>True</td>
+<td>False</td>
+<td>40.0</td>
+<td>100.0</td>
+<td>25.0</td>
+<td>2.0</td>
+<td>1623024000</td>
+<td>Diaper</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>104</td>
+<td>medium</td>
+<td>2021-06-07</td>
+<td>25.0</td>
+<td>5</td>
+<td>False</td>
+<td>True</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>25.0</td>
+<td>1.0</td>
+<td>1623024000</td>
+<td>Pizza</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 </section>
-<section id="embedded-methods" class="slide level2">
-<h2>Embedded methods</h2>
-<p><em>Embedded methods</em> perform feature selection as part of the model construction process</p>
-<ul>
-<li>The exemplar of this approach is the LASSO method for constructing a linear model, which penalizes the regression coefficients with an L1 penalty, shrinking many of them to zero</li>
-<li>Any features which have non-zero regression coefficients are ‘selected’ by the LASSO algorithm</li>
-</ul>
-<p>LASSO (least absolute shrinkage and selection operator; also Lasso or LASSO) is a regression analysis method that performs both variable selection and regularization in order to enhance the prediction accuracy and interpretability of the resulting statistical model.</p>
-<ul>
-<li>The lasso method assumes that the coefficients of the linear model are sparse, meaning that few of them are non-zero.</li>
-</ul>
-<p>[1] Katrutsa, Alexandr, and Vadim Strijov. “Comprehensive study of feature selection methods to solve multicollinearity problem according to evaluation criteria.” Expert Systems with Applications 76 (2017): 1-11.</p>
-<p>[2] Chan, Jireh Yi-Le, et al.&nbsp;“Mitigating the multicollinearity problem and its machine learning approach: a review.” Mathematics 10.8 (2022): 1283.</p>
-</section></section>
+
 <section id="exercise" class="title-slide slide level1 center">
 <h1>Exercise</h1>
 <ol type="1">
-<li>Add a new column: <code>population_per_household = population / households</code></li>
-<li>Add a new column: <code>rooms_per_household = total_rooms / households</code></li>
-<li>Add a new column: <code>bedrooms_per_room = total_bedrooms / total_rooms</code></li>
-<li>Filling in (i.e., impute) missing values with the median value</li>
-<li>Apply standardization to all the numeric columns</li>
-<li>One hot encode <code>ocean_proximity</code> since it is a categorical attribute</li>
+<li>Generate a sales dataframe</li>
 </ol>
-<div id="qZWX_HgfeQpM" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T09:48:12.801438Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T09:48:12.801244Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T09:48:12.803627Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T09:48:12.803182Z&quot;}" data-execution_count="12">
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>{</span>
+<span id="cb22-2"><a href=""></a>    <span class="st">'ID'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
+<span id="cb22-3"><a href=""></a>    <span class="st">'ProductID'</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">101</span>, <span class="dv">104</span>],</span>
+<span id="cb22-4"><a href=""></a>    <span class="st">'PriceBin'</span>: [<span class="st">'Low'</span>, <span class="st">'Medium'</span>, <span class="st">'High'</span>, np.nan, <span class="st">'Low'</span>],</span>
+<span id="cb22-5"><a href=""></a>    <span class="st">'Date'</span>: [<span class="st">'10/01/2024'</span>, <span class="st">'10/02/2024'</span>, <span class="st">'10/03/2024'</span>, <span class="st">'10/04/2024'</span>, <span class="st">'10/05/2024'</span>],</span>
+<span id="cb22-6"><a href=""></a>    <span class="st">'Quantity'</span>: [<span class="dv">5</span>, <span class="dv">10</span>, np.nan, <span class="dv">20</span>, <span class="dv">15</span>]</span>
+<span id="cb22-7"><a href=""></a>}</span></code></pre></div>
+<ol start="2" type="1">
+<li>Generate a products dataframe</li>
+</ol>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>{</span>
+<span id="cb23-2"><a href=""></a>    <span class="st">'productid'</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">104</span>],</span>
+<span id="cb23-3"><a href=""></a>    <span class="st">'ProductName'</span>: [<span class="st">'Product A'</span>, <span class="st">'Product B'</span>, <span class="st">'Product C'</span>, <span class="st">'Product D'</span>]</span>
+<span id="cb23-4"><a href=""></a>}</span></code></pre></div>
+<ol start="3" type="1">
+<li>Handle missing values in <code>sales_df</code></li>
+<li>Convert <code>Date</code> to Unix timestamp</li>
+<li>Calculate a column <code>Total Sales</code> (quantity * price), assuming that <code>{'Low': 10, 'Medium': 20, 'High': 30}</code></li>
+<li>Ordinal encode <code>PriceBin</code></li>
+<li>Scale <code>Quantity</code></li>
+<li>Join <code>sales_df</code> with <code>products_df</code> on <code>ProductID</code></li>
+<li>Print the final dataframe</li>
+</ol>
+<div id="qZWX_HgfeQpM" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-07T15:55:41.546346Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-07T15:55:41.546024Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-07T15:55:41.548512Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-07T15:55:41.547993Z&quot;}" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="co"># Write your code here</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="co"># Write your code here</span></span></code></pre></div>
 </details>
 </div>
 <div class="quarto-auto-generated-content">
