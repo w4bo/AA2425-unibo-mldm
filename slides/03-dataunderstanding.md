@@ -2,7 +2,9 @@
 subtitle: Data Understanding
 ---
 
-![](./img/crispdm_du.svg)
+#
+
+<img src="./img/crispdm_du.svg" class="center">
 
 # Data understanding
 
@@ -303,17 +305,17 @@ In descriptive statistics, a **box plot** shows graphically the locality, spread
 
 A boxplot is a standardized way of displaying the dataset based on the five-number summary:
 
-1. *Minimum* (Q0 or 0th percentile): the lowest data point
-1. *First quartile* (Q1 or 25th percentile)
-1. *Median* (Q2 or 50th percentile): the middle value 
-1. *Third quartile* (Q3 or 75th percentile)
+1. *Minimum* ($Q_0$ or 0th percentile): the lowest data point
+1. *First quartile* ($Q_1$ or 25th percentile)
+1. *Median* ($Q_2$ or 50th percentile): the middle value 
+1. *Third quartile* ($Q_3$ or 75th percentile)
 1. *Maximum* (Q4 or 100th percentile): the highest data point
 
 *Interquartile range*: $\text{IQR}=Q_{3}-Q_{1}$ 
 
 Graphical elements
 
-- The *box* is drawn from Q1 to Q3
+- The *box* is drawn from $Q_1$ to $Q_3$
 - *Whiskers* are based on the $1.5 \cdot IQR$ value
   - A whisker is drawn up to the largest/lowest observed data point from the dataset that falls within this distance
   - The whisker lengths can look unequal

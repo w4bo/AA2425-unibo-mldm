@@ -2,7 +2,9 @@
 subtitle: Business understanding
 ---
 
-![](./img/crispdm_bu.svg)
+#
+
+<img src="./img/crispdm_bu.svg" class="center">
 
 # Business Understanding
 

@@ -2,7 +2,9 @@
 subtitle: Data Preparation
 ---
 
-![](./img/crispdm_dp.svg)
+#
+
+<img src="./img/crispdm_dp.svg" class="center">
 
 # Data Preparation (aka *data pre-processing*)
 

@@ -17,6 +17,8 @@ jobs:
       - name: Generate the slides
         run: |
           cd slides 
+          cp build.sh.example build.sh
+          chmod +x build.sh
           docker compose up
       - name: Deploy
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
