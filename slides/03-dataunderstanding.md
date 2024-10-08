@@ -2,6 +2,8 @@
 subtitle: Data Understanding
 ---
 
+![](./img/crispdm_du.svg)
+
 # Data understanding
 
 The **data understanding** phase of CRISP-DM involves taking a closer look at the data available for mining

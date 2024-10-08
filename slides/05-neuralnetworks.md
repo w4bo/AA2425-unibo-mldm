@@ -2,6 +2,8 @@
 subtitle: "Modeling: Neural Networks"
 ---
 
+![](./img/crispdm_me.svg)
+
 # Recalling the Machine Learning pipeline 
 
 * In these slides we focus on the model, the real “heart” of the AI in our system

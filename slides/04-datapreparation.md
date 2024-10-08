@@ -2,6 +2,8 @@
 subtitle: Data Preparation
 ---
 
+![](./img/crispdm_dp.svg)
+
 # Data Preparation (aka *data pre-processing*)
 
 The **data preparation** phase covers all activities to construct the dataset fed into the modeling tools from the initial data.
@@ -662,7 +664,7 @@ Feature selection approaches are characterized by
 
 *Variance threshold*
 
-- Mean: $\mu = \frac{1}{n} \sum _{i=1}^{n}x_{i}$, Variance: $Var(X)={\frac{1}{n}}\sum _{i=1}^{n}(x_{i}-\mu )^{2}$
+- Mean: $\mu = \frac{1}{n} \sum _{i=1}^{n}x_{i}$, Variance: $Var(X)={\frac{1}{n}}\sum _{i=1}^{n}(x_{i}-\mu)^{2}$
 - Features with low variance do not contribute much information to a model.
 - Use a variance threshold to remove any features that have little to no variation in their values.
 - Since variance can only be calculated on numeric values, this method only works on quantitative features.

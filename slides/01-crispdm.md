@@ -27,7 +27,7 @@ subtitle: Data Mining, Machine Learning, and CRISP-DM
 :::
 ::: {.column width="40%"}
 
-![CRISP-DM](./img/crispdm.png)
+![CRISP-DM](./img/crispdm_en.svg)
 
 :::
 ::::
@@ -55,7 +55,7 @@ CRISP-DM breaks down the life cycle of a data mining project into **six phases**
 :::
 ::: {.column width="40%"}
 
-![CRISP-DM](./img/crispdm.png)
+![CRISP-DM](./img/crispdm_en.svg)
 
 :::
 ::::
