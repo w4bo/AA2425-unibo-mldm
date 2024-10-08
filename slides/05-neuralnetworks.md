@@ -1,5 +1,5 @@
 ---
-subtitle: Neural Networks
+subtitle: "Modeling: Neural Networks"
 ---
 
 # Recalling the Machine Learning pipeline 
@@ -36,7 +36,7 @@ Feature extraction requires human intervention.
 - Cell body: this is where signals are «aggregated»
 - Dendrites: this is where the majority of input to the neuron occurs from other cells
 
-# Artificial Neuron
+# Artificial Neuron (perceptron)
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -75,6 +75,85 @@ See also [Activation Functions](https://medium.com/@shrutijadon/survey-on-activa
 >
 >![](./img/neuralnetworks/slide54.png)
 
+# Another example of a working AN
+
+:::: {.columns}
+::: {.column width="60%"}
+
+![](./img/neuralnetworks/9.png)
+
+$y' = \begin{cases}1, ~if~ 0.3x_1 + 0.3x_2 + 0.3x_3 -0.4 > 0\\-1, ~if~ 0.3x_1 + 0.3x_2 + 0.3x_3 -0.4 < 0\end{cases}$
+
+:::
+::: {.column width="40%"}
+
+| $x_1$ | $x_2$ | $x_3$ | | y’ |
+| :-: | :-: | :-: | :-: | :-: |
+| 1 | 0 | 0 || -1 
+| 1 | 0 | 1 || 1 |
+| 1 | 1 | 0 || 1 |
+| 1 | 1 | 1 || 1 |
+| 0 | 0 | 1 || -1 |
+| 0 | 1 | 0 || -1 |
+| 0 | 1 | 1 || 1 |
+| 0 | 0 | 0 || -1 |
+
+:::
+::::
+
+# An example of a working AN: Boolean functions
+
+:::: {.columns}
+::: {.column width="60%"}
+
+![](./img/neuralnetworks/43 - AI ANN2.png) 
+
+:::
+::: {.column width="40%"}
+
+**and**
+
+<table>
+    <tr>
+        <td>$x_1$ / $x_2$</td>
+        <td>0</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>*0*</td>
+        <td>*0*</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>*0*</td>
+        <td>**1**</td>
+    </tr>
+</table>
+
+**xor**
+
+<table>
+    <tr>
+        <td>$x_1$ / $x_2$</td>
+        <td>0</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>*0*</td>
+        <td>**1**</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>**1**</td>
+        <td>*0*</td>
+    </tr>
+</table>
+
+
+:::
+::::
 # Linear vs Non-linear problems
 
 * Unfortunately, a single AN can solve only linear problems!
@@ -87,7 +166,7 @@ See also [Activation Functions](https://medium.com/@shrutijadon/survey-on-activa
 # Artificial Neural Networks
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="65%"}
 
 * Groups of artificial neurons are organized in different layers → Neural Networks!
 * Typically, are present:
@@ -100,7 +179,7 @@ See also [Activation Functions](https://medium.com/@shrutijadon/survey-on-activa
   * Otherwise, we would be too slow to react to stimuli.
 
 :::
-::: {.column width="50%"}
+::: {.column width="30%"}
 
 ![](./img/neuralnetworks/56a.png)
 
@@ -112,19 +191,19 @@ See also [Activation Functions](https://medium.com/@shrutijadon/survey-on-activa
 # ANN typologies
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="70%"}
 
-* Feedforward:
+* **Feedforward**:
   * The connections connect the neurons of one level with the neurons of the next level
   * Backward connections or connections to the same level are not allowed
   * It is by far the most used type of network.
-* Recurrent:
+* **Recurrent**:
   * Feedback connections are expected (generally towards neurons of the same level, but also backward)
   * More suitable for the management of sequences because they have a (short-term)  memory effect
 * In our course, we will use only FF NN!
 
 :::
-::: {.column width="50%"}
+::: {.column width="30%"}
 
 ![](./img/neuralnetworks/3 Model59.png)
 
@@ -186,13 +265,11 @@ The cost function:
 Loss functions for the classification task:
 
 - Cross Entropy indicates the distance between what the model believes the output distribution should be, and what the original distribution really is.
-- Binary Cross Entropy (BCE): $Loss = -y_i \cdot log (\hat{y}_i) - (1 - y_i) \cdot log(1 - \hat{y}_i)$
-  - Where: $\hat{y}_i$ is the i-th scalar value in the model output (prediction), $y_i$ is the corresponding target (label) value
-  - $-y_i \cdot log (\hat{y}_i)$ cancels out if the target is 0
-  - $(1 - y_i) \cdot log(1 - \hat{y}_i)$ cancels out if the target is 1
-- Categorical Cross Entropy (CCE): $Loss = -\sum_i y_i log(\hat{y}_i)$
-  - Where: $\hat{y}_i$ is the i-th scalar value in the model output (prediction), $y_i$ is the corresponding target (label) value
-
+- *Binary Cross Entropy (BCE)*: $Loss = -y_i \cdot log (\hat{y}_i) - (1 - y_i) \cdot log(1 - \hat{y}_i)$
+    - $\hat{y}_i$ is the i-th scalar value in the model output (prediction), $y_i$ is the corresponding target (label) value
+        - $-y_i \cdot log (\hat{y}_i)$ cancels out if the target is 0
+        - $(1 - y_i) \cdot log(1 - \hat{y}_i)$ cancels out if the target is 1
+- *Categorical Cross Entropy (CCE)*: $Loss = -\sum_i y_i \cdot log(\hat{y}_i)$
 
 # Softmax classification
 
@@ -414,14 +491,14 @@ It is common to create line plots that show epochs along the *x*-axis and the lo
 
 ```python
 sklearn.neural_network.MLPClassifier(
- hidden*layer*sizes=(100,),
+    hidden*layer*sizes=(100,),
     activation='relu’,
     solver='adam’,
- batch*size='auto’,
- learning*rate='constant’,
+    batch*size='auto’,
+    learning*rate='constant’,
     max*iter=200,
     shuffle=True,
- ...
+    ...
 )
 ```
 
@@ -472,7 +549,7 @@ The superiority of DL approaches over other Machine Learning algorithms manifest
 # Hardware for Deep Learning
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="60%"}
 
 * The training of neural networks, especially if they are deep, requires specialized hardware:
     * Before starting a project with DL, you need to ask if the company/lab has the necessary hardware
@@ -484,7 +561,7 @@ The superiority of DL approaches over other Machine Learning algorithms manifest
     * The parallelization of the calculations is possible thanks to the CUDA libraries (*Compute Unified Device Architecture*, the true core business of Nvidia)
 
 :::
-::: {.column width="50%"}
+::: {.column width="30%"}
 
 ![](./img/neuralnetworks/3 Model105.png)
 
@@ -492,7 +569,6 @@ The superiority of DL approaches over other Machine Learning algorithms manifest
 
 :::
 ::::
-
 
 # Training DNNs...
 
@@ -529,7 +605,7 @@ The superiority of DL approaches over other Machine Learning algorithms manifest
 # Hardware for DL: in-house vs external solutions
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="60%"}
 
 * External solution: the hardware is rented through the *PaaS* paradigm (Cloud)
   * Pros:
@@ -542,20 +618,29 @@ The superiority of DL approaches over other Machine Learning algorithms manifest
       * Vendor *lock-in* → it is difficult to escape from the service provider
       * Who really owns the data?
       * Privacy issues
-  * Examples:
-    * [https://cloud.google.com/products/calculator/](https://cloud.google.com/products/calculator/)
-    * [https://www.leadergpu.com/#chose-best](https://www.leadergpu.com/#chose-best)
-    * [https://buomsoo-kim.github.io/colab/2020/03/15/Google-newly-launches-colab-pro.md/](https://buomsoo-kim.github.io/colab/2020/03/15/Google-newly-launches-colab-pro.md/)
-    * [https://calculator.aws/#/addService/EC2](https://calculator.aws/#/addService/EC2)
 
 :::
-::: {.column width="50%"}
+::: {.column width="40%"}
 
 ![](./img/neuralnetworks/3 Model108.png)
 
 :::
 ::::
 
+Examples:
+
+* [https://cloud.google.com/products/calculator/](https://cloud.google.com/products/calculator/)
+* [https://www.leadergpu.com/#chose-best](https://www.leadergpu.com/#chose-best)
+* [https://buomsoo-kim.github.io/colab/2020/03/15/Google-newly-launches-colab-pro.md/](https://buomsoo-kim.github.io/colab/2020/03/15/Google-newly-launches-colab-pro.md/)
+* [https://calculator.aws/#/addService/EC2](https://calculator.aws/#/addService/EC2)
+
+# Interactive demos
+
+- https://playground.tensorflow.org 
+- https://cs.stanford.edu/people/karpathy/convnetjs/ 
+
 # The end(?) of our AI journey
 
 ![](./img/neuralnetworks/98.png)
+
+# References
