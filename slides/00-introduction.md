@@ -58,8 +58,9 @@ Questions on **all (theoretical and practical) aspects** of the course
 
 No scheduled dates, just **book when you are ready**
 
-- At least one week in advance
-- Use the [Booking](https://outlook.office365.com/owa/calendar/DTMMachineLearningModule@live.unibo.it/bookings/s/VXKOGV3sS02dofzMZtOpHQ2) page
+- How do you know if you are prepared?
+    - Open random slides and check the titles, can you expose them and make a self-contained speech?
+- At least one week in advance, use the [Booking](https://outlook.office365.com/owa/calendar/DTMMachineLearningModule@live.unibo.it/bookings/s/VXKOGV3sS02dofzMZtOpHQ2) page
 
 According to the University's regulation
 
@@ -69,7 +70,7 @@ According to the University's regulation
 On the day of the exam (~30 minutes per person):
 
 - 3 questions on different topics about the whole program
-    - *If you do the final assignment on Machine Learning*, the first question will be a presentation & discussion with slides about your assignment (10/15 minutes)
+- *If you do the final assignment on Machine Learning*, the first question will be a presentation & discussion with slides about your assignment (10/15 minutes)
 
 # Final Assignment (Machine Learning)
 
