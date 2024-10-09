@@ -430,28 +430,102 @@ See also the [year 2000 problem](https://en.wikipedia.org/wiki/Year_2000_problem
 - If one of the features has a broad range of values, the distance will be governed by this particular feature.
 - For example, many classifiers calculate the distance between two points by the Euclidean distance.
     - $d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{n}-q_{n})^{2}}} = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}$
-    - Consider a dataset with two features `years` $\in [0, 120]$ and `income` $\in [0, 100000]$
-    - Given four points
-        - $p_1=($`years` = 50, `income` = 10000$)$
-        - $p_2=($`years` = 50, `income` = 11000$)$, $d(p_1,p_2)=1000$
-        - $p_3=($`years` = 60, `income` = 10000$)$, $d(p_1,p_3)=10$
-        - $p_4=($`years` = 60, `income` = 11000$)$, $d(p_1,p_4)=1000.05$
+ 
+
+> Consider a dataset with two features `age` $\in [0, 120]$ and `income` $\in [0, 100000]$
+> 
+> :::: {.columns}
+> ::: {.column width=60%}
+> 
+> 
+> 
+> Given four points
+> 
+> - $p_1=($`age` = 50, `income` = 10000$)$
+> - $p_2=($`age` = 50, `income` = 20000$)$, $d(p_1,p_2)=10000.00$
+> - $p_3=($`age` = 60, `income` = 10000$)$, $d(p_1,p_3)=10.00$
+> - $p_4=($`age` = 60, `income` = 20000$)$, $d(p_1,p_4)=10000.00$
+> 
+> :::
+> ::: {.column width=40%}
+> 
+> ![](./img/datapreprocessing/points.svg)
+> 
+> :::
+> ::::
 
 # Feature scaling
 
-*Min-max normalization* rescales the features in $[0, b]$ (tipically $[0, 1]$)
+*Min-max normalization* rescales the features in $[a, b]$ (tipically $[0, 1]$): $x'=a+{\frac{(x-{\text{min}}(x))(b-a)}{{\text{max}}(x)-{\text{min}}(x)}}$
 
-- $x'=a+{\frac{(x-{\text{min}}(x))(b-a)}{{\text{max}}(x)-{\text{min}}(x)}}$
+*Standardization* makes the values of each feature in the data have zero-mean and unit-variance: $x'={\frac{x-{\bar {x}}}{\sigma}}$
 
-*Standardization* makes the values of each feature in the data have zero-mean and unit-variance
+*Robust scaling* is designed to be robust to outliers: $x'={\frac{x-Q_{2}(x)}{Q_{3}(x)-Q_{1}(x)}}$
 
-- $\displaystyle x'={\frac{x-{\bar {x}}}{\sigma }}$
+> :::: {.columns}
+> ::: {.column width=50%}
+> 
+> ![Before min-max normalization](./img/datapreprocessing/points.svg)
+> 
+> :::
+> ::: {.column width=50%}
+> 
+> ![After min-max normalization](./img/datapreprocessing/points_norm.svg)
+> 
+> :::
+> ::::
 
-*Robust scaling*, also known as standardization using median and interquartile range (IQR), is designed to be robust to outliers
+#
 
-- $x'={\frac{x-Q_{2}(x)}{Q_{3}(x)-Q_{1}(x)}}$
+Original Iris dataset
 
-![](./img/datapreprocessing/normalized.svg)
+:::: {.columns}
+::: {.column width=24%}
+
+![](./img/datapreprocessing/normalized-originalpetaldata-distortion-False(6).svg)
+
+:::
+::: {.column width=24%}
+
+![](./img/datapreprocessing/normalized-minmaxscaler-distortion-False(3).svg)
+
+:::
+::: {.column width=24%}
+
+![](./img/datapreprocessing/normalized-standardscaler-distortion-False(3).svg)
+
+:::
+::: {.column width=24%}
+
+![](./img/datapreprocessing/normalized-robustscaler-distortion-False(3).svg)
+
+:::
+::::
+
+Transformed Iris dataset: `petal_length*=10`, addition of 1 outlier [`petal_length`=100, `petal_width`=100]
+
+:::: {.columns}
+::: {.column width=24%}
+
+![](./img/datapreprocessing/normalized-transformedpetaldata-distortion-True(8).svg)
+
+:::
+::: {.column width=24%}
+
+![](./img/datapreprocessing/normalized-minmaxscaler-distortion-True(4).svg)
+
+:::
+::: {.column width=24%}
+
+![](./img/datapreprocessing/normalized-standardscaler-distortion-True(4).svg)
+
+:::
+::: {.column width=24%}
+
+![](./img/datapreprocessing/normalized-robustscaler-distortion-True(4).svg)
+
+:::
+::::
 
 # Integrate Data
 
