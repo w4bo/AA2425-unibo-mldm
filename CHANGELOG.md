@@ -1,3 +1,9 @@
+## [1.0.17](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.16...1.0.17) (2024-10-09)
+
+### Bug Fixes
+
+* working on the ML lab ([d101d1b](https://github.com/w4bo/AA2425-unibo-mldm/commit/d101d1b4e7157b42c288b4a867ed239693de0cfc))
+
 ## [1.0.16](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.15...1.0.16) (2024-10-09)
 
 ### Bug Fixes
