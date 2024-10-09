@@ -599,13 +599,13 @@ Transformed Iris dataset: `petal_length*=10`, addition of 1 outlier [`petal_leng
 
 # Semantic Integration vs Primary Key-based Integration
 
-| **Aspect**            | **Semantic Integration**                                  | **Primary Key-based Integration**                      |
-|-----------------------|-----------------------------------------------------------|-------------------------------------------------------|
-| *Approach*            | Based on meaning and understanding of the data.           | Based on matching unique keys (e.g., customer ID).     |
-| *Suitability*         | Ideal for heterogeneous data with different terminologies or structures. | Ideal when datasets have common, well-defined keys.    |
-| *Complexity*          | More complex due to the need to interpret and align meanings. | Simpler, relies on exact key matches.                 |
-| *Flexibility*         | Can integrate data with different schemas or representations. | Less flexible, requires shared primary key fields.     |
-| *Challenges*          | Requires mapping of concepts, and understanding of domain semantics. | Limited to datasets that share a key, difficult without common keys. |
+| **Aspect**   | **Semantic Integration**                                  | **Primary Key-based Integration**                      |
+|--------------|-----------------------------------------------------------|-------------------------------------------------------|
+| *Approach*   | Based on meaning and understanding of the data.           | Based on matching unique keys.     |
+| *Suitability*| Data with heterogeneous terminologies or structures. | Datasets have common, well-defined keys.    |
+| *Complexity* | Complex to interpret and align meanings. | Simpler, relies on exact key matches.                 |
+| *Flexibility*| Integrate data with different schemas/representations. | Less flexible, requires shared primary key fields.     |
+| *Challenges* | Requires mapping of concepts and domain semantics. | Limited to datasets that share a key. |
 
 # Aggregation
 
