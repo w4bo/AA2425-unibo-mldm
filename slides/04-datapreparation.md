@@ -264,7 +264,7 @@ The data analyst could undertake operations such as developing entirely new reco
 
 > A derived attribute is `area` = `length` x `width`.
 >
-> A derived attribute is `income per head` which could be easier to use than `income per household`. 
+> A derived attribute is `income_per_head` which could be easier to use than `income_per_household`. 
 
 *Binning* may be necessary to *transform ranges to symbolic fields* (e.g., ages to age bands)
 
@@ -349,6 +349,8 @@ Categorical features can be *nominal* or *ordinal*.
 
 # The Likert scale
 
+The Likert scale is widely used in social work research, and is commonly constructed with four to seven points.
+
 - `[*, **, ***, ****, *****]`
 - `[1, 2, 3, 4, 5]`
 
@@ -356,11 +358,9 @@ What about averaging?
 
 # The Likert scale
 
-    Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn't necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn't necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.
-    
-The Likert scale is widely used in social work research, and is commonly constructed with four to seven points.
-
 It is usually treated as an interval scale, but strictly speaking it is an ordinal scale, where arithmetic operations cannot be conducted [@wu2017can]
+
+    Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn't necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn't necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.
 
 # Feature encoding: one-hot encoding
 
@@ -429,7 +429,7 @@ See also the [year 2000 problem](https://en.wikipedia.org/wiki/Year_2000_problem
 - Since the range of values of raw data varies widely, in some machine learning algorithms objective functions will not work properly without normalization.
 - If one of the features has a broad range of values, the distance will be governed by this particular feature.
 - For example, many classifiers calculate the distance between two points by the Euclidean distance.
-    - $d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{n}-q_{n})^{2}}}$
+    - $d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{n}-q_{n})^{2}}} = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}$
     - Consider a dataset with two features `years` $\in [0, 120]$ and `income` $\in [0, 100000]$
     - Given four points
         - $p_1=($`years` = 50, `income` = 10000$)$
