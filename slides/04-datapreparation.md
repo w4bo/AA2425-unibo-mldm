@@ -305,7 +305,7 @@ The data analyst could undertake operations such as developing entirely new reco
 
 Categorical features can be *nominal* or *ordinal*.
 
-- *Nominal features* (e.g., colors) don’t have a defined ranking or inherent order.
+- *Nominal features* (e.g., colors) do not have a defined ranking or inherent order.
 - *Ordinal features* (e.g., size) have an inherent order or ranking
 
 *One hot encoding* and *ordinal encoding* are the most common methods to transform categorical variables into numerical features. 
@@ -358,9 +358,9 @@ What about averaging?
 
     Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn't necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn't necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.
     
-The Likert scale is widely used in social work research, and is commonly constructed with four to seven points. It is usually treated as an interval scale, but strictly speaking it is an ordinal scale, where arithmetic operations cannot be conducted [1]
+The Likert scale is widely used in social work research, and is commonly constructed with four to seven points.
 
-[1] Wu, Huiping, and Shing-On Leung. "Can Likert scales be treated as interval scales?—A simulation study." Journal of social service research 43.4 (2017): 527-532.
+It is usually treated as an interval scale, but strictly speaking it is an ordinal scale, where arithmetic operations cannot be conducted [@wu2017can]
 
 # Feature encoding: one-hot encoding
 
