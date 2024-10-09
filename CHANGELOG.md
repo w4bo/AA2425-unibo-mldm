@@ -1,3 +1,10 @@
+## [1.0.18](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.17...1.0.18) (2024-10-09)
+
+### Bug Fixes
+
+* data preparation after class ([a5b06d0](https://github.com/w4bo/AA2425-unibo-mldm/commit/a5b06d00ed974b448826823c688338e597783602))
+* data preparation after class ([acddf8b](https://github.com/w4bo/AA2425-unibo-mldm/commit/acddf8bfc7d328e308d04ee4f0393dc2e02a5331))
+
 ## [1.0.17](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.16...1.0.17) (2024-10-09)
 
 ### Bug Fixes
