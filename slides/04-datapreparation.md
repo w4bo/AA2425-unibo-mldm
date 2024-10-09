@@ -773,6 +773,8 @@ Lasso performs automatic feature selection.
 
 The optimal $\lambda$ can be determined with cross-validation techniques.
 
+See also [@katrutsa2017comprehensive] [@chan2022mitigating]
+
 :::
 ::: {.column width="34%"}
 
@@ -782,11 +784,6 @@ The optimal $\lambda$ can be determined with cross-validation techniques.
 
 :::
 ::::
-
-[1] Katrutsa, Alexandr, and Vadim Strijov. "Comprehensive study of feature selection methods to solve multicollinearity problem according to evaluation criteria." Expert Systems with Applications 76 (2017): 1-11.
-
-[2] Chan, Jireh Yi-Le, et al. "Mitigating the multicollinearity problem and its machine learning approach: a review." Mathematics 10.8 (2022): 1283.
-
 
 # Feature extraction (or feature projection)
 
