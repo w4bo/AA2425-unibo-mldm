@@ -780,7 +780,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <blockquote>
 <p>A derived attribute is <code>area</code> = <code>length</code> x <code>width</code>.</p>
-<p>A derived attribute is <code>income per head</code> which could be easier to use than <code>income per household</code>.</p>
+<p>A derived attribute is <code>income_per_head</code> which could be easier to use than <code>income_per_household</code>.</p>
 </blockquote>
 <p><em>Binning</em> may be necessary to <em>transform ranges to symbolic fields</em> (e.g., ages to age bands)</p>
 <div class="columns">
@@ -863,7 +863,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>Categorical features can be <em>nominal</em> or <em>ordinal</em>.</p>
 <ul>
-<li><em>Nominal features</em> (e.g., colors) don’t have a defined ranking or inherent order.</li>
+<li><em>Nominal features</em> (e.g., colors) do not have a defined ranking or inherent order.</li>
 <li><em>Ordinal features</em> (e.g., size) have an inherent order or ranking</li>
 </ul>
 <p><em>One hot encoding</em> and <em>ordinal encoding</em> are the most common methods to transform categorical variables into numerical features.</p>
@@ -951,6 +951,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="the-likert-scale" class="title-slide slide level1 center">
 <h1>The Likert scale</h1>
+<p>The Likert scale is widely used in social work research, and is commonly constructed with four to seven points.</p>
 <ul>
 <li><code>[*, **, ***, ****, *****]</code></li>
 <li><code>[1, 2, 3, 4, 5]</code></li>
@@ -960,9 +961,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="the-likert-scale-1" class="title-slide slide level1 center">
 <h1>The Likert scale</h1>
+<p>It is usually treated as an interval scale, but strictly speaking it is an ordinal scale, where arithmetic operations cannot be conducted <span class="citation" data-cites="wu2017can">(<a href="#/references" role="doc-biblioref" onclick="">Wu and Leung 2017</a>)</span></p>
 <pre><code>Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn't necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn't necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.</code></pre>
-<p>The Likert scale is widely used in social work research, and is commonly constructed with four to seven points. It is usually treated as an interval scale, but strictly speaking it is an ordinal scale, where arithmetic operations cannot be conducted [1]</p>
-<p>[1] Wu, Huiping, and Shing-On Leung. “Can Likert scales be treated as interval scales?—A simulation study.” Journal of social service research 43.4 (2017): 527-532.</p>
 </section>
 
 <section>
@@ -1083,7 +1083,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>If one of the features has a broad range of values, the distance will be governed by this particular feature.</li>
 <li>For example, many classifiers calculate the distance between two points by the Euclidean distance.
 <ul>
-<li><span class="math inline">\(d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{n}-q_{n})^{2}}}\)</span></li>
+<li><span class="math inline">\(d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{n}-q_{n})^{2}}} = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}\)</span></li>
 <li>Consider a dataset with two features <code>years</code> <span class="math inline">\(\in [0, 120]\)</span> and <code>income</code> <span class="math inline">\(\in [0, 100000]\)</span></li>
 <li>Given four points
 <ul>
@@ -1755,6 +1755,9 @@ Liu, Fei Tony, Kai Ming Ting, and Zhi-Hua Zhou. 2008. <span>“Isolation Forest.
 </div>
 <div id="ref-shearer2000crisp" class="csl-entry" role="listitem">
 Shearer, Colin. 2000. <span>“The CRISP-DM Model: The New Blueprint for Data Mining.”</span> <em>Journal of Data Warehousing</em> 5 (4): 13–22.
+</div>
+<div id="ref-wu2017can" class="csl-entry" role="listitem">
+Wu, Huiping, and Shing-On Leung. 2017. <span>“Can Likert Scales Be Treated as Interval Scales?—a Simulation Study.”</span> <em>Journal of Social Service Research</em> 43 (4): 527–32.
 </div>
 </div>
 </section>
