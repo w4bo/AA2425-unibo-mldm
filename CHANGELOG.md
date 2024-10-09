@@ -1,3 +1,40 @@
+## [1.0.15](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.14...1.0.15) (2024-10-09)
+
+### Dependency updates
+
+* **deps:** update dependency flaml to v2.3.0 ([eaf4d76](https://github.com/w4bo/AA2425-unibo-mldm/commit/eaf4d7626a8d1374e5ed18404043ad820241c5ed))
+* **deps:** update dependency flaml to v2.3.1 ([a7e3f4f](https://github.com/w4bo/AA2425-unibo-mldm/commit/a7e3f4fb7f9494aa36ad91679eca0bab709ed968))
+* **deps:** update dependency jupyter to v1.1.1 ([19ea4b4](https://github.com/w4bo/AA2425-unibo-mldm/commit/19ea4b4de1ee831cf02c881b3b80b385fb62d192))
+* **deps:** update dependency jupyter to v1.1.1 ([38dc3c3](https://github.com/w4bo/AA2425-unibo-mldm/commit/38dc3c33a1fa0236f247239a62ec5b9ccc6798db))
+* **deps:** update dependency notebook to v7.2.2 [security] ([76bf403](https://github.com/w4bo/AA2425-unibo-mldm/commit/76bf4031e513f03a431ee7834348c04d919daf28))
+* **deps:** update dependency openpyxl to v3.1.5 ([68fc0f0](https://github.com/w4bo/AA2425-unibo-mldm/commit/68fc0f0c27e4c951dd7fafed7c622257621db9ba))
+* **deps:** update dependency pandas to v2.2.3 ([47b7d58](https://github.com/w4bo/AA2425-unibo-mldm/commit/47b7d581fbb05729aa090efdb7fb64419044cff0))
+* **deps:** update dependency scikit-learn to v1.5.2 ([2a3d2b9](https://github.com/w4bo/AA2425-unibo-mldm/commit/2a3d2b9ea90e75b9754c6fce318f2ea44bb81fa1))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.102 ([1b37466](https://github.com/w4bo/AA2425-unibo-mldm/commit/1b37466382feed737da594a1bb1c6770b09b55a9))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.103 ([6cc2d76](https://github.com/w4bo/AA2425-unibo-mldm/commit/6cc2d767a2889cf566821a4daa16861c2d55e84f))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.104 ([980ff09](https://github.com/w4bo/AA2425-unibo-mldm/commit/980ff09970e1753641771030bcff26df4ec0d39a))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.105 ([10f33ed](https://github.com/w4bo/AA2425-unibo-mldm/commit/10f33ed9747aa88aa61714f72489d0fd46d6d5cc))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.106 ([2d81d5c](https://github.com/w4bo/AA2425-unibo-mldm/commit/2d81d5c5c8189b97ad5842595aeb09bc705e4325))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.107 ([44bcc8a](https://github.com/w4bo/AA2425-unibo-mldm/commit/44bcc8a9d61a7d68375c168a1fa99f6e44ae5f44))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.108 ([2e55cea](https://github.com/w4bo/AA2425-unibo-mldm/commit/2e55cea8fc5e3adcfba240c1b98ba9b27b219254))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.109 ([88a7a5d](https://github.com/w4bo/AA2425-unibo-mldm/commit/88a7a5de9cd39f653462385066046d1f4ec5d53d))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.110 ([8415310](https://github.com/w4bo/AA2425-unibo-mldm/commit/8415310713d3d8d12dc8cad73285f386c837109c))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.111 ([23cff87](https://github.com/w4bo/AA2425-unibo-mldm/commit/23cff879435712b60b53765921e557d0dd0d20f1))
+* **deps:** update node.js to 20.18 ([bb0e636](https://github.com/w4bo/AA2425-unibo-mldm/commit/bb0e636b5d4de7b57a6469d5aadfa2260d2d0584))
+
+### Bug Fixes
+
+* data preparation ([94e647b](https://github.com/w4bo/AA2425-unibo-mldm/commit/94e647b01f46d96f58028332389070ead6c45502))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v4.0.4 ([0b6c176](https://github.com/w4bo/AA2425-unibo-mldm/commit/0b6c17686e3ce8be4e413fb5941edc6b9a12ba3a))
+* **deps:** update dependency ubuntu to v24 ([c03fc3e](https://github.com/w4bo/AA2425-unibo-mldm/commit/c03fc3e683c2d27bee5751b86ffbc90910b2dcd0))
+* **deps:** update jamesives/github-pages-deploy-action action to v4.6.4 ([d3790d1](https://github.com/w4bo/AA2425-unibo-mldm/commit/d3790d1ebe14e116f8cb7a04c34a0dd51d6572b3))
+* **deps:** update jamesives/github-pages-deploy-action action to v4.6.6 ([429d063](https://github.com/w4bo/AA2425-unibo-mldm/commit/429d063c2e0188a4cbf1cb86457b4db079957a2c))
+* **deps:** update jamesives/github-pages-deploy-action action to v4.6.7 ([391e3bb](https://github.com/w4bo/AA2425-unibo-mldm/commit/391e3bba0d085c3faf7c6d117444cbc1dcd7e332))
+* **deps:** update jamesives/github-pages-deploy-action action to v4.6.8 ([0015770](https://github.com/w4bo/AA2425-unibo-mldm/commit/0015770db5e82e81f041be8354fcc257059ccf03))
+
 ## [1.0.14](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.13...1.0.14) (2024-08-29)
 
 ### Bug Fixes
