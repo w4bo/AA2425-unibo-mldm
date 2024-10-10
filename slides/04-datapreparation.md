@@ -184,9 +184,13 @@ The data analyst must
 
 # Skewed distributions
 
-![image](https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png)
+![](https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png)
 
 What problems can arise with skewed distributions?
+
+#
+
+![](./img/datapreprocessing/imputation_100.svg)
 
 # Outlier removal
 
@@ -421,7 +425,6 @@ See also the [year 2000 problem](https://en.wikipedia.org/wiki/Year_2000_problem
 
 ![Y2K](https://upload.wikimedia.org/wikipedia/commons/f/fb/Bug_de_l%27an_2000.jpg)
 
-
 # Feature scaling (or data normalization)
 
 **Feature scaling** is a method used to normalize the range of independent variables or features of data
@@ -645,6 +648,12 @@ Pay attention to the *aggregation operator*!
 - Wrong: average of averages
     - $avg(avg(1, 2), avg(3, 4, 5)) = avg(1.5, 4) = 2.75$
     - $avg(1, 2, 3, 4, 5) = 3$
+
+# 
+
+![](./img/datapreprocessing/imputation_100.svg)
+
+![](./img/datapreprocessing/imputation_20.svg)
 
 # Format Data
 
