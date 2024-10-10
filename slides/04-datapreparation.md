@@ -366,6 +366,16 @@ It is usually treated as an interval scale, but strictly speaking it is an ordin
 
     Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn't necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn't necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.
 
+# J-shaped distribution
+
+![](./img/datapreprocessing/reviews.png)
+
+People tend to write reviews only when they are either extremely satisfied or extremely unsatisfied.
+
+People who feel the product is average might not be bothered to write a review
+
+[@hu2009overcoming] 
+
 # Feature encoding: one-hot encoding
 
 **One-hot encoding (OHE)** replaces categorical variables by *a set of binary variables* (each representing a category in the variable)
