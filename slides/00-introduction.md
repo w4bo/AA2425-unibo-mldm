@@ -23,6 +23,7 @@ Research topics
 [BIG (Business Intelligence Group)](https://big.csr.unibo.it/)
 
 - w/ Prof. Golfarelli, Prof. Gallinucci
+- You can check our open projects [here](https://big-unibo.github.io/thesis/)
 
 # Table of Contents and Course Goals
 
