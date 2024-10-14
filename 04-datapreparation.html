@@ -1171,6 +1171,111 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
+<section id="aggregation" class="title-slide slide level1 center">
+<h1>Aggregation</h1>
+<p><strong>Aggregation</strong> computes new values by summarizing information from multiple records and/or tables.</p>
+<blockquote>
+<p>For example, converting a table of product purchases, where there is one record for each purchase, into a new table where there is one record for each store.</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:49%;">
+<blockquote>
+<p>Before aggregation (detailed data)</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>ProductId</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>P1</td>
+<td>750</td>
+</tr>
+<tr class="even">
+<td>S2</td>
+<td>P1</td>
+<td>250</td>
+</tr>
+<tr class="odd">
+<td>S3</td>
+<td>P2</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div><div class="column" style="width:49%;">
+<blockquote>
+<p>After aggregation (sum sales by store)</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>S2</td>
+<td>1500</td>
+</tr>
+<tr class="odd">
+<td>S3</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
+<p>Pay attention to the <em>aggregation operator</em>!</p>
+<ul>
+<li>Correct: sum of sums
+<ul>
+<li><span class="math inline">\((1 + 2) + (3 + 4) = 1 + 2 + 3 + 4 = 10\)</span></li>
+</ul></li>
+<li>Wrong: average of averages
+<ul>
+<li><span class="math inline">\(avg(avg(1, 2), avg(3, 4, 5)) = avg(1.5, 4) = 2.75\)</span></li>
+<li><span class="math inline">\(avg(1, 2, 3, 4, 5) = 3\)</span></li>
+</ul></li>
+</ul>
+</section>
+
+<section id="binning" class="title-slide slide level1 center">
+<h1>Binning</h1>
+<p><strong>Data binning</strong> is a data pre-processing technique that reduces the effects of minor observation errors.</p>
+<ul>
+<li>The original values which fall into a given small interval (bin) are replaced by a value representative of that interval, often a central value</li>
+<li>Histograms are an example of data binning used in order to observe underlying frequency distributions</li>
+</ul>
+<p><em>Equal-width</em> binning: divides the range of values into equal-sized intervals or bins.</p>
+<ul>
+<li>It can create empty or sparse bins, especially if the data is skewed or has outliers.</li>
+<li>For example, if the values range from 0 to 100, and we want 10 bins, each bin will have a width of 10</li>
+</ul>
+<p><em>Equal-frequency</em> binning divides the values into bins that have the same number of observations or frequency.</p>
+<ul>
+<li>It creates balanced bins that can handle skewed data and outliers better.</li>
+<li>For example, if we have 100 observations and we want 10 bins, each bin will have 10 observations.</li>
+<li>The disadvantage is that it can distort the distribution of the data and create irregular bin widths.</li>
+</ul>
+</section>
+
+<section id="section-4" class="title-slide slide level1 center">
+<h1></h1>
+<p><img data-src="./img/datapreprocessing/imputation_100.svg"></p>
+<p><img data-src="./img/datapreprocessing/imputation_20.svg"></p>
+</section>
+
 <section id="integrate-data" class="title-slide slide level1 center">
 <h1>Integrate Data</h1>
 <p><strong>Integration</strong> involves <em>combining information from multiple tables</em> or records to create new records or values.</p>
@@ -1331,91 +1436,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 </tbody>
 </table>
-</section>
-
-<section id="aggregation" class="title-slide slide level1 center">
-<h1>Aggregation</h1>
-<p><strong>Aggregation</strong> computes new values by summarizing information from multiple records and/or tables.</p>
-<blockquote>
-<p>For example, converting a table of product purchases, where there is one record for each purchase, into a new table where there is one record for each store.</p>
-</blockquote>
-<div class="columns">
-<div class="column" style="width:49%;">
-<blockquote>
-<p>Before aggregation (detailed data)</p>
-<table>
-<thead>
-<tr class="header">
-<th><code>StoreId</code></th>
-<th><code>ProductId</code></th>
-<th><code>sales</code></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>S1</td>
-<td>P1</td>
-<td>750</td>
-</tr>
-<tr class="even">
-<td>S2</td>
-<td>P1</td>
-<td>250</td>
-</tr>
-<tr class="odd">
-<td>S3</td>
-<td>P2</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-</div><div class="column" style="width:49%;">
-<blockquote>
-<p>After aggregation (sum sales by store)</p>
-<table>
-<thead>
-<tr class="header">
-<th><code>StoreId</code></th>
-<th><code>sales</code></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>S1</td>
-<td>1000</td>
-</tr>
-<tr class="even">
-<td>S2</td>
-<td>1500</td>
-</tr>
-<tr class="odd">
-<td>S3</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-</div>
-</div>
-<p>Pay attention to the <em>aggregation operator</em>!</p>
-<ul>
-<li>Correct: sum of sums
-<ul>
-<li><span class="math inline">\((1 + 2) + (3 + 4) = 1 + 2 + 3 + 4 = 10\)</span></li>
-</ul></li>
-<li>Wrong: average of averages
-<ul>
-<li><span class="math inline">\(avg(avg(1, 2), avg(3, 4, 5)) = avg(1.5, 4) = 2.75\)</span></li>
-<li><span class="math inline">\(avg(1, 2, 3, 4, 5) = 3\)</span></li>
-</ul></li>
-</ul>
-</section>
-
-<section id="section-4" class="title-slide slide level1 center">
-<h1></h1>
-<p><img data-src="./img/datapreprocessing/imputation_100.svg"></p>
-<p><img data-src="./img/datapreprocessing/imputation_20.svg"></p>
 </section>
 
 <section id="format-data" class="title-slide slide level1 center">
