@@ -986,4 +986,8 @@ These are *some* of the questions of the exam
 4. Explain the role of feature engineering in improving the performance of machine learning algorithms. Give examples of techniques used in feature engineering.
 5. Compare and contrast different methods of handling categorical data, such as label encoding and one-hot encoding. What are the pros and cons of each?
 
+# Wooclap
+
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen src="https://app.wooclap.com/QSKSKM/questionnaires/670d494b9fbe10d48eaf9ea4" style="min-height: 550px; min-width: 300px" width="100%"></iframe>
+
 # References
