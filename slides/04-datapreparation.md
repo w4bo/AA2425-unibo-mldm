@@ -540,6 +540,69 @@ Transformed Iris dataset: `petal_length*=10`, addition of 1 outlier [`petal_leng
 :::
 ::::
 
+# Aggregation
+
+**Aggregation** computes new values by summarizing information from multiple records and/or tables.
+
+> For example, converting a table of product purchases, where there is one record for each purchase, into a new table where there is one record for each store.
+
+:::: {.columns}
+::: {.column width="49%"}
+
+> Before aggregation (detailed data)
+>
+> | `StoreId` | `ProductId` |`sales` |
+> |-----------|-------------|--------|
+> |S1         | P1 | 750   |
+> |S2         | P1 | 250 |
+> |S3         | P2 | ...  |
+
+:::
+::: {.column width="49%"}
+
+> After aggregation (sum sales by store)
+>
+> | `StoreId` |`sales` |
+> |-----------|--------|
+> |S1         | 1000   |
+> |S2         | 1500 |
+> |S3         | ...  | 
+
+:::
+::::
+
+Pay attention to the *aggregation operator*!
+
+- Correct: sum of sums
+    - $(1 + 2) + (3 + 4) = 1 + 2 + 3 + 4 = 10$
+- Wrong: average of averages
+    - $avg(avg(1, 2), avg(3, 4, 5)) = avg(1.5, 4) = 2.75$
+    - $avg(1, 2, 3, 4, 5) = 3$
+
+# Binning
+
+**Data binning** is a data pre-processing technique that reduces the effects of minor observation errors.
+
+- The original values which fall into a given small interval (bin) are replaced by a value representative of that interval, often a central value
+- Histograms are an example of data binning used in order to observe underlying frequency distributions
+
+*Equal-width* binning: divides the range of values into equal-sized intervals or bins.
+
+- It can create empty or sparse bins, especially if the data is skewed or has outliers.
+- For example, if the values range from 0 to 100, and we want 10 bins, each bin will have a width of 10
+
+*Equal-frequency* binning divides the values into bins that have the same number of observations or frequency.
+
+- It creates balanced bins that can handle skewed data and outliers better.
+- For example, if we have 100 observations and we want 10 bins, each bin will have 10 observations.
+- The disadvantage is that it can distort the distribution of the data and create irregular bin widths.
+
+#
+
+![](./img/datapreprocessing/imputation_100.svg)
+
+![](./img/datapreprocessing/imputation_20.svg)
+
 # Integrate Data
 
 **Integration** involves *combining information from multiple tables* or records to create new records or values.
@@ -619,51 +682,6 @@ Transformed Iris dataset: `petal_length*=10`, addition of 1 outlier [`petal_leng
 | *Complexity* | Complex to interpret and align meanings. | Simpler, relies on exact key matches.                 |
 | *Flexibility*| Integrate data with different schemas/representations. | Less flexible, requires shared primary key fields.     |
 | *Challenges* | Requires mapping of concepts and domain semantics. | Limited to datasets that share a key. |
-
-# Aggregation
-
-**Aggregation** computes new values by summarizing information from multiple records and/or tables.
-
-> For example, converting a table of product purchases, where there is one record for each purchase, into a new table where there is one record for each store.
-
-:::: {.columns}
-::: {.column width="49%"}
-
-> Before aggregation (detailed data)
->
-> | `StoreId` | `ProductId` |`sales` |
-> |-----------|-------------|--------|
-> |S1         | P1 | 750   |
-> |S2         | P1 | 250 |
-> |S3         | P2 | ...  |
-
-:::
-::: {.column width="49%"}
-
-> After aggregation (sum sales by store)
->
-> | `StoreId` |`sales` |
-> |-----------|--------|
-> |S1         | 1000   |
-> |S2         | 1500 |
-> |S3         | ...  | 
-
-:::
-::::
-
-Pay attention to the *aggregation operator*!
-
-- Correct: sum of sums
-    - $(1 + 2) + (3 + 4) = 1 + 2 + 3 + 4 = 10$
-- Wrong: average of averages
-    - $avg(avg(1, 2), avg(3, 4, 5)) = avg(1.5, 4) = 2.75$
-    - $avg(1, 2, 3, 4, 5) = 3$
-
-# 
-
-![](./img/datapreprocessing/imputation_100.svg)
-
-![](./img/datapreprocessing/imputation_20.svg)
 
 # Format Data
 
