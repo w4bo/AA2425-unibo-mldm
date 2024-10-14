@@ -1,3 +1,9 @@
+## [1.0.20](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.19...1.0.20) (2024-10-14)
+
+### Bug Fixes
+
+* add binning ([a453637](https://github.com/w4bo/AA2425-unibo-mldm/commit/a4536375474b09547b92e34a3478d96ad76ea429))
+
 ## [1.0.19](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.18...1.0.19) (2024-10-10)
 
 ### Bug Fixes
