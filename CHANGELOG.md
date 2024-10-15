@@ -1,3 +1,10 @@
+## [1.0.21](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.20...1.0.21) (2024-10-15)
+
+### Bug Fixes
+
+* add wooclap ([b9cce56](https://github.com/w4bo/AA2425-unibo-mldm/commit/b9cce56d9e444d6539f32a386a8fc3c142620466))
+* preparation ([98c5912](https://github.com/w4bo/AA2425-unibo-mldm/commit/98c59122e35beb7f8ce72327ce2b4bee051b5103))
+
 ## [1.0.20](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.19...1.0.20) (2024-10-14)
 
 ### Bug Fixes
