@@ -1,3 +1,11 @@
+## [1.0.23](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.22...1.0.23) (2024-10-15)
+
+### Bug Fixes
+
+* encoding ([31211df](https://github.com/w4bo/AA2425-unibo-mldm/commit/31211df5f61aec6811ab06723aa3c80b56ccc33c))
+* image caption ([37953f0](https://github.com/w4bo/AA2425-unibo-mldm/commit/37953f014dc30e713e114cce6b35069651b64b27))
+* lab 0 ([7951c81](https://github.com/w4bo/AA2425-unibo-mldm/commit/7951c818de11b1f7a466ce5024d75188942995a3))
+
 ## [1.0.22](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.21...1.0.22) (2024-10-15)
 
 ### Bug Fixes
