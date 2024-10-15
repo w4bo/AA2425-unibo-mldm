@@ -577,21 +577,21 @@ Pay attention to the *aggregation operator*!
 
 # Binning
 
-**Data binning** is a data pre-processing technique that reduces the effects of minor observation errors.
+**Data binning** is a data pre-processing technique that reduces the effects of minor observation errors
 
-- The original values which fall into a given small interval (bin) are replaced by a value representative of that interval, often a central value
+- The original values which fall into a given interval (bin) are replaced by a central value representative of that interval 
 - Histograms are an example of data binning used in order to observe underlying frequency distributions
 
-*Equal-width* binning: divides the range of values into equal-sized intervals or bins.
+*Equal-width*: divide the range of values into equal-sized intervals or bins
 
-- It can create empty or sparse bins, especially if the data is skewed or has outliers.
 - For example, if the values range from 0 to 100, and we want 10 bins, each bin will have a width of 10
+- It can create empty or sparse bins, especially if the data is skewed or has outliers
 
-*Equal-frequency* binning divides the values into bins that have the same number of observations or frequency.
+*Equal-frequency*: divide the values into bins that have the same number of observations or frequency
 
-- It creates balanced bins that can handle skewed data and outliers better.
-- For example, if we have 100 observations and we want 10 bins, each bin will have 10 observations.
-- The disadvantage is that it can distort the distribution of the data and create irregular bin widths.
+- For example, if we have 100 observations and we want 10 bins, each bin will have 10 observations
+- It creates balanced bins that can handle skewed data and outliers better
+- The disadvantage is that it can distort the distribution of the data and create irregular bin widths
 
 #
 
@@ -792,7 +792,7 @@ Feature selection approaches are characterized by
 
 > Compute variance
 >
-> $VAR($`StoreId`$)=0.67$
+> $VAR($`StoreId`$)=0.67$ **(?)**
 >
 > $VAR($`sales`$)=55555.56$
 >
