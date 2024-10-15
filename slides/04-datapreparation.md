@@ -450,8 +450,6 @@ See also the [year 2000 problem](https://en.wikipedia.org/wiki/Year_2000_problem
 > :::: {.columns}
 > ::: {.column width=60%}
 > 
-> 
-> 
 > Given four points
 > 
 > - $p_1=($`age` = 50, `income` = 10000$)$
@@ -612,7 +610,6 @@ Pay attention to the *aggregation operator*!
 > For instance, a retail chain has one table with information about each store's general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from the previous year), and another table with information about the demographics of the surrounding area.
 >
 > These tables can be merged together into a new table with one record for each store.
->
 
 
 :::: {.columns}
@@ -943,12 +940,12 @@ Iris contains 4 features, we cannot plot it directly
 
 Feature Relevance for 3 Components:
 
-| Feature             | PC 1  | PC 2  | PC 3  |
-|---------------------|-------|-------|-------|
-| Sepal Length (cm)    | 0.361 | 0.657 | -0.582|
-| Sepal Width (cm)     | -0.085| 0.730 | 0.598 |
-| Petal Length (cm)    | 0.857 | -0.173| 0.076 |
-| Petal Width (cm)     | 0.358 | -0.075| 0.546 |
+| Feature           | PC 1  | PC 2  | PC 3  |
+|-------------------|-------|-------|-------|
+| Sepal Length (cm) | 0.361 | 0.657 | -0.582|
+| Sepal Width (cm)  | -0.085| 0.730 | 0.598 |
+| Petal Length (cm) | 0.857 | -0.173| 0.076 |
+| Petal Width (cm)  | 0.358 | -0.075| 0.546 |
 
 :::
 ::::
