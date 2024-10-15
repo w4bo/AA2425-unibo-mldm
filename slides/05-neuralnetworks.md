@@ -34,7 +34,7 @@ Feature extraction requires human intervention.
   * *Networks* since neurons are connected through each other
   * Several scientific studies reported the structure of the biological neuron:
 
-![](./img/neuralnetworks/3 Model52.png)
+![Biological neuron](./img/neuralnetworks/3 Model52.png)
 
 - The axon primarily carries nerve signals away from the soma (from left to right)
 - Cell body: this is where signals are «aggregated»
@@ -57,7 +57,7 @@ Feature extraction requires human intervention.
 :::
 ::: {.column width="50%"}
 
-![](./img/neuralnetworks/3 Model53.png)
+![Artificial neuron](./img/neuralnetworks/3 Model53.png)
 
 :::
 ::::
@@ -69,22 +69,20 @@ Activation functions define the output of the neuron given an input or set of in
 * They are a sort of switches of the artificial neuron.
 * They output a small value for small inputs, and a larger value if its inputs exceed a threshold.
 
-![](./img/neuralnetworks/3 Model55.png)
-
-See also [Activation Functions](https://medium.com/@shrutijadon/survey-on-activation-functions-for-deep-learning-9689331ba092)
+![[Activation Functions](https://medium.com/@shrutijadon/survey-on-activation-functions-for-deep-learning-9689331ba092)](./img/neuralnetworks/3 Model55.png)
 
 # An example of a working AN
 
 > Will I pass the Machine Learning exam?
 >
->![](./img/neuralnetworks/slide54.png)
+> ![Example of neuron](./img/neuralnetworks/slide54.png)
 
 # Another example of a working AN
 
 :::: {.columns}
 ::: {.column width="60%"}
 
-![](./img/neuralnetworks/9.png)
+![Example of neuron](./img/neuralnetworks/9.png)
 
 $y' = \begin{cases}1, ~if~ 0.3x_1 + 0.3x_2 + 0.3x_3 -0.4 > 0\\-1, ~if~ 0.3x_1 + 0.3x_2 + 0.3x_3 -0.4 < 0\end{cases}$
 
@@ -110,7 +108,7 @@ $y' = \begin{cases}1, ~if~ 0.3x_1 + 0.3x_2 + 0.3x_3 -0.4 > 0\\-1, ~if~ 0.3x_1 + 
 :::: {.columns}
 ::: {.column width="60%"}
 
-![](./img/neuralnetworks/43 - AI ANN2.png) 
+![Boolean functions](./img/neuralnetworks/43 - AI ANN2.png) 
 
 :::
 ::: {.column width="40%"}
@@ -158,6 +156,7 @@ $y' = \begin{cases}1, ~if~ 0.3x_1 + 0.3x_2 + 0.3x_3 -0.4 > 0\\-1, ~if~ 0.3x_1 + 
 
 :::
 ::::
+
 # Linear vs Non-linear problems
 
 * Unfortunately, a single AN can solve only linear problems!
@@ -165,7 +164,7 @@ $y' = \begin{cases}1, ~if~ 0.3x_1 + 0.3x_2 + 0.3x_3 -0.4 > 0\\-1, ~if~ 0.3x_1 + 
   * It is not so easy, since this introduces several mathematical problems
   * Besides, we greatly improve the computational load
 
-![](./img/neuralnetworks/3 Model56.png)
+![Linear vs Non-linear](./img/neuralnetworks/3 Model56.png)
 
 # Artificial Neural Networks
 
@@ -185,9 +184,9 @@ $y' = \begin{cases}1, ~if~ 0.3x_1 + 0.3x_2 + 0.3x_3 -0.4 > 0\\-1, ~if~ 0.3x_1 + 
 :::
 ::: {.column width="30%"}
 
-![](./img/neuralnetworks/56a.png)
+![Multiple layers](./img/neuralnetworks/56a.png)
 
-![](./img/neuralnetworks/56b.png)
+![Biological layers](./img/neuralnetworks/56b.png)
 
 :::
 ::::
@@ -197,7 +196,7 @@ $y' = \begin{cases}1, ~if~ 0.3x_1 + 0.3x_2 + 0.3x_3 -0.4 > 0\\-1, ~if~ 0.3x_1 + 
 :::: {.columns}
 ::: {.column width="70%"}
 
-* **Feedforward**:
+* **Feed forward**:
   * The connections connect the neurons of one level with the neurons of the next level
   * Backward connections or connections to the same level are not allowed
   * It is by far the most used type of network.
@@ -209,14 +208,17 @@ $y' = \begin{cases}1, ~if~ 0.3x_1 + 0.3x_2 + 0.3x_3 -0.4 > 0\\-1, ~if~ 0.3x_1 + 
 :::
 ::: {.column width="30%"}
 
-![](./img/neuralnetworks/3 Model59.png)
+![Feed forward](./img/neuralnetworks/3 Model59.png)
 
-![](./img/neuralnetworks/3 Model60.png)
+![Recurrent](./img/neuralnetworks/3 Model60.png)
 
 :::
 ::::
 
-# Neural Networks training
+# Neural networks training
+
+:::: {.columns}
+::: {.column width="70%"}
 
 * General considerations about Neural Network architectures:
   * Greater number of hidden layers (therefore neurons) → better performance
@@ -224,37 +226,25 @@ $y' = \begin{cases}1, ~if~ 0.3x_1 + 0.3x_2 + 0.3x_3 -0.4 > 0\\-1, ~if~ 0.3x_1 + 
   * Greater number of hidden layers (therefore neurons) → greater computational load
 * How is it possible to train a neural network?
   * Training a neural network is extremely complicated, but we can use specific frameworks:
-  * The same happens in Machine Learning, in which we can use the *Scikit-Learn* library to train our own classifiers.
+  * The same happens in Machine Learning, in which we can use the *scikit-Learn* library to train our own classifiers.
 
-:::: {.columns}
-::: {.column width="33%"}
+
+
+:::
+::: {.column width="30%"}
 
 ![](./img/neuralnetworks/3 Model61.png)
 
-:::
-::: {.column width="33%"}
-
 ![](./img/neuralnetworks/3 Model62.png)
-
-:::
-::: {.column width="33%"}
 
 ![](./img/neuralnetworks/3 Model63.png)
 
 :::
 ::::
 
-#
+# Neural networks training: intuition
 
-Do you remember the example of how we learn to play the guitar?
-
-![](./img/neuralnetworks/3 Model64.png)
-
-# Neural Networks training: intuition
-
-The same happens with Neural Networks.
-
-![](./img/neuralnetworks/3 Model65.png)
+![Training](./img/neuralnetworks/3 Model65.png)
 
 # DNN Training
 
@@ -284,7 +274,7 @@ Then, we can use *softmax* layer that takes an *n*-dimensional vector of real nu
 - Softmax is a continuously differentiable function.
 - The Softmax activation function determines the final probability value of each class $p_i = \frac{e^{a_k}}{\sum_{k=1}^n e^{a_k}}$
 
-![](./img/neuralnetworks/3 Model66.png)
+![Softmax](./img/neuralnetworks/3 Model66.png)
 
 See also:
 
@@ -314,7 +304,7 @@ After some iterations...
 
 $CCE = -log_2 0.0938 = 0.0923$
 
-*The loss function is decreased!*
+*The loss function has decreased!*
 
 :::
 ::::
@@ -325,7 +315,7 @@ $CCE = -log_2 0.0938 = 0.0923$
 
 How to minimize the loss?
 
-![](./img/neuralnetworks/3 Model53.png)
+![Choosing the learning rate](./img/neuralnetworks/3 Model53.png)
 
 Adjusting (change) the weights and the bias of every neuron
 
@@ -334,7 +324,7 @@ Adjusting (change) the weights and the bias of every neuron
 # DNN Training
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="60%"}
 
 Different optimizers:
 
@@ -352,11 +342,11 @@ Different optimizers:
   * Computationally efficient, has little memory requirement
 
 :::
-::: {.column width="50%"}
+::: {.column width="40%"}
 
-![](./img/neuralnetworks/3 Model71.png)
+![Vanilla Gradient Descent](./img/neuralnetworks/3 Model71.png)
 
-![](./img/neuralnetworks/3 Model72.jpg)
+![Stochastic Gradient Descent](./img/neuralnetworks/3 Model72.jpg)
 
 :::
 ::::
@@ -443,7 +433,7 @@ It proceeds backward w.r.t the flow of computations performed to compute the los
 :::
 ::: {.column width="50%"}
 
-![](./img/neuralnetworks/3 Model76.png)
+![Learning rate](./img/neuralnetworks/3 Model76.png)
 
 The choice of the right value of the learning rate is important!
 
@@ -482,7 +472,7 @@ It is common to create line plots that show epochs along the *x*-axis and the lo
 :::
 ::: {.column width="50%"}
 
-![](./img/neuralnetworks/3 Model77.png)
+![Learning curves](./img/neuralnetworks/3 Model77.png)
 
 - Usually, at the beginning of the learning, the value of the loss function drops rapidly
 - Starting of the overfitting
@@ -518,8 +508,6 @@ sklearn.neural_network.MLPClassifier(
   * When is it better to use Machine Learning? And Deep Learning?
   * What about hardware for AI?
 
-![](./img/neuralnetworks/3 Model103.png)
-
 # How to develop an AI project?
 
 * We have seen what are the main steps necessary for the realization of an AI project
@@ -548,7 +536,7 @@ sklearn.neural_network.MLPClassifier(
 
 The superiority of DL approaches over other Machine Learning algorithms manifests itself when large (huge)  quantities of training data are available.
 
-![](./img/neuralnetworks/93.png)
+![DL vs (classical) ML](./img/neuralnetworks/93.png)
 
 # Hardware for Deep Learning
 
@@ -567,9 +555,9 @@ The superiority of DL approaches over other Machine Learning algorithms manifest
 :::
 ::: {.column width="30%"}
 
-![](./img/neuralnetworks/3 Model105.png)
+![GPUs](./img/neuralnetworks/3 Model105.png)
 
-![](./img/neuralnetworks/3 Model106.png)
+![NVIDIA](./img/neuralnetworks/3 Model106.png)
 
 :::
 ::::
@@ -626,7 +614,7 @@ The superiority of DL approaches over other Machine Learning algorithms manifest
 :::
 ::: {.column width="40%"}
 
-![](./img/neuralnetworks/3 Model108.png)
+![COLAB](./img/neuralnetworks/3 Model108.png)
 
 :::
 ::::
@@ -640,11 +628,11 @@ Examples:
 
 # Interactive demos
 
-- https://playground.tensorflow.org 
-- https://cs.stanford.edu/people/karpathy/convnetjs/ 
+- [https://playground.tensorflow.org](https://playground.tensorflow.org)
+- [https://cs.stanford.edu/people/karpathy/convnetjs/](https://cs.stanford.edu/people/karpathy/convnetjs/)
 
 # The end(?) of our AI journey
 
-![](./img/neuralnetworks/98.png)
+![AI journey](./img/neuralnetworks/98.png)
 
 # References
