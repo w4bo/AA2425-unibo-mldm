@@ -322,11 +322,10 @@ Categorical features can be *nominal* or *ordinal*.
 - Ordinal encoding is a preferred option when the categorical variable has an inherent order.
 
 > Examples include the variable `size`, with values "small", "medium", and "large".
-
-:::: {.columns}
-
-::: {.column width="49%"}
-
+>
+> :::: {.columns}
+> ::: {.column width="49%"}
+>
 > Before encoding
 >
 > | `ProductId` | `size` |
@@ -335,10 +334,10 @@ Categorical features can be *nominal* or *ordinal*.
 > |P2           | medium |
 > |P3           | large  |
 > |P4           | small  |
-
-:::
-::: {.column width="49%"}
-
+>
+> :::
+> ::: {.column width="49%"}
+>
 > After encoding (small = 0, medium = 1, large = 2)
 >
 > | `ProductId` | `size` | `size_enc` |
@@ -347,9 +346,9 @@ Categorical features can be *nominal* or *ordinal*.
 > |P2           | medium | 1  |
 > |P3           | large  | 2  |
 > |P4           | small  | 0  |
-
-:::
-::::
+>
+> :::
+> ::::
 
 # The Likert scale
 
@@ -384,11 +383,10 @@ People who feel the product is average might not be bothered to write a review
 - One hot encoding treats each category independently.
 
 > Examples include the variable `color`, with values "red", "green", and "blue".
-
-:::: {.columns}
-
-::: {.column width="49%"}
-
+> 
+> :::: {.columns}
+> ::: {.column width="49%"}
+> 
 > Before encoding
 >
 > | `ProductId` | `color` |
@@ -397,10 +395,10 @@ People who feel the product is average might not be bothered to write a review
 > |P2           | green |
 > |P3           | blue  |
 > |P4           | red  |
-
-:::
-::: {.column width="49%"}
-
+> 
+> :::
+> ::: {.column width="49%"}
+> 
 > After encoding
 >
 > | `ProductId` | `color` | `red` | `green` | `blue` |
@@ -409,9 +407,9 @@ People who feel the product is average might not be bothered to write a review
 > |P2           | green | 0  | 1  | 0  |
 > |P3           | blue  | 0  | 0  | 1  |
 > |P4           | red   | 1  | 0  | 0  |
-
-:::
-::::
+> 
+> :::
+> ::::
 
 OHE increases the dimensionality of the dataset and it may not be suitable for encoding high cardinality features.
 
@@ -985,6 +983,6 @@ These are *some* of the questions of the exam
 
 # Wooclap
 
-<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen src="https://app.wooclap.com/QSKSKM/questionnaires/670d494b9fbe10d48eaf9ea4" style="min-height: 550px; min-width: 300px" width="100%"></iframe>
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen src="https://app.wooclap.com/ABXTPL/questionnaires/670e89672a9adb2c13ca5b23" style="min-height: 550px; min-width: 300px" width="100%"></iframe>
 
 # References
