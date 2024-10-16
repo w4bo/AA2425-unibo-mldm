@@ -599,6 +599,12 @@ Pay attention to the *aggregation operator*!
 
 ![](./img/datapreprocessing/imputation_20.svg)
 
+#
+
+![](./img/datapreprocessing/imputation_20.svg)
+
+![](./img/datapreprocessing/imputation_equi_frequency.svg)
+
 # Integrate Data
 
 **Integration** involves *combining information from multiple tables* or records to create new records or values.
@@ -970,6 +976,11 @@ More an art than a science
 - *Load*: Load the transformed data into a target database or data warehouse.
 
 *ELT (Extract, Load, Transform)* loads data into a storage system (like a data lake) and then transforms within the storage system.
+
+# Overlapping with big data and cloud platforms
+
+- Data *profiling* to get metadata summarizing our dataset
+- Data *provenance* to track all the transformations that we apply on our dataset
 
 # Towards the exam: examples of questions
 
