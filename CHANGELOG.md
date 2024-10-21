@@ -1,3 +1,9 @@
+## [1.0.24](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.23...1.0.24) (2024-10-16)
+
+### Bug Fixes
+
+* add equi-frequency ([73b7fd0](https://github.com/w4bo/AA2425-unibo-mldm/commit/73b7fd002447ae938398db84e785e17d105f87f2))
+
 ## [1.0.23](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.22...1.0.23) (2024-10-15)
 
 ### Bug Fixes
