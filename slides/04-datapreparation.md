@@ -570,7 +570,7 @@ Transformed Iris dataset: `petal_length*=10`, addition of 1 outlier [`petal_leng
 Pay attention to the *aggregation operator*!
 
 - Correct: sum of sums
-    - $(1 + 2) + (3 + 4) = 1 + 2 + 3 + 4 = 10$
+    - $(1 + 2) + (3 + 4 + 5) = 1 + 2 + 3 + 4 + 5 = 15$
 - Wrong: average of averages
     - $avg(avg(1, 2), avg(3, 4, 5)) = avg(1.5, 4) = 2.75$
     - $avg(1, 2, 3, 4, 5) = 3$
