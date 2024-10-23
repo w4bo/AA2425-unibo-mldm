@@ -6,6 +6,13 @@ data = [["Alice", 20, "New York"],
         ["Charlie", 19, "New York"]]
 df = pd.DataFrame(data, columns=["Name", "Age", "City"])
 
+data = {
+    "Name": ["Alice", "Bob", "Charlie" ],
+    "Age": [20, 21, 19],
+    "City": ["New York", "Los Angeles", "New York"]
+}
+df = pd.DataFrame(data)
+
 # Step 2: Select and print the column Name
 name_column = df['Name']
 print("Column 'Name':")
