@@ -1,3 +1,14 @@
+## [1.0.26](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.25...1.0.26) (2024-10-23)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.112 ([65b9da3](https://github.com/w4bo/AA2425-unibo-mldm/commit/65b9da363482d30e0215da278f598a968bd43560))
+
+### Bug Fixes
+
+* data preparation lab ([9b6532f](https://github.com/w4bo/AA2425-unibo-mldm/commit/9b6532f0b2909a481b01fbfa63196c5b4537d288))
+* lab solutions ([f10f7c5](https://github.com/w4bo/AA2425-unibo-mldm/commit/f10f7c5567f6cadb3c07aaf79d5340de7e58af61))
+
 ## [1.0.25](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.24...1.0.25) (2024-10-21)
 
 ### Bug Fixes
