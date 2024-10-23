@@ -1,3 +1,9 @@
+## [1.0.27](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.26...1.0.27) (2024-10-23)
+
+### Bug Fixes
+
+* data preparation ([53d8e87](https://github.com/w4bo/AA2425-unibo-mldm/commit/53d8e874ec1fb96720525464ff5766446053569a))
+
 ## [1.0.26](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.25...1.0.26) (2024-10-23)
 
 ### Dependency updates
