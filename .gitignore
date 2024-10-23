@@ -1,4 +1,6 @@
 slides/build.sh
+slides/my_df.csv
+my_df.csv
 ~*.pptx
 ~*.twbr
 *.html
