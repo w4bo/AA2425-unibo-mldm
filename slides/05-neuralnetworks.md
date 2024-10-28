@@ -260,6 +260,42 @@ In our course, we will use only FF NN!
 :::
 ::::
 
+# Universal Approximation Theorem
+
+**Universal Approximation Theorem**: a NN with *at least 1 hidden layer* can approximate any continuous function *to any desired degree of accuracy*, given *sufficient neurons* in that hidden layer, the *right weights and biases*, and a *non-polynomial activation* function.
+
+![Universal Approximation Theorem](img/neuralnetworks/universaltheorem1.svg)
+
+Limitations
+
+- The theorem applies to feedforward neural networks with $n$ inputs, a single hidden layer ("shallow" and wide), and 1 output
+- Achieving a close approximation might require an impractically large number of neurons, making the network hard to train
+- The theorem assumes that the "right" weights and biases exist but does not address how to find them
+- Not applicable to discontinuous functions
+
+# Håstad's switching lemma [@hastad1986almost]
+
+**Håstad's switching lemma**: certain functions, while easily represented by deep networks with a modest number of neurons, require an exponentially larger number of neurons to represent accurately if constrained to a single hidden layer. 
+
+"Global" functions are harder to be approximated, for instance
+
+- The *parity function* determines whether the number of 1s in a binary input string is odd or even.
+- The *majority function* outputs 1 if more than half of the input bits are 1, and 0 otherwise. 
+
+This lemma provides a theoretical foundation for using depth in both circuit complexity and neural networks
+
+- It justifies the need for layered structure when working with complex, globally-dependent functions.
+
+# Universal Approximation Theorem [@kidger2020universal]
+
+[@kidger2020universal]: let $n$ be the number of inputs neurons, $m$ be the number of output neurons, and let $\rho$ be any nonaffine continuous function, with a continuous nonzero derivative at some point.
+The class of neural networks of arbitrary depth, width $n + m + 2$ and activation function $\rho$, is dense in $C(K; R^m)$ for $K \subseteq R^n$ with $K$ compact.
+This covers any activation function, including polynomial activation functions.
+
+![Universal Approximation Theorem for Deep Narrow Networks](img/neuralnetworks/universaltheorem1.svg)
+
+This is why deep neural networks work
+
 # Neural networks training: intuition
 
 ![Training](./img/neuralnetworks/3 Model65.png)
@@ -430,9 +466,9 @@ If $F(\mathbf {x})$ is defined and differentiable in a neighborhood of a point $
 
 $F(\mathbf {x} )$ decreases fastest in the direction of the negative gradient of $F$ at $\mathbf {a}$, that is $-\nabla F(\mathbf {a} )$.
 
-It follows that, if $\mathbf {a} _{n+1}=\mathbf {a} _{n}-\gamma \nabla F(\mathbf {a} _{n})$
+It follows that, if $\mathbf {a} _{n+1}=\mathbf {a} _{n}-\eta \nabla F(\mathbf {a} _{n})$
 
-For a small enough step size or learning rate $\gamma \in \mathbb {R} _{+}$, then $F(\mathbf {a_{n}} ) \geq F(\mathbf {a_{n+1}})$
+For a small enough step size or learning rate $\eta \in \mathbb {R} _{+}$, then $F(\mathbf {a_{n}} ) \geq F(\mathbf {a_{n+1}})$
 
 :::
 ::: {.column width="25%"}
@@ -466,7 +502,7 @@ For a small enough step size or learning rate $\gamma \in \mathbb {R} _{+}$, the
 
 Vanilla Gradient Descent
 
-- Smoother convergence
+- Smooth convergence
 - Not recommended for huge training dataset → Slow and computationally expensive algorithm
 
 # Gradient descent
