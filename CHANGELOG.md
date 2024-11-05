@@ -1,3 +1,14 @@
+## [1.0.28](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.27...1.0.28) (2024-11-05)
+
+### Bug Fixes
+
+* nn ([194cc21](https://github.com/w4bo/AA2425-unibo-mldm/commit/194cc2136523c0829d76093222ee9539a4291ec4))
+* nn ([8197da9](https://github.com/w4bo/AA2425-unibo-mldm/commit/8197da938989f81f39badfa9c18dda9c423414c1))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v4.1.0 ([003a59f](https://github.com/w4bo/AA2425-unibo-mldm/commit/003a59fd2b656bd1d6efdbed2f6ea103064fc420))
+
 ## [1.0.27](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.26...1.0.27) (2024-10-23)
 
 ### Bug Fixes
