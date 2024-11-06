@@ -403,7 +403,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section class="slide level2">
 
-<div id="cell-0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-06T05:05:54.972517Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-06T05:05:54.972352Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-06T05:05:56.034143Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-06T05:05:56.033527Z&quot;}" data-execution_count="1">
+<div id="cell-0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-06T12:14:48.099964Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-06T12:14:48.099807Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-06T12:14:49.170036Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-06T12:14:49.169450Z&quot;}" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -449,7 +449,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
-<div id="cell-1" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-06T05:05:56.068312Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-06T05:05:56.068011Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-06T05:05:56.338283Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-06T05:05:56.337732Z&quot;}" data-execution_count="2">
+<div id="cell-1" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-06T12:14:49.203419Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-06T12:14:49.203151Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-06T12:14:49.475192Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-06T12:14:49.474689Z&quot;}" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -522,7 +522,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
-<div id="cell-2" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-06T05:05:56.340227Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-06T05:05:56.339854Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-06T05:05:56.745847Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-06T05:05:56.745296Z&quot;}" data-execution_count="3">
+<div id="cell-2" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-06T12:14:49.476979Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-06T12:14:49.476806Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-06T12:14:49.875124Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-06T12:14:49.874564Z&quot;}" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -531,17 +531,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb3-4"><a href=""></a></span>
 <span id="cb3-5"><a href=""></a><span class="co"># AND operator inputs and outputs</span></span>
 <span id="cb3-6"><a href=""></a>X <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">1</span>]])</span>
-<span id="cb3-7"><a href=""></a>y <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>])  <span class="co"># Target outputs for AND</span></span>
+<span id="cb3-7"><a href=""></a>y <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>])  <span class="co"># Target outputs for OR</span></span>
 <span id="cb3-8"><a href=""></a></span>
 <span id="cb3-9"><a href=""></a><span class="co"># Sigmoid activation function</span></span>
-<span id="cb3-10"><a href=""></a><span class="kw">def</span> sigmoid(x):</span>
-<span id="cb3-11"><a href=""></a>    <span class="cf">return</span> np.heaviside(x, <span class="dv">0</span>)</span>
+<span id="cb3-10"><a href=""></a><span class="kw">def</span> sigmoid(x, b):</span>
+<span id="cb3-11"><a href=""></a>    <span class="cf">return</span> np.heaviside(x, <span class="dv">1</span>)</span>
 <span id="cb3-12"><a href=""></a>    <span class="co"># return 1 / (1 + np.exp(-x))</span></span>
 <span id="cb3-13"><a href=""></a></span>
 <span id="cb3-14"><a href=""></a><span class="co"># Perceptron output</span></span>
 <span id="cb3-15"><a href=""></a><span class="kw">def</span> perceptron_output(X, w1, w2, b):</span>
 <span id="cb3-16"><a href=""></a>    z <span class="op">=</span> w1 <span class="op">*</span> X[:, <span class="dv">0</span>] <span class="op">+</span> w2 <span class="op">*</span> X[:, <span class="dv">1</span>] <span class="op">+</span> b</span>
-<span id="cb3-17"><a href=""></a>    <span class="cf">return</span> sigmoid(z)</span>
+<span id="cb3-17"><a href=""></a>    <span class="cf">return</span> sigmoid(z, b)</span>
 <span id="cb3-18"><a href=""></a></span>
 <span id="cb3-19"><a href=""></a><span class="co"># Function to calculate error</span></span>
 <span id="cb3-20"><a href=""></a><span class="kw">def</span> calculate_error(w1, w2, b):</span>
@@ -552,11 +552,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb3-25"><a href=""></a><span class="co"># Generate weight grid</span></span>
 <span id="cb3-26"><a href=""></a>w1_range <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
 <span id="cb3-27"><a href=""></a>w2_range <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
-<span id="cb3-28"><a href=""></a>W1, W2 <span class="op">=</span> np.meshgrid(w1_range, w2_range)</span>
-<span id="cb3-29"><a href=""></a></span>
+<span id="cb3-28"><a href=""></a>b <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="co"># Bias value, can be adjusted</span></span>
+<span id="cb3-29"><a href=""></a>W1, W2 <span class="op">=</span> np.meshgrid(w1_range, w2_range)</span>
 <span id="cb3-30"><a href=""></a><span class="co"># Calculate error for each weight combination</span></span>
 <span id="cb3-31"><a href=""></a>errors <span class="op">=</span> np.zeros(W1.shape)</span>
-<span id="cb3-32"><a href=""></a>b <span class="op">=</span> <span class="dv">0</span> <span class="co"># Bias value, can be adjusted</span></span>
+<span id="cb3-32"><a href=""></a></span>
 <span id="cb3-33"><a href=""></a></span>
 <span id="cb3-34"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(W1.shape[<span class="dv">0</span>]):</span>
 <span id="cb3-35"><a href=""></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(W1.shape[<span class="dv">1</span>]):</span>
@@ -568,9 +568,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb3-41"><a href=""></a>ax.plot_surface(W1, W2, errors, cmap<span class="op">=</span><span class="st">'viridis'</span>, edgecolor<span class="op">=</span><span class="st">'none'</span>)</span>
 <span id="cb3-42"><a href=""></a>ax.set_xlabel(<span class="st">'w1'</span>)</span>
 <span id="cb3-43"><a href=""></a>ax.set_ylabel(<span class="st">'w2'</span>)</span>
-<span id="cb3-44"><a href=""></a>ax.set_zlabel(<span class="st">'RMSE'</span>)</span>
-<span id="cb3-45"><a href=""></a>fig.tight_layout()</span>
-<span id="cb3-46"><a href=""></a>plt.show()</span></code></pre></div>
+<span id="cb3-44"><a href=""></a>ax.set_zlim([<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb3-45"><a href=""></a>ax.set_xlim([<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>])</span>
+<span id="cb3-46"><a href=""></a>ax.set_ylim([<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>])</span>
+<span id="cb3-47"><a href=""></a>ax.set_zlabel(<span class="st">'RMSE'</span>)</span>
+<span id="cb3-48"><a href=""></a>fig.tight_layout()</span>
+<span id="cb3-49"><a href=""></a>plt.show()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>

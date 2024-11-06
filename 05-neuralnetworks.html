@@ -779,7 +779,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Universal Approximation Theorem <span class="citation" data-cites="kidger2020universal">(<a href="#/references" role="doc-biblioref" onclick="">Kidger and Lyons 2020</a>)</span></h1>
 <p><span class="citation" data-cites="kidger2020universal">(<a href="#/references" role="doc-biblioref" onclick="">Kidger and Lyons 2020</a>)</span>: let <span class="math inline">\(n\)</span> be the number of inputs neurons, <span class="math inline">\(m\)</span> be the number of output neurons, and let <span class="math inline">\(\rho\)</span> be any nonaffine continuous function, with a continuous nonzero derivative at some point. The class of neural networks of arbitrary depth, width <span class="math inline">\(n + m + 2\)</span> and activation function <span class="math inline">\(\rho\)</span>, is dense in <span class="math inline">\(C(K; R^m)\)</span> for <span class="math inline">\(K \subseteq R^n\)</span> with <span class="math inline">\(K\)</span> compact. This covers any activation function, including polynomial activation functions.</p>
 
-<img data-src="img/neuralnetworks/universaltheorem1.svg" class="r-stretch quarto-figure-center"><p class="caption">Universal Approximation Theorem for Deep Narrow Networks</p><p>This is why deep neural networks work</p>
+<img data-src="img/neuralnetworks/universaltheorem2.svg" class="r-stretch quarto-figure-center"><p class="caption">Universal Approximation Theorem for Deep Narrow Networks</p><p>This is why deep neural networks work</p>
 </section>
 
 <section id="neural-networks-training-intuition" class="title-slide slide level1 center">
@@ -1101,7 +1101,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>The larger the batch size, the more video memory is used! (check your GPU specs)</li>
 <li>Empirically, the batch size may be (at least) equal to the number of classes</li>
 </ul>
-<p><strong>Iteration</strong>: #iterations = the size of the training set / the batch size</p>
+<p><strong>#Iterations</strong>: the size of the training set / the batch size</p>
 <p><strong>Epoch</strong>: the learning procedure is applied to the entire training dataset:</p>
 <ul>
 <li>One epoch means that each sample in the training has had an opportunity to update the weights</li>
