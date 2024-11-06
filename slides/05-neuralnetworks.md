@@ -292,7 +292,7 @@ This lemma provides a theoretical foundation for using depth in both circuit com
 The class of neural networks of arbitrary depth, width $n + m + 2$ and activation function $\rho$, is dense in $C(K; R^m)$ for $K \subseteq R^n$ with $K$ compact.
 This covers any activation function, including polynomial activation functions.
 
-![Universal Approximation Theorem for Deep Narrow Networks](img/neuralnetworks/universaltheorem1.svg)
+![Universal Approximation Theorem for Deep Narrow Networks](img/neuralnetworks/universaltheorem2.svg)
 
 This is why deep neural networks work
 
@@ -564,7 +564,7 @@ Adam is based on two principles:
 - The larger the batch size, the more video memory is used! (check your GPU specs)
 - Empirically, the batch size may be (at least) equal to the number of classes
 
-**Iteration**: #iterations = the size of the training set / the batch size
+**#Iterations**: the size of the training set / the batch size
 
 **Epoch**: the learning procedure is applied to the entire training dataset:
 
