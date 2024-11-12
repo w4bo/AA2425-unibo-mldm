@@ -1,3 +1,17 @@
+## [1.0.30](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.29...1.0.30) (2024-11-12)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.115 ([#49](https://github.com/w4bo/AA2425-unibo-mldm/issues/49)) ([0bec025](https://github.com/w4bo/AA2425-unibo-mldm/commit/0bec0253d081efd456a2deef6fd3ea8458d5a355))
+
+### Bug Fixes
+
+* modeling ([63f4d31](https://github.com/w4bo/AA2425-unibo-mldm/commit/63f4d3172a42cc17bfaef2924a5aad61bffc11bc))
+
+### Build and continuous integration
+
+* **deps:** update jamesives/github-pages-deploy-action action to v4.6.9 ([#50](https://github.com/w4bo/AA2425-unibo-mldm/issues/50)) ([04c7662](https://github.com/w4bo/AA2425-unibo-mldm/commit/04c7662dde5e5f2c2b4f6a19b28af40827892010))
+
 ## [1.0.29](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.28...1.0.29) (2024-11-06)
 
 ### Dependency updates
