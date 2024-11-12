@@ -1,3 +1,15 @@
+## [1.0.29](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.28...1.0.29) (2024-11-06)
+
+### Dependency updates
+
+* **deps:** update dependency flaml to v2.3.2 ([d80025c](https://github.com/w4bo/AA2425-unibo-mldm/commit/d80025ce6df3588faebf265dff95c11b0602b6e6))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.114 ([1728777](https://github.com/w4bo/AA2425-unibo-mldm/commit/1728777f4b5ad4df8275a3815cebd338b43b5389))
+* **deps:** update node.js to v22 ([b85331f](https://github.com/w4bo/AA2425-unibo-mldm/commit/b85331fbc94650802e793a482c93c5ab8b45cd5f))
+
+### Bug Fixes
+
+* nn ([de4ba0e](https://github.com/w4bo/AA2425-unibo-mldm/commit/de4ba0e5df7b212cbc4e672621d6cf6a4fdfcb4d))
+
 ## [1.0.28](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.27...1.0.28) (2024-11-05)
 
 ### Bug Fixes
