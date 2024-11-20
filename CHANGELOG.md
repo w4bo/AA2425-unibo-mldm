@@ -1,3 +1,10 @@
+## [1.0.33](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.32...1.0.33) (2024-11-20)
+
+### Bug Fixes
+
+* add instructions to download the dataset ([78e267b](https://github.com/w4bo/AA2425-unibo-mldm/commit/78e267ba06d451ad558795ba4c1cfc879d461ce8))
+* add the link to colab ([242226f](https://github.com/w4bo/AA2425-unibo-mldm/commit/242226f067d4eb0dd752e8bcfe7d6226b44af061))
+
 ## [1.0.32](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.31...1.0.32) (2024-11-20)
 
 ### Bug Fixes
