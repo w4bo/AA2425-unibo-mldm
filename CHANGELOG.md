@@ -1,3 +1,9 @@
+## [1.0.32](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.31...1.0.32) (2024-11-20)
+
+### Bug Fixes
+
+* titanic ([38826de](https://github.com/w4bo/AA2425-unibo-mldm/commit/38826dea6fabea126ce21bf6af28e4a8c72ab27a))
+
 ## [1.0.31](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.30...1.0.31) (2024-11-13)
 
 ### Bug Fixes
