@@ -418,14 +418,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><strong>Requirements</strong>: you are allowed to use <code>numpy</code>, <code>pandas</code>, <code>matplotlib</code>, <code>sns</code>, and <code>sklearn</code> Python libraries.</p>
 <ol type="1">
 <li>You can import any model from <code>sk-learn</code>.</li>
-<li>Work on Sklearn pipelines https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html</li>
-<li>Work on Auto-Sklearn https://automl.github.io/auto-sklearn/master/</li>
+<li>Try <code>sk-learn</code> pipelines https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html</li>
+<li>Explore AutoML with <code>FLAML</code></li>
 </ol>
 </section>
 
 <section id="setup" class="title-slide slide level1 center">
 <h1>Setup</h1>
-<p>::: {#cell-3 .cell _cell_guid=‘e3200e6e-62d4-1d74-496b-c5197a574dcb’ execution=‘{“iopub.execute_input”:“2024-11-26T09:58:54.104419Z”,“iopub.status.busy”:“2024-11-26T09:58:54.104012Z”,“iopub.status.idle”:“2024-11-26T09:58:55.178444Z”,“shell.execute_reply”:“2024-11-26T09:58:55.177952Z”}’ execution_count=1}</p>
+<p>::: {#cell-3 .cell _cell_guid=‘e3200e6e-62d4-1d74-496b-c5197a574dcb’ execution=‘{“iopub.execute_input”:“2024-11-26T10:41:36.004274Z”,“iopub.status.busy”:“2024-11-26T10:41:36.004098Z”,“iopub.status.idle”:“2024-11-26T10:41:37.310882Z”,“shell.execute_reply”:“2024-11-26T10:41:37.310256Z”}’ execution_count=1}</p>
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co"># Import the libraries used for machine learning</span></span>
@@ -473,7 +473,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="check-the-data" class="title-slide slide level1 center">
 <h1>Check the data</h1>
-<p>::: {#cell-6 .cell _cell_guid=‘7036d299-0057-db0a-d892-fe212c0d612c’ execution=‘{“iopub.execute_input”:“2024-11-26T09:58:55.180585Z”,“iopub.status.busy”:“2024-11-26T09:58:55.180226Z”,“iopub.status.idle”:“2024-11-26T09:58:55.199343Z”,“shell.execute_reply”:“2024-11-26T09:58:55.198821Z”}’ execution_count=2}</p>
+<p>::: {#cell-6 .cell _cell_guid=‘7036d299-0057-db0a-d892-fe212c0d612c’ execution=‘{“iopub.execute_input”:“2024-11-26T10:41:37.313243Z”,“iopub.status.busy”:“2024-11-26T10:41:37.312933Z”,“iopub.status.idle”:“2024-11-26T10:41:37.334105Z”,“shell.execute_reply”:“2024-11-26T10:41:37.333571Z”}’ execution_count=2}</p>
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>df</span></code></pre></div>
@@ -797,7 +797,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="data-profiling" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
-<p>::: {#cell-8 .cell _cell_guid=‘1109ea03-5b73-25fa-72ca-6695de4b0c5b’ execution=‘{“iopub.execute_input”:“2024-11-26T09:58:55.250640Z”,“iopub.status.busy”:“2024-11-26T09:58:55.249977Z”,“iopub.status.idle”:“2024-11-26T09:58:55.259677Z”,“shell.execute_reply”:“2024-11-26T09:58:55.259239Z”}’ execution_count=3}</p>
+<p>::: {#cell-8 .cell _cell_guid=‘1109ea03-5b73-25fa-72ca-6695de4b0c5b’ execution=‘{“iopub.execute_input”:“2024-11-26T10:41:37.370779Z”,“iopub.status.busy”:“2024-11-26T10:41:37.370176Z”,“iopub.status.idle”:“2024-11-26T10:41:37.380756Z”,“shell.execute_reply”:“2024-11-26T10:41:37.380146Z”}’ execution_count=3}</p>
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>df.info()</span></code></pre></div>
