@@ -408,18 +408,24 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <p><a href="https://colab.research.google.com/github/w4bo/AA2425-unibo-mldm/blob/master/slides/lab-08-BreastCancer.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 </section>
-<section>
 <section id="the-breastcancer-challenge" class="title-slide slide level1 center">
 <h1>The <code>BreastCancer</code> challenge</h1>
-
+<p><strong>Goal</strong>: it is your job to predict the <code>diagnosis</code> for each data item.</p>
+<p><strong>Metric</strong>: submissions are evaluated using the accuracy score.</p>
+<ul>
+<li>When splitting train and test datasets, the test dataset should contain 30% of the data.</li>
+</ul>
+<p><strong>Requirements</strong>: you are allowed to use <code>numpy</code>, <code>pandas</code>, <code>matplotlib</code>, <code>sns</code>, and <code>sklearn</code> Python libraries.</p>
+<ol type="1">
+<li>You can import any model from <code>sk-learn</code>.</li>
+<li>Work on Sklearn pipelines https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html</li>
+<li>Work on Auto-Sklearn https://automl.github.io/auto-sklearn/master/</li>
+</ol>
 </section>
-<h3 id="goal">Goal</h3>
-<p>It is your job to predict the <code>diagnosis</code> for each data item.</p>
-<h3 id="metric">Metric</h3>
-<p>Submissions are evaluated using the accuracy score. When splitting train and test datasets, the test dataset should contain 30% of the data.</p>
-<h3 id="requirements">Requirements</h3>
-<p>You are allowed to use <code>numpy</code>, <code>pandas</code>, <code>matplotlib</code>, <code>sns</code>, and <code>sklearn</code> Python libraries. 1. You can import any model from <code>sk-learn</code>. 2. Work on Sklearn pipelines https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html 3. Work on Auto-Sklearn https://automl.github.io/auto-sklearn/master/</p>
-<p>::: {#cell-2 .cell _cell_guid=‘e3200e6e-62d4-1d74-496b-c5197a574dcb’ execution=‘{“iopub.execute_input”:“2024-11-26T09:55:41.194980Z”,“iopub.status.busy”:“2024-11-26T09:55:41.194572Z”,“iopub.status.idle”:“2024-11-26T09:55:42.385376Z”,“shell.execute_reply”:“2024-11-26T09:55:42.384702Z”}’ execution_count=1}</p>
+
+<section id="setup" class="title-slide slide level1 center">
+<h1>Setup</h1>
+<p>::: {#cell-3 .cell _cell_guid=‘e3200e6e-62d4-1d74-496b-c5197a574dcb’ execution=‘{“iopub.execute_input”:“2024-11-26T09:58:54.104419Z”,“iopub.status.busy”:“2024-11-26T09:58:54.104012Z”,“iopub.status.idle”:“2024-11-26T09:58:55.178444Z”,“shell.execute_reply”:“2024-11-26T09:58:55.177952Z”}’ execution_count=1}</p>
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co"># Import the libraries used for machine learning</span></span>
@@ -445,15 +451,29 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb1-21"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/w4bo/teaching-handsondatapipelines/main/materials/datasets/breastcancer.csv"</span>)</span></code></pre></div>
 </details>
 <p>:::</p>
-<section id="data-understanding" class="slide level2">
-<h2>Data understanding</h2>
+</section>
+
+<section id="data-understanding" class="title-slide slide level1 center">
+<h1>Data understanding</h1>
 <p>Hints</p>
 <ul>
 <li>There are 569 observations with 30 features each</li>
 <li>Each observation is labelled with a <code>diagnosis</code></li>
 </ul>
-<p>Take a first glance to the dataset - Do we consider all features? - Are there null values? - Which are the attribute types? - Which are the attribute ranges? - How many labels? - Are classes unbalanced?</p>
-<p>::: {#cell-4 .cell _cell_guid=‘7036d299-0057-db0a-d892-fe212c0d612c’ execution=‘{“iopub.execute_input”:“2024-11-26T09:55:42.387671Z”,“iopub.status.busy”:“2024-11-26T09:55:42.387480Z”,“iopub.status.idle”:“2024-11-26T09:55:42.407436Z”,“shell.execute_reply”:“2024-11-26T09:55:42.406836Z”}’ execution_count=2}</p>
+<p>Take a first glance to the dataset</p>
+<ul>
+<li>Do we consider all features?</li>
+<li>Are there null values?</li>
+<li>Which are the attribute types?</li>
+<li>Which are the attribute ranges?</li>
+<li>How many labels?</li>
+<li>Are classes unbalanced?</li>
+</ul>
+</section>
+
+<section id="check-the-data" class="title-slide slide level1 center">
+<h1>Check the data</h1>
+<p>::: {#cell-6 .cell _cell_guid=‘7036d299-0057-db0a-d892-fe212c0d612c’ execution=‘{“iopub.execute_input”:“2024-11-26T09:58:55.180585Z”,“iopub.status.busy”:“2024-11-26T09:58:55.180226Z”,“iopub.status.idle”:“2024-11-26T09:58:55.199343Z”,“shell.execute_reply”:“2024-11-26T09:58:55.198821Z”}’ execution_count=2}</p>
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>df</span></code></pre></div>
@@ -773,7 +793,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 <p>:::</p>
-<p>::: {#cell-5 .cell _cell_guid=‘1109ea03-5b73-25fa-72ca-6695de4b0c5b’ execution=‘{“iopub.execute_input”:“2024-11-26T09:55:42.441674Z”,“iopub.status.busy”:“2024-11-26T09:55:42.441146Z”,“iopub.status.idle”:“2024-11-26T09:55:42.450943Z”,“shell.execute_reply”:“2024-11-26T09:55:42.450350Z”}’ execution_count=3}</p>
+</section>
+
+<section id="data-profiling" class="title-slide slide level1 center">
+<h1>Data profiling</h1>
+<p>::: {#cell-8 .cell _cell_guid=‘1109ea03-5b73-25fa-72ca-6695de4b0c5b’ execution=‘{“iopub.execute_input”:“2024-11-26T09:58:55.250640Z”,“iopub.status.busy”:“2024-11-26T09:58:55.249977Z”,“iopub.status.idle”:“2024-11-26T09:58:55.259677Z”,“shell.execute_reply”:“2024-11-26T09:58:55.259239Z”}’ execution_count=3}</p>
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>df.info()</span></code></pre></div>
@@ -821,8 +845,28 @@ dtypes: float64(31), int64(1), object(1)
 memory usage: 146.8+ KB</code></pre>
 </div>
 <p>:::</p>
-<h3 id="feature-semantics">Feature semantics</h3>
-<p>Hint: - id of the observation - diagnosis (M = malignant, B = benign) - Ten real-valued features are computed for each cell nucleus: - radius (mean of distances from center to points on the perimeter) - texture (standard deviation of gray-scale values) - perimeter - area - smoothness (local variation in radius lengths) - compactness (perimeter^2 / area - 1.0) - concavity (severity of concave portions of the contour) - concave points (number of concave portions of the contour) - symmetry - fractal dimension (“coastline approximation” - 1)</p>
+</section>
+
+<section id="feature-semantics" class="title-slide slide level1 center">
+<h1>Feature semantics</h1>
+<p>Hint:</p>
+<ul>
+<li>id of the observation</li>
+<li>diagnosis (M = malignant, B = benign)</li>
+<li>Ten real-valued features are computed for each cell nucleus:
+<ul>
+<li>radius (mean of distances from center to points on the perimeter)</li>
+<li>texture (standard deviation of gray-scale values)</li>
+<li>perimeter</li>
+<li>area</li>
+<li>smoothness (local variation in radius lengths)</li>
+<li>compactness (perimeter^2 / area - 1.0)</li>
+<li>concavity (severity of concave portions of the contour)</li>
+<li>concave points (number of concave portions of the contour)</li>
+<li>symmetry</li>
+<li>fractal dimension (“coastline approximation” - 1)</li>
+</ul></li>
+</ul>
 <p><code>*_mean</code>: the means of all cells</p>
 <p><code>*_se</code>: standard error of all cells</p>
 <p><code>*_worst</code>: the worst cell</p>
@@ -831,7 +875,7 @@ memory usage: 146.8+ KB</code></pre>
 <p>Matteo Francia - Machine Learning and Data Mining (Module 2) - A.Y. 2024/25</p>
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
