@@ -1,3 +1,10 @@
+## [1.0.34](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.33...1.0.34) (2024-11-26)
+
+### Bug Fixes
+
+* add breast cancer ([0252590](https://github.com/w4bo/AA2425-unibo-mldm/commit/0252590483c631f5f9a2924e3a227ec9d367fa67))
+* breast cancer ([7893cb1](https://github.com/w4bo/AA2425-unibo-mldm/commit/7893cb1ab20fab985db1fbc4d1c830dd68311f7c))
+
 ## [1.0.33](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.32...1.0.33) (2024-11-20)
 
 ### Bug Fixes
