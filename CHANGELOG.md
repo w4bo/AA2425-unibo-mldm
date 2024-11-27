@@ -1,3 +1,9 @@
+## [1.0.38](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.37...1.0.38) (2024-11-27)
+
+### Bug Fixes
+
+* solution ([f2ce547](https://github.com/w4bo/AA2425-unibo-mldm/commit/f2ce547c017bf97ab04f3b7741504fc8ebcb87b1))
+
 ## [1.0.37](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.36...1.0.37) (2024-11-27)
 
 ### Bug Fixes
