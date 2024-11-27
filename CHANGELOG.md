@@ -1,3 +1,9 @@
+## [1.0.36](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.35...1.0.36) (2024-11-27)
+
+### Bug Fixes
+
+* add link to pipelines ([fbf9ff8](https://github.com/w4bo/AA2425-unibo-mldm/commit/fbf9ff87d3139d5794f8b1c7a5a7a06ffaae5d69))
+
 ## [1.0.35](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.34...1.0.35) (2024-11-27)
 
 ### Bug Fixes
