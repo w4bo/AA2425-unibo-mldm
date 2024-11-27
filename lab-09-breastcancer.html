@@ -425,21 +425,21 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="setup" class="title-slide slide level1 center">
 <h1>Setup</h1>
-<div id="cell-3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-27T12:06:08.682851Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-27T12:06:08.682406Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-27T12:06:09.950557Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-27T12:06:09.950036Z&quot;}" data-execution_count="1">
+<div id="cell-4" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-27T13:48:02.106756Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-27T13:48:02.106538Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-27T13:48:03.282620Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-27T13:48:03.282027Z&quot;}" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co"># Import the libraries used for machine learning</span></span>
-<span id="cb1-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># linear algebra</span></span>
-<span id="cb1-3"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># data processing, CSV file I/O (e.g. pd.read_csv), data manipulation as in SQL</span></span>
-<span id="cb1-4"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># this is used for the plot the graph </span></span>
-<span id="cb1-5"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns <span class="co"># used for plot interactive graph. I like it most for plot</span></span>
-<span id="cb1-6"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split <span class="co"># to split the data into two parts</span></span>
-<span id="cb1-7"><a href=""></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
-<span id="cb1-8"><a href=""></a><span class="im">from</span> sklearn <span class="im">import</span> metrics <span class="co"># for the check the error and accuracy of the model</span></span>
-<span id="cb1-9"><a href=""></a><span class="im">import</span> random</span>
-<span id="cb1-10"><a href=""></a><span class="im">import</span> os</span>
-<span id="cb1-11"><a href=""></a></span>
-<span id="cb1-12"><a href=""></a><span class="co"># SEED all random generators</span></span>
+<span id="cb1-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># linear algebra</span></span>
+<span id="cb1-3"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># data processing, CSV file I/O (e.g. pd.read_csv), data manipulation as in SQL</span></span>
+<span id="cb1-4"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># used for plotting </span></span>
+<span id="cb1-5"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns   <span class="co"># used for plotting</span></span>
+<span id="cb1-6"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split  <span class="co">#  split the data into training and test</span></span>
+<span id="cb1-7"><a href=""></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier  <span class="co"># import a machine learning model</span></span>
+<span id="cb1-8"><a href=""></a><span class="im">from</span> sklearn <span class="im">import</span> metrics  <span class="co"># check the error and accuracy of the model</span></span>
+<span id="cb1-9"><a href=""></a></span>
+<span id="cb1-10"><a href=""></a><span class="co"># SEED all random generators</span></span>
+<span id="cb1-11"><a href=""></a><span class="im">import</span> random</span>
+<span id="cb1-12"><a href=""></a><span class="im">import</span> os</span>
 <span id="cb1-13"><a href=""></a>seed <span class="op">=</span> <span class="dv">42</span></span>
 <span id="cb1-14"><a href=""></a>random.seed(seed)</span>
 <span id="cb1-15"><a href=""></a>os.environ[<span class="st">'PYTHONHASHSEED'</span>] <span class="op">=</span> <span class="bu">str</span>(seed)</span>
@@ -458,25 +458,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>There are 569 observations with 30 features each</li>
 <li>Each observation is labelled with a <code>diagnosis</code></li>
 </ul>
-<p>Take a first glance to the dataset</p>
-<ul>
-<li>Do we consider all features?</li>
-<li>Are there null values?</li>
-<li>Which are the attribute types?</li>
-<li>Which are the attribute ranges?</li>
-<li>How many labels?</li>
-<li>Are classes unbalanced?</li>
-</ul>
-</section>
-
-<section id="check-the-data" class="title-slide slide level1 center">
-<h1>Check the data</h1>
-<div id="cell-6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-27T12:06:09.952790Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-27T12:06:09.952416Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-27T12:06:09.973191Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-27T12:06:09.972599Z&quot;}" data-execution_count="2">
+<div id="cell-6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-27T13:48:03.284815Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-27T13:48:03.284428Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-27T13:48:03.305480Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-27T13:48:03.304938Z&quot;}" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>df</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -795,7 +782,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="data-profiling" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
-<div id="cell-8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-27T12:06:10.007063Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-27T12:06:10.006806Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-27T12:06:10.014774Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-27T12:06:10.014304Z&quot;}" data-execution_count="3">
+<div id="cell-8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-27T13:48:03.307354Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-27T13:48:03.307009Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-27T13:48:03.314949Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-27T13:48:03.314459Z&quot;}" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>df.info()</span></code></pre></div>
@@ -868,6 +855,19 @@ memory usage: 146.8+ KB</code></pre>
 <p><code>*_mean</code>: the means of all cells</p>
 <p><code>*_se</code>: standard error of all cells</p>
 <p><code>*_worst</code>: the worst cell</p>
+</section>
+
+<section id="and-now" class="title-slide slide level1 center">
+<h1>… and now?</h1>
+<p>Take a first glance to the dataset</p>
+<ul>
+<li>Do we consider all features?</li>
+<li>Are there null values?</li>
+<li>Which are the attribute types?</li>
+<li>Which are the attribute ranges?</li>
+<li>How many labels?</li>
+<li>Are classes unbalanced?</li>
+</ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Machine Learning and Data Mining (Module 2) - A.Y. 2024/25</p>
