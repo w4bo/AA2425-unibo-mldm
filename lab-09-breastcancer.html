@@ -425,7 +425,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="setup" class="title-slide slide level1 center">
 <h1>Setup</h1>
-<div id="cell-3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-26T17:12:54.526469Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-26T17:12:54.526306Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-26T17:12:55.578708Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-26T17:12:55.578120Z&quot;}" data-vscode="{&quot;languageId&quot;:&quot;plaintext&quot;}" data-execution_count="1">
+<div id="cell-3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-27T09:12:07.036041Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-27T09:12:07.035878Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-27T09:12:08.422029Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-27T09:12:08.421494Z&quot;}" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co"># Import the libraries used for machine learning</span></span>
@@ -433,22 +433,20 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb1-3"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># data processing, CSV file I/O (e.g. pd.read_csv), data manipulation as in SQL</span></span>
 <span id="cb1-4"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># this is used for the plot the graph </span></span>
 <span id="cb1-5"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns <span class="co"># used for plot interactive graph. I like it most for plot</span></span>
-<span id="cb1-6"><a href=""></a><span class="op">%</span>matplotlib inline</span>
-<span id="cb1-7"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split <span class="co"># to split the data into two parts</span></span>
-<span id="cb1-8"><a href=""></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
-<span id="cb1-9"><a href=""></a><span class="im">from</span> sklearn <span class="im">import</span> metrics <span class="co"># for the check the error and accuracy of the model</span></span>
-<span id="cb1-10"><a href=""></a><span class="im">import</span> random</span>
-<span id="cb1-11"><a href=""></a><span class="im">import</span> os</span>
-<span id="cb1-12"><a href=""></a></span>
-<span id="cb1-13"><a href=""></a><span class="co"># SEED all random generators</span></span>
-<span id="cb1-14"><a href=""></a>seed <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb1-15"><a href=""></a>random.seed(seed)</span>
-<span id="cb1-16"><a href=""></a>os.environ[<span class="st">'PYTHONHASHSEED'</span>] <span class="op">=</span> <span class="bu">str</span>(seed)</span>
-<span id="cb1-17"><a href=""></a>np.random.seed(seed)</span>
-<span id="cb1-18"><a href=""></a></span>
-<span id="cb1-19"><a href=""></a><span class="co"># read the data</span></span>
-<span id="cb1-20"><a href=""></a><span class="co"># df = pd.read_csv("datasets/breastcancer.csv")</span></span>
-<span id="cb1-21"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/w4bo/teaching-handsondatapipelines/main/materials/datasets/breastcancer.csv"</span>)</span></code></pre></div>
+<span id="cb1-6"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split <span class="co"># to split the data into two parts</span></span>
+<span id="cb1-7"><a href=""></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
+<span id="cb1-8"><a href=""></a><span class="im">from</span> sklearn <span class="im">import</span> metrics <span class="co"># for the check the error and accuracy of the model</span></span>
+<span id="cb1-9"><a href=""></a><span class="im">import</span> random</span>
+<span id="cb1-10"><a href=""></a><span class="im">import</span> os</span>
+<span id="cb1-11"><a href=""></a></span>
+<span id="cb1-12"><a href=""></a><span class="co"># SEED all random generators</span></span>
+<span id="cb1-13"><a href=""></a>seed <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb1-14"><a href=""></a>random.seed(seed)</span>
+<span id="cb1-15"><a href=""></a>os.environ[<span class="st">'PYTHONHASHSEED'</span>] <span class="op">=</span> <span class="bu">str</span>(seed)</span>
+<span id="cb1-16"><a href=""></a>np.random.seed(seed)</span>
+<span id="cb1-17"><a href=""></a></span>
+<span id="cb1-18"><a href=""></a><span class="co"># read the data</span></span>
+<span id="cb1-19"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/w4bo/teaching-handsondatapipelines/main/materials/datasets/breastcancer.csv"</span>)</span></code></pre></div>
 </details>
 </div>
 </section>
@@ -473,7 +471,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="check-the-data" class="title-slide slide level1 center">
 <h1>Check the data</h1>
-<div id="cell-6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-26T17:12:55.581135Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-26T17:12:55.580677Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-26T17:12:55.599945Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-26T17:12:55.599356Z&quot;}" data-vscode="{&quot;languageId&quot;:&quot;plaintext&quot;}" data-execution_count="2">
+<div id="cell-6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-27T09:12:08.424033Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-27T09:12:08.423859Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-27T09:12:08.444492Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-27T09:12:08.443930Z&quot;}" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>df</span></code></pre></div>
@@ -797,7 +795,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="data-profiling" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
-<div id="cell-8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-26T17:12:55.633461Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-26T17:12:55.633127Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-26T17:12:55.642147Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-26T17:12:55.641651Z&quot;}" data-vscode="{&quot;languageId&quot;:&quot;plaintext&quot;}" data-execution_count="3">
+<div id="cell-8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-11-27T09:12:08.485019Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-11-27T09:12:08.484574Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-11-27T09:12:08.492662Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-11-27T09:12:08.492087Z&quot;}" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>df.info()</span></code></pre></div>
