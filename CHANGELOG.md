@@ -1,3 +1,16 @@
+## [1.0.39](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.38...1.0.39) (2024-11-29)
+
+### Bug Fixes
+
+* AutoML budget ([fd51525](https://github.com/w4bo/AA2425-unibo-mldm/commit/fd51525a265cbe8123f8a0078b2dc94a9fd98002))
+* rfe ([73f96d2](https://github.com/w4bo/AA2425-unibo-mldm/commit/73f96d29bbb26d9beb3f2931160bc6eeffc9cd31))
+* solution ([2d5b601](https://github.com/w4bo/AA2425-unibo-mldm/commit/2d5b6017c2ed2bb725d0e4617c74bc196677496d))
+* typo ([569fbb5](https://github.com/w4bo/AA2425-unibo-mldm/commit/569fbb5e29dc0ab3221f9a1a5332fc2aa4f02326))
+
+### Build and continuous integration
+
+* **deps:** update jamesives/github-pages-deploy-action action to v4.7.1 ([#52](https://github.com/w4bo/AA2425-unibo-mldm/issues/52)) ([e4edaa4](https://github.com/w4bo/AA2425-unibo-mldm/commit/e4edaa480581181cd8e197467bfddaf48e8e254f))
+
 ## [1.0.38](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.37...1.0.38) (2024-11-27)
 
 ### Bug Fixes
