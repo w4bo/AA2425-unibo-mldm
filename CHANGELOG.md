@@ -1,3 +1,14 @@
+## [1.0.40](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.39...1.0.40) (2024-12-03)
+
+### Dependency updates
+
+* **deps:** update dependency matplotlib to v3.9.3 ([#53](https://github.com/w4bo/AA2425-unibo-mldm/issues/53)) ([a4c8534](https://github.com/w4bo/AA2425-unibo-mldm/commit/a4c85340b689dbc714863e188c02f0b8dcdb583a))
+
+### Bug Fixes
+
+* breast cancer solution ([0aa7896](https://github.com/w4bo/AA2425-unibo-mldm/commit/0aa78967b3be3ef849136c3cfe4c798c89a1dc00))
+* outlier detection ([2cec1e9](https://github.com/w4bo/AA2425-unibo-mldm/commit/2cec1e9ac09941c0c3a16c576dbfa2a5a75d5999))
+
 ## [1.0.39](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.38...1.0.39) (2024-11-29)
 
 ### Bug Fixes
