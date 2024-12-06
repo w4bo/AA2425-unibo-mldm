@@ -364,14 +364,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Data encodes values, contexts, and cultures</li>
 <li>Goal of diversification</li>
 </ul>
-<p>Debiasing datasets</p>
+<p>De-biasing datasets</p>
 <ul>
 <li>Should be continuous over time since society is changing</li>
 </ul>
 <p>CVs</p>
 <ul>
 <li>Identity &amp; agency: is it descriptive or discriminative?</li>
-<li>Networks of Visibility: deanonymization based on connections</li>
+<li>Networks of Visibility: de-anonymization based on connections</li>
 </ul>
 <p>GeoAI</p>
 </section>
@@ -382,42 +382,42 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Discrimination, different treatments</p>
 <ul>
 <li>Direct</li>
-<li>Indirect discrimination: something that seams neutral but applies discrimination</li>
+<li>Indirect discrimination: something that seems neutral but applies discrimination</li>
 <li>Intersectional? discrimination</li>
 </ul>
-<p><em>Computational fairness</em>: algorithms should not perform any kind of discrimination.</p>
+<p><em>Computational fairness</em>: algorithms should not perform any discrimination.</p>
 <ul>
 <li>We need to quantify the level of (un)fairness</li>
 </ul>
 <p><em>Multidisciplinary</em> approach is a must, at least three perspectives: legal, social, and technical</p>
 <ul>
-<li>Legal: we have lot of regulations such as AI acts, article 21, national and sectorial regulations</li>
+<li>Legal: we have a lot of regulations such as AI acts, article 21, national and sectorial regulations</li>
 <li>How do we move this into something quantifiable?
 <ul>
 <li>Which metrics should we use?</li>
 <li>Metrics should be legally sound in terms of laws.</li>
-<li>Metrics are in conflict with each others</li>
+<li>Metrics conflict with each other</li>
 <li>Metrics are threshold-based: who defines the thresholds?</li>
 </ul></li>
 </ul>
-<p>Fairness is contextual to the application, an application is FAIR inside some boundaries both not other.</p>
+<p>Fairness is contextual to the application, an application is FAIR inside some boundaries but not others.</p>
 <ul>
 <li>How do we define the boundaries?
 <ul>
 <li>Participative design (see: holistic social-legal-technical methodology for AI fairness)</li>
 </ul></li>
-<li>Context can be based using a context</li>
+<li>Boundaries can be based on a context</li>
 </ul>
 </section>
 
 <section id="abstention-mechanism" class="title-slide slide level1 center">
 <h1>Abstention mechanism</h1>
-<p>Abstention option is an additional function for classifier to abstain the model making a prediction when it not sure enough.</p>
+<p>The abstention option is an additional function for classifiers to abstain the model from making a prediction when it is not sure enough.</p>
 <ul>
 <li>You have a confidence function (such as softmax layer)</li>
 <li>We can select coverage (how much of input data I want to cover)</li>
 </ul>
-<p>Many systems usually add bias in the final result.</p>
+<p>Many systems usually add bias to the final result.</p>
 <ul>
 <li>Minority classes have reduced performance, and classification is rejected</li>
 <li>We can inject an interpretable model to understand when this problem occurs
@@ -431,7 +431,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="fair-division" class="title-slide slide level1 center">
 <h1>Fair division</h1>
-<p>Distributing resources in way that each perceives the division as fair</p>
+<p>Distributing resources in a way that each perceives the division as fair</p>
 <ul>
 <li>Some things are indivisible</li>
 </ul>
@@ -446,10 +446,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Computational feasibility is NP-complete What happens if there is no fair solution?</p>
 <p>Social impact metric</p>
 <ul>
-<li>Find fair solution and maximize social impact (Price of Fairness = best possible solution / best social impact of a fair solution)</li>
-<li>Individual vs group fairness: the goal is also to counter for historical disadvantages (this is about pink quotas)
+<li>Find a fair solution and maximize its social impact (Price of Fairness = best possible solution / best social impact of a fair solution)</li>
+<li>Individual vs group fairness: the goal is also to counter historical disadvantages (this is about pink quotas)
 <ul>
-<li>You can weight a group of people more than others when computing fairness</li>
+<li>You can weigh a group of people more than others when computing fairness</li>
 </ul></li>
 <li>Sandra Buttock paper</li>
 </ul>
@@ -459,10 +459,22 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>AI Act</h1>
 <p>How are we implementing the AI Act?</p>
 <ul>
-<li>A lot of the requirements is not really clear about the implementation</li>
+<li>A lot of the requirements are not clear about their implementation</li>
 <li>Difficulty in terms of language (law and computer science backgrounds)</li>
 </ul>
-<p>Are we also considering that not using AI something is the right solution?</p>
+<p>Are we also considering that not using AI sometimes is the right solution?</p>
+<ul>
+<li>E.g., do not always increase the size of the gun, but use the simplest working tools</li>
+</ul>
+</section>
+
+<section id="papers" class="title-slide slide level1 center">
+<h1>Papers</h1>
+<ol type="1">
+<li>Bias preservation in machine learning: the legality of fairness metrics under EU non-discrimination law</li>
+<li>Why fairness cannot be automated: Bridging the gap between EU non-discrimination law and AI</li>
+<li>Compatibility of Fairness Metrics with EU Non-Discrimination Laws: Demographic Parity &amp; Conditional Demographic Disparity</li>
+</ol>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Machine Learning and Data Mining (Module 2) - A.Y. 2024/25</p>
