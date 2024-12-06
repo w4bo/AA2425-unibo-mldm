@@ -16,7 +16,7 @@ https://www.ohchr.org/en/stories/2024/07/racism-and-ai-bias-past-leads-bias-futu
 
 Can we change our datasets?
 Images on the internet are even more sexist than texts.
-You go back in time, how would that community be like when taking selfies
+You go back in time, how would that community be like when taking selfies.
 
 From training to teaching AI
 
@@ -35,7 +35,10 @@ From training to teaching AI
 
 De-biasing datasets
 
-- Should be continuous over time since society is changing
+- Should be continuous over time since society is changing.
+- Public institutions should push towards open data, but what about the private sector?
+    - Burden of the proof should fall on the provider.
+    - Privacy was dealt with consent, do not make the same mistake again.
 
 CVs
 
@@ -123,8 +126,38 @@ Are we also considering that not using AI sometimes is the right solution?
 
 - E.g., do not always increase the size of the gun, but use the simplest working tools
 
+# Privacy
+
+Privacy hinders AI.
+Fairness is the only tools to safeguard people's privacy (GDPR).
+
+There is no technological solution to a problem that is political
+
+Companies have created AI governance.
+We need a common ground between technicians and humanistic people.
+You cannot use the same metric in any scenarios
+For a lot of companies AI means buying off the shelf products.
+
+Fairness and transparency about processes goes beyond GDPR (since GDPR is only about personal data).
+But if the task is only preparatory, that is not high risk, and many constraints can be dropped.
+For most companies, AI is not about developing but buying.
+
+# Social scoring
+
+# LLMs
+
+# Fairness and companies
+
+Is there a chief AI office?
+Fairness and explainability.
+Fairness is part of the development and whole lifecycle of the project.
+It is important to position wrt the AI act.
+
 # Papers
 
-1. Bias preservation in machine learning: the legality of fairness metrics under EU non-discrimination law
-1. Why fairness cannot be automated: Bridging the gap between EU non-discrimination law and AI
-1. Compatibility of Fairness Metrics with EU Non-Discrimination Laws: Demographic Parity & Conditional Demographic Disparity
+1. Bias preservation in machine learning: the legality of fairness metrics under EU non-discrimination law.
+1. Why fairness cannot be automated: Bridging the gap between EU non-discrimination law and AI.
+1. Compatibility of Fairness Metrics with EU Non-Discrimination Laws: Demographic Parity & Conditional Demographic Disparity.
+1. Distrust by design.
+    - Accountability: how can we deal with whose fault is?
+1. Holigarcs book.
