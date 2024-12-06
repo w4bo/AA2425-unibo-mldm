@@ -33,14 +33,14 @@ From training to teaching AI
 - Data encodes values, contexts, and cultures
 - Goal of diversification
 
-Debiasing datasets
+De-biasing datasets
 
 - Should be continuous over time since society is changing
 
 CVs
 
 - Identity & agency: is it descriptive or discriminative?
-- Networks of Visibility: deanonymization based on connections
+- Networks of Visibility: de-anonymization based on connections
 
 GeoAI
 
@@ -51,36 +51,36 @@ GeoAI
 Discrimination, different treatments
 
 - Direct
-- Indirect discrimination: something that seams neutral but applies discrimination 
+- Indirect discrimination: something that seems neutral but applies discrimination 
 - Intersectional? discrimination
 
-*Computational fairness*: algorithms should not perform any kind of discrimination.
+*Computational fairness*: algorithms should not perform any discrimination.
 
 - We need to quantify the level of (un)fairness
 
 *Multidisciplinary* approach is a must, at least three perspectives: legal, social, and technical
 
-- Legal: we have lot of regulations such as AI acts, article 21, national and sectorial regulations
+- Legal: we have a lot of regulations such as AI acts, article 21, national and sectorial regulations
 - How do we move this into something quantifiable?
     - Which metrics should we use?
     - Metrics should be legally sound in terms of laws.
-    - Metrics are in conflict with each others
+    - Metrics conflict with each other
     - Metrics are threshold-based: who defines the thresholds?
 
-Fairness is contextual to the application, an application is FAIR inside some boundaries both not other.
+Fairness is contextual to the application, an application is FAIR inside some boundaries but not others.
 
 - How do we define the boundaries?
     - Participative design (see: holistic social-legal-technical methodology for AI fairness)
-- Context can be based using a context
+- Boundaries can be based on a context
 
 # Abstention mechanism
 
-Abstention option is an additional function for classifier to abstain the model making a prediction when it not sure enough.
+The abstention option is an additional function for classifiers to abstain the model from making a prediction when it is not sure enough.
 
 - You have a confidence function (such as softmax layer)
 - We can select coverage (how much of input data I want to cover)
 
-Many systems usually add bias in the final result.
+Many systems usually add bias to the final result.
 
 - Minority classes have reduced performance, and classification is rejected
 - We can inject an interpretable model to understand when this problem occurs
@@ -90,7 +90,7 @@ Many systems usually add bias in the final result.
 
 # Fair division
 
-Distributing resources in way that each perceives the division as fair
+Distributing resources in a way that each perceives the division as fair
 
 - Some things are indivisible
 
@@ -107,16 +107,24 @@ What happens if there is no fair solution?
 
 Social impact metric
 
-- Find fair solution and maximize social impact (Price of Fairness = best possible solution / best social impact of a fair solution)
-- Individual vs group fairness: the goal is also to counter for historical disadvantages (this is about pink quotas)
-    - You can weight a group of people more than others when computing fairness
+- Find a fair solution and maximize its social impact (Price of Fairness = best possible solution / best social impact of a fair solution)
+- Individual vs group fairness: the goal is also to counter historical disadvantages (this is about pink quotas)
+    - You can weigh a group of people more than others when computing fairness
 - Sandra Buttock paper
 
 # AI Act
 
 How are we implementing the AI Act?
 
-- A lot of the requirements is not really clear about the implementation
+- A lot of the requirements are not clear about their implementation
 - Difficulty in terms of language (law and computer science backgrounds)
 
-Are we also considering that not using AI something is the right solution?
+Are we also considering that not using AI sometimes is the right solution?
+
+- E.g., do not always increase the size of the gun, but use the simplest working tools
+
+# Papers
+
+1. Bias preservation in machine learning: the legality of fairness metrics under EU non-discrimination law
+1. Why fairness cannot be automated: Bridging the gap between EU non-discrimination law and AI
+1. Compatibility of Fairness Metrics with EU Non-Discrimination Laws: Demographic Parity & Conditional Demographic Disparity
