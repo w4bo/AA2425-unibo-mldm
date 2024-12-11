@@ -1,3 +1,21 @@
+## [1.0.41](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.40...1.0.41) (2024-12-09)
+
+### Dependency updates
+
+* **deps:** update dependency notebook to v7.3.0 ([#56](https://github.com/w4bo/AA2425-unibo-mldm/issues/56)) ([0a616e7](https://github.com/w4bo/AA2425-unibo-mldm/commit/0a616e7ae69f8a838be811c41e714a9256e7f15f))
+* **deps:** update dependency notebook to v7.3.1 ([#57](https://github.com/w4bo/AA2425-unibo-mldm/issues/57)) ([85cdbd4](https://github.com/w4bo/AA2425-unibo-mldm/commit/85cdbd4783846acf468e34fe276a14e12733421e))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.116 ([#58](https://github.com/w4bo/AA2425-unibo-mldm/issues/58)) ([1b69a78](https://github.com/w4bo/AA2425-unibo-mldm/commit/1b69a78e7e77c71a6120c2851dc78f42aef4337d))
+* **deps:** update node.js to 22.12 ([#55](https://github.com/w4bo/AA2425-unibo-mldm/issues/55)) ([1afacf0](https://github.com/w4bo/AA2425-unibo-mldm/commit/1afacf08ef5335e158dfc847b0636d0ec4861834))
+
+### Bug Fixes
+
+* pipeline ([b549cba](https://github.com/w4bo/AA2425-unibo-mldm/commit/b549cba9df2491eb39581527456a315c4f710c51))
+* solution ([72195be](https://github.com/w4bo/AA2425-unibo-mldm/commit/72195becfbf3990a4793c0b6618cf92a07e3c9e5))
+
+### Build and continuous integration
+
+* **deps:** update jamesives/github-pages-deploy-action action to v4.7.2 ([#54](https://github.com/w4bo/AA2425-unibo-mldm/issues/54)) ([7eed8f3](https://github.com/w4bo/AA2425-unibo-mldm/commit/7eed8f3fdc274239feab13deb7a77c3575196dca))
+
 ## [1.0.40](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.39...1.0.40) (2024-12-03)
 
 ### Dependency updates
