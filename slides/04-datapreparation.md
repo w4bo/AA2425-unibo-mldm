@@ -261,18 +261,27 @@ For example, if $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles respective
 
 # The black swan theory
 
+Juvenal (55-128, Roman poet) wrote in his Satire VI of *events being "a bird as rare upon the earth as a black swan"*
+
+- When the phrase was coined, the black swan was presumed by Romans not to exist.
+- All swans are white because all historical records reported that swans had white feathers-
+
 :::: {.columns}
 ::: {.column width="70%"}
 
-Juvenal (55-128, Roman poet) wrote in his Satire VI of events being "a bird as rare upon the earth as a black swan"
+In 1697, Dutch explorers became the first Europeans to see black swans in Western Australia.
 
-- When the phrase was coined, the black swan was presumed by Romans not to exist.
-- All swans must be white because all historical records of swans reported that they had white feathers
-
-However, in 1697, Dutch explorers became the first Europeans to see black swans, in Western Australia.
-
-- In this case, the observation of a single black swan would be the undoing of the logic of any system of thought, as well as any reasoning that followed from that underlying logic.
+- The observation of a *single black swan* is the undoing of the logic of any system of thought
+    - ... as well as any reasoning that followed from that underlying logic.
 - A set of conclusions is potentially undone once any of its fundamental postulates is disproved.
+
+:::
+::: {.column width="30%"}
+
+![[Black swan](https://en.wikipedia.org/wiki/Black_swan_theory)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Black_swan_jan09.jpg/1280px-Black_swan_jan09.jpg)
+
+:::
+::::
 
 The black swan theory was developed by Nassim Nicholas Taleb to explain:
 
@@ -283,14 +292,6 @@ The black swan theory was developed by Nassim Nicholas Taleb to explain:
 Such extreme events (outliers), collectively play vastly larger roles than regular occurrences.
 
 - Especially in portfolios!
-
-:::
-::: {.column width="30%"}
-
-![[Black swan](https://en.wikipedia.org/wiki/Black_swan_theory)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Black_swan_jan09.jpg/1280px-Black_swan_jan09.jpg)
-
-:::
-::::
 
 # Construct data
 
