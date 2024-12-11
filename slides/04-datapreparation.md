@@ -264,14 +264,14 @@ For example, if $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles respective
 Juvenal (55-128, Roman poet) wrote in his Satire VI of *events being "a bird as rare upon the earth as a black swan"*
 
 - When the phrase was coined, the black swan was presumed by Romans not to exist.
-- All swans are white because all historical records reported that swans had white feathers-
+- All swans are white because all historical records reported that swans had white feathers
 
 :::: {.columns}
 ::: {.column width="70%"}
 
 In 1697, Dutch explorers became the first Europeans to see black swans in Western Australia.
 
-- The observation of a *single black swan* is the undoing of the logic of any system of thought
+- Observing a *single black swan* is the undoing of the logic of any system of thought
     - ... as well as any reasoning that followed from that underlying logic.
 - A set of conclusions is potentially undone once any of its fundamental postulates is disproved.
 
@@ -285,9 +285,9 @@ In 1697, Dutch explorers became the first Europeans to see black swans in Wester
 
 The black swan theory was developed by Nassim Nicholas Taleb [@taleb2008impact] to explain:
 
-- The disproportionate role of high-profile, hard-to-predict, and rare events that are beyond the realm of normal expectations in history, science, finance, and technology.
-- The non-computability of the probability of consequential rare events using scientific methods (owing to the very nature of small probabilities).
-- The psychological biases that blind people, both individually and collectively, to uncertainty and to the substantial role of rare events in historical affairs.
+- The disproportionate role of hard-to-predict and rare events that are beyond the realm of normal expectations in history, science, finance, and technology.
+- The non-computability of the probability of consequential rare events using scientific methods.
+- The psychological biases that blind people to uncertainty and to the substantial role of rare events in historical affairs.
 
 Such extreme events (outliers), collectively play vastly larger roles than regular occurrences.
 

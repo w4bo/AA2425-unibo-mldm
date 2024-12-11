@@ -38,11 +38,11 @@ Goals
 1. *Master the right terms and paradigms* behind AI
 1. *Develop (=code) your own (simple) project* based on AI
 1. *Make technical considerations* about AI
-  - What happens if I do ...?
+    - What happens if I do ...?
 1. *Understanding the surrounding AI world*
-  - Make decisions with AI
-  - Try to make predictions about AI for your company
-  - Orient yourself in an extremely dynamic and complex world dominated by AI
+    - Make decisions with AI
+    - Try to make predictions about AI for your company
+    - Orient yourself in an extremely dynamic and complex world dominated by AI
 
 # (Oral) Exam
 
