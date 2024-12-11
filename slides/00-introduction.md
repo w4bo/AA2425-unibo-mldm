@@ -93,8 +93,8 @@ The assignment on Machine Learning is about developing (= coding) an AI system i
 Once defined your project:
 
 1. Send me an email to discuss the details of your project
-  - ~300 words, including the datasets description (and a link to the source) and the main challenges
-  - The dataset must require some pre-processing
+    - ~300 words, including the datasets description (and a link to the source) and the main challenges
+    - The dataset must require some pre-processing
 1. After my approval, register the group (2 people at maximum) and project here: [https://forms.gle/T1hynSuu6LpRGtjw8](https://forms.gle/T1hynSuu6LpRGtjw8)
 1. Now you can start your project on Google Colab
 
@@ -103,16 +103,16 @@ Once defined your project:
 Once the project is completed:
 
 - Write a 5-page paper about the project
-  - Use Latex ([https://www.overleaf.com/](https://www.overleaf.com/))
-  - Use this template ([https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip](https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip))
-  - Sections:
-    1. Introduction (~1 page; including group organization and the work done by each member)
-    2. Related Work (~1 page; what others have done or which techniques can be applied)
-    3. Proposed Method (~1.5 pages; what did you do and how)
-    4. Results (~1 page; results and insights)
-    5. Conclusions (~0.5 pages; summary)
+    - Use Latex ([https://www.overleaf.com/](https://www.overleaf.com/))
+    - Use this template ([https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip](https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip))
+    - Sections:
+        1. Introduction (~1 page; including group organization and the work done by each member)
+        2. Related Work (~1 page; what others have done or which techniques can be applied)
+        3. Proposed Method (~1.5 pages; what did you do and how)
+        4. Results (~1 page; results and insights)
+        5. Conclusions (~0.5 pages; summary)
 - Upload the paper, assignment, and presentation into a Github repo
-  - The assignment must be executable on Google Colab without errors
+    - The assignment must be executable on Google Colab without errors
 - Share (with me) the Github repo
 
 **When both members have studied and all the material is ready, both members must book the exam on the same day**
@@ -149,11 +149,11 @@ However, I suggest you to read the book:
 - *Title*: Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow
 - *Author*: Aurélien Géron
 - Some notes about the book:
-  - The book is intended as a support
-  - The book is available for free in the library
-  - The book is pretty huge (about 800 pages)
-  - Carefully check the summary and select our topics
-  - If you want, you can read the other parts to take inspiration (not requested for the final exam)
+    - The book is intended as a support
+    - The book is available for free in the library
+    - The book is pretty huge (about 800 pages)
+    - Carefully check the summary and select our topics
+    - If you want, you can read the other parts to take inspiration (not requested for the final exam)
 
 :::
 ::: {.column width="40%"}
