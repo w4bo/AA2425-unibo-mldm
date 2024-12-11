@@ -27,25 +27,23 @@ Research topics
 
 # Table of Contents and Course Goals
 
-Hands-on *machine learning* (module 2, 24 hours)
+Hands-on *machine learning* (Module 2, 24 hours)
 
-- Theory, practice, and case studies of the main steps of the CRISP-DM methodology
-  - (Tentative) Labs will be every two weeks
+- *Theory*, *practice*, and *case studies* of the main steps of the CRISP-DM methodology
+  - We will have coding labs
   - Python libraries for machine learning (mainly `pandas` and `scikit-learn`)
 
-*Learning the working knowledge for the Artificial Intelligence field*
-
-- You must know the right terms and paradigms behind AI
-- You must know what AI is and how it works
 
 Goals
 
-- *Develop your own (simple) project* based on AI
-- *Make technical considerations* about AI
-- *Understanding the surrounding AI world*
-  - Orient yourself in an extremely dynamic and complex world dominated by AI
+1. *Master the right terms and paradigms* behind AI
+1. *Develop (=code) your own (simple) project* based on AI
+1. *Make technical considerations* about AI
+  - What happens if I do ...?
+1. *Understanding the surrounding AI world*
   - Make decisions with AI
   - Try to make predictions about AI for your company
+  - Orient yourself in an extremely dynamic and complex world dominated by AI
 
 # (Oral) Exam
 
@@ -71,42 +69,47 @@ According to the University's regulation
 On the day of the exam (~30 minutes per person):
 
 - 3 questions on different topics about the whole program
-- *If you do the final assignment on Machine Learning*, the 1st question will be a discussion with slides about your assignment (10/15 minutes)
+- *If you do the final assignment on Machine Learning*, the 1st question is a discussion with slides about your assignment
 
 # Final Assignment (Machine Learning)
 
-You can choose to do an assignment either on Machine Learning (ask me) or Data Mining (ask Prof. Golfarelli)
+You must do an assignment, either on Machine Learning (ask me) or Data Mining (ask Prof. Golfarelli)
 
-The assignment on Machine Learning is about developing an AI system in a group of 2 people (at maximum)
+The assignment on Machine Learning is about developing (= coding) an AI system in a group of 2 people (at maximum)
 
 1. Define the problem (of your interest!), the core of your project
-1. Define your strategy (algorithms), find data (datasets), ...
-1. Compare your strategy with existing ones (check on Google Scholar) ...
+1. Find data (datasets)
+1. Define your strategy (algorithms)
+1. Compare your strategy with existing ones (check on Google Scholar)
 1. Describe the insights you extracted from your analysis
 
 **You are responsible for your code** ("I do not know how to program" is not a valid excuse!)
 
-- **If you cannot explain your code and your choices**...
-- ... **and/or you copied and pasted it from colleagues or LLMs**
+- If you cannot explain your code and your choices...
+- ... and/or you copied and pasted it from colleagues or LLMs
 - ... you will retake the exam
+
+# Final Assignment (Machine Learning)
 
 Once defined your project:
 
 1. Send me an email to discuss the details of your project
+  - ~300 words, including the datasets description (and a link to the source), and the main challenges to face
+  - The dataset must require some pre-processing
 1. After my approval, register the group (2 people at maximum) and project here: [https://forms.gle/T1hynSuu6LpRGtjw8](https://forms.gle/T1hynSuu6LpRGtjw8)
 1. Now you can start your project on Google Colab
 
-# Presenting the Assignment
+# Final Assignment (Machine Learning)
 
-Once the project is completed
+Once the project is completed:
 
-- Write a 6-page paper about the project
+- Write a 5-page paper about the project
   - Use Latex ([https://www.overleaf.com/](https://www.overleaf.com/))
   - Use this template ([https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip](https://ieeecs-media.computer.org/assets/zip/ieeetran-final_sub.zip))
   - Sections:
     1. Introduction (~1 page; including group organization and the work done by each member)
     2. Related Work (~1 page; what others have done or which techniques can be applied)
-    3. Proposed Method (~2.5 pages; what did you do and how)
+    3. Proposed Method (~1.5 pages; what did you do and how)
     4. Results (~1 page; results and insights)
     5. Conclusions (~0.5 pages; summary)
 - Upload the paper, assignment, and presentation into a Github repo
@@ -119,8 +122,7 @@ Once the project is completed
 
 You will find all you need on Virtuale
 
-- Slides
-- and Python notebooks to be opened on Google Colab
+- Slides and Python notebooks to be opened on Google Colab
 
 However, **keeping up the pace with machine learning and data mining is hard**
 
@@ -132,7 +134,7 @@ However, **keeping up the pace with machine learning and data mining is hard**
 Rule of thumb
 
 - Understand the general concepts and fundamentals
-- Connect the dots... and ask questions!
+- ... and ask questions!
 
 # Books
 
@@ -175,22 +177,20 @@ If you need help for coding and labs, *you can ask the tutor*!
 :::: {.columns}
 ::: {.column width="60%"}
 
-Theory
-
 1. [CRISP-DM](https://w4bo.github.io/AA2425-unibo-mldm/01-crispdm)
+1. [(Lab) Introduction to Google Colab](https://w4bo.github.io/AA2425-unibo-mldm/lab-00-introduction)
 1. [Business Understanding](https://w4bo.github.io/AA2425-unibo-mldm/02-businessunderstanding)
 1. [Data Understanding](https://w4bo.github.io/AA2425-unibo-mldm/03-dataunderstanding)
+1. [(Lab) Data Understanding](https://w4bo.github.io/AA2425-unibo-mldm/lab-01-dataunderstanding)
+1. [(Lab) Housing (understanding)](https://w4bo.github.io/AA2425-unibo-mldm/lab-02-housing)
 1. [Data Preparation](https://w4bo.github.io/AA2425-unibo-mldm/04-datapreparation)
-1. [Modeling](https://w4bo.github.io/AA2425-unibo-mldm/05-modeling)
-1. [Neural Networks](https://w4bo.github.io/AA2425-unibo-mldm/06-neuralnetworks)
-
-Labs
-
-1. [Introduction to Google Colab](https://w4bo.github.io/AA2425-unibo-mldm/lab-00-introduction)
-1. [Data Understanding](https://w4bo.github.io/AA2425-unibo-mldm/lab-01-dataunderstanding) + [Housing](https://w4bo.github.io/AA2425-unibo-mldm/lab-02-housing)
-1. [Data Preparation](https://w4bo.github.io/AA2425-unibo-mldm/lab-03-datapreparation) + [Housing](https://w4bo.github.io/AA2425-unibo-mldm/lab-04-housing)
-1. [Modeling (classification)](https://w4bo.github.io/AA2425-unibo-mldm/lab-05-classification) + [Housing](https://w4bo.github.io/AA2425-unibo-mldm/lab-06-housing)
-1. [Modeling (neural networks)](https://w4bo.github.io/AA2425-unibo-mldm/lab-07-neuralnetworks)
+1. [(Lab) Data Preparation](https://w4bo.github.io/AA2425-unibo-mldm/lab-03-datapreparation)
+1. [Neural Networks](https://w4bo.github.io/AA2425-unibo-mldm/05-neuralnetworks)
+1. [Modeling](https://w4bo.github.io/AA2425-unibo-mldm/06-modeling)
+1. [(Lab) Housing (preparation)](https://w4bo.github.io/AA2425-unibo-mldm/lab-04-housing)
+1. [(Lab) Housing (modeling)](https://w4bo.github.io/AA2425-unibo-mldm/lab-06-housing)
+1. [(Lab) Titanic](https://w4bo.github.io/AA2425-unibo-mldm/lab-07-titanic)
+1. [(Lab) Breast cancer](https://w4bo.github.io/AA2425-unibo-mldm/lab-09-breastcancer)
 
 :::
 ::: {.column width="40%"}
