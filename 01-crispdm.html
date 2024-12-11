@@ -719,30 +719,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="our-solution-vool" class="title-slide slide level1 center">
-<h1>Our solution: VOOL</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>For instance, this has been done in VOOL <span class="citation" data-cites="DBLP:conf/adbis/FranciaGGR22">(<a href="#/references" role="doc-biblioref" onclick="">Francia et al. 2022</a>)</span> by:</p>
-<ol type="1">
-<li>applying existing ML techniques (modules) in a bag-of-task fashion,</li>
-<li>let each module compute its own insight (in a range that is shared by all modules)</li>
-<li>Compute a knapsack of the patterns extracted on time.</li>
-</ol>
-<blockquote>
-<p>Grouped by product department and sex the average quantity is 6699. All genders have similar quantity values. Facts can be grouped into 3 clusters, the largest has 22 facts and 1803 as average quantity, the second has 12 facts and 8187 as average quantity, the third has 10 facts and 15686 as average quantity. The 2 anomalous facts are (Produce, M) with 19076, and (Produce, F) with 18711.</p>
-</blockquote>
-<p>The reviewer #2 found it “good old fashioned AI”, and asked us to compare against LLMs and LLM-based applications.</p>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/user-attachments/assets/719bb7a2-488b-4fbc-9f22-0d7e5e3d2538"></p>
-<figcaption>Good old fashioned AI</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
 
 <section id="large-language-models-llms" class="title-slide slide level1 center">
 <h1>Large Language Models (LLMs)</h1>
@@ -752,37 +729,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Applications leveraging LLMs, such as ChatGPT, are usually oriented to general-purpose information retrieval</li>
 </ul>
 <p>LLMs are powerful tools for broad natural language applications, are they a good choice for data-intensive tasks as well?</p>
-</section>
-
-<section id="data-volume-and-cost" class="title-slide slide level1 center">
-<h1>Data volume and cost</h1>
-<ul>
-<li>Since business data are sensitive, they are stored in private repositories (such as data warehouses) unknown to LLMs</li>
-<li>To feed data to an LLM, the main possibility is to use the prompt.
-<ul>
-<li>Depending on the LLM, prompts <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">have limits in the #tokens (as of 2024-06)</a> composing input and answer</li>
-<li>The <a href="https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service">OpenAI price calculator in Microsoft Azure (as of 2024-06)</a> estimates that using GPT-4-32K costs around $0.06 per <span class="math inline">\(10^3\)</span> input tokens and $0.12 per <span class="math inline">\(10^3\)</span> output tokens, where 1000 tokens correspond to almost 750 words.
-<ul>
-<li>Prompting a table with <span class="math inline">\(10^5\)</span> tuples (if feasible) costs several dollars per execution.</li>
-</ul></li>
-</ul></li>
-<li>LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content.
-<ul>
-<li>This can overcome the limits and cost of tokens.</li>
-<li>However, if the summary process is incorrect, it will add errors and bias to the final answer.</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="running-algorithms" class="title-slide slide level1 center">
-<h1>Running algorithms</h1>
-<p>Algorithmic tasks such as SQL querying and data mining are better handled by DBMSs and query engines since</p>
-<ul>
-<li>they are optimized for these types of operations (e.g., using R-trees to speed up clustering in Euclidean spaces);</li>
-<li>their answers are correct, consistent, and reproducible;</li>
-<li>they do not have hallucinations.</li>
-</ul>
-<p>At the moment (2024), while (plain) LLMs have many strengths, they are not typically suitable for data-intensive tasks.</p>
 </section>
 
 <section id="llm-based-applications" class="title-slide slide level1 center">
@@ -1078,6 +1024,37 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1></h1>
 
 <img data-src="https://imgs.xkcd.com/comics/data_error.png" class="r-stretch quarto-figure-center"><p class="caption">Data Error</p></section>
+
+<section id="running-algorithms" class="title-slide slide level1 center">
+<h1>Running algorithms</h1>
+<p>Algorithmic tasks such as SQL querying and data mining are better handled by DBMSs and query engines since</p>
+<ul>
+<li>they are optimized for these types of operations (e.g., using R-trees to speed up clustering in Euclidean spaces);</li>
+<li>their answers are correct, consistent, and reproducible;</li>
+<li>they do not have hallucinations.</li>
+</ul>
+<p>At the moment (2024), while (plain) LLMs have many strengths, they are not typically suitable for data-intensive tasks.</p>
+</section>
+
+<section id="data-volume-and-cost" class="title-slide slide level1 center">
+<h1>Data volume and cost</h1>
+<ul>
+<li>Since business data are sensitive, they are stored in private repositories (such as data warehouses) unknown to LLMs</li>
+<li>To feed data to an LLM, the main possibility is to use the prompt.
+<ul>
+<li>Depending on the LLM, prompts <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">have limits in the #tokens (as of 2024-06)</a> composing input and answer</li>
+<li>The <a href="https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service">OpenAI price calculator in Microsoft Azure (as of 2024-06)</a> estimates that using GPT-4-32K costs around $0.06 per <span class="math inline">\(10^3\)</span> input tokens and $0.12 per <span class="math inline">\(10^3\)</span> output tokens, where 1000 tokens correspond to almost 750 words.
+<ul>
+<li>Prompting a table with <span class="math inline">\(10^5\)</span> tuples (if feasible) costs several dollars per execution.</li>
+</ul></li>
+</ul></li>
+<li>LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content.
+<ul>
+<li>This can overcome the limits and cost of tokens.</li>
+<li>However, if the summary process is incorrect, it will add errors and bias to the final answer.</li>
+</ul></li>
+</ul>
+</section>
 
 <section id="additional-issues" class="title-slide slide level1 center">
 <h1>Additional Issues</h1>
