@@ -1,3 +1,16 @@
+## [1.0.42](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.41...1.0.42) (2024-12-11)
+
+### Dependency updates
+
+* **deps:** update dependency scikit-learn to v1.6.0 ([#59](https://github.com/w4bo/AA2425-unibo-mldm/issues/59)) ([ac080d9](https://github.com/w4bo/AA2425-unibo-mldm/commit/ac080d90683d15c59386289335cf2319498d588b))
+
+### Bug Fixes
+
+* black swan ([f0f9218](https://github.com/w4bo/AA2425-unibo-mldm/commit/f0f9218e846e194d1e1944b15d44cbd80251c6ea))
+* black swan ([1fcff7c](https://github.com/w4bo/AA2425-unibo-mldm/commit/1fcff7ce8f474f0f0faa959702d2fcd6de167b37))
+* intro ([3ada40b](https://github.com/w4bo/AA2425-unibo-mldm/commit/3ada40b73e7a27143415da57cd938c910f3f0d15))
+* intro ([cfee129](https://github.com/w4bo/AA2425-unibo-mldm/commit/cfee1298e4fd4507cd82e5f609775eb823c703a4))
+
 ## [1.0.41](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.40...1.0.41) (2024-12-09)
 
 ### Dependency updates
