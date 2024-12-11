@@ -52,7 +52,6 @@ Questions on **all (theoretical and practical) aspects** of the course
 - Two separate and independent exam sessions (the other w/ Prof. Golfarelli)
   - The final mark is the average of the two exams
 - **Interaction** during the lectures/labs is considered in the final evaluation
-- The final mark of the exam will be averaged with the Data Mining module
 
 No scheduled dates, just **book when you are ready**
 
