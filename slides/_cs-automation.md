@@ -53,7 +53,7 @@ What insights would you return to describe the query result?
 :::
 ::::
 
-# Our solution: VOOL
+# Our solution: VOOL {visibility="hidden"}
 
 
 :::: {.columns}
@@ -90,27 +90,6 @@ Generative AI and LLMs have recently witnessed a huge hype even in the data scie
 - Applications leveraging LLMs, such as ChatGPT, are usually oriented to general-purpose information retrieval
 
 LLMs are powerful tools for broad natural language applications, are they a good choice for data-intensive tasks as well?
-
-# Data volume and cost
-
-- Since business data are sensitive, they are stored in private repositories (such as data warehouses) unknown to LLMs
-- To feed data to an LLM, the main possibility is to use the prompt.
-    - Depending on the LLM, prompts [have limits in the \#tokens (as of 2024-06)](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) composing input and answer
-    - The [OpenAI price calculator in Microsoft Azure (as of 2024-06)](https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service) estimates that using GPT-4-32K costs around \$0.06 per $10^3$ input tokens and \$0.12 per $10^3$ output tokens, where 1000 tokens correspond to almost 750 words.
-      - Prompting a table with $10^5$ tuples (if feasible) costs several dollars per execution.
-- LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content. 
-    - This can overcome the limits and cost of tokens.
-    - However, if the summary process is incorrect, it will add errors and bias to the final answer.
-
-# Running algorithms
-
-Algorithmic tasks such as SQL querying and data mining are better handled by DBMSs and query engines since
-
-- they are optimized for these types of operations (e.g., using R-trees to speed up clustering in Euclidean spaces);
-- their answers are correct, consistent, and reproducible;
-- they do not have hallucinations.
-
-At the moment (2024), while (plain) LLMs have many strengths, they are not typically suitable for data-intensive tasks.
 
 # LLM-based applications
 
@@ -229,6 +208,27 @@ and the one of a subsequent query obtained by drilling down the previous one (to
 # 
 
 ![Data Error](https://imgs.xkcd.com/comics/data_error.png)
+
+# Running algorithms
+
+Algorithmic tasks such as SQL querying and data mining are better handled by DBMSs and query engines since
+
+- they are optimized for these types of operations (e.g., using R-trees to speed up clustering in Euclidean spaces);
+- their answers are correct, consistent, and reproducible;
+- they do not have hallucinations.
+
+At the moment (2024), while (plain) LLMs have many strengths, they are not typically suitable for data-intensive tasks.
+
+# Data volume and cost
+
+- Since business data are sensitive, they are stored in private repositories (such as data warehouses) unknown to LLMs
+- To feed data to an LLM, the main possibility is to use the prompt.
+    - Depending on the LLM, prompts [have limits in the \#tokens (as of 2024-06)](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) composing input and answer
+    - The [OpenAI price calculator in Microsoft Azure (as of 2024-06)](https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service) estimates that using GPT-4-32K costs around \$0.06 per $10^3$ input tokens and \$0.12 per $10^3$ output tokens, where 1000 tokens correspond to almost 750 words.
+      - Prompting a table with $10^5$ tuples (if feasible) costs several dollars per execution.
+- LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content. 
+    - This can overcome the limits and cost of tokens.
+    - However, if the summary process is incorrect, it will add errors and bias to the final answer.
 
 # Additional Issues
 

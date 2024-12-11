@@ -38,16 +38,28 @@ The analyst then proceeds to
 >
 > Ronald H. Coase
 
-Several *biases* can occur:
+Several **biases** can occur:
 
-- **Selection**: the sample used for data collection is not representative of the population being studied
-- **Sampling**: Arises when certain segments of the population are more likely to be included or excluded from the sample
-- **Response**: Occurs when participants in a survey or study provide inaccurate or misleading responses
-- **Confirmation**: Refers to the tendency to favor information that confirms pre-existing beliefs or hypotheses while ignoring or discounting contradictory evidence
-- **Cultural**: Occurs when data collection methods, survey questions, or study designs are culturally insensitive or fail to account for cultural differences
-- **Time-Interval**: Occurs when the timing of data collection influences the results
-- **Publication**: Tendency for researchers or journals to publish studies with positive or significant results while neglecting to publish studies with null or negative results
+- *Selection*: the sample used for data collection is not representative of the population being studied
+- *Sampling*: Arises when certain segments of the population are more likely to be included or excluded from the sample
+- *Response*: Occurs when participants in a survey or study provide inaccurate or misleading responses
+- *Confirmation*: Refers to the tendency to favor information that confirms pre-existing beliefs or hypotheses while ignoring or discounting contradictory evidence
+- *Cultural*: Occurs when data collection methods, survey questions, or study designs are culturally insensitive or fail to account for cultural differences
+- *Time-Interval*: Occurs when the timing of data collection influences the results
+- *Publication*: Tendency for researchers or journals to publish studies with positive or significant results while neglecting to publish studies with null or negative results
 - ... and many others
+
+# 
+
+Selection bias
+
+![https://xkcd.com/2618/](https://imgs.xkcd.com/comics/selection_bias.png)
+
+#
+
+Survivor bias
+
+![https://xkcd.com/1827/](https://imgs.xkcd.com/comics/survivorship_bias.png)
 
 # Is data the new oil?
 

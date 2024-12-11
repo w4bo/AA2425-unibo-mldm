@@ -2,6 +2,12 @@
 subtitle: "Fairness"
 ---
 
+# Fairness 
+
+> **Fairness**
+>
+> impartial and just treatment or behaviour without favouritism or discrimination.
+
 # Regulations
 
 Regulation without enforcement is meaningless.
