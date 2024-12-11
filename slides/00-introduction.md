@@ -33,7 +33,6 @@ Hands-on *machine learning* (Module 2, 24 hours)
   - We will have coding labs
   - Python libraries for machine learning (mainly `pandas` and `scikit-learn`)
 
-
 Goals
 
 1. *Master the right terms and paradigms* behind AI
@@ -94,7 +93,7 @@ The assignment on Machine Learning is about developing (= coding) an AI system i
 Once defined your project:
 
 1. Send me an email to discuss the details of your project
-  - ~300 words, including the datasets description (and a link to the source), and the main challenges to face
+  - ~300 words, including the datasets description (and a link to the source) and the main challenges
   - The dataset must require some pre-processing
 1. After my approval, register the group (2 people at maximum) and project here: [https://forms.gle/T1hynSuu6LpRGtjw8](https://forms.gle/T1hynSuu6LpRGtjw8)
 1. Now you can start your project on Google Colab
@@ -166,11 +165,17 @@ However, I suggest you to read the book:
 
 # Office hours
 
-- Lectures start/end 10 minutes later/earlier than the time stated in the teaching calendar
-- You can ask questions before/after each lecture
+Lectures start/end 10 minutes later/earlier than the time stated in the teaching calendar
+
+- **Arrive ON TIME**
+
+You can ask questions before/after each lecture
+
 - ... or send an email to book an appointment
 
-If you need help for coding and labs, *you can ask the tutor*!
+If you need help for coding and labs, *you can ask me or the designed tutor*!
+
+- Remember, "I do not know how to code" is not a valid excuse!
 
 # Tentative outline
 
