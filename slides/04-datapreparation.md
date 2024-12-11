@@ -283,7 +283,7 @@ In 1697, Dutch explorers became the first Europeans to see black swans in Wester
 :::
 ::::
 
-The black swan theory was developed by Nassim Nicholas Taleb to explain:
+The black swan theory was developed by Nassim Nicholas Taleb [@taleb2008impact] to explain:
 
 - The disproportionate role of high-profile, hard-to-predict, and rare events that are beyond the realm of normal expectations in history, science, finance, and technology.
 - The non-computability of the probability of consequential rare events using scientific methods (owing to the very nature of small probabilities).
