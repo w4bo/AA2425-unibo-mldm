@@ -1,3 +1,12 @@
+## [1.0.43](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.42...1.0.43) (2024-12-11)
+
+### Bug Fixes
+
+* list ([b94bc2a](https://github.com/w4bo/AA2425-unibo-mldm/commit/b94bc2acbad5f0bf3548601c5f45bdefb5f10099))
+* minor fixes ([1ce8b9e](https://github.com/w4bo/AA2425-unibo-mldm/commit/1ce8b9e305467f38c2cdf3fc66e31005a290ff0c))
+* typo ([23fd0ee](https://github.com/w4bo/AA2425-unibo-mldm/commit/23fd0ee5deb039c7250e8890b27e9b53bbc58195))
+* typo ([a6ed8ad](https://github.com/w4bo/AA2425-unibo-mldm/commit/a6ed8adb11bbb2c689439b4c3c0b020138c76367))
+
 ## [1.0.42](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.41...1.0.42) (2024-12-11)
 
 ### Dependency updates
