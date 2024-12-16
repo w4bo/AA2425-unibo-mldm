@@ -94,7 +94,7 @@ Once defined your project:
 1. Send me an email to discuss the details of your project
     - ~300 words, including the datasets description (and a link to the source) and the main challenges
     - The dataset must require some pre-processing
-1. After my approval, register the group (2 people at maximum) and project here: [https://forms.gle/T1hynSuu6LpRGtjw8](https://forms.gle/T1hynSuu6LpRGtjw8)
+1. After my approval, register the group (2 people at maximum) and project here: [https://forms.gle/aZ4L7azCF43qqpzk6](https://forms.gle/aZ4L7azCF43qqpzk6)
 1. Now you can start your project on Google Colab
 
 # Final Assignment (Machine Learning)
