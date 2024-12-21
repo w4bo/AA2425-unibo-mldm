@@ -415,7 +415,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section id="solution-of-the-previous-hands-on" class="slide level2">
 <h2>Solution of the previous <code>Hands on</code></h2>
-<div id="87eb7c60" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:33:48.772473Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:33:48.772246Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:33:48.859045Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:33:48.858574Z&quot;}" data-execution_count="2">
+<div id="87eb7c60" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:17:19.815613Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:17:19.815148Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:17:19.906295Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:17:19.905730Z&quot;}" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="kw">def</span> preprocess(normalize<span class="op">=</span><span class="va">True</span>):</span>
@@ -711,7 +711,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section></section>
 <section id="checking-feature-correlations" class="title-slide slide level1 center">
 <h1>Checking feature correlations</h1>
-<div id="6UU4itaaW-pF" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:33:48.860940Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:33:48.860577Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:33:52.634369Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:33:52.633858Z&quot;}" data-outputid="9890e739-2566-4e8f-ca63-a1f515c047d6" data-execution_count="3">
+<div id="6UU4itaaW-pF" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:17:19.908345Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:17:19.908001Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:17:23.693666Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:17:23.693086Z&quot;}" data-outputid="9890e739-2566-4e8f-ca63-a1f515c047d6" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>sns.pairplot(</span>
@@ -725,7 +725,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="splitting-training-and-test-data" class="title-slide slide level1 center">
 <h1>Splitting training and test data</h1>
-<div id="09fe3dce" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:33:52.636334Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:33:52.635992Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:33:52.704073Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:33:52.703570Z&quot;}" data-execution_count="4">
+<div id="09fe3dce" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:17:23.695775Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:17:23.695396Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:17:23.763962Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:17:23.763398Z&quot;}" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
@@ -745,7 +745,7 @@ y_train: (13828,)
 y_test: (6812,)</code></pre>
 </div>
 </div>
-<div id="613643ea" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:33:52.706061Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:33:52.705605Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:33:52.712498Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:33:52.712056Z&quot;}" data-outputid="a4442b92-29c4-4d21-c35d-448acb919b71" data-execution_count="5">
+<div id="613643ea" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:17:23.766086Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:17:23.765631Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:17:23.772715Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:17:23.772253Z&quot;}" data-outputid="a4442b92-29c4-4d21-c35d-448acb919b71" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>X_train.info()</span></code></pre></div>
@@ -781,7 +781,7 @@ memory usage: 1.3 MB</code></pre>
 <section id="regression" class="title-slide slide level1 center">
 <h1>Regression</h1>
 <p>LinearRegression fits a linear model with coefficients <span class="math inline">\(w = (w_1, ..., w_p)\)</span> to minimize the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation.</p>
-<div id="805e7157" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:33:52.714168Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:33:52.713997Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:33:52.745170Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:33:52.744333Z&quot;}" data-outputid="8690e44b-d89e-441c-abb7-329217939c72" data-execution_count="6">
+<div id="805e7157" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:17:23.774372Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:17:23.774202Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:17:23.807579Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:17:23.807104Z&quot;}" data-outputid="8690e44b-d89e-441c-abb7-329217939c72" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression  <span class="co"># choose and import the model</span></span>
@@ -796,7 +796,7 @@ memory usage: 1.3 MB</code></pre>
        -57203.42335754, 126522.31313893, -28661.2527942 , -18574.51485723])</code></pre>
 </div>
 </div>
-<div id="deb75fc9" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:33:52.747320Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:33:52.747075Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:33:52.753993Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:33:52.753529Z&quot;}" data-outputid="240c7e9e-dfe4-4606-acca-09f86309f0a1" data-execution_count="7">
+<div id="deb75fc9" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:17:23.809854Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:17:23.809592Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:17:23.816381Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:17:23.815892Z&quot;}" data-outputid="240c7e9e-dfe4-4606-acca-09f86309f0a1" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>housing_predictions <span class="op">=</span> lin_reg.predict(X_test)  <span class="co"># predict the cost of the houses in the test set</span></span>
@@ -823,7 +823,7 @@ memory usage: 1.3 MB</code></pre>
 
 <section id="computing-the-rmse" class="title-slide slide level1 center">
 <h1>Computing the RMSE</h1>
-<div id="a764f2b9" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:33:52.756932Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:33:52.755985Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:33:52.947002Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:33:52.946521Z&quot;}" data-outputid="67c9d925-8b17-4d76-a6b5-b6afe9e27a99" data-execution_count="8">
+<div id="a764f2b9" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:17:23.819587Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:17:23.818798Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:17:24.012171Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:17:24.011693Z&quot;}" data-outputid="67c9d925-8b17-4d76-a6b5-b6afe9e27a99" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> root_mean_squared_error</span>
@@ -855,7 +855,7 @@ memory usage: 1.3 MB</code></pre>
 <h1><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html">Random forest regressor</a></h1>
 <p>A random forest fits decision trees on sub-samples of the dataset and uses averaging to improve accuracy and control over-fitting.</p>
 <p>The sample size is controlled with <code>max_samples</code> if <code>bootstrap=True</code>, otherwise the whole dataset is used to build each tree.</p>
-<div id="109abc76" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:33:52.948675Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:33:52.948507Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:34:05.316670Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:34:05.316202Z&quot;}" data-execution_count="9">
+<div id="109abc76" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:17:24.014168Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:17:24.013803Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:17:36.348249Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:17:36.347780Z&quot;}" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor  <span class="co"># import the model</span></span>
@@ -878,7 +878,7 @@ memory usage: 1.3 MB</code></pre>
 
 <section id="feature-importance" class="title-slide slide level1 center">
 <h1>Feature importance</h1>
-<div id="b45ae8cc" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:34:05.318675Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:34:05.318286Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:34:05.342130Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:34:05.341645Z&quot;}" data-execution_count="10">
+<div id="b45ae8cc" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:17:36.350322Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:17:36.349901Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:17:36.373749Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:17:36.373273Z&quot;}" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>feature_importance <span class="op">=</span> forest_reg.feature_importances_</span>
@@ -999,7 +999,7 @@ memory usage: 1.3 MB</code></pre>
 
 <section id="calculate-the-average-median_house_income-by-ocean_proximity" class="title-slide slide level1 center">
 <h1>Calculate the average <code>median_house_income</code> by <code>ocean_proximity</code></h1>
-<div id="b802bd3f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:34:05.344055Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:34:05.343680Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:34:05.669622Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:34:05.669151Z&quot;}" data-execution_count="11">
+<div id="b802bd3f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:17:36.375604Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:17:36.375260Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:17:36.708262Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:17:36.707740Z&quot;}" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>cur_df <span class="op">=</span> preprocess(normalize<span class="op">=</span><span class="va">False</span>)</span>
@@ -1015,7 +1015,7 @@ memory usage: 1.3 MB</code></pre>
 <section id="hyperparameters" class="title-slide slide level1 center">
 <h1>Hyperparameters</h1>
 <p>Look at parameters used by our current forest</p>
-<div id="f0235826" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:34:05.671513Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:34:05.671166Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:34:05.675255Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:34:05.674699Z&quot;}" data-outputid="ef64edc2-59a9-48a1-cb0d-08785ca187a8" data-execution_count="12">
+<div id="f0235826" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:17:36.710234Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:17:36.709834Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:17:36.714043Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:17:36.713446Z&quot;}" data-outputid="ef64edc2-59a9-48a1-cb0d-08785ca187a8" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>forest_reg.get_params()</span></code></pre></div>
@@ -1045,7 +1045,7 @@ memory usage: 1.3 MB</code></pre>
 
 <section id="hyperparameter-optimization-random-search" class="title-slide slide level1 center">
 <h1>Hyperparameter optimization: random search</h1>
-<div id="8d94f505" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:34:05.677114Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:34:05.676712Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:34:54.132296Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:34:54.131805Z&quot;}" data-outputid="e8ff8305-48f8-489a-9c30-5dff16650f1b" data-execution_count="13">
+<div id="8d94f505" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:17:36.715948Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:17:36.715562Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:24.910891Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:24.910374Z&quot;}" data-outputid="e8ff8305-48f8-489a-9c30-5dff16650f1b" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> RandomizedSearchCV</span>
@@ -1076,8 +1076,8 @@ memory usage: 1.3 MB</code></pre>
 [CV] END max_features=sqrt, min_samples_split=5, n_estimators=2; total time=   0.0s
 [CV] END max_features=sqrt, min_samples_split=5, n_estimators=2; total time=   0.0s
 [CV] END max_features=1.0, min_samples_split=5, n_estimators=150; total time=  10.8s
-[CV] END max_features=1.0, min_samples_split=5, n_estimators=150; total time=  10.6s
-[CV] END max_features=1.0, min_samples_split=5, n_estimators=150; total time=  10.6s</code></pre>
+[CV] END max_features=1.0, min_samples_split=5, n_estimators=150; total time=  10.5s
+[CV] END max_features=1.0, min_samples_split=5, n_estimators=150; total time=  10.5s</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>{'n_estimators': 100, 'min_samples_split': 2, 'max_features': 'sqrt'}</code></pre>
@@ -1087,7 +1087,7 @@ memory usage: 1.3 MB</code></pre>
 
 <section id="running-the-best-forest" class="title-slide slide level1 center">
 <h1>Running the best forest</h1>
-<div id="f40f18a9" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:34:54.134260Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:34:54.133882Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:34:57.904538Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:34:57.903990Z&quot;}" data-outputid="28de0675-820b-49db-d617-d7ebb3936c17" data-execution_count="14">
+<div id="f40f18a9" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:24.912778Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:24.912436Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:28.679744Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:28.679151Z&quot;}" data-outputid="28de0675-820b-49db-d617-d7ebb3936c17" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>forest<span class="op">=</span>run_forest(n_estimators<span class="op">=</span><span class="dv">100</span>, min_samples_split<span class="op">=</span><span class="dv">2</span>, max_features<span class="op">=</span><span class="st">'sqrt'</span>)</span></code></pre></div>
@@ -1101,7 +1101,7 @@ memory usage: 1.3 MB</code></pre>
 
 <section id="dimensionality-reduction-pca" class="title-slide slide level1 center">
 <h1>Dimensionality reduction: PCA</h1>
-<div id="41167ddd" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:34:57.906473Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:34:57.906129Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:34:58.241342Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:34:58.240875Z&quot;}" data-outputid="3fd9659d-cbcb-4589-ff31-a5687caaaed2" data-execution_count="15">
+<div id="41167ddd" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:28.681843Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:28.681399Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:29.013628Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:29.013071Z&quot;}" data-outputid="3fd9659d-cbcb-4589-ff31-a5687caaaed2" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
@@ -1199,7 +1199,7 @@ memory usage: 1.3 MB</code></pre>
 
 <section id="dimensionality-reduction-tsne" class="title-slide slide level1 center">
 <h1>Dimensionality reduction: TSNE</h1>
-<div id="HYDBmdVCXjFV" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:34:58.243262Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:34:58.242857Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:08.728492Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:08.727990Z&quot;}" data-outputid="8a922751-723f-41bf-989a-ba8c39e91498" data-execution_count="16">
+<div id="HYDBmdVCXjFV" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:29.015609Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:29.015244Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:39.598966Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:39.598349Z&quot;}" data-outputid="8a922751-723f-41bf-989a-ba8c39e91498" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a><span class="im">from</span> sklearn.manifold <span class="im">import</span> TSNE</span>
@@ -1220,7 +1220,7 @@ memory usage: 1.3 MB</code></pre>
 
 <section id="binning-the-median_house_value-into-3-classes" class="title-slide slide level1 center">
 <h1>Binning the <code>median_house_value</code> into 3 classes</h1>
-<div id="f16c0883" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:08.730277Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:08.730056Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:09.079305Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:09.078773Z&quot;}" data-outputid="049fe2a8-9c8f-4064-cc3b-f991f465a2bb" data-execution_count="17">
+<div id="f16c0883" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:39.600851Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:39.600614Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:39.744044Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:39.743580Z&quot;}" data-outputid="049fe2a8-9c8f-4064-cc3b-f991f465a2bb" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>df <span class="op">=</span> preprocess(<span class="va">False</span>)  <span class="co"># clean the dataset withtout standardization</span></span>
@@ -1236,7 +1236,7 @@ memory usage: 1.3 MB</code></pre>
 <section id="feature-selection" class="title-slide slide level1 center">
 <h1>Feature selection</h1>
 <p>For the sake of performance, we are going to use a manually defined set of features</p>
-<div id="eafc83b9" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:09.081060Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:09.080864Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:09.086336Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:09.085917Z&quot;}" data-execution_count="18">
+<div id="eafc83b9" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:39.746108Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:39.745754Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:39.751268Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:39.750843Z&quot;}" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>y <span class="op">=</span> df[<span class="st">"median_house_value"</span>]  <span class="co"># labels</span></span>
@@ -1250,7 +1250,7 @@ memory usage: 1.3 MB</code></pre>
 
 <section id="pca" class="title-slide slide level1 center">
 <h1>PCA</h1>
-<div id="ae91e744" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:09.088154Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:09.087816Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:09.420841Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:09.420271Z&quot;}" data-execution_count="19">
+<div id="ae91e744" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:39.752836Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:39.752681Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:40.084852Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:40.084344Z&quot;}" data-execution_count="19">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>result_pca <span class="op">=</span> pca.fit_transform(X_train.values)</span>
@@ -1266,7 +1266,7 @@ memory usage: 1.3 MB</code></pre>
 
 <section id="tsne" class="title-slide slide level1 center">
 <h1>TSNE</h1>
-<div id="7c2620f8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:09.423101Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:09.422483Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:20.690577Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:20.690051Z&quot;}" data-execution_count="20">
+<div id="7c2620f8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:40.086757Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:40.086468Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:51.415595Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:51.415076Z&quot;}" data-execution_count="20">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>tsne <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>)</span>
@@ -1295,7 +1295,7 @@ memory usage: 1.3 MB</code></pre>
 
 <section id="decision-tree" class="title-slide slide level1 center">
 <h1>Decision tree</h1>
-<div id="f6a910d0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:20.692447Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:20.692275Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:20.823222Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:20.822769Z&quot;}" data-outputid="82053cf2-a092-429d-ecb4-d43592966a25" data-execution_count="21">
+<div id="f6a910d0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:51.417560Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:51.417333Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:51.542665Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:51.542161Z&quot;}" data-outputid="82053cf2-a092-429d-ecb4-d43592966a25" data-execution_count="21">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a><span class="im">from</span> sklearn <span class="im">import</span> tree</span>
@@ -1309,7 +1309,7 @@ memory usage: 1.3 MB</code></pre>
 <pre><code>Accuracy: 0.768349970640047</code></pre>
 </div>
 </div>
-<div id="0a816a7f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:20.824963Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:20.824637Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:20.869579Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:20.869154Z&quot;}" data-outputid="2e6106d2-46a7-4a47-ed82-5e4ea92d1c6c" data-execution_count="22">
+<div id="0a816a7f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:51.544565Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:51.544206Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:51.589185Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:51.588600Z&quot;}" data-outputid="2e6106d2-46a7-4a47-ed82-5e4ea92d1c6c" data-execution_count="22">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report</span>
@@ -1329,7 +1329,7 @@ weighted avg       0.77      0.77      0.77      6812
 </code></pre>
 </div>
 </div>
-<div id="ec492de6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:20.871214Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:20.871052Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:20.877653Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:20.877219Z&quot;}" data-execution_count="23">
+<div id="ec492de6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:51.591139Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:51.590715Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:51.597655Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:51.597062Z&quot;}" data-execution_count="23">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href=""></a>feature_importance <span class="op">=</span> clf.feature_importances_</span>
@@ -1400,7 +1400,7 @@ weighted avg       0.77      0.77      0.77      6812
 
 <section id="plotting-the-tree" class="title-slide slide level1 center">
 <h1>Plotting the tree</h1>
-<div id="017f3c68" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:20.879246Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:20.879083Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:21.997603Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:21.997030Z&quot;}" data-outputid="68f262ca-ef73-4f29-9af9-2f6e010b4659" data-execution_count="24">
+<div id="017f3c68" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:51.599437Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:51.599042Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:52.745071Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:52.744497Z&quot;}" data-outputid="68f262ca-ef73-4f29-9af9-2f6e010b4659" data-execution_count="24">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb35-1"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">12</span>))</span>
@@ -1412,7 +1412,7 @@ weighted avg       0.77      0.77      0.77      6812
 
 <section id="random-forest" class="title-slide slide level1 center">
 <h1>Random forest</h1>
-<div id="zgtE_hRwXpWj" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:21.999438Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:21.999265Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:24.857142Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:24.856511Z&quot;}" data-outputid="8744a206-7a5a-4625-8927-e1118481dcea" data-execution_count="25">
+<div id="zgtE_hRwXpWj" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:52.747060Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:52.746744Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:55.594056Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:55.593418Z&quot;}" data-outputid="8744a206-7a5a-4625-8927-e1118481dcea" data-execution_count="25">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
@@ -1425,7 +1425,7 @@ weighted avg       0.77      0.77      0.77      6812
 <pre><code>Accuracy: 0.8247210804462712</code></pre>
 </div>
 </div>
-<div id="oXKGFKaUXriL" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:24.858809Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:24.858641Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:24.862968Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:24.862504Z&quot;}" data-outputid="f8a1ee63-8169-46e4-ab6b-cc58fd0ec666" data-execution_count="26">
+<div id="oXKGFKaUXriL" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:55.596100Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:55.595653Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:18:55.599928Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:18:55.599379Z&quot;}" data-outputid="f8a1ee63-8169-46e4-ab6b-cc58fd0ec666" data-execution_count="26">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href=""></a>forest_cls.get_params()</span></code></pre></div>
@@ -1456,7 +1456,7 @@ weighted avg       0.77      0.77      0.77      6812
 
 <section id="hyperparameter-optimization" class="title-slide slide level1 center">
 <h1>Hyperparameter optimization</h1>
-<div id="iJNLDjRuXtv0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:24.864704Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:24.864377Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:55.596817Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:55.596308Z&quot;}" data-outputid="72c212c8-fc8d-4a4b-fc20-f915f86e4d3f" data-execution_count="27">
+<div id="iJNLDjRuXtv0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:18:55.601721Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:18:55.601397Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:19:26.272920Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:19:26.272281Z&quot;}" data-outputid="72c212c8-fc8d-4a4b-fc20-f915f86e4d3f" data-execution_count="27">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href=""></a>random_grid <span class="op">=</span> {<span class="st">'n_estimators'</span>: [<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>], <span class="co"># Number of trees in random forest</span></span>
@@ -1498,7 +1498,7 @@ weighted avg       0.77      0.77      0.77      6812
 [CV] END max_depth=5, max_features=sqrt, min_samples_leaf=5, n_estimators=50; total time=   0.4s
 [CV] END max_depth=5, max_features=sqrt, min_samples_leaf=5, n_estimators=50; total time=   0.4s
 [CV] END max_depth=5, max_features=sqrt, min_samples_leaf=5, n_estimators=50; total time=   0.4s
-[CV] END max_depth=2, max_features=1.0, min_samples_leaf=5, n_estimators=150; total time=   1.3s
+[CV] END max_depth=2, max_features=1.0, min_samples_leaf=5, n_estimators=150; total time=   1.4s
 [CV] END max_depth=2, max_features=1.0, min_samples_leaf=5, n_estimators=150; total time=   1.3s
 [CV] END max_depth=2, max_features=1.0, min_samples_leaf=5, n_estimators=150; total time=   1.3s</code></pre>
 </div>
@@ -1513,7 +1513,7 @@ weighted avg       0.77      0.77      0.77      6812
 
 <section id="running-the-best-forest-1" class="title-slide slide level1 center">
 <h1>Running the “best” forest</h1>
-<div id="Prs9v1QQXvbo" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:55.598579Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:55.598420Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:56.083374Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:56.082799Z&quot;}" data-outputid="fc61d6be-42bc-4eb8-8d91-5394c252c714" data-execution_count="28">
+<div id="Prs9v1QQXvbo" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:19:26.275051Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:19:26.274718Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:19:26.760329Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:19:26.759796Z&quot;}" data-outputid="fc61d6be-42bc-4eb8-8d91-5394c252c714" data-execution_count="28">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href=""></a>forest_cls <span class="op">=</span> RandomForestClassifier(criterion<span class="op">=</span><span class="st">"gini"</span>, random_state<span class="op">=</span><span class="dv">42</span>, n_estimators<span class="op">=</span><span class="dv">50</span>, max_features<span class="op">=</span><span class="st">"sqrt"</span>, min_samples_leaf<span class="op">=</span><span class="dv">1</span>, max_depth<span class="op">=</span><span class="dv">5</span>)</span>
@@ -1524,7 +1524,7 @@ weighted avg       0.77      0.77      0.77      6812
 <pre><code>Accuracy: 0.7298884321785085</code></pre>
 </div>
 </div>
-<div id="1Wr3yNmyXxE8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:56.085258Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:56.084919Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:56.088865Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:56.088337Z&quot;}" data-outputid="937a6ff7-345d-4b67-e480-49b65e761dff" data-execution_count="29">
+<div id="1Wr3yNmyXxE8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:19:26.762196Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:19:26.761873Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:19:26.765917Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:19:26.765477Z&quot;}" data-outputid="937a6ff7-345d-4b67-e480-49b65e761dff" data-execution_count="29">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href=""></a>forest_cls.get_params()</span></code></pre></div>
@@ -1555,7 +1555,7 @@ weighted avg       0.77      0.77      0.77      6812
 
 <section id="automl-with-flaml" class="title-slide slide level1 center">
 <h1>AutoML with <a href="https://microsoft.github.io/FLAML/docs/reference/automl/automl#automl-objects">FLAML</a></h1>
-<div id="13d88cfc" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:56.090674Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:56.090309Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:35:56.098187Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:35:56.097625Z&quot;}" data-outputid="320b4213-5797-4338-f51b-16a82636b439" data-execution_count="30">
+<div id="13d88cfc" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:19:26.767538Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:19:26.767338Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:19:26.775216Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:19:26.774643Z&quot;}" data-outputid="320b4213-5797-4338-f51b-16a82636b439" data-execution_count="30">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb47-1"><a href=""></a>scale_mapper <span class="op">=</span> {<span class="st">"low"</span>: <span class="dv">1</span>, <span class="st">"medium"</span>: <span class="dv">2</span>, <span class="st">"high"</span>: <span class="dv">3</span>}</span>
@@ -1583,7 +1583,7 @@ Categories (3, int64): [1 &lt; 2 &lt; 3]</code></pre>
 
 <section id="running-automl" class="title-slide slide level1 center">
 <h1>Running AutoML</h1>
-<div id="1898d4d7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:35:56.099850Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:35:56.099699Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:36:57.203366Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:36:57.202947Z&quot;}" data-outputid="67453331-b383-437a-d618-c8e747d50d1b" data-execution_count="31">
+<div id="1898d4d7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:19:26.777032Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:19:26.776713Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:20:27.581992Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:20:27.581479Z&quot;}" data-outputid="67453331-b383-437a-d618-c8e747d50d1b" data-execution_count="31">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb49-1"><a href=""></a><span class="im">from</span> flaml <span class="im">import</span> AutoML</span>
@@ -1598,166 +1598,166 @@ Categories (3, int64): [1 &lt; 2 &lt; 3]</code></pre>
 <span id="cb49-10"><a href=""></a>automl.fit(X_train, y_train, <span class="op">**</span>automl_settings)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[flaml.automl.logger: 12-20 01:35:56] {1728} INFO - task = classification
-[flaml.automl.logger: 12-20 01:35:56] {1739} INFO - Evaluation method: cv
-[flaml.automl.logger: 12-20 01:35:56] {1838} INFO - Minimizing error metric: 1-accuracy
-[flaml.automl.logger: 12-20 01:35:56] {1955} INFO - List of ML learners in AutoML Run: ['lgbm', 'rf', 'xgboost', 'extra_tree', 'xgb_limitdepth', 'sgd', 'lrl1']
-[flaml.automl.logger: 12-20 01:35:56] {2258} INFO - iteration 0, current learner lgbm
-[flaml.automl.logger: 12-20 01:35:56] {2393} INFO - Estimated sufficient time budget=1313s. Estimated necessary time budget=30s.
-[flaml.automl.logger: 12-20 01:35:56] {2442} INFO -  at 0.1s,   estimator lgbm's best error=0.3435, best estimator lgbm's best error=0.3435
-[flaml.automl.logger: 12-20 01:35:56] {2258} INFO - iteration 1, current learner lgbm
-[flaml.automl.logger: 12-20 01:35:56] {2442} INFO -  at 0.2s,   estimator lgbm's best error=0.3435, best estimator lgbm's best error=0.3435
-[flaml.automl.logger: 12-20 01:35:56] {2258} INFO - iteration 2, current learner lgbm
-[flaml.automl.logger: 12-20 01:35:56] {2442} INFO -  at 0.3s,   estimator lgbm's best error=0.3199, best estimator lgbm's best error=0.3199
-[flaml.automl.logger: 12-20 01:35:56] {2258} INFO - iteration 3, current learner sgd
-[flaml.automl.logger: 12-20 01:35:56] {2442} INFO -  at 0.7s,   estimator sgd's best error=0.5094,  best estimator lgbm's best error=0.3199
-[flaml.automl.logger: 12-20 01:35:56] {2258} INFO - iteration 4, current learner lgbm
-[flaml.automl.logger: 12-20 01:35:56] {2442} INFO -  at 0.8s,   estimator lgbm's best error=0.2283, best estimator lgbm's best error=0.2283
-[flaml.automl.logger: 12-20 01:35:56] {2258} INFO - iteration 5, current learner lgbm
-[flaml.automl.logger: 12-20 01:35:57] {2442} INFO -  at 0.9s,   estimator lgbm's best error=0.2283, best estimator lgbm's best error=0.2283
-[flaml.automl.logger: 12-20 01:35:57] {2258} INFO - iteration 6, current learner lgbm
-[flaml.automl.logger: 12-20 01:35:57] {2442} INFO -  at 1.0s,   estimator lgbm's best error=0.2081, best estimator lgbm's best error=0.2081
-[flaml.automl.logger: 12-20 01:35:57] {2258} INFO - iteration 7, current learner lgbm
-[flaml.automl.logger: 12-20 01:35:57] {2442} INFO -  at 1.1s,   estimator lgbm's best error=0.2081, best estimator lgbm's best error=0.2081
-[flaml.automl.logger: 12-20 01:35:57] {2258} INFO - iteration 8, current learner lgbm
-[flaml.automl.logger: 12-20 01:35:57] {2442} INFO -  at 1.2s,   estimator lgbm's best error=0.2081, best estimator lgbm's best error=0.2081
-[flaml.automl.logger: 12-20 01:35:57] {2258} INFO - iteration 9, current learner lgbm
-[flaml.automl.logger: 12-20 01:35:57] {2442} INFO -  at 1.4s,   estimator lgbm's best error=0.1994, best estimator lgbm's best error=0.1994
-[flaml.automl.logger: 12-20 01:35:57] {2258} INFO - iteration 10, current learner xgboost
-[flaml.automl.logger: 12-20 01:35:57] {2442} INFO -  at 1.5s,   estimator xgboost's best error=0.3410,  best estimator lgbm's best error=0.1994
-[flaml.automl.logger: 12-20 01:35:57] {2258} INFO - iteration 11, current learner xgboost
-[flaml.automl.logger: 12-20 01:35:57] {2442} INFO -  at 1.6s,   estimator xgboost's best error=0.3002,  best estimator lgbm's best error=0.1994
-[flaml.automl.logger: 12-20 01:35:57] {2258} INFO - iteration 12, current learner extra_tree
-[flaml.automl.logger: 12-20 01:35:57] {2442} INFO -  at 1.8s,   estimator extra_tree's best error=0.3828,   best estimator lgbm's best error=0.1994
-[flaml.automl.logger: 12-20 01:35:57] {2258} INFO - iteration 13, current learner extra_tree
-[flaml.automl.logger: 12-20 01:35:58] {2442} INFO -  at 1.9s,   estimator extra_tree's best error=0.3687,   best estimator lgbm's best error=0.1994
-[flaml.automl.logger: 12-20 01:35:58] {2258} INFO - iteration 14, current learner rf
-[flaml.automl.logger: 12-20 01:35:58] {2442} INFO -  at 2.1s,   estimator rf's best error=0.3757,   best estimator lgbm's best error=0.1994
-[flaml.automl.logger: 12-20 01:35:58] {2258} INFO - iteration 15, current learner rf
-[flaml.automl.logger: 12-20 01:35:58] {2442} INFO -  at 2.3s,   estimator rf's best error=0.3132,   best estimator lgbm's best error=0.1994
-[flaml.automl.logger: 12-20 01:35:58] {2258} INFO - iteration 16, current learner xgboost
-[flaml.automl.logger: 12-20 01:35:58] {2442} INFO -  at 2.4s,   estimator xgboost's best error=0.3002,  best estimator lgbm's best error=0.1994
-[flaml.automl.logger: 12-20 01:35:58] {2258} INFO - iteration 17, current learner lgbm
-[flaml.automl.logger: 12-20 01:35:58] {2442} INFO -  at 2.5s,   estimator lgbm's best error=0.1994, best estimator lgbm's best error=0.1994
-[flaml.automl.logger: 12-20 01:35:58] {2258} INFO - iteration 18, current learner sgd
-[flaml.automl.logger: 12-20 01:35:59] {2442} INFO -  at 3.1s,   estimator sgd's best error=0.4920,  best estimator lgbm's best error=0.1994
-[flaml.automl.logger: 12-20 01:35:59] {2258} INFO - iteration 19, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:00] {2442} INFO -  at 3.9s,   estimator lgbm's best error=0.1670, best estimator lgbm's best error=0.1670
-[flaml.automl.logger: 12-20 01:36:00] {2258} INFO - iteration 20, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:00] {2442} INFO -  at 4.1s,   estimator xgboost's best error=0.2881,  best estimator lgbm's best error=0.1670
-[flaml.automl.logger: 12-20 01:36:00] {2258} INFO - iteration 21, current learner rf
-[flaml.automl.logger: 12-20 01:36:00] {2442} INFO -  at 4.2s,   estimator rf's best error=0.3132,   best estimator lgbm's best error=0.1670
-[flaml.automl.logger: 12-20 01:36:00] {2258} INFO - iteration 22, current learner rf
-[flaml.automl.logger: 12-20 01:36:00] {2442} INFO -  at 4.5s,   estimator rf's best error=0.3132,   best estimator lgbm's best error=0.1670
-[flaml.automl.logger: 12-20 01:36:00] {2258} INFO - iteration 23, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:02] {2442} INFO -  at 6.0s,   estimator lgbm's best error=0.1670, best estimator lgbm's best error=0.1670
-[flaml.automl.logger: 12-20 01:36:02] {2258} INFO - iteration 24, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:02] {2442} INFO -  at 6.7s,   estimator lgbm's best error=0.1670, best estimator lgbm's best error=0.1670
-[flaml.automl.logger: 12-20 01:36:02] {2258} INFO - iteration 25, current learner extra_tree
-[flaml.automl.logger: 12-20 01:36:03] {2442} INFO -  at 6.9s,   estimator extra_tree's best error=0.3687,   best estimator lgbm's best error=0.1670
-[flaml.automl.logger: 12-20 01:36:03] {2258} INFO - iteration 26, current learner sgd
-[flaml.automl.logger: 12-20 01:36:03] {2442} INFO -  at 7.1s,   estimator sgd's best error=0.4920,  best estimator lgbm's best error=0.1670
-[flaml.automl.logger: 12-20 01:36:03] {2258} INFO - iteration 27, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:04] {2442} INFO -  at 7.9s,   estimator lgbm's best error=0.1670, best estimator lgbm's best error=0.1670
-[flaml.automl.logger: 12-20 01:36:04] {2258} INFO - iteration 28, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:04] {2442} INFO -  at 8.0s,   estimator xgboost's best error=0.2738,  best estimator lgbm's best error=0.1670
-[flaml.automl.logger: 12-20 01:36:04] {2258} INFO - iteration 29, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:04] {2442} INFO -  at 8.1s,   estimator xgboost's best error=0.2738,  best estimator lgbm's best error=0.1670
-[flaml.automl.logger: 12-20 01:36:04] {2258} INFO - iteration 30, current learner extra_tree
-[flaml.automl.logger: 12-20 01:36:04] {2442} INFO -  at 8.3s,   estimator extra_tree's best error=0.3687,   best estimator lgbm's best error=0.1670
-[flaml.automl.logger: 12-20 01:36:04] {2258} INFO - iteration 31, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:05] {2442} INFO -  at 9.7s,   estimator lgbm's best error=0.1647, best estimator lgbm's best error=0.1647
-[flaml.automl.logger: 12-20 01:36:05] {2258} INFO - iteration 32, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:09] {2442} INFO -  at 12.9s,  estimator lgbm's best error=0.1647, best estimator lgbm's best error=0.1647
-[flaml.automl.logger: 12-20 01:36:09] {2258} INFO - iteration 33, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:09] {2442} INFO -  at 13.6s,  estimator lgbm's best error=0.1647, best estimator lgbm's best error=0.1647
-[flaml.automl.logger: 12-20 01:36:09] {2258} INFO - iteration 34, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:09] {2442} INFO -  at 13.8s,  estimator xgboost's best error=0.2738,  best estimator lgbm's best error=0.1647
-[flaml.automl.logger: 12-20 01:36:09] {2258} INFO - iteration 35, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:13] {2442} INFO -  at 17.2s,  estimator lgbm's best error=0.1641, best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:13] {2258} INFO - iteration 36, current learner rf
-[flaml.automl.logger: 12-20 01:36:13] {2442} INFO -  at 17.5s,  estimator rf's best error=0.2894,   best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:13] {2258} INFO - iteration 37, current learner sgd
-[flaml.automl.logger: 12-20 01:36:13] {2442} INFO -  at 17.7s,  estimator sgd's best error=0.4877,  best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:13] {2258} INFO - iteration 38, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:13] {2442} INFO -  at 17.8s,  estimator xgboost's best error=0.2738,  best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:13] {2258} INFO - iteration 39, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:14] {2442} INFO -  at 17.9s,  estimator xgboost's best error=0.2738,  best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:14] {2258} INFO - iteration 40, current learner rf
-[flaml.automl.logger: 12-20 01:36:14] {2442} INFO -  at 18.2s,  estimator rf's best error=0.2894,   best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:14] {2258} INFO - iteration 41, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:14] {2442} INFO -  at 18.4s,  estimator xgboost's best error=0.2565,  best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:14] {2258} INFO - iteration 42, current learner extra_tree
-[flaml.automl.logger: 12-20 01:36:14] {2442} INFO -  at 18.5s,  estimator extra_tree's best error=0.3272,   best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:14] {2258} INFO - iteration 43, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:16] {2442} INFO -  at 19.9s,  estimator lgbm's best error=0.1641, best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:16] {2258} INFO - iteration 44, current learner extra_tree
-[flaml.automl.logger: 12-20 01:36:16] {2442} INFO -  at 20.1s,  estimator extra_tree's best error=0.3207,   best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:16] {2258} INFO - iteration 45, current learner sgd
-[flaml.automl.logger: 12-20 01:36:16] {2442} INFO -  at 20.3s,  estimator sgd's best error=0.4877,  best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:16] {2258} INFO - iteration 46, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:16] {2442} INFO -  at 20.4s,  estimator xgboost's best error=0.2565,  best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:16] {2258} INFO - iteration 47, current learner rf
-[flaml.automl.logger: 12-20 01:36:16] {2442} INFO -  at 20.7s,  estimator rf's best error=0.2746,   best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:16] {2258} INFO - iteration 48, current learner extra_tree
-[flaml.automl.logger: 12-20 01:36:16] {2442} INFO -  at 20.9s,  estimator extra_tree's best error=0.3207,   best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:17] {2258} INFO - iteration 49, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:18] {2442} INFO -  at 22.3s,  estimator lgbm's best error=0.1641, best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:18] {2258} INFO - iteration 50, current learner rf
-[flaml.automl.logger: 12-20 01:36:18] {2442} INFO -  at 22.8s,  estimator rf's best error=0.2451,   best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:18] {2258} INFO - iteration 51, current learner extra_tree
-[flaml.automl.logger: 12-20 01:36:19] {2442} INFO -  at 23.1s,  estimator extra_tree's best error=0.2973,   best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:19] {2258} INFO - iteration 52, current learner rf
-[flaml.automl.logger: 12-20 01:36:19] {2442} INFO -  at 23.3s,  estimator rf's best error=0.2451,   best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:19] {2258} INFO - iteration 53, current learner rf
-[flaml.automl.logger: 12-20 01:36:19] {2442} INFO -  at 23.7s,  estimator rf's best error=0.2451,   best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:19] {2258} INFO - iteration 54, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:29] {2442} INFO -  at 33.0s,  estimator lgbm's best error=0.1641, best estimator lgbm's best error=0.1641
-[flaml.automl.logger: 12-20 01:36:29] {2258} INFO - iteration 55, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:34] {2442} INFO -  at 38.0s,  estimator lgbm's best error=0.1640, best estimator lgbm's best error=0.1640
-[flaml.automl.logger: 12-20 01:36:34] {2258} INFO - iteration 56, current learner extra_tree
-[flaml.automl.logger: 12-20 01:36:34] {2442} INFO -  at 38.2s,  estimator extra_tree's best error=0.2973,   best estimator lgbm's best error=0.1640
-[flaml.automl.logger: 12-20 01:36:34] {2258} INFO - iteration 57, current learner rf
-[flaml.automl.logger: 12-20 01:36:34] {2442} INFO -  at 38.7s,  estimator rf's best error=0.2155,   best estimator lgbm's best error=0.1640
-[flaml.automl.logger: 12-20 01:36:34] {2258} INFO - iteration 58, current learner rf
-[flaml.automl.logger: 12-20 01:36:35] {2442} INFO -  at 39.0s,  estimator rf's best error=0.2155,   best estimator lgbm's best error=0.1640
-[flaml.automl.logger: 12-20 01:36:35] {2258} INFO - iteration 59, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:35] {2442} INFO -  at 39.1s,  estimator xgboost's best error=0.2565,  best estimator lgbm's best error=0.1640
-[flaml.automl.logger: 12-20 01:36:35] {2258} INFO - iteration 60, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:38] {2442} INFO -  at 42.5s,  estimator lgbm's best error=0.1631, best estimator lgbm's best error=0.1631
-[flaml.automl.logger: 12-20 01:36:38] {2258} INFO - iteration 61, current learner rf
-[flaml.automl.logger: 12-20 01:36:39] {2442} INFO -  at 43.4s,  estimator rf's best error=0.1994,   best estimator lgbm's best error=0.1631
-[flaml.automl.logger: 12-20 01:36:39] {2258} INFO - iteration 62, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:42] {2442} INFO -  at 45.9s,  estimator lgbm's best error=0.1631, best estimator lgbm's best error=0.1631
-[flaml.automl.logger: 12-20 01:36:42] {2258} INFO - iteration 63, current learner rf
-[flaml.automl.logger: 12-20 01:36:42] {2442} INFO -  at 46.5s,  estimator rf's best error=0.1994,   best estimator lgbm's best error=0.1631
-[flaml.automl.logger: 12-20 01:36:42] {2258} INFO - iteration 64, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:42] {2442} INFO -  at 46.6s,  estimator xgboost's best error=0.2406,  best estimator lgbm's best error=0.1631
-[flaml.automl.logger: 12-20 01:36:42] {2258} INFO - iteration 65, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:47] {2442} INFO -  at 51.8s,  estimator lgbm's best error=0.1631, best estimator lgbm's best error=0.1631
-[flaml.automl.logger: 12-20 01:36:47] {2258} INFO - iteration 66, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:48] {2442} INFO -  at 52.0s,  estimator xgboost's best error=0.2108,  best estimator lgbm's best error=0.1631
-[flaml.automl.logger: 12-20 01:36:48] {2258} INFO - iteration 67, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:48] {2442} INFO -  at 52.3s,  estimator xgboost's best error=0.2108,  best estimator lgbm's best error=0.1631
-[flaml.automl.logger: 12-20 01:36:48] {2258} INFO - iteration 68, current learner xgboost
-[flaml.automl.logger: 12-20 01:36:48] {2442} INFO -  at 52.5s,  estimator xgboost's best error=0.2108,  best estimator lgbm's best error=0.1631
-[flaml.automl.logger: 12-20 01:36:48] {2258} INFO - iteration 69, current learner lgbm
-[flaml.automl.logger: 12-20 01:36:56] {2442} INFO -  at 60.3s,  estimator lgbm's best error=0.1631, best estimator lgbm's best error=0.1631
-[flaml.automl.logger: 12-20 01:36:57] {2685} INFO - retrain lgbm for 0.7s
-[flaml.automl.logger: 12-20 01:36:57] {2688} INFO - retrained model: LGBMClassifier(colsample_bytree=np.float64(0.6782006405163307),
+<pre><code>[flaml.automl.logger: 12-21 14:19:26] {1728} INFO - task = classification
+[flaml.automl.logger: 12-21 14:19:26] {1739} INFO - Evaluation method: cv
+[flaml.automl.logger: 12-21 14:19:26] {1838} INFO - Minimizing error metric: 1-accuracy
+[flaml.automl.logger: 12-21 14:19:26] {1955} INFO - List of ML learners in AutoML Run: ['lgbm', 'rf', 'xgboost', 'extra_tree', 'xgb_limitdepth', 'sgd', 'lrl1']
+[flaml.automl.logger: 12-21 14:19:26] {2258} INFO - iteration 0, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:27] {2393} INFO - Estimated sufficient time budget=1542s. Estimated necessary time budget=36s.
+[flaml.automl.logger: 12-21 14:19:27] {2442} INFO -  at 0.2s,   estimator lgbm's best error=0.3435, best estimator lgbm's best error=0.3435
+[flaml.automl.logger: 12-21 14:19:27] {2258} INFO - iteration 1, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:27] {2442} INFO -  at 0.2s,   estimator lgbm's best error=0.3435, best estimator lgbm's best error=0.3435
+[flaml.automl.logger: 12-21 14:19:27] {2258} INFO - iteration 2, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:27] {2442} INFO -  at 0.3s,   estimator lgbm's best error=0.3199, best estimator lgbm's best error=0.3199
+[flaml.automl.logger: 12-21 14:19:27] {2258} INFO - iteration 3, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:27] {2442} INFO -  at 0.4s,   estimator lgbm's best error=0.2283, best estimator lgbm's best error=0.2283
+[flaml.automl.logger: 12-21 14:19:27] {2258} INFO - iteration 4, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:27] {2442} INFO -  at 0.5s,   estimator lgbm's best error=0.2283, best estimator lgbm's best error=0.2283
+[flaml.automl.logger: 12-21 14:19:27] {2258} INFO - iteration 5, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:27] {2442} INFO -  at 0.6s,   estimator lgbm's best error=0.2081, best estimator lgbm's best error=0.2081
+[flaml.automl.logger: 12-21 14:19:27] {2258} INFO - iteration 6, current learner sgd
+[flaml.automl.logger: 12-21 14:19:27] {2442} INFO -  at 1.1s,   estimator sgd's best error=0.5094,  best estimator lgbm's best error=0.2081
+[flaml.automl.logger: 12-21 14:19:27] {2258} INFO - iteration 7, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:28] {2442} INFO -  at 1.2s,   estimator lgbm's best error=0.2081, best estimator lgbm's best error=0.2081
+[flaml.automl.logger: 12-21 14:19:28] {2258} INFO - iteration 8, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:28] {2442} INFO -  at 1.3s,   estimator lgbm's best error=0.2081, best estimator lgbm's best error=0.2081
+[flaml.automl.logger: 12-21 14:19:28] {2258} INFO - iteration 9, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:28] {2442} INFO -  at 1.5s,   estimator lgbm's best error=0.1994, best estimator lgbm's best error=0.1994
+[flaml.automl.logger: 12-21 14:19:28] {2258} INFO - iteration 10, current learner xgboost
+[flaml.automl.logger: 12-21 14:19:28] {2442} INFO -  at 1.6s,   estimator xgboost's best error=0.3410,  best estimator lgbm's best error=0.1994
+[flaml.automl.logger: 12-21 14:19:28] {2258} INFO - iteration 11, current learner xgboost
+[flaml.automl.logger: 12-21 14:19:28] {2442} INFO -  at 1.7s,   estimator xgboost's best error=0.3002,  best estimator lgbm's best error=0.1994
+[flaml.automl.logger: 12-21 14:19:28] {2258} INFO - iteration 12, current learner extra_tree
+[flaml.automl.logger: 12-21 14:19:28] {2442} INFO -  at 1.9s,   estimator extra_tree's best error=0.3828,   best estimator lgbm's best error=0.1994
+[flaml.automl.logger: 12-21 14:19:28] {2258} INFO - iteration 13, current learner extra_tree
+[flaml.automl.logger: 12-21 14:19:28] {2442} INFO -  at 2.0s,   estimator extra_tree's best error=0.3687,   best estimator lgbm's best error=0.1994
+[flaml.automl.logger: 12-21 14:19:28] {2258} INFO - iteration 14, current learner rf
+[flaml.automl.logger: 12-21 14:19:29] {2442} INFO -  at 2.2s,   estimator rf's best error=0.3757,   best estimator lgbm's best error=0.1994
+[flaml.automl.logger: 12-21 14:19:29] {2258} INFO - iteration 15, current learner rf
+[flaml.automl.logger: 12-21 14:19:29] {2442} INFO -  at 2.4s,   estimator rf's best error=0.3132,   best estimator lgbm's best error=0.1994
+[flaml.automl.logger: 12-21 14:19:29] {2258} INFO - iteration 16, current learner xgboost
+[flaml.automl.logger: 12-21 14:19:29] {2442} INFO -  at 2.5s,   estimator xgboost's best error=0.3002,  best estimator lgbm's best error=0.1994
+[flaml.automl.logger: 12-21 14:19:29] {2258} INFO - iteration 17, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:29] {2442} INFO -  at 2.7s,   estimator lgbm's best error=0.1994, best estimator lgbm's best error=0.1994
+[flaml.automl.logger: 12-21 14:19:29] {2258} INFO - iteration 18, current learner sgd
+[flaml.automl.logger: 12-21 14:19:30] {2442} INFO -  at 3.2s,   estimator sgd's best error=0.4924,  best estimator lgbm's best error=0.1994
+[flaml.automl.logger: 12-21 14:19:30] {2258} INFO - iteration 19, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:30] {2442} INFO -  at 4.1s,   estimator lgbm's best error=0.1670, best estimator lgbm's best error=0.1670
+[flaml.automl.logger: 12-21 14:19:30] {2258} INFO - iteration 20, current learner xgboost
+[flaml.automl.logger: 12-21 14:19:31] {2442} INFO -  at 4.2s,   estimator xgboost's best error=0.2881,  best estimator lgbm's best error=0.1670
+[flaml.automl.logger: 12-21 14:19:31] {2258} INFO - iteration 21, current learner rf
+[flaml.automl.logger: 12-21 14:19:31] {2442} INFO -  at 4.4s,   estimator rf's best error=0.3132,   best estimator lgbm's best error=0.1670
+[flaml.automl.logger: 12-21 14:19:31] {2258} INFO - iteration 22, current learner rf
+[flaml.automl.logger: 12-21 14:19:31] {2442} INFO -  at 4.6s,   estimator rf's best error=0.3132,   best estimator lgbm's best error=0.1670
+[flaml.automl.logger: 12-21 14:19:31] {2258} INFO - iteration 23, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:33] {2442} INFO -  at 6.2s,   estimator lgbm's best error=0.1670, best estimator lgbm's best error=0.1670
+[flaml.automl.logger: 12-21 14:19:33] {2258} INFO - iteration 24, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:33] {2442} INFO -  at 6.9s,   estimator lgbm's best error=0.1670, best estimator lgbm's best error=0.1670
+[flaml.automl.logger: 12-21 14:19:33] {2258} INFO - iteration 25, current learner extra_tree
+[flaml.automl.logger: 12-21 14:19:33] {2442} INFO -  at 7.1s,   estimator extra_tree's best error=0.3687,   best estimator lgbm's best error=0.1670
+[flaml.automl.logger: 12-21 14:19:33] {2258} INFO - iteration 26, current learner sgd
+[flaml.automl.logger: 12-21 14:19:34] {2442} INFO -  at 7.3s,   estimator sgd's best error=0.4924,  best estimator lgbm's best error=0.1670
+[flaml.automl.logger: 12-21 14:19:34] {2258} INFO - iteration 27, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:34] {2442} INFO -  at 8.1s,   estimator lgbm's best error=0.1670, best estimator lgbm's best error=0.1670
+[flaml.automl.logger: 12-21 14:19:34] {2258} INFO - iteration 28, current learner xgboost
+[flaml.automl.logger: 12-21 14:19:35] {2442} INFO -  at 8.2s,   estimator xgboost's best error=0.2738,  best estimator lgbm's best error=0.1670
+[flaml.automl.logger: 12-21 14:19:35] {2258} INFO - iteration 29, current learner xgboost
+[flaml.automl.logger: 12-21 14:19:35] {2442} INFO -  at 8.3s,   estimator xgboost's best error=0.2738,  best estimator lgbm's best error=0.1670
+[flaml.automl.logger: 12-21 14:19:35] {2258} INFO - iteration 30, current learner extra_tree
+[flaml.automl.logger: 12-21 14:19:35] {2442} INFO -  at 8.5s,   estimator extra_tree's best error=0.3687,   best estimator lgbm's best error=0.1670
+[flaml.automl.logger: 12-21 14:19:35] {2258} INFO - iteration 31, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:36] {2442} INFO -  at 9.8s,   estimator lgbm's best error=0.1647, best estimator lgbm's best error=0.1647
+[flaml.automl.logger: 12-21 14:19:36] {2258} INFO - iteration 32, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:39] {2442} INFO -  at 13.1s,  estimator lgbm's best error=0.1647, best estimator lgbm's best error=0.1647
+[flaml.automl.logger: 12-21 14:19:39] {2258} INFO - iteration 33, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:40] {2442} INFO -  at 13.8s,  estimator lgbm's best error=0.1647, best estimator lgbm's best error=0.1647
+[flaml.automl.logger: 12-21 14:19:40] {2258} INFO - iteration 34, current learner xgboost
+[flaml.automl.logger: 12-21 14:19:40] {2442} INFO -  at 14.0s,  estimator xgboost's best error=0.2738,  best estimator lgbm's best error=0.1647
+[flaml.automl.logger: 12-21 14:19:40] {2258} INFO - iteration 35, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:44] {2442} INFO -  at 17.7s,  estimator lgbm's best error=0.1641, best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:44] {2258} INFO - iteration 36, current learner rf
+[flaml.automl.logger: 12-21 14:19:44] {2442} INFO -  at 17.9s,  estimator rf's best error=0.2894,   best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:44] {2258} INFO - iteration 37, current learner sgd
+[flaml.automl.logger: 12-21 14:19:44] {2442} INFO -  at 18.2s,  estimator sgd's best error=0.4892,  best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:44] {2258} INFO - iteration 38, current learner xgboost
+[flaml.automl.logger: 12-21 14:19:45] {2442} INFO -  at 18.3s,  estimator xgboost's best error=0.2738,  best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:45] {2258} INFO - iteration 39, current learner xgboost
+[flaml.automl.logger: 12-21 14:19:45] {2442} INFO -  at 18.4s,  estimator xgboost's best error=0.2738,  best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:45] {2258} INFO - iteration 40, current learner rf
+[flaml.automl.logger: 12-21 14:19:45] {2442} INFO -  at 18.7s,  estimator rf's best error=0.2894,   best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:45] {2258} INFO - iteration 41, current learner xgboost
+[flaml.automl.logger: 12-21 14:19:45] {2442} INFO -  at 18.8s,  estimator xgboost's best error=0.2565,  best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:45] {2258} INFO - iteration 42, current learner extra_tree
+[flaml.automl.logger: 12-21 14:19:45] {2442} INFO -  at 19.0s,  estimator extra_tree's best error=0.3272,   best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:45] {2258} INFO - iteration 43, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:47] {2442} INFO -  at 20.3s,  estimator lgbm's best error=0.1641, best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:47] {2258} INFO - iteration 44, current learner extra_tree
+[flaml.automl.logger: 12-21 14:19:47] {2442} INFO -  at 20.5s,  estimator extra_tree's best error=0.3207,   best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:47] {2258} INFO - iteration 45, current learner sgd
+[flaml.automl.logger: 12-21 14:19:47] {2442} INFO -  at 20.7s,  estimator sgd's best error=0.4892,  best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:47] {2258} INFO - iteration 46, current learner xgboost
+[flaml.automl.logger: 12-21 14:19:47] {2442} INFO -  at 20.8s,  estimator xgboost's best error=0.2565,  best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:47] {2258} INFO - iteration 47, current learner rf
+[flaml.automl.logger: 12-21 14:19:47] {2442} INFO -  at 21.1s,  estimator rf's best error=0.2746,   best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:47] {2258} INFO - iteration 48, current learner extra_tree
+[flaml.automl.logger: 12-21 14:19:48] {2442} INFO -  at 21.3s,  estimator extra_tree's best error=0.3207,   best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:48] {2258} INFO - iteration 49, current learner lgbm
+[flaml.automl.logger: 12-21 14:19:49] {2442} INFO -  at 22.8s,  estimator lgbm's best error=0.1641, best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:49] {2258} INFO - iteration 50, current learner rf
+[flaml.automl.logger: 12-21 14:19:50] {2442} INFO -  at 23.2s,  estimator rf's best error=0.2451,   best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:50] {2258} INFO - iteration 51, current learner extra_tree
+[flaml.automl.logger: 12-21 14:19:50] {2442} INFO -  at 23.5s,  estimator extra_tree's best error=0.2973,   best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:50] {2258} INFO - iteration 52, current learner rf
+[flaml.automl.logger: 12-21 14:19:50] {2442} INFO -  at 23.8s,  estimator rf's best error=0.2451,   best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:50] {2258} INFO - iteration 53, current learner rf
+[flaml.automl.logger: 12-21 14:19:51] {2442} INFO -  at 24.2s,  estimator rf's best error=0.2451,   best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:19:51] {2258} INFO - iteration 54, current learner lgbm
+[flaml.automl.logger: 12-21 14:20:00] {2442} INFO -  at 33.4s,  estimator lgbm's best error=0.1641, best estimator lgbm's best error=0.1641
+[flaml.automl.logger: 12-21 14:20:00] {2258} INFO - iteration 55, current learner lgbm
+[flaml.automl.logger: 12-21 14:20:05] {2442} INFO -  at 38.3s,  estimator lgbm's best error=0.1640, best estimator lgbm's best error=0.1640
+[flaml.automl.logger: 12-21 14:20:05] {2258} INFO - iteration 56, current learner extra_tree
+[flaml.automl.logger: 12-21 14:20:05] {2442} INFO -  at 38.5s,  estimator extra_tree's best error=0.2973,   best estimator lgbm's best error=0.1640
+[flaml.automl.logger: 12-21 14:20:05] {2258} INFO - iteration 57, current learner rf
+[flaml.automl.logger: 12-21 14:20:05] {2442} INFO -  at 39.0s,  estimator rf's best error=0.2155,   best estimator lgbm's best error=0.1640
+[flaml.automl.logger: 12-21 14:20:05] {2258} INFO - iteration 58, current learner rf
+[flaml.automl.logger: 12-21 14:20:06] {2442} INFO -  at 39.3s,  estimator rf's best error=0.2155,   best estimator lgbm's best error=0.1640
+[flaml.automl.logger: 12-21 14:20:06] {2258} INFO - iteration 59, current learner rf
+[flaml.automl.logger: 12-21 14:20:07] {2442} INFO -  at 40.2s,  estimator rf's best error=0.1994,   best estimator lgbm's best error=0.1640
+[flaml.automl.logger: 12-21 14:20:07] {2258} INFO - iteration 60, current learner lgbm
+[flaml.automl.logger: 12-21 14:20:10] {2442} INFO -  at 43.6s,  estimator lgbm's best error=0.1631, best estimator lgbm's best error=0.1631
+[flaml.automl.logger: 12-21 14:20:10] {2258} INFO - iteration 61, current learner rf
+[flaml.automl.logger: 12-21 14:20:11] {2442} INFO -  at 44.2s,  estimator rf's best error=0.1994,   best estimator lgbm's best error=0.1631
+[flaml.automl.logger: 12-21 14:20:11] {2258} INFO - iteration 62, current learner lgbm
+[flaml.automl.logger: 12-21 14:20:13] {2442} INFO -  at 46.7s,  estimator lgbm's best error=0.1631, best estimator lgbm's best error=0.1631
+[flaml.automl.logger: 12-21 14:20:13] {2258} INFO - iteration 63, current learner rf
+[flaml.automl.logger: 12-21 14:20:14] {2442} INFO -  at 48.1s,  estimator rf's best error=0.1994,   best estimator lgbm's best error=0.1631
+[flaml.automl.logger: 12-21 14:20:14] {2258} INFO - iteration 64, current learner xgboost
+[flaml.automl.logger: 12-21 14:20:15] {2442} INFO -  at 48.2s,  estimator xgboost's best error=0.2565,  best estimator lgbm's best error=0.1631
+[flaml.automl.logger: 12-21 14:20:15] {2258} INFO - iteration 65, current learner lgbm
+[flaml.automl.logger: 12-21 14:20:20] {2442} INFO -  at 53.5s,  estimator lgbm's best error=0.1631, best estimator lgbm's best error=0.1631
+[flaml.automl.logger: 12-21 14:20:20] {2258} INFO - iteration 66, current learner rf
+[flaml.automl.logger: 12-21 14:20:21] {2442} INFO -  at 54.3s,  estimator rf's best error=0.1922,   best estimator lgbm's best error=0.1631
+[flaml.automl.logger: 12-21 14:20:21] {2258} INFO - iteration 67, current learner extra_tree
+[flaml.automl.logger: 12-21 14:20:21] {2442} INFO -  at 54.6s,  estimator extra_tree's best error=0.2973,   best estimator lgbm's best error=0.1631
+[flaml.automl.logger: 12-21 14:20:21] {2258} INFO - iteration 68, current learner rf
+[flaml.automl.logger: 12-21 14:20:22] {2442} INFO -  at 55.4s,  estimator rf's best error=0.1922,   best estimator lgbm's best error=0.1631
+[flaml.automl.logger: 12-21 14:20:22] {2258} INFO - iteration 69, current learner lgbm
+[flaml.automl.logger: 12-21 14:20:26] {2442} INFO -  at 60.0s,  estimator lgbm's best error=0.1631, best estimator lgbm's best error=0.1631
+[flaml.automl.logger: 12-21 14:20:27] {2685} INFO - retrain lgbm for 0.7s
+[flaml.automl.logger: 12-21 14:20:27] {2688} INFO - retrained model: LGBMClassifier(colsample_bytree=np.float64(0.6782006405163307),
                learning_rate=np.float64(0.08222714104485472), max_bin=511,
                min_child_samples=5, n_estimators=44, n_jobs=-1, num_leaves=254,
                reg_alpha=np.float64(0.003934614746573571),
                reg_lambda=np.float64(0.003560646472734122), verbose=-1)
-[flaml.automl.logger: 12-20 01:36:57] {1985} INFO - fit succeeded
-[flaml.automl.logger: 12-20 01:36:57] {1986} INFO - Time taken to find the best model: 42.47236466407776</code></pre>
+[flaml.automl.logger: 12-21 14:20:27] {1985} INFO - fit succeeded
+[flaml.automl.logger: 12-21 14:20:27] {1986} INFO - Time taken to find the best model: 43.57257962226868</code></pre>
 </div>
 </div>
 </section>
 
 <section id="running-the-best-model" class="title-slide slide level1 center">
 <h1>Running the best model</h1>
-<div id="8f9415cc" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:36:57.205165Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:36:57.204857Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:36:57.210845Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:36:57.210403Z&quot;}" data-outputid="29cb1af8-ff84-4d3a-9777-b53de04f264b" data-execution_count="32">
+<div id="8f9415cc" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:20:27.583864Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:20:27.583580Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:20:27.589718Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:20:27.589252Z&quot;}" data-outputid="29cb1af8-ff84-4d3a-9777-b53de04f264b" data-execution_count="32">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb51-1"><a href=""></a>automl.model.estimator</span></code></pre></div>
@@ -2189,7 +2189,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                reg_lambda=np.float64(0.003560646472734122), verbose=-1)</pre></div> </div></div></div></div>
 </div>
 </div>
-<div id="6b21842b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:36:57.212525Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:36:57.212199Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:36:57.251809Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:36:57.251133Z&quot;}" data-outputid="552ae0e5-5a1e-49fe-eba5-1bdc54fc0319" data-execution_count="33">
+<div id="6b21842b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:20:27.591229Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:20:27.591066Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:20:27.631567Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:20:27.630832Z&quot;}" data-outputid="552ae0e5-5a1e-49fe-eba5-1bdc54fc0319" data-execution_count="33">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb52-1"><a href=""></a>housing_predictions <span class="op">=</span> automl.predict(X_test)</span>
@@ -2203,7 +2203,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <section id="exercise" class="title-slide slide level1 center">
 <h1>Exercise</h1>
-<div id="571b733a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-20T01:36:57.253950Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-20T01:36:57.253754Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-20T01:36:57.257223Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-20T01:36:57.256617Z&quot;}" data-execution_count="34">
+<div id="571b733a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-12-21T14:20:27.633730Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-12-21T14:20:27.633539Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-12-21T14:20:27.636912Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-12-21T14:20:27.636416Z&quot;}" data-execution_count="34">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb54-1"><a href=""></a><span class="co"># Can you do better?</span></span></code></pre></div>
