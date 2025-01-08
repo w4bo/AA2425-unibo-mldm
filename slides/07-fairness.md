@@ -8,6 +8,21 @@ subtitle: "Fairness"
 >
 > impartial and just treatment or behaviour without favouritism or discrimination.
 
+Machine learning algorithms (e.g., classifiers) make predictions about new data *by training on old data*.
+
+- These predictions may be hiring or not hiring, good or bad credit, and so on.
+
+However, the training data may contain patterns such as a higher rate of good outcomes for members of certain groups.
+
+This is quantified by the “80% rule” of disparate impact, which is a legal measure and definition of bias.
+
+- $\frac{\textup{Rate of unprivileged applicants receiving good outcome}}{\textup{Rate of privileged applicants receiving good outcome}} < 0.8$
+
+It is ethically and legally undesirable for a classifier to learn these biases from the data.
+
+We propose two methods of modifying data, called Combinatorial and Geometric repair. We test our repairs on three data sets.
+Experiments show that our repairs perform favorably in terms of training classifiers that are both accurate and unbiased.
+
 # Regulations
 
 Regulation without enforcement is meaningless.

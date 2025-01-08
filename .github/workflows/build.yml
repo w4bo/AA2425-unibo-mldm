@@ -5,21 +5,15 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11' 
       - name: Running the notebooks
         run: |
           cd slides 
-          pip install -r requirements.txt
-          chmod +x generate.sh
-          ./generate.sh
+          docker compose up build
       - name: Generate the slides
         run: |
           cd slides 
-          cp build.sh.example build.sh
-          chmod +x build.sh
-          docker compose up
+          cp publish.sh.example publish.sh
+          docker compose up publish
       - name: Deploy
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         uses: JamesIves/github-pages-deploy-action@v4.7.2

@@ -1,13 +1,18 @@
-version: "3.9"
 services:
-  build-quarto:
+  build:
     init: true
-    # restart: always
+    image: w4bo/python:1.0.2
+    volumes:
+      - ./:/data
+    command: bash -c "cd /data && ./build.sh"
+
+  publish:
+    init: true
     image: w4bo/quarto-slides:1.0.23
-    hostname: build-quarto
-    container_name: build-quarto
+    hostname: publish
+    container_name: publish
     ports:
       - "6778:6778"
     volumes:
       - ./:/data
-    command: ["/bin/bash", "/data/build.sh"]
+    command: ["/bin/bash", "/data/publish.sh"]

@@ -40,26 +40,56 @@ The analyst then proceeds to
 
 Several **biases** can occur:
 
-- *Selection*: the sample used for data collection is not representative of the population being studied
-- *Sampling*: Arises when certain segments of the population are more likely to be included or excluded from the sample
-- *Response*: Occurs when participants in a survey or study provide inaccurate or misleading responses
-- *Confirmation*: Refers to the tendency to favor information that confirms pre-existing beliefs or hypotheses while ignoring or discounting contradictory evidence
-- *Cultural*: Occurs when data collection methods, survey questions, or study designs are culturally insensitive or fail to account for cultural differences
-- *Time-Interval*: Occurs when the timing of data collection influences the results
-- *Publication*: Tendency for researchers or journals to publish studies with positive or significant results while neglecting to publish studies with null or negative results
+- *Selection*: sample used for data collection is not representative of the population being studied
+- *Sampling*: certain segments of the population are more likely to be included or excluded from the sample
+- *Response*: participants in a survey or study provide inaccurate or misleading responses
+- *Confirmation*: refers to the tendency to favor information that confirms pre-existing beliefs or hypotheses while ignoring or discounting contradictory evidence
+- *Cultural*: data collection methods, survey questions, or study designs are culturally insensitive or fail to account for cultural differences
+- *Time-Interval*: the timing of data collection influences the results
+- *Publication*: tendency for researchers or journals to publish studies with positive or significant results while neglecting to publish studies with null or negative results
 - ... and many others
 
 # 
 
-Selection bias
+![Red dots stand for places where surviving planes were shot. How would you reinforce the planes?](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Survivorship-bias.svg/1280px-Survivorship-bias.svg.png)
+
+# Survivorship bias
+
+The "survivors" get studied, while the failures are excluded, leading to potentially flawed conclusions.
+
+Start-up Success Stories
+
+- People often hear stories of wildly successful companies like Apple, Amazon, or Tesla and assume that hard work and a good idea are enough to succeed. This overlooks the countless failed start-ups that had hard-working teams and great ideas but didn’t survive due to market conditions, competition, or other factors.
+
+Fitness and Weight Loss Programs
+
+- Testimonials for fitness programs often highlight people who achieved dramatic results. These "success stories" ignore the many individuals who followed the same program but didn’t achieve noticeable results, either due to differences in genetics, lifestyle, or other factors.
+
+Investment Portfolios
+
+- Financial advice often highlights top-performing stocks or mutual funds as examples of great investments. These examples focus on the "survivors" in the market, ignoring the many investments that failed or underperformed, which can lead to overestimating the likelihood of similar success in the future.
+
+# Survivorship bias
+
+![https://xkcd.com/1827/](https://imgs.xkcd.com/comics/survivorship_bias.png)
+
+# Selection bias
 
 ![https://xkcd.com/2618/](https://imgs.xkcd.com/comics/selection_bias.png)
 
-#
+# ... and more!
 
-Survivor bias
+*Confirmation Bias*
 
-![https://xkcd.com/1827/](https://imgs.xkcd.com/comics/survivorship_bias.png)
+- A person who believes in a specific political ideology might seek out news articles or social media posts that reinforce their beliefs, while ignoring or dismissing information that contradicts their views. This selective exposure to information strengthens their pre-existing opinions.
+
+*Anchoring Bias*
+
+- When shopping for a new car, a person may see a car priced at $30,000, and then a second car priced at $25,000. Even if the second car is not objectively better or a great deal, the first price "anchors" their perception of the value of the second car, leading them to think it's a better deal simply because it's cheaper than the first option.
+
+*Availability Bias*
+
+- After watching several news reports about airplane crashes, a person might overestimate the risk of flying. They might avoid flying, despite it being statistically safer than driving, because the images and stories of crashes are more readily available in their memory.
 
 # Is data the new oil?
 
