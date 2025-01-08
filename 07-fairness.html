@@ -343,6 +343,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><strong>Fairness</strong></p>
 <p>impartial and just treatment or behaviour without favouritism or discrimination.</p>
 </blockquote>
+<p>Machine learning algorithms (e.g., classifiers) make predictions about new data <em>by training on old data</em>.</p>
+<ul>
+<li>These predictions may be hiring or not hiring, good or bad credit, and so on.</li>
+</ul>
+<p>However, the training data may contain patterns such as a higher rate of good outcomes for members of certain groups.</p>
+<p>This is quantified by the “80% rule” of disparate impact, which is a legal measure and definition of bias.</p>
+<ul>
+<li><span class="math inline">\(\frac{\textup{Rate of unprivileged applicants receiving good outcome}}{\textup{Rate of privileged applicants receiving good outcome}} &lt; 0.8\)</span></li>
+</ul>
+<p>It is ethically and legally undesirable for a classifier to learn these biases from the data.</p>
+<p>We propose two methods of modifying data, called Combinatorial and Geometric repair. We test our repairs on three data sets. Experiments show that our repairs perform favorably in terms of training classifiers that are both accurate and unbiased.</p>
 </section>
 
 <section id="regulations" class="title-slide slide level1 center">
