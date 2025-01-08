@@ -2,7 +2,7 @@
     "name": "Dev",
     "context": "..",
     // "dockerFile": "../Dockerfile",
-    "image": "w4bo/python:1.0.2",
+    "image": "w4bo/python:1.0.3",
     "workspaceMount": "source=${localWorkspaceFolder},target=/home,type=bind",
     "workspaceFolder": "/home",
     "customizations": {
