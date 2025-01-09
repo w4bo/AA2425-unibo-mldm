@@ -1,3 +1,14 @@
+## [1.0.45](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.44...1.0.45) (2025-01-09)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.119 ([#69](https://github.com/w4bo/AA2425-unibo-mldm/issues/69)) ([d46169a](https://github.com/w4bo/AA2425-unibo-mldm/commit/d46169aef0cd2e18cf556fadf31d9b1620390899))
+* **deps:** update w4bo/python docker tag to v1.0.3 ([#68](https://github.com/w4bo/AA2425-unibo-mldm/issues/68)) ([5ade146](https://github.com/w4bo/AA2425-unibo-mldm/commit/5ade146105f636c2adb411f996db3b875a2338af))
+
+### Bug Fixes
+
+* data understanding ([05e17bf](https://github.com/w4bo/AA2425-unibo-mldm/commit/05e17bf215a8215a2b0d0069c0da81c27c1647f4))
+
 ## [1.0.44](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.43...1.0.44) (2025-01-08)
 
 ### Dependency updates
