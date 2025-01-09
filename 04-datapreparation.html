@@ -696,9 +696,220 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="section-2" class="title-slide slide level1 center">
-<h1></h1>
+<section id="which-mean-compount-interest" class="title-slide slide level1 center">
+<h1>Which mean? Compount interest</h1>
+<p>Consider an investment portfolio with initial value 1000€ and final value 2406.62€ after 18 years.</p>
+<p>Which return has the portfolio generated each year?</p>
+</section>
 
+<section id="which-mean-compount-interest-1" class="title-slide slide level1 center">
+<h1>Which mean? Compount interest</h1>
+<div class="columns">
+<div class="column" style="width:70%;">
+<blockquote>
+<p>Assume that each year our portfolio has a return of X%</p>
+<p>The first year, the portfolio increases its value to <span class="math inline">\(V_1=1000€ + (1000€ \times X\%) = 1050€\)</span></p>
+<p>The second year, the portfolio increases its value to <span class="math inline">\(V_2 = V_1 + (V_1 \times X\%) = 1102.50€\)</span></p>
+<p>… and so on.</p>
+</blockquote>
+</div><div class="column" style="width:29%;">
+<blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1000.00 €</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1050.00 €</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1102.50 €</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>2292.02 €</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>2406.62 €</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
+<p>This is not a linear increase!</p>
+<p>This is a geometric sequence, the final value is <span class="math inline">\(\text{Initial value} \times (1 + \frac{r}{n})^\frac{t}{n}\)</span></p>
+<ul>
+<li><span class="math inline">\(r\)</span> is the nominal annual interest rate</li>
+<li><span class="math inline">\(n\)</span> is the compounding frequency (1: annually, 12: monthly, 52: weekly, 365: daily)</li>
+<li><span class="math inline">\(t\)</span> is the overall length of time the interest is applied (expressed using the same time units as n, usually years).</li>
+</ul>
+<blockquote>
+<p><span class="math inline">\(\text{Final value} = \text{Initial value} \times (1 + X)^{18}\)</span></p>
+<p><span class="math inline">\(X = (\frac{\text{Final value}}{\text{Initial value}})^\frac{1}{18} - 1\)</span></p>
+<p><span class="math inline">\(X = 0.05 = 5\%\)</span></p>
+</blockquote>
+<p>In this case the return is equal every year, so the average interest is <span class="math inline">\(5\%\)</span>.</p>
+</section>
+
+<section id="which-mean-compount-interest-2" class="title-slide slide level1 center">
+<h1>Which mean? Compount interest</h1>
+<p>Let us assume now that the returns changes over year.</p>
+<blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>Value</th>
+<th>Return</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1000.00 €</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1050.00 €</td>
+<td>5%</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>997.50 €</td>
+<td>-5%</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>1047.38 €</td>
+<td>5%</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>995.01 €</td>
+<td>-5%</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>995.01 €</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>What is the average return?</p>
+</section>
+
+<section id="which-mean-compount-interest-3" class="title-slide slide level1 center">
+<h1>Which mean? Compount interest</h1>
+<p>If we apply the aritmetic mean it is <span class="math inline">\(\frac{5 -5 + 5 -5 + 0}{5} = 0%\)</span>, however <strong>this is wrong!</strong></p>
+<blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>Value</th>
+<th>Return</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1000.00 €</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1000.00 €</td>
+<td>0%</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1000.00 €</td>
+<td>0%</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>1000.00 €</td>
+<td>0%</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>1000.00 €</td>
+<td>0%</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>1000.00 €</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>We already know that <span class="math inline">\(X = \frac{\text{Final value}}{\text{Initial value}}^\frac{1}{5} - 1\)</span>, the average return is <span class="math inline">\(X = -0.1\%\)</span></p>
+<blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>Value</th>
+<th>Return</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1000.00 €</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>999.00 €</td>
+<td>-0.1%</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>998.00 €</td>
+<td>-0.1%</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>997.00 €</td>
+<td>-0.1%</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>996.00 €</td>
+<td>-0.1%</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>995.01 €</td>
+<td>-0.1%</td>
+</tr>
+</tbody>
+</table>
+<p>This is correct!</p>
+</blockquote>
+<p>The <em>Compound Annual Growth Rate</em> represents the mean annualized growth rate for compounding values over a given time period.</p>
+<ul>
+<li>CAGR smoothes the effect of volatility of periodic values that can render arithmetic means less meaningful.</li>
+</ul>
 </section>
 
 <section id="skewed-distributions" class="title-slide slide level1 center">
@@ -707,10 +918,151 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <img data-src="https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png" class="r-stretch"><p>What problems can arise with skewed distributions?</p>
 </section>
 
-<section id="section-3" class="title-slide slide level1 center">
+<section id="section-2" class="title-slide slide level1 center">
 <h1></h1>
 
 <img data-src="./img/datapreprocessing/imputation_100.svg" class="r-stretch"></section>
+
+<section id="skewed-distributions-1" class="title-slide slide level1 center">
+<h1>Skewed distributions</h1>
+<p>What happens to mean and median values?</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/datapreprocessing/height_distribution.svg"></p>
+<figcaption>Gaussian distribution</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/datapreprocessing/market_cap_distribution.svg"></p>
+<figcaption>Skewed distribution</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="skewed-distributions-2" class="title-slide slide level1 center">
+<h1>Skewed distributions</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/datapreprocessing/height_distribution.svg"></p>
+<figcaption>Gaussian distribution</figcaption>
+</figure>
+</div>
+<pre><code>Mean   = 173 cm
+Median = 173 cm</code></pre>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/datapreprocessing/market_cap_distribution.svg"></p>
+<figcaption>Skewed distribution</figcaption>
+</figure>
+</div>
+<pre><code>Mean:   103158262914
+Median:  36666524821</code></pre>
+</div>
+</div>
+</section>
+
+<section id="skewed-distributions-stocks" class="title-slide slide level1 center">
+<h1>Skewed distributions: Stocks</h1>
+<p>Let us consider the S&amp;P 500 index</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/S%26P_500">Standard and Poor’s 500</a> is an index tracking the stock performance of <a href="https://en.wikipedia.org/wiki/List_of_S%26P_500_companies">500 of the largest companies</a> in the United States.</li>
+</ul>
+
+<img data-src="./img/datapreprocessing/market_cap_topn.svg" class="r-stretch quarto-figure-center"><p class="caption">Top 25 company from the S&amp;P 500 index</p><p>How would you define the <em>weight</em> of a company in the index?</p>
+<ul>
+<li>Companies emit stocks that are buyed by investors, the number of stocks is called <em>shares outstanding</em>
+<ul>
+<li><em>Shares outstanding</em> are shares of a corporation that have been purchased by investors and are held by them</li>
+<li><em>Treasury shares</em> are shares held by the corporation itself</li>
+<li><em>Issued shares</em> = Shares outstanding + Treasury shares</li>
+</ul></li>
+<li>Stocks are daily traded in stock market
+<ul>
+<li><em>Volume</em> is the amount of shares that are daily traded</li>
+<li><em>Close</em> and <em>Open</em> are closing/opening prices of daily trades</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="skewed-distributions-stocks-1" class="title-slide slide level1 center">
+<h1>Skewed distributions: Stocks</h1>
+<p>As a semplification, given a company <span class="math inline">\(C\)</span> and a generic index <span class="math inline">\(I\)</span></p>
+<p><em>Market cap weight</em> (e.g., <a href="https://en.wikipedia.org/wiki/S%26P_500">S&amp;P 500</a>)</p>
+<ul>
+<li><span class="math inline">\(\text{MarketCapitalization(C)} = \text{SharesOutstanding(C)} \times \text{StockPrice(C)}\)</span></li>
+<li><span class="math inline">\(\text{MarketCapWeight(C)} = \frac{\text{MarketCapitalization(C)}}{\sum_{C' \in I} \text{MarketCapitalization(C')}}\)</span></li>
+</ul>
+<p><em>Price weight index</em> (e.g., <a href="https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average">Dow Jones Industrial Average</a>)</p>
+<ul>
+<li><span class="math inline">\(\text{PriceWeight(C)} = \frac{\text{StockPrice(C)}}{\sum_{C' \in I} \text{StockPrice(C')}}\)</span></li>
+</ul>
+<blockquote>
+<p>Given a few companies such as</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Ticker</th>
+<th style="text-align: right;">Close</th>
+<th style="text-align: right;">Shares</th>
+<th style="text-align: right;">PWI (%)</th>
+<th style="text-align: right;">Market Cap (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">AMZN</td>
+<td style="text-align: right;">222.13</td>
+<td style="text-align: right;">1.0515e+10</td>
+<td style="text-align: right;">3.20253</td>
+<td style="text-align: right;">4.53745</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AAPL</td>
+<td style="text-align: right;">242.7</td>
+<td style="text-align: right;">1.51158e+10</td>
+<td style="text-align: right;">3.4991</td>
+<td style="text-align: right;">7.12683</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GS</td>
+<td style="text-align: right;">580.02</td>
+<td style="text-align: right;">3.1391e+08</td>
+<td style="text-align: right;">8.36237</td>
+<td style="text-align: right;">0.353707</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MSFT</td>
+<td style="text-align: right;">424.56</td>
+<td style="text-align: right;">7.43488e+09</td>
+<td style="text-align: right;">6.12105</td>
+<td style="text-align: right;">6.13209</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NVDA</td>
+<td style="text-align: right;">140.11</td>
+<td style="text-align: right;">2.449e+10</td>
+<td style="text-align: right;">2.02002</td>
+<td style="text-align: right;">6.66582</td>
+</tr>
+</tbody>
+</table>
+<p>What is their impact on DJIA and S&amp;P 500?</p>
+</blockquote>
+</section>
+
+<section id="skewed-distributions-stocks-2" class="title-slide slide level1 center">
+<h1>Skewed distributions: Stocks</h1>
+
+<img data-src="./img/datapreprocessing/price_weight_distribution.svg" class="r-stretch quarto-figure-center"><p class="caption">Price vs market cap weighted</p></section>
 
 <section id="outlier-removal" class="title-slide slide level1 center">
 <h1>Outlier removal</h1>
@@ -784,17 +1136,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Juvenal (55-128, Roman poet) wrote in his Satire VI of <em>events being “a bird as rare upon the earth as a black swan”</em></p>
 <ul>
 <li>When the phrase was coined, the black swan was presumed by Romans not to exist.</li>
-<li>All swans are white because all historical records reported that swans had white feathers</li>
+<li>All swans are white because all records reported that swans had white feathers.</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:70%;">
-<p>In 1697, Dutch explorers became the first Europeans to see black swans in Western Australia.</p>
+<p>In 1697, Dutch explorers became the first Europeans to see black swans in Australia.</p>
 <ul>
 <li>Observing a <em>single black swan</em> is the undoing of the logic of any system of thought
 <ul>
 <li>… as well as any reasoning that followed from that underlying logic.</li>
 </ul></li>
-<li>A set of conclusions is potentially undone once any of its fundamental postulates is disproved.</li>
+<li>Conclusions are potentially undone once any of its fundamental postulates is disproved.</li>
 </ul>
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
@@ -807,14 +1159,40 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 <p>The black swan theory was developed by Nassim Nicholas Taleb <span class="citation" data-cites="taleb2008impact">(<a href="#/references" role="doc-biblioref" onclick="">Taleb 2008</a>)</span> to explain:</p>
 <ul>
-<li>The disproportionate role of hard-to-predict and rare events that are beyond the realm of normal expectations in history, science, finance, and technology.</li>
+<li>The disproportionate role of hard-to-predict and rare events that are beyond the realm of normal expectations.</li>
 <li>The non-computability of the probability of consequential rare events using scientific methods.</li>
 <li>The psychological biases that blind people to uncertainty and to the substantial role of rare events in historical affairs.</li>
 </ul>
 <p>Such extreme events (outliers), collectively play vastly larger roles than regular occurrences.</p>
+</section>
+
+<section id="the-black-swan-theory-in-action" class="title-slide slide level1 center">
+<h1>The black swan theory in action!</h1>
+<p><a href="https://en.wikipedia.org/wiki/Long-Term_Capital_Management">Long-Term Capital Management</a> was a <em>highly leveraged</em> hedge fund.</p>
 <ul>
-<li>Especially in portfolios!</li>
+<li>Members of LTCM’s board of directors included Myron Scholes and Robert C. Merton, who three years later in 1997 shared the Nobel Prize in Economics</li>
+<li>LTCM was initially successful, with annualized returns of around
+<ul>
+<li>21% in its first year,</li>
+<li>43% in its second year,</li>
+<li>and 41% in its third year.</li>
+</ul></li>
+<li>However, in 1998 it lost $4.6 billion <em>in less than four months due to an unlikely combination</em> of high leverage and exposure to the 1997 Asian financial crisis and 1998 Russian financial crisis.</li>
 </ul>
+<div class="columns">
+<div class="column" style="width:60%;">
+<blockquote>
+<p><span class="citation" data-cites="jorion2000risk">(<a href="#/references" role="doc-biblioref" onclick="">Jorion 2000</a>)</span> Even worse, on 21 August, the portfolio lost $550 million. By 31 August, the portfolio had lost $1,710 million in 1 month only. Using the presumed $45 million daily (or $206 million monthly) standard deviation, this translates into a <em>8.3 standard deviation event</em>. Assuming a normal distribution, <em>such an event would occur once every 800 trillion years, or 40,000 times the age of the universe</em>. Surely this assumption was wrong.</p>
+</blockquote>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/e/ec/LTCM.png"></p>
+<figcaption>LCTM</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 <section id="construct-data" class="title-slide slide level1 center">
@@ -1178,7 +1556,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </blockquote>
 </section>
 
-<section id="section-4" class="title-slide slide level1 center">
+<section id="section-3" class="title-slide slide level1 center">
 <h1></h1>
 <p>Original Iris dataset</p>
 <div class="columns">
@@ -1305,13 +1683,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="section-5" class="title-slide slide level1 center">
+<section id="section-4" class="title-slide slide level1 center">
 <h1></h1>
 <p><img data-src="./img/datapreprocessing/imputation_100.svg"></p>
 <p><img data-src="./img/datapreprocessing/imputation_20.svg"></p>
 </section>
 
-<section id="section-6" class="title-slide slide level1 center">
+<section id="section-5" class="title-slide slide level1 center">
 <h1></h1>
 <p><img data-src="./img/datapreprocessing/imputation_20.svg"></p>
 <p><img data-src="./img/datapreprocessing/imputation_equi_frequency.svg"></p>
@@ -1905,6 +2283,9 @@ Chan, Jireh Yi-Le, Steven Mun Hong Leow, Khean Thye Bea, Wai Khuen Cheng, Seuk W
 </div>
 <div id="ref-hu2009overcoming" class="csl-entry" role="listitem">
 Hu, Nan, Jie Zhang, and Paul A Pavlou. 2009. <span>“Overcoming the j-Shaped Distribution of Product Reviews.”</span> <em>Communications of the ACM</em> 52 (10): 144–47.
+</div>
+<div id="ref-jorion2000risk" class="csl-entry" role="listitem">
+Jorion, Philippe. 2000. <span>“Risk Management Lessons from Long-Term Capital Management.”</span> <em>European Financial Management</em> 6 (3): 277–300.
 </div>
 <div id="ref-katrutsa2017comprehensive" class="csl-entry" role="listitem">
 Katrutsa, Alexandr, and Vadim Strijov. 2017. <span>“Comprehensive Study of Feature Selection Methods to Solve Multicollinearity Problem According to Evaluation Criteria.”</span> <em>Expert Systems with Applications</em> 76: 1–11.
