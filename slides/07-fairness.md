@@ -14,7 +14,7 @@ Machine learning algorithms (e.g., classifiers) make predictions about new data 
 
 However, the training data may contain patterns such as a higher rate of good outcomes for members of certain groups.
 
-This is quantified by the “80% rule” of disparate impact, which is a legal measure and definition of bias.
+This is quantified by the "80% rule" of disparate impact, which is a legal measure and definition of bias.
 
 - $\frac{\textup{Rate of unprivileged applicants receiving good outcome}}{\textup{Rate of privileged applicants receiving good outcome}} < 0.8$
 

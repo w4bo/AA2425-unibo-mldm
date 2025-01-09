@@ -182,7 +182,100 @@ The data analyst must
 :::
 ::::
 
-# 
+# Which mean? Compount interest
+
+Consider an investment portfolio with initial value 1000€ and final value 2406.62€ after 18 years.
+
+Which return has the portfolio generated each year?
+
+# Which mean? Compount interest
+
+:::: {.columns}
+::: {.column width="70%"}
+
+> Assume that each year our portfolio has a return of X%
+>
+> The first year, the portfolio increases its value to $V_1=1000€ + (1000€ \times X\%) = 1050€$
+>
+> The second year, the portfolio increases its value to $V_2 = V_1 + (V_1 \times X\%) = 1102.50€$
+>
+> ... and so on.
+
+:::
+::: {.column width="29%"}
+
+> |Year| Value |
+> |----|-----------|
+> |0   |1000.00 € |
+> |1   |1050.00 € |
+> |2   |1102.50 € |
+> |... |...        |
+> |17  |2292.02 € |
+> |18  |2406.62 € |
+
+:::
+::::
+
+This is not a linear increase!
+
+This is a geometric sequence, the final value is $\text{Initial value} \times (1 + \frac{r}{n})^\frac{t}{n}$
+
+- $r$ is the nominal annual interest rate
+- $n$ is the compounding frequency (1: annually, 12: monthly, 52: weekly, 365: daily)
+- $t$ is the overall length of time the interest is applied (expressed using the same time units as n, usually years).
+
+> $\text{Final value} = \text{Initial value} \times (1 + X)^{18}$
+>
+> $X = (\frac{\text{Final value}}{\text{Initial value}})^\frac{1}{18} - 1$
+>
+> $X = 0.05 = 5\%$
+
+In this case the return is equal every year, so the average interest is $5\%$.
+
+# Which mean? Compount interest
+
+Let us assume now that the returns changes over year.
+
+> |Year| Value | Return|
+> |----|-----------|---|
+> |0|1000.00 €| 	-|
+> |1|1050.00 € |	5%|
+> |2|997.50 € 	|-5%|
+> |3|1047.38 € |	5%|
+> |4|995.01 € 	|-5%|
+> |5|995.01 € |	0%|
+
+What is the average return?
+
+# Which mean? Compount interest
+
+If we apply the aritmetic mean it is $\frac{5 -5 + 5 -5 + 0}{5} = 0%$, however **this is wrong!**
+
+> |Year| Value | Return|
+> |----|-----------|---|
+> |0|1000.00 €| -|
+> |1|1000.00 €| 0%|
+> |2|1000.00 €| 0%|
+> |3|1000.00 €| 0%|
+> |4|1000.00 €| 0%|
+> |5|1000.00 €| 0%|
+
+We already know that $X = \frac{\text{Final value}}{\text{Initial value}}^\frac{1}{5} - 1$, the average return is $X = -0.1\%$
+
+> |Year| Value | Return|
+> |----|-----------|---|
+> |0|1000.00 €|	-|
+> |1|999.00 € |	-0.1%|
+> |2|998.00 € |	-0.1%|
+> |3|997.00 € |	-0.1%|
+> |4|996.00 € |	-0.1%|
+> |5|995.01 € |	-0.1%|
+>
+> This is correct!
+
+The *Compound Annual Growth Rate* represents the mean annualized growth rate for compounding values over a given time period.
+
+- CAGR smoothes the effect of volatility of periodic values that can render arithmetic means less meaningful.
 
 # Skewed distributions
 
@@ -193,6 +286,95 @@ What problems can arise with skewed distributions?
 #
 
 ![](./img/datapreprocessing/imputation_100.svg)
+
+# Skewed distributions
+
+What happens to mean and median values?
+
+:::: {.columns}
+::: {.column width="50%"}
+
+![Gaussian distribution](./img/datapreprocessing/height_distribution.svg)
+
+:::
+::: {.column width="50%"}
+
+![Skewed distribution](./img/datapreprocessing/market_cap_distribution.svg)
+
+:::
+::::
+
+# Skewed distributions
+
+:::: {.columns}
+::: {.column width="50%"}
+
+![Gaussian distribution](./img/datapreprocessing/height_distribution.svg)
+
+```
+Mean   = 173 cm
+Median = 173 cm
+```
+
+:::
+::: {.column width="50%"}
+
+![Skewed distribution](./img/datapreprocessing/market_cap_distribution.svg)
+
+```
+Mean:   103158262914
+Median:  36666524821
+```
+
+:::
+::::
+
+# Skewed distributions: Stocks
+
+Let us consider the S&P 500 index
+
+- [Standard and Poor's 500](https://en.wikipedia.org/wiki/S%26P_500) is an index tracking the stock performance of [500 of the largest companies](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) in the United States.
+
+![Top 25 company from the S&P 500 index](./img/datapreprocessing/market_cap_topn.svg)
+
+How would you define the *weight* of a company in the index?
+
+- Companies emit stocks that are buyed by investors, the number of stocks is called *shares outstanding*
+    - *Shares outstanding* are shares of a corporation that have been purchased by investors and are held by them
+    - *Treasury shares* are shares held by the corporation itself
+    - *Issued shares* = Shares outstanding + Treasury shares
+- Stocks are daily traded in stock market
+    - *Volume* is the amount of shares that are daily traded
+    - *Close* and *Open* are closing/opening prices of daily trades
+
+# Skewed distributions: Stocks
+
+As a semplification, given a company $C$ and a generic index $I$
+
+*Market cap weight* (e.g., [S&P 500](https://en.wikipedia.org/wiki/S%26P_500))
+
+- $\text{MarketCapitalization(C)} = \text{SharesOutstanding(C)} \times \text{StockPrice(C)}$
+- $\text{MarketCapWeight(C)} = \frac{\text{MarketCapitalization(C)}}{\sum_{C' \in I} \text{MarketCapitalization(C')}}$
+
+*Price weight index* (e.g., [Dow Jones Industrial Average](https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average))
+
+- $\text{PriceWeight(C)} = \frac{\text{StockPrice(C)}}{\sum_{C' \in I} \text{StockPrice(C')}}$
+
+> Given a few companies such as
+> 
+> | Ticker   |   Close |      Shares |   PWI (%) |   Market Cap (%) |
+> |:---------|--------:|------------:|----------:|-----------------:|
+> | AMZN     |  222.13 | 1.0515e+10  |  3.20253  |         4.53745  |
+> | AAPL     |  242.7  | 1.51158e+10 |  3.4991   |         7.12683  |
+> | GS       |  580.02 | 3.1391e+08  |  8.36237  |         0.353707 |
+> | MSFT     |  424.56 | 7.43488e+09 |  6.12105  |         6.13209  |
+> | NVDA     |  140.11 | 2.449e+10   |  2.02002  |         6.66582  |
+> 
+> What is their impact on DJIA and S&P 500?
+
+# Skewed distributions: Stocks
+
+![Price vs market cap weighted](./img/datapreprocessing/price_weight_distribution.svg)
 
 # Outlier removal
 
@@ -266,16 +448,16 @@ For example, if $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles respective
 Juvenal (55-128, Roman poet) wrote in his Satire VI of *events being "a bird as rare upon the earth as a black swan"*
 
 - When the phrase was coined, the black swan was presumed by Romans not to exist.
-- All swans are white because all historical records reported that swans had white feathers
+- All swans are white because all records reported that swans had white feathers.
 
 :::: {.columns}
 ::: {.column width="70%"}
 
-In 1697, Dutch explorers became the first Europeans to see black swans in Western Australia.
+In 1697, Dutch explorers became the first Europeans to see black swans in Australia.
 
 - Observing a *single black swan* is the undoing of the logic of any system of thought
     - ... as well as any reasoning that followed from that underlying logic.
-- A set of conclusions is potentially undone once any of its fundamental postulates is disproved.
+- Conclusions are potentially undone once any of its fundamental postulates is disproved.
 
 :::
 ::: {.column width="30%"}
@@ -287,13 +469,35 @@ In 1697, Dutch explorers became the first Europeans to see black swans in Wester
 
 The black swan theory was developed by Nassim Nicholas Taleb [@taleb2008impact] to explain:
 
-- The disproportionate role of hard-to-predict and rare events that are beyond the realm of normal expectations in history, science, finance, and technology.
+- The disproportionate role of hard-to-predict and rare events that are beyond the realm of normal expectations.
 - The non-computability of the probability of consequential rare events using scientific methods.
 - The psychological biases that blind people to uncertainty and to the substantial role of rare events in historical affairs.
 
 Such extreme events (outliers), collectively play vastly larger roles than regular occurrences.
 
-- Especially in portfolios!
+# The black swan theory in action!
+
+[Long-Term Capital Management](https://en.wikipedia.org/wiki/Long-Term_Capital_Management) was a *highly leveraged* hedge fund.
+
+- Members of LTCM's board of directors included Myron Scholes and Robert C. Merton, who three years later in 1997 shared the Nobel Prize in Economics
+- LTCM was initially successful, with annualized returns of around
+    - 21% in its first year,
+    - 43% in its second year,
+    - and 41% in its third year.
+- However, in 1998 it lost $4.6 billion *in less than four months due to an unlikely combination* of high leverage and exposure to the 1997 Asian financial crisis and 1998 Russian financial crisis.
+
+:::: {.columns}
+::: {.column width="60%"}
+
+> [@jorion2000risk] Even worse, on 21 August, the portfolio lost $550 million. By 31 August, the portfolio had lost $1,710 million in 1 month only. Using the presumed $45 million daily (or $206 million monthly) standard deviation, this translates into a *8.3 standard deviation event*. Assuming a normal distribution, *such an event would occur once every 800 trillion years, or 40,000 times the age of the universe*. Surely this assumption was wrong.
+
+:::
+::: {.column width="40%"}
+
+![LCTM](https://upload.wikimedia.org/wikipedia/commons/e/ec/LTCM.png)
+
+:::
+::::
 
 # Construct data
 
