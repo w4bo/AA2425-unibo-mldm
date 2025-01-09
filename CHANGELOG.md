@@ -1,3 +1,21 @@
+## [1.0.44](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.43...1.0.44) (2025-01-08)
+
+### Dependency updates
+
+* **deps:** update dependency flaml to v2.3.3 ([#62](https://github.com/w4bo/AA2425-unibo-mldm/issues/62)) ([bd0925a](https://github.com/w4bo/AA2425-unibo-mldm/commit/bd0925aca89f62738451a9bda68ec6b85fad7ed4))
+* **deps:** update dependency matplotlib to v3.10.0 ([#61](https://github.com/w4bo/AA2425-unibo-mldm/issues/61)) ([b4a9a69](https://github.com/w4bo/AA2425-unibo-mldm/commit/b4a9a6993af217f8b1e31bee973ecce50b26bd5c))
+* **deps:** update dependency matplotlib to v3.9.4 ([#60](https://github.com/w4bo/AA2425-unibo-mldm/issues/60)) ([4ea7003](https://github.com/w4bo/AA2425-unibo-mldm/commit/4ea70033a141b94dde277c6d4dd385ce2e5e9705))
+* **deps:** update dependency notebook to v7.3.2 ([#64](https://github.com/w4bo/AA2425-unibo-mldm/issues/64)) ([bc79984](https://github.com/w4bo/AA2425-unibo-mldm/commit/bc799842bfa656540c1caadfd274bc0c0777f7b7))
+* **deps:** update dependency scipy to v1.15.0 ([#65](https://github.com/w4bo/AA2425-unibo-mldm/issues/65)) ([e3ea0c8](https://github.com/w4bo/AA2425-unibo-mldm/commit/e3ea0c82fad52889434eeba6246184bb2b7e4bfa))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.117 ([#63](https://github.com/w4bo/AA2425-unibo-mldm/issues/63)) ([3498e74](https://github.com/w4bo/AA2425-unibo-mldm/commit/3498e74a30c6118baddca18cf2ee674873e97f51))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.118 ([#66](https://github.com/w4bo/AA2425-unibo-mldm/issues/66)) ([24c9aaf](https://github.com/w4bo/AA2425-unibo-mldm/commit/24c9aafd0ac81a762f6bbae2e214baddab8e35fc))
+* **deps:** update node.js to 22.13 ([#67](https://github.com/w4bo/AA2425-unibo-mldm/issues/67)) ([b9f3448](https://github.com/w4bo/AA2425-unibo-mldm/commit/b9f3448842f0a7f38808eac34ff790f99409347c))
+
+### Bug Fixes
+
+* fix script permissions ([9dabd58](https://github.com/w4bo/AA2425-unibo-mldm/commit/9dabd58ba86e77cf73841163e09f1fb3650fa971))
+* reworking slides and moving to devcontainer ([bc473ce](https://github.com/w4bo/AA2425-unibo-mldm/commit/bc473ce3a175bad50532da119c74cd3d99401f8d))
+
 ## [1.0.43](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.42...1.0.43) (2024-12-11)
 
 ### Bug Fixes
