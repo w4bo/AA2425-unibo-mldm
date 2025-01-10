@@ -104,7 +104,7 @@ Given the 8 intervals from the table
 
 Is $NP=200W$ a hard or an easy ride?
 
-![Easy ride for Mathieu van der Poel](./img/kpisport/mvdp.png)
+![Easy ride for Mathieu van der Poel, impossible ride for me](./img/kpisport/mvdp.png)
 
 The Normalized Power is an *absolute* measurement.
 
