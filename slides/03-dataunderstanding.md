@@ -57,15 +57,15 @@ Several **biases** can occur:
 
 The "survivors" get studied, while the failures are excluded, leading to potentially flawed conclusions.
 
-Start-up Success Stories
+*Start-up Success Stories*
 
 - People often hear stories of wildly successful companies like Apple, Amazon, or Tesla and assume that hard work and a good idea are enough to succeed. This overlooks the countless failed start-ups that had hard-working teams and great ideas but didn’t survive due to market conditions, competition, or other factors.
 
-Fitness and Weight Loss Programs
+*Fitness and Weight Loss Programs*
 
 - Testimonials for fitness programs often highlight people who achieved dramatic results. These "success stories" ignore the many individuals who followed the same program but didn’t achieve noticeable results, either due to differences in genetics, lifestyle, or other factors.
 
-Investment Portfolios
+*Investment Portfolios*
 
 - Financial advice often highlights top-performing stocks or mutual funds as examples of great investments. These examples focus on the "survivors" in the market, ignoring the many investments that failed or underperformed, which can lead to overestimating the likelihood of similar success in the future.
 
