@@ -707,7 +707,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="columns">
 <div class="column" style="width:70%;">
 <blockquote>
-<p>Assume that each year our portfolio has a return of X%</p>
+<p>Our portfolio has an initial value <span class="math inline">\(V_0 = 1000€\)</span> and each has a return of X%</p>
 <p>The first year, the portfolio increases its value to <span class="math inline">\(V_1=1000€ + (1000€ \times X\%) = 1050€\)</span></p>
 <p>The second year, the portfolio increases its value to <span class="math inline">\(V_2 = V_1 + (V_1 \times X\%) = 1102.50€\)</span></p>
 <p>… and so on.</p>
@@ -739,10 +739,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>…</td>
 </tr>
 <tr class="odd">
-<td>17</td>
-<td>2292.02 €</td>
-</tr>
-<tr class="even">
 <td>18</td>
 <td>2406.62 €</td>
 </tr>
@@ -751,8 +747,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </blockquote>
 </div>
 </div>
-<p>This is not a linear increase!</p>
-<p>This is a geometric sequence, the final value is <span class="math inline">\(\text{Initial value} \times (1 + \frac{r}{n})^\frac{t}{n}\)</span></p>
+<p>This is not a linear increase but a geometric sequence, the final value is <span class="math inline">\(\text{Initial value} \times (1 + \frac{r}{n})^\frac{t}{n}\)</span></p>
 <ul>
 <li><span class="math inline">\(r\)</span> is the nominal annual interest rate</li>
 <li><span class="math inline">\(n\)</span> is the compounding frequency (1: annually, 12: monthly, 52: weekly, 365: daily)</li>
@@ -817,7 +812,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="which-mean-compount-interest-3" class="title-slide slide level1 center">
 <h1>Which mean? Compount interest</h1>
-<p>If we apply the aritmetic mean it is <span class="math inline">\(\frac{5 -5 + 5 -5 + 0}{5} = 0%\)</span>, however <strong>this is wrong!</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>If we apply the aritmetic mean it is <span class="math inline">\(\frac{5 -5 + 5 -5 + 0}{5} = 0%\)</span></p>
+<p>However, <strong>this is wrong!</strong></p>
+</div><div class="column" style="width:50%;">
 <blockquote>
 <table>
 <thead>
@@ -844,16 +843,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>0%</td>
 </tr>
 <tr class="even">
-<td>3</td>
-<td>1000.00 €</td>
-<td>0%</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
 </tr>
 <tr class="odd">
-<td>4</td>
-<td>1000.00 €</td>
-<td>0%</td>
-</tr>
-<tr class="even">
 <td>5</td>
 <td>1000.00 €</td>
 <td>0%</td>
@@ -861,7 +855,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tbody>
 </table>
 </blockquote>
-<p>We already know that <span class="math inline">\(X = \frac{\text{Final value}}{\text{Initial value}}^\frac{1}{5} - 1\)</span>, the average return is <span class="math inline">\(X = -0.1\%\)</span></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>We already know that <span class="math inline">\(X = \frac{\text{Final value}}{\text{Initial value}}^\frac{1}{5} - 1\)</span></p>
+<p>The average return is <span class="math inline">\(X = -0.1\%\)</span></p>
+<p><span class="math inline">\(X\%\)</span> is the <em>Compound Annual Growth Rate</em>, the mean annualized growth rate for compounding values over a given time period.</p>
+<ul>
+<li>CAGR smoothes the effect of volatility of periodic values that can render arithmetic means less meaningful.</li>
+</ul>
+</div><div class="column" style="width:50%;">
 <blockquote>
 <table>
 <thead>
@@ -888,28 +892,21 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>-0.1%</td>
 </tr>
 <tr class="even">
-<td>3</td>
-<td>997.00 €</td>
-<td>-0.1%</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
 </tr>
 <tr class="odd">
-<td>4</td>
-<td>996.00 €</td>
-<td>-0.1%</td>
-</tr>
-<tr class="even">
 <td>5</td>
 <td>995.01 €</td>
 <td>-0.1%</td>
 </tr>
 </tbody>
 </table>
-<p>This is correct!</p>
 </blockquote>
-<p>The <em>Compound Annual Growth Rate</em> represents the mean annualized growth rate for compounding values over a given time period.</p>
-<ul>
-<li>CAGR smoothes the effect of volatility of periodic values that can render arithmetic means less meaningful.</li>
-</ul>
+</div>
+</div>
+<p><strong>Take away</strong>: pay attention to the semantics of the features!</p>
 </section>
 
 <section id="skewed-distributions" class="title-slide slide level1 center">
@@ -972,18 +969,12 @@ Median:  36666524821</code></pre>
 
 <section id="skewed-distributions-stocks" class="title-slide slide level1 center">
 <h1>Skewed distributions: Stocks</h1>
-<p>Let us consider the S&amp;P 500 index</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/S%26P_500">Standard and Poor’s 500</a> is an index tracking the stock performance of <a href="https://en.wikipedia.org/wiki/List_of_S%26P_500_companies">500 of the largest companies</a> in the United States.</li>
-</ul>
+<p>The <a href="https://en.wikipedia.org/wiki/S%26P_500">Standard and Poor’s 500</a> index tracks the stock performance of <a href="https://en.wikipedia.org/wiki/List_of_S%26P_500_companies">500 of the largest companies</a> in the United States.</p>
 
-<img data-src="./img/datapreprocessing/market_cap_topn.svg" class="r-stretch quarto-figure-center"><p class="caption">Top 25 company from the S&amp;P 500 index</p><p>How would you define the <em>weight</em> of a company in the index?</p>
-<ul>
+<img data-src="./img/datapreprocessing/market_cap_topn.svg" class="r-stretch quarto-figure-center"><p class="caption">Top 25 company from the S&amp;P 500 index</p><ul>
 <li>Companies emit stocks that are buyed by investors, the number of stocks is called <em>shares outstanding</em>
 <ul>
 <li><em>Shares outstanding</em> are shares of a corporation that have been purchased by investors and are held by them</li>
-<li><em>Treasury shares</em> are shares held by the corporation itself</li>
-<li><em>Issued shares</em> = Shares outstanding + Treasury shares</li>
 </ul></li>
 <li>Stocks are daily traded in stock market
 <ul>
@@ -991,20 +982,24 @@ Median:  36666524821</code></pre>
 <li><em>Close</em> and <em>Open</em> are closing/opening prices of daily trades</li>
 </ul></li>
 </ul>
+<p>How would you define the <em>weight</em> of a company in the index?</p>
 </section>
 
 <section id="skewed-distributions-stocks-1" class="title-slide slide level1 center">
 <h1>Skewed distributions: Stocks</h1>
 <p>As a semplification, given a company <span class="math inline">\(C\)</span> and a generic index <span class="math inline">\(I\)</span></p>
+<div class="columns">
+<div class="column" style="width:49%;">
 <p><em>Market cap weight</em> (e.g., <a href="https://en.wikipedia.org/wiki/S%26P_500">S&amp;P 500</a>)</p>
 <ul>
-<li><span class="math inline">\(\text{MarketCapitalization(C)} = \text{SharesOutstanding(C)} \times \text{StockPrice(C)}\)</span></li>
-<li><span class="math inline">\(\text{MarketCapWeight(C)} = \frac{\text{MarketCapitalization(C)}}{\sum_{C' \in I} \text{MarketCapitalization(C')}}\)</span></li>
+<li><span class="math inline">\(\text{MarketCap(C)} = \text{SharesOut(C)} \times \text{StockPrice(C)}\)</span></li>
+<li><span class="math inline">\(\text{MarketCapWeight(C)} = \frac{\text{MarketCap(C)}}{\sum_{C' \in I} \text{MarketCap(C')}}\)</span></li>
 </ul>
 <p><em>Price weight index</em> (e.g., <a href="https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average">Dow Jones Industrial Average</a>)</p>
 <ul>
 <li><span class="math inline">\(\text{PriceWeight(C)} = \frac{\text{StockPrice(C)}}{\sum_{C' \in I} \text{StockPrice(C')}}\)</span></li>
 </ul>
+</div><div class="column" style="width:50%;">
 <blockquote>
 <p>Given a few companies such as</p>
 <table>
@@ -1055,8 +1050,10 @@ Median:  36666524821</code></pre>
 </tr>
 </tbody>
 </table>
-<p>What is their impact on DJIA and S&amp;P 500?</p>
+<p>What is their impact on DJIA and S&amp;P?</p>
 </blockquote>
+</div>
+</div>
 </section>
 
 <section id="skewed-distributions-stocks-2" class="title-slide slide level1 center">
@@ -2112,7 +2109,7 @@ Median:  36666524821</code></pre>
 <figcaption>Linear regression</figcaption>
 </figure>
 </div>
-<p><img data-src="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/d2/a9/4-1_model-complexity-bias-variance.component.complex-narrative-xl.ts=1723041862502.png/content/adobe-cms/us/en/topics/lasso-regression/jcr:content/root/table_of_contents/body/content_section_styled/content-section-body/complex_narrative_1723597861/items/content_group_1333297271/image"></p>
+<p><img data-src="./img/datapreprocessing/modelcomplexity.png"></p>
 </div>
 </div>
 </section>
