@@ -28,7 +28,7 @@ The **data understanding** phase of CRISP-DM involves taking a closer look at th
 The analyst then proceeds to
 
 - increase familiarity with the data,
-- identify data quality problems, 
+- identify data quality problems,
 - discover initial insights into the data,
 - detect interesting subsets to form hypotheses about hidden information
 
@@ -49,7 +49,7 @@ Several **biases** can occur:
 - *Publication*: tendency for researchers or journals to publish studies with positive or significant results while neglecting to publish studies with null or negative results
 - ... and many others
 
-# 
+#
 
 ![Red dots stand for places where surviving planes were shot. How would you reinforce the planes?](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Survivorship-bias.svg/1280px-Survivorship-bias.svg.png)
 
@@ -128,9 +128,9 @@ Many universities publicly release their datasets:
 - There are no requirements related to profit or non-disclosure agreement (NDA)
   - It is the basis of the scientific method, in particular for the reproducibility of the results obtained
   - I release my data so that others can conduct my own experiments and verify my results
-  - Examples: [https://www.image-net.org/](https://www.image-net.org/) 
+  - Examples: [https://www.image-net.org/](https://www.image-net.org/)
 
-Some platforms make datasets available for competitions, such as [Kaggle](https://www.kaggle.com/datasets) and [others](https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62) 
+Some platforms make datasets available for competitions, such as [Kaggle](https://www.kaggle.com/datasets) and [others](https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62)
 
 # Example of a public dataset: the Iris dataset
 
@@ -140,7 +140,7 @@ The [Iris dataset](https://www.kaggle.com/datasets/uciml/iris) is public data th
 
 - It can also be found on the [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/).
 - It includes 3 iris species (Setosa, Virginica, and Versicolor) with 50 samples each
-- It characterizes flowers with some properties about each flower 
+- It characterizes flowers with some properties about each flower
     1. `SepalLengthCm`
     1. `SepalWidthCm`
     1. `PetalLengthCm`
@@ -252,7 +252,7 @@ The last aspect to be defined relating to data annotation: **do we know all anno
 - The most common case in machine learning benchmarks
 - Ideal condition, but not always suitable for real-world systems
 
-*Open Set*: the patterns to be classified can belong to none of the known classes. 
+*Open Set*: the patterns to be classified can belong to none of the known classes.
 
 - More realistic condition, but more challenging
 - Example: classify all fruits into {pears, bananas}
@@ -266,13 +266,13 @@ Two possible solutions to the open set problem:
 
 # Common Problems in Data Collection
 
-Companies usually face common problems: 
+Companies usually face common problems:
 
 - The business process produces huge amounts of data
   - It is almost impossible to acquire all the data
   - Also, physical limitations when the data stream is bigger than the storing capacity
   - Usually, it is necessary to choose which ones to store
-- Sometimes companies have a lot of "old" data in their databases or information systems: 
+- Sometimes companies have a lot of "old" data in their databases or information systems:
   - They don't know what to do with it
   - Data re-collection on existing data (since data must be clean or something similar)
 - In many business processes it is unclear understanding:
@@ -310,16 +310,16 @@ Plain Iris dataset
 # Iris
 
 Example of profiling the schema of the data in Iris
- 
+
 >     RangeIndex: 150 entries, 0 to 149
 >     Data columns (total 5 columns):
->     #   Column             Non-Null Count  Dtype  
->     --- ------             --------------  -----  
+>     #   Column             Non-Null Count  Dtype 
+>     --- ------             --------------  ----- 
 >     0   sepal length (cm)  150 non-null    float64
 >     1   sepal width (cm)   150 non-null    float64
 >     2   petal length (cm)  150 non-null    float64
 >     3   petal width (cm)   150 non-null    float64
->     4   species            150 non-null    object 
+>     4   species            150 non-null    object
 >     dtypes: float64(4), object(1)
 >     memory usage: 6.0+ KB
 
@@ -349,11 +349,11 @@ A boxplot is a standardized way of displaying the dataset based on the five-numb
 
 1. *Minimum* ($Q_0$ or 0th percentile): the lowest data point
 1. *First quartile* ($Q_1$ or 25th percentile)
-1. *Median* ($Q_2$ or 50th percentile): the middle value 
+1. *Median* ($Q_2$ or 50th percentile): the middle value
 1. *Third quartile* ($Q_3$ or 75th percentile)
 1. *Maximum* (Q4 or 100th percentile): the highest data point
 
-*Interquartile range*: $\text{IQR}=Q_{3}-Q_{1}$ 
+*Interquartile range*: $\text{IQR}=Q_{3}-Q_{1}$
 
 Graphical elements
 
@@ -371,7 +371,7 @@ Graphical elements
 > ![Box plot](./img/dataunderstanding/iris-boxplot.svg)
 
 :::
-:::: 
+::::
 
 # Explore the Data
 
@@ -399,11 +399,11 @@ Value distribution vs `species`
 ::: {.column width="50%"}
 
 > `sepal_length` vs `species`
-> 
+>
 > ![](./img/dataunderstanding/sepal_length-boxplot.svg)
 
 :::
-:::: 
+::::
 
 # Verify Data Quality
 
