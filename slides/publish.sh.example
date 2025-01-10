@@ -1,6 +1,4 @@
 #!/bin/bash
 set -exo
-# quarto pandoc -o slides.pptx --print-default-data-file reference.pptx 
-# quarto render --to pptx
+# quarto preview prova.md --to revealjs --port 6778 --host 0.0.0.0
 quarto render --to revealjs
-# quarto preview 04-datapreparation.md --to revealjs --port 6778 --host 0.0.0.0

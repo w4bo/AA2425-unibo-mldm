@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - name: Running the notebooks
+      - name: Running the notebooks (if any)
         run: |
-          cd slides 
+          cd slides
           chmod +x *.sh
           docker compose up build
       - name: Generate the slides
