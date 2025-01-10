@@ -7,9 +7,9 @@
 Consider the following task.
 
 > Given a query result, return insights describe the query result.
-> 
+>
 > This task requires to:
-> 
+>
 > - extract interesting patterns/insights,
 > - rank them by their interest,
 > - select the most interesting insights given a limited word/time budget.
@@ -150,8 +150,8 @@ Several LLM-based applications have been deployed to overcome these limitations.
 Imagining a session of query results, here follow the prompts of an initial query:
 
 > You are a data scientist describing the highlights of query results.
-> Given the following query result in CSV format, return the most interesting quantitative insights describing it. 
-> You can use any algorithm to compute the insights (e.g., the ones from scikit-learn). 
+> Given the following query result in CSV format, return the most interesting quantitative insights describing it.
+> You can use any algorithm to compute the insights (e.g., the ones from scikit-learn).
 > The highlights must be 100 words at most.
 >
 > [Query result is added here]
@@ -205,7 +205,7 @@ and the one of a subsequent query obtained by drilling down the previous one (to
 :::
 ::::
 
-# 
+#
 
 ![Data Error](https://imgs.xkcd.com/comics/data_error.png)
 
@@ -226,7 +226,7 @@ At the moment (2024), while (plain) LLMs have many strengths, they are not typic
     - Depending on the LLM, prompts [have limits in the \#tokens (as of 2024-06)](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) composing input and answer
     - The [OpenAI price calculator in Microsoft Azure (as of 2024-06)](https://azure.microsoft.com/en-us/pricing/calculator/?service=openai-service) estimates that using GPT-4-32K costs around \$0.06 per $10^3$ input tokens and \$0.12 per $10^3$ output tokens, where 1000 tokens correspond to almost 750 words.
       - Prompting a table with $10^5$ tuples (if feasible) costs several dollars per execution.
-- LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content. 
+- LLMs now allow users to attach files to the prompt, and some LLM-based applications can even extract succinct summaries from these files and use them in place of the whole file content.
     - This can overcome the limits and cost of tokens.
     - However, if the summary process is incorrect, it will add errors and bias to the final answer.
 

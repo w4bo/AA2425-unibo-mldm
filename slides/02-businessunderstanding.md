@@ -29,8 +29,8 @@ This is essential also to understand which data should later be analyzed and how
 - Make sure that each *success criterion relates to at least one of the specified business objectives*
 
 > The business goal could be to retain current customers by predicting when they are prone to move to a competitor
-> 
-> - "How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?" 
+>
+> - "How does the primary channel (e.g., ATM, branch visit, Internet) of a bank customer affect whether they stay or go?"
 > - "Will lower ATM fees significantly reduce the number of high-value customers who leave?"
 
 # Assess the Situation
@@ -91,7 +91,7 @@ Ask and refine sharp questions that are relevant, specific, and unambiguous.
     1. Is this unusual? (anomaly detection)
     1. Which option should be taken? (recommendation)
 
-# 
+#
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -118,6 +118,10 @@ If the business goal cannot be effectively translated into a data mining goal, *
 >
 > Success should also be defined in these terms such as achieving a certain level of predictive accuracy
 
+# Case study
+
+{{< include _cs-kpisport.md >}}
+
 # Produce a Project Plan
 
 **Describe the intended plan for achieving the goals**, including:
@@ -140,6 +144,8 @@ Identifying and delving into the problem to solve
 - Is an **interdisciplinary** phase
 - Even if you have good knowledge in the fields of computer and data science...
 - ... maybe you still miss domain knowledge that is fundamental to understanding and modeling the problem
+
+# Case study
 
 {{< include _cs-brownspot.md >}}
 

@@ -6,7 +6,7 @@ subtitle: "Modeling: Neural Networks"
 
 <img src="./img/crispdm_me.svg" class="center">
 
-# Recalling the Machine Learning pipeline 
+# Recalling the Machine Learning pipeline
 
 We now focus on the model, the "heart" of the AI in our system
 
@@ -66,7 +66,7 @@ $y' = \begin{cases}1, ~if~ 0.3\cdot x_1 + 0.8 \cdot x_2 + 0.5 \cdot x_3 \ge 3\\0
 How can we implement the following operators?
 
 :::: {.columns}
-::: {.column width=33%} 
+::: {.column width=33%}
 
 **not**
 
@@ -134,7 +134,7 @@ How can we implement the following operators?
 
 # Examples of working ANs: Boolean functions
 
-![Boolean functions](./img/neuralnetworks/43 - AI ANN2.png) 
+![Boolean functions](./img/neuralnetworks/43 - AI ANN2.png)
 
 # Examples of working ANs: Boolean functions
 
@@ -214,7 +214,7 @@ Each neuron is fully connected with those of the next level.
 - Suitable for sequences because they have a (short-term) memory effect
 
 In our course, we will use only FF NN!
- 
+
 :::
 ::: {.column width="30%"}
 
@@ -237,7 +237,7 @@ In our course, we will use only FF NN!
 # Activation functions
 
 :::: {.columns}
-::: {.column width=33%} 
+::: {.column width=33%}
 
 **Relu**
 
@@ -275,12 +275,12 @@ Limitations
 
 # Håstad's switching lemma [@hastad1986almost]
 
-**Håstad's switching lemma**: certain functions, while easily represented by deep networks with a modest number of neurons, require an exponentially larger number of neurons to represent accurately if constrained to a single hidden layer. 
+**Håstad's switching lemma**: certain functions, while easily represented by deep networks with a modest number of neurons, require an exponentially larger number of neurons to represent accurately if constrained to a single hidden layer.
 
 "Global" functions are harder to be approximated, for instance
 
 - The *parity function* determines whether the number of 1s in a binary input string is odd or even.
-- The *majority function* outputs 1 if more than half of the input bits are 1, and 0 otherwise. 
+- The *majority function* outputs 1 if more than half of the input bits are 1, and 0 otherwise.
 
 This lemma provides a theoretical foundation for using depth in both circuit complexity and neural networks
 
@@ -628,7 +628,7 @@ $C(y,f^{L}(W^{L}f^{L-1}(W^{L-1}\cdots f^{2}(W^{2}f^{1}(W^{1}x))\cdots )))$
 
 - $x$ is the input;
 - $z^{l}$ is the weighted input of each hidden layer
-- $a^{l}$ is the output of hidden layer $l$ 
+- $a^{l}$ is the output of hidden layer $l$
 
 Finally, the derivative is $\frac {dC}{da^{L}} \cdot {\frac {da^{L}}{dz^{L}}}\cdot {\frac {dz^{L}}{da^{L-1}}}\cdot {\frac {da^{L-1}}{dz^{L-1}}}\cdot {\frac {dz^{L-1}}{da^{L-2}}}\cdot \ldots \cdot {\frac {da^{1}}{dz^{1}}}\cdot {\frac {\partial z^{1}}{\partial x}}$
 
@@ -828,7 +828,7 @@ Examples:
 - [https://calculator.aws/#/addService/EC2](https://calculator.aws/#/addService/EC2)
 
 
-# 
+#
 
 :::: {.columns}
 ::: {.column width="50%"}

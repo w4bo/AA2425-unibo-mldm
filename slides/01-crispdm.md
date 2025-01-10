@@ -17,7 +17,7 @@ subtitle: Data Mining, Machine Learning, and CRISP-DM
 **CRISP-DM** (CRoss-Industry Standard Process for Data Mining) [@shearer2000crisp]
 
 > a non-proprietary, documented, and freely available data mining model.
-> 
+>
 > Developed by industry leaders with input from more than 200 data mining users [...] and service providers, CRISP-DM is an *industry-, tool-, and application-neutral* model.
 >
 > This model encourages best practices and offers organizations the structure needed to realize better, faster results from data mining.
@@ -48,7 +48,7 @@ CRISP-DM breaks down the life cycle of a data mining project into **six phases**
 
 **Arrows**
 
-- indicate the most important and frequent dependencies between the phases, while the 
+- indicate the most important and frequent dependencies between the phases, while the
 - the outer circle symbolizes the cyclical nature of data mining itself
 - ... lessons learned during the data mining process trigger new, often more focused business questions
 
@@ -100,7 +100,7 @@ The CRISP-DM tells us that *we don't do machine learning for the sake of trainin
 
 **Feature**
 
-> Properties of things, ways that we, as humans, might describe them. 
+> Properties of things, ways that we, as humans, might describe them.
 >
 > Synonyms: characteristic; attribute; property; trait, etc.
 
@@ -110,7 +110,7 @@ The CRISP-DM tells us that *we don't do machine learning for the sake of trainin
 
 **Query Language** [@liu2009encyclopedia]
 
-> A query language (e.g. SQL) is a specialized programming language for searching and changing the contents of a database. 
+> A query language (e.g. SQL) is a specialized programming language for searching and changing the contents of a database.
 
 :::
 ::: {.column width="40%"}

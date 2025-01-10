@@ -16,7 +16,7 @@ It plays a key role in a data analytics process and *avoids "garbage in, garbage
 
 - *A broad range of activities*; from correcting errors to selecting the most relevant features
     - Out-of-range values (e.g., Income: −100)
-    - Impossible data combinations (e.g., `Exam mark`: 15, `Exam result`: Passed) 
+    - Impossible data combinations (e.g., `Exam mark`: 15, `Exam result`: Passed)
     - Missing values
     - Inconsistent data among multiple sources
 - There are *no pre-defined rules* on the impact of pre-processing transformations
@@ -24,7 +24,7 @@ It plays a key role in a data analytics process and *avoids "garbage in, garbage
 
 #
 
-Data pre-processing includes [@shearer2000crisp] data 
+Data pre-processing includes [@shearer2000crisp] data
 
 1. *selection*
 1. *cleansing*
@@ -45,13 +45,13 @@ Part of the data selection process should involve explaining why certain data wa
 
 > For instance, while an individual's address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated.
 >
-> To learn how sales are characterized by store `type` you do not need to consider the `StoreId` 
+> To learn how sales are characterized by store `type` you do not need to consider the `StoreId`
 >
 > | ~~`StoreId`~~ | `type` |`sales` |
 > |-----------|--------|--------|
 > |S1         | grocery   | 1000   |
 > |S2         | supermarket | 1500 |
-> |S3         | ...  | ...  | 
+> |S3         | ...  | ...  |
 
 # [What personal data is considered sensitive](https://commission.europa.eu/law/law-topic/data-protection/reform/rules-business-and-organisations/legal-grounds-processing-data/sensitive-data/what-personal-data-considered-sensitive_en)?
 
@@ -92,7 +92,7 @@ The data analyst must
 > |-----------|--------|--------|
 > |S1         |    | 1000   |
 > |S2         | supermarket |  |
-> |S3         | grocery  | 100  | 
+> |S3         | grocery  | 100  |
 
 :::
 ::: {.column width="49%"}
@@ -101,7 +101,7 @@ The data analyst must
 >
 > | `StoreId` | `type` |`sales` |
 > |-----------|--------|--------|
-> |S3         | grocery  | 100  | 
+> |S3         | grocery  | 100  |
 
 :::
 ::::
@@ -127,7 +127,7 @@ The data analyst must
 > |-----------|--------|--------|
 > |S1         | 2024-10-04 | 1000   |
 > |S1         | 2024-10-05 |  |
-> |S2         | 2024-10-04 |  | 
+> |S2         | 2024-10-04 |  |
 
 :::
 ::: {.column width="49%"}
@@ -138,7 +138,7 @@ The data analyst must
 > |-----------|--------|--------|
 > |S1         | 2024-10-04 | 1000   |
 > |S1         | 2024-10-05 | *1000* |
-> |**S2**         | 2024-10-04 | *1000* | 
+> |**S2**         | 2024-10-04 | *1000* |
 
 :::
 ::::
@@ -163,8 +163,8 @@ The data analyst must
 > |S1         | 2024-10-04 | 1000   |
 > |S1         | 2024-10-05 |  |
 > |S1         | 2024-10-06 | 2000 |
-> |S2         | 2024-10-04 |  | 
-> |S2         | 2024-10-05 | 1000 | 
+> |S2         | 2024-10-04 |  |
+> |S2         | 2024-10-05 | 1000 |
 
 :::
 ::: {.column width="49%"}
@@ -176,8 +176,8 @@ The data analyst must
 > |S1         | 2024-10-04 | 1000   |
 > |S1         | 2024-10-05 | *1500* |
 > |S1         | 2024-10-06 | 2000 |
-> |S2         | 2024-10-04 | *1000* | 
-> |S2         | 2024-10-05 | 1000 | 
+> |S2         | 2024-10-04 | *1000* |
+> |S2         | 2024-10-05 | 1000 |
 
 :::
 ::::
@@ -361,7 +361,7 @@ As a semplification, given a company $C$ and a generic index $I$
 - $\text{PriceWeight(C)} = \frac{\text{StockPrice(C)}}{\sum_{C' \in I} \text{StockPrice(C')}}$
 
 > Given a few companies such as
-> 
+>
 > | Ticker   |   Close |      Shares |   PWI (%) |   Market Cap (%) |
 > |:---------|--------:|------------:|----------:|-----------------:|
 > | AMZN     |  222.13 | 1.0515e+10  |  3.20253  |         4.53745  |
@@ -369,7 +369,7 @@ As a semplification, given a company $C$ and a generic index $I$
 > | GS       |  580.02 | 3.1391e+08  |  8.36237  |         0.353707 |
 > | MSFT     |  424.56 | 7.43488e+09 |  6.12105  |         6.13209  |
 > | NVDA     |  140.11 | 2.449e+10   |  2.02002  |         6.66582  |
-> 
+>
 > What is their impact on DJIA and S&P 500?
 
 # Skewed distributions: Stocks
@@ -428,7 +428,7 @@ For example, if $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles respective
 **Isolation Forest** [@liu2008isolation] is an algorithm for data anomaly detection using binary trees
 
 - Because anomalies are few and different from other data, they can be isolated using few partitions.
-- Unlike decision tree algorithms, it uses only path length to output an anomaly score, and does not use leaf node statistics of class distribution or target value. 
+- Unlike decision tree algorithms, it uses only path length to output an anomaly score, and does not use leaf node statistics of class distribution or target value.
 
 :::: {.columns}
 ::: {.column width="49%"}
@@ -508,7 +508,7 @@ The data analyst could undertake operations such as developing entirely new reco
 
 > A derived attribute is `area` = `length` x `width`.
 >
-> A derived attribute is `income_per_head` which could be easier to use than `income_per_household`. 
+> A derived attribute is `income_per_head` which could be easier to use than `income_per_household`.
 
 *Binning* may be necessary to *transform ranges to symbolic fields* (e.g., ages to age bands)
 
@@ -552,13 +552,13 @@ Categorical features can be *nominal* or *ordinal*.
 - *Nominal features* (e.g., colors) do not have a defined ranking or inherent order.
 - *Ordinal features* (e.g., size) have an inherent order or ranking
 
-*One hot encoding* and *ordinal encoding* are the most common methods to transform categorical variables into numerical features. 
+*One hot encoding* and *ordinal encoding* are the most common methods to transform categorical variables into numerical features.
 
 # Feature encoding: ordinal encoding
 
 **Ordinal encoding** replaces each category with an integer value.
 
-- These numbers are, in general, assigned arbitrarily. 
+- These numbers are, in general, assigned arbitrarily.
 - Ordinal encoding is a preferred option when the categorical variable has an inherent order.
 
 > Examples include the variable `size`, with values "small", "medium", and "large".
@@ -613,7 +613,7 @@ People tend to write reviews only when they are either extremely satisfied or ex
 
 People who feel the product is average might not be bothered to write a review
 
-[@hu2009overcoming] 
+[@hu2009overcoming]
 
 # Feature encoding: one-hot encoding
 
@@ -623,10 +623,10 @@ People who feel the product is average might not be bothered to write a review
 - One hot encoding treats each category independently.
 
 > Examples include the variable `color`, with values "red", "green", and "blue".
-> 
+>
 > :::: {.columns}
 > ::: {.column width="49%"}
-> 
+>
 > Before encoding
 >
 > | `ProductId` | `color` |
@@ -635,10 +635,10 @@ People who feel the product is average might not be bothered to write a review
 > |P2           | green |
 > |P3           | blue  |
 > |P4           | red  |
-> 
+>
 > :::
 > ::: {.column width="49%"}
-> 
+>
 > After encoding
 >
 > | `ProductId` | `color` | `red` | `green` | `blue` |
@@ -647,7 +647,7 @@ People who feel the product is average might not be bothered to write a review
 > |P2           | green | 0  | 1  | 0  |
 > |P3           | blue  | 0  | 0  | 1  |
 > |P4           | red   | 1  | 0  | 0  |
-> 
+>
 > :::
 > ::::
 
@@ -681,25 +681,25 @@ See also the [year 2000 problem](https://en.wikipedia.org/wiki/Year_2000_problem
 - If one of the features has a broad range of values, the distance will be governed by this particular feature.
 - For example, many classifiers calculate the distance between two points by the Euclidean distance.
     - $d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{n}-q_{n})^{2}}} = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}$
- 
+
 
 > Consider a dataset with two features `age` $\in [0, 120]$ and `income` $\in [0, 100000]$
-> 
+>
 > :::: {.columns}
 > ::: {.column width=60%}
-> 
+>
 > Given four points
-> 
+>
 > - $p_1=($`age` = 50, `income` = 10000$)$
 > - $p_2=($`age` = 50, `income` = 20000$)$, $d(p_1,p_2)=10000.00$
 > - $p_3=($`age` = 60, `income` = 10000$)$, $d(p_1,p_3)=10.00$
 > - $p_4=($`age` = 60, `income` = 20000$)$, $d(p_1,p_4)=10000.00$
-> 
+>
 > :::
 > ::: {.column width=40%}
-> 
+>
 > ![](./img/datapreprocessing/points.svg)
-> 
+>
 > :::
 > ::::
 
@@ -713,14 +713,14 @@ See also the [year 2000 problem](https://en.wikipedia.org/wiki/Year_2000_problem
 
 > :::: {.columns}
 > ::: {.column width=50%}
-> 
+>
 > ![Before min-max normalization](./img/datapreprocessing/points.svg)
-> 
+>
 > :::
 > ::: {.column width=50%}
-> 
+>
 > ![After min-max normalization](./img/datapreprocessing/points_norm.svg)
-> 
+>
 > :::
 > ::::
 
@@ -802,7 +802,7 @@ Transformed Iris dataset: `petal_length*=10`, addition of 1 outlier [`petal_leng
 > |-----------|--------|
 > |S1         | 1000   |
 > |S2         | 1500 |
-> |S3         | ...  | 
+> |S3         | ...  |
 
 :::
 ::::
@@ -819,7 +819,7 @@ Pay attention to the *aggregation operator*!
 
 **Data binning** is a data pre-processing technique that reduces the effects of minor observation errors
 
-- The original values which fall into a given interval (bin) are replaced by a central value representative of that interval 
+- The original values which fall into a given interval (bin) are replaced by a central value representative of that interval
 - Histograms are an example of data binning used in order to observe underlying frequency distributions
 
 *Equal-width*: divide the range of values into equal-sized intervals or bins
@@ -878,7 +878,7 @@ Pay attention to the *aggregation operator*!
 > |-----------|--------|
 > |S1         | 1000   |
 > |S2         | 1500 |
-> |S3         | ...  | 
+> |S3         | ...  |
 
 :::
 ::: {.column width="3%"}
@@ -892,7 +892,7 @@ Pay attention to the *aggregation operator*!
 > |-----------|--------|--------|
 > |S1         | grocery   | 1000   |
 > |S2         | supermarket | 1500 |
-> |S3         | ...  | ...  | 
+> |S3         | ...  | ...  |
 
 :::
 ::::
@@ -952,7 +952,7 @@ The main approaches can also be divided into *feature selection* and *feature ex
 
 Feature engineering, in data science, refers to manipulation — addition, deletion, combination, mutation — of your data set to improve machine learning model training, leading to better performance and greater accuracy.
 
-# Feature selection 
+# Feature selection
 
 **Feature selection** is the process of selecting a subset of relevant features (variables, predictors) for use in model construction
 
@@ -1042,7 +1042,7 @@ Feature selection approaches are characterized by
 >
 > $VAR($`sales`$)=55555.56$
 >
-> $VAR($`PostalCode`$)=0$ 
+> $VAR($`PostalCode`$)=0$
 
 :::
 ::: {.column width="33%"}
@@ -1119,7 +1119,7 @@ Linear regression model: $\hat{y}_i = \beta_1 x_1 + \beta_2 x_2 + ... + \beta_p 
     - $\beta_j$​ are the coefficients of the model,
     - $\lambda$ is the regularization parameter controlling the penalty's strength.
 
-Lasso performs automatic feature selection. 
+Lasso performs automatic feature selection.
 
 - By shrinking some coefficients to 0, Lasso removes irrelevant features
 
@@ -1224,7 +1224,7 @@ More an art than a science
 
 # Towards the exam: examples of questions
 
-These are *some* of the questions of the exam 
+These are *some* of the questions of the exam
 
 1. Explain the importance of data transformation in the preprocessing pipeline.
 2. Discuss the challenges of data preprocessing in real-world machine learning projects. How can you ensure the quality of your preprocessed data?

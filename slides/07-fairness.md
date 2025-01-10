@@ -2,7 +2,7 @@
 subtitle: "Fairness"
 ---
 
-# Fairness 
+# Fairness
 
 > **Fairness**
 >
@@ -75,7 +75,7 @@ GeoAI
 Discrimination, different treatments
 
 - Direct
-- Indirect discrimination: something that seems neutral but applies discrimination 
+- Indirect discrimination: something that seems neutral but applies discrimination
 - Intersectional? discrimination
 
 *Computational fairness*: algorithms should not perform any discrimination.

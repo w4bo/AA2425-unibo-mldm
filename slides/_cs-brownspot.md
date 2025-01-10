@@ -4,7 +4,7 @@
 ::: {.column width="60%"}
 
 > Brown spot of European Pear
-> 
+>
 > - A company wants to track the spreading of the Brown spot of European pear in Emilia Romagna.
 > - Brown spots are caused by a fungus (Stemphylium vesicarium) damaging pear fruits and causing economic loss for producers.
 > - Also, the company wants to find out if there are environmental factors related to the spreading of such fungus and the level of damage.
@@ -12,7 +12,7 @@
 - How would you address this problem?
 :::
 ::: {.column width="40%"}
-![Brown Spots](https://agricoltura.regione.emilia-romagna.it/fitosanitario/temi/avversita/schede/avversita-per-nome/immagini-e-documenti/maculatura-bruna-del-pero/sui-frutti-l2019area-necrotica-si-circonda-spesso-di-alone-rossastro)
+![Brown Spots](./img/brownspot/brownspot.png)
 :::
 ::::
 
@@ -32,7 +32,7 @@
 - What features would you collect?
 - How do we translate this problem into a *quantitative metric*?
 
-# Determine the Data Mining Goal 
+# Determine the Data Mining Goal
 
 > Ideally, the goal is to build a dataset such as the following
 >
@@ -44,7 +44,7 @@
 > | Field\#4 | ...                | ...                        | ... | ...                 |
 >
 > and to learn relationships between *environmental features* and **Level of Damage** (the target of the analysis).
-> 
+>
 > In other words, can we identify features that allows us to predict an accurate level of damage?
 
 Metrics: predict the level of damage with high *accuracy*
@@ -60,7 +60,7 @@ Metrics: predict the level of damage with high *accuracy*
 
 - In your opinion, what are the pros/cons of this solution?
 
-# 
+#
 
 > Once the employee had collected almost 100 questionnaires, the company asked us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.
 
@@ -71,9 +71,9 @@ If you were the analyst, what would you do?
 > To us, it was impossible to apply machine learning techniques to data on paper.
 >
 > We prepared a Google Form where answers could be digitalized.
-> 
+>
 > The employee would take ~1 month to return the digitalized questionnaires.
-> 
+>
 > **Issue #1**: some answers were inconsistent with the provided options.
 >
 > **Issue #2**: what about open questions?

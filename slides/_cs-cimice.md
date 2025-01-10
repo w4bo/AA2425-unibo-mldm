@@ -116,23 +116,23 @@ The acquisition of data concerning the installation and monitoring of traps have
 :::
 ::::
 
-# 
+#
 
 <img src="./img/cimice/case3.png" class="center">
 
-# 
+#
 
 <img src="./img/cimice/case4.png" class="center">
 
-# 
+#
 
 <img src="./img/cimice/case5.png" class="center">
 
-# 
+#
 
 <img src="./img/cimice/case8.png" class="center">
 
-# 
+#
 
 :::: {.columns}
 
