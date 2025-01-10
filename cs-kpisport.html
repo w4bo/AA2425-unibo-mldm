@@ -326,7 +326,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Artificial Intelligence and Prescriptive Analytics</h1>
-  <p class="subtitle">KPI in sport</p>
+  <p class="subtitle">KPIs in sport</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -340,575 +340,307 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="training-kpis" class="title-slide slide level1 center">
 <h1>Training KPIs</h1>
 
-<img data-src="https://www.triathlonvibe.com/wp-content/uploads/2021/09/lucy-charles-finish-donald-mirralle-ironman.jpg" class="r-stretch quarto-figure-center"><p class="caption">Lucy Charles-Barclay Wins Ironman 70.3 World Championship (2021)</p><p>We are preparing for a race and we need create a proper plan</p>
-<ul>
-<li>What are the main aspects to consider?</li>
-</ul>
-</section>
-
-<section id="training-kpis-1" class="title-slide slide level1 center">
-<h1>Training KPIs</h1>
+<img data-src="https://www.triathlonvibe.com/wp-content/uploads/2021/09/lucy-charles-finish-donald-mirralle-ironman.jpg" class="r-stretch quarto-figure-center"><p class="caption">Lucy Charles-Barclay Wins Ironman 70.3 World Championship (2021)</p><p>We are preparing for a race and we need to create a proper plan.</p>
 <p>Risks of Poor Planning:</p>
 <ul>
-<li>Overtraining<br>
-</li>
-<li>Underperformance<br>
-</li>
+<li>Overtraining</li>
+<li>Underperformance</li>
 <li>Increased risk of injury</li>
 </ul>
-<p>How can we quantify all these aspects?</p>
-<ul>
-<li>We need to minimize <em>fatigue</em> (i.e., short-term stress from recent training)</li>
-<li>Maximize the <em>fitness</em> (i.e., long-term training adaptations)</li>
-<li>Performance Readiness: Achieved when fitness is high, and fatigue is low.</li>
-</ul>
-<p>Key Questions to Answer:</p>
-<ul>
-<li>What is your current fitness level?<br>
-</li>
-<li>How much fatigue are you carrying?<br>
-</li>
-<li>How do you time your taper for optimal performance?</li>
-</ul>
-</section>
-
-<section id="introduction-to-sport-kpis" class="title-slide slide level1 center">
-<h1>Introduction to Sport KPIs</h1>
-<ul>
-<li>Key Performance Indicators (KPIs) are measurable values that track performance and progress toward a goal.<br>
-</li>
-<li>Why use KPIs in training?
-<ul>
-<li>Objectively measure improvements<br>
-</li>
-<li>Balance training intensity and recovery<br>
-</li>
-<li>Prevent overtraining or undertraining</li>
-</ul></li>
-<li><code>Training Load</code> (<span class="math inline">\(TL\)</span>): A measure of the stress placed on the body during exercise.
-<ul>
-<li><span class="math inline">\(TL = Duration × Intensity\)</span></li>
-<li>Units: <span class="math inline">\(TSS\)</span> (Training Stress Score), RPE (Rate of Perceived Exertion)</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="how-do-we-quantify-intensity" class="title-slide slide level1 center">
-<h1>How do we quantify intensity?</h1>
-<p>Let’s focus on a specific sport, cyclism</p>
-</section>
-
-<section id="how-do-we-measure-watts" class="title-slide slide level1 center">
-<h1>How do we measure watts?</h1>
-<p>We have sensors!</p>
-
-<img data-src="https://www.cyclistshub.com/wp-content/uploads/2021/11/how-to-choose-a-power-meter.png" class="r-stretch quarto-figure-center"><p class="caption">Power meters</p><p>Cycling power meters measure torque using strain gauges.</p>
-<ul>
-<li>The strain gauges measure a rider’s force on a given component (pedal, crank, etc.).</li>
-<li>This torque is later converted to power by multiplying it by that component’s cadence (angular velocity).</li>
-</ul>
-</section>
-
-<section id="intensity-factor-if" class="title-slide slide level1 center">
-<h1>Intensity Factor (IF)</h1>
-<p>Intensity Factor: a measure of workout intensity relative to FTP.</p>
-<ul>
-<li><p><span class="math inline">\(IF = \frac{\text{Normalized Power (NP)}}{\text{FTP}}\)</span></p></li>
-<li><p>Purpose:</p>
-<ul>
-<li>Compare the intensity of different sessions.<br>
-</li>
-<li>Optimize training stress relative to fitness.<br>
-</li>
-</ul></li>
-<li><p>Ranges:</p>
-<ul>
-<li>Easy recovery: IF &lt; 0.65<br>
-</li>
-<li>Moderate endurance: IF 0.65–0.85<br>
-</li>
-<li>High-intensity intervals: IF &gt; 0.85</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="functional-threshold-power-ftp" class="title-slide slide level1 center">
-<h1>Functional Threshold Power (FTP)</h1>
-<p>Functional Threshold Power: The highest average power (measured in watts) a cyclist can sustain for 60 minutes.</p>
-<ul>
-<li>Purpose:
-<ul>
-<li>Benchmark for training zones<br>
-</li>
-<li>Indicates overall cycling fitness<br>
-</li>
-</ul></li>
-<li>Testing Methods:
-<ul>
-<li>20-minute time trial: FTP = 95% of average power.<br>
-</li>
-<li>Ramp or step tests with smart trainers.</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="using-ftp-and-if-in-training" class="title-slide slide level1 center">
-<h1>Using FTP and IF in Training</h1>
-<ul>
-<li>Tracking Progress:
-<ul>
-<li>Test FTP every 4–6 weeks.<br>
-</li>
-<li>Monitor IF for each workout to ensure proper intensity.</li>
-</ul></li>
-<li>Balancing Work and Recovery:
-<ul>
-<li>Use IF to adjust training load:
-<ul>
-<li>Too high = risk of overtraining.<br>
-</li>
-<li>Too low = insufficient stimulus for improvement.</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-
-<section id="normalized-power-np" class="title-slide slide level1 center">
-<h1>Normalized Power (NP)</h1>
-<p>Normalized Power (NP) is a metric developed to better quantify the physiological demands of cycling, especially for rides with variable intensity.</p>
-<p>Unlike average power, NP accounts for the variability in effort during a ride, reflecting how the body responds to the stress.</p>
-<ol type="1">
-<li>Divide the Ride into 30-Second Moving Averages:
-<ul>
-<li>Calculate the rolling average power for every 30-second interval throughout the ride.<br>
-</li>
-<li>This smooths out short-term power fluctuations.</li>
-</ul></li>
-<li>Raise Each 30-Second Average to the Fourth Power:
-<ul>
-<li><span class="math inline">\(P_{\text{30-sec}}^4\)</span><br>
-</li>
-<li>This step emphasizes higher power outputs, as intense efforts contribute disproportionately to physiological stress.</li>
-</ul></li>
-<li>Take the Average of All Fourth Powers:
-<ul>
-<li>Compute the average of all <span class="math inline">\(P_{\text{30-sec}}^4\)</span> values over the entire ride.</li>
-</ul></li>
-<li>Take the Fourth Root of the Result:
-<ul>
-<li>Finally, calculate the fourth root of the average from Step 3.<br>
-</li>
-<li><span class="math inline">\(\text{NP} = \sqrt[4]{\text{average of } P_{\text{30-sec}}^4}\)</span></li>
-</ul></li>
-</ol>
-<p><span class="math inline">\(\text{NP} = \sqrt[4]{\frac{\sum_{i=1}^{n} P_{\text{30-sec},i}^4}{n}}\)</span></p>
-<p>Why Use Normalized Power?</p>
-<ul>
-<li>Reflects Physiological Stress: High-intensity intervals are more stressful than steady-state efforts, even if the average power is the same.<br>
-</li>
-<li>Improves Comparisons: Allows riders to compare efforts from rides with different intensity profiles.</li>
-</ul>
-</section>
-
-<section id="example-calculation" class="title-slide slide level1 center">
-<h1>Example Calculation</h1>
-<p>Assume a ride where the power output varies as follows over a series of intervals (in watts): 200, 250, 300, 400.</p>
-<ol type="1">
-<li>Compute 30-second moving averages:<br>
-<span class="math inline">\(P_{\text{30-sec}}\)</span>: 200, 250, 300, 400.<br>
-</li>
-<li>Raise each value to the fourth power:<br>
-<span class="math inline">\(P^4\)</span>: <span class="math inline">\(200^4, 250^4, 300^4, 400^4\)</span>.<br>
-</li>
-<li>Take the average of <span class="math inline">\(P^4\)</span>.<br>
-</li>
-<li>Find the fourth root of the result.</li>
-</ol>
-</section>
-
-<section id="training-zones" class="title-slide slide level1 center">
-<h1>Training Zones</h1>
-<p>Training Zones Based on FTP:</p>
-<ol type="1">
-<li>Active Recovery: &lt;55% of FTP<br>
-</li>
-<li>Endurance: 56–75% of FTP<br>
-</li>
-<li>Tempo: 76–90% of FTP<br>
-</li>
-<li>Threshold: 91–105% of FTP<br>
-</li>
-<li>VO₂ Max: 106–120% of FTP<br>
-</li>
-<li>Anaerobic Capacity: &gt;120% of FTP</li>
-</ol>
-</section>
-
-<section id="training-zones-1" class="title-slide slide level1 center">
-<h1>Training Zones</h1>
-<p>Heart rate (HR) training zones are commonly used to structure workouts based on intensity.</p>
-<p>These zones are typically calculated as percentages of your maximum heart rate (HRmax) or heart rate reserve (HRR). Here’s an overview of the zones:</p>
-<ul>
-<li><em>Zone 1</em>: Active Recovery (50–60% HRmax)
-<ul>
-<li>Purpose: Promote recovery after intense workouts. Build a strong aerobic foundation.<br>
-</li>
-<li>Effort Level: Very light; easy conversation possible.</li>
-</ul></li>
-<li><em>Zone 2</em>: Endurance (60–70% HRmax)
-<ul>
-<li>Purpose: Improve fat metabolism and aerobic efficiency. Ideal for long-duration, steady-state activities.<br>
-</li>
-<li>Effort Level: Comfortable; conversation is sustainable.</li>
-</ul></li>
-<li><em>Zone 3</em>: Tempo (Moderate; 70–80% HRmax)
-<ul>
-<li>Purpose: Increase aerobic capacity. Transition zone between endurance and threshold training.<br>
-</li>
-<li>Effort Level: Moderate; conversation is more challenging.</li>
-</ul></li>
-<li><em>Zone 4</em>: Lactate Threshold (Threshold; 80–90% HRmax)
-<ul>
-<li>Purpose: Improve lactate clearance and sustain high-intensity efforts. Enhance race-specific endurance.<br>
-</li>
-<li>Effort Level: Hard; limited conversation possible.</li>
-</ul></li>
-<li><em>Zone 5</em>: VO₂ Max (90–95% HRmax)
-<ul>
-<li>Purpose: Increase maximum aerobic capacity (VO₂ Max). Develop speed and power.<br>
-</li>
-<li>Effort Level: Very hard; speaking is difficult.</li>
-</ul></li>
-<li><em>Zone 6</em>: Anaerobic Capacity (95–100% HRmax)
-<ul>
-<li>Purpose: Develop short bursts of power and speed. Improve sprinting ability and neuromuscular coordination.</li>
-<li>Effort Level: Maximum effort; no conversation possible.</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="calculating-heart-rate-zones" class="title-slide slide level1 center">
-<h1>Calculating Heart Rate Zones</h1>
-<p>Based on HRmax</p>
-<ul>
-<li><span class="math inline">\(\text{HRmax} = 220 - \text{age}\)</span> (or test it during a maximum effort session).<br>
-</li>
-<li>Multiply HRmax by the percentage for each zone.</li>
-</ul>
-<p>Based on HR Reserve (HRR)</p>
-<ul>
-<li>Karvonen Formula: <span class="math inline">\(\text{Target HR} = \text{Resting HR} + (\text{HRmax} - \text{Resting HR}) \times \text{Zone %}\)</span></li>
-</ul>
-<p>Example: For a 40-year-old athlete</p>
-<ul>
-<li>HRmax = 220 - 40 = 180 bpm<br>
-</li>
-<li>Resting HR = 60 bpm<br>
-</li>
-<li>Zone 2 (60–70% of HRR): <span class="math inline">\(60 + (180 - 60) \times 0.60 = 132 \, \text{to} \, 60 + (180 - 60) \times 0.70 = 144 \, \text{bpm}\)</span></li>
-</ul>
-</section>
-
-<section id="quantifying-fitness" class="title-slide slide level1 center">
-<h1>Quantifying <code>Fitness</code></h1>
-
-</section>
-
-<section id="quantifying-fitness-1" class="title-slide slide level1 center">
-<h1>Quantifying <code>Fitness</code></h1>
-<p>Subjective Indicators:</p>
-<ul>
-<li>Confidence in handling race demands.<br>
-</li>
-<li>Past performance in similar conditions.</li>
-</ul>
-<p>Defining Preparation Levels:</p>
-<ul>
-<li>Low: Minimal consistent training.<br>
-</li>
-<li>Moderate: Regular training but lacks race-specific intensity.<br>
-</li>
-<li>High: Consistent, race-specific training with effective recovery phases.</li>
-</ul>
-</section>
-
-<section id="quantifying-fitness-2" class="title-slide slide level1 center">
-<h1>Quantifying <code>Fitness</code></h1>
-<p>Sport unaware</p>
-<ul>
-<li>CTL (Chronic Training Load): Reflects long-term fitness trends.<br>
-</li>
-<li>VO<span class="math inline">\(_2\)</span> Max: Measures aerobic capacity.</li>
-</ul>
-<p>Sport aware</p>
-<ul>
-<li>Functional Threshold Power (FTP): Cycling performance indicator.<br>
-</li>
-<li>Critical Swim Speed (CSS): Endurance swimming capacity.</li>
-</ul>
-</section>
-
-<section id="chronic-training-load-ctl" class="title-slide slide level1 center">
-<h1>Chronic Training Load (<span class="math inline">\(CTL\)</span>)</h1>
-<p>Long-term training stress, measured over the past 42 days.</p>
-<ul>
-<li>Purpose: Reflects overall fitness level.<br>
-</li>
-<li><span class="math inline">\(CTL = \frac{\text{Sum of daily TL over 42 days}}{42}\)</span></li>
-</ul>
-</section>
-
-<section id="quantifying-fatigue" class="title-slide slide level1 center">
-<h1>Quantifying <code>Fatigue</code></h1>
-
-</section>
-
-<section id="quantifying-fatigue-1" class="title-slide slide level1 center">
-<h1>Quantifying <code>Fatigue</code></h1>
-<p>Defining Fatigue:</p>
-<ul>
-<li>Accumulated stress from training and daily life.<br>
-</li>
-<li>Can be physical, mental, or both.</li>
-</ul>
-<p>Key Problems in Quantification:</p>
-<ul>
-<li><em>Subjectivity</em>: Perceived exertion varies by individual.<br>
-</li>
-<li><em>Delayed Effects</em>: Fatigue may appear days after intense training.<br>
-</li>
-<li><em>External Factors</em>: Sleep, nutrition, and stress influence fatigue but are hard to measure precisely.</li>
-</ul>
-<p>Subjective Indicators:</p>
-<ul>
-<li>Heavy legs, decreased motivation, poor sleep.</li>
-</ul>
-</section>
-
-<section id="quantifying-fatigue-2" class="title-slide slide level1 center">
-<h1>Quantifying <code>Fatigue</code></h1>
-<p>Objective indicators</p>
-<p><strong>Acute Training Load (ATL)</strong>:</p>
-<ul>
-<li>Measures short-term fatigue (last 7 days).<br>
-</li>
-<li>High ATL often means high stress, requiring recovery.</li>
-</ul>
-<p><strong>Heart Rate Variability (HRV)</strong>:</p>
-<ul>
-<li>Declines with increased fatigue or insufficient recovery.</li>
-</ul>
-</section>
-
-<section id="acute-training-load-atl" class="title-slide slide level1 center">
-<h1>Acute Training Load (<span class="math inline">\(ATL\)</span>)</h1>
-<p>Definition: Short-term training stress, typically measured over the past 7 days.</p>
-<ul>
-<li>Purpose: Reflects recent training intensity and fatigue.<br>
-</li>
-<li><span class="math inline">\(ATL = \frac{\text{Sum of daily TL over 7 days}}{7}\)</span></li>
-</ul>
-</section>
-
-<section id="strategies-to-avoid-overtraining" class="title-slide slide level1 center">
-<h1>Strategies to Avoid Overtraining</h1>
-<ol type="1">
-<li>Periodization:</li>
-</ol>
-<ul>
-<li>Alternate between high and low-intensity weeks.<br>
-</li>
-<li>Include rest and recovery phases.</li>
-</ul>
-<ol start="2" type="1">
-<li>Monitor Key Metrics:</li>
-</ol>
-<ul>
-<li>Maintain a positive TSB for readiness.<br>
-</li>
-<li>Watch for declining HRV or chronic fatigue.</li>
-</ul>
-<ol start="3" type="1">
-<li>Adjust Based on Feedback:</li>
-</ol>
-<ul>
-<li>Reduce intensity or volume if fatigue accumulates.<br>
-</li>
-<li>Focus on recovery activities (e.g., yoga, massage).</li>
-</ul>
-<ol start="4" type="1">
-<li>Tapering Before the Race:</li>
-</ol>
-<ul>
-<li>Gradual reduction in training volume to reduce fatigue while maintaining fitness.</li>
-</ul>
-</section>
-
-<section id="quantifying-preparation" class="title-slide slide level1 center">
-<h1>Quantifying Preparation:</h1>
-<ul>
-<li><p>Prioritize recovery during taper to reduce ATL without losing CTL.</p></li>
-<li><p>Training Stress Balance (TSB): ( = - )</p></li>
-<li><p>Training Adjustments:</p>
-<ul>
-<li>If CTL is low, focus on increasing training volume or intensity.<br>
-</li>
-<li>If ATL is high, incorporate rest days or low-intensity sessions.<br>
-</li>
-<li>Monitor Training Stress Balance (TSB):
-<ul>
-<li>Positive TSB: Indicates readiness.<br>
-</li>
-<li>Negative TSB: Indicates fatigue.</li>
-</ul></li>
-</ul></li>
-<li><p>Tapering Strategy:</p>
-<ul>
-<li>Reduce training volume by 40–60% over 1–3 weeks.<br>
-</li>
-<li>Maintain intensity to preserve fitness.</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="practical-guidelines-for-race-day-readiness" class="title-slide slide level1 center">
-<h1>Practical Guidelines for Race Day Readiness</h1>
-<ul>
-<li><p>Key Metrics to Monitor:</p>
-<ol type="1">
-<li>Fitness: Maintain a high CTL relative to past races.<br>
-</li>
-<li>Fatigue: Lower ATL during taper to avoid carrying excessive stress.<br>
-</li>
-<li>TSB: Aim for a positive balance (e.g., +10 to +20) before race day.</li>
-</ol></li>
-<li><p>Checklist for Final Preparation:</p>
-<ul>
-<li>Conduct a final fitness test 2–3 weeks before the race.<br>
-</li>
-<li>Track subjective feelings and adjust the taper as needed.<br>
-</li>
-<li>Focus on sleep, nutrition, and hydration during the taper period.</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="critical-swim-speed-css" class="title-slide slide level1 center">
-<h1>Critical Swim Speed (CSS)</h1>
-<ul>
-<li>Definition: The speed a swimmer can maintain continuously without exhaustion.<br>
-</li>
-<li>Calculation:<br>
-From time trials:<br>
-<span class="math inline">\(\text{CSS} = \frac{\text{400m time} - \text{200m time}}{200m}\)</span><br>
-</li>
-<li>Purpose: Optimize race pacing and aerobic capacity.</li>
-</ul>
-</section>
-
-<section id="vo₂-max" class="title-slide slide level1 center">
-<h1>VO₂ Max</h1>
-<ul>
-<li>Definition: Maximum rate of oxygen consumption during intense exercise.<br>
-</li>
-<li>Units: mL/kg/min<br>
-</li>
-<li>Purpose:
-<ul>
-<li>Indicator of aerobic capacity<br>
-</li>
-<li>Improves with endurance training</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="heart-rate-variability-hrv" class="title-slide slide level1 center">
-<h1>Heart Rate Variability (HRV)</h1>
-<ul>
-<li>Definition: Variations in the time interval between heartbeats.<br>
-</li>
-<li>Purpose:
-<ul>
-<li>Higher HRV = Better recovery<br>
-</li>
-<li>Lower HRV = Possible fatigue or stress</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="kpi-dashboard-for-race-planning" class="title-slide slide level1 center">
-<h1>KPI Dashboard for Race Planning</h1>
-<p>Key Metrics to Monitor:</p>
-<ul>
-<li><span class="math inline">\(ATL\)</span>: Short-term fatigue<br>
-</li>
-<li><span class="math inline">\(CTL\)</span>: Long-term fitness<br>
-</li>
-<li><span class="math inline">\(TSB\)</span>: Recovery and readiness<br>
-</li>
-<li><span class="math inline">\(CSS\)</span>: Pacing and endurance<br>
-</li>
-<li><span class="math inline">\(VO_2 Max\)</span>: Aerobic capacity<br>
-</li>
-<li><span class="math inline">\(HRV\)</span>: Recovery status</li>
-</ul>
-<p>Tools:</p>
-<ul>
-<li>Wearable devices<br>
-</li>
-<li>Training apps (e.g., TrainingPeaks, Strava)</li>
-</ul>
-</section>
-
-<section id="example-kpi-dashboard-for-cyclists" class="title-slide slide level1 center">
-<h1>Example KPI Dashboard for Cyclists</h1>
-<table>
-<colgroup>
-<col style="width: 40%">
-<col style="width: 20%">
-<col style="width: 40%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Metric</th>
-<th>Purpose</th>
-<th>Ideal Range</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>FTP</td>
-<td>Fitness benchmark</td>
-<td>Test periodically</td>
-</tr>
-<tr class="even">
-<td>IF</td>
-<td>Workout intensity relative to FTP</td>
-<td>Adjust for fatigue</td>
-</tr>
-<tr class="odd">
-<td>NP</td>
-<td>Adjusted stress for variable rides</td>
-<td>Match training zones</td>
-</tr>
-<tr class="even">
-<td>TSS</td>
-<td>Overall training stress</td>
-<td>Balance weekly totals</td>
-</tr>
-<tr class="odd">
-<td>HRV</td>
-<td>Recovery and readiness</td>
-<td>Monitor daily trends</td>
-</tr>
-</tbody>
-</table>
+<p>How can we exploit <em>data-driven</em> planning?</p>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Machine Learning and Data Mining (Module 2) - A.Y. 2024/25</p>
 </div>
-</div>
+</div></section>
+
+<section id="training-kpis-1" class="title-slide slide level1 center">
+<h1>Training KPIs</h1>
+<p>Key Performance Indicators (KPIs) are measurable values that track performance and progress toward a goal.</p>
+<ul>
+<li>Objectively measure improvements</li>
+<li>Balance training intensity and recovery</li>
+<li>Prevent overtraining or undertraining</li>
+</ul>
+<p>We need to optimize <em>performance readiness</em>: achieved when <em>fitness</em> is high, and <em>fatigue</em> is low</p>
+<ul>
+<li>We need to minimize <em>fatigue</em> (i.e., short-term stress from recent training)</li>
+<li>Maximize the <em>fitness</em> (i.e., long-term training adaptations)</li>
+</ul>
 </section>
+
+<section id="how-can-we-quantify-all-these-aspects" class="title-slide slide level1 center">
+<h1>How can we quantify all these aspects?</h1>
+
+</section>
+
+<section id="training-load" class="title-slide slide level1 center">
+<h1><em>Training Load</em></h1>
+<p><em>Training Load</em> (<span class="math inline">\(TL\)</span>): a measure of the stress placed on the body during exercise.</p>
+<ul>
+<li><span class="math inline">\(TL = Duration \times Intensity\)</span></li>
+<li>Units: <span class="math inline">\(TSS\)</span> (Training Stress Score)</li>
+</ul>
+</section>
+
+<section id="how-do-we-quantify-intensity" class="title-slide slide level1 center">
+<h1>How do we quantify <em>Intensity</em>?</h1>
+
+</section>
+
+<section id="how-do-we-quantify-intensity-1" class="title-slide slide level1 center">
+<h1>How do we quantify <em>Intensity</em>?</h1>
+<p>Let’s focus on a specific sport, cyclism</p>
+<ul>
+<li>We can measure the <em>current</em> rider’s effort (= power) using <em>power meters</em></li>
+</ul>
+
+<img data-src="https://www.cyclistshub.com/wp-content/uploads/2021/11/how-to-choose-a-power-meter.png" class="r-stretch quarto-figure-center"><p class="caption">Power meters</p><p>Cycling <em>power meters</em> measure torque using strain gauges.</p>
+<ul>
+<li>The strain gauges measure <em>a rider’s force on a given component</em> (pedal, crank, etc.).</li>
+<li>This torque is later converted to power by multiplying it by that component’s cadence (angular velocity).</li>
+</ul>
+</section>
+
+<section id="normalized-power" class="title-slide slide level1 center">
+<h1><em>Normalized Power</em></h1>
+<p><em>Normalized Power</em> <span class="math inline">\(\text{NP} = \sqrt[4]{\frac{\sum_{i=1}^{n} P_{\text{30-sec}, i}^4}{n}}\)</span> quantifies the physiological demands of a cycling activity with variable intensity.</p>
+<ol type="1">
+<li><p>Divide the ride into 30-second moving average and calculate the average power for every 30-second interval.</p>
+<ul>
+<li>Smooth out short-term power fluctuations.</li>
+</ul></li>
+<li><p>Raise each 30-second average to the fourth power</p>
+<ul>
+<li>Emphasize higher power outputs, as intense efforts contribute disproportionately to physiological stress.</li>
+</ul></li>
+<li><p>Take the average of all fourth powers</p></li>
+<li><p>Take the fourth root of the Result</p></li>
+</ol>
+</section>
+
+<section id="normalized-power-1" class="title-slide slide level1 center">
+<h1><em>Normalized Power</em></h1>
+<p>Unlike average power, NP accounts for the variability in effort during a ride, reflecting how the body responds to the stress.</p>
+<ul>
+<li>High-intensity intervals are more stressful than steady-state efforts, even if the average power is the same.</li>
+</ul>
+<div class="columns">
+<div class="column" data-with="65%">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/kpisport/activity.svg"></p>
+<figcaption>Activity</figcaption>
+</figure>
+</div>
+</div><div class="column" data-with="34%">
+<blockquote>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Time</th>
+<th style="text-align: right;">Interval</th>
+<th style="text-align: right;">Avg Power</th>
+<th style="text-align: right;">Avg HR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2285</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">242</td>
+<td style="text-align: right;">130</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2313</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">103</td>
+<td style="text-align: right;">134</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2345</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">253</td>
+<td style="text-align: right;">135</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2372</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: right;">136</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2404</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">278</td>
+<td style="text-align: right;">139</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2432</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">104</td>
+<td style="text-align: right;">147</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2464</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">290</td>
+<td style="text-align: right;">145</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2492</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">107</td>
+<td style="text-align: right;">140</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
+<p>Given the 8 intervals from the table</p>
+<ul>
+<li>Average power = 184</li>
+<li>Normalized power = 226</li>
+</ul>
+</section>
+
+<section id="towards-intensity" class="title-slide slide level1 center">
+<h1>Towards <em>Intensity</em></h1>
+<p>Is <span class="math inline">\(NP=200W\)</span> a hard or an easy ride?</p>
+
+<img data-src="./img/kpisport/mvdp.png" class="r-stretch quarto-figure-center"><p class="caption">Easy ride for Mathieu van der Poel</p><p>The Normalized Power is an <em>absolute</em> measurement.</p>
+<ul>
+<li><em>Absolute</em> measurements provide information on volume, size, or magnitude.</li>
+<li><em>Relative</em> measurements provide a comparative gauge of how well the work has been executed.</li>
+</ul>
+</section>
+
+<section id="intensity-factor" class="title-slide slide level1 center">
+<h1><em>Intensity Factor</em></h1>
+<p><em>Intensity Factor</em> <span class="math inline">\(IF = \frac{\text{Normalized Power (NP)}}{\text{FTP}}\)</span> measures workout intensity relative to the <em>Functional Threshold Power</em> (<span class="math inline">\(FTP\)</span>).</p>
+<p><span class="math inline">\(FTP\)</span>: the highest average power (measured in watts with sensors) a cyclist can sustain for 60 minutes.</p>
+<ul>
+<li>Testing Methods:
+<ul>
+<li>20-minute time trial: <span class="math inline">\(FTP = 95\%\)</span> of average power.</li>
+<li>Ramp or step tests with smart trainers.</li>
+</ul></li>
+</ul>
+<p><span class="math inline">\(IF\)</span> ranges:</p>
+<ul>
+<li>Easy recovery: <span class="math inline">\(IF &lt; 0.65\)</span></li>
+<li>Moderate endurance: <span class="math inline">\(IF \in [0.65, 0.85]\)</span></li>
+<li>High-intensity intervals: <span class="math inline">\(IF &gt; 0.85\)</span></li>
+</ul>
+<p>Use <span class="math inline">\(IF\)</span> to adjust the training load:</p>
+<ul>
+<li>Too high = risk of overtraining.</li>
+<li>Too low = insufficient stimulus for improvement.</li>
+</ul>
+</section>
+
+<section id="now-that-we-have-defined-the-training-load-what-about-fitness-and-fatigue" class="title-slide slide level1 center">
+<h1>Now that we have defined the <em>Training Load</em>, what about <em>Fitness</em> and <em>Fatigue</em>?</h1>
+<p>Key Problems in quantification:</p>
+<ul>
+<li><em>Subjectivity</em>: Perceived exertion varies by individual.</li>
+<li><em>External Factors</em>: Sleep, nutrition, and stress influence fatigue but are hard to measure precisely.</li>
+<li><em>Delayed Effects</em>: Fatigue may appear days after intense training.
+<ul>
+<li>How do we distinguish <em>Fatigue</em> from <em>Fitness</em>?</li>
+<li>As of today, yesterday’s activity provokes fatigue but will increase fitness in the long run</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="quantifying-fatigue-acute-training-load" class="title-slide slide level1 center">
+<h1>Quantifying <em>Fatigue</em>: <em>Acute Training Load</em></h1>
+<p><em>Acute Training Load</em> <span class="math inline">\(ATL = \frac{\text{Sum of daily TL over 7 days}}{7}\)</span></p>
+<ul>
+<li>Short-term training stress, typically measured over the past 7 days.</li>
+<li>Reflects recent training intensity and fatigue.</li>
+</ul>
+</section>
+
+<section id="quantifying-fitness-chronic-training-load" class="title-slide slide level1 center">
+<h1>Quantifying <em>Fitness</em>: <em>Chronic Training Load</em></h1>
+<p><em>Chronic Training Load</em> <span class="math inline">\(CTL = \frac{\text{Sum of daily TL over 42 days}}{42}\)</span></p>
+<ul>
+<li>Long-term training stress, measured over the past 42 days.</li>
+<li>Reflects the overall fitness level.</li>
+</ul>
+</section>
+
+<section id="quantifying-performance-readiness" class="title-slide slide level1 center">
+<h1>Quantifying <em>Performance Readiness</em></h1>
+<p><em>Training Stress Balance</em> <span class="math inline">\(TSB = \text{Fitness (CTL)} - \text{Fatigue (ATL)}\)</span></p>
+<ul>
+<li>Positive <span class="math inline">\(TSB\)</span>: Indicates readiness.</li>
+<li>Negative <span class="math inline">\(TSB\)</span>: Indicates fatigue.</li>
+</ul>
+
+<img data-src="./img/kpisport/tsb.png" class="r-stretch quarto-figure-center"><p class="caption">TSB over 7 days</p><p>Training Adjustments:</p>
+<ul>
+<li>If <span class="math inline">\(CTL\)</span> is low, focus on increasing training volume or intensity.</li>
+<li>If <span class="math inline">\(ATL\)</span> is high, incorporate rest days or low-intensity sessions.</li>
+</ul>
+</section>
+
+<section id="planning-to-optimize-performance-readiness" class="title-slide slide level1 center">
+<h1>Planning to Optimize Performance Readiness</h1>
+<p>Monitor Key Metrics:</p>
+<ul>
+<li><span class="math inline">\(CSS\)</span>: <em>Single</em> training load</li>
+<li><span class="math inline">\(ATL\)</span>: <em>Short-term</em> fatigue
+<ul>
+<li>Lower <span class="math inline">\(ATL\)</span> during taper to avoid carrying excessive stress.</li>
+</ul></li>
+<li><span class="math inline">\(CTL\)</span>: <em>Long-term</em> fitness
+<ul>
+<li>Maintain a high <span class="math inline">\(CTL\)</span> relative to past races.</li>
+</ul></li>
+<li><span class="math inline">\(TSB\)</span>: Recovery and readiness
+<ul>
+<li>Aim for a positive balance (e.g., +10 to +20) before race day.</li>
+</ul></li>
+</ul>
+<p>Adjust Based on Feedback:</p>
+<ul>
+<li>Reduce intensity or volume if fatigue accumulates.</li>
+<li>Focus on recovery activities (e.g., yoga, massage).</li>
+</ul>
+<p>Tapering Before the Race:</p>
+<ul>
+<li>Gradual reduction in training volume to reduce fatigue while maintaining fitness.</li>
+<li>Reduce training volume by 40–60% over 1–3 weeks.</li>
+<li>Maintain intensity to preserve fitness.</li>
+</ul>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   </div>
 
