@@ -5,9 +5,8 @@
 <script src="lab-01-dataunderstanding_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-01-dataunderstanding_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lab-01-dataunderstanding_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lab-01-dataunderstanding_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="lab-01-dataunderstanding_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+<link href="lab-01-dataunderstanding_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -41,7 +40,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -69,7 +68,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -83,7 +82,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -94,209 +93,11 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="lab-01-dataunderstanding_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="lab-01-dataunderstanding_files/libs/revealjs/dist/theme/quarto-ed3ed8e2bee100c8aba16b41caadc9a2.css">
   <link href="lab-01-dataunderstanding_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="lab-01-dataunderstanding_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="lab-01-dataunderstanding_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
   <link href="lab-01-dataunderstanding_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
-
-  .callout {
-    margin-top: 1em;
-    margin-bottom: 1em;  
-    border-radius: .25rem;
-  }
-
-  .callout.callout-style-simple { 
-    padding: 0em 0.5em;
-    border-left: solid #acacac .3rem;
-    border-right: solid 1px silver;
-    border-top: solid 1px silver;
-    border-bottom: solid 1px silver;
-    display: flex;
-  }
-
-  .callout.callout-style-default {
-    border-left: solid #acacac .3rem;
-    border-right: solid 1px silver;
-    border-top: solid 1px silver;
-    border-bottom: solid 1px silver;
-  }
-
-  .callout .callout-body-container {
-    flex-grow: 1;
-  }
-
-  .callout.callout-style-simple .callout-body {
-    font-size: 1rem;
-    font-weight: 400;
-  }
-
-  .callout.callout-style-default .callout-body {
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .callout.callout-titled.callout-style-simple .callout-body {
-    margin-top: 0.2em;
-  }
-
-  .callout:not(.callout-titled) .callout-body {
-      display: flex;
-  }
-
-  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
-    padding-left: 1.6em;
-  }
-
-  .callout.callout-titled .callout-header {
-    padding-top: 0.2em;
-    margin-bottom: -0.2em;
-  }
-
-  .callout.callout-titled .callout-title  p {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  }
-    
-  .callout.callout-titled.callout-style-simple .callout-content  p {
-    margin-top: 0;
-  }
-
-  .callout.callout-titled.callout-style-default .callout-content  p {
-    margin-top: 0.7em;
-  }
-
-  .callout.callout-style-simple div.callout-title {
-    border-bottom: none;
-    font-size: .9rem;
-    font-weight: 600;
-    opacity: 75%;
-  }
-
-  .callout.callout-style-default  div.callout-title {
-    border-bottom: none;
-    font-weight: 600;
-    opacity: 85%;
-    font-size: 0.9rem;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-  }
-
-  .callout.callout-style-default div.callout-content {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-  }
-
-  .callout.callout-style-simple .callout-icon::before {
-    height: 1rem;
-    width: 1rem;
-    display: inline-block;
-    content: "";
-    background-repeat: no-repeat;
-    background-size: 1rem 1rem;
-  }
-
-  .callout.callout-style-default .callout-icon::before {
-    height: 0.9rem;
-    width: 0.9rem;
-    display: inline-block;
-    content: "";
-    background-repeat: no-repeat;
-    background-size: 0.9rem 0.9rem;
-  }
-
-  .callout-title {
-    display: flex
-  }
-    
-  .callout-icon::before {
-    margin-top: 1rem;
-    padding-right: .5rem;
-  }
-
-  .callout.no-icon::before {
-    display: none !important;
-  }
-
-  .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
-  }
-
-  .callout.callout-titled .callout-icon::before {
-    margin-top: .5rem;
-    padding-right: .5rem;
-  }
-
-  .callout:not(.callout-titled) .callout-icon::before {
-    margin-top: 1rem;
-    padding-right: .5rem;
-  }
-
-  /* Callout Types */
-
-  div.callout-note {
-    border-left-color: #4582ec !important;
-  }
-
-  div.callout-note .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
-  }
-
-  div.callout-note.callout-style-default .callout-title {
-    background-color: #dae6fb
-  }
-
-  div.callout-important {
-    border-left-color: #d9534f !important;
-  }
-
-  div.callout-important .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
-  }
-
-  div.callout-important.callout-style-default .callout-title {
-    background-color: #f7dddc
-  }
-
-  div.callout-warning {
-    border-left-color: #f0ad4e !important;
-  }
-
-  div.callout-warning .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
-  }
-
-  div.callout-warning.callout-style-default .callout-title {
-    background-color: #fcefdc
-  }
-
-  div.callout-tip {
-    border-left-color: #02b875 !important;
-  }
-
-  div.callout-tip .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
-  }
-
-  div.callout-tip.callout-style-default .callout-title {
-    background-color: #ccf1e3
-  }
-
-  div.callout-caution {
-    border-left-color: #fd7e14 !important;
-  }
-
-  div.callout-caution .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
-  }
-
-  div.callout-caution.callout-style-default .callout-title {
-    background-color: #ffe5d0
-  }
-
-  </style>
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -444,7 +245,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Support to SQL-like operations (join/merge, aggregation, etc.)</li>
 <li>Data transformation: imputation of missing values, manipulation of data shape, et.</li>
 </ul>
-<div id="aacb3166" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:09.933175Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:09.932992Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:10.211164Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:10.210643Z&quot;}" data-outputid="de89e76c-077f-4794-f448-2e10c89e7d4e" data-execution_count="1">
+<div id="aacb3166" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:43.180099Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:43.179911Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:43.461095Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:43.460533Z&quot;}" data-outputid="de89e76c-077f-4794-f448-2e10c89e7d4e" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># By convention, the package pandas is imported as `pd`</span></span>
@@ -464,7 +265,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Seaborn: <a href="https://seaborn.pydata.org/">https://seaborn.pydata.org/</a></li>
 <li>Matplotlib: <a href="https://matplotlib.org/">https://matplotlib.org/</a></li>
 </ul>
-<div id="3932b785" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:10.213076Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:10.212829Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.082362Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.081833Z&quot;}" data-execution_count="2">
+<div id="3932b785" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:43.463059Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:43.462757Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.350181Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.349557Z&quot;}" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># operations on arrays</span></span>
@@ -482,7 +283,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Arithmetic operations align on both row and column labels.</li>
 <li>Can be thought of as a dict-like container for Series objects.</li>
 </ul>
-<div id="74c37032" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.084844Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.084288Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.096842Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.096250Z&quot;}" data-outputid="45bb3eea-fc45-4c4b-b85b-4e92363a03b5" data-execution_count="3">
+<div id="74c37032" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.352614Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.352167Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.364378Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.363877Z&quot;}" data-outputid="45bb3eea-fc45-4c4b-b85b-4e92363a03b5" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># create a numeric dataframe/table</span></span>
@@ -507,7 +308,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -598,7 +399,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section id="some-operations" class="slide level2">
 <h2>Some operations</h2>
-<div id="e5cf8058" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.098740Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.098381Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.107227Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.106662Z&quot;}" data-outputid="f7338355-f16f-4b8c-a9e8-ad6eb57607be" data-execution_count="4">
+<div id="e5cf8058" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.366070Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.365865Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.374702Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.374213Z&quot;}" data-outputid="f7338355-f16f-4b8c-a9e8-ad6eb57607be" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co"># Get the headers (i.e., the column names)</span></span>
@@ -626,7 +427,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -728,7 +529,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Label are usually numeric or string identifiers (e.g., the primary key of a database table)</li>
 <li>Labels need not be unique but must be a hashable type (both integer- and label-based indexing)</li>
 </ul>
-<div id="205a800c" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.109180Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.108846Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.113539Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.112985Z&quot;}" data-outputid="ee7c35e1-e9ca-40ed-b5a3-e58fb5e9e1a4" data-execution_count="5">
+<div id="205a800c" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.376655Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.376291Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.381085Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.380484Z&quot;}" data-outputid="ee7c35e1-e9ca-40ed-b5a3-e58fb5e9e1a4" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])</span></code></pre></div>
@@ -740,7 +541,7 @@ c    3
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="a4ed958f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.115453Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.115124Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.119406Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.118960Z&quot;}" data-outputid="55e128f0-c560-41ee-f31a-0b2c1dcd6e07" data-execution_count="6">
+<div id="a4ed958f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.382984Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.382600Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.386739Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.386263Z&quot;}" data-outputid="55e128f0-c560-41ee-f31a-0b2c1dcd6e07" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co"># Select a column (i.e., a series) as in a SQL projection</span></span>
@@ -759,7 +560,7 @@ Name: a, dtype: int64</code></pre>
 <section id="doing-some-element-wise-operations" class="title-slide slide level1 center">
 <h1>Doing some element-wise operations</h1>
 <p>Operations between Series (e.g., +, -, /) align values based on their associated index values</p>
-<div id="8af0fee7-2e12-4b68-8634-58a26ae19839" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.121351Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.121005Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.129033Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.128456Z&quot;}" data-outputid="44762d8c-a2cd-46d7-ede2-161edaa90c77" data-execution_count="7">
+<div id="8af0fee7-2e12-4b68-8634-58a26ae19839" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.388745Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.388381Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.396882Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.396303Z&quot;}" data-outputid="44762d8c-a2cd-46d7-ede2-161edaa90c77" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="co"># Add another column to the dataframe</span></span>
@@ -782,7 +583,7 @@ Name: a, dtype: int64</code></pre>
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -876,7 +677,7 @@ Name: a, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="50a5bde6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.130967Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.130493Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.136142Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.135582Z&quot;}" data-outputid="c58ad916-7ffe-4fe8-ecb7-f7ec0f3c30aa" data-execution_count="8">
+<div id="50a5bde6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.398653Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.398322Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.404063Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.403573Z&quot;}" data-outputid="c58ad916-7ffe-4fe8-ecb7-f7ec0f3c30aa" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>ser_a <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])</span>
@@ -894,7 +695,7 @@ dtype: int64</code></pre>
 
 <section id="filtering-the-data" class="title-slide slide level1 center">
 <h1>Filtering the data</h1>
-<div id="3e8bbab0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.138134Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.137778Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.145208Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.144640Z&quot;}" data-execution_count="9">
+<div id="3e8bbab0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.406040Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.405579Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.413206Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.412731Z&quot;}" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>df[df[<span class="st">'a'</span>] <span class="op">&gt;</span> <span class="dv">2</span>]  <span class="co"># filter the entire dataframe</span></span></code></pre></div>
@@ -915,7 +716,7 @@ dtype: int64</code></pre>
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -967,7 +768,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="85083d76" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.147078Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.146743Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.151472Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.150907Z&quot;}" data-execution_count="10">
+<div id="85083d76" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.415057Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.414712Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.419285Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.418793Z&quot;}" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>df[df[<span class="st">'a'</span>] <span class="op">&gt;</span> <span class="dv">2</span>][<span class="st">'a'</span>]  <span class="co"># filter and select the column 'a'</span></span></code></pre></div>
@@ -982,7 +783,7 @@ Name: a, dtype: int64</code></pre>
 
 <section id="doing-some-aggregation" class="title-slide slide level1 center">
 <h1>Doing some aggregation</h1>
-<div id="b2c64c8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.153342Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.153018Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.157404Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.156957Z&quot;}" data-outputid="f34e8487-ac46-416f-a5e4-bd79c94e101a" data-execution_count="11">
+<div id="b2c64c8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.421200Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.420837Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.425511Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.424947Z&quot;}" data-outputid="f34e8487-ac46-416f-a5e4-bd79c94e101a" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>ser_c <span class="op">=</span> df[<span class="st">"a"</span>]</span>
@@ -997,7 +798,7 @@ Name: a, dtype: int64</code></pre>
 <pre><code>np.int64(4)</code></pre>
 </div>
 </div>
-<div id="4f74f58d-d995-49d8-ae68-6e3ce7fe6d0e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.159129Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.158794Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.182336Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.181820Z&quot;}" data-outputid="e103511b-c049-44e4-e494-e0256500b82d" data-execution_count="12">
+<div id="4f74f58d-d995-49d8-ae68-6e3ce7fe6d0e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.427253Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.426914Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.450879Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.450300Z&quot;}" data-outputid="e103511b-c049-44e4-e494-e0256500b82d" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>df.groupby([<span class="st">'a'</span>]).agg([<span class="st">'mean'</span>, <span class="st">'count'</span>])</span></code></pre></div>
@@ -1022,7 +823,7 @@ Name: a, dtype: int64</code></pre>
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1037,7 +838,7 @@ Name: a, dtype: int64</code></pre>
 <th colspan="2" data-quarto-table-cell-role="th" data-halign="left">j</th>
 <th colspan="2" data-quarto-table-cell-role="th" data-halign="left">k</th>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th">mean</th>
 <th data-quarto-table-cell-role="th">count</th>
@@ -1221,7 +1022,7 @@ Name: a, dtype: int64</code></pre>
 <li><code>datetime64</code>, timedelta64: timestamp and time intervals</li>
 <li><code>object</code>: mainly used for strings</li>
 </ul>
-<div id="fe21ad74" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.191179Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.190996Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.197832Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.197345Z&quot;}" data-execution_count="14">
+<div id="fe21ad74" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.459617Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.459263Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.466251Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.465653Z&quot;}" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>df</span></code></pre></div>
@@ -1242,7 +1043,7 @@ Name: a, dtype: int64</code></pre>
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1259,7 +1060,7 @@ Name: a, dtype: int64</code></pre>
 <td>Pizza Margherita</td>
 <td>High</td>
 <td>2025-01-12</td>
-<td>50</td>
+<td>69</td>
 <td>5</td>
 </tr>
 <tr class="even">
@@ -1267,7 +1068,7 @@ Name: a, dtype: int64</code></pre>
 <td>Cheeseburger</td>
 <td>High</td>
 <td>2025-01-15</td>
-<td>55</td>
+<td>63</td>
 <td>4</td>
 </tr>
 <tr class="odd">
@@ -1275,7 +1076,7 @@ Name: a, dtype: int64</code></pre>
 <td>Spaghetti Carbonara</td>
 <td>Medium</td>
 <td>2025-01-12</td>
-<td>60</td>
+<td>34</td>
 <td>5</td>
 </tr>
 <tr class="even">
@@ -1283,7 +1084,7 @@ Name: a, dtype: int64</code></pre>
 <td>Caesar Salad</td>
 <td>Low</td>
 <td>2025-01-13</td>
-<td>35</td>
+<td>40</td>
 <td>3</td>
 </tr>
 <tr class="odd">
@@ -1291,7 +1092,7 @@ Name: a, dtype: int64</code></pre>
 <td>Pad Thai</td>
 <td>Medium</td>
 <td>2025-01-12</td>
-<td>22</td>
+<td>50</td>
 <td>5</td>
 </tr>
 <tr class="even">
@@ -1299,7 +1100,7 @@ Name: a, dtype: int64</code></pre>
 <td>Sushi Platter</td>
 <td>Medium</td>
 <td>2025-01-17</td>
-<td>45</td>
+<td>36</td>
 <td>3</td>
 </tr>
 <tr class="odd">
@@ -1307,7 +1108,7 @@ Name: a, dtype: int64</code></pre>
 <td>Tandoori Chicken</td>
 <td>High</td>
 <td>2025-01-11</td>
-<td>49</td>
+<td>64</td>
 <td>3</td>
 </tr>
 <tr class="even">
@@ -1315,7 +1116,7 @@ Name: a, dtype: int64</code></pre>
 <td>Beef Tacos</td>
 <td>Low</td>
 <td>2025-01-15</td>
-<td>54</td>
+<td>60</td>
 <td>3</td>
 </tr>
 <tr class="odd">
@@ -1323,7 +1124,7 @@ Name: a, dtype: int64</code></pre>
 <td>Veggie Wrap</td>
 <td>Medium</td>
 <td>2025-01-17</td>
-<td>45</td>
+<td>41</td>
 <td>2</td>
 </tr>
 <tr class="even">
@@ -1331,7 +1132,7 @@ Name: a, dtype: int64</code></pre>
 <td>Chocolate Cake</td>
 <td>Medium</td>
 <td>2025-01-13</td>
-<td>58</td>
+<td>16</td>
 <td>3</td>
 </tr>
 </tbody>
@@ -1340,7 +1141,7 @@ Name: a, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="7d53489b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.199446Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.199267Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.203690Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.203211Z&quot;}" data-outputid="97c41b58-041b-4538-c9de-d8315c66f7cd" data-execution_count="15">
+<div id="7d53489b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.468203Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.467807Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.472397Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.471796Z&quot;}" data-outputid="97c41b58-041b-4538-c9de-d8315c66f7cd" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>df.dtypes</span></code></pre></div>
@@ -1379,7 +1180,7 @@ dtype: object</code></pre>
 
 <section id="data-profiling" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
-<div id="4d3c26ed" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.205426Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.205246Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.211761Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.211263Z&quot;}" data-outputid="4ab0845e-47d5-40e1-f72e-bb8ca33e95f7" data-execution_count="16">
+<div id="4d3c26ed" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.477406Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.476981Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.483598Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.483042Z&quot;}" data-outputid="4ab0845e-47d5-40e1-f72e-bb8ca33e95f7" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>df.info()</span></code></pre></div>
@@ -1403,7 +1204,7 @@ memory usage: 532.0+ bytes</code></pre>
 
 <section id="data-profiling-1" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
-<div id="4061127e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.213420Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.213241Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.226120Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.225541Z&quot;}" data-outputid="b0361495-a3ad-4caf-a648-ff76fcc16a61" data-execution_count="17">
+<div id="4061127e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.485518Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.485170Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.498741Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.498231Z&quot;}" data-outputid="b0361495-a3ad-4caf-a648-ff76fcc16a61" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="co"># To get some statistics (e.g., count, mean, std, min, etc.)</span></span>
@@ -1425,7 +1226,7 @@ memory usage: 532.0+ bytes</code></pre>
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1482,7 +1283,7 @@ memory usage: 532.0+ bytes</code></pre>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>11.508934</td>
+<td>16.806414</td>
 <td>1.074968</td>
 </tr>
 <tr class="odd">
@@ -1490,7 +1291,7 @@ memory usage: 532.0+ bytes</code></pre>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>22.000000</td>
+<td>16.000000</td>
 <td>2.000000</td>
 </tr>
 <tr class="even">
@@ -1498,7 +1299,7 @@ memory usage: 532.0+ bytes</code></pre>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>45.000000</td>
+<td>37.000000</td>
 <td>3.000000</td>
 </tr>
 <tr class="odd">
@@ -1506,7 +1307,7 @@ memory usage: 532.0+ bytes</code></pre>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>49.500000</td>
+<td>45.500000</td>
 <td>3.000000</td>
 </tr>
 <tr class="even">
@@ -1514,7 +1315,7 @@ memory usage: 532.0+ bytes</code></pre>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>54.750000</td>
+<td>62.250000</td>
 <td>4.750000</td>
 </tr>
 <tr class="odd">
@@ -1522,7 +1323,7 @@ memory usage: 532.0+ bytes</code></pre>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>60.000000</td>
+<td>69.000000</td>
 <td>5.000000</td>
 </tr>
 </tbody>
@@ -1540,7 +1341,7 @@ memory usage: 532.0+ bytes</code></pre>
 <li>Each bar typically covers a range of numeric values called a bin or class</li>
 <li>A bar’s height indicates the <em>frequency</em> of data points with a value within the corresponding bin.</li>
 </ul>
-<div id="411d3ecf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.228198Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.227855Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.538592Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.537990Z&quot;}" data-execution_count="18">
+<div id="411d3ecf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.500844Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.500350Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.825708Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.825121Z&quot;}" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>df.hist(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>), bins<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, grid<span class="op">=</span><span class="va">True</span>)</span>
@@ -1552,7 +1353,7 @@ memory usage: 532.0+ bytes</code></pre>
 
 <section id="plotting-the-data-distribution-boxplots-numeric" class="title-slide slide level1 center">
 <h1>Plotting the data distribution: boxplots (numeric)</h1>
-<div id="a3cfe38f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.540632Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.540213Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:11.665289Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:11.664830Z&quot;}" data-execution_count="19">
+<div id="a3cfe38f" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.827811Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.827354Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:44.964102Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:44.963543Z&quot;}" data-execution_count="19">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
@@ -1570,7 +1371,7 @@ memory usage: 532.0+ bytes</code></pre>
 
 <section id="plotting-the-data-distribution-histogram-categorical" class="title-slide slide level1 center">
 <h1>Plotting the data distribution: histogram (categorical)</h1>
-<div id="0f8ddde6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:11.667155Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:11.666861Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:12.021451Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:12.020891Z&quot;}" data-execution_count="20">
+<div id="0f8ddde6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:44.966209Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:44.965997Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:45.335140Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:45.334447Z&quot;}" data-execution_count="20">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="co"># Select only the categorical columns (non-numeric)</span></span>
@@ -1605,20 +1406,20 @@ memory usage: 532.0+ bytes</code></pre>
 <li>Sort the DataFrame by Age in descending order. Hint: Use <code>df.sort_values()</code>, see the <a href="http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html">documentation</a></li>
 <li>Export the final DataFrame to a CSV file. Hint: Use <code>df.to_csv()</code>, see the <a href="http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html">documentation</a>.</li>
 </ol>
-<div id="1e4187e7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T11:51:12.023356Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T11:51:12.023163Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T11:51:12.025974Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T11:51:12.025377Z&quot;}" data-execution_count="21">
+<div id="1e4187e7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-01-10T15:55:45.337308Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-01-10T15:55:45.336917Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-01-10T15:55:45.339458Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-01-10T15:55:45.339002Z&quot;}" data-execution_count="21">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="co"># write your code here</span></span></code></pre></div>
 </details>
 </div>
-<div class="quarto-auto-generated-content">
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
 <p>Matteo Francia - Machine Learning and Data Mining (Module 2) - A.Y. 2024/25</p>
 </div>
-</div>
-</section>
-    </div>
-  </div>
+</div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="lab-01-dataunderstanding_files/libs/revealjs/dist/reveal.js"></script>
@@ -1647,7 +1448,8 @@ memory usage: 532.0+ bytes</code></pre>
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -1801,7 +1603,7 @@ memory usage: 532.0+ bytes</code></pre>
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1851,6 +1653,24 @@ memory usage: 532.0+ bytes</code></pre>
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);
       });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -1887,7 +1707,11 @@ memory usage: 532.0+ bytes</code></pre>
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
