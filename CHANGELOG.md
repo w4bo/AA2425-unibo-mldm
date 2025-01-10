@@ -1,3 +1,11 @@
+## [1.0.46](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.45...1.0.46) (2025-01-10)
+
+### Bug Fixes
+
+* add sport kpi ([d177e18](https://github.com/w4bo/AA2425-unibo-mldm/commit/d177e187e4e99a17e4b6e8b102d5cbffd298c302))
+* data preprocessing ([21dfb18](https://github.com/w4bo/AA2425-unibo-mldm/commit/21dfb189769a97a185195b4b4465fc660e9478ea))
+* data understanding, add sport kpis ([f396475](https://github.com/w4bo/AA2425-unibo-mldm/commit/f3964756c1d50e8f5a90410f38eab627fe10341a))
+
 ## [1.0.45](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.44...1.0.45) (2025-01-09)
 
 ### Dependency updates
