@@ -193,7 +193,7 @@ Which return has the portfolio generated each year?
 :::: {.columns}
 ::: {.column width="70%"}
 
-> Assume that each year our portfolio has a return of X%
+> Our portfolio has an initial value $V_0 = 1000€$ and each has a return of X%
 >
 > The first year, the portfolio increases its value to $V_1=1000€ + (1000€ \times X\%) = 1050€$
 >
@@ -210,15 +210,12 @@ Which return has the portfolio generated each year?
 > |1   |1050.00 € |
 > |2   |1102.50 € |
 > |... |...        |
-> |17  |2292.02 € |
 > |18  |2406.62 € |
 
 :::
 ::::
 
-This is not a linear increase!
-
-This is a geometric sequence, the final value is $\text{Initial value} \times (1 + \frac{r}{n})^\frac{t}{n}$
+This is not a linear increase but a geometric sequence, the final value is $\text{Initial value} \times (1 + \frac{r}{n})^\frac{t}{n}$
 
 - $r$ is the nominal annual interest rate
 - $n$ is the compounding frequency (1: annually, 12: monthly, 52: weekly, 365: daily)
@@ -249,33 +246,53 @@ What is the average return?
 
 # Which mean? Compount interest
 
-If we apply the aritmetic mean it is $\frac{5 -5 + 5 -5 + 0}{5} = 0%$, however **this is wrong!**
+:::: {.columns}
+::: {.column width="50%"}
+
+If we apply the aritmetic mean it is $\frac{5 -5 + 5 -5 + 0}{5} = 0%$
+
+However, **this is wrong!**
+
+:::
+::: {.column width="50%"}
 
 > |Year| Value | Return|
 > |----|-----------|---|
 > |0|1000.00 €| -|
 > |1|1000.00 €| 0%|
 > |2|1000.00 €| 0%|
-> |3|1000.00 €| 0%|
-> |4|1000.00 €| 0%|
+> |...|...|...|
 > |5|1000.00 €| 0%|
 
-We already know that $X = \frac{\text{Final value}}{\text{Initial value}}^\frac{1}{5} - 1$, the average return is $X = -0.1\%$
+:::
+::::
+
+:::: {.columns}
+::: {.column width="50%"}
+
+We already know that $X = \frac{\text{Final value}}{\text{Initial value}}^\frac{1}{5} - 1$
+
+The average return is $X = -0.1\%$
+
+$X\%$ is the *Compound Annual Growth Rate*, the mean annualized growth rate for compounding values over a given time period.
+
+- CAGR smoothes the effect of volatility of periodic values that can render arithmetic means less meaningful.
+
+:::
+::: {.column width="50%"}
 
 > |Year| Value | Return|
 > |----|-----------|---|
 > |0|1000.00 €|	-|
 > |1|999.00 € |	-0.1%|
 > |2|998.00 € |	-0.1%|
-> |3|997.00 € |	-0.1%|
-> |4|996.00 € |	-0.1%|
+> |...|...|...|
 > |5|995.01 € |	-0.1%|
->
-> This is correct!
 
-The *Compound Annual Growth Rate* represents the mean annualized growth rate for compounding values over a given time period.
+:::
+::::
 
-- CAGR smoothes the effect of volatility of periodic values that can render arithmetic means less meaningful.
+**Take away**: pay attention to the semantics of the features!
 
 # Skewed distributions
 
@@ -331,34 +348,36 @@ Median:  36666524821
 
 # Skewed distributions: Stocks
 
-Let us consider the S&P 500 index
-
-- [Standard and Poor's 500](https://en.wikipedia.org/wiki/S%26P_500) is an index tracking the stock performance of [500 of the largest companies](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) in the United States.
+The [Standard and Poor's 500](https://en.wikipedia.org/wiki/S%26P_500) index tracks the stock performance of [500 of the largest companies](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) in the United States.
 
 ![Top 25 company from the S&P 500 index](./img/datapreprocessing/market_cap_topn.svg)
 
-How would you define the *weight* of a company in the index?
-
 - Companies emit stocks that are buyed by investors, the number of stocks is called *shares outstanding*
     - *Shares outstanding* are shares of a corporation that have been purchased by investors and are held by them
-    - *Treasury shares* are shares held by the corporation itself
-    - *Issued shares* = Shares outstanding + Treasury shares
 - Stocks are daily traded in stock market
     - *Volume* is the amount of shares that are daily traded
     - *Close* and *Open* are closing/opening prices of daily trades
+
+How would you define the *weight* of a company in the index?
 
 # Skewed distributions: Stocks
 
 As a semplification, given a company $C$ and a generic index $I$
 
+:::: {.columns}
+::: {.column width="49%"}
+
 *Market cap weight* (e.g., [S&P 500](https://en.wikipedia.org/wiki/S%26P_500))
 
-- $\text{MarketCapitalization(C)} = \text{SharesOutstanding(C)} \times \text{StockPrice(C)}$
-- $\text{MarketCapWeight(C)} = \frac{\text{MarketCapitalization(C)}}{\sum_{C' \in I} \text{MarketCapitalization(C')}}$
+- $\text{MarketCap(C)} = \text{SharesOut(C)} \times \text{StockPrice(C)}$
+- $\text{MarketCapWeight(C)} = \frac{\text{MarketCap(C)}}{\sum_{C' \in I} \text{MarketCap(C')}}$
 
 *Price weight index* (e.g., [Dow Jones Industrial Average](https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average))
 
 - $\text{PriceWeight(C)} = \frac{\text{StockPrice(C)}}{\sum_{C' \in I} \text{StockPrice(C')}}$
+
+:::
+::: {.column width="50%"}
 
 > Given a few companies such as
 >
@@ -370,7 +389,10 @@ As a semplification, given a company $C$ and a generic index $I$
 > | MSFT     |  424.56 | 7.43488e+09 |  6.12105  |         6.13209  |
 > | NVDA     |  140.11 | 2.449e+10   |  2.02002  |         6.66582  |
 >
-> What is their impact on DJIA and S&P 500?
+> What is their impact on DJIA and S&P?
+
+:::
+::::
 
 # Skewed distributions: Stocks
 
@@ -1132,7 +1154,7 @@ See also [@katrutsa2017comprehensive] [@chan2022mitigating]
 
 ![Linear regression](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Linear_least_squares_example2.svg/1024px-Linear_least_squares_example2.svg.png)
 
-![](https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/d2/a9/4-1_model-complexity-bias-variance.component.complex-narrative-xl.ts=1723041862502.png/content/adobe-cms/us/en/topics/lasso-regression/jcr:content/root/table_of_contents/body/content_section_styled/content-section-body/complex_narrative_1723597861/items/content_group_1333297271/image)
+![](./img/datapreprocessing/modelcomplexity.png)
 
 :::
 ::::
