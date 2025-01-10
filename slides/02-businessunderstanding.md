@@ -118,9 +118,11 @@ If the business goal cannot be effectively translated into a data mining goal, *
 >
 > Success should also be defined in these terms such as achieving a certain level of predictive accuracy
 
-# Case study
+# Case study: Sport KPIs
 
 {{< include _cs-kpisport.md >}}
+
+# End of the case study: Sport KPIs
 
 # Produce a Project Plan
 
@@ -145,8 +147,10 @@ Identifying and delving into the problem to solve
 - Even if you have good knowledge in the fields of computer and data science...
 - ... maybe you still miss domain knowledge that is fundamental to understanding and modeling the problem
 
-# Case study
+# Case study: Brown Spot
 
 {{< include _cs-brownspot.md >}}
+
+# End of the case study: Brown Spot
 
 # References
