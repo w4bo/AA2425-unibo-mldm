@@ -30,7 +30,8 @@
                 "ms-python.black-formatter",
                 "ms-toolsai.jupyter",
                 "jock.SVG",
-                "tomoki1207.pdf"
+                "tomoki1207.pdf",
+                "adamvoss.vscode-languagetool-en"
             ]
         }
     }
