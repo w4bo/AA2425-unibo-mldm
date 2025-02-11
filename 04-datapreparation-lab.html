@@ -230,7 +230,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="election-data" class="title-slide slide level1 center">
 <h1>Election data</h1>
-<div id="cell-5" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:28:50.284966Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:28:50.284698Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:28:50.361316Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:28:50.360704Z&quot;}" data-execution_count="2">
+<div id="cell-5" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:52:51.141064Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:52:51.140527Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:52:51.228438Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:52:51.227855Z&quot;}" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>election_df <span class="op">=</span> pd.read_csv(<span class="st">'./datasets/census/countypres_2000-2020.csv'</span>)</span>
@@ -337,7 +337,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
-<div id="cell-6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:28:50.391522Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:28:50.391020Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:28:50.395352Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:28:50.394788Z&quot;}" data-execution_count="3">
+<div id="cell-6" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:52:51.260615Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:52:51.260156Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:52:51.264552Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:52:51.264081Z&quot;}" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>election_df.columns</span></code></pre></div>
@@ -353,7 +353,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="profiling" class="title-slide slide level1 center">
 <h1>Profiling</h1>
-<div id="cell-8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:28:50.397375Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:28:50.396919Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:28:50.419705Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:28:50.419138Z&quot;}" data-execution_count="4">
+<div id="cell-8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:52:51.266506Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:52:51.266152Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:52:51.288543Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:52:51.288031Z&quot;}" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>election_df.info()</span></code></pre></div>
@@ -387,7 +387,7 @@ memory usage: 6.6+ MB</code></pre>
 <ul>
 <li><code>mode</code> refers to the different ways that individuals had been able to participate in the election.</li>
 </ul>
-<div id="cell-10" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:28:50.421492Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:28:50.421161Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:28:50.618394Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:28:50.617836Z&quot;}" data-execution_count="5">
+<div id="cell-10" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:52:51.290525Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:52:51.290149Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:52:51.496887Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:52:51.496250Z&quot;}" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>plt.xticks(rotation<span class="op">=</span><span class="st">'vertical'</span>)</span>
@@ -405,7 +405,7 @@ memory usage: 6.6+ MB</code></pre>
 <li>Feature selection: since <code>mode</code> now has a single value, we can drop the column</li>
 <li>Data cleaning: lowering the <code>county_name</code></li>
 </ol>
-<div id="cell-12" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:28:50.620353Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:28:50.620161Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:28:50.654543Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:28:50.654039Z&quot;}" data-execution_count="6">
+<div id="cell-12" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:52:51.499055Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:52:51.498655Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:52:51.534284Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:52:51.533748Z&quot;}" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>election_df <span class="op">=</span> election_df[election_df[<span class="st">'mode'</span>] <span class="op">==</span> <span class="st">'TOTAL'</span>]</span>
@@ -517,7 +517,7 @@ memory usage: 6.6+ MB</code></pre>
 <li>County FIPS Codes are unique 5-digit codes that represent specific US counties</li>
 <li>We can drop them and keep only the county names</li>
 </ul>
-<div id="cell-14" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:28:50.656495Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:28:50.656131Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:28:50.763834Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:28:50.763192Z&quot;}" data-execution_count="7">
+<div id="cell-14" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:52:51.536362Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:52:51.535985Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:52:51.645547Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:52:51.644963Z&quot;}" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>election_df[<span class="st">"county_fips"</span>].hist()</span>
@@ -530,7 +530,7 @@ memory usage: 6.6+ MB</code></pre>
 <section id="checking-the-granularity-of-the-analysis" class="title-slide slide level1 center">
 <h1>Checking the granularity of the analysis</h1>
 <p>How can we find the subject (primary key) of each row?</p>
-<div id="cell-17" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:28:50.766051Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:28:50.765665Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:28:50.790044Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:28:50.789557Z&quot;}" data-execution_count="8">
+<div id="cell-17" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:52:51.647548Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:52:51.647346Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:52:51.672351Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:52:51.671831Z&quot;}" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>election_df.groupby([<span class="st">'state'</span>, <span class="st">'state_po'</span>]).count()[:<span class="dv">8</span>]</span></code></pre></div>
@@ -685,7 +685,7 @@ memory usage: 6.6+ MB</code></pre>
 
 <section id="granularity-state-county" class="title-slide slide level1 center">
 <h1>Granularity: <code>State</code> + <code>County</code></h1>
-<div id="cell-19" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:28:50.791935Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:28:50.791550Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:28:50.818336Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:28:50.817864Z&quot;}" data-execution_count="9">
+<div id="cell-19" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:52:51.674195Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:52:51.674004Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:52:51.701512Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:52:51.700987Z&quot;}" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>election_df.groupby([<span class="st">'state'</span>, <span class="st">'state_po'</span>, <span class="st">'county_name'</span>]).count()[:<span class="dv">8</span>]</span></code></pre></div>
@@ -826,7 +826,7 @@ memory usage: 6.6+ MB</code></pre>
 
 <section id="granularity-state-county-year" class="title-slide slide level1 center">
 <h1>Granularity: <code>State</code> + <code>County</code> + <code>Year</code></h1>
-<div id="cell-21" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:28:50.820330Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:28:50.819974Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:28:50.847795Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:28:50.847329Z&quot;}" data-execution_count="10">
+<div id="cell-21" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:52:51.703704Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:52:51.703387Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:52:51.733083Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:52:51.732436Z&quot;}" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>election_df.groupby([<span class="st">'state'</span>, <span class="st">'state_po'</span>, <span class="st">'county_name'</span>, <span class="st">'year'</span>]).count()[:<span class="dv">8</span>]</span></code></pre></div>
@@ -961,7 +961,7 @@ memory usage: 6.6+ MB</code></pre>
 
 <section id="granularity-state-county-year-party" class="title-slide slide level1 center">
 <h1>Granularity: <code>State</code> + <code>County</code> + <code>Year</code> + <code>Party</code></h1>
-<div id="cell-23" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:28:50.849707Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:28:50.849332Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:28:50.882993Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:28:50.882390Z&quot;}" data-execution_count="11">
+<div id="cell-23" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:52:51.735303Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:52:51.734930Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:52:51.769715Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:52:51.769076Z&quot;}" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>election_df.groupby([<span class="st">'state'</span>, <span class="st">'state_po'</span>, <span class="st">'county_name'</span>, <span class="st">'year'</span>, <span class="st">'party'</span>]).count()[:<span class="dv">8</span>]</span></code></pre></div>
@@ -1098,7 +1098,7 @@ memory usage: 6.6+ MB</code></pre>
 </ul></li>
 <li>We coarsen the granularity from (<code>State</code> + <code>County</code> + <code>Year</code> + <code>Party</code>) to (<code>State</code> + <code>County</code> + <code>Year</code>)</li>
 </ul>
-<div id="cell-25" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:28:50.884984Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:28:50.884620Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:02.558229Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:02.557630Z&quot;}" data-execution_count="12">
+<div id="cell-25" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:52:51.771949Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:52:51.771729Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:03.635685Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:03.635095Z&quot;}" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># Group the election_df by state, county, and year</span></span>
@@ -1179,7 +1179,7 @@ memory usage: 6.6+ MB</code></pre>
 
 <section id="the-partisanism-time-series" class="title-slide slide level1 center">
 <h1>The <code>partisanism</code> time series</h1>
-<div id="cell-27" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:02.560320Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:02.559972Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:02.770198Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:02.769567Z&quot;}" data-execution_count="13">
+<div id="cell-27" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:03.637591Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:03.637401Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:03.858026Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:03.857417Z&quot;}" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>))  <span class="co"># Adjust figure size as needed</span></span>
@@ -1209,7 +1209,7 @@ memory usage: 6.6+ MB</code></pre>
 <li>We can interpolate the data and obtain the mean and slope of partisanism across elections over 20 years</li>
 <li>We coarsen the granularity from (<code>State</code> + <code>County</code> + <code>Year</code>) to (<code>State</code> + <code>County</code>)</li>
 </ul>
-<div id="cell-29" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:02.772499Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:02.772050Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:04.286530Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:04.286005Z&quot;}" data-execution_count="14">
+<div id="cell-29" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:03.860090Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:03.859884Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:05.472466Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:05.471835Z&quot;}" data-execution_count="14">
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 <style scoped="">
@@ -1329,7 +1329,7 @@ memory usage: 6.6+ MB</code></pre>
 
 <section id="education-data" class="title-slide slide level1 center">
 <h1>Education data</h1>
-<div id="cell-33" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:04.408237Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:04.407947Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:04.704257Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:04.703635Z&quot;}" data-execution_count="16">
+<div id="cell-33" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:05.603799Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:05.603421Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:05.914971Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:05.914276Z&quot;}" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>edu_df <span class="op">=</span> pd.read_excel(<span class="st">'./datasets/census/Education.xls'</span>)</span>
@@ -1486,7 +1486,7 @@ memory usage: 6.6+ MB</code></pre>
 
 <section id="do-not-consider-the-first-3-rows" class="title-slide slide level1 center">
 <h1>Do not consider the first 3 rows</h1>
-<div id="cell-35" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:04.706359Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:04.705890Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:05.095356Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:05.094746Z&quot;}" data-execution_count="17">
+<div id="cell-35" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:05.917362Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:05.916925Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:06.256211Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:06.255594Z&quot;}" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>edu_df <span class="op">=</span> pd.read_excel(<span class="st">'./datasets/census/Education.xls'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
@@ -1643,7 +1643,7 @@ memory usage: 6.6+ MB</code></pre>
 
 <section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-37" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:05.097505Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:05.097145Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:05.107100Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:05.106625Z&quot;}" data-execution_count="18">
+<div id="cell-37" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:06.258175Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:06.257990Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:06.359059Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:06.358431Z&quot;}" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>edu_df.info()</span></code></pre></div>
@@ -1709,7 +1709,7 @@ memory usage: 1.2+ MB</code></pre>
 
 <section id="selecting-some-features" class="title-slide slide level1 center">
 <h1>Selecting some features</h1>
-<div id="cell-39" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:05.109060Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:05.108712Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:05.115528Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:05.114945Z&quot;}" data-execution_count="19">
+<div id="cell-39" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:06.361133Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:06.360722Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:06.368383Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:06.367893Z&quot;}" data-execution_count="19">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>edu_df <span class="op">=</span> edu_df[[<span class="st">'State'</span>, <span class="st">'Area name'</span>, <span class="st">"Percent of adults with a bachelor's degree or higher, 2015-19"</span>]]</span>
@@ -1771,7 +1771,7 @@ memory usage: 1.2+ MB</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-40" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:05.117428Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:05.117091Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:05.125197Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:05.124732Z&quot;}" data-execution_count="20">
+<div id="cell-40" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:06.370327Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:06.369959Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:06.378776Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:06.378291Z&quot;}" data-execution_count="20">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>edu_df <span class="op">=</span> edu_df.rename({<span class="st">'Area name'</span>: <span class="st">'Area_Name'</span>, <span class="st">"Percent of adults with a bachelor's degree or higher, 2015-19"</span>: <span class="st">"HigherEdPercent"</span>}, axis<span class="op">=</span><span class="dv">1</span>)</span>
@@ -1838,7 +1838,7 @@ memory usage: 1.2+ MB</code></pre>
 
 <section id="poverty-data" class="title-slide slide level1 center">
 <h1>Poverty data</h1>
-<div id="cell-42" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:05.126882Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:05.126690Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:05.325630Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:05.325035Z&quot;}" data-execution_count="21">
+<div id="cell-42" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:06.380672Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:06.380475Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:06.586401Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:06.585870Z&quot;}" data-execution_count="21">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a>pov_df <span class="op">=</span> pd.read_excel(<span class="st">'./datasets/census/PovertyEstimates.xls'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
@@ -1927,7 +1927,7 @@ memory usage: 1.2+ MB</code></pre>
 
 <section id="unemployment-data" class="title-slide slide level1 center">
 <h1>Unemployment data</h1>
-<div id="cell-44" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:05.327917Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:05.327355Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:08.203460Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:08.202959Z&quot;}" data-execution_count="22">
+<div id="cell-44" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:06.588470Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:06.588100Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:09.543115Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:09.542463Z&quot;}" data-execution_count="22">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>employment_df <span class="op">=</span> pd.read_excel(<span class="st">'./datasets/census/Unemployment.xlsx'</span>, skiprows<span class="op">=</span><span class="dv">4</span>)</span>
@@ -1990,7 +1990,7 @@ memory usage: 1.2+ MB</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-45" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:08.205290Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:08.205021Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:08.214043Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:08.213487Z&quot;}" data-execution_count="23">
+<div id="cell-45" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:09.545306Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:09.544813Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:09.554271Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:09.553789Z&quot;}" data-execution_count="23">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>employment_df[<span class="st">'Area_Name'</span>] <span class="op">=</span> employment_df.Area_name.<span class="bu">apply</span>(<span class="kw">lambda</span> v: v[:v.find(<span class="st">','</span>)] <span class="cf">if</span> <span class="st">','</span> <span class="kw">in</span> v <span class="cf">else</span> v)</span>
@@ -2057,7 +2057,7 @@ memory usage: 1.2+ MB</code></pre>
 
 <section id="population-data" class="title-slide slide level1 center">
 <h1>Population data</h1>
-<div id="cell-47" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:08.216021Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:08.215666Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.236376Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.235888Z&quot;}" data-execution_count="24">
+<div id="cell-47" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:09.556317Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:09.555931Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:10.608719Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:10.608202Z&quot;}" data-execution_count="24">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>pop_df <span class="op">=</span> pd.read_excel(<span class="st">'./datasets/census/PopulationEstimates.xls'</span>, skiprows<span class="op">=</span><span class="dv">2</span>)</span>
@@ -2226,7 +2226,7 @@ memory usage: 1.2+ MB</code></pre>
 
 <section id="section-2" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-49" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.238366Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.237999Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.244879Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.244390Z&quot;}" data-execution_count="25">
+<div id="cell-49" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:10.610707Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:10.610371Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:10.617927Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:10.617317Z&quot;}" data-execution_count="25">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>pop_df <span class="op">=</span> pop_df[[<span class="st">'State'</span>, <span class="st">'Area_Name'</span>, <span class="st">'CENSUS_2010_POP'</span>]]</span>
@@ -2294,7 +2294,7 @@ memory usage: 1.2+ MB</code></pre>
 <section id="integration" class="title-slide slide level1 center">
 <h1>Integration</h1>
 <p>Now <code>edu_df</code>, <code>pop_df</code>, <code>pov_df</code>, <code>employment_df</code> all have the <code>State</code> and <code>Area_Name</code> columns</p>
-<div id="cell-51" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.246843Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.246481Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.249936Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.249441Z&quot;}" data-execution_count="26">
+<div id="cell-51" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:10.619952Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:10.619747Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:10.623233Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:10.622741Z&quot;}" data-execution_count="26">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="bu">print</span>(<span class="ss">f"edu_df: </span><span class="sc">{</span>edu_df<span class="sc">.</span>columns<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -2313,7 +2313,7 @@ employment_df: Index(['State', 'Unemployment_rate_2019', 'Area_Name'], dtype='ob
 <ul>
 <li>For instance, they contains data from both the US (aggregated data) and single counties (detailed data)</li>
 </ul>
-<div id="cell-53" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.251798Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.251425Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.275491Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.275053Z&quot;}" data-execution_count="27">
+<div id="cell-53" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:10.624956Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:10.624773Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:10.650083Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:10.649527Z&quot;}" data-execution_count="27">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a><span class="cf">for</span> cur_df <span class="kw">in</span> [edu_df, pop_df, pov_df, employment_df]:</span>
@@ -2327,7 +2327,7 @@ employment_df: Index(['State', 'Unemployment_rate_2019', 'Area_Name'], dtype='ob
 
 <section id="section-3" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-55" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.277590Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.277062Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.282952Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.282483Z&quot;}" data-execution_count="28">
+<div id="cell-55" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:10.652390Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:10.652004Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:10.658369Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:10.657908Z&quot;}" data-execution_count="28">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a>edu_df[:<span class="dv">2</span>]</span></code></pre></div>
@@ -2377,7 +2377,7 @@ employment_df: Index(['State', 'Unemployment_rate_2019', 'Area_Name'], dtype='ob
 </div>
 </div>
 </div>
-<div id="cell-56" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.284984Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.284448Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.290163Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.289720Z&quot;}" data-execution_count="29">
+<div id="cell-56" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:10.660342Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:10.659966Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:10.666364Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:10.665782Z&quot;}" data-execution_count="29">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>pop_df[:<span class="dv">2</span>]</span></code></pre></div>
@@ -2427,7 +2427,7 @@ employment_df: Index(['State', 'Unemployment_rate_2019', 'Area_Name'], dtype='ob
 </div>
 </div>
 </div>
-<div id="cell-57" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.292009Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.291628Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.298081Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.297598Z&quot;}" data-execution_count="30">
+<div id="cell-57" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:10.668360Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:10.668015Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:10.674655Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:10.674080Z&quot;}" data-execution_count="30">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>pov_df[:<span class="dv">2</span>]</span></code></pre></div>
@@ -2481,7 +2481,7 @@ employment_df: Index(['State', 'Unemployment_rate_2019', 'Area_Name'], dtype='ob
 </div>
 </div>
 </div>
-<div id="cell-58" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.299772Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.299547Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.305701Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.305218Z&quot;}" data-execution_count="31">
+<div id="cell-58" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:10.676702Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:10.676339Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:10.682579Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:10.682134Z&quot;}" data-execution_count="31">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href=""></a>employment_df[:<span class="dv">2</span>]</span></code></pre></div>
@@ -2535,7 +2535,7 @@ employment_df: Index(['State', 'Unemployment_rate_2019', 'Area_Name'], dtype='ob
 
 <section id="also-we-have-partisan_df" class="title-slide slide level1 center">
 <h1>Also, we have <code>partisan_df</code></h1>
-<div id="cell-60" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.307518Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.307152Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.315455Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.314889Z&quot;}" data-execution_count="32">
+<div id="cell-60" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:10.684532Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:10.684173Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:10.692748Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:10.692173Z&quot;}" data-execution_count="32">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb35-1"><a href=""></a>partisan_df</span></code></pre></div>
@@ -2654,7 +2654,7 @@ employment_df: Index(['State', 'Unemployment_rate_2019', 'Area_Name'], dtype='ob
 
 <section id="joining-the-sources" class="title-slide slide level1 center">
 <h1>Joining the sources</h1>
-<div id="cell-62" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.317442Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.317097Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.332350Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.331885Z&quot;}" data-execution_count="33">
+<div id="cell-62" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:10.694738Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:10.694446Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:10.711360Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:10.710832Z&quot;}" data-execution_count="33">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a>county_df <span class="op">=</span> pop_df.join(edu_df).join(pov_df).join(employment_df).join(partisan_df)</span>
@@ -2759,7 +2759,7 @@ employment_df: Index(['State', 'Unemployment_rate_2019', 'Area_Name'], dtype='ob
 
 <section id="section-4" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-64" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.334303Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.333847Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.340399Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.339946Z&quot;}" data-execution_count="34">
+<div id="cell-64" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:10.713538Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:10.713090Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:10.720704Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:10.720117Z&quot;}" data-execution_count="34">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb37-1"><a href=""></a>county_df.info()</span></code></pre></div>
@@ -2786,7 +2786,7 @@ memory usage: 341.0+ KB</code></pre>
 
 <section id="handling-the-missing-values" class="title-slide slide level1 center">
 <h1>Handling the missing values</h1>
-<div id="cell-66" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.342393Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.341937Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.349264Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.348776Z&quot;}" data-execution_count="35">
+<div id="cell-66" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:10.722650Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:10.722447Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:10.730667Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:10.730181Z&quot;}" data-execution_count="35">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href=""></a>county_df.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span>
@@ -2814,7 +2814,7 @@ memory usage: 275.4+ KB</code></pre>
 
 <section id="outliers" class="title-slide slide level1 center">
 <h1>Outliers</h1>
-<div id="cell-68" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.351146Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.350791Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.647938Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.647418Z&quot;}" data-execution_count="36">
+<div id="cell-68" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:10.732681Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:10.732336Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:11.044842Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:11.044203Z&quot;}" data-execution_count="36">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb41-1"><a href=""></a><span class="cf">for</span> att <span class="kw">in</span> county_df.columns[:<span class="dv">2</span>]:</span>
@@ -2843,7 +2843,7 @@ memory usage: 275.4+ KB</code></pre>
 
 <section id="setting-the-class-attribute" class="title-slide slide level1 center">
 <h1>Setting the <code>class</code> attribute</h1>
-<div id="cell-70" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.649847Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.649636Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.661661Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.661076Z&quot;}" data-execution_count="37">
+<div id="cell-70" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:11.046871Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:11.046542Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:11.058992Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:11.058410Z&quot;}" data-execution_count="37">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb42-1"><a href=""></a><span class="kw">def</span> set_class(x):</span>
@@ -2959,7 +2959,7 @@ memory usage: 275.4+ KB</code></pre>
 
 <section id="distribution-of-class" class="title-slide slide level1 center">
 <h1>Distribution of <code>class</code></h1>
-<div id="cell-73" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.667976Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.667795Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:09.746831Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:09.746359Z&quot;}" data-execution_count="39">
+<div id="cell-73" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:11.066035Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:11.065664Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:11.150022Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:11.149414Z&quot;}" data-execution_count="39">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href=""></a>county_df[<span class="st">"class"</span>].hist()</span></code></pre></div>
@@ -2970,7 +2970,7 @@ memory usage: 275.4+ KB</code></pre>
 
 <section id="checking-for-data-correlations" class="title-slide slide level1 center">
 <h1>Checking for data correlations</h1>
-<div id="cell-75" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:09.748555Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:09.748372Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:20.899443Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:20.898835Z&quot;}" data-execution_count="40">
+<div id="cell-75" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:11.152056Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:11.151682Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:22.820742Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:22.820071Z&quot;}" data-execution_count="40">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb44-1"><a href=""></a>county_df_no_p <span class="op">=</span> county_df[[x <span class="cf">for</span> x <span class="kw">in</span> county_df.columns <span class="cf">if</span> <span class="st">"Partisanism"</span> <span class="kw">not</span> <span class="kw">in</span> x]]</span>
@@ -2982,7 +2982,7 @@ memory usage: 275.4+ KB</code></pre>
 
 <section id="using-pca-to-visualize-the-dataset" class="title-slide slide level1 center">
 <h1>Using PCA to visualize the dataset</h1>
-<div id="cell-78" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:21.240411Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:21.240058Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:21.374521Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:21.373984Z&quot;}" data-execution_count="42">
+<div id="cell-78" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:23.181153Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:23.180581Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:23.324024Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:23.323403Z&quot;}" data-execution_count="42">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href=""></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
@@ -3058,7 +3058,7 @@ memory usage: 275.4+ KB</code></pre>
 
 <section id="visualizing-the-data" class="title-slide slide level1 center">
 <h1>Visualizing the data</h1>
-<div id="cell-81" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:21.385592Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:21.385249Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:21.815187Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:21.814646Z&quot;}" data-execution_count="44">
+<div id="cell-81" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:23.335902Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:23.335322Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:23.783701Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:23.783085Z&quot;}" data-execution_count="44">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb46-1"><a href=""></a>Xs_t.plot.scatter(x<span class="op">=</span><span class="st">'PC1'</span>, y<span class="op">=</span><span class="st">'PC2'</span>, c<span class="op">=</span>county_df[<span class="st">"class"</span>].<span class="bu">apply</span>(color), sharex<span class="op">=</span><span class="va">False</span>, colormap <span class="op">=</span><span class="st">'gray'</span>, marker<span class="op">=</span><span class="st">'.'</span>,figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
@@ -3075,7 +3075,7 @@ memory usage: 275.4+ KB</code></pre>
 
 <section id="doing-machine-learning" class="title-slide slide level1 center">
 <h1>Doing machine learning</h1>
-<div id="cell-83" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:21.817217Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:21.816852Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:21.986045Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:21.985502Z&quot;}" data-execution_count="45">
+<div id="cell-83" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:23.785973Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:23.785594Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:23.962435Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:23.961787Z&quot;}" data-execution_count="45">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb47-1"><a href=""></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier, plot_tree, export_text</span>
@@ -3104,7 +3104,7 @@ memory usage: 275.4+ KB</code></pre>
 
 <section id="another-decision-tree" class="title-slide slide level1 center">
 <h1>Another decision tree</h1>
-<div id="cell-85" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:21.988264Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:21.987704Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:22.002778Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:22.002215Z&quot;}" data-execution_count="46">
+<div id="cell-85" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:23.964729Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:23.964412Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:23.981420Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:23.980920Z&quot;}" data-execution_count="46">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb49-1"><a href=""></a>dtree(county_df.drop(columns<span class="op">=</span>[<span class="st">"Mean_Partisanism"</span>, <span class="st">"Slope_Partisanism"</span>, <span class="st">"Intercept_Partisanism"</span>]), max_depth<span class="op">=</span><span class="dv">3</span>, print_text<span class="op">=</span><span class="va">True</span>, plot<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
@@ -3138,7 +3138,7 @@ memory usage: 275.4+ KB</code></pre>
 <pre><code>0.734966592427617</code></pre>
 </div>
 </div>
-<div id="cell-86" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-06T12:29:22.004637Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-06T12:29:22.004211Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-06T12:29:22.006893Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-06T12:29:22.006310Z&quot;}" data-execution_count="47">
+<div id="cell-86" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-02-11T18:53:23.983383Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-02-11T18:53:23.983177Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-02-11T18:53:23.985773Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-02-11T18:53:23.985286Z&quot;}" data-execution_count="47">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb52-1"><a href=""></a><span class="co"># Can you do better?</span></span></code></pre></div>
