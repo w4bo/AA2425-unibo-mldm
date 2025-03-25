@@ -48,7 +48,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="04-datapreparation_files/libs/revealjs/dist/theme/quarto-ed3ed8e2bee100c8aba16b41caadc9a2.css">
+  <link rel="stylesheet" href="04-datapreparation_files/libs/revealjs/dist/theme/quarto-6391498a111a1f00b0d941bda0c7e264.css">
   <link href="04-datapreparation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="04-datapreparation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="04-datapreparation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -161,7 +161,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="section" class="title-slide slide level1 center">
 <h1></h1>
 
-<img src="./img/crispdm_dp.svg" class="center r-stretch"></section>
+<img src="./img/crispdm_dp.svg" class="center-img r-stretch"></section>
+
+<section id="section-1" class="title-slide slide level1 center">
+<h1></h1>
+<p><em>Without clean data, the results of a data mining analysis are in question</em>.</p>
+</section>
 
 <section id="data-preparation-aka-data-pre-processing" class="title-slide slide level1 center">
 <h1>Data Preparation (aka <em>data pre-processing</em>)</h1>
@@ -171,17 +176,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li><em>A broad range of activities</em>; from correcting errors to selecting the most relevant features
 <ul>
-<li>Out-of-range values (e.g., Income: −100)</li>
-<li>Impossible data combinations (e.g., <code>Exam mark</code>: 15, <code>Exam result</code>: Passed)</li>
-<li>Missing values</li>
-<li>Inconsistent data among multiple sources</li>
+<li>Out-of-range values (<code>Income</code>: −100), Impossible combinations (<code>Exam mark</code>: 15 and <code>Exam result</code>: Passed), Missing values…</li>
 </ul></li>
 <li>There are <em>no pre-defined rules</em> on the impact of pre-processing transformations</li>
-<li>Data scientists <em>cannot easily foresee the impact of pipeline prototypes</em></li>
+<li>Data scientists <em>cannot easily foresee the impact of pipeline prototypes</em>
+<ul>
+<li>Outline how each quality problem (reported in the earlier “Verify Data Quality” step) has been addressed</li>
+</ul></li>
 </ul>
 </section>
 
-<section id="section-1" class="title-slide slide level1 center">
+<section id="section-2" class="title-slide slide level1 center">
 <h1></h1>
 <p>Data pre-processing includes <span class="citation" data-cites="shearer2000crisp">(<a href="#/references" role="doc-biblioref" onclick="">Shearer 2000</a>)</span> data</p>
 <ol type="1">
@@ -193,20 +198,28 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ol>
 </section>
 
+<section id="problem-which-data-should-we-use" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: which data should we use?</h1>
+
+</section>
+
 <section id="select-data" class="title-slide slide level1 center">
 <h1>Select Data</h1>
 <p>Deciding on the data that will be used for the analysis is based on several criteria, including</p>
 <ul>
-<li>its relevance to the data mining goals</li>
-<li>quality and technical constraints such as GDPR or limits on data volume or data types</li>
+<li>its <em>relevance</em> to the data mining goals</li>
+<li><em>quality</em> and <em>technical</em> constraints such as GDPR or limits on data volume or data types</li>
 </ul>
 <p>Part of the data selection process should involve explaining why certain data was included or excluded.</p>
 <ul>
 <li>It is also a good idea to decide if one or more attributes are more important than others</li>
 </ul>
 <blockquote>
-<p>For instance, while an individual’s address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated.</p>
-<p>To learn how sales are characterized by store <code>type</code> you do not need to consider the <code>StoreId</code></p>
+<p>Examples</p>
+<ul>
+<li><p>An individual’s address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated.</p></li>
+<li><p>To learn how sales are characterized by store <code>type</code> you do not need to consider the <code>StoreId</code></p></li>
+</ul>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -238,7 +251,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="what-personal-data-is-considered-sensitive" class="title-slide slide level1 center">
 <h1><a href="https://commission.europa.eu/law/law-topic/data-protection/reform/rules-business-and-organisations/legal-grounds-processing-data/sensitive-data/what-personal-data-considered-sensitive_en">What personal data is considered sensitive</a>?</h1>
-<p>The following personal data is considered ‘sensitive’ and is subject to specific processing conditions:</p>
+<p>The following personal data is considered <em>sensitive</em> and is subject to specific processing conditions:</p>
 <ul>
 <li>personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs;</li>
 <li>trade-union membership;</li>
@@ -247,16 +260,94 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>data concerning a person’s sex life or sexual orientation.</li>
 </ul>
 <p>See <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&amp;from=EN#d1e1489-1-1">article 4</a></p>
+<p>Why should we care about sensitive data?</p>
 </section>
 
-<section id="clean-data-or-data-cleansing" class="title-slide slide level1 center">
-<h1>Clean Data (or data cleansing)</h1>
-<p><em>Without clean data, the results of a data mining analysis are in question</em>.</p>
-<p>The data analyst must</p>
+<section id="the-artificial-intelligence-act" class="title-slide slide level1 center">
+<h1>The Artificial Intelligence Act</h1>
+<p>The <em>AI Act</em> is a European Union regulation concerning artificial intelligence that classifies applications by their risk of causing harm.</p>
 <ul>
-<li>select clean subsets of data or incorporate techniques such as estimating missing data through modeling analyses</li>
-<li>make sure they outline how they addressed each quality problem reported in the earlier “Verify Data Quality” step</li>
+<li><strong>Unacceptable-risk</strong> applications are <em>banned</em>.
+<ul>
+<li>Applications that manipulate human behaviour, use real-time remote biometric identification in public spaces, and social scoring (ranking individuals based on their personal characteristics, socio-economic status, or behaviour)</li>
+</ul></li>
+<li><strong>High-risk</strong> applications must comply with <em>security</em>, <em>transparency</em> and <em>quality obligations</em>, and undergo conformity assessments.
+<ul>
+<li>AI applications that are expected to pose significant threats to health, safety, or the fundamental rights of persons.</li>
+<li>They must be evaluated both before they are placed on the market and throughout their life cycle.</li>
+</ul></li>
+<li><strong>Limited-risk</strong> applications <em>only have transparency</em> obligations.
+<ul>
+<li>AI applications that make it possible to generate or manipulate images, sound, or videos.</li>
+<li>Ensure that users are informed that they are interacting with an AI system and allowing them to make informed choices.</li>
+</ul></li>
+<li><strong>Minimal-risk</strong> applications <em>are not regulated</em>.
+<ul>
+<li>AI systems used for video games or spam filters.</li>
+</ul></li>
 </ul>
+</section>
+
+<section id="ai-act-and-black-mirror" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> AI Act and Black Mirror</h1>
+<p>See <em>Black Mirror</em> episodes and how they relate to the AI Act’s high-risk categories:</p>
+<ul>
+<li>“The Entire History of You” (Season 1, Episode 3)
+<ul>
+<li>People have <strong>memory implants</strong> that allow them to replay and analyze past events.<br>
+</li>
+</ul></li>
+<li>“Nosedive” (Season 3, Episode 1)
+<ul>
+<li>People’s <strong>social credit scores</strong> determine their access to housing, jobs, and even flights.<br>
+</li>
+</ul></li>
+<li>“Hated in the Nation” (Season 3, Episode 6)
+<ul>
+<li>A social media campaign with an AI-driven hashtag leads to <strong>automated drone assassinations</strong>.</li>
+</ul></li>
+<li>“Metalhead” (Season 4, Episode 5)
+<ul>
+<li>The episode features relentless <strong>autonomous killer robots</strong> that hunt down humans.<br>
+</li>
+</ul></li>
+<li>“Rachel, Jack and Ashley Too” (Season 5, Episode 3) – AI &amp; Digital Manipulation
+<ul>
+<li>A pop star’s <strong>consciousness is cloned into an AI assistant</strong>, and the AI is used to create performances without her consent.</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="problem-missing-values" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: missing values?</h1>
+<blockquote>
+<p>A retail company tracks daily sales, but some records are missing due to system failures.</p>
+<p>A telecom company is predicting customer churn, but some customers have missing contract duration or monthly bill values.</p>
+<p>A hospital maintains records of patients’ blood pressure, but 15% of entries are missing.</p>
+<p>A bank evaluates loan applications, but some applicants have missing income data.</p>
+</blockquote>
+</section>
+
+<section id="problem-missing-values-1" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: missing values?</h1>
+<blockquote>
+<p>A retail company tracks daily sales, but some records are missing due to system failures.</p>
+<ul>
+<li><em>Use historical sales trends</em> to impute missing values</li>
+</ul>
+<p>A telecom company is predicting customer churn, but some customers have missing contract duration or monthly bill values.</p>
+<ul>
+<li><em>Use median imputation for numerical features</em> (e.g., replace missing monthly bill amounts with the median).</li>
+</ul>
+<p>A hospital maintains records of patients’ blood pressure, but 15% of entries are missing.</p>
+<ul>
+<li>Use K-Nearest Neighbors (KNN) imputation to <em>estimate missing values based on similar patients</em>.</li>
+</ul>
+<p>A bank evaluates loan applications, but some applicants have missing income data.</p>
+<ul>
+<li><em>Use group-based imputation</em> (e.g., average income for self-employed individuals).</li>
+</ul>
+</blockquote>
 </section>
 
 <section id="imputation-of-missing-values" class="title-slide slide level1 center">
@@ -494,14 +585,90 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div></div>
 </section>
 
-<section id="which-mean-compount-interest" class="title-slide slide level1 center">
-<h1>Which mean? Compount interest</h1>
-<p>Consider an investment portfolio with initial value 1000€ and final value 2406.62€ after 18 years.</p>
-<p>Which return has the portfolio generated each year?</p>
+<section id="case-study-how-do-we-impute" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: How Do We Impute?</h1>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Year</th>
+<th style="text-align: center;">Portfolio Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2008</td>
+<td style="text-align: center;">1000.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2009</td>
+<td style="text-align: center;">1050.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2010</td>
+<td style="text-align: center;">1102.50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2011</td>
+<td style="text-align: center;">1157.63</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2012</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2013</td>
+<td style="text-align: center;">1276.28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2014</td>
+<td style="text-align: center;">1340.10</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2015</td>
+<td style="text-align: center;">1407.10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2016</td>
+<td style="text-align: center;">1477.46</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2017</td>
+<td style="text-align: center;">1551.33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2018</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2019</td>
+<td style="text-align: center;">1710.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2020</td>
+<td style="text-align: center;">1795.86</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2021</td>
+<td style="text-align: center;">1885.65</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2022</td>
+<td style="text-align: center;">1979.93</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;">2182.87</td>
+</tr>
+</tbody>
+</table>
 </section>
 
-<section id="which-mean-compount-interest-1" class="title-slide slide level1 center">
-<h1>Which mean? Compount interest</h1>
+<section id="case-study-compount-interest" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: Compount Interest</h1>
 <div class="columns">
 <div class="column" style="width:70%;">
 <blockquote>
@@ -558,8 +725,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>In this case the return is equal every year, so the average interest is <span class="math inline">\(5\%\)</span>.</p>
 </section>
 
-<section id="which-mean-compount-interest-2" class="title-slide slide level1 center">
-<h1>Which mean? Compount interest</h1>
+<section id="case-study-compount-interest-1" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: Compount Interest</h1>
 <p>Let us assume now that the returns changes over year.</p>
 <blockquote>
 <table class="caption-top">
@@ -607,8 +774,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>What is the average return?</p>
 </section>
 
-<section id="which-mean-compount-interest-3" class="title-slide slide level1 center">
-<h1>Which mean? Compount interest</h1>
+<section id="case-study-compount-interest-2" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: Compount Interest</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>If we apply the aritmetic mean it is <span class="math inline">\(\frac{5 -5 + 5 -5 + 0}{5} = 0%\)</span></p>
@@ -701,23 +868,30 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </blockquote>
 </div></div>
+</section>
+
+<section id="case-study-compount-interest-3" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: Compount Interest</h1>
 <p><strong>Take away</strong>: pay attention to the semantics of the features!</p>
 </section>
 
-<section id="skewed-distributions" class="title-slide slide level1 center">
-<h1>Skewed distributions</h1>
+<section id="what-imputation-problems-can-arise-with-skewed-distributions" class="title-slide slide level1 center">
+<h1>What imputation problems can arise with skewed distributions?</h1>
 
-<img data-src="https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png" class="r-stretch"><p>What problems can arise with skewed distributions?</p>
-</section>
+<img data-src="https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png" class="r-stretch quarto-figure-center"><p class="caption">Skewed vs normal distributions</p></section>
 
-<section id="section-2" class="title-slide slide level1 center">
-<h1></h1>
+<section id="effects-of-imputation-on-skewed-distributions" class="title-slide slide level1 center">
+<h1>Effects of imputation on skewed distributions?</h1>
+<p><em>Long Tail</em> refers to the concept where a large number of niche products collectively generate more sales than a few bestsellers.</p>
+<ul>
+<li>Ecommerces such as Amazon stock a vast array of products that traditional retailers wouldn’t carry due to space constraints.</li>
+<li>The Long Tail phenomenon is directly related to skewed distributions, specifically a type of right-skewed distribution</li>
+</ul>
 
 <img data-src="./img/datapreprocessing/imputation_100.svg" class="r-stretch"></section>
 
-<section id="skewed-distributions-1" class="title-slide slide level1 center">
-<h1>Skewed distributions</h1>
-<p>What happens to mean and median values?</p>
+<section id="normal-vs-skewed-distributions-what-happens-to-mean-values" class="title-slide slide level1 center">
+<h1>Normal vs Skewed distributions: what happens to mean values?</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -736,7 +910,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div></div>
 </section>
 
-<section id="skewed-distributions-2" class="title-slide slide level1 center">
+<section id="skewed-distributions" class="title-slide slide level1 center">
 <h1>Skewed distributions</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -760,8 +934,8 @@ Median:  36666524821</code></pre>
 </div></div>
 </section>
 
-<section id="skewed-distributions-stocks" class="title-slide slide level1 center">
-<h1>Skewed distributions: Stocks</h1>
+<section id="case-study-stocks" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: Stocks</h1>
 <p>The <a href="https://en.wikipedia.org/wiki/S%26P_500">Standard and Poor’s 500</a> index tracks the stock performance of <a href="https://en.wikipedia.org/wiki/List_of_S%26P_500_companies">500 of the largest companies</a> in the United States.</p>
 
 <img data-src="./img/datapreprocessing/market_cap_topn.svg" class="r-stretch quarto-figure-center"><p class="caption">Top 25 company from the S&amp;P 500 index</p><ul>
@@ -778,8 +952,8 @@ Median:  36666524821</code></pre>
 <p>How would you define the <em>weight</em> of a company in the index?</p>
 </section>
 
-<section id="skewed-distributions-stocks-1" class="title-slide slide level1 center">
-<h1>Skewed distributions: Stocks</h1>
+<section id="case-study-stocks-1" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: Stocks</h1>
 <p>As a semplification, given a company <span class="math inline">\(C\)</span> and a generic index <span class="math inline">\(I\)</span></p>
 <div class="columns">
 <div class="column" style="width:49%;">
@@ -848,10 +1022,20 @@ Median:  36666524821</code></pre>
 </div></div>
 </section>
 
-<section id="skewed-distributions-stocks-2" class="title-slide slide level1 center">
-<h1>Skewed distributions: Stocks</h1>
+<section id="case-study-stocks-2" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: Stocks</h1>
 
 <img data-src="./img/datapreprocessing/price_weight_distribution.svg" class="r-stretch quarto-figure-center"><p class="caption">Price vs market cap weighted</p></section>
+
+<section id="problem-how-do-we-handle-anomalies" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: how do we handle anomalies?</h1>
+<blockquote>
+<p>A customer who typically buys groceries worth $50 suddenly places an order for $5,000 in electronics. Is it a fraud?</p>
+<p>A system that usually receives 100-200 requests per second suddenly sees 10,000 requests per second. is it a DDoS attack?</p>
+<p>A bottle-filling machine fills 500ml of liquid, but occasionally, some bottles contain 450ml or 550ml. Is it a defect?</p>
+<p>A credit card transaction of $10,000 when the usual spending is around $50-$100. Is it a fraud?</p>
+</blockquote>
+</section>
 
 <section id="outlier-removal" class="title-slide slide level1 center">
 <h1>Outlier removal</h1>
@@ -917,8 +1101,8 @@ Median:  36666524821</code></pre>
 </div></div>
 </section>
 
-<section id="the-black-swan-theory" class="title-slide slide level1 center">
-<h1>The black swan theory</h1>
+<section id="case-study-the-black-swan-theory" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: The Black Swan Theory</h1>
 <p>Juvenal (55-128, Roman poet) wrote in his Satire VI of <em>events being “a bird as rare upon the earth as a black swan”</em></p>
 <ul>
 <li>When the phrase was coined, the black swan was presumed by Romans not to exist.</li>
@@ -951,8 +1135,8 @@ Median:  36666524821</code></pre>
 <p>Such extreme events (outliers), collectively play vastly larger roles than regular occurrences.</p>
 </section>
 
-<section id="the-black-swan-theory-in-action" class="title-slide slide level1 center">
-<h1>The black swan theory in action!</h1>
+<section id="case-study-the-black-swan-theory-1" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: The Black Swan Theory</h1>
 <p><a href="https://en.wikipedia.org/wiki/Long-Term_Capital_Management">Long-Term Capital Management</a> was a <em>highly leveraged</em> hedge fund.</p>
 <ul>
 <li>Members of LTCM’s board of directors included Myron Scholes and Robert C. Merton, who three years later in 1997 shared the Nobel Prize in Economics</li>
@@ -979,20 +1163,24 @@ Median:  36666524821</code></pre>
 </div></div>
 </section>
 
-<section id="construct-data" class="title-slide slide level1 center">
-<h1>Construct data</h1>
-<p>The data analyst could undertake operations such as developing entirely new records or producing derived attributes.</p>
-<ul>
-<li><em>Derived attributes should only be added if they ease the modeling algorithm</em>
-<ul>
-<li>… and not just to reduce the number of input attributes</li>
-</ul></li>
-</ul>
+<section id="problem-is-the-dataset-ready-for-machine-learning" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: is the dataset ready for machine learning?</h1>
 <blockquote>
-<p>A derived attribute is <code>area</code> = <code>length</code> x <code>width</code>.</p>
-<p>A derived attribute is <code>income_per_head</code> which could be easier to use than <code>income_per_household</code>.</p>
+<p>An online retailer wants to predict which customers are likely to churn. Instead of using raw purchase data, they need a “Loyalty Score” based on Total purchases in the last 12 months, average order value, and frequency of purchases.</p>
+<p>A bank needs to classify customers into risk levels based on their credit score.</p>
+<p>Netflix needs to recommend movies based on genre. However, movie genres are categorical (e.g., “Action,” “Comedy”), which must be converted into numbers.</p>
 </blockquote>
-<p><em>Binning</em> may be necessary to <em>transform ranges to symbolic fields</em> (e.g., ages to age bands)</p>
+</section>
+
+<section id="problem-is-the-dataset-ready-for-machine-learning-1" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: is the dataset ready for machine learning?</h1>
+<p><strong>Feature engineering</strong>, in data science, refers to manipulation — addition, deletion, combination, mutation — of your data set to improve machine learning model training.</p>
+<p><em>Derived attributes</em> should be added if they ease the modeling algorithm</p>
+<blockquote>
+<p><code>Area</code> = <code>Length</code> x <code>Width</code>.</p>
+<p><code>Loyalty_Score</code> = <code>Total_Purchases</code> x 0.4 + <code>Avg_Order_Value</code> x 0.3 + <code>Frequency</code> x 0.3.</p>
+</blockquote>
+<p><em>Binning</em> may be necessary to <em>transform ranges to symbolic fields</em></p>
 <div class="columns">
 <div class="column" style="width:49%;">
 <blockquote>
@@ -1062,8 +1250,16 @@ Median:  36666524821</code></pre>
 <p><em>Encoding</em> may be necessary to transform <em>or symbolic fields (“definitely yes”, “yes”, “don’t know”, “no”) to numeric values</em></p>
 </section>
 
-<section id="feature-encoding" class="title-slide slide level1 center">
-<h1>Feature encoding</h1>
+<section id="problem-how-do-we-transform-features-into-numbers" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: how do we transform features into numbers?</h1>
+<blockquote>
+<p>Some machine learning models can only work with numerical values.</p>
+<p>How do we transform the categorical values of the relevant features into numerical ones?</p>
+</blockquote>
+</section>
+
+<section id="encoding" class="title-slide slide level1 center">
+<h1>Encoding</h1>
 <p><strong>Encoding</strong> is the process of converting categorical variables into numeric features.</p>
 <ul>
 <li>Most machine learning algorithms, like linear regression and support vector machines, require input data to be numeric because they use numerical computations to learn the model.</li>
@@ -1078,8 +1274,8 @@ Median:  36666524821</code></pre>
 <p><em>One hot encoding</em> and <em>ordinal encoding</em> are the most common methods to transform categorical variables into numerical features.</p>
 </section>
 
-<section id="feature-encoding-ordinal-encoding" class="title-slide slide level1 center">
-<h1>Feature encoding: ordinal encoding</h1>
+<section id="encoding-ordinal-encoding" class="title-slide slide level1 center">
+<h1>Encoding: ordinal encoding</h1>
 <p><strong>Ordinal encoding</strong> replaces each category with an integer value.</p>
 <ul>
 <li>These numbers are, in general, assigned arbitrarily.</li>
@@ -1153,8 +1349,8 @@ Median:  36666524821</code></pre>
 </blockquote>
 </section>
 
-<section id="the-likert-scale" class="title-slide slide level1 center">
-<h1>The Likert scale</h1>
+<section id="encoding-likert-scale" class="title-slide slide level1 center">
+<h1>Encoding: Likert scale</h1>
 <p>The Likert scale is widely used in social work research, and is commonly constructed with four to seven points.</p>
 <ul>
 <li><code>[*, **, ***, ****, *****]</code></li>
@@ -1163,23 +1359,22 @@ Median:  36666524821</code></pre>
 <p>What about averaging?</p>
 </section>
 
-<section id="the-likert-scale-1" class="title-slide slide level1 center">
-<h1>The Likert scale</h1>
+<section id="encoding-likert-scale-1" class="title-slide slide level1 center">
+<h1>Encoding: Likert scale</h1>
 <p>It is usually treated as an interval scale, but strictly speaking it is an ordinal scale, where arithmetic operations cannot be conducted <span class="citation" data-cites="wu2017can">(<a href="#/references" role="doc-biblioref" onclick="">Wu and Leung 2017</a>)</span></p>
 <pre><code>Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn't necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn't necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.</code></pre>
 </section>
 
-<section id="j-shaped-distribution" class="title-slide slide level1 center">
-<h1>J-shaped distribution</h1>
+<section id="encoding-likert-scale-2" class="title-slide slide level1 center">
+<h1>Encoding: Likert scale</h1>
 
-<img data-src="./img/datapreprocessing/reviews.png" class="r-stretch"><p>People tend to write reviews only when they are either extremely satisfied or extremely unsatisfied.</p>
+<img data-src="./img/datapreprocessing/reviews.png" class="r-stretch quarto-figure-center"><p class="caption">J-shaped distribution</p><p>People tend to write reviews only when they are either extremely satisfied or extremely unsatisfied.</p>
 <p>People who feel the product is average might not be bothered to write a review</p>
 <p><span class="citation" data-cites="hu2009overcoming">(<a href="#/references" role="doc-biblioref" onclick="">Hu, Zhang, and Pavlou 2009</a>)</span></p>
 </section>
 
-<section>
-<section id="feature-encoding-one-hot-encoding" class="title-slide slide level1 center">
-<h1>Feature encoding: one-hot encoding</h1>
+<section id="encoding-one-hot-encoding" class="title-slide slide level1 center">
+<h1>Encoding: one-hot encoding</h1>
 <p><strong>One-hot encoding (OHE)</strong> replaces categorical variables by <em>a set of binary variables</em> (each representing a category in the variable)</p>
 <ul>
 <li>The binary variable takes the value 1 if the observation shows the category, or alternatively, 0.</li>
@@ -1267,12 +1462,14 @@ Median:  36666524821</code></pre>
 <li>… less frequent values are treated collectively and represented as 0s in all the binary variables.</li>
 </ul>
 </section>
-<section id="encoding-data-with-the-wrong-type" class="slide level2">
-<h2>Encoding data with the wrong type</h2>
+
+<section id="case-study-encoding-wrong-data-types" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: Encoding Wrong Data Types</h1>
 
 <img data-src="https://user-images.githubusercontent.com/18005592/232748093-a25e8ba7-24d4-4e2b-9e58-1553786cac33.png" class="r-stretch quarto-figure-center"><p class="caption">Y2K22 bug</p></section>
-<section id="encoding-data-with-the-wrong-type-1" class="slide level2">
-<h2>Encoding data with the wrong type</h2>
+
+<section id="case-study-encoding-wrong-data-types-1" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: Encoding Wrong Data Types</h1>
 <p>Encoding the date 2022-01-01T00:01 into a signed integer <span class="math inline">\(2201010001\)</span></p>
 <p>A signed integer is a 32-bit datum that represents an integer in the range:</p>
 <ul>
@@ -1281,17 +1478,17 @@ Median:  36666524821</code></pre>
 </ul>
 <p>See also the <a href="https://en.wikipedia.org/wiki/Year_2000_problem">year 2000 problem</a></p>
 
-<img data-src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Bug_de_l%27an_2000.jpg" class="r-stretch quarto-figure-center"><p class="caption">Y2K</p></section></section>
-<section id="feature-scaling-or-data-normalization" class="title-slide slide level1 center">
-<h1>Feature scaling (or data normalization)</h1>
-<p><strong>Feature scaling</strong> is a method used to normalize the range of independent variables or features of data</p>
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Bug_de_l%27an_2000.jpg" class="r-stretch quarto-figure-center"><p class="caption">Y2K</p></section>
+
+<section id="problem-how-do-we-treat-features-with-different-ranges" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: how do we treat features with different ranges?</h1>
+<p>If data values varies widely, in some ML algorithms objective functions will not work properly without normalization.</p>
 <ul>
-<li>Since the range of values of raw data varies widely, in some machine learning algorithms objective functions will not work properly without normalization.</li>
-<li>If one of the features has a broad range of values, the distance will be governed by this particular feature.</li>
 <li>For example, many classifiers calculate the distance between two points by the Euclidean distance.
 <ul>
 <li><span class="math inline">\(d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{n}-q_{n})^{2}}} = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}\)</span></li>
 </ul></li>
+<li>If one of the features has a broad range of values, the distance will be governed by this particular feature.</li>
 </ul>
 <blockquote>
 <p>Consider a dataset with two features <code>age</code> <span class="math inline">\(\in [0, 120]\)</span> and <code>income</code> <span class="math inline">\(\in [0, 100000]\)</span></p>
@@ -1310,8 +1507,9 @@ Median:  36666524821</code></pre>
 </blockquote>
 </section>
 
-<section id="feature-scaling" class="title-slide slide level1 center">
-<h1>Feature scaling</h1>
+<section id="feature-scaling-or-data-normalization" class="title-slide slide level1 center">
+<h1>Feature scaling (or data normalization)</h1>
+<p><strong>Feature scaling</strong> normalizes the range of independent variables</p>
 <p><em>Min-max normalization</em> rescales the features in <span class="math inline">\([a, b]\)</span> (tipically <span class="math inline">\([0, 1]\)</span>): <span class="math inline">\(x'=a+{\frac{(x-{\text{min}}(x))(b-a)}{{\text{max}}(x)-{\text{min}}(x)}}\)</span></p>
 <p><em>Standardization</em> makes the values of each feature in the data have zero-mean and unit-variance: <span class="math inline">\(x'={\frac{x-{\bar {x}}}{\sigma}}\)</span></p>
 <p><em>Robust scaling</em> is designed to be robust to outliers: <span class="math inline">\(x'={\frac{x-Q_{2}(x)}{Q_{3}(x)-Q_{1}(x)}}\)</span></p>
@@ -1359,6 +1557,82 @@ Median:  36666524821</code></pre>
 </div><div class="column" style="width:24%;">
 <p><img data-src="./img/datapreprocessing/normalized-robustscaler-distortion-True(4).svg"></p>
 </div></div>
+</section>
+
+<section id="problem-if-the-dataset-is-too-detailednoisy-what-can-we-do" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: if the dataset is too detailed/noisy, what can we do?</h1>
+<blockquote>
+<p>A meteorologist analyzes hourly temperature readings, but the data has fluctuations due to temporary weather conditions.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Hour</th>
+<th>Temperature (°C)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>24.1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>24.3</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>23.8</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>24.5</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>22.9 (Sudden drop due to rain)</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>24.2</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>23.9</td>
+</tr>
+</tbody>
+</table>
+<p>How can we smooth small variations?</p>
+</blockquote>
+</section>
+
+<section id="problem-if-the-dataset-is-too-detailednoisy-what-can-we-do-1" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: if the dataset is too detailed/noisy, what can we do?</h1>
+<blockquote>
+<p>For instance, using <em>equal-width binning</em> (grouping every 3 hours and averaging):</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Time Period</th>
+<th>Smoothed Temperature (°C)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1-3 AM</td>
+<td>24.0 (Avg of 24.1, 24.3, 23.8)</td>
+</tr>
+<tr class="even">
+<td>4-6 AM</td>
+<td>23.9 (Avg of 24.5, 22.9, 24.2)</td>
+</tr>
+<tr class="odd">
+<td>7 AM</td>
+<td>23.9</td>
+</tr>
+</tbody>
+</table>
+<p>Noise from sudden drops (e.g., 22.9°C at 5 AM) is smoothed, making temperature trends more reliable.</p>
+</blockquote>
 </section>
 
 <section id="aggregation" class="title-slide slide level1 center">
@@ -1469,6 +1743,376 @@ Median:  36666524821</code></pre>
 <h1></h1>
 <p><img data-src="./img/datapreprocessing/imputation_20.svg"></p>
 <p><img data-src="./img/datapreprocessing/imputation_equi_frequency.svg"></p>
+</section>
+
+<section id="problem-what-if-we-have-too-many-features" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: what if we have too many features?</h1>
+<blockquote>
+<p>A streaming platform ants to recommend movies based on user preferences.</p>
+<p>Each movie is represented by a vector of features:</p>
+<ol type="1">
+<li><code>Genre</code></li>
+<li><code>Director</code></li>
+<li><code>Lead Actor</code></li>
+<li><code>IMDB Rating</code></li>
+<li><code>Budget</code></li>
+<li><code>User Reviews</code></li>
+<li><code>Box Office Revenue</code></li>
+<li><code>Soundtrack Style</code></li>
+<li>… and many more (let’s assume 100+ features per movie).</li>
+</ol>
+<p>If movies had only 2 features (e.g., “Genre” and “IMDB Rating”), we could easily visualize clusters of similar movies.</p>
+<p>With 100+ features, the data points are spread out across a vast space.</p>
+<ul>
+<li>All points seem “far apart” from each other, making similarity calculations less reliable.</li>
+<li>Nearest neighbors are not actually close (because all distances become similar).</li>
+</ul>
+</blockquote>
+</section>
+
+<section id="dimensionality-reduction" class="title-slide slide level1 center">
+<h1>Dimensionality reduction</h1>
+<p><strong>Dimensionality reduction</strong> is the transformation of data from a high-dimensional space into a low-dimensional space</p>
+<ul>
+<li>Working in high-dimensional spaces can be undesirable for many reasons</li>
+<li>Raw data are often sparse as a consequence of the curse of dimensionality</li>
+<li>Dimensionality reduction can be used for noise reduction, data visualization, cluster analysis, or to facilitate other analyses</li>
+</ul>
+<p>The main approaches can also be divided into <em>feature selection</em> and <em>feature extraction</em>.</p>
+</section>
+
+<section id="feature-selection" class="title-slide slide level1 center">
+<h1>Feature selection</h1>
+<p><strong>Feature selection</strong> is the process of selecting a subset of relevant features (variables, predictors) for use in model construction</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><em>Dummy algorithm</em>: test each subset of features to find the one that minimizes the error</p>
+<ul>
+<li><p>This is an exhaustive search of the space, and is computationally intractable for all but the smallest of feature sets</p></li>
+<li><p>If <span class="math inline">\(S\)</span> is a finite set of features with cardinality <span class="math inline">\(|S|\)</span>, then the number of all the subsets of <span class="math inline">\(S\)</span> is <span class="math inline">\(|P(S)| = 2^{|S|} - 1\)</span> (do not consider <span class="math inline">\(\varnothing\)</span>)</p>
+<ul>
+<li>With 3 features: <span class="math inline">\(2^3=8\)</span> subsets</li>
+<li>With 4 features: <span class="math inline">\(2^4=16\)</span> subsets</li>
+<li>With 10 features: <span class="math inline">\(2^{10}=1024\)</span> subsets</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Hasse_diagram_of_powerset_of_3.svg/1280px-Hasse_diagram_of_powerset_of_3.svg.png"></p>
+</div></div>
+<p>Feature selection approaches are characterized by</p>
+<ul>
+<li><em>Search technique</em> for proposing new feature subsets</li>
+<li><em>Evaluation measure</em> which scores the different feature subsets</li>
+</ul>
+</section>
+
+<section id="feature-selection-1" class="title-slide slide level1 center">
+<h1>Feature selection</h1>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><strong>Feature selection</strong> approaches try to find a subset of the input variables</p>
+<p><em>Filter</em> strategy: select variables regardless of the model</p>
+<ul>
+<li>Based only on general features like the correlation with the variable to predict</li>
+</ul>
+<p><em>Wrapper</em> strategy</p>
+<ul>
+<li>Methods include forward selection, backward elimination, and exhaustive search</li>
+</ul>
+<p><em>Embedded</em> strategy</p>
+<ul>
+<li>Add/remove features while building the model based on prediction errors</li>
+<li>A learning algorithm takes advantage of its own variable selection process and performs feature selection and classification simultaneously</li>
+</ul>
+</div><div class="column" style="width:34%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Filter_Methode.png"></p>
+<figcaption>Filter</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/0/04/Feature_selection_Wrapper_Method.png"></p>
+<figcaption>Wrapper</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Feature_selection_Embedded_Method.png"></p>
+<figcaption>Embedded</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+
+<section id="feature-selection-filter-strategy" class="title-slide slide level1 center">
+<h1>Feature selection: Filter strategy</h1>
+<p><em>Variance threshold</em></p>
+<ul>
+<li>Mean: <span class="math inline">\(\mu = \frac{1}{n} \sum _{i=1}^{n}x_{i}\)</span>, Variance: <span class="math inline">\(Var(X)={\frac{1}{n}}\sum _{i=1}^{n}(x_{i}-\mu)^{2}\)</span></li>
+<li>Features with low variance do not contribute much information to a model.</li>
+<li>Use a variance threshold to remove any features that have little to no variation in their values.</li>
+<li>Since variance can only be calculated on numeric values, this method only works on quantitative features.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:33%;">
+<blockquote>
+<p>Before selection</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>sales</code></th>
+<th><code>PostalCode</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1000</td>
+<td>47522</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1500</td>
+<td>47522</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1000</td>
+<td>47522</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div><div class="column" style="width:33%;">
+<blockquote>
+<p>Compute variance</p>
+<p><span class="math inline">\(VAR(\)</span><code>StoreId</code><span class="math inline">\()=0.67\)</span> <strong>(?)</strong></p>
+<p><span class="math inline">\(VAR(\)</span><code>sales</code><span class="math inline">\()=55555.56\)</span></p>
+<p><span class="math inline">\(VAR(\)</span><code>PostalCode</code><span class="math inline">\()=0\)</span></p>
+</blockquote>
+</div><div class="column" style="width:33%;">
+<blockquote>
+<p>After selection (<span class="math inline">\(VAR(X) &gt; 0.6\)</span>)</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1500</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div></div>
+</section>
+
+<section id="feature-selection-filter-strategy-1" class="title-slide slide level1 center">
+<h1>Feature selection: Filter strategy</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><em>Pearson’s correlation</em>: measures the <em>linear</em> relationship between 2 numeric variables</p>
+<ul>
+<li>A coefficient close to 1 represents a positive correlation, -1 a negative correlation, and 0 no correlation</li>
+<li><em>Correlation between features</em>:
+<ul>
+<li>When two features are highly correlated with one another, then keeping just one to be used in the model will be enough</li>
+<li>The second variable would only be redundant and serve to contribute unnecessary noise.</li>
+</ul></li>
+<li><em>Correlation between feature and target</em>:
+<ul>
+<li>If a feature is not very correlated with the target variable, such as having a coefficient of between -0.3 and 0.3, then it may not be very predictive and can potentially be filtered out.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://www.w3schools.com/datascience/img_stat_heatmap.png"></p>
+</div></div>
+</section>
+
+<section id="feature-selection-wrapper-strategy" class="title-slide slide level1 center">
+<h1>Feature selection: Wrapper strategy</h1>
+<p><em>Each new feature subset is used to train a model</em>, which is tested on a hold-out set</p>
+<ul>
+<li>Counting the number of mistakes made on that hold-out set (the error rate of the model) gives the score for that subset</li>
+<li>As wrapper methods train a new model for each subset, they are very computationally intensive but provide good results</li>
+</ul>
+<p><em>Stepwise regression</em> adds the best feature (or deletes the worst feature) at each round</p>
+<p><em>Backward elimination</em></p>
+<ul>
+<li><p>Start with the full model (including all features) and then incrementally remove the most insignificant feature.</p></li>
+<li><p>This process repeats again and again until we have the final set of significant features.</p>
+<ol type="1">
+<li>Choose a significance level (e.g., SL = 0.05 with a 95% confidence).</li>
+<li>Fit a full model including all the features.</li>
+<li>Consider the feature with the highest p-value.
+<ul>
+<li>If the p-value &lt; SL terminate the process.</li>
+</ul></li>
+<li>Remove the feature which is under consideration.</li>
+<li>Fit a model without this feature. Repeat the entire process from Step 3.</li>
+</ol></li>
+</ul>
+</section>
+
+<section id="feature-selection-embedded-strategy" class="title-slide slide level1 center">
+<h1>Feature selection: Embedded strategy</h1>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p>Linear regression model: <span class="math inline">\(\hat{y}_i = \beta_1 x_1 + \beta_2 x_2 + ... + \beta_p x_p\)</span></p>
+<ul>
+<li>Goal is minimizing the sum of squared errors between predicted/actual values</li>
+<li><span class="math inline">\(min(\sum_{i=1}^n​(y_i​ - \hat{y}_i​)^2)\)</span>
+<ul>
+<li><span class="math inline">\(y_i\)</span>​ (red) is the actual value, <span class="math inline">\(\hat{y}_i\)</span>​ is the predicted value (blue)</li>
+</ul></li>
+</ul>
+<p><em>Least Absolute Shrinkage and Selection Operator (LASSO)</em></p>
+<ul>
+<li>Lasso adds a penalty proportional to the absolute values of the coefficients.</li>
+<li><span class="math inline">\(min(\sum_{i=1}^n​(y_i​ - \hat{y}_i​)^2+ \lambda \sum_{j=1}^p​ ∣\beta_j​∣)\)</span>
+<ul>
+<li><span class="math inline">\(\beta_j\)</span>​ are the coefficients of the model,</li>
+<li><span class="math inline">\(\lambda\)</span> is the regularization parameter controlling the penalty’s strength.</li>
+</ul></li>
+</ul>
+<p>Lasso performs automatic feature selection.</p>
+<ul>
+<li>By shrinking some coefficients to 0, Lasso removes irrelevant features</li>
+</ul>
+<p>The optimal <span class="math inline">\(\lambda\)</span> can be determined with cross-validation techniques.</p>
+<p>See also <span class="citation" data-cites="katrutsa2017comprehensive">(<a href="#/references" role="doc-biblioref" onclick="">Katrutsa and Strijov 2017</a>)</span> <span class="citation" data-cites="chan2022mitigating">(<a href="#/references" role="doc-biblioref" onclick="">Chan et al. 2022</a>)</span></p>
+</div><div class="column" style="width:34%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Linear_least_squares_example2.svg/1024px-Linear_least_squares_example2.svg.png"></p>
+<figcaption>Linear regression</figcaption>
+</figure>
+</div>
+<p><img data-src="./img/datapreprocessing/modelcomplexity.png"></p>
+</div></div>
+</section>
+
+<section id="feature-extraction-or-feature-projection" class="title-slide slide level1 center">
+<h1>Feature extraction (or feature projection)</h1>
+<p><strong>Feature projection</strong> transforms the data from the high-dimensional space to a space of fewer dimensions</p>
+<ul>
+<li>The data transformation may be linear, as in principal component analysis (PCA)</li>
+<li>… but many nonlinear dimensionality reduction techniques also exist</li>
+</ul>
+<p><em>Principal component analysis (PCA)</em> is a linear dimensionality reduction technique.</p>
+<ul>
+<li>PCA aims to preserve as much of the data’s variance as possible in fewer dimensions</li>
+<li>Variance measures of how much the data points differ from the mean of the dataset</li>
+<li>The data is linearly transformed onto a new coordinate system such that the directions (<em>principal components</em>) capturing the largest variation in the data can be easily identified</li>
+<li>The first principal component captures the highest variance, the second component captures the second highest, and so on.</li>
+</ul>
+<p>Computing PCA</p>
+<ul>
+<li>PCA is sensitive to the scale of the data, the first step is usually to standardize the features (mean = 0, standard deviation = 1) to ensure that all features contribute equally to the analysis.</li>
+<li>Then, compute the covariance Matrix
+<ul>
+<li>Eigenvectors represent the directions of the principal components.</li>
+<li>Eigenvalues represent the magnitude of variance in the direction of the corresponding eigenvector.</li>
+</ul></li>
+<li>The eigenvector with the largest eigenvalue is the first principal component, and so on.</li>
+</ul>
+</section>
+
+<section id="pca-on-the-iris-dataset" class="title-slide slide level1 center">
+<h1>PCA on the Iris dataset</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Iris contains 4 features, we cannot plot it directly</p>
+<ol type="1">
+<li><code>petal_length</code></li>
+<li><code>petal_width</code></li>
+<li><code>sepal_length</code></li>
+<li><code>sepal_width</code></li>
+</ol>
+<p><img data-src="./img/datapreprocessing/pca.svg"></p>
+</div><div class="column" style="width:40%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Principal Component</th>
+<th>Explained Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PC 1</td>
+<td>92.46%</td>
+</tr>
+<tr class="even">
+<td>PC 2</td>
+<td>5.31%</td>
+</tr>
+<tr class="odd">
+<td>PC 3</td>
+<td>1.71%</td>
+</tr>
+</tbody>
+</table>
+<p>Feature Relevance for 3 Components:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>PC 1</th>
+<th>PC 2</th>
+<th>PC 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sepal Length (cm)</td>
+<td>0.361</td>
+<td>0.657</td>
+<td>-0.582</td>
+</tr>
+<tr class="even">
+<td>Sepal Width (cm)</td>
+<td>-0.085</td>
+<td>0.730</td>
+<td>0.598</td>
+</tr>
+<tr class="odd">
+<td>Petal Length (cm)</td>
+<td>0.857</td>
+<td>-0.173</td>
+<td>0.076</td>
+</tr>
+<tr class="even">
+<td>Petal Width (cm)</td>
+<td>0.358</td>
+<td>-0.075</td>
+<td>0.546</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+
+<section id="problem-how-do-we-integrate-different-data-sources" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: how do we integrate different data sources?</h1>
+<blockquote>
+<p>A hospital wants to analyze patient health records by integrating data from multiple sources, including electronic health records (EHRs), wearable devices, and insurance claims.</p>
+</blockquote>
 </section>
 
 <section id="integrate-data" class="title-slide slide level1 center">
@@ -1634,358 +2278,22 @@ Median:  36666524821</code></pre>
 
 <section id="format-data" class="title-slide slide level1 center">
 <h1>Format Data</h1>
-<p>In some cases, the data analyst will <em>change the format of the data</em>.</p>
+<p>In some cases, the data analyst will <em>change the format (structure) of the data</em>.</p>
 <ul>
 <li>Sometimes these changes are needed to make the data suitable for a specific modeling tool.</li>
 <li>In other instances, the changes are needed to pose the necessary data mining questions.</li>
 </ul>
 
-<img data-src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*YejjU_69ffDyrC0z-X9jYQ.jpeg" class="r-stretch quarto-figure-center"><p class="caption">image</p><p>Examples:</p>
+<img data-src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*YejjU_69ffDyrC0z-X9jYQ.jpeg" class="r-stretch quarto-figure-center"><p class="caption">5V’s of Big Data</p><p>Examples:</p>
 <ul>
 <li>Simple: removing illegal characters from strings or trimming them to a maximum length</li>
 <li>More complex: reorganization of the information (e.g., <em>from normalized to flat tables</em>)</li>
 </ul>
 </section>
 
-<section id="dimensionality-reduction" class="title-slide slide level1 center">
-<h1>Dimensionality reduction</h1>
-<p><strong>Dimensionality reduction</strong> is the transformation of data from a high-dimensional space into a low-dimensional space</p>
-<ul>
-<li>Working in high-dimensional spaces can be undesirable for many reasons</li>
-<li>Raw data are often sparse as a consequence of the curse of dimensionality</li>
-<li>Dimensionality reduction can be used for noise reduction, data visualization, cluster analysis, or as an intermediate step to facilitate other analyses</li>
-</ul>
-<p>The main approaches can also be divided into <em>feature selection</em> and <em>feature extraction</em>.</p>
-</section>
+<section id="problem-how-do-we-concatenate-pre-processing-transformations" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: how do we concatenate pre-processing transformations?</h1>
 
-<section id="feature-engineering" class="title-slide slide level1 center">
-<h1>Feature engineering</h1>
-<p>Feature engineering, in data science, refers to manipulation — addition, deletion, combination, mutation — of your data set to improve machine learning model training, leading to better performance and greater accuracy.</p>
-</section>
-
-<section id="feature-selection" class="title-slide slide level1 center">
-<h1>Feature selection</h1>
-<p><strong>Feature selection</strong> is the process of selecting a subset of relevant features (variables, predictors) for use in model construction</p>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Simplest algorithm is to test each possible subset of features finding the one which minimizes the error rate</p>
-<ul>
-<li>This is an exhaustive search of the space, and is computationally intractable for all but the smallest of feature sets</li>
-</ul>
-<p>If <span class="math inline">\(S\)</span> is a finite set of features with the cardinality <span class="math inline">\(|S| = n\)</span>, then the number of all the subsets of <span class="math inline">\(S\)</span> is <span class="math inline">\(|P(S)| = 2^n - 1\)</span> (we do not consider the empty set)</p>
-<ul>
-<li>With three features: <span class="math inline">\(2^3=8\)</span></li>
-<li>With four features: <span class="math inline">\(2^4=16\)</span></li>
-<li>With ten features: <span class="math inline">\(2^{10}=1024\)</span></li>
-</ul>
-</div><div class="column" style="width:40%;">
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Hasse_diagram_of_powerset_of_3.svg/1280px-Hasse_diagram_of_powerset_of_3.svg.png"></p>
-</div></div>
-<p>Feature selection approaches are characterized by</p>
-<ul>
-<li><em>Search technique</em> for proposing new feature subsets</li>
-<li><em>Evaluation measure</em> which scores the different feature subsets</li>
-</ul>
-</section>
-
-<section id="feature-selection-1" class="title-slide slide level1 center">
-<h1>Feature selection</h1>
-<div class="columns">
-<div class="column" style="width:65%;">
-<p><strong>Feature selection</strong> approaches try to find a subset of the input variables</p>
-<p><em>Filter</em> strategy: select variables regardless of the model</p>
-<ul>
-<li>Based only on general features like the correlation with the variable to predict</li>
-</ul>
-<p><em>Wrapper</em> strategy</p>
-<ul>
-<li>Methods include forward selection, backward elimination, and exhaustive search</li>
-</ul>
-<p><em>Embedded</em> strategy</p>
-<ul>
-<li>Add/remove features while building the model based on prediction errors</li>
-<li>A learning algorithm takes advantage of its own variable selection process and performs feature selection and classification simultaneously</li>
-</ul>
-</div><div class="column" style="width:34%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Filter_Methode.png"></p>
-<figcaption>Filter</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/0/04/Feature_selection_Wrapper_Method.png"></p>
-<figcaption>Wrapper</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Feature_selection_Embedded_Method.png"></p>
-<figcaption>Embedded</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-
-<section id="feature-selection-filter-strategy" class="title-slide slide level1 center">
-<h1>Feature selection: Filter strategy</h1>
-<p><em>Variance threshold</em></p>
-<ul>
-<li>Mean: <span class="math inline">\(\mu = \frac{1}{n} \sum _{i=1}^{n}x_{i}\)</span>, Variance: <span class="math inline">\(Var(X)={\frac{1}{n}}\sum _{i=1}^{n}(x_{i}-\mu)^{2}\)</span></li>
-<li>Features with low variance do not contribute much information to a model.</li>
-<li>Use a variance threshold to remove any features that have little to no variation in their values.</li>
-<li>Since variance can only be calculated on numeric values, this method only works on quantitative features.</li>
-</ul>
-<div class="columns">
-<div class="column" style="width:33%;">
-<blockquote>
-<p>Before selection</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><code>StoreId</code></th>
-<th><code>sales</code></th>
-<th><code>PostalCode</code></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>1000</td>
-<td>47522</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>1500</td>
-<td>47522</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>1000</td>
-<td>47522</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-</div><div class="column" style="width:33%;">
-<blockquote>
-<p>Compute variance</p>
-<p><span class="math inline">\(VAR(\)</span><code>StoreId</code><span class="math inline">\()=0.67\)</span> <strong>(?)</strong></p>
-<p><span class="math inline">\(VAR(\)</span><code>sales</code><span class="math inline">\()=55555.56\)</span></p>
-<p><span class="math inline">\(VAR(\)</span><code>PostalCode</code><span class="math inline">\()=0\)</span></p>
-</blockquote>
-</div><div class="column" style="width:33%;">
-<blockquote>
-<p>After selection (<span class="math inline">\(VAR(X) &gt; 0.6\)</span>)</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><code>StoreId</code></th>
-<th><code>sales</code></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>1000</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>1500</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>1000</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-</div></div>
-</section>
-
-<section id="feature-selection-filter-strategy-1" class="title-slide slide level1 center">
-<h1>Feature selection: Filter strategy</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><em>Pearson’s correlation</em>: measures the linear relationship between two numeric variables</p>
-<ul>
-<li>A coefficient close to 1 represents a positive correlation, -1 a negative correlation, and 0 no correlation</li>
-<li><em>Correlation between features</em>:
-<ul>
-<li>When two features are highly correlated with one another, then keeping just one to be used in the model will be enough</li>
-<li>The second variable would only be redundant and serve to contribute unnecessary noise.</li>
-</ul></li>
-<li><em>Correlation between feature and target</em>:
-<ul>
-<li>If a feature is not very correlated with the target variable, such as having a coefficient of between -0.3 and 0.3, then it may not be very predictive and can potentially be filtered out.</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:40%;">
-<p><img data-src="https://www.w3schools.com/datascience/img_stat_heatmap.png"></p>
-</div></div>
-</section>
-
-<section id="feature-selection-wrapper-strategy" class="title-slide slide level1 center">
-<h1>Feature selection: Wrapper strategy</h1>
-<p>Each new feature subset is used to train a model, which is tested on a hold-out set</p>
-<ul>
-<li>Counting the number of mistakes made on that hold-out set (the error rate of the model) gives the score for that subset</li>
-<li>As wrapper methods train a new model for each subset, they are very computationally intensive but provide good results</li>
-<li><em>Stepwise regression</em> adds the best feature (or deletes the worst feature) at each round</li>
-</ul>
-<p><em>Backward elimination</em></p>
-<p>We start with the full model (including all the independent variables) and then incrementally remove the most insignificant feature.</p>
-<p>This process repeats again and again until we have the final set of significant features.</p>
-<ol type="1">
-<li>Choose a significance level (e.g., SL = 0.05 with a 95% confidence).</li>
-<li>Fit a full model including all the features.</li>
-<li>Consider the feature with the highest p-value.
-<ul>
-<li>If the p-value &lt; terminate the process.</li>
-</ul></li>
-<li>Remove the feature which is under consideration.</li>
-<li>Fit a model without this feature. Repeat the entire process from Step 3.</li>
-</ol>
-</section>
-
-<section id="feature-selection-embedded-strategy" class="title-slide slide level1 center">
-<h1>Feature selection: Embedded strategy</h1>
-<div class="columns">
-<div class="column" style="width:65%;">
-<p>Linear regression model: <span class="math inline">\(\hat{y}_i = \beta_1 x_1 + \beta_2 x_2 + ... + \beta_p x_p\)</span></p>
-<ul>
-<li>Goal is minimizing the sum of squared errors between predicted/actual values</li>
-<li><span class="math inline">\(min(\sum_{i=1}^n​(y_i​ - \hat{y}_i​)^2)\)</span>
-<ul>
-<li><span class="math inline">\(y_i\)</span>​ (red) is the actual value, <span class="math inline">\(\hat{y}_i\)</span>​ is the predicted value (blue)</li>
-</ul></li>
-</ul>
-<p><em>Least Absolute Shrinkage and Selection Operator (LASSO)</em></p>
-<ul>
-<li>Lasso adds a penalty proportional to the absolute values of the coefficients.</li>
-<li><span class="math inline">\(min(\sum_{i=1}^n​(y_i​ - \hat{y}_i​)^2+ \lambda \sum_{j=1}^p​ ∣\beta_j​∣)\)</span>
-<ul>
-<li><span class="math inline">\(\beta_j\)</span>​ are the coefficients of the model,</li>
-<li><span class="math inline">\(\lambda\)</span> is the regularization parameter controlling the penalty’s strength.</li>
-</ul></li>
-</ul>
-<p>Lasso performs automatic feature selection.</p>
-<ul>
-<li>By shrinking some coefficients to 0, Lasso removes irrelevant features</li>
-</ul>
-<p>The optimal <span class="math inline">\(\lambda\)</span> can be determined with cross-validation techniques.</p>
-<p>See also <span class="citation" data-cites="katrutsa2017comprehensive">(<a href="#/references" role="doc-biblioref" onclick="">Katrutsa and Strijov 2017</a>)</span> <span class="citation" data-cites="chan2022mitigating">(<a href="#/references" role="doc-biblioref" onclick="">Chan et al. 2022</a>)</span></p>
-</div><div class="column" style="width:34%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Linear_least_squares_example2.svg/1024px-Linear_least_squares_example2.svg.png"></p>
-<figcaption>Linear regression</figcaption>
-</figure>
-</div>
-<p><img data-src="./img/datapreprocessing/modelcomplexity.png"></p>
-</div></div>
-</section>
-
-<section id="feature-extraction-or-feature-projection" class="title-slide slide level1 center">
-<h1>Feature extraction (or feature projection)</h1>
-<p><strong>Feature projection</strong> transforms the data from the high-dimensional space to a space of fewer dimensions</p>
-<ul>
-<li>The data transformation may be linear, as in principal component analysis (PCA)</li>
-<li>… but many nonlinear dimensionality reduction techniques also exist</li>
-</ul>
-<p><em>Principal component analysis (PCA)</em> is a linear dimensionality reduction technique.</p>
-<ul>
-<li>PCA aims to preserve as much of the data’s variance as possible in fewer dimensions</li>
-<li>Variance measures of how much the data points differ from the mean of the dataset</li>
-<li>The data is linearly transformed onto a new coordinate system such that the directions (<em>principal components</em>) capturing the largest variation in the data can be easily identified</li>
-<li>The first principal component captures the highest variance, the second component captures the second highest, and so on.</li>
-</ul>
-<p>Computing PCA</p>
-<ul>
-<li>PCA is sensitive to the scale of the data, the first step is usually to standardize the features (mean = 0, standard deviation = 1) to ensure that all features contribute equally to the analysis.</li>
-<li>Then, compute the covariance Matrix
-<ul>
-<li>Eigenvectors represent the directions of the principal components.</li>
-<li>Eigenvalues represent the magnitude of variance in the direction of the corresponding eigenvector.</li>
-</ul></li>
-<li>The eigenvector with the largest eigenvalue is the first principal component, and so on.</li>
-</ul>
-</section>
-
-<section id="pca-on-the-iris-dataset" class="title-slide slide level1 center">
-<h1>PCA on the Iris dataset</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Iris contains 4 features, we cannot plot it directly</p>
-<ol type="1">
-<li><code>petal_length</code></li>
-<li><code>petal_width</code></li>
-<li><code>sepal_length</code></li>
-<li><code>sepal_width</code></li>
-</ol>
-<p><img data-src="./img/datapreprocessing/pca.svg"></p>
-</div><div class="column" style="width:40%;">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Principal Component</th>
-<th>Explained Variance</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>PC 1</td>
-<td>92.46%</td>
-</tr>
-<tr class="even">
-<td>PC 2</td>
-<td>5.31%</td>
-</tr>
-<tr class="odd">
-<td>PC 3</td>
-<td>1.71%</td>
-</tr>
-</tbody>
-</table>
-<p>Feature Relevance for 3 Components:</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>PC 1</th>
-<th>PC 2</th>
-<th>PC 3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Sepal Length (cm)</td>
-<td>0.361</td>
-<td>0.657</td>
-<td>-0.582</td>
-</tr>
-<tr class="even">
-<td>Sepal Width (cm)</td>
-<td>-0.085</td>
-<td>0.730</td>
-<td>0.598</td>
-</tr>
-<tr class="odd">
-<td>Petal Length (cm)</td>
-<td>0.857</td>
-<td>-0.173</td>
-<td>0.076</td>
-</tr>
-<tr class="even">
-<td>Petal Width (cm)</td>
-<td>0.358</td>
-<td>-0.075</td>
-<td>0.546</td>
-</tr>
-</tbody>
-</table>
-</div></div>
 </section>
 
 <section id="sequences-of-transformations" class="title-slide slide level1 center">
@@ -2000,6 +2308,11 @@ Median:  36666524821</code></pre>
 <ul>
 <li>… At least for now</li>
 </ul>
+</section>
+
+<section id="final-considerations" class="title-slide slide level1 center">
+<h1><strong>Final considerations</strong></h1>
+
 </section>
 
 <section id="overlapping-with-business-intelligence-and-data-warehousing" class="title-slide slide level1 center">

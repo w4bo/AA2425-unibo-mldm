@@ -48,7 +48,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="07-fairness_files/libs/revealjs/dist/theme/quarto-ed3ed8e2bee100c8aba16b41caadc9a2.css">
+  <link rel="stylesheet" href="07-fairness_files/libs/revealjs/dist/theme/quarto-6391498a111a1f00b0d941bda0c7e264.css">
   <link href="07-fairness_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="07-fairness_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="07-fairness_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -362,13 +362,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Machine learning</h1>
 <p>Do humans always take optimal decisions?</p>
 <div class="fragment">
-<ul>
-<li>Volumes of academic papers speak to the evident biases of human decision makers.</li>
-</ul>
-<p><em>Entire disciplines have embraced mathematical models of optimal decision making</em> in their theoretical foundations.</p>
-<ul>
-<li>We can label deviations from mathematical optimality as “bias” that requires attention.</li>
-</ul>
 <p>A body of research <em>compared the accuracy of statistical models to the judgments of humans</em>, even with years of experience.</p>
 <ul>
 <li>In many head-to-head comparisons, <em>data-driven decisions are more accurate than those based on intuition or expertise</em>.</li>
@@ -377,20 +370,23 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>These results have been welcomed as a way to ensure that high-stakes decisions that shape our lifes are <em>accurate</em> and <em>fair</em>.</li>
 </ul></li>
 </ul>
+<p><em>Entire disciplines have embraced mathematical models of optimal decision making</em> in their theoretical foundations.</p>
+<ul>
+<li>We can label deviations from mathematical optimality as “bias” that requires attention.</li>
+</ul>
 </div>
 </section>
 
 <section id="machine-learning-1" class="title-slide slide level1 center">
 <h1>Machine learning</h1>
+<p>Which factors (<em>among all that we have observed</em>) bear a statistical relationship to the outcome?</p>
 <p><strong>Machine learning</strong> adds a repertoire of heuristics that <em>learns decision rules from sufficiently large datasets</em></p>
 <ul>
 <li>Techniques for fitting huge statistical models on large datasets have led to impressive achievements.</li>
-<li>Many applications: image classification, speech recognition, and natural language processing etc.</li>
 </ul>
 <p><strong>ML is a way to learn and make decisions about individuals directly from the data</strong>.</p>
 <ul>
 <li>Rather than <em>manually formalizing</em> the relationship between <em>relevant factors</em> and an <em>outcome</em>, <em>ML learns the relevance from data</em></li>
-<li>Which factors (among <em>all</em> that we have observed) bear a statistical relationship to the outcome?</li>
 </ul>
 <blockquote>
 <div class="columns">
@@ -402,6 +398,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
+<p>Many applications: image classification, speech recognition, and natural language processing etc.</p>
 <p>We may be able to effortlessly identify objects in a scene, but we are unable to specify the full set of rules that we rely on to make these determinations. We cannot hand-code a program that exhaustively enumerates all the relevant factors that allow us to recognize objects from every possible perspective or visual configurations.</p>
 </div></div>
 </blockquote>
@@ -416,14 +413,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><em>Learning</em> is not a process of simply committing examples to memory.</p>
 <ul>
 <li><em>Induction</em>: drawing rules (from past examples) that effectively account for past cases, but that also apply to new/unseen cases.</li>
-<li>E.g., Homing in on those details that are characteristic of “2” in general, not just the “2”s that appear in the examples.</li>
 </ul>
-<p>When learning, ML turns <em>data into a model</em>.</p>
+<blockquote>
+<p>Homing in on those details that are characteristic of “2” in general, not just the “2”s that appear in the examples.</p>
+</blockquote>
+<p>When learning, ML turns <em>data into a model</em> that</p>
 <ul>
-<li>A model summarizes the patterns in the training data; <em>it makes generalizations</em>.</li>
-<li>A model could take many forms: a hyperplane, or a set of distributions, a set of weights, etc.</li>
+<li>summarizes the patterns in the training data; <em>it makes generalizations</em>.</li>
+<li>could take many forms: a hyperplane, or a set of distributions, a set of weights, etc.</li>
 </ul>
-<p>There are reasons to be cautiously optimistic about fairness and machine learning.</p>
+<p>There are reasons to be <em>cautiously optimistic about fairness and ML</em>.</p>
 <ul>
 <li>Data-driven decision making has the potential to be more transparent compared to human decision making.</li>
 <li>It forces to articulate our decision-making objectives and enables to clearly understand the trade-offs between desiderata.</li>
@@ -437,17 +436,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="machine-learning-3" class="title-slide slide level1 center">
 <h1>Machine Learning</h1>
-<p>Supervised ML (e.g., classification) is a form of inductive reasoning.</p>
+<p>Supervised ML (e.g., <em>classification</em>) is a form of inductive reasoning.</p>
 <ul>
-<li>Draw general rules from a specific examples, identifying the features and values that co-occur with an outcome of interest.</li>
-<li>The limitation of being insufficiently individualized is an unavoidable part of inductive reasoning.
+<li><em>Draw general rules from individual examples</em>, identifying the features and values that co-occur with an outcome of interest.</li>
+<li>However, <em>insufficiently-individualized decisions are an unavoidable</em> part of inductive reasoning.
 <ul>
 <li>“Statistically sound but nonuniversal generalizations”: an individual fulfills all the criteria for inclusion in a particular group but fails to possess the quality that these criteria are expected to predict [82].</li>
 <li>Even if we accept that decisions can never be fully individualized, we might still expect that decision makers take into account the full range of relevant information at their potential disposal.</li>
 </ul></li>
 </ul>
 <blockquote>
-<p>A car insurance company had an obligation to consider the applicants’ driving skills, not just the model and color of their car, even if doing so still meant that they were being assessed according to how often other people with similar driving skills Collecting and considering all of this information can be expensive, intrusive, and impractical. In fact, the cost of doing so could easily outweigh the perceived benefits that come from more granular decision making—not just to the decision maker but to the subjects of the decisions as well For instance, if developing a much more detailed assessment of applicants for car insurance increases the operating costs of the insurer, the insurer is likely to charge applicants a higher price to offset these additional costs.</p>
+<p>A car insurance company had an obligation to consider the applicants’ driving skills, not just the model and color of their car, even if doing so still meant that they were being assessed according to how often other people with similar driving skills Collecting and considering all of this information can be expensive, intrusive, and impractical. In fact, the cost of doing so could easily outweigh the perceived benefits that come from more granular decision making—not just to the decision maker but to the subjects of the decisions as well. For instance, if developing a much more detailed assessment of applicants for car insurance increases the operating costs of the insurer, the insurer is likely to charge applicants a higher price to offset these additional costs.</p>
 </blockquote>
 <p>Limits to inductive reasoning.</p>
 <ul>
@@ -714,7 +713,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 <p>Somehow, we have the following classifier</p>
 <p><span class="math inline">\(\text{Hired} = \begin{cases}
-1, \text{ if } -A + \epsilon &lt; B \\
+1, \text{ if } -\text{GPA} + \epsilon &gt; \text{Interview Score} \\
 0, otherwise
 \end{cases}\)</span></p>
 <p><strong>Question</strong>: Is the classifier fair?</p>
@@ -740,7 +739,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div><div class="column" style="width:50%;">
 <div class="columns">
 <div class="column" style="width:49%;">
-<p>Predicted Class = 1: <span class="math inline">\(-A + \epsilon &gt; B\)</span></p>
+<p>Predicted Class = 1: <span class="math inline">\(-\text{GPA} + \epsilon &gt; \text{Score}\)</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -760,7 +759,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tbody>
 </table>
 </div><div class="column" style="width:49%;">
-<p>Predicted Class = 0: <span class="math inline">\(-A + \epsilon \le B\)</span></p>
+<p>Predicted Class = 0: <span class="math inline">\(-\text{GPA} + \epsilon \le \text{Score}\)</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">

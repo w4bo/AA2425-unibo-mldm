@@ -48,7 +48,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="03-dataunderstanding_files/libs/revealjs/dist/theme/quarto-ed3ed8e2bee100c8aba16b41caadc9a2.css">
+  <link rel="stylesheet" href="03-dataunderstanding_files/libs/revealjs/dist/theme/quarto-6391498a111a1f00b0d941bda0c7e264.css">
   <link href="03-dataunderstanding_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="03-dataunderstanding_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="03-dataunderstanding_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -161,7 +161,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="section" class="title-slide slide level1 center">
 <h1></h1>
 
-<img src="./img/crispdm_du.svg" class="center r-stretch"></section>
+<img src="./img/crispdm_du.svg" class="center-img r-stretch"></section>
 
 <section id="data-understanding" class="title-slide slide level1 center">
 <h1>Data understanding</h1>
@@ -195,13 +195,23 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="section-1" class="title-slide slide level1 center">
-<h1></h1>
+<section id="problem-what-about-biases" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: what about biases?</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Survivorship-bias.svg/1280px-Survivorship-bias.svg.png"></p>
+<figcaption>Red dots stand for places where surviving planes were shot. How would you reinforce the planes?</figcaption>
+</figure>
+</div>
+</section>
+
+<section id="biases" class="title-slide slide level1 center">
+<h1>Biases</h1>
 <blockquote>
 <p>“If you torture the data long enough, it will confess to anything”</p>
 <p>Ronald H. Coase</p>
 </blockquote>
-<p>Several <strong>biases</strong> can occur:</p>
+<p>During data collection and analysis, several <strong>biases</strong> can occur</p>
 <ul>
 <li><em>Selection</em>: sample used for data collection is not representative of the population being studied</li>
 <li><em>Sampling</em>: certain segments of the population are more likely to be included or excluded from the sample</li>
@@ -214,26 +224,21 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="section-2" class="title-slide slide level1 center">
-<h1></h1>
-
-<img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Survivorship-bias.svg/1280px-Survivorship-bias.svg.png" class="r-stretch quarto-figure-center"><p class="caption">Red dots stand for places where surviving planes were shot. How would you reinforce the planes?</p></section>
-
 <section id="survivorship-bias" class="title-slide slide level1 center">
 <h1>Survivorship bias</h1>
 <p>The “survivors” get studied, while the failures are excluded, leading to potentially flawed conclusions.</p>
 <p><em>Start-up Success Stories</em></p>
-<ul>
-<li>People often hear stories of wildly successful companies like Apple, Amazon, or Tesla and assume that hard work and a good idea are enough to succeed. This overlooks the countless failed start-ups that had hard-working teams and great ideas but didn’t survive due to market conditions, competition, or other factors.</li>
-</ul>
+<blockquote>
+<p>People often hear stories of wildly successful companies like Apple, Amazon, or Tesla and assume that hard work and a good idea are enough to succeed. This overlooks the countless failed start-ups that had hard-working teams and great ideas but didn’t survive due to market conditions, competition, or other factors.</p>
+</blockquote>
 <p><em>Fitness and Weight Loss Programs</em></p>
-<ul>
-<li>Testimonials for fitness programs often highlight people who achieved dramatic results. These “success stories” ignore the many individuals who followed the same program but didn’t achieve noticeable results, either due to differences in genetics, lifestyle, or other factors.</li>
-</ul>
+<blockquote>
+<p>Testimonials for fitness programs often highlight people who achieved dramatic results. These “success stories” ignore the many individuals who followed the same program but didn’t achieve noticeable results, either due to differences in genetics, lifestyle, or other factors.</p>
+</blockquote>
 <p><em>Investment Portfolios</em></p>
-<ul>
-<li>Financial advice often highlights top-performing stocks or mutual funds as examples of great investments. These examples focus on the “survivors” in the market, ignoring the many investments that failed or underperformed, which can lead to overestimating the likelihood of similar success in the future.</li>
-</ul>
+<blockquote>
+<p>Financial advice often highlights top-performing stocks or mutual funds as examples of great investments. These examples focus on the “survivors” in the market, ignoring the many investments that failed or underperformed, which can lead to overestimating the likelihood of similar success in the future.</p>
+</blockquote>
 </section>
 
 <section id="survivorship-bias-1" class="title-slide slide level1 center">
@@ -249,21 +254,21 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="and-more" class="title-slide slide level1 center">
 <h1>… and more!</h1>
 <p><em>Confirmation Bias</em></p>
-<ul>
-<li>A person who believes in a specific political ideology might seek out news articles or social media posts that reinforce their beliefs, while ignoring or dismissing information that contradicts their views. This selective exposure to information strengthens their pre-existing opinions.</li>
-</ul>
+<blockquote>
+<p>A person who believes in a specific political ideology might seek out news articles or social media posts that reinforce their beliefs, while ignoring or dismissing information that contradicts their views. This selective exposure to information strengthens their pre-existing opinions.</p>
+</blockquote>
 <p><em>Anchoring Bias</em></p>
-<ul>
-<li>When shopping for a new car, a person may see a car priced at $30,000, and then a second car priced at $25,000. Even if the second car is not objectively better or a great deal, the first price “anchors” their perception of the value of the second car, leading them to think it’s a better deal simply because it’s cheaper than the first option.</li>
-</ul>
+<blockquote>
+<p>When shopping for a new car, a person may see a car priced at $30,000, and then a second car priced at $25,000. Even if the second car is not objectively better or a great deal, the first price “anchors” their perception of the value of the second car, leading them to think it’s a better deal simply because it’s cheaper than the first option.</p>
+</blockquote>
 <p><em>Availability Bias</em></p>
-<ul>
-<li>After watching several news reports about airplane crashes, a person might overestimate the risk of flying. They might avoid flying, despite it being statistically safer than driving, because the images and stories of crashes are more readily available in their memory.</li>
-</ul>
+<blockquote>
+<p>After watching several news reports about airplane crashes, a person might overestimate the risk of flying. They might avoid flying, despite it being statistically safer than driving, because the images and stories of crashes are more readily available in their memory.</p>
+</blockquote>
 </section>
 
-<section id="is-data-the-new-oil" class="title-slide slide level1 center">
-<h1>Is data the new oil?</h1>
+<section id="problem-is-data-the-new-oil" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: is data the new oil?</h1>
 <p>The more data we have, the more analysis we can do (however, more data != smarter data)</p>
 <ul>
 <li>There are several disciplines focusing on data (e.g., Data Science, Data Mining, Big Data, Business Intelligence)</li>
@@ -279,12 +284,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="section-3" class="title-slide slide level1 center">
+<section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
 <p>Rule of thumb: <em>one in ten/twenty</em> <span class="citation" data-cites="chowdhury2020variable">(<a href="#/references" role="doc-biblioref" onclick="">Chowdhury and Turin 2020</a>)</span></p>
 <blockquote>
 <p>There is no set rule as to the number of variables to include in a prediction model as it often depends on several factors. The ‘one in ten rule’, a rule that stipulates how many variables/parameters can be estimated from a data set, is quite popular in traditional clinical prediction modeling strategies (e.g., logistic regression and survival models). According to this rule, one variable can be considered in a model for every 10 events</p>
 </blockquote>
+</section>
+
+<section id="problem-how-can-we-collect-data" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: how can we collect data?</h1>
+
 </section>
 
 <section id="public-datasets" class="title-slide slide level1 center">
@@ -340,7 +350,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>It is a simple dataset, it is easy to distinguish the different flowers and does not need data preparation</li>
 </ul>
-<p><img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center"></p>
+<p><img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center-img"></p>
 </section>
 
 <section id="acquisition-of-a-new-dataset" class="title-slide slide level1 center">
@@ -416,7 +426,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="amazon-mechanical-turk" class="title-slide slide level1 center">
 <h1><a href="https://www.mturk.com/">Amazon Mechanical Turk</a></h1>
 
-<img src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="center r-stretch"></section>
+<img src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="center-img r-stretch"></section>
 
 <section id="different-ways-of-learning" class="title-slide slide level1 center">
 <h1>Different Ways of Learning</h1>
@@ -502,6 +512,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Which data is (really) useful for the business</li>
 </ul></li>
 </ul>
+</section>
+
+<section id="problem-now-that-we-have-the-data-what-do-we-do" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: now that we have the data, what do we do?</h1>
+
 </section>
 
 <section id="describe-the-data" class="title-slide slide level1 center">
@@ -755,7 +770,7 @@ memory usage: 6.0+ KB</code></pre>
 </ul>
 <blockquote>
 <p>2D visualization of the Iris dataset</p>
-<p><img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center"></p>
+<p><img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center-img"></p>
 </blockquote>
 </section>
 
@@ -811,15 +826,15 @@ memory usage: 6.0+ KB</code></pre>
 <h1>Dimensions of Data Quality <span class="citation" data-cites="sidi2012data">(<a href="#/references" role="doc-biblioref" onclick="">Sidi et al. 2012</a>)</span></h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img src="https://github.com/user-attachments/assets/64417f65-acb0-4c77-a5cc-89522e5703a4" style="max-height: 450px !important" class="center"></p>
+<p><img src="https://github.com/user-attachments/assets/64417f65-acb0-4c77-a5cc-89522e5703a4" style="max-height: 450px !important" class="center-img"></p>
 </div><div class="column" style="width:50%;">
-<p><img src="https://github.com/user-attachments/assets/4c7dc682-84a6-4a23-9896-134ffbe80a82" style="max-height: 450px !important" class="center"></p>
+<p><img src="https://github.com/user-attachments/assets/4c7dc682-84a6-4a23-9896-134ffbe80a82" style="max-height: 450px !important" class="center-img"></p>
 </div></div>
 </section>
 
 <section id="metrics-of-data-quality-batini2009methodologies" class="title-slide slide level1 center">
 <h1>Metrics of Data Quality <span class="citation" data-cites="batini2009methodologies">(<a href="#/references" role="doc-biblioref" onclick="">Batini et al. 2009</a>)</span></h1>
-<p><img src="https://github.com/user-attachments/assets/0724117f-3369-41f7-a277-2bfe1cf5d533" style="max-height: 450px !important" class="center"></p>
+<p><img src="https://github.com/user-attachments/assets/0724117f-3369-41f7-a277-2bfe1cf5d533" style="max-height: 450px !important" class="center-img"></p>
 </section>
 
 <section id="references" class="title-slide slide level1 smaller scrollable">
