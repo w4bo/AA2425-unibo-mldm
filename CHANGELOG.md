@@ -1,3 +1,9 @@
+## [1.0.48](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.47...1.0.48) (2025-01-20)
+
+### Bug Fixes
+
+* fairness ([72d9629](https://github.com/w4bo/AA2425-unibo-mldm/commit/72d962910fe62049b23960062104e2d11597600f))
+
 ## [1.0.47](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.46...1.0.47) (2025-01-10)
 
 ### Dependency updates
