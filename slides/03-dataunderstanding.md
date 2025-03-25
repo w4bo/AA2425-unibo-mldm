@@ -4,7 +4,7 @@ subtitle: Data Understanding
 
 #
 
-<img src="./img/crispdm_du.svg" class="center">
+<img src="./img/crispdm_du.svg" class="center-img">
 
 # Data understanding
 
@@ -32,13 +32,17 @@ The analyst then proceeds to
 - discover initial insights into the data,
 - detect interesting subsets to form hypotheses about hidden information
 
-#
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: what about biases?
+
+![Red dots stand for places where surviving planes were shot. How would you reinforce the planes?](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Survivorship-bias.svg/1280px-Survivorship-bias.svg.png)
+
+# Biases 
 
 > "If you torture the data long enough, it will confess to anything"
 >
 > Ronald H. Coase
 
-Several **biases** can occur:
+During data collection and analysis, several **biases** can occur
 
 - *Selection*: sample used for data collection is not representative of the population being studied
 - *Sampling*: certain segments of the population are more likely to be included or excluded from the sample
@@ -49,25 +53,21 @@ Several **biases** can occur:
 - *Publication*: tendency for researchers or journals to publish studies with positive or significant results while neglecting to publish studies with null or negative results
 - ... and many others
 
-#
-
-![Red dots stand for places where surviving planes were shot. How would you reinforce the planes?](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Survivorship-bias.svg/1280px-Survivorship-bias.svg.png)
-
 # Survivorship bias
 
 The "survivors" get studied, while the failures are excluded, leading to potentially flawed conclusions.
 
 *Start-up Success Stories*
 
-- People often hear stories of wildly successful companies like Apple, Amazon, or Tesla and assume that hard work and a good idea are enough to succeed. This overlooks the countless failed start-ups that had hard-working teams and great ideas but didn’t survive due to market conditions, competition, or other factors.
+> People often hear stories of wildly successful companies like Apple, Amazon, or Tesla and assume that hard work and a good idea are enough to succeed. This overlooks the countless failed start-ups that had hard-working teams and great ideas but didn’t survive due to market conditions, competition, or other factors.
 
 *Fitness and Weight Loss Programs*
 
-- Testimonials for fitness programs often highlight people who achieved dramatic results. These "success stories" ignore the many individuals who followed the same program but didn’t achieve noticeable results, either due to differences in genetics, lifestyle, or other factors.
+> Testimonials for fitness programs often highlight people who achieved dramatic results. These "success stories" ignore the many individuals who followed the same program but didn’t achieve noticeable results, either due to differences in genetics, lifestyle, or other factors.
 
 *Investment Portfolios*
 
-- Financial advice often highlights top-performing stocks or mutual funds as examples of great investments. These examples focus on the "survivors" in the market, ignoring the many investments that failed or underperformed, which can lead to overestimating the likelihood of similar success in the future.
+> Financial advice often highlights top-performing stocks or mutual funds as examples of great investments. These examples focus on the "survivors" in the market, ignoring the many investments that failed or underperformed, which can lead to overestimating the likelihood of similar success in the future.
 
 # Survivorship bias
 
@@ -81,17 +81,17 @@ The "survivors" get studied, while the failures are excluded, leading to potenti
 
 *Confirmation Bias*
 
-- A person who believes in a specific political ideology might seek out news articles or social media posts that reinforce their beliefs, while ignoring or dismissing information that contradicts their views. This selective exposure to information strengthens their pre-existing opinions.
+> A person who believes in a specific political ideology might seek out news articles or social media posts that reinforce their beliefs, while ignoring or dismissing information that contradicts their views. This selective exposure to information strengthens their pre-existing opinions.
 
 *Anchoring Bias*
 
-- When shopping for a new car, a person may see a car priced at $30,000, and then a second car priced at $25,000. Even if the second car is not objectively better or a great deal, the first price "anchors" their perception of the value of the second car, leading them to think it's a better deal simply because it's cheaper than the first option.
+> When shopping for a new car, a person may see a car priced at $30,000, and then a second car priced at $25,000. Even if the second car is not objectively better or a great deal, the first price "anchors" their perception of the value of the second car, leading them to think it's a better deal simply because it's cheaper than the first option.
 
 *Availability Bias*
 
-- After watching several news reports about airplane crashes, a person might overestimate the risk of flying. They might avoid flying, despite it being statistically safer than driving, because the images and stories of crashes are more readily available in their memory.
+> After watching several news reports about airplane crashes, a person might overestimate the risk of flying. They might avoid flying, despite it being statistically safer than driving, because the images and stories of crashes are more readily available in their memory.
 
-# Is data the new oil?
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: is data the new oil?
 
 The more data we have, the more analysis we can do (however, more data != smarter data)
 
@@ -109,6 +109,8 @@ Acquiring data is a time-consuming, investment, and knowledge-intensive process
 Rule of thumb: *one in ten/twenty* [@chowdhury2020variable]
 
 > There is no set rule as to the number of variables to include in a prediction model as it often depends on several factors. The ‘one in ten rule’, a rule that stipulates how many variables/parameters can be estimated from a data set, is quite popular in traditional clinical prediction modeling strategies (e.g., logistic regression and survival models). According to this rule, one variable can be considered in a model for every 10 events
+
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: how can we collect data?
 
 # Public Datasets
 
@@ -153,7 +155,7 @@ Used in classification problems where the goal is to predict the species of Iris
 
 - It is a simple dataset, it is easy to distinguish the different flowers and does not need data preparation
 
-<img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center">
+<img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center-img">
 
 # Acquisition of a new dataset
 
@@ -210,8 +212,7 @@ The data annotation process can take place in several ways:
 
 # [Amazon Mechanical Turk](https://www.mturk.com/)
 
-<img src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="center">
-
+<img src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="center-img">
 
 # Different Ways of Learning
 
@@ -278,6 +279,8 @@ Companies usually face common problems:
 - In many business processes it is unclear understanding:
   - Which data is possible to collect (also due to privacy issues)
   - Which data is (really) useful for the business
+
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: now that we have the data, what do we do?
 
 # Describe the Data
 
@@ -382,7 +385,7 @@ This task tackles the data mining questions, which can be addressed using queryi
 
 > 2D visualization of the Iris dataset
 >
-> <img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center">
+> <img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center-img">
 
 # Iris
 
@@ -430,18 +433,18 @@ Some common data quality issues to check include:
 
 ::: {.column width="50%"}
 
-<img src="https://github.com/user-attachments/assets/64417f65-acb0-4c77-a5cc-89522e5703a4" style="max-height: 450px !important" class="center">
+<img src="https://github.com/user-attachments/assets/64417f65-acb0-4c77-a5cc-89522e5703a4" style="max-height: 450px !important" class="center-img">
 
 :::
 ::: {.column width="50%"}
 
-<img src="https://github.com/user-attachments/assets/4c7dc682-84a6-4a23-9896-134ffbe80a82" style="max-height: 450px !important" class="center">
+<img src="https://github.com/user-attachments/assets/4c7dc682-84a6-4a23-9896-134ffbe80a82" style="max-height: 450px !important" class="center-img">
 
 :::
 ::::
 
 # Metrics of Data Quality [@batini2009methodologies]
 
-<img src="https://github.com/user-attachments/assets/0724117f-3369-41f7-a277-2bfe1cf5d533" style="max-height: 450px !important" class="center">
+<img src="https://github.com/user-attachments/assets/0724117f-3369-41f7-a277-2bfe1cf5d533" style="max-height: 450px !important" class="center-img">
 
 # References

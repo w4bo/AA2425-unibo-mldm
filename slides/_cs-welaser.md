@@ -15,15 +15,15 @@ The increased use of pesticides and fertilizers damages the environment, destroy
 
 # The "Carob" Robot
 
-<img src="./img/welaser/carob.png" class="center">
+<img src="./img/welaser/carob.png" class="center-img">
 
 # The IoT Ecosystem
 
-<img src="./img/welaser/iot.png" class="center">
+<img src="./img/welaser/iot.png" class="center-img">
 
 # The IoT Ecosystem
 
-<img src="./img/welaser/iot2.png" class="center">
+<img src="./img/welaser/iot2.png" class="center-img">
 
 # Data Platform
 
@@ -70,11 +70,11 @@ Several applications of AI an machine learning
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zyl3KP8lHD4?si=ghjWTI0uT-2lk7pE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<img src="./img/welaser/madrid.gif" class="center">
+<img src="./img/welaser/madrid.gif" class="center-img">
 
 :::
 ::::
 
 # Copenhagen
 
-<img src="./img/welaser/copenhagen.gif" class="center">
+<img src="./img/welaser/copenhagen.gif" class="center-img">

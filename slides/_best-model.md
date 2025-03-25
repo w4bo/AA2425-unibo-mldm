@@ -5,7 +5,7 @@
 
 $Z = X + Y$
 
-<img src="./img/00-ml/LinearRegression-2d.svg" class="center">
+<img src="./img/00-ml/LinearRegression-2d.svg" class="center-img">
 
 # The Perfect Model ... in 3D
 
@@ -14,11 +14,11 @@ $Error = Z - Z'$ (if blue, $Z > Z'$)
 - $Z = X + Y$
 - $Z' = model(X, Y)$
 
-<img src="./img/00-ml/LinearRegression-3d.svg" class="center">
+<img src="./img/00-ml/LinearRegression-3d.svg" class="center-img">
 
 # (Small) Decision Tree
 
-<img src="./img/00-ml/SmallDecisionTreeRegressor-dt.svg" class="center">
+<img src="./img/00-ml/SmallDecisionTreeRegressor-dt.svg" class="center-img">
 
 # (Small) Decision Tree... in 2D
 
@@ -28,29 +28,29 @@ $Error = Z - Z'$ (if blue, $Z > Z'$)
 
 Predicting the test data
 
-<img src="./img/00-ml/SmallDecisionTreeRegressor-test-2d.svg" class="center">
+<img src="./img/00-ml/SmallDecisionTreeRegressor-test-2d.svg" class="center-img">
 
 :::
 ::: {.column width="50%"}
 
 Predicting the whole data
 
-<img src="./img/00-ml/SmallDecisionTreeRegressor-2d.svg" class="center">
+<img src="./img/00-ml/SmallDecisionTreeRegressor-2d.svg" class="center-img">
 
 :::
 ::::
 
 # (Small) Decision Tree... in 3D
 
-<img src="./img/00-ml/SmallDecisionTreeRegressor-3d.svg" class="center">
+<img src="./img/00-ml/SmallDecisionTreeRegressor-3d.svg" class="center-img">
 
 # (Bigger) Decision Tree
 
-<img src="./img/00-ml/DecisionTreeRegressor-dt.svg" class="center">
+<img src="./img/00-ml/DecisionTreeRegressor-dt.svg" class="center-img">
 
 # (Bigger) Decision Tree... in 3D
 
-<img src="./img/00-ml/DecisionTreeRegressor-3d.svg" class="center">
+<img src="./img/00-ml/DecisionTreeRegressor-3d.svg" class="center-img">
 
 # Linear Regression
 
@@ -59,7 +59,7 @@ Predicting the whole data
 - $\alpha$ and $\beta$ can be fitted (learned) using *[ordinary least squares (OLS)](https://en.wikipedia.org/wiki/Ordinary_least_squares)*
 - Best fit?
 
-<img src="./img/00-ml/LinearRegression-3d.svg" class="center">
+<img src="./img/00-ml/LinearRegression-3d.svg" class="center-img">
 
 # Best fit?
 
@@ -88,12 +88,12 @@ $Z = X + Y$
 :::
 ::: {.column width="40%"}
 
-<img src="./img/00-ml/percettrone.svg" class="center">
+<img src="./img/00-ml/percettrone.svg" class="center-img">
 
 :::
 ::::
 
-<img src="./img/00-ml/NeuralNetwork20epoch-3d.svg" class="center">
+<img src="./img/00-ml/NeuralNetwork20epoch-3d.svg" class="center-img">
 
 # AutoML (FLAML)
 
@@ -116,7 +116,7 @@ $Z = X + Y$
 
     R^2 score on training data: 1.0000
 
-<img src="./img/00-ml/AutoML-3d.svg" class="center">
+<img src="./img/00-ml/AutoML-3d.svg" class="center-img">
 
 # Generalization
 
@@ -126,12 +126,12 @@ What if we ask the models the result of 12 + 12?
 
 ::: {.column width="50%"}
 
-<img src="./img/00-ml/LinearRegression-ext-20-2d.svg" class="center" style="height: 400px !important">
+<img src="./img/00-ml/LinearRegression-ext-20-2d.svg" class="center-img" style="height: 400px !important">
 
 :::
 ::: {.column width="50%"}
 
-<img src="./img/00-ml/LinearRegression-ext-24-2d.svg" class="center" style="height: 450px !important; width: 450 !important">
+<img src="./img/00-ml/LinearRegression-ext-24-2d.svg" class="center-img" style="height: 450px !important; width: 450 !important">
 
 :::
 ::::
@@ -142,30 +142,30 @@ What if we ask the models the result of 12 + 12?
 
 ::: {.column width="50%"}
 
-<img src="./img/00-ml/DecisionTreeRegressor-ext-20-2d.svg" class="center" style="height: 400px !important">
+<img src="./img/00-ml/DecisionTreeRegressor-ext-20-2d.svg" class="center-img" style="height: 400px !important">
 
 :::
 ::: {.column width="50%"}
 
-<img src="./img/00-ml/DecisionTreeRegressor-ext-24-2d.svg" class="center" style="height: 450px !important; width: 450 !important">
+<img src="./img/00-ml/DecisionTreeRegressor-ext-24-2d.svg" class="center-img" style="height: 450px !important; width: 450 !important">
 
 :::
 ::::
 
 # Generalization: Decision Tree in 3D
 
-<img src="./img/00-ml/DecisionTreeRegressor-ext-3d.svg" class="center">
+<img src="./img/00-ml/DecisionTreeRegressor-ext-3d.svg" class="center-img">
 
 # Generalization: ANN
 
-<img src="./img/00-ml/NeuralNetwork20epoch-ext-3d.svg" class="center">
+<img src="./img/00-ml/NeuralNetwork20epoch-ext-3d.svg" class="center-img">
 
 # Generalization: AutoML
 
-<img src="./img/00-ml/AutoML-ext-3d.svg" class="center">
+<img src="./img/00-ml/AutoML-ext-3d.svg" class="center-img">
 
 # Generalization: Linear Regression
 
-<img src="./img/00-ml/LinearRegression-ext-3d.svg" class="center">
+<img src="./img/00-ml/LinearRegression-ext-3d.svg" class="center-img">
 
 # References

@@ -99,36 +99,36 @@ Weber's *ideal-typical bureaucracy* is characterized by several factors, includi
 Do humans always take optimal decisions?
 
 ::: {.fragment}
-- Volumes of academic papers speak to the evident biases of human decision makers.
-
-*Entire disciplines have embraced mathematical models of optimal decision making* in their theoretical foundations.
-
-- We can label deviations from mathematical optimality as "bias" that requires attention.
-
 A body of research *compared the accuracy of statistical models to the judgments of humans*, even with years of experience.
 
 - In many head-to-head comparisons, *data-driven decisions are more accurate than those based on intuition or expertise*.
 - A 2002 study shows that **automated** underwriting of loans was both more accurate and less racially disparate.
     - These results have been welcomed as a way to ensure that high-stakes decisions that shape our lifes are *accurate* and *fair*.
+
+*Entire disciplines have embraced mathematical models of optimal decision making* in their theoretical foundations.
+
+- We can label deviations from mathematical optimality as "bias" that requires attention.
 :::
 
 # Machine learning
 
+Which factors (*among all that we have observed*) bear a statistical relationship to the outcome?
+
 **Machine learning** adds a repertoire of heuristics that *learns decision rules from sufficiently large datasets*
 
 - Techniques for fitting huge statistical models on large datasets have led to impressive achievements.
-- Many applications: image classification, speech recognition, and natural language processing etc.
 
 **ML is a way to learn and make decisions about individuals directly from the data**.
 
 - Rather than *manually formalizing* the relationship between *relevant factors* and an *outcome*, *ML learns the relevance from data*
-- Which factors (among *all* that we have observed) bear a statistical relationship to the outcome?
 
 > :::: {.columns}
 > ::: {.column width=40%}
 > ![MNIST dataset](https://upload.wikimedia.org/wikipedia/commons/b/b1/MNIST_dataset_example.png)
 > :::
 > ::: {.column width=60%}
+> Many applications: image classification, speech recognition, and natural language processing etc.
+>
 > We may be able to effortlessly identify objects in a scene, but we are unable to specify the full set of rules that we rely on to make these determinations.
 > We cannot hand-code a program that exhaustively enumerates all the relevant factors that allow us to recognize objects from every possible perspective or visual configurations.
 > :::
@@ -143,14 +143,15 @@ Interrogating ML is a way of interrogating institutional decision making in soci
 *Learning* is not a process of simply committing examples to memory.
 
 - *Induction*: drawing rules (from past examples) that effectively account for past cases, but that also apply to new/unseen cases.
-- E.g., Homing in on those details that are characteristic of "2" in general, not just the "2"s that appear in the examples.
 
-When learning, ML turns *data into a model*.
+> Homing in on those details that are characteristic of "2" in general, not just the "2"s that appear in the examples.
 
-- A model summarizes the patterns in the training data; *it makes generalizations*.
-- A model could take many forms: a hyperplane, or a set of distributions, a set of weights, etc.
+When learning, ML turns *data into a model* that
 
-There are reasons to be cautiously optimistic about fairness and machine learning.
+- summarizes the patterns in the training data; *it makes generalizations*.
+- could take many forms: a hyperplane, or a set of distributions, a set of weights, etc.
+
+There are reasons to be *cautiously optimistic about fairness and ML*.
 
 - Data-driven decision making has the potential to be more transparent compared to human decision making.
 - It forces to articulate our decision-making objectives and enables to clearly understand the trade-offs between desiderata.
@@ -162,16 +163,16 @@ Challenges:
 
 # Machine Learning
 
-Supervised ML (e.g., classification) is a form of inductive reasoning.
+Supervised ML (e.g., *classification*) is a form of inductive reasoning.
 
-- Draw general rules from a specific examples, identifying the features and values that co-occur with an outcome of interest.
-- The limitation of being insufficiently individualized is an unavoidable part of inductive reasoning.
+- *Draw general rules from individual examples*, identifying the features and values that co-occur with an outcome of interest.
+- However, *insufficiently-individualized decisions are an unavoidable* part of inductive reasoning.
     - "Statistically sound but nonuniversal generalizations": an individual fulfills all the criteria for inclusion in a particular group but fails to possess the quality that these criteria are expected to predict [82].
     - Even if we accept that decisions can never be fully individualized, we might still expect that decision makers take into account the full range of relevant information at their potential disposal.
 
 > A car insurance company had an obligation to consider the applicants' driving skills, not just the model and color of their car, even if doing so still meant that they were being assessed according to how often other people with similar driving skills
 > Collecting and considering all of this information can be expensive, intrusive, and impractical.
-> In fact, the cost of doing so could easily outweigh the perceived benefits that come from more granular decision making—not just to the decision maker but to the subjects of the decisions as well
+> In fact, the cost of doing so could easily outweigh the perceived benefits that come from more granular decision making—not just to the decision maker but to the subjects of the decisions as well.
 > For instance, if developing a much more detailed assessment of applicants for car insurance increases the operating costs of the insurer, the insurer is likely to charge applicants a higher price to offset these additional costs.
 
 Limits to inductive reasoning.
@@ -359,7 +360,7 @@ We have a dataset with 3 columns, and $C$ is the (sensitive) group
 Somehow, we have the following classifier
 
 $\text{Hired} = \begin{cases}
-1, \text{ if } -A + \epsilon < B \\
+1, \text{ if } -\text{GPA} + \epsilon > \text{Interview Score} \\
 0, otherwise
 \end{cases}$
 
@@ -387,7 +388,7 @@ $\text{Hired} = \begin{cases}
 :::: {.columns}
 ::: {.column width=49%}
 
-Predicted Class = 1: $-A + \epsilon > B$
+Predicted Class = 1: $-\text{GPA} + \epsilon > \text{Score}$
 
 | C        | count |
 |:---------|------:|
@@ -397,7 +398,7 @@ Predicted Class = 1: $-A + \epsilon > B$
 :::
 ::: {.column width=49%}
 
-Predicted Class = 0: $-A + \epsilon \le B$
+Predicted Class = 0: $-\text{GPA} + \epsilon \le \text{Score}$
 
 | C        | count |
 |:---------|------:|

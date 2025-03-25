@@ -4,8 +4,12 @@ subtitle: Data Preparation
 
 #
 
-<img src="./img/crispdm_dp.svg" class="center">
+<img src="./img/crispdm_dp.svg" class="center-img">
 
+#
+
+*Without clean data, the results of a data mining analysis are in question*.
+ 
 # Data Preparation (aka *data pre-processing*)
 
 The **data preparation** phase covers all activities to construct the dataset fed into the modeling tools from the initial data.
@@ -15,12 +19,10 @@ The **data preparation** phase covers all activities to construct the dataset fe
 It plays a key role in a data analytics process and *avoids "garbage in, garbage out"*
 
 - *A broad range of activities*; from correcting errors to selecting the most relevant features
-    - Out-of-range values (e.g., Income: −100)
-    - Impossible data combinations (e.g., `Exam mark`: 15, `Exam result`: Passed)
-    - Missing values
-    - Inconsistent data among multiple sources
+    - Out-of-range values (`Income`: −100), Impossible combinations (`Exam mark`: 15 and `Exam result`: Passed), Missing values...
 - There are *no pre-defined rules* on the impact of pre-processing transformations
 - Data scientists *cannot easily foresee the impact of pipeline prototypes*
+    - Outline how each quality problem (reported in the earlier "Verify Data Quality" step) has been addressed
 
 #
 
@@ -32,20 +34,24 @@ Data pre-processing includes [@shearer2000crisp] data
 1. *integration*
 1. *formatting*
 
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: which data should we use?
+
 # Select Data
 
 Deciding on the data that will be used for the analysis is based on several criteria, including
 
-- its relevance to the data mining goals
-- quality and technical constraints such as GDPR or limits on data volume or data types
+- its *relevance* to the data mining goals
+- *quality* and *technical* constraints such as GDPR or limits on data volume or data types
 
 Part of the data selection process should involve explaining why certain data was included or excluded.
 
 - It is also a good idea to decide if one or more attributes are more important than others
 
-> For instance, while an individual's address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated.
+> Examples
+> 
+> - An individual's address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated.
 >
-> To learn how sales are characterized by store `type` you do not need to consider the `StoreId`
+> - To learn how sales are characterized by store `type` you do not need to consider the `StoreId`
 >
 > | ~~`StoreId`~~ | `type` |`sales` |
 > |-----------|--------|--------|
@@ -55,24 +61,75 @@ Part of the data selection process should involve explaining why certain data wa
 
 # [What personal data is considered sensitive](https://commission.europa.eu/law/law-topic/data-protection/reform/rules-business-and-organisations/legal-grounds-processing-data/sensitive-data/what-personal-data-considered-sensitive_en)?
 
-The following personal data is considered ‘sensitive’ and is subject to specific processing conditions:
+The following personal data is considered *sensitive* and is subject to specific processing conditions:
 
 - personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs;
 - trade-union membership;
 - genetic data, biometric data processed solely to identify a human being;
 - health-related data;
-- data concerning a person’s sex life or sexual orientation.
+- data concerning a person's sex life or sexual orientation.
 
 See [article 4](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN#d1e1489-1-1)
 
-# Clean Data (or data cleansing)
+Why should we care about sensitive data? 
 
-*Without clean data, the results of a data mining analysis are in question*.
+# The Artificial Intelligence Act
 
-The data analyst must
+The *AI Act* is a European Union regulation concerning artificial intelligence that classifies applications by their risk of causing harm.
 
-- select clean subsets of data or incorporate techniques such as estimating missing data through modeling analyses
-- make sure they outline how they addressed each quality problem reported in the earlier "Verify Data Quality" step
+- **Unacceptable-risk** applications are *banned*.
+  - Applications that manipulate human behaviour, use real-time remote biometric identification in public spaces, and social scoring (ranking individuals based on their personal characteristics, socio-economic status, or behaviour)
+- **High-risk** applications must comply with *security*, *transparency* and *quality obligations*, and undergo conformity assessments.
+  - AI applications that are expected to pose significant threats to health, safety, or the fundamental rights of persons.
+  - They must be evaluated both before they are placed on the market and throughout their life cycle. 
+- **Limited-risk** applications *only have transparency* obligations.
+  - AI applications that make it possible to generate or manipulate images, sound, or videos.
+  - Ensure that users are informed that they are interacting with an AI system and allowing them to make informed choices. 
+- **Minimal-risk** applications *are not regulated*.
+  - AI systems used for video games or spam filters.
+
+# <img src="./img/cs.svg" class="title-icon" /> AI Act and Black Mirror
+
+See *Black Mirror* episodes and how they relate to the AI Act's high-risk categories:
+
+- "The Entire History of You" (Season 1, Episode 3)
+    - People have **memory implants** that allow them to replay and analyze past events.  
+- "Nosedive" (Season 3, Episode 1)
+    - People's **social credit scores** determine their access to housing, jobs, and even flights.  
+- "Hated in the Nation" (Season 3, Episode 6)
+    - A social media campaign with an AI-driven hashtag leads to **automated drone assassinations**.
+- "Metalhead" (Season 4, Episode 5)
+    - The episode features relentless **autonomous killer robots** that hunt down humans.  
+- "Rachel, Jack and Ashley Too" (Season 5, Episode 3) – AI & Digital Manipulation
+    - A pop star's **consciousness is cloned into an AI assistant**, and the AI is used to create performances without her consent.  
+
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: missing values?
+
+> A retail company tracks daily sales, but some records are missing due to system failures.
+>
+> A telecom company is predicting customer churn, but some customers have missing contract duration or monthly bill values.
+>
+> A hospital maintains records of patients' blood pressure, but 15% of entries are missing.
+>
+> A bank evaluates loan applications, but some applicants have missing income data.
+
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: missing values?
+
+> A retail company tracks daily sales, but some records are missing due to system failures.
+>
+> - *Use historical sales trends* to impute missing values
+>
+> A telecom company is predicting customer churn, but some customers have missing contract duration or monthly bill values.
+>
+> - *Use median imputation for numerical features* (e.g., replace missing monthly bill amounts with the median).
+>
+> A hospital maintains records of patients' blood pressure, but 15% of entries are missing.
+>
+> - Use K-Nearest Neighbors (KNN) imputation to *estimate missing values based on similar patients*.
+>
+> A bank evaluates loan applications, but some applicants have missing income data.
+>
+> - *Use group-based imputation* (e.g., average income for self-employed individuals).
 
 # Imputation of missing values
 
@@ -182,13 +239,29 @@ The data analyst must
 :::
 ::::
 
-# Which mean? Compount interest
+# Case Study: How Do We Impute? {background-color="#121011"}
 
-Consider an investment portfolio with initial value 1000€ and final value 2406.62€ after 18 years.
+|Year|Portfolio Value|
+|:--:|:-------------:|
+|2008|	1000.00|
+|2009|	1050.00|
+|2010|	1102.50|
+|2011|	1157.63|
+|2012|	|
+|2013|	1276.28|
+|2014|	1340.10|
+|2015|	1407.10|
+|2016|	1477.46|
+|2017|	1551.33|
+|2018|	|
+|2019|	1710.34|
+|2020|	1795.86|
+|2021|	1885.65|
+|2022|	1979.93|
+|2023|	|
+|2024|	2182.87|
 
-Which return has the portfolio generated each year?
-
-# Which mean? Compount interest
+# Case Study: Compount Interest {background-color="#121011"}
 
 :::: {.columns}
 ::: {.column width="70%"}
@@ -229,7 +302,7 @@ This is not a linear increase but a geometric sequence, the final value is $\tex
 
 In this case the return is equal every year, so the average interest is $5\%$.
 
-# Which mean? Compount interest
+# Case Study: Compount Interest {background-color="#121011"}
 
 Let us assume now that the returns changes over year.
 
@@ -244,7 +317,7 @@ Let us assume now that the returns changes over year.
 
 What is the average return?
 
-# Which mean? Compount interest
+# Case Study: Compount Interest {background-color="#121011"}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -292,21 +365,24 @@ $X\%$ is the *Compound Annual Growth Rate*, the mean annualized growth rate for 
 :::
 ::::
 
+# Case Study: Compount Interest {background-color="#121011"}
+
 **Take away**: pay attention to the semantics of the features!
 
-# Skewed distributions
+# What imputation problems can arise with skewed distributions?
 
-![](https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png)
+![Skewed vs normal distributions](https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png)
 
-What problems can arise with skewed distributions?
+# Effects of imputation on skewed distributions?
 
-#
+*Long Tail* refers to the concept where a large number of niche products collectively generate more sales than a few bestsellers.
+
+- Ecommerces such as Amazon stock a vast array of products that traditional retailers wouldn't carry due to space constraints.
+- The Long Tail phenomenon is directly related to skewed distributions, specifically a type of right-skewed distribution
 
 ![](./img/datapreprocessing/imputation_100.svg)
 
-# Skewed distributions
-
-What happens to mean and median values?
+# Normal vs Skewed distributions: what happens to mean values?
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -346,7 +422,7 @@ Median:  36666524821
 :::
 ::::
 
-# Skewed distributions: Stocks
+# Case Study: Stocks {background-color="#121011"}
 
 The [Standard and Poor's 500](https://en.wikipedia.org/wiki/S%26P_500) index tracks the stock performance of [500 of the largest companies](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) in the United States.
 
@@ -360,7 +436,7 @@ The [Standard and Poor's 500](https://en.wikipedia.org/wiki/S%26P_500) index tra
 
 How would you define the *weight* of a company in the index?
 
-# Skewed distributions: Stocks
+# Case Study: Stocks {background-color="#121011"}
 
 As a semplification, given a company $C$ and a generic index $I$
 
@@ -394,9 +470,19 @@ As a semplification, given a company $C$ and a generic index $I$
 :::
 ::::
 
-# Skewed distributions: Stocks
+# Case Study: Stocks {background-color="#121011"}
 
 ![Price vs market cap weighted](./img/datapreprocessing/price_weight_distribution.svg)
+
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we handle anomalies?
+
+> A customer who typically buys groceries worth $50 suddenly places an order for $5,000 in electronics. Is it a fraud?
+> 
+> A system that usually receives 100-200 requests per second suddenly sees 10,000 requests per second. is it a DDoS attack?
+> 
+> A bottle-filling machine fills 500ml of liquid, but occasionally, some bottles contain 450ml or 550ml. Is it a defect?
+> 
+> A credit card transaction of $10,000 when the usual spending is around $50-$100. Is it a fraud?
 
 # Outlier removal
 
@@ -465,7 +551,7 @@ For example, if $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles respective
 :::
 ::::
 
-# The black swan theory
+# Case Study: The Black Swan Theory {background-color="#121011"}
 
 Juvenal (55-128, Roman poet) wrote in his Satire VI of *events being "a bird as rare upon the earth as a black swan"*
 
@@ -497,7 +583,7 @@ The black swan theory was developed by Nassim Nicholas Taleb [@taleb2008impact] 
 
 Such extreme events (outliers), collectively play vastly larger roles than regular occurrences.
 
-# The black swan theory in action!
+# Case Study: The Black Swan Theory {background-color="#121011"}
 
 [Long-Term Capital Management](https://en.wikipedia.org/wiki/Long-Term_Capital_Management) was a *highly leveraged* hedge fund.
 
@@ -521,18 +607,25 @@ Such extreme events (outliers), collectively play vastly larger roles than regul
 :::
 ::::
 
-# Construct data
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: is the dataset ready for machine learning?
 
-The data analyst could undertake operations such as developing entirely new records or producing derived attributes.
+> An online retailer wants to predict which customers are likely to churn. Instead of using raw purchase data, they need a "Loyalty Score" based on Total purchases in the last 12 months, average order value, and frequency of purchases.
+> 
+> A bank needs to classify customers into risk levels based on their credit score.
+> 
+> Netflix needs to recommend movies based on genre. However, movie genres are categorical (e.g., "Action," "Comedy"), which must be converted into numbers.
 
-- *Derived attributes should only be added if they ease the modeling algorithm*
-    - ... and not just to reduce the number of input attributes
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: is the dataset ready for machine learning?
 
-> A derived attribute is `area` = `length` x `width`.
+**Feature engineering**, in data science, refers to manipulation — addition, deletion, combination, mutation — of your data set to improve machine learning model training.
+
+*Derived attributes* should be added if they ease the modeling algorithm
+
+> `Area` = `Length` x `Width`.
 >
-> A derived attribute is `income_per_head` which could be easier to use than `income_per_household`.
+> `Loyalty_Score` = `Total_Purchases` x 0.4 + `Avg_Order_Value` x 0.3 + `Frequency` x 0.3.
 
-*Binning* may be necessary to *transform ranges to symbolic fields* (e.g., ages to age bands)
+*Binning* may be necessary to *transform ranges to symbolic fields*
 
 :::: {.columns}
 ::: {.column width="49%"}
@@ -561,7 +654,13 @@ The data analyst could undertake operations such as developing entirely new reco
 
 *Encoding* may be necessary to transform *or symbolic fields ("definitely yes", "yes", "don't know", "no") to numeric values*
 
-# Feature encoding
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we transform features into numbers?
+
+> Some machine learning models can only work with numerical values.
+> 
+> How do we transform the categorical values of the relevant features into numerical ones?
+
+# Encoding
 
 **Encoding** is the process of converting categorical variables into numeric features.
 
@@ -576,7 +675,7 @@ Categorical features can be *nominal* or *ordinal*.
 
 *One hot encoding* and *ordinal encoding* are the most common methods to transform categorical variables into numerical features.
 
-# Feature encoding: ordinal encoding
+# Encoding: ordinal encoding
 
 **Ordinal encoding** replaces each category with an integer value.
 
@@ -612,7 +711,7 @@ Categorical features can be *nominal* or *ordinal*.
 > :::
 > ::::
 
-# The Likert scale
+# Encoding: Likert scale
 
 The Likert scale is widely used in social work research, and is commonly constructed with four to seven points.
 
@@ -621,15 +720,15 @@ The Likert scale is widely used in social work research, and is commonly constru
 
 What about averaging?
 
-# The Likert scale
+# Encoding: Likert scale
 
 It is usually treated as an interval scale, but strictly speaking it is an ordinal scale, where arithmetic operations cannot be conducted [@wu2017can]
 
     Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn't necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn't necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.
 
-# J-shaped distribution
+# Encoding: Likert scale
 
-![](./img/datapreprocessing/reviews.png)
+![J-shaped distribution](./img/datapreprocessing/reviews.png)
 
 People tend to write reviews only when they are either extremely satisfied or extremely unsatisfied.
 
@@ -637,7 +736,7 @@ People who feel the product is average might not be bothered to write a review
 
 [@hu2009overcoming]
 
-# Feature encoding: one-hot encoding
+# Encoding: one-hot encoding
 
 **One-hot encoding (OHE)** replaces categorical variables by *a set of binary variables* (each representing a category in the variable)
 
@@ -678,11 +777,11 @@ OHE increases the dimensionality of the dataset and it may not be suitable for e
 - To prevent a massive increase of the feature space, we can one-hot encode only the most frequent categories in the variable.
 - ... less frequent values are treated collectively and represented as 0s in all the binary variables.
 
-## Encoding data with the wrong type
+# Case Study: Encoding Wrong Data Types {background-color="#121011"}
 
 ![Y2K22 bug](https://user-images.githubusercontent.com/18005592/232748093-a25e8ba7-24d4-4e2b-9e58-1553786cac33.png)
 
-## Encoding data with the wrong type
+# Case Study: Encoding Wrong Data Types {background-color="#121011"}
 
 Encoding the date 2022-01-01T00:01 into a signed integer $2201010001$
 
@@ -695,15 +794,13 @@ See also the [year 2000 problem](https://en.wikipedia.org/wiki/Year_2000_problem
 
 ![Y2K](https://upload.wikimedia.org/wikipedia/commons/f/fb/Bug_de_l%27an_2000.jpg)
 
-# Feature scaling (or data normalization)
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we treat features with different ranges?
 
-**Feature scaling** is a method used to normalize the range of independent variables or features of data
+If data values varies widely, in some ML algorithms objective functions will not work properly without normalization.
 
-- Since the range of values of raw data varies widely, in some machine learning algorithms objective functions will not work properly without normalization.
-- If one of the features has a broad range of values, the distance will be governed by this particular feature.
 - For example, many classifiers calculate the distance between two points by the Euclidean distance.
     - $d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{n}-q_{n})^{2}}} = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}$
-
+- If one of the features has a broad range of values, the distance will be governed by this particular feature.
 
 > Consider a dataset with two features `age` $\in [0, 120]$ and `income` $\in [0, 100000]$
 >
@@ -725,7 +822,9 @@ See also the [year 2000 problem](https://en.wikipedia.org/wiki/Year_2000_problem
 > :::
 > ::::
 
-# Feature scaling
+# Feature scaling (or data normalization)
+
+**Feature scaling** normalizes the range of independent variables
 
 *Min-max normalization* rescales the features in $[a, b]$ (tipically $[0, 1]$): $x'=a+{\frac{(x-{\text{min}}(x))(b-a)}{{\text{max}}(x)-{\text{min}}(x)}}$
 
@@ -798,6 +897,34 @@ Transformed Iris dataset: `petal_length*=10`, addition of 1 outlier [`petal_leng
 :::
 ::::
 
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: if the dataset is too detailed/noisy, what can we do?
+
+> A meteorologist analyzes hourly temperature readings, but the data has fluctuations due to temporary weather conditions.
+> 
+> |Hour|	Temperature (°C)|
+> |----|--------------------|
+> |1|	24.1|
+> |2|	24.3|
+> |3|	23.8|
+> |4|	24.5|
+> |5|	22.9 (Sudden drop due to rain)|
+> |6|	24.2|
+> |7|	23.9|
+>
+> How can we smooth small variations?
+
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: if the dataset is too detailed/noisy, what can we do?
+
+> For instance, using *equal-width binning* (grouping every 3 hours and averaging):
+> 
+> |Time Period|	Smoothed Temperature (°C)|
+> |-----------|--------------------------|
+> |1-3 AM|	24.0 (Avg of 24.1, 24.3, 23.8)|
+> |4-6 AM|	23.9 (Avg of 24.5, 22.9, 24.2)|
+> |7 AM|	23.9|
+> 
+> Noise from sudden drops (e.g., 22.9°C at 5 AM) is smoothed, making temperature trends more reliable.
+
 # Aggregation
 
 **Aggregation** computes new values by summarizing information from multiple records and/or tables.
@@ -867,98 +994,28 @@ Pay attention to the *aggregation operator*!
 
 ![](./img/datapreprocessing/imputation_equi_frequency.svg)
 
-# Integrate Data
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: what if we have too many features?
 
-**Integration** involves *combining information from multiple tables* or records to create new records or values.
-
-- With table-based data, an analyst can join two or more tables that have different information about the same objects.
-
-> For instance, a retail chain has one table with information about each store's general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from the previous year), and another table with information about the demographics of the surrounding area.
+> A streaming platform ants to recommend movies based on user preferences.
+> 
+> Each movie is represented by a vector of features:
+> 
+> 1. `Genre`
+> 1. `Director`
+> 1. `Lead Actor`
+> 1. `IMDB Rating`
+> 1. `Budget`
+> 1. `User Reviews`
+> 1. `Box Office Revenue`
+> 1. `Soundtrack Style`
+> 1. ... and many more (let’s assume 100+ features per movie).
+> 
+> If movies had only 2 features (e.g., "Genre" and "IMDB Rating"), we could easily visualize clusters of similar movies.
+> 
+> With 100+ features, the data points are spread out across a vast space.
 >
-> These tables can be merged together into a new table with one record for each store.
-
-
-:::: {.columns}
-
-::: {.column width="30%"}
-
-> | `StoreId` | `type` |
-> |-----------|--------|
-> |S1         | grocery   |
-> |S2         | supermarket |
-> |S3         | ...  |
-
-:::
-::: {.column width="3%"}
-
-\+
-
-:::
-::: {.column width="30%"}
-
-> | `StoreId` |`sales` |
-> |-----------|--------|
-> |S1         | 1000   |
-> |S2         | 1500 |
-> |S3         | ...  |
-
-:::
-::: {.column width="3%"}
-
-=
-
-:::
-::: {.column width="30%"}
-
-> | `StoreId` | `type` |`sales` |
-> |-----------|--------|--------|
-> |S1         | grocery   | 1000   |
-> |S2         | supermarket | 1500 |
-> |S3         | ...  | ...  |
-
-:::
-::::
-
-
-# Data integration
-
-**Data integration** combines data residing in different sources and provides users with a unified view of them.
-
-*Primary key-based integration* combines multiple sources based on matching unique identifiers (primary keys).
-
-- This method works when both datasets have a well-defined and consistent schema with common key fields.
-
-*Semantic integration* focuses on understanding the meaning of the data from different sources to combine it effectively.
-
-- The goal is to merge data that may use different names, terminologies, or structures to describe the same concepts.
-- Data is integrated based on semantic meaning rather than structural similarities.
-- It involves the use of ontologies or data dictionaries to map similar concepts across datasets, ensuring consistency.
-- It requires understanding the context, meaning, and relationships within the data.
-    - For instance, spatial data can be easily integrated into maps
-
-# Semantic Integration vs Primary Key-based Integration
-
-| **Aspect**   | **Semantic Integration**                                  | **Primary Key-based Integration**                      |
-|--------------|-----------------------------------------------------------|-------------------------------------------------------|
-| *Approach*   | Based on meaning and understanding of the data.           | Based on matching unique keys.     |
-| *Suitability*| Data with heterogeneous terminologies or structures. | Datasets have common, well-defined keys.    |
-| *Complexity* | Complex to interpret and align meanings. | Simpler, relies on exact key matches.                 |
-| *Flexibility*| Integrate data with different schemas/representations. | Less flexible, requires shared primary key fields.     |
-| *Challenges* | Requires mapping of concepts and domain semantics. | Limited to datasets that share a key. |
-
-# Format Data
-
-In some cases, the data analyst will *change the format of the data*.
-
-- Sometimes these changes are needed to make the data suitable for a specific modeling tool.
-- In other instances, the changes are needed to pose the necessary data mining questions.
-
-![image](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*YejjU_69ffDyrC0z-X9jYQ.jpeg)
-
-Examples:
-
-- Simple: removing illegal characters from strings or trimming them to a maximum length
-- More complex: reorganization of the information (e.g., *from normalized to flat tables*)
+> - All points seem "far apart" from each other, making similarity calculations less reliable.
+> - Nearest neighbors are not actually close (because all distances become similar).
 
 # Dimensionality reduction
 
@@ -966,13 +1023,9 @@ Examples:
 
 - Working in high-dimensional spaces can be undesirable for many reasons
 - Raw data are often sparse as a consequence of the curse of dimensionality
-- Dimensionality reduction can be used for noise reduction, data visualization, cluster analysis, or as an intermediate step to facilitate other analyses
+- Dimensionality reduction can be used for noise reduction, data visualization, cluster analysis, or to facilitate other analyses
 
 The main approaches can also be divided into *feature selection* and *feature extraction*.
-
-# Feature engineering
-
-Feature engineering, in data science, refers to manipulation — addition, deletion, combination, mutation — of your data set to improve machine learning model training, leading to better performance and greater accuracy.
 
 # Feature selection
 
@@ -981,15 +1034,14 @@ Feature engineering, in data science, refers to manipulation — addition, delet
 :::: {.columns}
 ::: {.column width="60%"}
 
-Simplest algorithm is to test each possible subset of features finding the one which minimizes the error rate
+*Dummy algorithm*: test each subset of features to find the one that minimizes the error
 
 - This is an exhaustive search of the space, and is computationally intractable for all but the smallest of feature sets
+- If $S$ is a finite set of features with cardinality $|S|$, then the number of all the subsets of $S$ is $|P(S)| = 2^{|S|} - 1$ (do not consider $\varnothing$)
 
-If $S$ is a finite set of features with the cardinality $|S| = n$, then the number of all the subsets of $S$ is $|P(S)| = 2^n - 1$ (we do not consider the empty set)
-
-- With three features: $2^3=8$
-- With four features: $2^4=16$
-- With ten features: $2^{10}=1024$
+  - With 3 features: $2^3=8$ subsets
+  - With 4 features: $2^4=16$ subsets
+  - With 10 features: $2^{10}=1024$ subsets
 
 :::
 ::: {.column width="40%"}
@@ -1085,7 +1137,7 @@ Feature selection approaches are characterized by
 :::: {.columns}
 ::: {.column width="60%"}
 
-*Pearson's correlation*: measures the linear relationship between two numeric variables
+*Pearson's correlation*: measures the *linear* relationship between 2 numeric variables
 
 - A coefficient close to 1 represents a positive correlation, -1 a negative correlation, and 0 no correlation
 - *Correlation between features*:
@@ -1104,24 +1156,24 @@ Feature selection approaches are characterized by
 
 # Feature selection: Wrapper strategy
 
-Each new feature subset is used to train a model, which is tested on a hold-out set
+*Each new feature subset is used to train a model*, which is tested on a hold-out set
 
 - Counting the number of mistakes made on that hold-out set (the error rate of the model) gives the score for that subset
 - As wrapper methods train a new model for each subset, they are very computationally intensive but provide good results
-- *Stepwise regression* adds the best feature (or deletes the worst feature) at each round
+
+*Stepwise regression* adds the best feature (or deletes the worst feature) at each round
 
 *Backward elimination*
 
-We start with the full model (including all the independent variables) and then incrementally remove the most insignificant feature.
+- Start with the full model (including all features) and then incrementally remove the most insignificant feature.
+- This process repeats again and again until we have the final set of significant features.
 
-This process repeats again and again until we have the final set of significant features.
-
-1. Choose a significance level (e.g., SL = 0.05 with a 95% confidence).
-1. Fit a full model including all the features.
-1. Consider the feature with the highest p-value.
-    - If the p-value < terminate the process.
-1. Remove the feature which is under consideration.
-1. Fit a model without this feature. Repeat the entire process from Step 3.
+    1. Choose a significance level (e.g., SL = 0.05 with a 95% confidence).
+    2. Fit a full model including all the features.
+    3. Consider the feature with the highest p-value.
+        - If the p-value < SL terminate the process.
+    4. Remove the feature which is under consideration.
+    5. Fit a model without this feature. Repeat the entire process from Step 3.
 
 # Feature selection: Embedded strategy
 
@@ -1216,6 +1268,104 @@ Feature Relevance for 3 Components:
 :::
 ::::
 
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we integrate different data sources?
+
+> A hospital wants to analyze patient health records by integrating data from multiple sources, including electronic health records (EHRs), wearable devices, and insurance claims.
+
+# Integrate Data
+
+**Integration** involves *combining information from multiple tables* or records to create new records or values.
+
+- With table-based data, an analyst can join two or more tables that have different information about the same objects.
+
+> For instance, a retail chain has one table with information about each store's general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from the previous year), and another table with information about the demographics of the surrounding area.
+>
+> These tables can be merged together into a new table with one record for each store.
+
+
+:::: {.columns}
+
+::: {.column width="30%"}
+
+> | `StoreId` | `type` |
+> |-----------|--------|
+> |S1         | grocery   |
+> |S2         | supermarket |
+> |S3         | ...  |
+
+:::
+::: {.column width="3%"}
+
+\+
+
+:::
+::: {.column width="30%"}
+
+> | `StoreId` |`sales` |
+> |-----------|--------|
+> |S1         | 1000   |
+> |S2         | 1500 |
+> |S3         | ...  |
+
+:::
+::: {.column width="3%"}
+
+=
+
+:::
+::: {.column width="30%"}
+
+> | `StoreId` | `type` |`sales` |
+> |-----------|--------|--------|
+> |S1         | grocery   | 1000   |
+> |S2         | supermarket | 1500 |
+> |S3         | ...  | ...  |
+
+:::
+::::
+
+# Data integration
+
+**Data integration** combines data residing in different sources and provides users with a unified view of them.
+
+*Primary key-based integration* combines multiple sources based on matching unique identifiers (primary keys).
+
+- This method works when both datasets have a well-defined and consistent schema with common key fields.
+
+*Semantic integration* focuses on understanding the meaning of the data from different sources to combine it effectively.
+
+- The goal is to merge data that may use different names, terminologies, or structures to describe the same concepts.
+- Data is integrated based on semantic meaning rather than structural similarities.
+- It involves the use of ontologies or data dictionaries to map similar concepts across datasets, ensuring consistency.
+- It requires understanding the context, meaning, and relationships within the data.
+    - For instance, spatial data can be easily integrated into maps
+
+# Semantic Integration vs Primary Key-based Integration
+
+| **Aspect**   | **Semantic Integration**                                  | **Primary Key-based Integration**                      |
+|--------------|-----------------------------------------------------------|-------------------------------------------------------|
+| *Approach*   | Based on meaning and understanding of the data.           | Based on matching unique keys.     |
+| *Suitability*| Data with heterogeneous terminologies or structures. | Datasets have common, well-defined keys.    |
+| *Complexity* | Complex to interpret and align meanings. | Simpler, relies on exact key matches.                 |
+| *Flexibility*| Integrate data with different schemas/representations. | Less flexible, requires shared primary key fields.     |
+| *Challenges* | Requires mapping of concepts and domain semantics. | Limited to datasets that share a key. |
+
+# Format Data
+
+In some cases, the data analyst will *change the format (structure) of the data*.
+
+- Sometimes these changes are needed to make the data suitable for a specific modeling tool.
+- In other instances, the changes are needed to pose the necessary data mining questions.
+
+![5V's of Big Data](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*YejjU_69ffDyrC0z-X9jYQ.jpeg)
+
+Examples:
+
+- Simple: removing illegal characters from strings or trimming them to a maximum length
+- More complex: reorganization of the information (e.g., *from normalized to flat tables*)
+
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we concatenate pre-processing transformations?
+
 # Sequences of transformations
 
 Things are even more complex when applying sequences of transformations
@@ -1228,6 +1378,8 @@ Things are even more complex when applying sequences of transformations
 More an art than a science
 
 - ... At least for now
+
+# **Final considerations**
 
 # Overlapping with business intelligence and data warehousing
 

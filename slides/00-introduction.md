@@ -23,7 +23,7 @@ Research topics
 [BIG (Business Intelligence Group)](https://big.csr.unibo.it/)
 
 - w/ Prof. Golfarelli, Prof. Gallinucci
-- You can check our open projects [here](https://big-unibo.github.io/thesis/)
+- You can check our thesis projects [here](https://big-unibo.github.io/thesis/)
 
 # Table of Contents and Course Goals
 
@@ -38,7 +38,7 @@ Goals
 1. *Master the right terms and paradigms* behind AI
 1. *Develop (=code) your own (simple) project* based on AI
 1. *Make technical considerations* about AI
-    - What happens if I do ...?
+    - "What happens if I do ...?"
 1. *Understanding the surrounding AI world*
     - Make decisions with AI
     - Try to make predictions about AI for your company
@@ -75,10 +75,9 @@ You must do an assignment, either on Machine Learning (ask me) or Data Mining (a
 
 The assignment on Machine Learning is about developing (= coding) an AI system in a group of 2 people (at maximum)
 
-1. Define the problem (of your interest!), the core of your project
-1. Find data (datasets)
+1. Find a problem of your interest
+1. Get the data (a public dataset with real data)
 1. Define your strategy (algorithms)
-1. Compare your strategy with existing ones (check on Google Scholar)
 1. Describe the insights you extracted from your analysis
 
 **You are responsible for your code** ("I do not know how to program" is not a valid excuse!)
@@ -92,9 +91,9 @@ The assignment on Machine Learning is about developing (= coding) an AI system i
 Once defined your project:
 
 1. Send me an email to discuss the details of your project
-    - ~300 words, including the datasets description (and a link to the source) and the main challenges
+    - ~300 words, including the datasets description, a link to the public dataset, and the main challenges
     - The dataset must require some pre-processing
-1. After my approval, register the group (2 people at maximum) and project here: [https://forms.gle/aZ4L7azCF43qqpzk6](https://forms.gle/aZ4L7azCF43qqpzk6)
+1. After my approval, register the group (2 people at maximum) and the project here: [https://forms.gle/aZ4L7azCF43qqpzk6](https://forms.gle/aZ4L7azCF43qqpzk6)
 1. Now you can start your project on Google Colab
 
 # Final Assignment (Machine Learning)
@@ -172,7 +171,7 @@ You can ask questions before/after each lecture
 
 - ... or send an email to book an appointment
 
-If you need help for coding and labs, *you can ask me or the designed tutor*!
+If you need help for coding and labs, *you can ask me and the designed tutor*!
 
 - Remember, "I do not know how to code" is not a valid excuse!
 

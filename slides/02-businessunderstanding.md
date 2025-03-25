@@ -4,7 +4,7 @@ subtitle: Business understanding
 
 #
 
-<img src="./img/crispdm_bu.svg" class="center">
+<img src="./img/crispdm_bu.svg" class="center-img">
 
 # Business Understanding
 

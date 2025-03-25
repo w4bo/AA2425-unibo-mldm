@@ -4,7 +4,7 @@ subtitle: "Modeling: Neural Networks"
 
 #
 
-<img src="./img/crispdm_me.svg" class="center">
+<img src="./img/crispdm_me.svg" class="center-img">
 
 # Recalling the Machine Learning pipeline
 
