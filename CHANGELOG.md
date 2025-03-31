@@ -1,3 +1,25 @@
+## [1.0.49](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.48...1.0.49) (2025-03-31)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.121 ([#71](https://github.com/w4bo/AA2425-unibo-mldm/issues/71)) ([c9d7993](https://github.com/w4bo/AA2425-unibo-mldm/commit/c9d79936249d2143dd8d581578d29b476fdffffa))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.122 ([#72](https://github.com/w4bo/AA2425-unibo-mldm/issues/72)) ([15dbf29](https://github.com/w4bo/AA2425-unibo-mldm/commit/15dbf29eecaebc95fef38b4f5081b5d98a666606))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.123 ([#74](https://github.com/w4bo/AA2425-unibo-mldm/issues/74)) ([6c27544](https://github.com/w4bo/AA2425-unibo-mldm/commit/6c2754493c1b19c4c4633986375702d5f096913d))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.124 ([#75](https://github.com/w4bo/AA2425-unibo-mldm/issues/75)) ([dbffd80](https://github.com/w4bo/AA2425-unibo-mldm/commit/dbffd807cad30007621f268c558e4259f3f125e0))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.125 ([#76](https://github.com/w4bo/AA2425-unibo-mldm/issues/76)) ([a3e23ef](https://github.com/w4bo/AA2425-unibo-mldm/commit/a3e23ef78683c8e55f19d013788bf7b3faf6ee32))
+* **deps:** update node.js to 22.14 ([#73](https://github.com/w4bo/AA2425-unibo-mldm/issues/73)) ([87c491c](https://github.com/w4bo/AA2425-unibo-mldm/commit/87c491c74e07829ad017c6e4c956f077cd0ed990))
+
+### Bug Fixes
+
+* Update 00-introduction-bbs.md ([87f8b73](https://github.com/w4bo/AA2425-unibo-mldm/commit/87f8b737fda307937913ec2aa60bbd4593e26c1c))
+* update automl ([720371b](https://github.com/w4bo/AA2425-unibo-mldm/commit/720371b9006c98fd755e43141bb258311e262ff1))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v4.2.0 ([#70](https://github.com/w4bo/AA2425-unibo-mldm/issues/70)) ([9d4552c](https://github.com/w4bo/AA2425-unibo-mldm/commit/9d4552c582faba7d6525b9a1fa46a4e3c2fdbd01))
+* **deps:** update actions/setup-node action to v4.3.0 ([#78](https://github.com/w4bo/AA2425-unibo-mldm/issues/78)) ([e286939](https://github.com/w4bo/AA2425-unibo-mldm/commit/e286939899ef87e1da4d9c66e498ba8442ee1373))
+* **deps:** update jamesives/github-pages-deploy-action action to v4.7.3 ([#77](https://github.com/w4bo/AA2425-unibo-mldm/issues/77)) ([3f5e7cd](https://github.com/w4bo/AA2425-unibo-mldm/commit/3f5e7cdc0e1362f52f452a67531084018870f53e))
+
 ## [1.0.48](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.47...1.0.48) (2025-01-20)
 
 ### Bug Fixes
