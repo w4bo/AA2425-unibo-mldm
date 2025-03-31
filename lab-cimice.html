@@ -653,6 +653,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 </section>
 
+<section id="automl-in-brief" class="title-slide slide level1 center">
+<h1>AutoML in brief</h1>
+
+<img data-src="https://developers.google.com/static/machine-learning/crash-course/automl/images/ml-workflow.png" class="r-stretch quarto-figure-center"><p class="caption">Repetitive tasks in ML</p><p>Check the crash course from <a href="https://developers.google.com/machine-learning/crash-course/automl">Google</a></p>
+</section>
+
+<section id="automl-in-brief-1" class="title-slide slide level1 center">
+<h1>AutoML in brief</h1>
+
+<img data-src="./img/cimice/bo.png" class="r-stretch quarto-figure-center"><p class="caption">Example of Bayesian Optimization</p></section>
+
 <section id="dblpjournalscacmbierhhsw22" class="title-slide slide level1 center">
 <h1><span class="citation" data-cites="DBLP:journals/cacm/BieRHHSW22">(<a href="#/references" role="doc-biblioref" onclick="">Bie et al. 2022</a>)</span></h1>
 <p>“<strong>AutoML</strong> falls squarely into the first form of automation, mechanization […] as it can be seen as yet another level of abstraction over a series of automation stages.</p>
@@ -677,7 +688,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="genai-and-automl" class="title-slide slide level1 center">
 <h1>GenAI and AutoML</h1>
 <p>This <strong>code was written by ChatGPT 4o</strong> and uses <strong>AutoML to train several models</strong> given a specific budget</p>
-<div id="cell-13" class="cell" data-execution_count="2">
+<div id="cell-15" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> root_mean_squared_error</span>
@@ -777,7 +788,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="section-5" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-15" class="cell" data-execution_count="3">
+<div id="cell-17" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="bu">print</span>(<span class="st">"RMSE using AutoML:"</span>, <span class="bu">round</span>(rmse, <span class="dv">2</span>))</span></code></pre></div>
@@ -794,7 +805,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><span class="math inline">\(RMSE = \sqrt{\frac{1}{n}\sum(y_{true}−y_{pred})^2}\)</span></p>
 <p>The squared differences have squared units, but the square root brings it back to the same unit as the target variable</p>
 <p><span class="math inline">\(NRMSE = \frac{RMSE}{avg(y_{true})}\)</span></p>
-<div id="cell-20" class="cell" data-execution_count="4">
+<div id="cell-22" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -816,7 +827,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="lets-try-to-better-understand-the-data" class="title-slide slide level1 center">
 <h1>Let’s try to better understand the data</h1>
-<div id="cell-22" class="cell" data-execution_count="5">
+<div id="cell-24" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>df.info()</span></code></pre></div>
@@ -851,7 +862,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="lets-try-simpler-models" class="title-slide slide level1 center">
 <h1>Let’s try simpler models</h1>
-<div id="cell-24" class="cell" data-execution_count="6">
+<div id="cell-26" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
@@ -881,7 +892,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="lets-take-a-look-at-the-features.-do-they-ring-a-bell" class="title-slide slide level1 center">
 <h1>Let’s take a look at the features. Do they ring a bell?</h1>
-<div id="cell-27" class="cell" data-execution_count="7">
+<div id="cell-29" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>df.columns</span></code></pre></div>
@@ -898,7 +909,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="section-6" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-29" class="cell" data-execution_count="8">
+<div id="cell-31" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>log_reg.coef_  <span class="co"># weights (coefficients) of the Linear Regression model</span></span></code></pre></div>
@@ -912,7 +923,7 @@ memory usage: 1.3+ MB</code></pre>
 </div>
 <p>LinearRegression correctly captures this pattern, AutoML does not</p>
 <p><code>ADULTS</code> = - <code>SMALL_INSTARS</code> - <code>LARGE_INSTARS</code> + <code>TOTAL_CAPTURES</code></p>
-<div id="cell-31" class="cell" data-execution_count="9">
+<div id="cell-33" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>equation <span class="op">=</span> <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span><span class="st">''</span> <span class="cf">if</span> weight <span class="op">&lt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">'+'</span><span class="sc">}{</span><span class="bu">round</span>(weight, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">*</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> weight, col <span class="kw">in</span> <span class="bu">zip</span>(log_reg.coef_, X_train.columns) <span class="cf">if</span> <span class="bu">abs</span>(weight) <span class="op">&gt;</span> <span class="fl">0.01</span>)</span>
@@ -927,7 +938,7 @@ memory usage: 1.3+ MB</code></pre>
 <section id="lets-drop-the-total_captures" class="title-slide slide level1 center">
 <h1>Let’s drop the <code>TOTAL_CAPTURES</code></h1>
 <p>This was a trick, usually we do not have this type of derived features in the dataset</p>
-<div id="cell-33" class="cell" data-execution_count="10">
+<div id="cell-35" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ADULTS'</span>, <span class="st">'TOTAL_CAPTURES'</span>])</span>
@@ -1024,7 +1035,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="section-7" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-35" class="cell" data-execution_count="11">
+<div id="cell-37" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="bu">print</span>(<span class="st">"RMSE using AutoML:"</span>, <span class="bu">round</span>(rmse, <span class="dv">2</span>))</span></code></pre></div>
@@ -1033,7 +1044,7 @@ memory usage: 1.3+ MB</code></pre>
 <pre><code>RMSE using AutoML: 12.03</code></pre>
 </div>
 </div>
-<div id="cell-36" class="cell" data-execution_count="12">
+<div id="cell-38" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>automl.best_estimator</span></code></pre></div>
@@ -1042,7 +1053,7 @@ memory usage: 1.3+ MB</code></pre>
 <pre><code>'lgbm'</code></pre>
 </div>
 </div>
-<div id="cell-37" class="cell" data-execution_count="13">
+<div id="cell-39" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>automl.best_config</span></code></pre></div>
@@ -1067,7 +1078,7 @@ memory usage: 1.3+ MB</code></pre>
 <li>Time. How?</li>
 <li>Cumulative degree days: <span class="math inline">\(\sum_{d \in [May-Sep]} max(0, T^{avg}_d-12.2)\)</span> <span class="citation" data-cites="DBLP:journals/ecoi/ForresiGGMPV24">(<a href="#/references" role="doc-biblioref" onclick="">Forresi et al. 2024</a>)</span></li>
 </ol>
-<div id="cell-40" class="cell" data-execution_count="14">
+<div id="cell-42" class="cell" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./datasets/cimice/captures-raw.csv"</span>, sep<span class="op">=</span><span class="st">','</span>)  <span class="co"># Load the dataset from a CSV file</span></span>
@@ -1262,7 +1273,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="average-temperature-vs-cumulative-degree-days" class="title-slide slide level1 center">
 <h1>Average temperature vs cumulative degree days</h1>
-<div id="cell-42" class="cell" data-execution_count="15">
+<div id="cell-44" class="cell" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1286,7 +1297,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="data-understanding" class="title-slide slide level1 center">
 <h1>Data understanding</h1>
-<div id="cell-44" class="cell" data-vscode="{&quot;languageId&quot;:&quot;ruby&quot;}" data-execution_count="16">
+<div id="cell-46" class="cell" data-vscode="{&quot;languageId&quot;:&quot;ruby&quot;}" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>numerical_columns <span class="op">=</span> df.select_dtypes(include<span class="op">=</span>[<span class="st">'float64'</span>, <span class="st">'int64'</span>]).columns  <span class="co"># Select numerical columns</span></span>
@@ -1300,7 +1311,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="data-understanding-1" class="title-slide slide level1 center">
 <h1>Data understanding</h1>
-<div id="cell-46" class="cell" data-execution_count="17">
+<div id="cell-48" class="cell" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -1319,7 +1330,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="plotting-the-correlations" class="title-slide slide level1 center">
 <h1>Plotting the correlations</h1>
-<div id="cell-48" class="cell" data-execution_count="18">
+<div id="cell-50" class="cell" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
@@ -1334,7 +1345,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="lets-apply-simple-models" class="title-slide slide level1 center">
 <h1>Let’s apply simple models</h1>
-<div id="cell-50" class="cell" data-execution_count="19">
+<div id="cell-52" class="cell" data-execution_count="19">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
@@ -1348,7 +1359,7 @@ memory usage: 1.3+ MB</code></pre>
 <pre><code>RMSE using Logistic Regression: 9.88</code></pre>
 </div>
 </div>
-<div id="cell-51" class="cell" data-execution_count="20">
+<div id="cell-53" class="cell" data-execution_count="20">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
@@ -1366,7 +1377,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="lets-do-hyper-parameter-tuning-on-rf" class="title-slide slide level1 center">
 <h1>Let’s do hyper-parameter tuning on RF</h1>
-<div id="cell-53" class="cell" data-execution_count="21">
+<div id="cell-55" class="cell" data-execution_count="21">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> RandomizedSearchCV</span>
@@ -1492,7 +1503,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="section-8" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-55" class="cell" data-execution_count="22">
+<div id="cell-57" class="cell" data-execution_count="22">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href=""></a>random_search.best_params_</span></code></pre></div>
@@ -1505,7 +1516,7 @@ memory usage: 1.3+ MB</code></pre>
  'max_depth': 30}</code></pre>
 </div>
 </div>
-<div id="cell-56" class="cell" data-execution_count="23">
+<div id="cell-58" class="cell" data-execution_count="23">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href=""></a>random_search.best_estimator_</span></code></pre></div>
@@ -1931,7 +1942,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                       random_state=42)</pre></div> </div></div></div></div>
 </div>
 </div>
-<div id="cell-57" class="cell" data-execution_count="24">
+<div id="cell-59" class="cell" data-execution_count="24">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb41-1"><a href=""></a><span class="bu">print</span>(<span class="st">"Optimized RMSE using Random Forest Regressor:"</span>, <span class="bu">round</span>(rmse_rf, <span class="dv">2</span>))</span></code></pre></div>
@@ -1944,7 +1955,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <section id="lets-try-more-complex-models" class="title-slide slide level1 center">
 <h1>Let’s try more complex models</h1>
-<div id="cell-59" class="cell" data-execution_count="25">
+<div id="cell-61" class="cell" data-execution_count="25">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href=""></a><span class="im">import</span> xgboost <span class="im">as</span> xgb</span>
@@ -2127,7 +2138,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <section id="section-9" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-61" class="cell" data-execution_count="26">
+<div id="cell-63" class="cell" data-execution_count="26">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href=""></a>random_search.best_params_</span></code></pre></div>
@@ -2142,7 +2153,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
  'colsample_bytree': 0.6}</code></pre>
 </div>
 </div>
-<div id="cell-62" class="cell" data-execution_count="27">
+<div id="cell-64" class="cell" data-execution_count="27">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb47-1"><a href=""></a>random_search.best_estimator_</span></code></pre></div>
@@ -2586,7 +2597,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
              n_jobs=None, num_parallel_tree=None, ...)</pre></div> </div></div></div></div>
 </div>
 </div>
-<div id="cell-63" class="cell" data-execution_count="28">
+<div id="cell-65" class="cell" data-execution_count="28">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb48-1"><a href=""></a><span class="bu">print</span>(<span class="st">"Optimized RMSE using XGBoost:"</span>, <span class="bu">round</span>(rmse_xgb, <span class="dv">2</span>))</span></code></pre></div>
@@ -2599,7 +2610,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <section id="plotting-feature-importance" class="title-slide slide level1 center">
 <h1>Plotting feature importance</h1>
-<div id="cell-65" class="cell" data-execution_count="29">
+<div id="cell-67" class="cell" data-execution_count="29">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb50-1"><a href=""></a>feature_importance <span class="op">=</span> best_xgb.feature_importances_  <span class="co"># Get feature importance</span></span>
@@ -2618,7 +2629,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <section id="lets-retry-automl" class="title-slide slide level1 center">
 <h1>Let’s retry AutoML</h1>
-<div id="cell-67" class="cell" data-execution_count="30">
+<div id="cell-69" class="cell" data-execution_count="30">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb51-1"><a href=""></a>automl <span class="op">=</span> AutoML()</span>
@@ -2713,7 +2724,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <section id="section-10" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-69" class="cell" data-execution_count="31">
+<div id="cell-71" class="cell" data-execution_count="31">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb53-1"><a href=""></a>automl.best_estimator</span></code></pre></div>
@@ -2722,7 +2733,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <pre><code>'lgbm'</code></pre>
 </div>
 </div>
-<div id="cell-70" class="cell" data-execution_count="32">
+<div id="cell-72" class="cell" data-execution_count="32">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb55-1"><a href=""></a>automl.best_config</span></code></pre></div>
@@ -2738,7 +2749,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
  'reg_lambda': np.float64(0.009280655005879927)}</code></pre>
 </div>
 </div>
-<div id="cell-71" class="cell" data-execution_count="33">
+<div id="cell-73" class="cell" data-execution_count="33">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb57-1"><a href=""></a><span class="bu">print</span>(<span class="st">"RMSE using AutoML:"</span>, <span class="bu">round</span>(rmse, <span class="dv">2</span>))</span></code></pre></div>
