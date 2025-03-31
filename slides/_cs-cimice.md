@@ -25,13 +25,13 @@ The impacts of climate change are so rapid that what happened last year is no lo
 
 ::: {.column width="50%"}
 
-The brown marmorated stink bug (Halyomorpha halys) is an insect pest species causing economic damages to several agricultural commodities
+The brown marmorated stink bug (Halyomorpha halys) is an insect pest species causing economic damage to several agricultural commodities
 
 - We want to build a data-driven approach to support the application of Integrated Pest Management strategies
 - We want to monitor the spread of H. Halys
 - And learn the most important environmental factors
 
-Three years long project
+Three years-long project
 
 :::
 ::: {.column width="50%"}
@@ -45,7 +45,7 @@ Three years long project
 
 # Cimice.Net
 
-Goal: help growers in protecting crops
+Goal: help farmers protect crops
 
 - A network of monitoring traps has been deployed in Emilia-Romagna
 - Monitoring 145, 168, and 101 farms in 2020-2022 (also in 2023 and 2024)
@@ -68,7 +68,7 @@ Goal: help growers in protecting crops
 The acquisition of data concerning the installation and monitoring of traps have been aided by *CASE* (*Collaborative Agro SEnsing*)
 
 - Dynamic questionnaire application for on-field data crowdsourcing in the agricultural domain
-- Facilitate and standardize the communications between on-field operators with first-hand visuals of a given field/orchard and the technicians needing a 360-degrees view of all fields
+- Facilitate and standardize the communications between on-field operators with first-hand visuals of a given field/orchard and the technicians needing a 360-degree view of all fields
 
 :::: {.columns}
 ::: {.column width="50%"}
