@@ -364,14 +364,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="loading-the-data" class="title-slide slide level1 center">
 <h1>Loading the data</h1>
-<div id="cell-3" class="cell" data-execution_count="53">
+<div id="cell-3" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./datasets/cimice/captures-raw.csv"</span>, sep<span class="op">=</span><span class="st">','</span>)</span>
 <span id="cb1-3"><a href=""></a>df</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="53">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -677,7 +677,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="genai-and-automl" class="title-slide slide level1 center">
 <h1>GenAI and AutoML</h1>
 <p>This <strong>code was written by ChatGPT 4o</strong> and uses <strong>AutoML to train several models</strong> given a specific budget</p>
-<div id="cell-13" class="cell" data-execution_count="54">
+<div id="cell-13" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> root_mean_squared_error</span>
@@ -700,90 +700,90 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb2-18"><a href=""></a>rmse <span class="op">=</span> root_mean_squared_error(y_test, y_pred)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[flaml.automl.logger: 03-31 15:05:48] {1728} INFO - task = regression
-[flaml.automl.logger: 03-31 15:05:48] {1739} INFO - Evaluation method: holdout
-[flaml.automl.logger: 03-31 15:05:48] {1838} INFO - Minimizing error metric: rmse
-[flaml.automl.logger: 03-31 15:05:48] {1955} INFO - List of ML learners in AutoML Run: ['lgbm', 'rf', 'xgboost', 'extra_tree', 'xgb_limitdepth', 'sgd']
-[flaml.automl.logger: 03-31 15:05:48] {2258} INFO - iteration 0, current learner lgbm
-[flaml.automl.logger: 03-31 15:05:48] {2393} INFO - Estimated sufficient time budget=1964s. Estimated necessary time budget=14s.
-[flaml.automl.logger: 03-31 15:05:48] {2442} INFO -  at 0.3s,   estimator lgbm's best error=12.0178,    best estimator lgbm's best error=12.0178
-[flaml.automl.logger: 03-31 15:05:48] {2258} INFO - iteration 1, current learner lgbm
-[flaml.automl.logger: 03-31 15:05:48] {2442} INFO -  at 0.3s,   estimator lgbm's best error=12.0178,    best estimator lgbm's best error=12.0178
-[flaml.automl.logger: 03-31 15:05:48] {2258} INFO - iteration 2, current learner lgbm
-[flaml.automl.logger: 03-31 15:05:48] {2442} INFO -  at 0.3s,   estimator lgbm's best error=8.1328, best estimator lgbm's best error=8.1328
-[flaml.automl.logger: 03-31 15:05:48] {2258} INFO - iteration 3, current learner lgbm
-[flaml.automl.logger: 03-31 15:05:48] {2442} INFO -  at 0.4s,   estimator lgbm's best error=4.8052, best estimator lgbm's best error=4.8052
-[flaml.automl.logger: 03-31 15:05:48] {2258} INFO - iteration 4, current learner lgbm
-[flaml.automl.logger: 03-31 15:05:48] {2442} INFO -  at 0.5s,   estimator lgbm's best error=4.8052, best estimator lgbm's best error=4.8052
-[flaml.automl.logger: 03-31 15:05:48] {2258} INFO - iteration 5, current learner lgbm
-[flaml.automl.logger: 03-31 15:05:48] {2442} INFO -  at 0.6s,   estimator lgbm's best error=3.8738, best estimator lgbm's best error=3.8738
-[flaml.automl.logger: 03-31 15:05:48] {2258} INFO - iteration 6, current learner lgbm
-[flaml.automl.logger: 03-31 15:05:49] {2442} INFO -  at 0.6s,   estimator lgbm's best error=3.8738, best estimator lgbm's best error=3.8738
-[flaml.automl.logger: 03-31 15:05:49] {2258} INFO - iteration 7, current learner lgbm
-[flaml.automl.logger: 03-31 15:05:49] {2442} INFO -  at 0.9s,   estimator lgbm's best error=3.8738, best estimator lgbm's best error=3.8738
-[flaml.automl.logger: 03-31 15:05:49] {2258} INFO - iteration 8, current learner sgd
-[flaml.automl.logger: 03-31 15:05:50] {2442} INFO -  at 1.7s,   estimator sgd's best error=14.5309, best estimator lgbm's best error=3.8738
-[flaml.automl.logger: 03-31 15:05:50] {2258} INFO - iteration 9, current learner lgbm
-[flaml.automl.logger: 03-31 15:05:50] {2442} INFO -  at 2.2s,   estimator lgbm's best error=3.5504, best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:50] {2258} INFO - iteration 10, current learner xgboost
-[flaml.automl.logger: 03-31 15:05:50] {2442} INFO -  at 2.4s,   estimator xgboost's best error=12.1446, best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:50] {2258} INFO - iteration 11, current learner xgboost
-[flaml.automl.logger: 03-31 15:05:50] {2442} INFO -  at 2.5s,   estimator xgboost's best error=12.1446, best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:50] {2258} INFO - iteration 12, current learner extra_tree
-[flaml.automl.logger: 03-31 15:05:51] {2442} INFO -  at 2.6s,   estimator extra_tree's best error=10.9591,  best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:51] {2258} INFO - iteration 13, current learner extra_tree
-[flaml.automl.logger: 03-31 15:05:51] {2442} INFO -  at 2.7s,   estimator extra_tree's best error=8.3080,   best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:51] {2258} INFO - iteration 14, current learner xgboost
-[flaml.automl.logger: 03-31 15:05:51] {2442} INFO -  at 2.9s,   estimator xgboost's best error=8.1855,  best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:51] {2258} INFO - iteration 15, current learner extra_tree
-[flaml.automl.logger: 03-31 15:05:51] {2442} INFO -  at 3.0s,   estimator extra_tree's best error=8.3080,   best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:51] {2258} INFO - iteration 16, current learner rf
-[flaml.automl.logger: 03-31 15:05:51] {2442} INFO -  at 3.1s,   estimator rf's best error=7.9172,   best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:51] {2258} INFO - iteration 17, current learner rf
-[flaml.automl.logger: 03-31 15:05:51] {2442} INFO -  at 3.3s,   estimator rf's best error=5.3341,   best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:51] {2258} INFO - iteration 18, current learner extra_tree
-[flaml.automl.logger: 03-31 15:05:51] {2442} INFO -  at 3.4s,   estimator extra_tree's best error=5.3649,   best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:51] {2258} INFO - iteration 19, current learner lgbm
-[flaml.automl.logger: 03-31 15:05:52] {2442} INFO -  at 3.7s,   estimator lgbm's best error=3.5504, best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:52] {2258} INFO - iteration 20, current learner extra_tree
-[flaml.automl.logger: 03-31 15:05:52] {2442} INFO -  at 3.9s,   estimator extra_tree's best error=3.5723,   best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:52] {2258} INFO - iteration 21, current learner xgboost
-[flaml.automl.logger: 03-31 15:05:52] {2442} INFO -  at 4.0s,   estimator xgboost's best error=5.7739,  best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:52] {2258} INFO - iteration 22, current learner xgboost
-[flaml.automl.logger: 03-31 15:05:52] {2442} INFO -  at 4.1s,   estimator xgboost's best error=5.7739,  best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:52] {2258} INFO - iteration 23, current learner rf
-[flaml.automl.logger: 03-31 15:05:52] {2442} INFO -  at 4.2s,   estimator rf's best error=5.3341,   best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:52] {2258} INFO - iteration 24, current learner rf
-[flaml.automl.logger: 03-31 15:05:52] {2442} INFO -  at 4.4s,   estimator rf's best error=3.5688,   best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:52] {2258} INFO - iteration 25, current learner extra_tree
-[flaml.automl.logger: 03-31 15:05:52] {2442} INFO -  at 4.6s,   estimator extra_tree's best error=3.5723,   best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:52] {2258} INFO - iteration 26, current learner sgd
-[flaml.automl.logger: 03-31 15:05:54] {2442} INFO -  at 5.7s,   estimator sgd's best error=13.3043, best estimator lgbm's best error=3.5504
-[flaml.automl.logger: 03-31 15:05:54] {2258} INFO - iteration 27, current learner rf
-[flaml.automl.logger: 03-31 15:05:54] {2442} INFO -  at 6.0s,   estimator rf's best error=2.8167,   best estimator rf's best error=2.8167
-[flaml.automl.logger: 03-31 15:05:54] {2258} INFO - iteration 28, current learner extra_tree
-[flaml.automl.logger: 03-31 15:05:54] {2442} INFO -  at 6.1s,   estimator extra_tree's best error=3.2234,   best estimator rf's best error=2.8167
-[flaml.automl.logger: 03-31 15:05:54] {2258} INFO - iteration 29, current learner extra_tree
-[flaml.automl.logger: 03-31 15:05:54] {2442} INFO -  at 6.2s,   estimator extra_tree's best error=3.2234,   best estimator rf's best error=2.8167
-[flaml.automl.logger: 03-31 15:05:54] {2685} INFO - retrain rf for 0.1s
-[flaml.automl.logger: 03-31 15:05:54] {2688} INFO - retrained model: RandomForestRegressor(max_features=np.float64(0.7754448469593765),
-                      max_leaf_nodes=101, n_estimators=6, n_jobs=-1,
+<pre><code>[flaml.automl.logger: 03-31 16:46:44] {1728} INFO - task = regression
+[flaml.automl.logger: 03-31 16:46:44] {1739} INFO - Evaluation method: holdout
+[flaml.automl.logger: 03-31 16:46:44] {1838} INFO - Minimizing error metric: rmse
+[flaml.automl.logger: 03-31 16:46:44] {1955} INFO - List of ML learners in AutoML Run: ['lgbm', 'rf', 'xgboost', 'extra_tree', 'xgb_limitdepth', 'sgd']
+[flaml.automl.logger: 03-31 16:46:44] {2258} INFO - iteration 0, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:44] {2393} INFO - Estimated sufficient time budget=483s. Estimated necessary time budget=3s.
+[flaml.automl.logger: 03-31 16:46:44] {2442} INFO -  at 0.1s,   estimator lgbm's best error=12.0178,    best estimator lgbm's best error=12.0178
+[flaml.automl.logger: 03-31 16:46:44] {2258} INFO - iteration 1, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:44] {2442} INFO -  at 0.2s,   estimator lgbm's best error=12.0178,    best estimator lgbm's best error=12.0178
+[flaml.automl.logger: 03-31 16:46:44] {2258} INFO - iteration 2, current learner sgd
+[flaml.automl.logger: 03-31 16:46:45] {2442} INFO -  at 0.9s,   estimator sgd's best error=14.5268, best estimator lgbm's best error=12.0178
+[flaml.automl.logger: 03-31 16:46:45] {2258} INFO - iteration 3, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:45] {2442} INFO -  at 1.4s,   estimator lgbm's best error=8.1328, best estimator lgbm's best error=8.1328
+[flaml.automl.logger: 03-31 16:46:45] {2258} INFO - iteration 4, current learner xgboost
+[flaml.automl.logger: 03-31 16:46:46] {2442} INFO -  at 1.8s,   estimator xgboost's best error=12.1446, best estimator lgbm's best error=8.1328
+[flaml.automl.logger: 03-31 16:46:46] {2258} INFO - iteration 5, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:46] {2442} INFO -  at 1.9s,   estimator extra_tree's best error=10.9591,  best estimator lgbm's best error=8.1328
+[flaml.automl.logger: 03-31 16:46:46] {2258} INFO - iteration 6, current learner rf
+[flaml.automl.logger: 03-31 16:46:46] {2442} INFO -  at 2.0s,   estimator rf's best error=7.9172,   best estimator rf's best error=7.9172
+[flaml.automl.logger: 03-31 16:46:46] {2258} INFO - iteration 7, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:47] {2442} INFO -  at 2.6s,   estimator lgbm's best error=4.8052, best estimator lgbm's best error=4.8052
+[flaml.automl.logger: 03-31 16:46:47] {2258} INFO - iteration 8, current learner rf
+[flaml.automl.logger: 03-31 16:46:47] {2442} INFO -  at 2.8s,   estimator rf's best error=5.3341,   best estimator lgbm's best error=4.8052
+[flaml.automl.logger: 03-31 16:46:47] {2258} INFO - iteration 9, current learner rf
+[flaml.automl.logger: 03-31 16:46:47] {2442} INFO -  at 2.9s,   estimator rf's best error=5.3341,   best estimator lgbm's best error=4.8052
+[flaml.automl.logger: 03-31 16:46:47] {2258} INFO - iteration 10, current learner rf
+[flaml.automl.logger: 03-31 16:46:47] {2442} INFO -  at 3.2s,   estimator rf's best error=3.5688,   best estimator rf's best error=3.5688
+[flaml.automl.logger: 03-31 16:46:47] {2258} INFO - iteration 11, current learner rf
+[flaml.automl.logger: 03-31 16:46:48] {2442} INFO -  at 3.5s,   estimator rf's best error=2.8167,   best estimator rf's best error=2.8167
+[flaml.automl.logger: 03-31 16:46:48] {2258} INFO - iteration 12, current learner rf
+[flaml.automl.logger: 03-31 16:46:48] {2442} INFO -  at 3.7s,   estimator rf's best error=2.8167,   best estimator rf's best error=2.8167
+[flaml.automl.logger: 03-31 16:46:48] {2258} INFO - iteration 13, current learner xgboost
+[flaml.automl.logger: 03-31 16:46:48] {2442} INFO -  at 4.2s,   estimator xgboost's best error=12.1446, best estimator rf's best error=2.8167
+[flaml.automl.logger: 03-31 16:46:48] {2258} INFO - iteration 14, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:48] {2442} INFO -  at 4.3s,   estimator extra_tree's best error=8.3080,   best estimator rf's best error=2.8167
+[flaml.automl.logger: 03-31 16:46:48] {2258} INFO - iteration 15, current learner rf
+[flaml.automl.logger: 03-31 16:46:49] {2442} INFO -  at 4.6s,   estimator rf's best error=2.8167,   best estimator rf's best error=2.8167
+[flaml.automl.logger: 03-31 16:46:49] {2258} INFO - iteration 16, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:49] {2442} INFO -  at 4.7s,   estimator extra_tree's best error=8.3080,   best estimator rf's best error=2.8167
+[flaml.automl.logger: 03-31 16:46:49] {2258} INFO - iteration 17, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:49] {2442} INFO -  at 4.9s,   estimator lgbm's best error=4.8052, best estimator rf's best error=2.8167
+[flaml.automl.logger: 03-31 16:46:49] {2258} INFO - iteration 18, current learner sgd
+[flaml.automl.logger: 03-31 16:46:50] {2442} INFO -  at 5.9s,   estimator sgd's best error=13.2966, best estimator rf's best error=2.8167
+[flaml.automl.logger: 03-31 16:46:50] {2258} INFO - iteration 19, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:50] {2442} INFO -  at 6.4s,   estimator lgbm's best error=3.8738, best estimator rf's best error=2.8167
+[flaml.automl.logger: 03-31 16:46:50] {2258} INFO - iteration 20, current learner xgboost
+[flaml.automl.logger: 03-31 16:46:51] {2442} INFO -  at 6.8s,   estimator xgboost's best error=8.1855,  best estimator rf's best error=2.8167
+[flaml.automl.logger: 03-31 16:46:51] {2258} INFO - iteration 21, current learner rf
+[flaml.automl.logger: 03-31 16:46:51] {2442} INFO -  at 7.0s,   estimator rf's best error=2.8167,   best estimator rf's best error=2.8167
+[flaml.automl.logger: 03-31 16:46:51] {2258} INFO - iteration 22, current learner xgboost
+[flaml.automl.logger: 03-31 16:46:51] {2442} INFO -  at 7.3s,   estimator xgboost's best error=5.7739,  best estimator rf's best error=2.8167
+[flaml.automl.logger: 03-31 16:46:51] {2258} INFO - iteration 23, current learner rf
+[flaml.automl.logger: 03-31 16:46:52] {2442} INFO -  at 7.5s,   estimator rf's best error=2.6926,   best estimator rf's best error=2.6926
+[flaml.automl.logger: 03-31 16:46:52] {2258} INFO - iteration 24, current learner rf
+[flaml.automl.logger: 03-31 16:46:52] {2442} INFO -  at 7.7s,   estimator rf's best error=2.6926,   best estimator rf's best error=2.6926
+[flaml.automl.logger: 03-31 16:46:52] {2258} INFO - iteration 25, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:52] {2442} INFO -  at 7.8s,   estimator extra_tree's best error=5.3649,   best estimator rf's best error=2.6926
+[flaml.automl.logger: 03-31 16:46:52] {2258} INFO - iteration 26, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:52] {2442} INFO -  at 7.9s,   estimator extra_tree's best error=3.5723,   best estimator rf's best error=2.6926
+[flaml.automl.logger: 03-31 16:46:52] {2258} INFO - iteration 27, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:52] {2442} INFO -  at 8.1s,   estimator extra_tree's best error=3.5723,   best estimator rf's best error=2.6926
+[flaml.automl.logger: 03-31 16:46:52] {2258} INFO - iteration 28, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:52] {2442} INFO -  at 8.2s,   estimator extra_tree's best error=3.2234,   best estimator rf's best error=2.6926
+[flaml.automl.logger: 03-31 16:46:52] {2258} INFO - iteration 29, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:52] {2442} INFO -  at 8.3s,   estimator extra_tree's best error=3.2234,   best estimator rf's best error=2.6926
+[flaml.automl.logger: 03-31 16:46:52] {2685} INFO - retrain rf for 0.1s
+[flaml.automl.logger: 03-31 16:46:52] {2688} INFO - retrained model: RandomForestRegressor(max_features=np.float64(0.6701678765297618),
+                      max_leaf_nodes=157, n_estimators=15, n_jobs=-1,
                       random_state=12032022)
-[flaml.automl.logger: 03-31 15:05:54] {1985} INFO - fit succeeded
-[flaml.automl.logger: 03-31 15:05:54] {1986} INFO - Time taken to find the best model: 5.95280385017395</code></pre>
+[flaml.automl.logger: 03-31 16:46:52] {1985} INFO - fit succeeded
+[flaml.automl.logger: 03-31 16:46:52] {1986} INFO - Time taken to find the best model: 7.521904706954956</code></pre>
 </div>
 </div>
 </section>
 
 <section id="section-5" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-15" class="cell" data-execution_count="55">
+<div id="cell-15" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="bu">print</span>(<span class="st">"RMSE using AutoML:"</span>, <span class="bu">round</span>(rmse, <span class="dv">2</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>RMSE using AutoML: 2.59</code></pre>
+<pre><code>RMSE using AutoML: 2.81</code></pre>
 </div>
 </div>
 <p>Is this error high/low?</p>
@@ -794,7 +794,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><span class="math inline">\(RMSE = \sqrt{\frac{1}{n}\sum(y_{true}−y_{pred})^2}\)</span></p>
 <p>The squared differences have squared units, but the square root brings it back to the same unit as the target variable</p>
 <p><span class="math inline">\(NRMSE = \frac{RMSE}{avg(y_{true})}\)</span></p>
-<div id="cell-20" class="cell">
+<div id="cell-20" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -808,7 +808,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb6-9"><a href=""></a><span class="bu">print</span>(<span class="ss">f"RMSE </span><span class="sc">{</span>rmse<span class="sc">:.3}</span><span class="ss">, Mean </span><span class="sc">{</span>mean<span class="sc">:.3}</span><span class="ss">, NRMSE </span><span class="sc">{</span>rmse <span class="op">/</span> mean<span class="sc">:.2%}</span><span class="ss">"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>RMSE 2.59, Mean 8.92, NRMSE 29.07%</code></pre>
+<pre><code>RMSE 2.81, Mean 8.92, NRMSE 31.48%</code></pre>
 </div>
 
 </div>
@@ -816,7 +816,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="lets-try-to-better-understand-the-data" class="title-slide slide level1 center">
 <h1>Let’s try to better understand the data</h1>
-<div id="cell-22" class="cell" data-execution_count="68">
+<div id="cell-22" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>df.info()</span></code></pre></div>
@@ -851,7 +851,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="lets-try-simpler-models" class="title-slide slide level1 center">
 <h1>Let’s try simpler models</h1>
-<div id="cell-24" class="cell" data-execution_count="18">
+<div id="cell-24" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
@@ -881,12 +881,12 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="lets-take-a-look-at-the-features.-do-they-ring-a-bell" class="title-slide slide level1 center">
 <h1>Let’s take a look at the features. Do they ring a bell?</h1>
-<div id="cell-27" class="cell" data-execution_count="19">
+<div id="cell-27" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>df.columns</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>Index(['GID', 'TIMESTAMP', 'CROP_ID', 'ADULTS', 'SMALL_INSTARS',
        'LARGE_INSTARS', 'TEMPERATURE_AVG', 'TEMPERATURE_MAX',
        'TEMPERATURE_MIN', 'HUMIDITY_AVG', 'HUMIDITY_MAX', 'HUMIDITY_MIN',
@@ -898,12 +898,12 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="section-6" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-29" class="cell" data-execution_count="20">
+<div id="cell-29" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>log_reg.coef_  <span class="co"># weights (coefficients) of the Linear Regression model</span></span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>array([-1.36674174e-15,  9.57661737e-19,  3.29282180e-16, -1.00000000e+00,
        -1.00000000e+00, -1.03341376e-14,  5.47160740e-15,  5.14910117e-15,
        -4.28713255e-16, -5.72840934e-16,  6.72047207e-16, -9.13815595e-17,
@@ -912,7 +912,7 @@ memory usage: 1.3+ MB</code></pre>
 </div>
 <p>LinearRegression correctly captures this pattern, AutoML does not</p>
 <p><code>ADULTS</code> = - <code>SMALL_INSTARS</code> - <code>LARGE_INSTARS</code> + <code>TOTAL_CAPTURES</code></p>
-<div id="cell-31" class="cell" data-execution_count="21">
+<div id="cell-31" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>equation <span class="op">=</span> <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span><span class="st">''</span> <span class="cf">if</span> weight <span class="op">&lt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">'+'</span><span class="sc">}{</span><span class="bu">round</span>(weight, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">*</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> weight, col <span class="kw">in</span> <span class="bu">zip</span>(log_reg.coef_, X_train.columns) <span class="cf">if</span> <span class="bu">abs</span>(weight) <span class="op">&gt;</span> <span class="fl">0.01</span>)</span>
@@ -927,7 +927,7 @@ memory usage: 1.3+ MB</code></pre>
 <section id="lets-drop-the-total_captures" class="title-slide slide level1 center">
 <h1>Let’s drop the <code>TOTAL_CAPTURES</code></h1>
 <p>This was a trick, usually we do not have this type of derived features in the dataset</p>
-<div id="cell-33" class="cell" data-execution_count="22">
+<div id="cell-33" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ADULTS'</span>, <span class="st">'TOTAL_CAPTURES'</span>])</span>
@@ -945,117 +945,117 @@ memory usage: 1.3+ MB</code></pre>
 <span id="cb18-13"><a href=""></a>rmse <span class="op">=</span> root_mean_squared_error(y_test, y_pred)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[flaml.automl.logger: 03-31 11:49:51] {1728} INFO - task = regression
-[flaml.automl.logger: 03-31 11:49:51] {1739} INFO - Evaluation method: holdout
-[flaml.automl.logger: 03-31 11:49:51] {1838} INFO - Minimizing error metric: rmse
-[flaml.automl.logger: 03-31 11:49:51] {1955} INFO - List of ML learners in AutoML Run: ['lgbm', 'rf', 'xgboost', 'extra_tree', 'xgb_limitdepth', 'sgd']
-[flaml.automl.logger: 03-31 11:49:51] {2258} INFO - iteration 0, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:51] {2393} INFO - Estimated sufficient time budget=249s. Estimated necessary time budget=2s.
-[flaml.automl.logger: 03-31 11:49:51] {2442} INFO -  at 0.1s,   estimator lgbm's best error=14.1248,    best estimator lgbm's best error=14.1248
-[flaml.automl.logger: 03-31 11:49:51] {2258} INFO - iteration 1, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:51] {2442} INFO -  at 0.1s,   estimator lgbm's best error=14.1248,    best estimator lgbm's best error=14.1248
-[flaml.automl.logger: 03-31 11:49:51] {2258} INFO - iteration 2, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:51] {2442} INFO -  at 0.1s,   estimator lgbm's best error=12.7827,    best estimator lgbm's best error=12.7827
-[flaml.automl.logger: 03-31 11:49:51] {2258} INFO - iteration 3, current learner sgd
-[flaml.automl.logger: 03-31 11:49:52] {2442} INFO -  at 0.8s,   estimator sgd's best error=16.9499, best estimator lgbm's best error=12.7827
-[flaml.automl.logger: 03-31 11:49:52] {2258} INFO - iteration 4, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:52] {2442} INFO -  at 0.8s,   estimator lgbm's best error=12.2781,    best estimator lgbm's best error=12.2781
-[flaml.automl.logger: 03-31 11:49:52] {2258} INFO - iteration 5, current learner xgboost
-[flaml.automl.logger: 03-31 11:49:52] {2442} INFO -  at 1.1s,   estimator xgboost's best error=14.8380, best estimator lgbm's best error=12.2781
-[flaml.automl.logger: 03-31 11:49:52] {2258} INFO - iteration 6, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:52] {2442} INFO -  at 1.2s,   estimator lgbm's best error=12.2781,    best estimator lgbm's best error=12.2781
-[flaml.automl.logger: 03-31 11:49:52] {2258} INFO - iteration 7, current learner extra_tree
-[flaml.automl.logger: 03-31 11:49:52] {2442} INFO -  at 1.3s,   estimator extra_tree's best error=14.7095,  best estimator lgbm's best error=12.2781
-[flaml.automl.logger: 03-31 11:49:52] {2258} INFO - iteration 8, current learner rf
-[flaml.automl.logger: 03-31 11:49:52] {2442} INFO -  at 1.4s,   estimator rf's best error=13.8960,  best estimator lgbm's best error=12.2781
-[flaml.automl.logger: 03-31 11:49:52] {2258} INFO - iteration 9, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:52] {2442} INFO -  at 1.4s,   estimator lgbm's best error=12.0187,    best estimator lgbm's best error=12.0187
-[flaml.automl.logger: 03-31 11:49:52] {2258} INFO - iteration 10, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:52] {2442} INFO -  at 1.5s,   estimator lgbm's best error=12.0187,    best estimator lgbm's best error=12.0187
-[flaml.automl.logger: 03-31 11:49:52] {2258} INFO - iteration 11, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:52] {2442} INFO -  at 1.5s,   estimator lgbm's best error=12.0187,    best estimator lgbm's best error=12.0187
-[flaml.automl.logger: 03-31 11:49:52] {2258} INFO - iteration 12, current learner rf
-[flaml.automl.logger: 03-31 11:49:52] {2442} INFO -  at 1.6s,   estimator rf's best error=12.9380,  best estimator lgbm's best error=12.0187
-[flaml.automl.logger: 03-31 11:49:52] {2258} INFO - iteration 13, current learner rf
-[flaml.automl.logger: 03-31 11:49:53] {2442} INFO -  at 1.8s,   estimator rf's best error=12.9380,  best estimator lgbm's best error=12.0187
-[flaml.automl.logger: 03-31 11:49:53] {2258} INFO - iteration 14, current learner extra_tree
-[flaml.automl.logger: 03-31 11:49:53] {2442} INFO -  at 1.9s,   estimator extra_tree's best error=14.1609,  best estimator lgbm's best error=12.0187
-[flaml.automl.logger: 03-31 11:49:53] {2258} INFO - iteration 15, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:53] {2442} INFO -  at 2.0s,   estimator lgbm's best error=11.6593,    best estimator lgbm's best error=11.6593
-[flaml.automl.logger: 03-31 11:49:53] {2258} INFO - iteration 16, current learner xgboost
-[flaml.automl.logger: 03-31 11:49:53] {2442} INFO -  at 2.1s,   estimator xgboost's best error=14.8380, best estimator lgbm's best error=11.6593
-[flaml.automl.logger: 03-31 11:49:53] {2258} INFO - iteration 17, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:53] {2442} INFO -  at 2.1s,   estimator lgbm's best error=11.6593,    best estimator lgbm's best error=11.6593
-[flaml.automl.logger: 03-31 11:49:53] {2258} INFO - iteration 18, current learner extra_tree
-[flaml.automl.logger: 03-31 11:49:53] {2442} INFO -  at 2.2s,   estimator extra_tree's best error=14.1609,  best estimator lgbm's best error=11.6593
-[flaml.automl.logger: 03-31 11:49:53] {2258} INFO - iteration 19, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:53] {2442} INFO -  at 2.3s,   estimator lgbm's best error=11.2939,    best estimator lgbm's best error=11.2939
-[flaml.automl.logger: 03-31 11:49:53] {2258} INFO - iteration 20, current learner xgboost
-[flaml.automl.logger: 03-31 11:49:53] {2442} INFO -  at 2.3s,   estimator xgboost's best error=13.9034, best estimator lgbm's best error=11.2939
-[flaml.automl.logger: 03-31 11:49:53] {2258} INFO - iteration 21, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:53] {2442} INFO -  at 2.5s,   estimator lgbm's best error=11.2939,    best estimator lgbm's best error=11.2939
-[flaml.automl.logger: 03-31 11:49:53] {2258} INFO - iteration 22, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:53] {2442} INFO -  at 2.6s,   estimator lgbm's best error=11.2939,    best estimator lgbm's best error=11.2939
-[flaml.automl.logger: 03-31 11:49:53] {2258} INFO - iteration 23, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:54] {2442} INFO -  at 2.6s,   estimator lgbm's best error=11.2901,    best estimator lgbm's best error=11.2901
-[flaml.automl.logger: 03-31 11:49:54] {2258} INFO - iteration 24, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:54] {2442} INFO -  at 2.7s,   estimator lgbm's best error=11.1013,    best estimator lgbm's best error=11.1013
-[flaml.automl.logger: 03-31 11:49:54] {2258} INFO - iteration 25, current learner xgboost
-[flaml.automl.logger: 03-31 11:49:54] {2442} INFO -  at 2.8s,   estimator xgboost's best error=13.0185, best estimator lgbm's best error=11.1013
-[flaml.automl.logger: 03-31 11:49:54] {2258} INFO - iteration 26, current learner sgd
-[flaml.automl.logger: 03-31 11:49:54] {2442} INFO -  at 2.8s,   estimator sgd's best error=16.9499, best estimator lgbm's best error=11.1013
-[flaml.automl.logger: 03-31 11:49:54] {2258} INFO - iteration 27, current learner lgbm
-[flaml.automl.logger: 03-31 11:49:54] {2442} INFO -  at 3.1s,   estimator lgbm's best error=11.1013,    best estimator lgbm's best error=11.1013
-[flaml.automl.logger: 03-31 11:49:54] {2258} INFO - iteration 28, current learner xgboost
-[flaml.automl.logger: 03-31 11:49:54] {2442} INFO -  at 3.2s,   estimator xgboost's best error=13.0185, best estimator lgbm's best error=11.1013
-[flaml.automl.logger: 03-31 11:49:54] {2258} INFO - iteration 29, current learner sgd
-[flaml.automl.logger: 03-31 11:49:54] {2442} INFO -  at 3.2s,   estimator sgd's best error=15.9278, best estimator lgbm's best error=11.1013
-[flaml.automl.logger: 03-31 11:49:54] {2685} INFO - retrain lgbm for 0.1s
-[flaml.automl.logger: 03-31 11:49:54] {2688} INFO - retrained model: LGBMRegressor(colsample_bytree=np.float64(0.6649148062238498),
-              learning_rate=np.float64(0.17402065726724145), max_bin=255,
-              min_child_samples=4, n_estimators=99, n_jobs=-1, num_leaves=15,
-              reg_alpha=np.float64(0.006958608037974516),
-              reg_lambda=np.float64(0.006761362450996487), verbose=-1)
-[flaml.automl.logger: 03-31 11:49:54] {1985} INFO - fit succeeded
-[flaml.automl.logger: 03-31 11:49:54] {1986} INFO - Time taken to find the best model: 2.7243244647979736</code></pre>
+<pre><code>[flaml.automl.logger: 03-31 16:46:53] {1728} INFO - task = regression
+[flaml.automl.logger: 03-31 16:46:53] {1739} INFO - Evaluation method: holdout
+[flaml.automl.logger: 03-31 16:46:53] {1838} INFO - Minimizing error metric: rmse
+[flaml.automl.logger: 03-31 16:46:53] {1955} INFO - List of ML learners in AutoML Run: ['lgbm', 'rf', 'xgboost', 'extra_tree', 'xgb_limitdepth', 'sgd']
+[flaml.automl.logger: 03-31 16:46:53] {2258} INFO - iteration 0, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:53] {2393} INFO - Estimated sufficient time budget=192s. Estimated necessary time budget=1s.
+[flaml.automl.logger: 03-31 16:46:53] {2442} INFO -  at 0.1s,   estimator lgbm's best error=14.1248,    best estimator lgbm's best error=14.1248
+[flaml.automl.logger: 03-31 16:46:53] {2258} INFO - iteration 1, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:53] {2442} INFO -  at 0.1s,   estimator lgbm's best error=14.1248,    best estimator lgbm's best error=14.1248
+[flaml.automl.logger: 03-31 16:46:53] {2258} INFO - iteration 2, current learner sgd
+[flaml.automl.logger: 03-31 16:46:54] {2442} INFO -  at 0.8s,   estimator sgd's best error=16.9510, best estimator lgbm's best error=14.1248
+[flaml.automl.logger: 03-31 16:46:54] {2258} INFO - iteration 3, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:54] {2442} INFO -  at 1.2s,   estimator lgbm's best error=12.7827,    best estimator lgbm's best error=12.7827
+[flaml.automl.logger: 03-31 16:46:54] {2258} INFO - iteration 4, current learner xgboost
+[flaml.automl.logger: 03-31 16:46:55] {2442} INFO -  at 1.5s,   estimator xgboost's best error=14.8380, best estimator lgbm's best error=12.7827
+[flaml.automl.logger: 03-31 16:46:55] {2258} INFO - iteration 5, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:55] {2442} INFO -  at 1.6s,   estimator extra_tree's best error=14.7095,  best estimator lgbm's best error=12.7827
+[flaml.automl.logger: 03-31 16:46:55] {2258} INFO - iteration 6, current learner rf
+[flaml.automl.logger: 03-31 16:46:55] {2442} INFO -  at 1.7s,   estimator rf's best error=13.8960,  best estimator lgbm's best error=12.7827
+[flaml.automl.logger: 03-31 16:46:55] {2258} INFO - iteration 7, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:56] {2442} INFO -  at 2.6s,   estimator lgbm's best error=12.2781,    best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:56] {2258} INFO - iteration 8, current learner rf
+[flaml.automl.logger: 03-31 16:46:56] {2442} INFO -  at 2.7s,   estimator rf's best error=12.9380,  best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:56] {2258} INFO - iteration 9, current learner rf
+[flaml.automl.logger: 03-31 16:46:56] {2442} INFO -  at 2.8s,   estimator rf's best error=12.9380,  best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:56] {2258} INFO - iteration 10, current learner rf
+[flaml.automl.logger: 03-31 16:46:56] {2442} INFO -  at 3.0s,   estimator rf's best error=12.5801,  best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:56] {2258} INFO - iteration 11, current learner xgboost
+[flaml.automl.logger: 03-31 16:46:56] {2442} INFO -  at 3.3s,   estimator xgboost's best error=14.8380, best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:56] {2258} INFO - iteration 12, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:56] {2442} INFO -  at 3.3s,   estimator extra_tree's best error=14.1609,  best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:56] {2258} INFO - iteration 13, current learner xgboost
+[flaml.automl.logger: 03-31 16:46:57] {2442} INFO -  at 3.7s,   estimator xgboost's best error=13.9034, best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:57] {2258} INFO - iteration 14, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:57] {2442} INFO -  at 3.7s,   estimator extra_tree's best error=14.1609,  best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:57] {2258} INFO - iteration 15, current learner rf
+[flaml.automl.logger: 03-31 16:46:57] {2442} INFO -  at 4.1s,   estimator rf's best error=12.4112,  best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:57] {2258} INFO - iteration 16, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:57] {2442} INFO -  at 4.2s,   estimator extra_tree's best error=12.7479,  best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:57] {2258} INFO - iteration 17, current learner rf
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 4.5s,   estimator rf's best error=12.4112,  best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:58] {2258} INFO - iteration 18, current learner sgd
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 4.5s,   estimator sgd's best error=16.9510, best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:58] {2258} INFO - iteration 19, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 4.6s,   estimator lgbm's best error=12.2781,    best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:58] {2258} INFO - iteration 20, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 4.7s,   estimator extra_tree's best error=12.7479,  best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:58] {2258} INFO - iteration 21, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 4.8s,   estimator extra_tree's best error=12.7479,  best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:58] {2258} INFO - iteration 22, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 4.9s,   estimator extra_tree's best error=12.4312,  best estimator lgbm's best error=12.2781
+[flaml.automl.logger: 03-31 16:46:58] {2258} INFO - iteration 23, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 4.9s,   estimator lgbm's best error=12.0187,    best estimator lgbm's best error=12.0187
+[flaml.automl.logger: 03-31 16:46:58] {2258} INFO - iteration 24, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 4.9s,   estimator lgbm's best error=12.0187,    best estimator lgbm's best error=12.0187
+[flaml.automl.logger: 03-31 16:46:58] {2258} INFO - iteration 25, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 5.0s,   estimator lgbm's best error=12.0187,    best estimator lgbm's best error=12.0187
+[flaml.automl.logger: 03-31 16:46:58] {2258} INFO - iteration 26, current learner sgd
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 5.0s,   estimator sgd's best error=16.1357, best estimator lgbm's best error=12.0187
+[flaml.automl.logger: 03-31 16:46:58] {2258} INFO - iteration 27, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 5.1s,   estimator lgbm's best error=11.6593,    best estimator lgbm's best error=11.6593
+[flaml.automl.logger: 03-31 16:46:58] {2258} INFO - iteration 28, current learner lgbm
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 5.1s,   estimator lgbm's best error=11.6593,    best estimator lgbm's best error=11.6593
+[flaml.automl.logger: 03-31 16:46:58] {2258} INFO - iteration 29, current learner extra_tree
+[flaml.automl.logger: 03-31 16:46:58] {2442} INFO -  at 5.2s,   estimator extra_tree's best error=12.4312,  best estimator lgbm's best error=11.6593
+[flaml.automl.logger: 03-31 16:46:58] {2685} INFO - retrain lgbm for 0.1s
+[flaml.automl.logger: 03-31 16:46:58] {2688} INFO - retrained model: LGBMRegressor(colsample_bytree=np.float64(0.7610534336273627),
+              learning_rate=np.float64(0.41929025492645006), max_bin=255,
+              min_child_samples=4, n_estimators=34, n_jobs=-1, num_leaves=4,
+              reg_alpha=0.0009765625,
+              reg_lambda=np.float64(0.009280655005879927), verbose=-1)
+[flaml.automl.logger: 03-31 16:46:58] {1985} INFO - fit succeeded
+[flaml.automl.logger: 03-31 16:46:58] {1986} INFO - Time taken to find the best model: 5.059842109680176</code></pre>
 </div>
 </div>
 </section>
 
 <section id="section-7" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-35" class="cell" data-execution_count="23">
+<div id="cell-35" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="bu">print</span>(<span class="st">"RMSE using AutoML:"</span>, <span class="bu">round</span>(rmse, <span class="dv">2</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>RMSE using AutoML: 11.31</code></pre>
+<pre><code>RMSE using AutoML: 12.03</code></pre>
 </div>
 </div>
-<div id="cell-36" class="cell" data-execution_count="24">
+<div id="cell-36" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>automl.best_estimator</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>'lgbm'</code></pre>
 </div>
 </div>
-<div id="cell-37" class="cell" data-execution_count="25">
+<div id="cell-37" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>automl.best_config</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="25">
-<pre><code>{'n_estimators': 99,
- 'num_leaves': 15,
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>{'n_estimators': 34,
+ 'num_leaves': 4,
  'min_child_samples': 4,
- 'learning_rate': np.float64(0.17402065726724145),
+ 'learning_rate': np.float64(0.41929025492645006),
  'log_max_bin': 8,
- 'colsample_bytree': np.float64(0.6649148062238498),
- 'reg_alpha': np.float64(0.006958608037974516),
- 'reg_lambda': np.float64(0.006761362450996487)}</code></pre>
+ 'colsample_bytree': np.float64(0.7610534336273627),
+ 'reg_alpha': 0.0009765625,
+ 'reg_lambda': np.float64(0.009280655005879927)}</code></pre>
 </div>
 </div>
 </section>
@@ -1067,7 +1067,7 @@ memory usage: 1.3+ MB</code></pre>
 <li>Time. How?</li>
 <li>Cumulative degree days: <span class="math inline">\(\sum_{d \in [May-Sep]} max(0, T^{avg}_d-12.2)\)</span> <span class="citation" data-cites="DBLP:journals/ecoi/ForresiGGMPV24">(<a href="#/references" role="doc-biblioref" onclick="">Forresi et al. 2024</a>)</span></li>
 </ol>
-<div id="cell-40" class="cell">
+<div id="cell-40" class="cell" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./datasets/cimice/captures-raw.csv"</span>, sep<span class="op">=</span><span class="st">','</span>)  <span class="co"># Load the dataset from a CSV file</span></span>
@@ -1094,7 +1094,7 @@ memory usage: 1.3+ MB</code></pre>
 <span id="cb26-22"><a href=""></a></span>
 <span id="cb26-23"><a href=""></a>df.head()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="77">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1262,7 +1262,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="average-temperature-vs-cumulative-degree-days" class="title-slide slide level1 center">
 <h1>Average temperature vs cumulative degree days</h1>
-<div id="cell-42" class="cell">
+<div id="cell-42" class="cell" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1286,7 +1286,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="data-understanding" class="title-slide slide level1 center">
 <h1>Data understanding</h1>
-<div id="cell-44" class="cell" data-vscode="{&quot;languageId&quot;:&quot;ruby&quot;}" data-execution_count="74">
+<div id="cell-44" class="cell" data-vscode="{&quot;languageId&quot;:&quot;ruby&quot;}" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>numerical_columns <span class="op">=</span> df.select_dtypes(include<span class="op">=</span>[<span class="st">'float64'</span>, <span class="st">'int64'</span>]).columns  <span class="co"># Select numerical columns</span></span>
@@ -1300,7 +1300,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="data-understanding-1" class="title-slide slide level1 center">
 <h1>Data understanding</h1>
-<div id="cell-46" class="cell">
+<div id="cell-46" class="cell" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -1319,7 +1319,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="plotting-the-correlations" class="title-slide slide level1 center">
 <h1>Plotting the correlations</h1>
-<div id="cell-48" class="cell" data-execution_count="85">
+<div id="cell-48" class="cell" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
@@ -1334,7 +1334,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="lets-apply-simple-models" class="title-slide slide level1 center">
 <h1>Let’s apply simple models</h1>
-<div id="cell-50" class="cell" data-execution_count="28">
+<div id="cell-50" class="cell" data-execution_count="19">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
@@ -1348,7 +1348,7 @@ memory usage: 1.3+ MB</code></pre>
 <pre><code>RMSE using Logistic Regression: 9.88</code></pre>
 </div>
 </div>
-<div id="cell-51" class="cell" data-execution_count="29">
+<div id="cell-51" class="cell" data-execution_count="20">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
@@ -1366,7 +1366,7 @@ memory usage: 1.3+ MB</code></pre>
 
 <section id="lets-do-hyper-parameter-tuning-on-rf" class="title-slide slide level1 center">
 <h1>Let’s do hyper-parameter tuning on RF</h1>
-<div id="cell-53" class="cell" data-execution_count="30">
+<div id="cell-53" class="cell" data-execution_count="21">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> RandomizedSearchCV</span>
@@ -1386,118 +1386,118 @@ memory usage: 1.3+ MB</code></pre>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Fitting 5 folds for each of 20 candidates, totalling 100 fits
+[CV] END max_depth=10, max_features=sqrt, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   0.8s
 [CV] END max_depth=10, max_features=sqrt, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   0.9s
 [CV] END max_depth=10, max_features=sqrt, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   0.9s
-[CV] END max_depth=10, max_features=sqrt, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   1.0s
-[CV] END max_depth=10, max_features=sqrt, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   1.0s
-[CV] END max_depth=10, max_features=sqrt, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   1.1s
-[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=100; total time=   2.4s
-[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=100; total time=   2.4s
+[CV] END max_depth=10, max_features=sqrt, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   0.9s
+[CV] END max_depth=10, max_features=sqrt, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   0.9s
+[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=100; total time=   2.3s
+[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=100; total time=   2.3s
 [CV] END max_depth=20, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=100; total time=   2.4s
 [CV] END max_depth=20, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=100; total time=   2.5s
 [CV] END max_depth=20, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=100; total time=   2.5s
 [CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=2, n_estimators=100; total time=   2.5s
+[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=2, n_estimators=100; total time=   2.6s
+[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=2, n_estimators=100; total time=   2.6s
 [CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=2, n_estimators=100; total time=   2.7s
-[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=2, n_estimators=100; total time=   2.7s
-[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=2, n_estimators=100; total time=   2.8s
 [CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=2, n_estimators=100; total time=   2.4s
 [CV] END max_depth=10, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=50; total time=   0.8s
 [CV] END max_depth=10, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=50; total time=   0.8s
+[CV] END max_depth=10, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=50; total time=   0.9s
 [CV] END max_depth=10, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=50; total time=   0.8s
 [CV] END max_depth=10, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=50; total time=   0.8s
-[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   4.1s
-[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   4.3s
-[CV] END max_depth=10, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=50; total time=   0.8s
-[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   4.4s
-[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   4.4s
+[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   4.6s
 [CV] END max_depth=20, max_features=sqrt, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   4.5s
+[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   4.6s
+[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   4.6s
+[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   4.7s
 [CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.1s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.0s
-[CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=400; total time=   6.0s
 [CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.1s
 [CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=400; total time=   6.1s
 [CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=400; total time=   6.1s
-[CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=400; total time=   6.1s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.2s
-[CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=400; total time=   6.3s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.0s
-[CV] END max_depth=30, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=200; total time=   4.5s
-[CV] END max_depth=30, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=200; total time=   4.5s
+[CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=400; total time=   6.2s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.5s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.6s
+[CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=400; total time=   6.5s
+[CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=400; total time=   6.6s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.1s
 [CV] END max_depth=30, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=200; total time=   4.6s
-[CV] END max_depth=30, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=200; total time=   4.5s
+[CV] END max_depth=30, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=200; total time=   4.6s
+[CV] END max_depth=30, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=200; total time=   4.7s
+[CV] END max_depth=30, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=200; total time=   4.7s
 [CV] END max_depth=30, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=200; total time=   4.4s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=300; total time=   6.8s
 [CV] END max_depth=20, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=300; total time=   6.6s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=300; total time=   6.5s
-[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=400; total time=   8.2s
-[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=400; total time=   8.1s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=300; total time=   6.3s
-[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=400; total time=   8.3s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=300; total time=   6.6s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=300; total time=   6.4s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=300; total time=   6.7s
 [CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=400; total time=   8.3s
 [CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=400; total time=   8.4s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=300; total time=   6.5s
+[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=400; total time=   8.3s
+[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=400; total time=   8.5s
+[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=2, min_samples_split=10, n_estimators=400; total time=   8.6s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=2, min_samples_split=5, n_estimators=300; total time=   6.4s
 [CV] END max_depth=20, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   1.0s
 [CV] END max_depth=20, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   1.0s
 [CV] END max_depth=20, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   1.0s
-[CV] END max_depth=30, max_features=log2, min_samples_leaf=4, min_samples_split=10, n_estimators=300; total time=   5.6s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   1.0s
 [CV] END max_depth=30, max_features=log2, min_samples_leaf=4, min_samples_split=10, n_estimators=300; total time=   5.8s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   1.0s
 [CV] END max_depth=30, max_features=log2, min_samples_leaf=4, min_samples_split=10, n_estimators=300; total time=   5.8s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   1.0s
 [CV] END max_depth=30, max_features=log2, min_samples_leaf=4, min_samples_split=10, n_estimators=300; total time=   5.9s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=4, min_samples_split=2, n_estimators=50; total time=   1.0s
+[CV] END max_depth=30, max_features=log2, min_samples_leaf=4, min_samples_split=10, n_estimators=300; total time=   5.8s
+[CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   2.8s
 [CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   2.9s
 [CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   3.0s
+[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=2, n_estimators=300; total time=   7.7s
 [CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   2.9s
+[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=2, n_estimators=300; total time=   7.6s
 [CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   2.9s
-[CV] END max_depth=10, max_features=log2, min_samples_leaf=4, min_samples_split=5, n_estimators=200; total time=   2.8s
+[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=2, n_estimators=300; total time=   7.7s
 [CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=2, n_estimators=300; total time=   7.7s
 [CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=2, n_estimators=300; total time=   7.8s
-[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=2, n_estimators=300; total time=   7.8s
-[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=2, n_estimators=300; total time=   7.8s
-[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=2, n_estimators=300; total time=   8.1s
-[CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.2s
-[CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.2s
 [CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.3s
-[CV] END max_depth=30, max_features=log2, min_samples_leaf=4, min_samples_split=10, n_estimators=300; total time=   5.8s
-[CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=100; total time=   2.7s
-[CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=100; total time=   2.6s
-[CV] END max_depth=10, max_features=log2, min_samples_leaf=2, min_samples_split=2, n_estimators=50; total time=   0.8s
+[CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.5s
+[CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.3s
+[CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=100; total time=   2.8s
+[CV] END max_depth=30, max_features=log2, min_samples_leaf=4, min_samples_split=10, n_estimators=300; total time=   5.9s
 [CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.2s
-[CV] END max_depth=10, max_features=log2, min_samples_leaf=2, min_samples_split=2, n_estimators=50; total time=   0.8s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=10, n_estimators=100; total time=   2.1s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=10, n_estimators=100; total time=   2.1s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=10, n_estimators=100; total time=   2.1s
-[CV] END max_depth=10, max_features=log2, min_samples_leaf=2, min_samples_split=2, n_estimators=50; total time=   0.8s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=10, n_estimators=100; total time=   2.1s
-[CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.4s
-[CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=100; total time=   2.5s
-[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=10, n_estimators=100; total time=   2.1s
 [CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=100; total time=   2.6s
+[CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=200; total time=   5.2s
+[CV] END max_depth=10, max_features=log2, min_samples_leaf=2, min_samples_split=2, n_estimators=50; total time=   0.7s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=10, n_estimators=100; total time=   2.2s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=10, n_estimators=100; total time=   2.1s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=10, n_estimators=100; total time=   2.2s
+[CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=100; total time=   2.6s
+[CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=100; total time=   2.7s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=10, n_estimators=100; total time=   2.2s
+[CV] END max_depth=20, max_features=log2, min_samples_leaf=1, min_samples_split=10, n_estimators=100; total time=   2.1s
 [CV] END max_depth=10, max_features=log2, min_samples_leaf=2, min_samples_split=2, n_estimators=50; total time=   0.7s
 [CV] END max_depth=10, max_features=log2, min_samples_leaf=2, min_samples_split=2, n_estimators=50; total time=   0.7s
 [CV] END max_depth=30, max_features=log2, min_samples_leaf=1, min_samples_split=2, n_estimators=100; total time=   2.6s
-[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.6s
+[CV] END max_depth=10, max_features=log2, min_samples_leaf=2, min_samples_split=2, n_estimators=50; total time=   0.7s
+[CV] END max_depth=10, max_features=log2, min_samples_leaf=2, min_samples_split=2, n_estimators=50; total time=   0.7s
+[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.8s
 [CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.9s
 [CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.8s
-[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.7s
+[CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.8s
 [CV] END max_depth=30, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.9s
+[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.2s
+[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.2s
+[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.3s
 [CV] END max_depth=20, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.1s
-[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.2s
-[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   6.9s
-[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.2s
-[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.4s</code></pre>
+[CV] END max_depth=20, max_features=sqrt, min_samples_leaf=1, min_samples_split=10, n_estimators=400; total time=   7.2s</code></pre>
 </div>
 </div>
 </section>
 
 <section id="section-8" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-55" class="cell" data-execution_count="31">
+<div id="cell-55" class="cell" data-execution_count="22">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href=""></a>random_search.best_params_</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="31">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>{'n_estimators': 200,
  'min_samples_split': 2,
  'min_samples_leaf': 1,
@@ -1505,12 +1505,12 @@ memory usage: 1.3+ MB</code></pre>
  'max_depth': 30}</code></pre>
 </div>
 </div>
-<div id="cell-56" class="cell" data-execution_count="32">
+<div id="cell-56" class="cell" data-execution_count="23">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href=""></a>random_search.best_estimator_</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="32">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <style>#sk-container-id-1 {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: #000;
@@ -1931,7 +1931,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                       random_state=42)</pre></div> </div></div></div></div>
 </div>
 </div>
-<div id="cell-57" class="cell" data-execution_count="33">
+<div id="cell-57" class="cell" data-execution_count="24">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb41-1"><a href=""></a><span class="bu">print</span>(<span class="st">"Optimized RMSE using Random Forest Regressor:"</span>, <span class="bu">round</span>(rmse_rf, <span class="dv">2</span>))</span></code></pre></div>
@@ -1944,7 +1944,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <section id="lets-try-more-complex-models" class="title-slide slide level1 center">
 <h1>Let’s try more complex models</h1>
-<div id="cell-59" class="cell" data-execution_count="34">
+<div id="cell-59" class="cell" data-execution_count="25">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href=""></a><span class="im">import</span> xgboost <span class="im">as</span> xgb</span>
@@ -1979,147 +1979,147 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 [CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=300, subsample=0.8; total time=   0.5s
 [CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=300, subsample=0.8; total time=   0.5s
 [CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=300, subsample=0.8; total time=   0.5s
-[CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=300, subsample=0.8; total time=   0.5s
-[CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=300, subsample=0.8; total time=   0.5s
+[CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=300, subsample=0.8; total time=   0.5s[CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=300, subsample=0.8; total time=   0.5s
+
 [CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.01, max_depth=5, min_child_weight=7, n_estimators=300, subsample=1.0; total time=   0.8s
-[CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.01, max_depth=5, min_child_weight=7, n_estimators=300, subsample=1.0; total time=   0.8s
 [CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.01, max_depth=5, min_child_weight=7, n_estimators=300, subsample=1.0; total time=   0.9s
 [CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.01, max_depth=5, min_child_weight=7, n_estimators=300, subsample=1.0; total time=   0.9s
 [CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.01, max_depth=5, min_child_weight=7, n_estimators=300, subsample=1.0; total time=   0.9s
-[CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   0.8s
-[CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   0.8s
+[CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.01, max_depth=5, min_child_weight=7, n_estimators=300, subsample=1.0; total time=   1.0s
 [CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   0.9s
+[CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   1.0s
 [CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   0.9s
-[CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   0.8s
+[CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   1.0s
+[CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   0.9s
 [CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
 [CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
-[CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
-[CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
-[CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.1, max_depth=5, min_child_weight=5, n_estimators=500, subsample=0.8; total time=   1.2s
-[CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.1, max_depth=5, min_child_weight=5, n_estimators=500, subsample=0.8; total time=   1.2s
-[CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.1, max_depth=5, min_child_weight=5, n_estimators=500, subsample=0.8; total time=   1.3s
-[CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.1, max_depth=5, min_child_weight=5, n_estimators=500, subsample=0.8; total time=   1.3s
-[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
 [CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.9s
-[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
-[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
-[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
 [CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.1, max_depth=5, min_child_weight=5, n_estimators=500, subsample=0.8; total time=   1.3s
-[CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=1, n_estimators=100, subsample=0.8; total time=   0.2s
+[CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.1, max_depth=5, min_child_weight=5, n_estimators=500, subsample=0.8; total time=   1.3s
+[CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.1, max_depth=5, min_child_weight=5, n_estimators=500, subsample=0.8; total time=   1.3s
+[CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.9s
+[CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.1, max_depth=5, min_child_weight=5, n_estimators=500, subsample=0.8; total time=   1.3s
+[CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
+[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
+[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
+[CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.1, max_depth=5, min_child_weight=5, n_estimators=500, subsample=0.8; total time=   1.2s
+[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.9s
+[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
 [CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=1, n_estimators=100, subsample=0.8; total time=   0.2s
 [CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=1, n_estimators=100, subsample=0.8; total time=   0.2s
 [CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=1, n_estimators=100, subsample=0.8; total time=   0.2s
 [CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=1, n_estimators=500, subsample=0.8; total time=   0.8s
 [CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=1, n_estimators=100, subsample=0.8; total time=   0.2s
+[CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=1, n_estimators=100, subsample=0.8; total time=   0.2s
 [CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=7, n_estimators=100, subsample=0.8; total time=   0.2s
-[CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=7, n_estimators=100, subsample=0.8; total time=   0.2s
-[CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.2, max_depth=5, min_child_weight=3, n_estimators=300, subsample=0.6; total time=   1.1s
-[CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.2, max_depth=5, min_child_weight=3, n_estimators=300, subsample=0.6; total time=   1.1s
-[CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=7, n_estimators=100, subsample=0.8; total time=   0.2s
-[CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.2, max_depth=5, min_child_weight=3, n_estimators=300, subsample=0.6; total time=   1.0s
 [CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=7, n_estimators=100, subsample=0.8; total time=   0.2s
 [CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=7, n_estimators=100, subsample=0.8; total time=   0.2s
 [CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.2, max_depth=5, min_child_weight=3, n_estimators=300, subsample=0.6; total time=   1.1s
+[CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=7, n_estimators=100, subsample=0.8; total time=   0.3s
+[CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.01, max_depth=3, min_child_weight=7, n_estimators=100, subsample=0.8; total time=   0.2s
 [CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.2, max_depth=5, min_child_weight=3, n_estimators=300, subsample=0.6; total time=   1.1s
-[CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.6s
+[CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.2, max_depth=5, min_child_weight=3, n_estimators=300, subsample=0.6; total time=   1.1s
+[CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.2, max_depth=5, min_child_weight=3, n_estimators=300, subsample=0.6; total time=   1.1s
+[CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.2, max_depth=5, min_child_weight=3, n_estimators=300, subsample=0.6; total time=   1.2s
 [CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.7s
 [CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.7s
-[CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.8s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=500, subsample=0.6; total time=   2.3s
+[CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.7s
+[CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.9s
 [CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=500, subsample=0.6; total time=   2.4s
 [CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=500, subsample=0.6; total time=   2.5s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=500, subsample=0.6; total time=   2.6s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=500, subsample=0.6; total time=   2.6s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=500, subsample=0.6; total time=   2.5s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=500, subsample=0.6; total time=   2.4s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.01, max_depth=7, min_child_weight=5, n_estimators=500, subsample=0.6; total time=   2.5s
+[CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=7, n_estimators=100, subsample=0.6; total time=   0.3s
 [CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=7, n_estimators=100, subsample=0.6; total time=   0.3s
 [CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=7, n_estimators=100, subsample=0.6; total time=   0.3s
 [CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=7, n_estimators=100, subsample=0.6; total time=   0.3s
 [CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=7, n_estimators=100, subsample=0.6; total time=   0.3s
 [CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.4s
 [CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.5s
-[CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.4s
-[CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=7, n_estimators=100, subsample=0.6; total time=   0.3s
+[CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.1, max_depth=3, min_child_weight=5, n_estimators=300, subsample=1.0; total time=   0.4s
+[CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.5s
+[CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.1, max_depth=3, min_child_weight=5, n_estimators=300, subsample=1.0; total time=   0.4s
 [CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.5s
 [CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.1, max_depth=3, min_child_weight=5, n_estimators=300, subsample=1.0; total time=   0.4s
 [CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.1, max_depth=3, min_child_weight=5, n_estimators=300, subsample=1.0; total time=   0.4s
 [CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.1, max_depth=3, min_child_weight=5, n_estimators=300, subsample=1.0; total time=   0.4s
-[CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.1, max_depth=3, min_child_weight=5, n_estimators=300, subsample=1.0; total time=   0.4s
-[CV] END colsample_bytree=0.6, gamma=0.1, learning_rate=0.1, max_depth=3, min_child_weight=5, n_estimators=300, subsample=1.0; total time=   0.4s
 [CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.4s
-[CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=1, n_estimators=200, subsample=1.0; total time=   4.6s
 [CV] END colsample_bytree=0.8, gamma=0.2, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.4s
-[CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=1, n_estimators=200, subsample=1.0; total time=   4.7s
 [CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=1, n_estimators=200, subsample=1.0; total time=   4.8s
+[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   6.7s
+[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   6.8s
 [CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=1, n_estimators=200, subsample=1.0; total time=   5.0s
-[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   6.6s
+[CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=1, n_estimators=200, subsample=1.0; total time=   4.9s
 [CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=1, n_estimators=200, subsample=1.0; total time=   5.0s
-[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   6.9s
+[CV] END colsample_bytree=0.8, gamma=0, learning_rate=0.05, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   0.6s
 [CV] END colsample_bytree=0.8, gamma=0, learning_rate=0.05, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   0.6s
 [CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=0.6; total time=   0.4s
 [CV] END colsample_bytree=0.8, gamma=0, learning_rate=0.05, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   0.6s
-[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   7.0s
-[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   7.0s
+[CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=1, n_estimators=200, subsample=1.0; total time=   5.2s
+[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   7.1s
 [CV] END colsample_bytree=0.8, gamma=0, learning_rate=0.05, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   0.6s
-[CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=0.6; total time=   0.4s
 [CV] END colsample_bytree=0.8, gamma=0, learning_rate=0.05, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   0.6s
 [CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=0.6; total time=   0.3s
 [CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   7.1s
-[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=5, n_estimators=100, subsample=1.0; total time=   0.2s
-[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=5, n_estimators=100, subsample=1.0; total time=   0.2s
-[CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=0.6; total time=   0.3s
-[CV] END colsample_bytree=0.8, gamma=0, learning_rate=0.05, max_depth=7, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   0.6s
-[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=5, n_estimators=100, subsample=1.0; total time=   0.2s
-[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=5, n_estimators=100, subsample=1.0; total time=   0.2s
+[CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=0.6; total time=   0.4s
 [CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=5, n_estimators=100, subsample=1.0; total time=   0.2s
 [CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=0.6; total time=   0.3s
+[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=5, n_estimators=100, subsample=1.0; total time=   0.2s
+[CV] END colsample_bytree=1.0, gamma=0, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=0.6; total time=   0.3s
+[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=5, n_estimators=100, subsample=1.0; total time=   0.2s
+[CV] END colsample_bytree=0.8, gamma=0.5, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   7.3s
+[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=5, n_estimators=100, subsample=1.0; total time=   0.2s
+[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.05, max_depth=3, min_child_weight=5, n_estimators=100, subsample=1.0; total time=   0.2s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=1.0; total time=   0.3s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=1.0; total time=   0.3s
 [CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=1.0; total time=   0.3s
 [CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=1.0; total time=   0.3s
 [CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=300, subsample=0.8; total time=   1.4s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=1.0; total time=   0.3s[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=1.0; total time=   0.3s
-
 [CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.05, max_depth=5, min_child_weight=3, n_estimators=100, subsample=1.0; total time=   0.3s
-[CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=300, subsample=0.8; total time=   1.4s
-[CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=300, subsample=0.8; total time=   1.4s
+[CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=300, subsample=0.8; total time=   1.3s
 [CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=300, subsample=0.8; total time=   1.3s
 [CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=300, subsample=0.8; total time=   1.4s
-[CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   8.0s
+[CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   7.8s
+[CV] END colsample_bytree=0.8, gamma=0.1, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=300, subsample=0.8; total time=   1.4s
+[CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   7.9s
 [CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   8.1s
 [CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   8.1s
-[CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   8.2s
-[CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   8.3s
+[CV] END colsample_bytree=1.0, gamma=0.1, learning_rate=0.05, max_depth=10, min_child_weight=3, n_estimators=500, subsample=0.8; total time=   8.4s
 [CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.1, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.2s
 [CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.1, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.2s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.2s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.2s
+[CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.1, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.2s
 [CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.1, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.3s
-[CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.1, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.3s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.1s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.1s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.2s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.2s
 [CV] END colsample_bytree=0.6, gamma=0.2, learning_rate=0.1, max_depth=7, min_child_weight=5, n_estimators=300, subsample=0.8; total time=   1.2s
 [CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.2s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.2s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=5, min_child_weight=1, n_estimators=500, subsample=1.0; total time=   1.2s
-[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=500, subsample=1.0; total time=   1.7s
-[CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   1.9s
 [CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=3, min_child_weight=7, n_estimators=500, subsample=0.8; total time=   0.7s
-[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=500, subsample=1.0; total time=   1.7s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=3, min_child_weight=7, n_estimators=500, subsample=0.8; total time=   0.7s
 [CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   2.0s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=3, min_child_weight=7, n_estimators=500, subsample=0.8; total time=   0.7s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=3, min_child_weight=7, n_estimators=500, subsample=0.8; total time=   0.7s
-[CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   2.1s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=3, min_child_weight=7, n_estimators=500, subsample=0.8; total time=   0.7s
+[CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   2.0s
 [CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=3, min_child_weight=7, n_estimators=500, subsample=0.8; total time=   0.6s
+[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=500, subsample=1.0; total time=   1.6s
 [CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   2.1s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=3, min_child_weight=7, n_estimators=500, subsample=0.8; total time=   0.7s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.1, max_depth=3, min_child_weight=7, n_estimators=500, subsample=0.8; total time=   0.7s
 [CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   2.1s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=200, subsample=1.0; total time=   0.7s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=200, subsample=1.0; total time=   0.8s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=200, subsample=1.0; total time=   0.7s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=200, subsample=1.0; total time=   0.8s
+[CV] END colsample_bytree=1.0, gamma=0.2, learning_rate=0.01, max_depth=10, min_child_weight=5, n_estimators=100, subsample=0.8; total time=   2.0s
+[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=500, subsample=1.0; total time=   1.7s
 [CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=500, subsample=1.0; total time=   1.7s
 [CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=500, subsample=1.0; total time=   1.6s
-[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=500, subsample=1.0; total time=   1.6s
-[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=200, subsample=1.0; total time=   0.6s
-[CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.01, max_depth=10, min_child_weight=7, n_estimators=500, subsample=0.6; total time=   3.1s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=200, subsample=1.0; total time=   0.8s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=200, subsample=1.0; total time=   0.7s
+[CV] END colsample_bytree=1.0, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=7, n_estimators=500, subsample=1.0; total time=   1.7s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=200, subsample=1.0; total time=   0.7s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=200, subsample=1.0; total time=   0.8s
+[CV] END colsample_bytree=0.6, gamma=0.5, learning_rate=0.2, max_depth=7, min_child_weight=5, n_estimators=200, subsample=1.0; total time=   0.5s
 [CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.01, max_depth=10, min_child_weight=7, n_estimators=500, subsample=0.6; total time=   3.2s
+[CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.01, max_depth=10, min_child_weight=7, n_estimators=500, subsample=0.6; total time=   3.4s
+[CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.01, max_depth=10, min_child_weight=7, n_estimators=500, subsample=0.6; total time=   3.3s
 [CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.01, max_depth=10, min_child_weight=7, n_estimators=500, subsample=0.6; total time=   3.1s
-[CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.01, max_depth=10, min_child_weight=7, n_estimators=500, subsample=0.6; total time=   3.2s
 [CV] END colsample_bytree=0.6, gamma=0, learning_rate=0.01, max_depth=10, min_child_weight=7, n_estimators=500, subsample=0.6; total time=   3.0s</code></pre>
 </div>
 </div>
@@ -2127,12 +2127,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <section id="section-9" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-61" class="cell" data-execution_count="35">
+<div id="cell-61" class="cell" data-execution_count="26">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href=""></a>random_search.best_params_</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="35">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>{'subsample': 0.6,
  'n_estimators': 500,
  'min_child_weight': 5,
@@ -2142,12 +2142,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
  'colsample_bytree': 0.6}</code></pre>
 </div>
 </div>
-<div id="cell-62" class="cell" data-execution_count="36">
+<div id="cell-62" class="cell" data-execution_count="27">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb47-1"><a href=""></a>random_search.best_estimator_</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="36">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <style>#sk-container-id-2 {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: #000;
@@ -2567,26 +2567,26 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
              colsample_bylevel=None, colsample_bynode=None,
              colsample_bytree=0.6, device=None, early_stopping_rounds=None,
              enable_categorical=False, eval_metric=None, feature_types=None,
-             gamma=0.5, grow_policy=None, importance_type=None,
-             interaction_constraints=None, learning_rate=0.01, max_bin=None,
-             max_cat_threshold=None, max_cat_to_onehot=None,
-             max_delta_step=None, max_depth=7, max_leaves=None,
-             min_child_weight=5, missing=nan, monotone_constraints=None,
-             multi_strategy=None, n_estimators=500, n_jobs=None,
-             num_parallel_tree=None, random_state=42, ...)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked=""><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>XGBRegressor</div></div><div><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>XGBRegressor(base_score=None, booster=None, callbacks=None,
+             feature_weights=None, gamma=0.5, grow_policy=None,
+             importance_type=None, interaction_constraints=None,
+             learning_rate=0.01, max_bin=None, max_cat_threshold=None,
+             max_cat_to_onehot=None, max_delta_step=None, max_depth=7,
+             max_leaves=None, min_child_weight=5, missing=nan,
+             monotone_constraints=None, multi_strategy=None, n_estimators=500,
+             n_jobs=None, num_parallel_tree=None, ...)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked=""><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>XGBRegressor</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.0.0/python/python_api.html#xgboost.XGBRegressor">?<span>Documentation for XGBRegressor</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>XGBRegressor(base_score=None, booster=None, callbacks=None,
              colsample_bylevel=None, colsample_bynode=None,
              colsample_bytree=0.6, device=None, early_stopping_rounds=None,
              enable_categorical=False, eval_metric=None, feature_types=None,
-             gamma=0.5, grow_policy=None, importance_type=None,
-             interaction_constraints=None, learning_rate=0.01, max_bin=None,
-             max_cat_threshold=None, max_cat_to_onehot=None,
-             max_delta_step=None, max_depth=7, max_leaves=None,
-             min_child_weight=5, missing=nan, monotone_constraints=None,
-             multi_strategy=None, n_estimators=500, n_jobs=None,
-             num_parallel_tree=None, random_state=42, ...)</pre></div> </div></div></div></div>
+             feature_weights=None, gamma=0.5, grow_policy=None,
+             importance_type=None, interaction_constraints=None,
+             learning_rate=0.01, max_bin=None, max_cat_threshold=None,
+             max_cat_to_onehot=None, max_delta_step=None, max_depth=7,
+             max_leaves=None, min_child_weight=5, missing=nan,
+             monotone_constraints=None, multi_strategy=None, n_estimators=500,
+             n_jobs=None, num_parallel_tree=None, ...)</pre></div> </div></div></div></div>
 </div>
 </div>
-<div id="cell-63" class="cell" data-execution_count="37">
+<div id="cell-63" class="cell" data-execution_count="28">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb48-1"><a href=""></a><span class="bu">print</span>(<span class="st">"Optimized RMSE using XGBoost:"</span>, <span class="bu">round</span>(rmse_xgb, <span class="dv">2</span>))</span></code></pre></div>
@@ -2599,7 +2599,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <section id="plotting-feature-importance" class="title-slide slide level1 center">
 <h1>Plotting feature importance</h1>
-<div id="cell-65" class="cell">
+<div id="cell-65" class="cell" data-execution_count="29">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb50-1"><a href=""></a>feature_importance <span class="op">=</span> best_xgb.feature_importances_  <span class="co"># Get feature importance</span></span>
@@ -2618,7 +2618,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <section id="lets-retry-automl" class="title-slide slide level1 center">
 <h1>Let’s retry AutoML</h1>
-<div id="cell-67" class="cell" data-execution_count="39">
+<div id="cell-67" class="cell" data-execution_count="30">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb51-1"><a href=""></a>automl <span class="op">=</span> AutoML()</span>
@@ -2634,100 +2634,100 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span id="cb51-11"><a href=""></a>rmse <span class="op">=</span> root_mean_squared_error(y_test, y_pred)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[flaml.automl.logger: 03-31 11:50:47] {1728} INFO - task = regression
-[flaml.automl.logger: 03-31 11:50:47] {1739} INFO - Evaluation method: holdout
-[flaml.automl.logger: 03-31 11:50:47] {1838} INFO - Minimizing error metric: rmse
-[flaml.automl.logger: 03-31 11:50:47] {1955} INFO - List of ML learners in AutoML Run: ['lgbm', 'rf', 'xgboost', 'extra_tree', 'xgb_limitdepth', 'sgd']
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 0, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:47] {2393} INFO - Estimated sufficient time budget=450s. Estimated necessary time budget=3s.
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.1s,   estimator lgbm's best error=13.7019,    best estimator lgbm's best error=13.7019
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 1, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.1s,   estimator lgbm's best error=13.7019,    best estimator lgbm's best error=13.7019
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 2, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.1s,   estimator lgbm's best error=11.1891,    best estimator lgbm's best error=11.1891
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 3, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.2s,   estimator lgbm's best error=10.0279,    best estimator lgbm's best error=10.0279
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 4, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.2s,   estimator lgbm's best error=10.0279,    best estimator lgbm's best error=10.0279
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 5, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.2s,   estimator lgbm's best error=9.9213, best estimator lgbm's best error=9.9213
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 6, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.2s,   estimator lgbm's best error=9.9213, best estimator lgbm's best error=9.9213
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 7, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.2s,   estimator lgbm's best error=9.9213, best estimator lgbm's best error=9.9213
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 8, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.3s,   estimator lgbm's best error=9.6392, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 9, current learner sgd
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.3s,   estimator sgd's best error=18.1708, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 10, current learner sgd
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.3s,   estimator sgd's best error=18.1708, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 11, current learner sgd
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.4s,   estimator sgd's best error=18.1294, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 12, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.4s,   estimator lgbm's best error=9.6392, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 13, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:47] {2442} INFO -  at 0.5s,   estimator lgbm's best error=9.6392, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:47] {2258} INFO - iteration 14, current learner xgboost
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 0.6s,   estimator xgboost's best error=13.7583, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 15, current learner xgboost
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 0.6s,   estimator xgboost's best error=13.7583, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 16, current learner xgboost
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 0.6s,   estimator xgboost's best error=11.2826, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 17, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 0.6s,   estimator lgbm's best error=9.6392, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 18, current learner xgboost
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 0.7s,   estimator xgboost's best error=11.1308, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 19, current learner extra_tree
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 0.8s,   estimator extra_tree's best error=11.7083,  best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 20, current learner extra_tree
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 0.8s,   estimator extra_tree's best error=10.0393,  best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 21, current learner extra_tree
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 0.9s,   estimator extra_tree's best error=10.0393,  best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 22, current learner lgbm
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 0.9s,   estimator lgbm's best error=9.6392, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 23, current learner xgboost
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 1.0s,   estimator xgboost's best error=10.9476, best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 24, current learner extra_tree
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 1.1s,   estimator extra_tree's best error=9.8639,   best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 25, current learner rf
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 1.2s,   estimator rf's best error=11.0011,  best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 26, current learner extra_tree
-[flaml.automl.logger: 03-31 11:50:48] {2442} INFO -  at 1.4s,   estimator extra_tree's best error=9.7118,   best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:48] {2258} INFO - iteration 27, current learner rf
-[flaml.automl.logger: 03-31 11:50:49] {2442} INFO -  at 1.6s,   estimator rf's best error=9.9127,   best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:49] {2258} INFO - iteration 28, current learner extra_tree
-[flaml.automl.logger: 03-31 11:50:49] {2442} INFO -  at 1.7s,   estimator extra_tree's best error=9.7118,   best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:49] {2258} INFO - iteration 29, current learner extra_tree
-[flaml.automl.logger: 03-31 11:50:49] {2442} INFO -  at 1.9s,   estimator extra_tree's best error=9.7118,   best estimator lgbm's best error=9.6392
-[flaml.automl.logger: 03-31 11:50:49] {2685} INFO - retrain lgbm for 0.5s
-[flaml.automl.logger: 03-31 11:50:49] {2688} INFO - retrained model: LGBMRegressor(colsample_bytree=np.float64(0.7610534336273627),
+<pre><code>[flaml.automl.logger: 03-31 16:48:01] {1728} INFO - task = regression
+[flaml.automl.logger: 03-31 16:48:01] {1739} INFO - Evaluation method: holdout
+[flaml.automl.logger: 03-31 16:48:01] {1838} INFO - Minimizing error metric: rmse
+[flaml.automl.logger: 03-31 16:48:01] {1955} INFO - List of ML learners in AutoML Run: ['lgbm', 'rf', 'xgboost', 'extra_tree', 'xgb_limitdepth', 'sgd']
+[flaml.automl.logger: 03-31 16:48:01] {2258} INFO - iteration 0, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:01] {2393} INFO - Estimated sufficient time budget=306s. Estimated necessary time budget=2s.
+[flaml.automl.logger: 03-31 16:48:01] {2442} INFO -  at 0.1s,   estimator lgbm's best error=13.7019,    best estimator lgbm's best error=13.7019
+[flaml.automl.logger: 03-31 16:48:01] {2258} INFO - iteration 1, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.1s,   estimator lgbm's best error=13.7019,    best estimator lgbm's best error=13.7019
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 2, current learner sgd
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.2s,   estimator sgd's best error=18.1748, best estimator lgbm's best error=13.7019
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 3, current learner sgd
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.2s,   estimator sgd's best error=18.1748, best estimator lgbm's best error=13.7019
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 4, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.2s,   estimator lgbm's best error=11.1891,    best estimator lgbm's best error=11.1891
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 5, current learner sgd
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.2s,   estimator sgd's best error=18.0080, best estimator lgbm's best error=11.1891
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 6, current learner xgboost
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.3s,   estimator xgboost's best error=13.7583, best estimator lgbm's best error=11.1891
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 7, current learner extra_tree
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.4s,   estimator extra_tree's best error=11.7083,  best estimator lgbm's best error=11.1891
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 8, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.4s,   estimator lgbm's best error=10.0279,    best estimator lgbm's best error=10.0279
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 9, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.4s,   estimator lgbm's best error=10.0279,    best estimator lgbm's best error=10.0279
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 10, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.5s,   estimator lgbm's best error=9.9213, best estimator lgbm's best error=9.9213
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 11, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.5s,   estimator lgbm's best error=9.9213, best estimator lgbm's best error=9.9213
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 12, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.5s,   estimator lgbm's best error=9.9213, best estimator lgbm's best error=9.9213
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 13, current learner xgboost
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.5s,   estimator xgboost's best error=13.7583, best estimator lgbm's best error=9.9213
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 14, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.6s,   estimator lgbm's best error=9.6392, best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 15, current learner extra_tree
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.6s,   estimator extra_tree's best error=10.0393,  best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 16, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.6s,   estimator lgbm's best error=9.6392, best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 17, current learner extra_tree
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.7s,   estimator extra_tree's best error=10.0393,  best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 18, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.8s,   estimator lgbm's best error=9.6392, best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 19, current learner extra_tree
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 0.9s,   estimator extra_tree's best error=9.8639,   best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 20, current learner rf
+[flaml.automl.logger: 03-31 16:48:02] {2442} INFO -  at 1.1s,   estimator rf's best error=11.0011,  best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:02] {2258} INFO - iteration 21, current learner rf
+[flaml.automl.logger: 03-31 16:48:03] {2442} INFO -  at 1.3s,   estimator rf's best error=9.9127,   best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:03] {2258} INFO - iteration 22, current learner xgboost
+[flaml.automl.logger: 03-31 16:48:03] {2442} INFO -  at 1.4s,   estimator xgboost's best error=11.2826, best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:03] {2258} INFO - iteration 23, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:03] {2442} INFO -  at 1.4s,   estimator lgbm's best error=9.6392, best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:03] {2258} INFO - iteration 24, current learner lgbm
+[flaml.automl.logger: 03-31 16:48:03] {2442} INFO -  at 1.4s,   estimator lgbm's best error=9.6392, best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:03] {2258} INFO - iteration 25, current learner xgboost
+[flaml.automl.logger: 03-31 16:48:03] {2442} INFO -  at 1.5s,   estimator xgboost's best error=11.1308, best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:03] {2258} INFO - iteration 26, current learner extra_tree
+[flaml.automl.logger: 03-31 16:48:03] {2442} INFO -  at 1.6s,   estimator extra_tree's best error=9.7118,   best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:03] {2258} INFO - iteration 27, current learner rf
+[flaml.automl.logger: 03-31 16:48:03] {2442} INFO -  at 1.7s,   estimator rf's best error=9.9127,   best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:03] {2258} INFO - iteration 28, current learner extra_tree
+[flaml.automl.logger: 03-31 16:48:03] {2442} INFO -  at 1.9s,   estimator extra_tree's best error=9.7118,   best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:03] {2258} INFO - iteration 29, current learner extra_tree
+[flaml.automl.logger: 03-31 16:48:03] {2442} INFO -  at 2.1s,   estimator extra_tree's best error=9.7118,   best estimator lgbm's best error=9.6392
+[flaml.automl.logger: 03-31 16:48:03] {2685} INFO - retrain lgbm for 0.1s
+[flaml.automl.logger: 03-31 16:48:03] {2688} INFO - retrained model: LGBMRegressor(colsample_bytree=np.float64(0.7610534336273627),
               learning_rate=np.float64(0.41929025492645006), max_bin=255,
               min_child_samples=4, n_estimators=34, n_jobs=-1, num_leaves=4,
               reg_alpha=0.0009765625,
               reg_lambda=np.float64(0.009280655005879927), verbose=-1)
-[flaml.automl.logger: 03-31 11:50:49] {1985} INFO - fit succeeded
-[flaml.automl.logger: 03-31 11:50:49] {1986} INFO - Time taken to find the best model: 0.2773427963256836</code></pre>
+[flaml.automl.logger: 03-31 16:48:03] {1985} INFO - fit succeeded
+[flaml.automl.logger: 03-31 16:48:03] {1986} INFO - Time taken to find the best model: 0.5532464981079102</code></pre>
 </div>
 </div>
 </section>
 
 <section id="section-10" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cell-69" class="cell" data-execution_count="40">
+<div id="cell-69" class="cell" data-execution_count="31">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb53-1"><a href=""></a>automl.best_estimator</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="40">
+<div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>'lgbm'</code></pre>
 </div>
 </div>
-<div id="cell-70" class="cell" data-execution_count="41">
+<div id="cell-70" class="cell" data-execution_count="32">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb55-1"><a href=""></a>automl.best_config</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="41">
+<div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>{'n_estimators': 34,
  'num_leaves': 4,
  'min_child_samples': 4,
@@ -2738,7 +2738,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
  'reg_lambda': np.float64(0.009280655005879927)}</code></pre>
 </div>
 </div>
-<div id="cell-71" class="cell" data-execution_count="42">
+<div id="cell-71" class="cell" data-execution_count="33">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb57-1"><a href=""></a><span class="bu">print</span>(<span class="st">"RMSE using AutoML:"</span>, <span class="bu">round</span>(rmse, <span class="dv">2</span>))</span></code></pre></div>
