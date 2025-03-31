@@ -25,6 +25,8 @@ Research topics
 - w/ Prof. Golfarelli, Prof. Gallinucci
 - You can check our thesis projects [here](https://big-unibo.github.io/thesis/)
 
+<img src="./img/unibo.svg" style="box-shadow: none !important; position: absolute !important; top: -250px !important; right: -250px !important; ; max-height: 500px !important; max-width: 500px !important" />
+
 # Table of Contents and Course Goals
 
 Hands-on *machine learning* (Module 2, 24 hours)

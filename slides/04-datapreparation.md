@@ -9,7 +9,6 @@ subtitle: Data Preparation
 #
 
 *Without clean data, the results of a data mining analysis are in question*.
- 
 # Data Preparation (aka *data pre-processing*)
 
 The **data preparation** phase covers all activities to construct the dataset fed into the modeling tools from the initial data.
@@ -48,7 +47,7 @@ Part of the data selection process should involve explaining why certain data wa
 - It is also a good idea to decide if one or more attributes are more important than others
 
 > Examples
-> 
+>
 > - An individual's address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated.
 >
 > - To learn how sales are characterized by store `type` you do not need to consider the `StoreId`
@@ -71,7 +70,7 @@ The following personal data is considered *sensitive* and is subject to specific
 
 See [article 4](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN#d1e1489-1-1)
 
-Why should we care about sensitive data? 
+Why should we care about sensitive data?
 
 # The Artificial Intelligence Act
 
@@ -93,15 +92,15 @@ The *AI Act* is a European Union regulation concerning artificial intelligence t
 See *Black Mirror* episodes and how they relate to the AI Act's high-risk categories:
 
 - "The Entire History of You" (Season 1, Episode 3)
-    - People have **memory implants** that allow them to replay and analyze past events.  
+    - People have **memory implants** that allow them to replay and analyze past events.
 - "Nosedive" (Season 3, Episode 1)
-    - People's **social credit scores** determine their access to housing, jobs, and even flights.  
+    - People's **social credit scores** determine their access to housing, jobs, and even flights.
 - "Hated in the Nation" (Season 3, Episode 6)
     - A social media campaign with an AI-driven hashtag leads to **automated drone assassinations**.
 - "Metalhead" (Season 4, Episode 5)
-    - The episode features relentless **autonomous killer robots** that hunt down humans.  
+    - The episode features relentless **autonomous killer robots** that hunt down humans.
 - "Rachel, Jack and Ashley Too" (Season 5, Episode 3) – AI & Digital Manipulation
-    - A pop star's **consciousness is cloned into an AI assistant**, and the AI is used to create performances without her consent.  
+    - A pop star's **consciousness is cloned into an AI assistant**, and the AI is used to create performances without her consent.
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: missing values?
 
@@ -477,11 +476,11 @@ As a semplification, given a company $C$ and a generic index $I$
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we handle anomalies?
 
 > A customer who typically buys groceries worth $50 suddenly places an order for $5,000 in electronics. Is it a fraud?
-> 
+>
 > A system that usually receives 100-200 requests per second suddenly sees 10,000 requests per second. is it a DDoS attack?
-> 
+>
 > A bottle-filling machine fills 500ml of liquid, but occasionally, some bottles contain 450ml or 550ml. Is it a defect?
-> 
+>
 > A credit card transaction of $10,000 when the usual spending is around $50-$100. Is it a fraud?
 
 # Outlier removal
@@ -610,9 +609,9 @@ Such extreme events (outliers), collectively play vastly larger roles than regul
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: is the dataset ready for machine learning?
 
 > An online retailer wants to predict which customers are likely to churn. Instead of using raw purchase data, they need a "Loyalty Score" based on Total purchases in the last 12 months, average order value, and frequency of purchases.
-> 
+>
 > A bank needs to classify customers into risk levels based on their credit score.
-> 
+>
 > Netflix needs to recommend movies based on genre. However, movie genres are categorical (e.g., "Action," "Comedy"), which must be converted into numbers.
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: is the dataset ready for machine learning?
@@ -657,7 +656,7 @@ Such extreme events (outliers), collectively play vastly larger roles than regul
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we transform features into numbers?
 
 > Some machine learning models can only work with numerical values.
-> 
+>
 > How do we transform the categorical values of the relevant features into numerical ones?
 
 # Encoding
@@ -900,7 +899,7 @@ Transformed Iris dataset: `petal_length*=10`, addition of 1 outlier [`petal_leng
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: if the dataset is too detailed/noisy, what can we do?
 
 > A meteorologist analyzes hourly temperature readings, but the data has fluctuations due to temporary weather conditions.
-> 
+>
 > |Hour|	Temperature (°C)|
 > |----|--------------------|
 > |1|	24.1|
@@ -916,13 +915,13 @@ Transformed Iris dataset: `petal_length*=10`, addition of 1 outlier [`petal_leng
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: if the dataset is too detailed/noisy, what can we do?
 
 > For instance, using *equal-width binning* (grouping every 3 hours and averaging):
-> 
+>
 > |Time Period|	Smoothed Temperature (°C)|
 > |-----------|--------------------------|
 > |1-3 AM|	24.0 (Avg of 24.1, 24.3, 23.8)|
 > |4-6 AM|	23.9 (Avg of 24.5, 22.9, 24.2)|
 > |7 AM|	23.9|
-> 
+>
 > Noise from sudden drops (e.g., 22.9°C at 5 AM) is smoothed, making temperature trends more reliable.
 
 # Aggregation
@@ -997,9 +996,9 @@ Pay attention to the *aggregation operator*!
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: what if we have too many features?
 
 > A streaming platform ants to recommend movies based on user preferences.
-> 
+>
 > Each movie is represented by a vector of features:
-> 
+>
 > 1. `Genre`
 > 1. `Director`
 > 1. `Lead Actor`
@@ -1009,9 +1008,9 @@ Pay attention to the *aggregation operator*!
 > 1. `Box Office Revenue`
 > 1. `Soundtrack Style`
 > 1. ... and many more (let’s assume 100+ features per movie).
-> 
+>
 > If movies had only 2 features (e.g., "Genre" and "IMDB Rating"), we could easily visualize clusters of similar movies.
-> 
+>
 > With 100+ features, the data points are spread out across a vast space.
 >
 > - All points seem "far apart" from each other, making similarity calculations less reliable.
@@ -1281,8 +1280,6 @@ Feature Relevance for 3 Components:
 > For instance, a retail chain has one table with information about each store's general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from the previous year), and another table with information about the demographics of the surrounding area.
 >
 > These tables can be merged together into a new table with one record for each store.
-
-
 :::: {.columns}
 
 ::: {.column width="30%"}
