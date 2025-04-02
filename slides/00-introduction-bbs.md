@@ -61,6 +61,8 @@ Goals
 
 Slides and Python notebooks (to be opened on Google Colab) are sufficient to prepare for the final exam
 
+Download the material from [https://github.com/w4bo/2025-bbs-dm](https://github.com/w4bo/2025-bbs-dm)
+
 However, I suggest you to read the book:
 
 - *Title*: Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow
