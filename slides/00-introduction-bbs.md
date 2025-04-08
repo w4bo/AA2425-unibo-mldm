@@ -61,6 +61,8 @@ Goals
 
 Slides and Python notebooks (to be opened on Google Colab) are sufficient to prepare for the final exam
 
+Download the material from [https://github.com/w4bo/2025-bbs-dm](https://github.com/w4bo/2025-bbs-dm)
+
 However, I suggest you to read the book:
 
 - *Title*: Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow
@@ -80,6 +82,14 @@ However, I suggest you to read the book:
 :::
 ::::
 
+# Interesting news
+
+- [(April 1, 2025) Ghibli effect: ChatGPT usage hits record after rollout of viral feature](https://www.reuters.com/technology/artificial-intelligence/ghibli-effect-chatgpt-usage-hits-record-after-rollout-viral-feature-2025-04-01/)
+- [(January 28, 2025) DeepSeek sparks AI stock selloff; Nvidia posts record market-cap loss](https://www.reuters.com/technology/chinas-deepseek-sets-off-ai-market-rout-2025-01-27/)
+- [(January 2, 2025) Nvidia's market value gets $2 trillion boost in 2024 on AI rally](https://www.reuters.com/technology/artificial-intelligence/global-markets-marketcap-pix-2025-01-02/)
+- [The A.I. Boom Makes Millions for an Unlikely Industry Player](https://www.nytimes.com/2024/03/22/business/artificial-intelligence-anguilla.html)
+- ... and many others
+
 # Tentative outline
 
 :::: {.columns}
@@ -90,6 +100,13 @@ However, I suggest you to read the book:
 1. (w/ Prof. Gallinucci) Big data pipelines
 1. (w/ Prof. Gallinucci) Hands-on big data (lab session)
 
+The focus of my lectures is about *connecting the dots*! 
+
+- You have done Machine Learning
+- ... and data mining
+- ... and others
+
+Let's try to link all the topics and see some interesting (small) case studies!
 :::
 ::: {.column width="40%"}
 
