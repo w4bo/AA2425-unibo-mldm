@@ -4,7 +4,7 @@
     //     "context": "..",
     //     "dockerfile": "../Dockerfile"
     // },
-    "image": "w4bo/python:1.0.3",
+    "image": "w4bo/python:1.0.4",
     "workspaceMount": "source=${localWorkspaceFolder},target=/home,type=bind",
     "workspaceFolder": "/home",
     "customizations": {
@@ -33,7 +33,9 @@
                 "ms-toolsai.jupyter",
                 "jock.SVG",
                 "tomoki1207.pdf",
-                "adamvoss.vscode-languagetool-en"
+                "adamvoss.vscode-languagetool-en",
+                "mechatroner.rainbow-csv",
+                "ms-azuretools.vscode-docker"
             ]
         }
     }

@@ -1,39 +1,23 @@
-# Un sistema di telemetria per l’ortofrutta
+# A telemetry system for precision agriculture
+
+The impacts of climate change are so rapid that what happened last year is no longer true today.
+
+- We need to act quickly and make decisions based on evidence, not just history.
 
 :::: {.columns}
+::: {.column width="55%"}
 
-::: {.column width="50%"}
-
-Gli impatti del cambiamento climatico sono talmente rapidi che quello che è successo l’anno passato non è più vero oggi. Abbiamo bisogno di intervenire rapidamente e prendere decisioni basate sulle evidenze e non solo sulla storia
+![F1 control room](./img/cimice/controlroom.png)
 
 :::
-::: {.column width="50%"}
+::: {.column width="45%"}
 
-![](./img/cimice/controlroom.png)
+![The "Agro.Big.Data.Science" platform](./img/cimice/abds.svg)
 
 :::
 ::::
 
-# La piattaforma Agro.Big.Data.Science
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-Una piattaforma modulare per raccogliere, analizzare e visualizzare dati eterogenei dal campo e nella fase di post raccolta
-
-
-:::
-::: {.column width="50%"}
-
-![](./img/cimice/abds.svg)
-
-:::
-::::
-
-# La piattaforma Agro.Big.Data.Science
-
-<img src="./img/cimice/durezza.png" class="center-img">
+*ABDS*: A modular platform for collecting, analyzing, and visualizing heterogeneous data from the field and the post-harvest phase.
 
 # Cimice.Net
 
@@ -41,55 +25,35 @@ Una piattaforma modulare per raccogliere, analizzare e visualizzare dati eteroge
 
 ::: {.column width="50%"}
 
-The brown marmorated stink bug (Halyomorpha halys) is an insect pest species causing economic damages to several agricultural commodities
+The brown marmorated stink bug (Halyomorpha halys) is an insect pest species causing economic damage to several agricultural commodities
 
-- A data-driven approach to support the application of Integrated Pest Management strategies against H. halys
+- We want to build a data-driven approach to support the application of Integrated Pest Management strategies
+- We want to monitor the spread of H. Halys
+- And learn the most important environmental factors
 
-:::
-::: {.column width="50%"}
-
-![](./img/cimice/cimice.png)
-
-:::
-::::
-
-#
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-Three years long project
-
-- Goal: help growers in protecting crops
-- A network of monitoring traps has been deployed throughout Emilia-Romagna
-    - Monitoring 145, 168, and 101 farms in 2020-2022 (and also in 2023 and 2024)
-- A big data platform has been implemented
-    - Real-time pest surveillance
-    - Understanding about seasonal invasion dynamics and the main factors contributing to its spread
-    - Find relationships between spreading and environmental factors
+Three years-long project
 
 :::
 ::: {.column width="50%"}
 
-![](./img/cimice/trap.png)
+![Brown marmorated stink bug](./img/cimice/cimice2.jpg)
 
-![](./img/cimice/timeline.png)
+![Timeline](./img/cimice/timeline2.png)
 
 :::
 ::::
 
-#
+# Cimice.Net
+
+Goal: help farmers protect crops
+
+- A network of monitoring traps has been deployed in Emilia-Romagna
+- Monitoring 145, 168, and 101 farms in 2020-2022 (also in 2023 and 2024)
 
 :::: {.columns}
-
 ::: {.column width="50%"}
 
-The acquisition of data concerning the installation and monitoring of traps have been aided by CASE (Collaborative Agro SEnsing)
-
-- Dynamic questionnaire application for on-field data crowdsourcing in the agricultural domain
-- Facilitate and standardize the communications between on-field operators with first-hand visuals of a given field/orchard and the technicians needing a 360-degrees view of all fields/orchards for real-time monitoring, operational oversight, coordination, and analytical purposes
-
+![Trap](./img/cimice/trap2.jpg)
 
 :::
 ::: {.column width="50%"}
@@ -101,8 +65,12 @@ The acquisition of data concerning the installation and monitoring of traps have
 
 # Collaborative Agro SEnsing
 
-:::: {.columns}
+The acquisition of data concerning the installation and monitoring of traps have been aided by *CASE* (*Collaborative Agro SEnsing*)
 
+- Dynamic questionnaire application for on-field data crowdsourcing in the agricultural domain
+- Facilitate and standardize the communications between on-field operators with first-hand visuals of a given field/orchard and the technicians needing a 360-degree view of all fields
+
+:::: {.columns}
 ::: {.column width="50%"}
 
 ![](./img/cimice/case1.png)
@@ -138,15 +106,15 @@ The acquisition of data concerning the installation and monitoring of traps have
 
 ::: {.column width="50%"}
 
-![](./img/cimice/case6.png)
+![Database](./img/cimice/case6.png)
 
 
 :::
 ::: {.column width="50%"}
 
-![](./img/cimice/case7.png)
+![Multidimensional cube (DFM)](./img/cimice/case7.png)
 
 :::
 ::::
 
-# [Live!](https://big.csr.unibo.it/cimice/)
+# [Live!](https://big.csr.unibo.it/projects/cimice/monitoring.php?lan=en)
