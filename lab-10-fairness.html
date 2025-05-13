@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="lab-10-fairness_files/libs/quarto-html/tabby.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="lab-10-fairness_files/libs/quarto-html/tabby.min.js"></script>
 <script src="lab-10-fairness_files/libs/quarto-html/popper.min.js"></script>
 <script src="lab-10-fairness_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-10-fairness_files/libs/quarto-html/tippy.css" rel="stylesheet">
@@ -185,6 +185,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -204,7 +207,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section class="slide level2">
 
-<div id="cell-0" class="cell">
+<div id="cell-0" class="cell" data-execution_count="72">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -217,221 +220,620 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb1-8"><a href=""></a>df <span class="op">=</span> pd.read_csv(file_path, header<span class="op">=</span><span class="va">None</span>, names<span class="op">=</span>column_names, na_values<span class="op">=</span><span class="st">" ?"</span>, skipinitialspace<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb1-9"><a href=""></a>df.head()</span></code></pre></div>
 </details>
+<div class="cell-output cell-output-display" data-execution_count="72">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">workclass</th>
+<th data-quarto-table-cell-role="th">fnlwgt</th>
+<th data-quarto-table-cell-role="th">education</th>
+<th data-quarto-table-cell-role="th">education-num</th>
+<th data-quarto-table-cell-role="th">marital-status</th>
+<th data-quarto-table-cell-role="th">occupation</th>
+<th data-quarto-table-cell-role="th">relationship</th>
+<th data-quarto-table-cell-role="th">race</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">capital-gain</th>
+<th data-quarto-table-cell-role="th">capital-loss</th>
+<th data-quarto-table-cell-role="th">hours-per-week</th>
+<th data-quarto-table-cell-role="th">native-country</th>
+<th data-quarto-table-cell-role="th">income</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>39</td>
+<td>State-gov</td>
+<td>77516</td>
+<td>Bachelors</td>
+<td>13</td>
+<td>Never-married</td>
+<td>Adm-clerical</td>
+<td>Not-in-family</td>
+<td>White</td>
+<td>Male</td>
+<td>2174</td>
+<td>0</td>
+<td>40</td>
+<td>United-States</td>
+<td>&lt;=50K</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>50</td>
+<td>Self-emp-not-inc</td>
+<td>83311</td>
+<td>Bachelors</td>
+<td>13</td>
+<td>Married-civ-spouse</td>
+<td>Exec-managerial</td>
+<td>Husband</td>
+<td>White</td>
+<td>Male</td>
+<td>0</td>
+<td>0</td>
+<td>13</td>
+<td>United-States</td>
+<td>&lt;=50K</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>38</td>
+<td>Private</td>
+<td>215646</td>
+<td>HS-grad</td>
+<td>9</td>
+<td>Divorced</td>
+<td>Handlers-cleaners</td>
+<td>Not-in-family</td>
+<td>White</td>
+<td>Male</td>
+<td>0</td>
+<td>0</td>
+<td>40</td>
+<td>United-States</td>
+<td>&lt;=50K</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>53</td>
+<td>Private</td>
+<td>234721</td>
+<td>11th</td>
+<td>7</td>
+<td>Married-civ-spouse</td>
+<td>Handlers-cleaners</td>
+<td>Husband</td>
+<td>Black</td>
+<td>Male</td>
+<td>0</td>
+<td>0</td>
+<td>40</td>
+<td>United-States</td>
+<td>&lt;=50K</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>28</td>
+<td>Private</td>
+<td>338409</td>
+<td>Bachelors</td>
+<td>13</td>
+<td>Married-civ-spouse</td>
+<td>Prof-specialty</td>
+<td>Wife</td>
+<td>Black</td>
+<td>Female</td>
+<td>0</td>
+<td>0</td>
+<td>40</td>
+<td>Cuba</td>
+<td>&lt;=50K</td>
+</tr>
+</tbody>
+</table>
+
 </div>
-<div id="cell-1" class="cell">
+</div>
+</div>
+<div id="cell-1" class="cell" data-execution_count="73">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="bu">print</span>(df.head().to_markdown(index<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>|   age | workclass        |   fnlwgt | education   |   education-num | marital-status     | occupation        | relationship   | race   | sex    |   capital-gain |   capital-loss |   hours-per-week | native-country   | income   |
+|------:|:-----------------|---------:|:------------|----------------:|:-------------------|:------------------|:---------------|:-------|:-------|---------------:|---------------:|-----------------:|:-----------------|:---------|
+|    39 | State-gov        |    77516 | Bachelors   |              13 | Never-married      | Adm-clerical      | Not-in-family  | White  | Male   |           2174 |              0 |               40 | United-States    | &lt;=50K    |
+|    50 | Self-emp-not-inc |    83311 | Bachelors   |              13 | Married-civ-spouse | Exec-managerial   | Husband        | White  | Male   |              0 |              0 |               13 | United-States    | &lt;=50K    |
+|    38 | Private          |   215646 | HS-grad     |               9 | Divorced           | Handlers-cleaners | Not-in-family  | White  | Male   |              0 |              0 |               40 | United-States    | &lt;=50K    |
+|    53 | Private          |   234721 | 11th        |               7 | Married-civ-spouse | Handlers-cleaners | Husband        | Black  | Male   |              0 |              0 |               40 | United-States    | &lt;=50K    |
+|    28 | Private          |   338409 | Bachelors   |              13 | Married-civ-spouse | Prof-specialty    | Wife           | Black  | Female |              0 |              0 |               40 | Cuba             | &lt;=50K    |</code></pre>
 </div>
-<div id="cell-2" class="cell">
+</div>
+<div id="cell-2" class="cell" data-execution_count="74">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-3"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-4"><a href=""></a></span>
-<span id="cb3-5"><a href=""></a><span class="co"># Set a random seed for reproducibility</span></span>
-<span id="cb3-6"><a href=""></a>np.random.seed(<span class="dv">42</span>)</span>
-<span id="cb3-7"><a href=""></a></span>
-<span id="cb3-8"><a href=""></a><span class="co"># Generate dataset</span></span>
-<span id="cb3-9"><a href=""></a>n_points <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb3-10"><a href=""></a></span>
-<span id="cb3-11"><a href=""></a>A <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">10</span>, n_points)  <span class="co"># Random values for A between 0 and 10</span></span>
-<span id="cb3-12"><a href=""></a>B <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">10</span>, n_points)  <span class="co"># Random values for B between 0 and 10</span></span>
-<span id="cb3-13"><a href=""></a><span class="co"># Correct the probabilities calculation</span></span>
-<span id="cb3-14"><a href=""></a>prob_triangle <span class="op">=</span> A <span class="op">/</span> <span class="dv">10</span>  <span class="co"># Probability of being a triangle increases with A</span></span>
-<span id="cb3-15"><a href=""></a>prob_square <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> prob_triangle  <span class="co"># Probability of being a square</span></span>
-<span id="cb3-16"><a href=""></a>probabilities <span class="op">=</span> np.column_stack((prob_triangle, prob_square))</span>
-<span id="cb3-17"><a href=""></a></span>
-<span id="cb3-18"><a href=""></a><span class="co"># Assign C using row-wise probabilities</span></span>
-<span id="cb3-19"><a href=""></a>C <span class="op">=</span> [np.random.choice([<span class="st">'triangle'</span>, <span class="st">'square'</span>], p<span class="op">=</span>p) <span class="cf">for</span> p <span class="kw">in</span> probabilities]</span>
-<span id="cb3-20"><a href=""></a></span>
-<span id="cb3-21"><a href=""></a><span class="co"># Create a DataFrame</span></span>
-<span id="cb3-22"><a href=""></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'GPA'</span>: A, <span class="st">'Interview Score'</span>: B, <span class="st">'C'</span>: C})</span>
-<span id="cb3-23"><a href=""></a></span>
-<span id="cb3-24"><a href=""></a><span class="co"># Scatter plot</span></span>
-<span id="cb3-25"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
-<span id="cb3-26"><a href=""></a></span>
-<span id="cb3-27"><a href=""></a></span>
-<span id="cb3-28"><a href=""></a>x_line <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)  <span class="co"># Generate x values</span></span>
-<span id="cb3-29"><a href=""></a>y_line <span class="op">=</span> <span class="op">-</span>x_line <span class="op">+</span> <span class="dv">12</span>  <span class="co"># Compute corresponding y values</span></span>
-<span id="cb3-30"><a href=""></a>ax.plot(x_line, y_line, <span class="st">'k--'</span>, label<span class="op">=</span><span class="st">'B = -A + 10'</span>)  <span class="co"># Add the line to the plot</span></span>
-<span id="cb3-31"><a href=""></a></span>
-<span id="cb3-32"><a href=""></a><span class="cf">for</span> marker, group <span class="kw">in</span> <span class="bu">zip</span>([<span class="st">'^'</span>, <span class="st">'s'</span>], [<span class="st">'triangle'</span>, <span class="st">'square'</span>]):</span>
-<span id="cb3-33"><a href=""></a>    subset <span class="op">=</span> data[data[<span class="st">'C'</span>] <span class="op">==</span> group]</span>
-<span id="cb3-34"><a href=""></a>    ax.scatter(subset[<span class="st">'GPA'</span>], subset[<span class="st">'Interview Score'</span>], label<span class="op">=</span>group, alpha<span class="op">=</span>subset.<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="dv">1</span> <span class="cf">if</span> (<span class="op">-</span>x[<span class="st">'GPA'</span>]<span class="op">+</span><span class="dv">12</span>) <span class="op">&lt;</span> x[<span class="st">'Interview Score'</span>] <span class="cf">else</span> <span class="fl">0.5</span>, axis<span class="op">=</span><span class="dv">1</span>), marker<span class="op">=</span>marker)</span>
-<span id="cb3-35"><a href=""></a></span>
-<span id="cb3-36"><a href=""></a><span class="co"># Add labels and legend</span></span>
-<span id="cb3-37"><a href=""></a><span class="co"># ax.set_title('Scatterplot of A vs B with C as Marker', fontsize=14)</span></span>
-<span id="cb3-38"><a href=""></a>ax.set_xlabel(<span class="st">'GPA'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb3-39"><a href=""></a>ax.set_ylabel(<span class="st">'Interview Score'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb3-40"><a href=""></a>ax.set_ylim([<span class="dv">0</span>, <span class="dv">10</span>])</span>
-<span id="cb3-41"><a href=""></a>ax.set_xlim([<span class="dv">0</span>, <span class="dv">10</span>])</span>
-<span id="cb3-42"><a href=""></a>ax.set_xticklabels([])</span>
-<span id="cb3-43"><a href=""></a>ax.set_yticklabels([])</span>
-<span id="cb3-44"><a href=""></a><span class="co"># ax.set_title('Classifier: $B = -A + 12$', fontsize=12)</span></span>
-<span id="cb3-45"><a href=""></a>fig.tight_layout()</span>
-<span id="cb3-46"><a href=""></a>fig.savefig(<span class="st">"/home/slides/img/fairness/AB.svg"</span>)</span>
-<span id="cb3-47"><a href=""></a>fig.savefig(<span class="st">"/home/slides/img/fairness/AB.pdf"</span>)</span>
-<span id="cb3-48"><a href=""></a><span class="bu">print</span>(data[(<span class="op">-</span>data[<span class="st">'GPA'</span>]<span class="op">+</span><span class="dv">12</span>) <span class="op">&lt;</span> data[<span class="st">'Interview Score'</span>]].groupby(<span class="st">"C"</span>).count().to_markdown(index<span class="op">=</span><span class="va">True</span>))</span>
-<span id="cb3-49"><a href=""></a><span class="bu">print</span>(data[(<span class="op">-</span>data[<span class="st">'GPA'</span>]<span class="op">+</span><span class="dv">12</span>) <span class="op">&gt;</span> data[<span class="st">'Interview Score'</span>]].groupby(<span class="st">"C"</span>).count().to_markdown(index<span class="op">=</span><span class="va">True</span>))</span>
-<span id="cb3-50"><a href=""></a><span class="bu">print</span>(data.head().to_markdown(index<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
-</details>
-</div>
-<div id="cell-3" class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb4-3"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb4-4"><a href=""></a></span>
-<span id="cb4-5"><a href=""></a><span class="co"># Set seed for reproducibility</span></span>
+<span id="cb4-5"><a href=""></a><span class="co"># Set a random seed for reproducibility</span></span>
 <span id="cb4-6"><a href=""></a>np.random.seed(<span class="dv">42</span>)</span>
 <span id="cb4-7"><a href=""></a></span>
-<span id="cb4-8"><a href=""></a><span class="co"># Parameters for Gaussian distributions</span></span>
-<span id="cb4-9"><a href=""></a>mean_square <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb4-10"><a href=""></a>std_square <span class="op">=</span> <span class="fl">1.5</span></span>
-<span id="cb4-11"><a href=""></a>mean_triangle <span class="op">=</span> <span class="dv">6</span></span>
-<span id="cb4-12"><a href=""></a>std_triangle <span class="op">=</span> <span class="fl">1.5</span></span>
-<span id="cb4-13"><a href=""></a></span>
-<span id="cb4-14"><a href=""></a><span class="co"># Number of samples</span></span>
-<span id="cb4-15"><a href=""></a>n_samples_square <span class="op">=</span> <span class="dv">500</span></span>
-<span id="cb4-16"><a href=""></a>n_samples_triangle <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb4-8"><a href=""></a><span class="co"># Generate dataset</span></span>
+<span id="cb4-9"><a href=""></a>n_points <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb4-10"><a href=""></a></span>
+<span id="cb4-11"><a href=""></a>A <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">10</span>, n_points)  <span class="co"># Random values for A between 0 and 10</span></span>
+<span id="cb4-12"><a href=""></a>B <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">10</span>, n_points)  <span class="co"># Random values for B between 0 and 10</span></span>
+<span id="cb4-13"><a href=""></a><span class="co"># Correct the probabilities calculation</span></span>
+<span id="cb4-14"><a href=""></a>prob_triangle <span class="op">=</span> A <span class="op">/</span> <span class="dv">10</span>  <span class="co"># Probability of being a triangle increases with A</span></span>
+<span id="cb4-15"><a href=""></a>prob_square <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> prob_triangle  <span class="co"># Probability of being a square</span></span>
+<span id="cb4-16"><a href=""></a>probabilities <span class="op">=</span> np.column_stack((prob_triangle, prob_square))</span>
 <span id="cb4-17"><a href=""></a></span>
-<span id="cb4-18"><a href=""></a>df <span class="op">=</span> pd.DataFrame()</span>
-<span id="cb4-19"><a href=""></a>scores <span class="op">=</span> []</span>
+<span id="cb4-18"><a href=""></a><span class="co"># Assign C using row-wise probabilities</span></span>
+<span id="cb4-19"><a href=""></a>C <span class="op">=</span> [np.random.choice([<span class="st">'triangle'</span>, <span class="st">'square'</span>], p<span class="op">=</span>p) <span class="cf">for</span> p <span class="kw">in</span> probabilities]</span>
 <span id="cb4-20"><a href=""></a></span>
-<span id="cb4-21"><a href=""></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-22"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">100</span>):  <span class="co"># Generate data for each group</span></span>
-<span id="cb4-23"><a href=""></a>    a_square <span class="op">=</span> np.random.normal(mean_square, std_square, n_samples_square)</span>
-<span id="cb4-24"><a href=""></a>    a_triangle <span class="op">=</span> np.random.normal(mean_triangle, std_triangle, n_samples_triangle)</span>
-<span id="cb4-25"><a href=""></a></span>
-<span id="cb4-26"><a href=""></a>    <span class="co"># Create the dataset</span></span>
-<span id="cb4-27"><a href=""></a>    group_square <span class="op">=</span> [<span class="st">'Square'</span>] <span class="op">*</span> n_samples_square</span>
-<span id="cb4-28"><a href=""></a>    group_triangle <span class="op">=</span> [<span class="st">'Triangle'</span>] <span class="op">*</span> n_samples_triangle</span>
-<span id="cb4-29"><a href=""></a></span>
-<span id="cb4-30"><a href=""></a></span>
-<span id="cb4-31"><a href=""></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb4-32"><a href=""></a>        data <span class="op">=</span> {</span>
-<span id="cb4-33"><a href=""></a>            <span class="ss">f'A_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>: np.concatenate([a_square, a_triangle]),</span>
-<span id="cb4-34"><a href=""></a>            <span class="st">'GROUP'</span>: group_square <span class="op">+</span> group_triangle</span>
-<span id="cb4-35"><a href=""></a>        }</span>
-<span id="cb4-36"><a href=""></a>        df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb4-37"><a href=""></a></span>
-<span id="cb4-38"><a href=""></a>    <span class="cf">else</span>:</span>
-<span id="cb4-39"><a href=""></a>        df[<span class="ss">f"A_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>] <span class="op">=</span> np.concatenate([a_square, a_triangle])</span>
-<span id="cb4-40"><a href=""></a></span>
-<span id="cb4-41"><a href=""></a>    <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">3</span>:</span>
-<span id="cb4-42"><a href=""></a>        <span class="co"># Plot the data distribution by group</span></span>
-<span id="cb4-43"><a href=""></a>        <span class="cf">for</span> group, color <span class="kw">in</span> <span class="bu">zip</span>([<span class="st">'Square'</span>, <span class="st">'Triangle'</span>], [<span class="st">'blue'</span>, <span class="st">'orange'</span>]):</span>
-<span id="cb4-44"><a href=""></a>            group_data <span class="op">=</span> df[df[<span class="st">'GROUP'</span>] <span class="op">==</span> group]</span>
-<span id="cb4-45"><a href=""></a>            axs[i].hist(group_data[<span class="ss">f'A_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>], bins<span class="op">=</span><span class="dv">30</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span>group, color<span class="op">=</span>color)</span>
-<span id="cb4-46"><a href=""></a></span>
-<span id="cb4-47"><a href=""></a>        <span class="co"># plt.title('Distribution of A by Group', fontsize=16)</span></span>
-<span id="cb4-48"><a href=""></a>        axs[i].set_xlabel(<span class="ss">f'$X_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">$'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb4-49"><a href=""></a>        <span class="cf">if</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb4-50"><a href=""></a>            axs[i].set_ylabel(<span class="st">'Frequency'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb4-51"><a href=""></a>            axs[i].legend(title<span class="op">=</span><span class="st">"A"</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb4-52"><a href=""></a>        axs[i].grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb4-53"><a href=""></a></span>
-<span id="cb4-54"><a href=""></a>    <span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-55"><a href=""></a>    <span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-56"><a href=""></a>    <span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb4-57"><a href=""></a>    <span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
-<span id="cb4-58"><a href=""></a></span>
-<span id="cb4-59"><a href=""></a>    <span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</span>
-<span id="cb4-60"><a href=""></a>    <span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, accuracy_score</span>
-<span id="cb4-61"><a href=""></a></span>
-<span id="cb4-62"><a href=""></a>    <span class="co"># Simulated dataset creation (if not already created)</span></span>
-<span id="cb4-63"><a href=""></a>    X <span class="op">=</span> df[[x <span class="cf">for</span> x <span class="kw">in</span> df.columns <span class="cf">if</span> x <span class="op">!=</span> <span class="st">"GROUP"</span>]]</span>
-<span id="cb4-64"><a href=""></a>    y <span class="op">=</span> df[<span class="st">'GROUP'</span>]</span>
-<span id="cb4-65"><a href=""></a></span>
-<span id="cb4-66"><a href=""></a>    <span class="co"># 2. Encode the target</span></span>
-<span id="cb4-67"><a href=""></a>    <span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder</span>
-<span id="cb4-68"><a href=""></a></span>
-<span id="cb4-69"><a href=""></a>    label_encoder <span class="op">=</span> LabelEncoder()</span>
-<span id="cb4-70"><a href=""></a>    y_encoded <span class="op">=</span> label_encoder.fit_transform(y)</span>
-<span id="cb4-71"><a href=""></a>    X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y_encoded, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb4-72"><a href=""></a>    clf <span class="op">=</span> DecisionTreeClassifier(random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb4-73"><a href=""></a>    clf <span class="op">=</span> RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">10</span>, max_depth<span class="op">=</span><span class="dv">10</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb4-74"><a href=""></a>    clf.fit(X_train, y_train)</span>
-<span id="cb4-75"><a href=""></a>    y_pred <span class="op">=</span> clf.predict(X_test)</span>
-<span id="cb4-76"><a href=""></a>    accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
-<span id="cb4-77"><a href=""></a>    <span class="co"># report = classification_report(y_test, y_pred, target_names=label_encoder.classes_)</span></span>
-<span id="cb4-78"><a href=""></a>    scores.append(accuracy)</span>
-<span id="cb4-79"><a href=""></a>    <span class="co"># Display the first few rows of the dataset</span></span>
-<span id="cb4-80"><a href=""></a>    df.head()</span>
-<span id="cb4-81"><a href=""></a></span>
-<span id="cb4-82"><a href=""></a>fig.tight_layout()</span>
-<span id="cb4-83"><a href=""></a>fig.savefig(<span class="st">"/home/slides/img/fairness/A_dist.svg"</span>)</span>
-<span id="cb4-84"><a href=""></a>fig.savefig(<span class="st">"/home/slides/img/fairness/A_dist.pdf"</span>)</span>
-<span id="cb4-85"><a href=""></a>plt.show()</span>
-<span id="cb4-86"><a href=""></a>scores</span></code></pre></div>
+<span id="cb4-21"><a href=""></a><span class="co"># Create a DataFrame</span></span>
+<span id="cb4-22"><a href=""></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'GPA'</span>: A, <span class="st">'Interview Score'</span>: B, <span class="st">'C'</span>: C})</span>
+<span id="cb4-23"><a href=""></a></span>
+<span id="cb4-24"><a href=""></a><span class="co"># Scatter plot</span></span>
+<span id="cb4-25"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
+<span id="cb4-26"><a href=""></a></span>
+<span id="cb4-27"><a href=""></a></span>
+<span id="cb4-28"><a href=""></a>x_line <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)  <span class="co"># Generate x values</span></span>
+<span id="cb4-29"><a href=""></a>y_line <span class="op">=</span> <span class="op">-</span>x_line <span class="op">+</span> <span class="dv">12</span>  <span class="co"># Compute corresponding y values</span></span>
+<span id="cb4-30"><a href=""></a>ax.plot(x_line, y_line, <span class="st">'k--'</span>, label<span class="op">=</span><span class="st">'B = -A + 10'</span>)  <span class="co"># Add the line to the plot</span></span>
+<span id="cb4-31"><a href=""></a></span>
+<span id="cb4-32"><a href=""></a><span class="cf">for</span> marker, group <span class="kw">in</span> <span class="bu">zip</span>([<span class="st">'^'</span>, <span class="st">'s'</span>], [<span class="st">'triangle'</span>, <span class="st">'square'</span>]):</span>
+<span id="cb4-33"><a href=""></a>    subset <span class="op">=</span> data[data[<span class="st">'C'</span>] <span class="op">==</span> group]</span>
+<span id="cb4-34"><a href=""></a>    ax.scatter(subset[<span class="st">'GPA'</span>], subset[<span class="st">'Interview Score'</span>], label<span class="op">=</span>group, alpha<span class="op">=</span>subset.<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="dv">1</span> <span class="cf">if</span> (<span class="op">-</span>x[<span class="st">'GPA'</span>]<span class="op">+</span><span class="dv">12</span>) <span class="op">&lt;</span> x[<span class="st">'Interview Score'</span>] <span class="cf">else</span> <span class="fl">0.5</span>, axis<span class="op">=</span><span class="dv">1</span>), marker<span class="op">=</span>marker)</span>
+<span id="cb4-35"><a href=""></a></span>
+<span id="cb4-36"><a href=""></a><span class="co"># Add labels and legend</span></span>
+<span id="cb4-37"><a href=""></a><span class="co"># ax.set_title('Scatterplot of A vs B with C as Marker', fontsize=14)</span></span>
+<span id="cb4-38"><a href=""></a>ax.set_xlabel(<span class="st">'GPA'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-39"><a href=""></a>ax.set_ylabel(<span class="st">'Interview Score'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-40"><a href=""></a>ax.set_ylim([<span class="dv">0</span>, <span class="dv">10</span>])</span>
+<span id="cb4-41"><a href=""></a>ax.set_xlim([<span class="dv">0</span>, <span class="dv">10</span>])</span>
+<span id="cb4-42"><a href=""></a>ax.set_xticklabels([])</span>
+<span id="cb4-43"><a href=""></a>ax.set_yticklabels([])</span>
+<span id="cb4-44"><a href=""></a><span class="co"># ax.set_title('Classifier: $B = -A + 12$', fontsize=12)</span></span>
+<span id="cb4-45"><a href=""></a>fig.tight_layout()</span>
+<span id="cb4-46"><a href=""></a>fig.savefig(<span class="st">"/home/slides/img/fairness/AB.svg"</span>)</span>
+<span id="cb4-47"><a href=""></a>fig.savefig(<span class="st">"/home/slides/img/fairness/AB.pdf"</span>)</span>
+<span id="cb4-48"><a href=""></a><span class="bu">print</span>(data[(<span class="op">-</span>data[<span class="st">'GPA'</span>]<span class="op">+</span><span class="dv">12</span>) <span class="op">&lt;</span> data[<span class="st">'Interview Score'</span>]].groupby(<span class="st">"C"</span>).count().to_markdown(index<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb4-49"><a href=""></a><span class="bu">print</span>(data[(<span class="op">-</span>data[<span class="st">'GPA'</span>]<span class="op">+</span><span class="dv">12</span>) <span class="op">&gt;</span> data[<span class="st">'Interview Score'</span>]].groupby(<span class="st">"C"</span>).count().to_markdown(index<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb4-50"><a href=""></a><span class="bu">print</span>(data.head().to_markdown(index<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>| C        |   GPA |   Interview Score |
+|:---------|------:|------------------:|
+| square   |    10 |                10 |
+| triangle |    19 |                19 |
+| C        |   GPA |   Interview Score |
+|:---------|------:|------------------:|
+| square   |    46 |                46 |
+| triangle |    25 |                25 |
+|     GPA |   Interview Score | C        |
+|--------:|------------------:|:---------|
+| 3.7454  |          0.314292 | square   |
+| 9.50714 |          6.3641   | triangle |
+| 7.31994 |          3.14356  | triangle |
+| 5.98658 |          5.08571  | square   |
+| 1.56019 |          9.07566  | square   |</code></pre>
 </div>
-<div id="cell-4" class="cell">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lab-10-fairness_files/figure-revealjs/cell-4-output-2.png"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-3" class="cell" data-execution_count="80">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-2"><a href=""></a>axs.plot(<span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(scores)), scores)</span>
-<span id="cb5-3"><a href=""></a></span>
-<span id="cb5-4"><a href=""></a>df_scores <span class="op">=</span> pd.DataFrame(scores, columns<span class="op">=</span>[<span class="st">"Accuracy"</span>])</span>
-<span id="cb5-5"><a href=""></a>df_scores[<span class="st">"i"</span>] <span class="op">=</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(scores))</span>
-<span id="cb5-6"><a href=""></a></span>
-<span id="cb5-7"><a href=""></a><span class="co"># df_scores["Accuracy"].rolling(window=3).mean().plot(ax=axs)</span></span>
-<span id="cb5-8"><a href=""></a>axs.grid()</span>
-<span id="cb5-9"><a href=""></a>axs.set_ylim([<span class="dv">0</span>, <span class="dv">1</span>])</span>
-<span id="cb5-10"><a href=""></a>axs.set_xlabel(<span class="ss">f'#Features'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb5-11"><a href=""></a>axs.set_ylabel(<span class="ss">f'Accuracy'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb5-12"><a href=""></a></span>
-<span id="cb5-13"><a href=""></a>fig.tight_layout()</span>
-<span id="cb5-14"><a href=""></a>fig.savefig(<span class="st">"/home/slides/img/fairness/A_accuracy.svg"</span>)</span>
-<span id="cb5-15"><a href=""></a>fig.savefig(<span class="st">"/home/slides/img/fairness/A_accuracy.pdf"</span>)</span></code></pre></div>
-</details>
-</div>
-<div id="cell-5" class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>df[<span class="st">"target"</span>] <span class="op">=</span> df[<span class="st">"GROUP"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="dv">1</span> <span class="cf">if</span> x <span class="op">==</span> <span class="st">"Triangle"</span> <span class="cf">else</span> <span class="dv">0</span>)</span>
-<span id="cb6-2"><a href=""></a></span>
-<span id="cb6-3"><a href=""></a>new_scores <span class="op">=</span> []</span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-3"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb6-4"><a href=""></a></span>
-<span id="cb6-5"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(scores)):</span>
-<span id="cb6-6"><a href=""></a>    X <span class="op">=</span> df[[x <span class="cf">for</span> x <span class="kw">in</span> df.columns <span class="cf">if</span> (x <span class="op">!=</span> <span class="st">"GROUP"</span> <span class="kw">and</span> x <span class="op">!=</span> <span class="st">"target"</span> <span class="kw">and</span> <span class="bu">int</span>(x.split(<span class="st">"_"</span>)[<span class="dv">1</span>]) <span class="op">&lt;=</span> i)]]</span>
-<span id="cb6-7"><a href=""></a>    y <span class="op">=</span> df[<span class="st">'target'</span>]</span>
-<span id="cb6-8"><a href=""></a>    <span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder</span>
-<span id="cb6-9"><a href=""></a>    label_encoder <span class="op">=</span> LabelEncoder()</span>
-<span id="cb6-10"><a href=""></a>    y_encoded <span class="op">=</span> label_encoder.fit_transform(y)</span>
-<span id="cb6-11"><a href=""></a>    X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y_encoded, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb6-12"><a href=""></a>    clf <span class="op">=</span> RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">10</span>, max_depth<span class="op">=</span><span class="dv">10</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb6-13"><a href=""></a>    clf.fit(X_train, y_train)</span>
-<span id="cb6-14"><a href=""></a>    y_pred <span class="op">=</span> clf.predict(X_test)</span>
-<span id="cb6-15"><a href=""></a>    accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
-<span id="cb6-16"><a href=""></a>    new_scores.append(accuracy)</span>
+<span id="cb6-5"><a href=""></a><span class="co"># Set seed for reproducibility</span></span>
+<span id="cb6-6"><a href=""></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb6-7"><a href=""></a></span>
+<span id="cb6-8"><a href=""></a><span class="co"># Parameters for Gaussian distributions</span></span>
+<span id="cb6-9"><a href=""></a>mean_square <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb6-10"><a href=""></a>std_square <span class="op">=</span> <span class="fl">1.5</span></span>
+<span id="cb6-11"><a href=""></a>mean_triangle <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb6-12"><a href=""></a>std_triangle <span class="op">=</span> <span class="fl">1.5</span></span>
+<span id="cb6-13"><a href=""></a></span>
+<span id="cb6-14"><a href=""></a><span class="co"># Number of samples</span></span>
+<span id="cb6-15"><a href=""></a>n_samples_square <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb6-16"><a href=""></a>n_samples_triangle <span class="op">=</span> <span class="dv">500</span></span>
 <span id="cb6-17"><a href=""></a></span>
-<span id="cb6-18"><a href=""></a>new_scores</span></code></pre></div>
+<span id="cb6-18"><a href=""></a>df <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb6-19"><a href=""></a>scores <span class="op">=</span> []</span>
+<span id="cb6-20"><a href=""></a></span>
+<span id="cb6-21"><a href=""></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-22"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">100</span>):  <span class="co"># Generate data for each group</span></span>
+<span id="cb6-23"><a href=""></a>    a_square <span class="op">=</span> np.random.normal(mean_square, std_square, n_samples_square)</span>
+<span id="cb6-24"><a href=""></a>    a_triangle <span class="op">=</span> np.random.normal(mean_triangle, std_triangle, n_samples_triangle)</span>
+<span id="cb6-25"><a href=""></a></span>
+<span id="cb6-26"><a href=""></a>    <span class="co"># Create the dataset</span></span>
+<span id="cb6-27"><a href=""></a>    group_square <span class="op">=</span> [<span class="st">'Square'</span>] <span class="op">*</span> n_samples_square</span>
+<span id="cb6-28"><a href=""></a>    group_triangle <span class="op">=</span> [<span class="st">'Triangle'</span>] <span class="op">*</span> n_samples_triangle</span>
+<span id="cb6-29"><a href=""></a></span>
+<span id="cb6-30"><a href=""></a></span>
+<span id="cb6-31"><a href=""></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb6-32"><a href=""></a>        data <span class="op">=</span> {</span>
+<span id="cb6-33"><a href=""></a>            <span class="ss">f'A_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>: np.concatenate([a_square, a_triangle]),</span>
+<span id="cb6-34"><a href=""></a>            <span class="st">'GROUP'</span>: group_square <span class="op">+</span> group_triangle</span>
+<span id="cb6-35"><a href=""></a>        }</span>
+<span id="cb6-36"><a href=""></a>        df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb6-37"><a href=""></a></span>
+<span id="cb6-38"><a href=""></a>    <span class="cf">else</span>:</span>
+<span id="cb6-39"><a href=""></a>        df[<span class="ss">f"A_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>] <span class="op">=</span> np.concatenate([a_square, a_triangle])</span>
+<span id="cb6-40"><a href=""></a></span>
+<span id="cb6-41"><a href=""></a>    <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb6-42"><a href=""></a>        <span class="co"># Plot the data distribution by group</span></span>
+<span id="cb6-43"><a href=""></a>        <span class="cf">for</span> group, color <span class="kw">in</span> <span class="bu">zip</span>([<span class="st">'Square'</span>, <span class="st">'Triangle'</span>], [<span class="st">'blue'</span>, <span class="st">'orange'</span>]):</span>
+<span id="cb6-44"><a href=""></a>            group_data <span class="op">=</span> df[df[<span class="st">'GROUP'</span>] <span class="op">==</span> group]</span>
+<span id="cb6-45"><a href=""></a>            axs[i].hist(group_data[<span class="ss">f'A_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>], bins<span class="op">=</span><span class="dv">30</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span>group, color<span class="op">=</span>color)</span>
+<span id="cb6-46"><a href=""></a></span>
+<span id="cb6-47"><a href=""></a>        <span class="co"># plt.title('Distribution of A by Group', fontsize=16)</span></span>
+<span id="cb6-48"><a href=""></a>        axs[i].set_xlabel(<span class="ss">f'$X_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">$'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb6-49"><a href=""></a>        <span class="cf">if</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb6-50"><a href=""></a>            axs[i].set_ylabel(<span class="st">'Frequency'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb6-51"><a href=""></a>            axs[i].legend(title<span class="op">=</span><span class="st">"A"</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb6-52"><a href=""></a>        axs[i].grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-53"><a href=""></a></span>
+<span id="cb6-54"><a href=""></a>    <span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-55"><a href=""></a>    <span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-56"><a href=""></a>    <span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb6-57"><a href=""></a>    <span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
+<span id="cb6-58"><a href=""></a></span>
+<span id="cb6-59"><a href=""></a>    <span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</span>
+<span id="cb6-60"><a href=""></a>    <span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, accuracy_score</span>
+<span id="cb6-61"><a href=""></a></span>
+<span id="cb6-62"><a href=""></a>    <span class="co"># Simulated dataset creation (if not already created)</span></span>
+<span id="cb6-63"><a href=""></a>    X <span class="op">=</span> df[[x <span class="cf">for</span> x <span class="kw">in</span> df.columns <span class="cf">if</span> x <span class="op">!=</span> <span class="st">"GROUP"</span>]]</span>
+<span id="cb6-64"><a href=""></a>    y <span class="op">=</span> df[<span class="st">'GROUP'</span>]</span>
+<span id="cb6-65"><a href=""></a></span>
+<span id="cb6-66"><a href=""></a>    <span class="co"># 2. Encode the target</span></span>
+<span id="cb6-67"><a href=""></a>    <span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder</span>
+<span id="cb6-68"><a href=""></a></span>
+<span id="cb6-69"><a href=""></a>    label_encoder <span class="op">=</span> LabelEncoder()</span>
+<span id="cb6-70"><a href=""></a>    y_encoded <span class="op">=</span> label_encoder.fit_transform(y)</span>
+<span id="cb6-71"><a href=""></a>    X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y_encoded, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb6-72"><a href=""></a>    clf <span class="op">=</span> DecisionTreeClassifier(random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb6-73"><a href=""></a>    clf <span class="op">=</span> RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">10</span>, max_depth<span class="op">=</span><span class="dv">10</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb6-74"><a href=""></a>    clf.fit(X_train, y_train)</span>
+<span id="cb6-75"><a href=""></a>    y_pred <span class="op">=</span> clf.predict(X_test)</span>
+<span id="cb6-76"><a href=""></a>    accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
+<span id="cb6-77"><a href=""></a>    <span class="co"># report = classification_report(y_test, y_pred, target_names=label_encoder.classes_)</span></span>
+<span id="cb6-78"><a href=""></a>    scores.append(accuracy)</span>
+<span id="cb6-79"><a href=""></a>    <span class="co"># Display the first few rows of the dataset</span></span>
+<span id="cb6-80"><a href=""></a>    df.head()</span>
+<span id="cb6-81"><a href=""></a></span>
+<span id="cb6-82"><a href=""></a>fig.tight_layout()</span>
+<span id="cb6-83"><a href=""></a>fig.savefig(<span class="st">"/home/slides/img/fairness/A_dist.svg"</span>)</span>
+<span id="cb6-84"><a href=""></a>fig.savefig(<span class="st">"/home/slides/img/fairness/A_dist.pdf"</span>)</span>
+<span id="cb6-85"><a href=""></a>plt.show()</span>
+<span id="cb6-86"><a href=""></a>scores</span></code></pre></div>
 </details>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lab-10-fairness_files/figure-revealjs/cell-5-output-1.png"></p>
+</figure>
 </div>
-<div id="cell-6" class="cell">
+</div>
+<div class="cell-output cell-output-display" data-execution_count="80">
+<pre><code>[0.5466666666666666,
+ 0.61,
+ 0.7233333333333334,
+ 0.7533333333333333,
+ 0.7833333333333333,
+ 0.8133333333333334,
+ 0.7833333333333333,
+ 0.8066666666666666,
+ 0.8066666666666666,
+ 0.8166666666666667,
+ 0.8066666666666666,
+ 0.8166666666666667,
+ 0.79,
+ 0.8266666666666667,
+ 0.8133333333333334,
+ 0.8166666666666667,
+ 0.8433333333333334,
+ 0.86,
+ 0.8466666666666667,
+ 0.84,
+ 0.8566666666666667,
+ 0.8733333333333333,
+ 0.8433333333333334,
+ 0.8766666666666667,
+ 0.8633333333333333,
+ 0.8833333333333333,
+ 0.9033333333333333,
+ 0.8933333333333333,
+ 0.8666666666666667,
+ 0.85,
+ 0.8833333333333333,
+ 0.8733333333333333,
+ 0.8533333333333334,
+ 0.8833333333333333,
+ 0.9033333333333333,
+ 0.8733333333333333,
+ 0.8866666666666667,
+ 0.91,
+ 0.8933333333333333,
+ 0.8733333333333333,
+ 0.91,
+ 0.8966666666666666,
+ 0.8633333333333333,
+ 0.8966666666666666,
+ 0.8933333333333333,
+ 0.91,
+ 0.9133333333333333,
+ 0.8633333333333333,
+ 0.92,
+ 0.9066666666666666,
+ 0.87,
+ 0.9,
+ 0.88,
+ 0.9166666666666666,
+ 0.93,
+ 0.89,
+ 0.8866666666666667,
+ 0.91,
+ 0.9066666666666666,
+ 0.9266666666666666,
+ 0.8833333333333333,
+ 0.9066666666666666,
+ 0.9066666666666666,
+ 0.9033333333333333,
+ 0.9066666666666666,
+ 0.9066666666666666,
+ 0.9133333333333333,
+ 0.9066666666666666,
+ 0.8966666666666666,
+ 0.9066666666666666,
+ 0.8833333333333333,
+ 0.9033333333333333,
+ 0.9433333333333334,
+ 0.8966666666666666,
+ 0.93,
+ 0.8966666666666666,
+ 0.8966666666666666,
+ 0.9,
+ 0.8933333333333333,
+ 0.8933333333333333,
+ 0.91,
+ 0.9033333333333333,
+ 0.8966666666666666,
+ 0.9233333333333333,
+ 0.8733333333333333,
+ 0.92,
+ 0.9066666666666666,
+ 0.9233333333333333,
+ 0.9133333333333333,
+ 0.93,
+ 0.9,
+ 0.9066666666666666,
+ 0.9166666666666666,
+ 0.9133333333333333,
+ 0.9166666666666666,
+ 0.9,
+ 0.9266666666666666,
+ 0.9266666666666666,
+ 0.9066666666666666,
+ 0.9266666666666666]</code></pre>
+</div>
+</div>
+<div id="cell-4" class="cell" data-execution_count="81">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-2"><a href=""></a>axs.plot(<span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(new_scores)), new_scores)</span>
-<span id="cb7-3"><a href=""></a></span>
-<span id="cb7-4"><a href=""></a>df_scores <span class="op">=</span> pd.DataFrame(scores, columns<span class="op">=</span>[<span class="st">"Accuracy"</span>])</span>
-<span id="cb7-5"><a href=""></a>df_scores[<span class="st">"i"</span>] <span class="op">=</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(scores))</span>
-<span id="cb7-6"><a href=""></a></span>
-<span id="cb7-7"><a href=""></a>df_scores[<span class="st">"Accuracy"</span>].rolling(window<span class="op">=</span><span class="dv">3</span>).mean().plot(ax<span class="op">=</span>axs)</span>
-<span id="cb7-8"><a href=""></a>axs.grid()</span>
-<span id="cb7-9"><a href=""></a>axs.set_ylim([<span class="dv">0</span>, <span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-2"><a href=""></a>axs.plot(<span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(scores)), scores)</span>
+<span id="cb8-3"><a href=""></a></span>
+<span id="cb8-4"><a href=""></a>df_scores <span class="op">=</span> pd.DataFrame(scores, columns<span class="op">=</span>[<span class="st">"Accuracy"</span>])</span>
+<span id="cb8-5"><a href=""></a>df_scores[<span class="st">"i"</span>] <span class="op">=</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(scores))</span>
+<span id="cb8-6"><a href=""></a></span>
+<span id="cb8-7"><a href=""></a><span class="co"># df_scores["Accuracy"].rolling(window=3).mean().plot(ax=axs)</span></span>
+<span id="cb8-8"><a href=""></a>axs.grid()</span>
+<span id="cb8-9"><a href=""></a>axs.set_ylim([<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb8-10"><a href=""></a>axs.set_xlabel(<span class="ss">f'#Features'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb8-11"><a href=""></a>axs.set_ylabel(<span class="ss">f'Accuracy'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb8-12"><a href=""></a></span>
+<span id="cb8-13"><a href=""></a>fig.tight_layout()</span>
+<span id="cb8-14"><a href=""></a>fig.savefig(<span class="st">"/home/slides/img/fairness/A_accuracy.svg"</span>)</span>
+<span id="cb8-15"><a href=""></a>fig.savefig(<span class="st">"/home/slides/img/fairness/A_accuracy.pdf"</span>)</span></code></pre></div>
 </details>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lab-10-fairness_files/figure-revealjs/cell-6-output-1.png"></p>
+</figure>
 </div>
-<div id="cell-7" class="cell">
+</div>
+</div>
+<div id="cell-5" class="cell" data-execution_count="77">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="bu">print</span>(df[[<span class="st">"A_0"</span>, <span class="st">"A_1"</span>, <span class="st">"A_2"</span>, <span class="st">"GROUP"</span>]].loc[<span class="dv">498</span>:<span class="dv">501</span>].to_markdown(index<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>df[<span class="st">"target"</span>] <span class="op">=</span> df[<span class="st">"GROUP"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="dv">1</span> <span class="cf">if</span> x <span class="op">==</span> <span class="st">"Triangle"</span> <span class="cf">else</span> <span class="dv">0</span>)</span>
+<span id="cb9-2"><a href=""></a></span>
+<span id="cb9-3"><a href=""></a>new_scores <span class="op">=</span> []</span>
+<span id="cb9-4"><a href=""></a></span>
+<span id="cb9-5"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(scores)):</span>
+<span id="cb9-6"><a href=""></a>    X <span class="op">=</span> df[[x <span class="cf">for</span> x <span class="kw">in</span> df.columns <span class="cf">if</span> (x <span class="op">!=</span> <span class="st">"GROUP"</span> <span class="kw">and</span> x <span class="op">!=</span> <span class="st">"target"</span> <span class="kw">and</span> <span class="bu">int</span>(x.split(<span class="st">"_"</span>)[<span class="dv">1</span>]) <span class="op">&lt;=</span> i)]]</span>
+<span id="cb9-7"><a href=""></a>    y <span class="op">=</span> df[<span class="st">'target'</span>]</span>
+<span id="cb9-8"><a href=""></a>    <span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder</span>
+<span id="cb9-9"><a href=""></a>    label_encoder <span class="op">=</span> LabelEncoder()</span>
+<span id="cb9-10"><a href=""></a>    y_encoded <span class="op">=</span> label_encoder.fit_transform(y)</span>
+<span id="cb9-11"><a href=""></a>    X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y_encoded, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb9-12"><a href=""></a>    clf <span class="op">=</span> RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">10</span>, max_depth<span class="op">=</span><span class="dv">10</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb9-13"><a href=""></a>    clf.fit(X_train, y_train)</span>
+<span id="cb9-14"><a href=""></a>    y_pred <span class="op">=</span> clf.predict(X_test)</span>
+<span id="cb9-15"><a href=""></a>    accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
+<span id="cb9-16"><a href=""></a>    new_scores.append(accuracy)</span>
+<span id="cb9-17"><a href=""></a></span>
+<span id="cb9-18"><a href=""></a>new_scores</span></code></pre></div>
 </details>
+<div class="cell-output cell-output-display" data-execution_count="77">
+<pre><code>[0.5466666666666666,
+ 0.61,
+ 0.7233333333333334,
+ 0.7533333333333333,
+ 0.7833333333333333,
+ 0.8133333333333334,
+ 0.7833333333333333,
+ 0.8066666666666666,
+ 0.8066666666666666,
+ 0.8166666666666667,
+ 0.8066666666666666,
+ 0.8166666666666667,
+ 0.79,
+ 0.8266666666666667,
+ 0.8133333333333334,
+ 0.8166666666666667,
+ 0.8433333333333334,
+ 0.86,
+ 0.8466666666666667,
+ 0.84,
+ 0.8566666666666667,
+ 0.8733333333333333,
+ 0.8433333333333334,
+ 0.8766666666666667,
+ 0.8633333333333333,
+ 0.8833333333333333,
+ 0.9033333333333333,
+ 0.8933333333333333,
+ 0.8666666666666667,
+ 0.85,
+ 0.8833333333333333,
+ 0.8733333333333333,
+ 0.8533333333333334,
+ 0.8833333333333333,
+ 0.9033333333333333,
+ 0.8733333333333333,
+ 0.8866666666666667,
+ 0.91,
+ 0.8933333333333333,
+ 0.8733333333333333,
+ 0.91,
+ 0.8966666666666666,
+ 0.8633333333333333,
+ 0.8966666666666666,
+ 0.8933333333333333,
+ 0.91,
+ 0.9133333333333333,
+ 0.8633333333333333,
+ 0.92,
+ 0.9066666666666666,
+ 0.87,
+ 0.9,
+ 0.88,
+ 0.9166666666666666,
+ 0.93,
+ 0.89,
+ 0.8866666666666667,
+ 0.91,
+ 0.9066666666666666,
+ 0.9266666666666666,
+ 0.8833333333333333,
+ 0.9066666666666666,
+ 0.9066666666666666,
+ 0.9033333333333333,
+ 0.9066666666666666,
+ 0.9066666666666666,
+ 0.9133333333333333,
+ 0.9066666666666666,
+ 0.8966666666666666,
+ 0.9066666666666666,
+ 0.8833333333333333,
+ 0.9033333333333333,
+ 0.9433333333333334,
+ 0.8966666666666666,
+ 0.93,
+ 0.8966666666666666,
+ 0.8966666666666666,
+ 0.9,
+ 0.8933333333333333,
+ 0.8933333333333333,
+ 0.91,
+ 0.9033333333333333,
+ 0.8966666666666666,
+ 0.9233333333333333,
+ 0.8733333333333333,
+ 0.92,
+ 0.9066666666666666,
+ 0.9233333333333333,
+ 0.9133333333333333,
+ 0.93,
+ 0.9,
+ 0.9066666666666666,
+ 0.9166666666666666,
+ 0.9133333333333333,
+ 0.9166666666666666,
+ 0.9,
+ 0.9266666666666666,
+ 0.9266666666666666,
+ 0.9066666666666666,
+ 0.9266666666666666]</code></pre>
+</div>
+</div>
+<div id="cell-6" class="cell" data-execution_count="78">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-2"><a href=""></a>axs.plot(<span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(new_scores)), new_scores)</span>
+<span id="cb11-3"><a href=""></a></span>
+<span id="cb11-4"><a href=""></a>df_scores <span class="op">=</span> pd.DataFrame(scores, columns<span class="op">=</span>[<span class="st">"Accuracy"</span>])</span>
+<span id="cb11-5"><a href=""></a>df_scores[<span class="st">"i"</span>] <span class="op">=</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(scores))</span>
+<span id="cb11-6"><a href=""></a></span>
+<span id="cb11-7"><a href=""></a>df_scores[<span class="st">"Accuracy"</span>].rolling(window<span class="op">=</span><span class="dv">3</span>).mean().plot(ax<span class="op">=</span>axs)</span>
+<span id="cb11-8"><a href=""></a>axs.grid()</span>
+<span id="cb11-9"><a href=""></a>axs.set_ylim([<span class="dv">0</span>, <span class="dv">1</span>])</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lab-10-fairness_files/figure-revealjs/cell-8-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-7" class="cell" data-execution_count="79">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="bu">print</span>(df[[<span class="st">"A_0"</span>, <span class="st">"A_1"</span>, <span class="st">"A_2"</span>, <span class="st">"GROUP"</span>]].loc[<span class="dv">498</span>:<span class="dv">501</span>].to_markdown(index<span class="op">=</span><span class="va">False</span>))</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>|     A_0 |     A_1 |     A_2 | GROUP    |
+|--------:|--------:|--------:|:---------|
+| 3.68657 | 6.53609 | 6.18556 | Square   |
+| 2.9258  | 5.88879 | 5.51008 | Square   |
+| 7.38927 | 7.16754 | 6.85592 | Triangle |
+| 8.86412 | 5.17322 | 7.45228 | Triangle |</code></pre>
+</div>
 </div>
 
 </section>
