@@ -1,3 +1,61 @@
+## [1.0.50](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.49...1.0.50) (2025-12-01)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.126 ([#82](https://github.com/w4bo/AA2425-unibo-mldm/issues/82)) ([30bb09b](https://github.com/w4bo/AA2425-unibo-mldm/commit/30bb09b8c291f91ba504bb495fa744c8cc5b103a))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.127 ([#83](https://github.com/w4bo/AA2425-unibo-mldm/issues/83)) ([87cd7a6](https://github.com/w4bo/AA2425-unibo-mldm/commit/87cd7a6347f800c76dad1935f216b87a76fe6735))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.128 ([#84](https://github.com/w4bo/AA2425-unibo-mldm/issues/84)) ([c5c1625](https://github.com/w4bo/AA2425-unibo-mldm/commit/c5c1625509e7acc0f68a775a678b084f37439eb6))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.129 ([#85](https://github.com/w4bo/AA2425-unibo-mldm/issues/85)) ([09667e7](https://github.com/w4bo/AA2425-unibo-mldm/commit/09667e7cae27c8136a575c9c471d2ed848fd93e4))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.131 ([#87](https://github.com/w4bo/AA2425-unibo-mldm/issues/87)) ([7783917](https://github.com/w4bo/AA2425-unibo-mldm/commit/77839171f033771f9bea117a7b3fe90eae9dcda1))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.132 ([#88](https://github.com/w4bo/AA2425-unibo-mldm/issues/88)) ([6a5757a](https://github.com/w4bo/AA2425-unibo-mldm/commit/6a5757a266ecfb500586bdca245c52c1294966ae))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.133 ([#89](https://github.com/w4bo/AA2425-unibo-mldm/issues/89)) ([399c63d](https://github.com/w4bo/AA2425-unibo-mldm/commit/399c63deff42fdbe45485e56ec73d0748bce52ea))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.134 ([#91](https://github.com/w4bo/AA2425-unibo-mldm/issues/91)) ([43e8692](https://github.com/w4bo/AA2425-unibo-mldm/commit/43e8692418ae56770c8e95be32d474746dd50e05))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.135 ([#92](https://github.com/w4bo/AA2425-unibo-mldm/issues/92)) ([685a8a6](https://github.com/w4bo/AA2425-unibo-mldm/commit/685a8a6f26aa6bf05466498e0199d81ca02ff4b3))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.136 ([#93](https://github.com/w4bo/AA2425-unibo-mldm/issues/93)) ([dbf4f38](https://github.com/w4bo/AA2425-unibo-mldm/commit/dbf4f38db06e25bbd90380f089bbe73dbb74406d))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.137 ([#95](https://github.com/w4bo/AA2425-unibo-mldm/issues/95)) ([14845f3](https://github.com/w4bo/AA2425-unibo-mldm/commit/14845f3835de9d8bdadd2fdb581398d64a192e6d))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.138 ([#96](https://github.com/w4bo/AA2425-unibo-mldm/issues/96)) ([fed958b](https://github.com/w4bo/AA2425-unibo-mldm/commit/fed958b300295a031139468b51846bc4ad558b52))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.139 ([#98](https://github.com/w4bo/AA2425-unibo-mldm/issues/98)) ([40d3550](https://github.com/w4bo/AA2425-unibo-mldm/commit/40d3550198b3d4e5e8512d78fc07f815f139d29c))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.140 ([#100](https://github.com/w4bo/AA2425-unibo-mldm/issues/100)) ([e7213bf](https://github.com/w4bo/AA2425-unibo-mldm/commit/e7213bf0b2ff7f8a376c8917dd7fe2fc9444510c))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.141 ([#102](https://github.com/w4bo/AA2425-unibo-mldm/issues/102)) ([c9f9f36](https://github.com/w4bo/AA2425-unibo-mldm/commit/c9f9f36e40e70f7311e235f2c1e24d94b933c7a2))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.142 ([#104](https://github.com/w4bo/AA2425-unibo-mldm/issues/104)) ([d1b3e3c](https://github.com/w4bo/AA2425-unibo-mldm/commit/d1b3e3cbd0f38ed00269a66847992da565b57d3b))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.143 ([#105](https://github.com/w4bo/AA2425-unibo-mldm/issues/105)) ([6aeed91](https://github.com/w4bo/AA2425-unibo-mldm/commit/6aeed9130bc84904557eebc523698fae0b303f51))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.145 ([#106](https://github.com/w4bo/AA2425-unibo-mldm/issues/106)) ([9ce9313](https://github.com/w4bo/AA2425-unibo-mldm/commit/9ce931361f7a3b0904ec10d45a31b9dc8fee1a20))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.146 ([#107](https://github.com/w4bo/AA2425-unibo-mldm/issues/107)) ([809fee4](https://github.com/w4bo/AA2425-unibo-mldm/commit/809fee41140ef264a659b9cad4ccb33d9d71eb06))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.147 ([#109](https://github.com/w4bo/AA2425-unibo-mldm/issues/109)) ([105ea64](https://github.com/w4bo/AA2425-unibo-mldm/commit/105ea64e231cd6bb3a84bbe3dacf9c06e322dbef))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.148 ([#111](https://github.com/w4bo/AA2425-unibo-mldm/issues/111)) ([f5fe866](https://github.com/w4bo/AA2425-unibo-mldm/commit/f5fe866d5e74dc5a670c4454ab4c8dcf7ce5c4f5))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.149 ([#112](https://github.com/w4bo/AA2425-unibo-mldm/issues/112)) ([e03c7f0](https://github.com/w4bo/AA2425-unibo-mldm/commit/e03c7f0f6b93d111deb96c77ce6d5987b43ce188))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.151 ([#114](https://github.com/w4bo/AA2425-unibo-mldm/issues/114)) ([0e0c90e](https://github.com/w4bo/AA2425-unibo-mldm/commit/0e0c90e02ba8c1743079f8ff7ac438856c4e4f53))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.152 ([#115](https://github.com/w4bo/AA2425-unibo-mldm/issues/115)) ([bb7c5d4](https://github.com/w4bo/AA2425-unibo-mldm/commit/bb7c5d449efee67cc1bf8b38020c742922702ab4))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.153 ([#117](https://github.com/w4bo/AA2425-unibo-mldm/issues/117)) ([c256c7c](https://github.com/w4bo/AA2425-unibo-mldm/commit/c256c7ca2b54911969ab3da4805277a04fc45b09))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.154 ([#118](https://github.com/w4bo/AA2425-unibo-mldm/issues/118)) ([2475dfd](https://github.com/w4bo/AA2425-unibo-mldm/commit/2475dfd4bb926c14c115bb51ac4b61c7805777e6))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.155 ([#120](https://github.com/w4bo/AA2425-unibo-mldm/issues/120)) ([ec0270e](https://github.com/w4bo/AA2425-unibo-mldm/commit/ec0270ec6ef94b1b70c0eb69e350aaaa8a6b5d81))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.156 ([#121](https://github.com/w4bo/AA2425-unibo-mldm/issues/121)) ([8faafa5](https://github.com/w4bo/AA2425-unibo-mldm/commit/8faafa530bd2c48e7667cd7125db4a5ba04ba954))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.157 ([#123](https://github.com/w4bo/AA2425-unibo-mldm/issues/123)) ([d6bc526](https://github.com/w4bo/AA2425-unibo-mldm/commit/d6bc52609ef55257128a9c98feb3d1610a448ef7))
+* **deps:** update node.js to 22.15 ([#81](https://github.com/w4bo/AA2425-unibo-mldm/issues/81)) ([2e60e3d](https://github.com/w4bo/AA2425-unibo-mldm/commit/2e60e3dc954786d32d0d0de875850a7dc44d8b1e))
+* **deps:** update node.js to 22.16 ([#86](https://github.com/w4bo/AA2425-unibo-mldm/issues/86)) ([2b54617](https://github.com/w4bo/AA2425-unibo-mldm/commit/2b54617ebeffc1b64f1530e72caa01ff2513b787))
+* **deps:** update node.js to 22.17 ([#90](https://github.com/w4bo/AA2425-unibo-mldm/issues/90)) ([bbbfced](https://github.com/w4bo/AA2425-unibo-mldm/commit/bbbfced9e9b5101e454514e4c537992a5fda2cd4))
+* **deps:** update node.js to 22.18 ([#97](https://github.com/w4bo/AA2425-unibo-mldm/issues/97)) ([6986cba](https://github.com/w4bo/AA2425-unibo-mldm/commit/6986cba1108a7030e861ea6ce0bcf309d53a4b54))
+* **deps:** update node.js to 22.19 ([#101](https://github.com/w4bo/AA2425-unibo-mldm/issues/101)) ([0b7ddf1](https://github.com/w4bo/AA2425-unibo-mldm/commit/0b7ddf1ad4bcd8deba851b93d0224d48449a29a6))
+* **deps:** update node.js to 22.20 ([#108](https://github.com/w4bo/AA2425-unibo-mldm/issues/108)) ([be84395](https://github.com/w4bo/AA2425-unibo-mldm/commit/be843958eea343194bfe71b57e43c9ac8ed9c57d))
+* **deps:** update node.js to 22.21 ([#113](https://github.com/w4bo/AA2425-unibo-mldm/issues/113)) ([d6ffc86](https://github.com/w4bo/AA2425-unibo-mldm/commit/d6ffc8617a328bf632cbd7f4c4fb2ab6adc82da7))
+* **deps:** update node.js to v24 ([#116](https://github.com/w4bo/AA2425-unibo-mldm/issues/116)) ([fc531ee](https://github.com/w4bo/AA2425-unibo-mldm/commit/fc531ee59da8ba462be7a5a8b173e481b71b2fc8))
+* **deps:** update w4bo/python docker tag to v1.0.4 ([#79](https://github.com/w4bo/AA2425-unibo-mldm/issues/79)) ([6935b82](https://github.com/w4bo/AA2425-unibo-mldm/commit/6935b82d634477ed8038426264f47a126f701390))
+
+### Bug Fixes
+
+* refactoring css ([19363c3](https://github.com/w4bo/AA2425-unibo-mldm/commit/19363c3ac5e1a20962f843a405e53d9322191e86))
+* refactoring css ([566eec7](https://github.com/w4bo/AA2425-unibo-mldm/commit/566eec78e6182339b3990d0162f637d61ec49a37))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v5 ([#99](https://github.com/w4bo/AA2425-unibo-mldm/issues/99)) ([5607d6b](https://github.com/w4bo/AA2425-unibo-mldm/commit/5607d6ba392362475e68bf5bda7bf85d366832a2))
+* **deps:** update actions/checkout action to v6 ([#124](https://github.com/w4bo/AA2425-unibo-mldm/issues/124)) ([8288a5d](https://github.com/w4bo/AA2425-unibo-mldm/commit/8288a5dd70a849fc61d418adb26c5d5262c85f6d))
+* **deps:** update actions/setup-node action to v4.4.0 ([#80](https://github.com/w4bo/AA2425-unibo-mldm/issues/80)) ([286bc13](https://github.com/w4bo/AA2425-unibo-mldm/commit/286bc13a2e7505f7de37461a1500148bf2c61bd6))
+* **deps:** update actions/setup-node action to v5 ([#103](https://github.com/w4bo/AA2425-unibo-mldm/issues/103)) ([b306e3a](https://github.com/w4bo/AA2425-unibo-mldm/commit/b306e3a4ca443bf7193850fb3d6a612e10430e00))
+* **deps:** update actions/setup-node action to v6 ([#110](https://github.com/w4bo/AA2425-unibo-mldm/issues/110)) ([be1871f](https://github.com/w4bo/AA2425-unibo-mldm/commit/be1871faac9f81f116eecaffc0736750a63f79f2))
+* **deps:** update browser-actions/setup-chrome action to v2 ([#94](https://github.com/w4bo/AA2425-unibo-mldm/issues/94)) ([3cd4be3](https://github.com/w4bo/AA2425-unibo-mldm/commit/3cd4be34ba8b3b8f9e128a16759527c2569776c0))
+* **deps:** update jamesives/github-pages-deploy-action action to v4.7.4 ([#119](https://github.com/w4bo/AA2425-unibo-mldm/issues/119)) ([e59287f](https://github.com/w4bo/AA2425-unibo-mldm/commit/e59287fdee66f0f3273f2838f4cb431763df25d4))
+
 ## [1.0.49](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.48...1.0.49) (2025-03-31)
 
 ### Dependency updates
