@@ -1,3 +1,9 @@
+## [1.0.51](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.50...1.0.51) (2025-12-02)
+
+### Bug Fixes
+
+* gitignore and deleted unused images ([a690bfc](https://github.com/w4bo/AA2425-unibo-mldm/commit/a690bfca24283fe9502ff191358b4bbe7c220203))
+
 ## [1.0.50](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.49...1.0.50) (2025-12-01)
 
 ### Dependency updates
