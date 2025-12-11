@@ -5,8 +5,8 @@
 <script src="lab-03-datapreparation_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-03-datapreparation_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lab-03-datapreparation_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lab-03-datapreparation_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="lab-03-datapreparation_files/libs/quarto-html/quarto-syntax-highlighting-cdaacfc258cb6f151192107f105ac881.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.12">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -28,8 +28,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -40,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -93,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="lab-03-datapreparation_files/libs/revealjs/dist/theme/quarto-6391498a111a1f00b0d941bda0c7e264.css">
+  <link rel="stylesheet" href="lab-03-datapreparation_files/libs/revealjs/dist/theme/quarto-b3aa9dda08c8fde6dffd4aadb76df7d0.css">
   <link href="lab-03-datapreparation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="lab-03-datapreparation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="lab-03-datapreparation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -208,7 +209,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section id="data-preparation" class="title-slide slide level1 center">
 <h1>Data Preparation</h1>
-<div id="aacb3166" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:38.883641Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:38.883641Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.228268Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.228268Z&quot;}" data-outputid="6d82288e-1a47-4674-a7d3-6500cf9f04d1">
+<div id="aacb3166" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:38.883641Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:38.883641Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.228268Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.228268Z&quot;}}" data-outputid="6d82288e-1a47-4674-a7d3-6500cf9f04d1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># data wrangling</span></span>
@@ -241,14 +242,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="data-distribution" class="title-slide slide level1 center">
 <h1>Data distribution</h1>
-<div id="bff9fa20" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.230273Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.230273Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.233699Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.233699Z&quot;}" data-outputid="739c6259-428c-4018-b542-419bf9733f1a">
+<div id="bff9fa20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.230273Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.230273Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.233699Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.233699Z&quot;}}" data-outputid="739c6259-428c-4018-b542-419bf9733f1a">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="co"># array with distinct values sorted by first appearance</span></span>
 <span id="cb2-2"><a href=""></a>df[<span class="st">"Quantity"</span>].unique()</span></code></pre></div>
 </details>
 </div>
-<div id="3041345b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.235703Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.234703Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.238022Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.238022Z&quot;}" data-outputid="03cf3d32-e761-42ab-c44e-0bee001b1a10">
+<div id="3041345b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.235703Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.234703Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.238022Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.238022Z&quot;}}" data-outputid="03cf3d32-e761-42ab-c44e-0bee001b1a10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="co"># quantity of unique values</span></span>
@@ -259,14 +260,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="data-distribution-1" class="title-slide slide level1 center">
 <h1>Data distribution</h1>
-<div id="5f596a69" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.239037Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.239037Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.243023Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.243023Z&quot;}" data-outputid="47be88b8-164b-4a18-b43f-f20d27568ad1">
+<div id="5f596a69" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.239037Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.239037Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.243023Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.243023Z&quot;}}" data-outputid="47be88b8-164b-4a18-b43f-f20d27568ad1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># return a new series that associates each value with its number of occurrences, sorted by frequency</span></span>
 <span id="cb4-2"><a href=""></a>df[<span class="st">"Quantity"</span>].value_counts()</span></code></pre></div>
 </details>
 </div>
-<div id="a1d99dac" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.244034Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.244034Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.327720Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.327720Z&quot;}" data-outputid="a643086a-bec0-4717-c801-2d6132f09508">
+<div id="a1d99dac" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.244034Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.244034Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.327720Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.327720Z&quot;}}" data-outputid="a643086a-bec0-4717-c801-2d6132f09508">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
@@ -289,7 +290,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <pre><code>  2 * np.nan – 1
   nan</code></pre></li>
 </ul>
-<div id="5c2f6e66" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.329726Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.329726Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.335584Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.335584Z&quot;}" data-outputid="5fd6a227-7a4c-4123-c162-0944d0687b0d">
+<div id="5c2f6e66" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.329726Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.329726Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.335584Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.335584Z&quot;}}" data-outputid="5fd6a227-7a4c-4123-c162-0944d0687b0d">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co"># add the column "isna", True if the value is NaN</span></span>
@@ -318,7 +319,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section id="filling-the-values" class="slide level2">
 <h2>Filling the values</h2>
-<div id="fba624ad" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.337595Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.337595Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.344768Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.344768Z&quot;}" data-outputid="e7cfe545-497f-4381-9411-152012c46700">
+<div id="fba624ad" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.337595Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.337595Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.344768Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.344768Z&quot;}}" data-outputid="e7cfe545-497f-4381-9411-152012c46700">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>df[<span class="st">"Quantity_mean"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].fillna(df[<span class="st">"Quantity"</span>].mean())  <span class="co"># fill the missing value with the average</span></span>
@@ -365,13 +366,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section id="dropping-values" class="slide level2">
 <h2>Dropping values</h2>
-<div id="1aebd691" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.598141Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.598141Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.605375Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.605375Z&quot;}" data-outputid="2b43d7bb-c729-4a90-bff0-0c5e5c142cb7">
+<div id="1aebd691" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.598141Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.598141Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.605375Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.605375Z&quot;}}" data-outputid="2b43d7bb-c729-4a90-bff0-0c5e5c142cb7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>df.drop(columns<span class="op">=</span>[<span class="st">"Quantity"</span>])  <span class="co"># drop the `Quantity` column</span></span></code></pre></div>
 </details>
 </div>
-<div id="3ba31db2" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.607381Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.607381Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.615739Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.615739Z&quot;}" data-outputid="7960fed3-8e65-462c-edbc-4dcb782a807b">
+<div id="3ba31db2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.607381Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.607381Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.615739Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.615739Z&quot;}}" data-outputid="7960fed3-8e65-462c-edbc-4dcb782a807b">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>df.dropna()  <span class="co"># drop all rows with missing values in any column</span></span>
@@ -394,7 +395,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="encoding-date" class="title-slide slide level1 center">
 <h1>Encoding: <code>Date</code></h1>
-<div id="4c87578a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.709168Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.709168Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.717770Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.717770Z&quot;}">
+<div id="4c87578a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.709168Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.709168Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.717770Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.717770Z&quot;}}">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>df[<span class="st">'Date'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%m/</span><span class="sc">%d</span><span class="st">/%Y'</span>)  <span class="co"># Setting the date format is essential!</span></span>
@@ -406,7 +407,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="data-integration" class="title-slide slide level1 center">
 <h1>Data integration</h1>
-<div id="2ec92bdf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.719774Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.719774Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.724260Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.724260Z&quot;}">
+<div id="2ec92bdf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.719774Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.719774Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.724260Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.724260Z&quot;}}">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>products_df <span class="op">=</span> pd.DataFrame({<span class="st">'ProductID'</span>: [<span class="dv">100</span>, <span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">104</span>], <span class="st">'ProductName'</span>: [<span class="st">'Cola'</span>, <span class="st">'Bread'</span>, <span class="st">'Beer'</span>, <span class="st">'Diaper'</span>, <span class="st">'Pizza'</span>]})</span>
@@ -420,7 +421,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb17-2"><a href=""></a><span class="bu">print</span>(<span class="ss">f"products_df: </span><span class="sc">{</span><span class="bu">list</span>(products_df.columns)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
 </details>
 </div>
-<div id="acfbcf36" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.726270Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.725270Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.734816Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.734816Z&quot;}">
+<div id="acfbcf36" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.726270Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.725270Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.734816Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.734816Z&quot;}}">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>products_df <span class="op">=</span> products_df.rename({<span class="st">"ProductID"</span>: <span class="st">"ID"</span>}, axis<span class="op">=</span><span class="dv">1</span>)</span>
@@ -462,7 +463,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Join <code>sales_df</code> with <code>products_df</code> on <code>ProductID</code>. Hint: use the method <code>.merge()</code>, see the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html">documentation</a></li>
 <li>Print the final dataframe</li>
 </ol>
-<div id="qZWX_HgfeQpM" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.736836Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.735820Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.738699Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.738699Z&quot;}">
+<div id="qZWX_HgfeQpM" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.736836Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.735820Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.738699Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.738699Z&quot;}}">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="co"># Write your code here</span></span></code></pre></div>
@@ -688,7 +689,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb34-2"><a href=""></a>height_df <span class="op">=</span> height_df.dropna()</span>
 <span id="cb34-3"><a href=""></a>height_df <span class="op">=</span> height_df[height_df[<span class="st">"age"</span>] <span class="op">==</span> <span class="st">"20-29"</span>]</span>
 <span id="cb34-4"><a href=""></a>height_df[<span class="st">"percentage"</span>] <span class="op">=</span> height_df[<span class="st">"percentage_under"</span>].diff().fillna(<span class="dv">0</span>)</span>
-<span id="cb34-5"><a href=""></a>height_df[<span class="st">"height (cm)"</span>] <span class="op">=</span> (height_df[<span class="st">'height'</span>].<span class="bu">str</span>.extract(<span class="vs">r'(\d+)\'\s*(\d+)'</span>).astype(<span class="bu">float</span>).mul([<span class="dv">12</span><span class="op">*</span><span class="fl">2.54</span>, <span class="fl">2.54</span>]).<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>).<span class="bu">round</span>())</span>
+<span id="cb34-5"><a href=""></a>height_df[<span class="st">"height (cm)"</span>] <span class="op">=</span> (height_df[<span class="st">'height'</span>].<span class="bu">str</span>.extract(<span class="vs">r'</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="kw">)</span><span class="ch">\'</span><span class="dv">\s</span><span class="op">*</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="kw">)</span><span class="vs">'</span>).astype(<span class="bu">float</span>).mul([<span class="dv">12</span><span class="op">*</span><span class="fl">2.54</span>, <span class="fl">2.54</span>]).<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>).<span class="bu">round</span>())</span>
 <span id="cb34-6"><a href=""></a>height_df</span></code></pre></div>
 </details>
 </div>
@@ -907,7 +908,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -934,129 +935,111 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
             }
           }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
           }
-        } else {
-          return undefined;
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>

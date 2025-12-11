@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="lab-07-titanic_files/libs/quarto-html/tabby.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="lab-07-titanic_files/libs/quarto-html/tabby.min.js"></script>
 <script src="lab-07-titanic_files/libs/quarto-html/popper.min.js"></script>
 <script src="lab-07-titanic_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-07-titanic_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lab-07-titanic_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lab-07-titanic_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="lab-07-titanic_files/libs/quarto-html/quarto-syntax-highlighting-cdaacfc258cb6f151192107f105ac881.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.12">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -28,8 +28,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -40,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -93,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="lab-07-titanic_files/libs/revealjs/dist/theme/quarto-6391498a111a1f00b0d941bda0c7e264.css">
+  <link rel="stylesheet" href="lab-07-titanic_files/libs/revealjs/dist/theme/quarto-b3aa9dda08c8fde6dffd4aadb76df7d0.css">
   <link href="lab-07-titanic_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="lab-07-titanic_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="lab-07-titanic_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -185,7 +186,7 @@
       margin-right: 0; 
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
@@ -211,7 +212,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section id="the-titanic-dataset" class="title-slide slide level1 center">
 <h1>The <code>Titanic</code> dataset</h1>
-<div id="cell-2" class="cell" data-outputid="d77ddd71-cacb-424a-dcd5-eddaa5a7ff42" data-execution_count="60">
+<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:424}}" data-outputid="d77ddd71-cacb-424a-dcd5-eddaa5a7ff42" data-execution_count="60">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -239,7 +240,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -259,7 +260,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>1</td>
 <td>0</td>
 <td>3</td>
@@ -274,7 +275,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>S</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>2</td>
 <td>1</td>
 <td>1</td>
@@ -289,7 +290,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>C</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>3</td>
 <td>1</td>
 <td>3</td>
@@ -304,7 +305,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>S</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>4</td>
 <td>1</td>
 <td>1</td>
@@ -319,7 +320,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>S</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>5</td>
 <td>0</td>
 <td>3</td>
@@ -334,7 +335,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>S</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -349,7 +350,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">886</td>
+<th data-quarto-table-cell-role="th">886</th>
 <td>887</td>
 <td>0</td>
 <td>2</td>
@@ -364,7 +365,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>S</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">887</td>
+<th data-quarto-table-cell-role="th">887</th>
 <td>888</td>
 <td>1</td>
 <td>1</td>
@@ -379,7 +380,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>S</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">888</td>
+<th data-quarto-table-cell-role="th">888</th>
 <td>889</td>
 <td>0</td>
 <td>3</td>
@@ -394,7 +395,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>S</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">889</td>
+<th data-quarto-table-cell-role="th">889</th>
 <td>890</td>
 <td>1</td>
 <td>1</td>
@@ -409,7 +410,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>C</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">890</td>
+<th data-quarto-table-cell-role="th">890</th>
 <td>891</td>
 <td>0</td>
 <td>3</td>
@@ -504,7 +505,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="profiling" class="title-slide slide level1 center">
 <h1>Profiling</h1>
-<div id="cell-5" class="cell" data-outputid="43513d65-5527-463b-f158-a7c0d93a6051" data-execution_count="61">
+<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="43513d65-5527-463b-f158-a7c0d93a6051" data-execution_count="61">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>df.info()</span></code></pre></div>
@@ -556,7 +557,7 @@ memory usage: 83.7+ KB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -575,7 +576,7 @@ memory usage: 83.7+ KB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">PassengerId</td>
+<th data-quarto-table-cell-role="th">PassengerId</th>
 <td>891.0</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -589,7 +590,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>891.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">Survived</td>
+<th data-quarto-table-cell-role="th">Survived</th>
 <td>891.0</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -603,7 +604,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>1.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">Pclass</td>
+<th data-quarto-table-cell-role="th">Pclass</th>
 <td>891.0</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -617,7 +618,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>3.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">Name</td>
+<th data-quarto-table-cell-role="th">Name</th>
 <td>891</td>
 <td>891</td>
 <td>Dooley, Mr. Patrick</td>
@@ -631,7 +632,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">Sex</td>
+<th data-quarto-table-cell-role="th">Sex</th>
 <td>891</td>
 <td>2</td>
 <td>male</td>
@@ -645,7 +646,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">Age</td>
+<th data-quarto-table-cell-role="th">Age</th>
 <td>714.0</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -659,7 +660,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>80.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">SibSp</td>
+<th data-quarto-table-cell-role="th">SibSp</th>
 <td>891.0</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -673,7 +674,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>8.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">Parch</td>
+<th data-quarto-table-cell-role="th">Parch</th>
 <td>891.0</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -687,7 +688,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>6.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">Ticket</td>
+<th data-quarto-table-cell-role="th">Ticket</th>
 <td>891</td>
 <td>681</td>
 <td>347082</td>
@@ -701,7 +702,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">Fare</td>
+<th data-quarto-table-cell-role="th">Fare</th>
 <td>891.0</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -715,7 +716,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>512.3292</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">Cabin</td>
+<th data-quarto-table-cell-role="th">Cabin</th>
 <td>204</td>
 <td>147</td>
 <td>G6</td>
@@ -729,7 +730,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">Embarked</td>
+<th data-quarto-table-cell-role="th">Embarked</th>
 <td>889</td>
 <td>3</td>
 <td>S</td>
@@ -847,7 +848,7 @@ memory usage: 83.7+ KB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -858,31 +859,31 @@ memory usage: 83.7+ KB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>False</td>
 <td>False</td>
 <td>True</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>True</td>
 <td>False</td>
 <td>False</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>False</td>
 <td>False</td>
 <td>True</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>False</td>
 <td>False</td>
 <td>True</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>False</td>
 <td>False</td>
 <td>True</td>
@@ -916,7 +917,7 @@ memory usage: 83.7+ KB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -938,7 +939,7 @@ memory usage: 83.7+ KB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>1</td>
 <td>0</td>
 <td>3</td>
@@ -955,7 +956,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>True</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>2</td>
 <td>1</td>
 <td>1</td>
@@ -972,7 +973,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>False</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>3</td>
 <td>1</td>
 <td>3</td>
@@ -989,7 +990,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>True</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>4</td>
 <td>1</td>
 <td>1</td>
@@ -1006,7 +1007,7 @@ memory usage: 83.7+ KB</code></pre>
 <td>True</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>5</td>
 <td>0</td>
 <td>3</td>
@@ -1060,7 +1061,7 @@ memory usage: 83.7+ KB</code></pre>
 
 <section id="checking-data-distribution" class="title-slide slide level1 center">
 <h1>Checking data distribution</h1>
-<div id="cell-25" class="cell" data-outputid="f1836d8e-2322-4881-bd98-fb92a3554f9e" data-execution_count="73">
+<div id="cell-25" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:487}}" data-outputid="f1836d8e-2322-4881-bd98-fb92a3554f9e" data-execution_count="73">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>df.hist()</span>
@@ -1072,7 +1073,7 @@ memory usage: 83.7+ KB</code></pre>
 
 <section id="correlation-matrix" class="title-slide slide level1 center">
 <h1>Correlation matrix</h1>
-<div id="cell-27" class="cell" data-outputid="ad432c44-f9ed-4da6-a0f4-515760132e48" data-execution_count="74">
+<div id="cell-27" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="ad432c44-f9ed-4da6-a0f4-515760132e48" data-execution_count="74">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>correlation_matrix <span class="op">=</span> df.corr()</span>
@@ -1101,7 +1102,7 @@ memory usage: 83.7+ KB</code></pre>
 
 <section id="plotting-the-data-pca" class="title-slide slide level1 center">
 <h1>Plotting the data (PCA)</h1>
-<div id="cell-31" class="cell" data-outputid="311b93ea-7d87-4049-c697-d59fbc63cbbc" data-execution_count="76">
+<div id="cell-31" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:732}}" data-outputid="311b93ea-7d87-4049-c697-d59fbc63cbbc" data-execution_count="76">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
@@ -1127,7 +1128,7 @@ memory usage: 83.7+ KB</code></pre>
 
 <section id="plotting-the-data-t-sne" class="title-slide slide level1 center">
 <h1>Plotting the data (T-SNE)</h1>
-<div id="cell-33" class="cell" data-outputid="7e419fac-5415-41df-dac0-adf83c01c239" data-execution_count="77">
+<div id="cell-33" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:564}}" data-outputid="7e419fac-5415-41df-dac0-adf83c01c239" data-execution_count="77">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="im">from</span> sklearn.manifold <span class="im">import</span> TSNE</span>
@@ -1150,7 +1151,7 @@ memory usage: 83.7+ KB</code></pre>
 
 <section id="compute-a-decision-tree" class="title-slide slide level1 center">
 <h1>Compute a decision tree</h1>
-<div id="cell-35" class="cell" data-outputid="20e7a3da-47c9-450d-8c7d-87dae69b792a" data-execution_count="78">
+<div id="cell-35" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:807}}" data-outputid="20e7a3da-47c9-450d-8c7d-87dae69b792a" data-execution_count="78">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
@@ -1194,7 +1195,7 @@ memory usage: 83.7+ KB</code></pre>
 
 <section id="understanding-feature-relevance" class="title-slide slide level1 center">
 <h1>Understanding feature relevance</h1>
-<div id="cell-37" class="cell" data-outputid="91841c8c-1fa1-4e74-9de9-9b3d40c6ff50" data-execution_count="79">
+<div id="cell-37" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:669}}" data-outputid="91841c8c-1fa1-4e74-9de9-9b3d40c6ff50" data-execution_count="79">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="kw">def</span> feature_relevance(best_clf, X):</span>
@@ -1214,7 +1215,7 @@ memory usage: 83.7+ KB</code></pre>
 
 <section id="plot-survived-by-sex" class="title-slide slide level1 center">
 <h1>Plot <code>Survived</code> by <code>Sex</code></h1>
-<div id="cell-39" class="cell" data-outputid="5f3cb191-1ba4-42b5-9438-50300d9bef26" data-execution_count="80">
+<div id="cell-39" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:564}}" data-outputid="5f3cb191-1ba4-42b5-9438-50300d9bef26" data-execution_count="80">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>survived_by_sex <span class="op">=</span> df.groupby([<span class="st">'Sex'</span>, <span class="st">'Survived'</span>])[<span class="st">'Survived'</span>].count().unstack()</span>
@@ -1230,7 +1231,7 @@ memory usage: 83.7+ KB</code></pre>
 
 <section id="training-a-random-forest" class="title-slide slide level1 center">
 <h1>Training a random forest</h1>
-<div id="cell-41" class="cell" data-outputid="01ca5836-205b-4444-9388-9f924e652087" data-execution_count="81">
+<div id="cell-41" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="01ca5836-205b-4444-9388-9f924e652087" data-execution_count="81">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
@@ -1269,7 +1270,7 @@ memory usage: 83.7+ KB</code></pre>
 
 <section id="feature-engineering" class="title-slide slide level1 center">
 <h1>Feature engineering</h1>
-<div id="cell-43" class="cell" data-vscode="{&quot;languageId&quot;:&quot;ruby&quot;}" data-execution_count="82">
+<div id="cell-43" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;ruby&quot;}}" data-execution_count="82">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a><span class="kw">def</span> preprocess(df):</span>
@@ -1277,7 +1278,7 @@ memory usage: 83.7+ KB</code></pre>
 <span id="cb31-3"><a href=""></a>    df[<span class="st">'FarePerPerson'</span>] <span class="op">=</span> df[<span class="st">'Fare'</span>] <span class="op">/</span> df[<span class="st">'FamilySize'</span>]</span>
 <span id="cb31-4"><a href=""></a>    df[<span class="st">'IsAlone'</span>] <span class="op">=</span> (df[<span class="st">'FamilySize'</span>] <span class="op">==</span> <span class="dv">1</span>).astype(<span class="bu">int</span>)</span>
 <span id="cb31-5"><a href=""></a>    </span>
-<span id="cb31-6"><a href=""></a>    df[<span class="st">'Title'</span>] <span class="op">=</span> df[<span class="st">'Name'</span>].<span class="bu">str</span>.extract(<span class="st">' ([A-Za-z]+)\.'</span>, expand<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb31-6"><a href=""></a>    df[<span class="st">'Title'</span>] <span class="op">=</span> df[<span class="st">'Name'</span>].<span class="bu">str</span>.extract(<span class="st">' ([A-Za-z]+)</span><span class="er">\</span><span class="st">.'</span>, expand<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb31-7"><a href=""></a>    df[<span class="st">'Title'</span>] <span class="op">=</span> df[<span class="st">'Title'</span>].replace([<span class="st">'Lady'</span>, <span class="st">'Countess'</span>, <span class="st">'Capt'</span>, <span class="st">'Col'</span>, <span class="st">'Don'</span>, <span class="st">'Dr'</span>, <span class="st">'Major'</span>, <span class="st">'Rev'</span>, <span class="st">'Sir'</span>, <span class="st">'Jonkheer'</span>, <span class="st">'Dona'</span>], <span class="st">'Rare'</span>)</span>
 <span id="cb31-8"><a href=""></a>    df[<span class="st">'Title'</span>] <span class="op">=</span> df[<span class="st">'Title'</span>].replace(<span class="st">'Mlle'</span>, <span class="st">'Miss'</span>).replace(<span class="st">'Ms'</span>, <span class="st">'Miss'</span>).replace(<span class="st">'Mme'</span>, <span class="st">'Mrs'</span>)</span>
 <span id="cb31-9"><a href=""></a>    </span>
@@ -1298,7 +1299,7 @@ memory usage: 83.7+ KB</code></pre>
 
 <section id="retraining-the-decision-tree" class="title-slide slide level1 center">
 <h1>Retraining the decision tree</h1>
-<div id="cell-45" class="cell" data-vscode="{&quot;languageId&quot;:&quot;ruby&quot;}" data-execution_count="83">
+<div id="cell-45" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;ruby&quot;}}" data-execution_count="83">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>best_clf, train_score, test_score <span class="op">=</span> train_tree(X, y)</span>
@@ -1312,7 +1313,7 @@ memory usage: 83.7+ KB</code></pre>
 <pre><code>(0.8204067541271733, None)</code></pre>
 </div>
 </div>
-<div id="cell-46" class="cell" data-vscode="{&quot;languageId&quot;:&quot;ruby&quot;}" data-execution_count="84">
+<div id="cell-46" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;ruby&quot;}}" data-execution_count="84">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb35-1"><a href=""></a>feature_relevance(best_clf, X)</span></code></pre></div>
@@ -1323,7 +1324,7 @@ memory usage: 83.7+ KB</code></pre>
 
 <section id="retraining-the-random-forest" class="title-slide slide level1 center">
 <h1>Retraining the random forest</h1>
-<div id="cell-48" class="cell" data-vscode="{&quot;languageId&quot;:&quot;ruby&quot;}" data-execution_count="85">
+<div id="cell-48" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;ruby&quot;}}" data-execution_count="85">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a>best_clf, train_score, test_score <span class="op">=</span> train_forest(X, y)</span>
@@ -1336,7 +1337,7 @@ memory usage: 83.7+ KB</code></pre>
 <pre><code>(0.8316615403929445, None)</code></pre>
 </div>
 </div>
-<div id="cell-49" class="cell" data-vscode="{&quot;languageId&quot;:&quot;ruby&quot;}" data-execution_count="86">
+<div id="cell-49" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;ruby&quot;}}" data-execution_count="86">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href=""></a>feature_relevance(best_clf, X)</span></code></pre></div>
@@ -2375,7 +2376,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -2402,129 +2403,111 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
             }
           }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
           }
-        } else {
-          return undefined;
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>

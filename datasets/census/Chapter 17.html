@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="Chapter 17_files/libs/quarto-html/tabby.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="Chapter 17_files/libs/quarto-html/tabby.min.js"></script>
 <script src="Chapter 17_files/libs/quarto-html/popper.min.js"></script>
 <script src="Chapter 17_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="Chapter 17_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="Chapter 17_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Chapter 17_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="Chapter 17_files/libs/quarto-html/quarto-syntax-highlighting-cdaacfc258cb6f151192107f105ac881.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.12">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Hands-On Data Preprocessing in Python</title>
@@ -28,8 +28,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -40,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -93,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="Chapter 17_files/libs/revealjs/dist/theme/quarto-6391498a111a1f00b0d941bda0c7e264.css">
+  <link rel="stylesheet" href="Chapter 17_files/libs/revealjs/dist/theme/quarto-b3aa9dda08c8fde6dffd4aadb76df7d0.css">
   <link href="Chapter 17_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Chapter 17_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Chapter 17_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -185,7 +186,7 @@
       margin-right: 0; 
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
@@ -255,7 +256,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -284,7 +285,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>Sources: U.S. Census Bureau, 1970, 1980, 1990,...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -308,7 +309,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>For definitions of rural classifications, see ...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -332,7 +333,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>This table was prepared by USDA, Economic Rese...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -356,7 +357,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>FIPS Code</td>
 <td>State</td>
 <td>Area name</td>
@@ -380,7 +381,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>Percent of adults with a bachelor's degree or ...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>00000</td>
 <td>US</td>
 <td>United States</td>
@@ -404,7 +405,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>32.1455</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -428,7 +429,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3282</td>
+<th data-quarto-table-cell-role="th">3282</th>
 <td>72145</td>
 <td>PR</td>
 <td>Vega Baja Municipio</td>
@@ -452,7 +453,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>21.2223</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3283</td>
+<th data-quarto-table-cell-role="th">3283</th>
 <td>72147</td>
 <td>PR</td>
 <td>Vieques Municipio</td>
@@ -476,7 +477,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>17.9994</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3284</td>
+<th data-quarto-table-cell-role="th">3284</th>
 <td>72149</td>
 <td>PR</td>
 <td>Villalba Municipio</td>
@@ -500,7 +501,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>19.9128</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3285</td>
+<th data-quarto-table-cell-role="th">3285</th>
 <td>72151</td>
 <td>PR</td>
 <td>Yabucoa Municipio</td>
@@ -524,7 +525,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>18.003</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3286</td>
+<th data-quarto-table-cell-role="th">3286</th>
 <td>72153</td>
 <td>PR</td>
 <td>Yauco Municipio</td>
@@ -577,7 +578,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -606,7 +607,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>These data were posted to the ERS website (at ...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -630,7 +631,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>FIPStxt</td>
 <td>State</td>
 <td>Area_Name</td>
@@ -654,7 +655,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>R_NET_MIG_2019</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>00000</td>
 <td>US</td>
 <td>United States</td>
@@ -678,7 +679,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>01000</td>
 <td>AL</td>
 <td>Alabama</td>
@@ -702,7 +703,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>2.48374</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>01001</td>
 <td>AL</td>
 <td>Autauga County</td>
@@ -726,7 +727,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>4.56006</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -750,7 +751,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3270</td>
+<th data-quarto-table-cell-role="th">3270</th>
 <td>72145</td>
 <td>PR</td>
 <td>Vega Baja Municipio, Puerto Rico</td>
@@ -774,7 +775,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3271</td>
+<th data-quarto-table-cell-role="th">3271</th>
 <td>72147</td>
 <td>PR</td>
 <td>Vieques Municipio, Puerto Rico</td>
@@ -798,7 +799,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3272</td>
+<th data-quarto-table-cell-role="th">3272</th>
 <td>72149</td>
 <td>PR</td>
 <td>Villalba Municipio, Puerto Rico</td>
@@ -822,7 +823,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3273</td>
+<th data-quarto-table-cell-role="th">3273</th>
 <td>72151</td>
 <td>PR</td>
 <td>Yabucoa Municipio, Puerto Rico</td>
@@ -846,7 +847,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3274</td>
+<th data-quarto-table-cell-role="th">3274</th>
 <td>72153</td>
 <td>PR</td>
 <td>Yauco Municipio, Puerto Rico</td>
@@ -899,7 +900,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -928,7 +929,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>Source: U.S. Department of Commerce, Bureau of...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -952,7 +953,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>For definitions of rural classifications, see ...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -976,7 +977,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>This table was prepared by USDA, Economic Rese...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -1000,7 +1001,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>FIPStxt</td>
 <td>Stabr</td>
 <td>Area_name</td>
@@ -1024,7 +1025,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>CI90UB04P_2019</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>00000</td>
 <td>US</td>
 <td>United States</td>
@@ -1048,7 +1049,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>18.5</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -1072,7 +1073,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3192</td>
+<th data-quarto-table-cell-role="th">3192</th>
 <td>56037</td>
 <td>WY</td>
 <td>Sweetwater County</td>
@@ -1096,7 +1097,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3193</td>
+<th data-quarto-table-cell-role="th">3193</th>
 <td>56039</td>
 <td>WY</td>
 <td>Teton County</td>
@@ -1120,7 +1121,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3194</td>
+<th data-quarto-table-cell-role="th">3194</th>
 <td>56041</td>
 <td>WY</td>
 <td>Uinta County</td>
@@ -1144,7 +1145,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3195</td>
+<th data-quarto-table-cell-role="th">3195</th>
 <td>56043</td>
 <td>WY</td>
 <td>Washakie County</td>
@@ -1168,7 +1169,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3196</td>
+<th data-quarto-table-cell-role="th">3196</th>
 <td>56045</td>
 <td>WY</td>
 <td>Weston County</td>
@@ -1221,7 +1222,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1250,7 +1251,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>Sources: Unemployment: U.S. Department of Labo...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -1274,7 +1275,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>For definitions of rural classifications, see ...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -1298,7 +1299,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>This table was prepared by USDA, Economic Rese...</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -1322,7 +1323,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>FIPS_Code</td>
 <td>State</td>
 <td>Area_name</td>
@@ -1346,7 +1347,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>Med_HH_Income_Percent_of_State_Total_2019</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>00000</td>
 <td>US</td>
 <td>United States</td>
@@ -1370,7 +1371,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -1394,7 +1395,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3274</td>
+<th data-quarto-table-cell-role="th">3274</th>
 <td>72145</td>
 <td>PR</td>
 <td>Vega Baja Municipio, PR</td>
@@ -1418,7 +1419,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3275</td>
+<th data-quarto-table-cell-role="th">3275</th>
 <td>72147</td>
 <td>PR</td>
 <td>Vieques Municipio, PR</td>
@@ -1442,7 +1443,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3276</td>
+<th data-quarto-table-cell-role="th">3276</th>
 <td>72149</td>
 <td>PR</td>
 <td>Villalba Municipio, PR</td>
@@ -1466,7 +1467,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3277</td>
+<th data-quarto-table-cell-role="th">3277</th>
 <td>72151</td>
 <td>PR</td>
 <td>Yabucoa Municipio, PR</td>
@@ -1490,7 +1491,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3278</td>
+<th data-quarto-table-cell-role="th">3278</th>
 <td>72153</td>
 <td>PR</td>
 <td>Yauco Municipio, PR</td>
@@ -1545,7 +1546,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1565,7 +1566,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>2000</td>
 <td>ALABAMA</td>
 <td>AL</td>
@@ -1580,7 +1581,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>TOTAL</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>2000</td>
 <td>ALABAMA</td>
 <td>AL</td>
@@ -1595,7 +1596,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>TOTAL</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>2000</td>
 <td>ALABAMA</td>
 <td>AL</td>
@@ -1610,7 +1611,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>TOTAL</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>2000</td>
 <td>ALABAMA</td>
 <td>AL</td>
@@ -1625,7 +1626,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>TOTAL</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>2000</td>
 <td>ALABAMA</td>
 <td>AL</td>
@@ -1640,7 +1641,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>TOTAL</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -1655,7 +1656,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">72612</td>
+<th data-quarto-table-cell-role="th">72612</th>
 <td>2020</td>
 <td>WYOMING</td>
 <td>WY</td>
@@ -1670,7 +1671,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>TOTAL</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">72613</td>
+<th data-quarto-table-cell-role="th">72613</th>
 <td>2020</td>
 <td>WYOMING</td>
 <td>WY</td>
@@ -1685,7 +1686,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>TOTAL</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">72614</td>
+<th data-quarto-table-cell-role="th">72614</th>
 <td>2020</td>
 <td>WYOMING</td>
 <td>WY</td>
@@ -1700,7 +1701,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>TOTAL</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">72615</td>
+<th data-quarto-table-cell-role="th">72615</th>
 <td>2020</td>
 <td>WYOMING</td>
 <td>WY</td>
@@ -1715,7 +1716,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>TOTAL</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">72616</td>
+<th data-quarto-table-cell-role="th">72616</th>
 <td>2020</td>
 <td>WYOMING</td>
 <td>WY</td>
@@ -1766,7 +1767,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1785,7 +1786,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>2000</td>
 <td>ALABAMA</td>
 <td>AL</td>
@@ -1799,7 +1800,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>20191203</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>2000</td>
 <td>ALABAMA</td>
 <td>AL</td>
@@ -1813,7 +1814,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>20191203</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>2000</td>
 <td>ALABAMA</td>
 <td>AL</td>
@@ -1827,7 +1828,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>20191203</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>2000</td>
 <td>ALABAMA</td>
 <td>AL</td>
@@ -1841,7 +1842,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>20191203</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>2000</td>
 <td>ALABAMA</td>
 <td>AL</td>
@@ -1855,7 +1856,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>20191203</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -1869,7 +1870,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">72612</td>
+<th data-quarto-table-cell-role="th">72612</th>
 <td>2020</td>
 <td>WYOMING</td>
 <td>WY</td>
@@ -1883,7 +1884,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>20210622</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">72613</td>
+<th data-quarto-table-cell-role="th">72613</th>
 <td>2020</td>
 <td>WYOMING</td>
 <td>WY</td>
@@ -1897,7 +1898,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>20210622</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">72614</td>
+<th data-quarto-table-cell-role="th">72614</th>
 <td>2020</td>
 <td>WYOMING</td>
 <td>WY</td>
@@ -1911,7 +1912,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>20210622</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">72615</td>
+<th data-quarto-table-cell-role="th">72615</th>
 <td>2020</td>
 <td>WYOMING</td>
 <td>WY</td>
@@ -1925,7 +1926,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>20210622</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">72616</td>
+<th data-quarto-table-cell-role="th">72616</th>
 <td>2020</td>
 <td>WYOMING</td>
 <td>WY</td>
@@ -1998,7 +1999,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -2015,53 +2016,53 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AK</td>
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">DISTRICT 1</td>
-<td data-quarto-table-cell-role="th">2000</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AK</th>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">DISTRICT 1</th>
+<th data-quarto-table-cell-role="th">2000</th>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2004</td>
+<th data-quarto-table-cell-role="th">2004</th>
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2008</td>
+<th data-quarto-table-cell-role="th">2008</th>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2012</td>
+<th data-quarto-table-cell-role="th">2012</th>
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2016</td>
+<th data-quarto-table-cell-role="th">2016</th>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td data-quarto-table-cell-role="th">...</td>
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</td>
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WESTON</td>
-<td data-quarto-table-cell-role="th">2004</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</th>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WESTON</th>
+<th data-quarto-table-cell-role="th">2004</th>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2008</td>
+<th data-quarto-table-cell-role="th">2008</th>
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2012</td>
+<th data-quarto-table-cell-role="th">2012</th>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2016</td>
+<th data-quarto-table-cell-role="th">2016</th>
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2020</td>
+<th data-quarto-table-cell-role="th">2020</th>
 <td>NaN</td>
 </tr>
 </tbody>
@@ -20172,7 +20173,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -20189,53 +20190,53 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AK</td>
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">DISTRICT 1</td>
-<td data-quarto-table-cell-role="th">2000</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AK</th>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">DISTRICT 1</th>
+<th data-quarto-table-cell-role="th">2000</th>
 <td>0.510367</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2004</td>
+<th data-quarto-table-cell-role="th">2004</th>
 <td>0.253528</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2008</td>
+<th data-quarto-table-cell-role="th">2008</th>
 <td>0.222669</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2012</td>
+<th data-quarto-table-cell-role="th">2012</th>
 <td>0.56734</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2016</td>
+<th data-quarto-table-cell-role="th">2016</th>
 <td>0.0914432</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td data-quarto-table-cell-role="th">...</td>
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</td>
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WESTON</td>
-<td data-quarto-table-cell-role="th">2004</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</th>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WESTON</th>
+<th data-quarto-table-cell-role="th">2004</th>
 <td>0.636498</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2008</td>
+<th data-quarto-table-cell-role="th">2008</th>
 <td>0.574107</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2012</td>
+<th data-quarto-table-cell-role="th">2012</th>
 <td>0.714201</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2016</td>
+<th data-quarto-table-cell-role="th">2016</th>
 <td>0.775383</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2020</td>
+<th data-quarto-table-cell-role="th">2020</th>
 <td>0.771629</td>
 </tr>
 </tbody>
@@ -20267,7 +20268,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -20279,77 +20280,77 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>AK</td>
 <td>DISTRICT 1</td>
 <td>2000</td>
 <td>0.510367</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>AK</td>
 <td>DISTRICT 1</td>
 <td>2004</td>
 <td>0.253528</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>AK</td>
 <td>DISTRICT 1</td>
 <td>2008</td>
 <td>0.222669</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>AK</td>
 <td>DISTRICT 1</td>
 <td>2012</td>
 <td>0.56734</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>AK</td>
 <td>DISTRICT 1</td>
 <td>2016</td>
 <td>0.0914432</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">18045</td>
+<th data-quarto-table-cell-role="th">18045</th>
 <td>WY</td>
 <td>WESTON</td>
 <td>2004</td>
 <td>0.636498</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">18046</td>
+<th data-quarto-table-cell-role="th">18046</th>
 <td>WY</td>
 <td>WESTON</td>
 <td>2008</td>
 <td>0.574107</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">18047</td>
+<th data-quarto-table-cell-role="th">18047</th>
 <td>WY</td>
 <td>WESTON</td>
 <td>2012</td>
 <td>0.714201</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">18048</td>
+<th data-quarto-table-cell-role="th">18048</th>
 <td>WY</td>
 <td>WESTON</td>
 <td>2016</td>
 <td>0.775383</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">18049</td>
+<th data-quarto-table-cell-role="th">18049</th>
 <td>WY</td>
 <td>WESTON</td>
 <td>2020</td>
@@ -20385,7 +20386,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -20402,60 +20403,60 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AK</td>
-<td data-quarto-table-cell-role="th">DISTRICT 1</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AK</th>
+<th data-quarto-table-cell-role="th">DISTRICT 1</th>
 <td>NaN</td>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">DISTRICT 10</td>
+<th data-quarto-table-cell-role="th">DISTRICT 10</th>
 <td>NaN</td>
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">DISTRICT 11</td>
+<th data-quarto-table-cell-role="th">DISTRICT 11</th>
 <td>NaN</td>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">DISTRICT 12</td>
+<th data-quarto-table-cell-role="th">DISTRICT 12</th>
 <td>NaN</td>
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">DISTRICT 13</td>
+<th data-quarto-table-cell-role="th">DISTRICT 13</th>
 <td>NaN</td>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</td>
-<td data-quarto-table-cell-role="th">SWEETWATER</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</th>
+<th data-quarto-table-cell-role="th">SWEETWATER</th>
 <td>NaN</td>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">TETON</td>
+<th data-quarto-table-cell-role="th">TETON</th>
 <td>NaN</td>
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">UINTA</td>
+<th data-quarto-table-cell-role="th">UINTA</th>
 <td>NaN</td>
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">WASHAKIE</td>
+<th data-quarto-table-cell-role="th">WASHAKIE</th>
 <td>NaN</td>
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">WESTON</td>
+<th data-quarto-table-cell-role="th">WESTON</th>
 <td>NaN</td>
 <td>NaN</td>
 </tr>
@@ -20536,7 +20537,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -20553,60 +20554,60 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AK</td>
-<td data-quarto-table-cell-role="th">DISTRICT 1</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AK</th>
+<th data-quarto-table-cell-role="th">DISTRICT 1</th>
 <td>0.274999</td>
 <td>-0.0762906</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">DISTRICT 10</td>
+<th data-quarto-table-cell-role="th">DISTRICT 10</th>
 <td>0.404606</td>
 <td>0.0388433</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">DISTRICT 11</td>
+<th data-quarto-table-cell-role="th">DISTRICT 11</th>
 <td>0.429907</td>
 <td>0.00906478</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">DISTRICT 12</td>
+<th data-quarto-table-cell-role="th">DISTRICT 12</th>
 <td>0.417909</td>
 <td>0.0196095</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">DISTRICT 13</td>
+<th data-quarto-table-cell-role="th">DISTRICT 13</th>
 <td>0.28947</td>
 <td>0.00391493</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</td>
-<td data-quarto-table-cell-role="th">SWEETWATER</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</th>
+<th data-quarto-table-cell-role="th">SWEETWATER</th>
 <td>0.379123</td>
 <td>0.0557874</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">TETON</td>
+<th data-quarto-table-cell-role="th">TETON</th>
 <td>-0.155271</td>
 <td>-0.086146</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">UINTA</td>
+<th data-quarto-table-cell-role="th">UINTA</th>
 <td>0.540841</td>
 <td>0.0254894</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">WASHAKIE</td>
+<th data-quarto-table-cell-role="th">WASHAKIE</th>
 <td>0.573747</td>
 <td>0.0170218</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">WESTON</td>
+<th data-quarto-table-cell-role="th">WESTON</th>
 <td>0.69149</td>
 <td>0.0294079</td>
 </tr>
@@ -20662,7 +20663,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -20679,60 +20680,60 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AK</td>
-<td data-quarto-table-cell-role="th">district 1</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AK</th>
+<th data-quarto-table-cell-role="th">district 1</th>
 <td>0.274999</td>
 <td>-0.0762906</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">district 10</td>
+<th data-quarto-table-cell-role="th">district 10</th>
 <td>0.404606</td>
 <td>0.0388433</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">district 11</td>
+<th data-quarto-table-cell-role="th">district 11</th>
 <td>0.429907</td>
 <td>0.00906478</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">district 12</td>
+<th data-quarto-table-cell-role="th">district 12</th>
 <td>0.417909</td>
 <td>0.0196095</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">district 13</td>
+<th data-quarto-table-cell-role="th">district 13</th>
 <td>0.28947</td>
 <td>0.00391493</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</td>
-<td data-quarto-table-cell-role="th">sweetwater</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</th>
+<th data-quarto-table-cell-role="th">sweetwater</th>
 <td>0.379123</td>
 <td>0.0557874</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">teton</td>
+<th data-quarto-table-cell-role="th">teton</th>
 <td>-0.155271</td>
 <td>-0.086146</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">uinta</td>
+<th data-quarto-table-cell-role="th">uinta</th>
 <td>0.540841</td>
 <td>0.0254894</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">washakie</td>
+<th data-quarto-table-cell-role="th">washakie</th>
 <td>0.573747</td>
 <td>0.0170218</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">weston</td>
+<th data-quarto-table-cell-role="th">weston</th>
 <td>0.69149</td>
 <td>0.0294079</td>
 </tr>
@@ -20834,7 +20835,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -20849,50 +20850,50 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AL</td>
-<td data-quarto-table-cell-role="th">autauga</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AL</th>
+<th data-quarto-table-cell-role="th">autauga</th>
 <td>26.5716</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">baldwin</td>
+<th data-quarto-table-cell-role="th">baldwin</th>
 <td>31.8625</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">barbour</td>
+<th data-quarto-table-cell-role="th">barbour</th>
 <td>11.5787</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">bibb</td>
+<th data-quarto-table-cell-role="th">bibb</th>
 <td>10.3785</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">blount</td>
+<th data-quarto-table-cell-role="th">blount</th>
 <td>13.0934</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</td>
-<td data-quarto-table-cell-role="th">sweetwater</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</th>
+<th data-quarto-table-cell-role="th">sweetwater</th>
 <td>22.4984</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">teton</td>
+<th data-quarto-table-cell-role="th">teton</th>
 <td>57.0051</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">uinta</td>
+<th data-quarto-table-cell-role="th">uinta</th>
 <td>16.029</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">washakie</td>
+<th data-quarto-table-cell-role="th">washakie</th>
 <td>23.3862</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">weston</td>
+<th data-quarto-table-cell-role="th">weston</th>
 <td>19.9725</td>
 </tr>
 </tbody>
@@ -20975,7 +20976,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -20990,50 +20991,50 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AL</td>
-<td data-quarto-table-cell-role="th">autauga</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AL</th>
+<th data-quarto-table-cell-role="th">autauga</th>
 <td>54571</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">baldwin</td>
+<th data-quarto-table-cell-role="th">baldwin</th>
 <td>182265</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">barbour</td>
+<th data-quarto-table-cell-role="th">barbour</th>
 <td>27457</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">bibb</td>
+<th data-quarto-table-cell-role="th">bibb</th>
 <td>22915</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">blount</td>
+<th data-quarto-table-cell-role="th">blount</th>
 <td>57322</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</td>
-<td data-quarto-table-cell-role="th">sweetwater</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</th>
+<th data-quarto-table-cell-role="th">sweetwater</th>
 <td>43806</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">teton</td>
+<th data-quarto-table-cell-role="th">teton</th>
 <td>21294</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">uinta</td>
+<th data-quarto-table-cell-role="th">uinta</th>
 <td>21118</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">washakie</td>
+<th data-quarto-table-cell-role="th">washakie</th>
 <td>8533</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">weston</td>
+<th data-quarto-table-cell-role="th">weston</th>
 <td>7208</td>
 </tr>
 </tbody>
@@ -21072,7 +21073,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -21101,7 +21102,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>00000</td>
 <td>US</td>
 <td>United States</td>
@@ -21125,7 +21126,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>18.5</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
+<th data-quarto-table-cell-role="th">5</th>
 <td>01000</td>
 <td>AL</td>
 <td>Alabama</td>
@@ -21149,7 +21150,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>25.6</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
+<th data-quarto-table-cell-role="th">6</th>
 <td>01001</td>
 <td>AL</td>
 <td>Autauga County</td>
@@ -21173,7 +21174,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
+<th data-quarto-table-cell-role="th">7</th>
 <td>01003</td>
 <td>AL</td>
 <td>Baldwin County</td>
@@ -21197,7 +21198,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
+<th data-quarto-table-cell-role="th">8</th>
 <td>01005</td>
 <td>AL</td>
 <td>Barbour County</td>
@@ -21221,7 +21222,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -21245,7 +21246,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3192</td>
+<th data-quarto-table-cell-role="th">3192</th>
 <td>56037</td>
 <td>WY</td>
 <td>Sweetwater County</td>
@@ -21269,7 +21270,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3193</td>
+<th data-quarto-table-cell-role="th">3193</th>
 <td>56039</td>
 <td>WY</td>
 <td>Teton County</td>
@@ -21293,7 +21294,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3194</td>
+<th data-quarto-table-cell-role="th">3194</th>
 <td>56041</td>
 <td>WY</td>
 <td>Uinta County</td>
@@ -21317,7 +21318,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3195</td>
+<th data-quarto-table-cell-role="th">3195</th>
 <td>56043</td>
 <td>WY</td>
 <td>Washakie County</td>
@@ -21341,7 +21342,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3196</td>
+<th data-quarto-table-cell-role="th">3196</th>
 <td>56045</td>
 <td>WY</td>
 <td>Weston County</td>
@@ -21430,7 +21431,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -21442,77 +21443,77 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>AL</td>
 <td>12.1</td>
 <td>58233</td>
 <td>autauga</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>AL</td>
 <td>10.1</td>
 <td>59871</td>
 <td>baldwin</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>AL</td>
 <td>27.1</td>
 <td>35972</td>
 <td>barbour</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>AL</td>
 <td>20.3</td>
 <td>47918</td>
 <td>bibb</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>AL</td>
 <td>16.3</td>
 <td>52902</td>
 <td>blount</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3001</td>
+<th data-quarto-table-cell-role="th">3001</th>
 <td>WY</td>
 <td>8.3</td>
 <td>80639</td>
 <td>sweetwater</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3002</td>
+<th data-quarto-table-cell-role="th">3002</th>
 <td>WY</td>
 <td>6</td>
 <td>98837</td>
 <td>teton</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3003</td>
+<th data-quarto-table-cell-role="th">3003</th>
 <td>WY</td>
 <td>8.5</td>
 <td>70756</td>
 <td>uinta</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3004</td>
+<th data-quarto-table-cell-role="th">3004</th>
 <td>WY</td>
 <td>11.1</td>
 <td>55122</td>
 <td>washakie</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3005</td>
+<th data-quarto-table-cell-role="th">3005</th>
 <td>WY</td>
 <td>10.5</td>
 <td>59410</td>
@@ -21569,7 +21570,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -21586,60 +21587,60 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AL</td>
-<td data-quarto-table-cell-role="th">autauga</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AL</th>
+<th data-quarto-table-cell-role="th">autauga</th>
 <td>12.1</td>
 <td>58233</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">baldwin</td>
+<th data-quarto-table-cell-role="th">baldwin</th>
 <td>10.1</td>
 <td>59871</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">barbour</td>
+<th data-quarto-table-cell-role="th">barbour</th>
 <td>27.1</td>
 <td>35972</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">bibb</td>
+<th data-quarto-table-cell-role="th">bibb</th>
 <td>20.3</td>
 <td>47918</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">blount</td>
+<th data-quarto-table-cell-role="th">blount</th>
 <td>16.3</td>
 <td>52902</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</td>
-<td data-quarto-table-cell-role="th">sweetwater</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</th>
+<th data-quarto-table-cell-role="th">sweetwater</th>
 <td>8.3</td>
 <td>80639</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">teton</td>
+<th data-quarto-table-cell-role="th">teton</th>
 <td>6</td>
 <td>98837</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">uinta</td>
+<th data-quarto-table-cell-role="th">uinta</th>
 <td>8.5</td>
 <td>70756</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">washakie</td>
+<th data-quarto-table-cell-role="th">washakie</th>
 <td>11.1</td>
 <td>55122</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">weston</td>
+<th data-quarto-table-cell-role="th">weston</th>
 <td>10.5</td>
 <td>59410</td>
 </tr>
@@ -21692,7 +21693,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -21705,7 +21706,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>US</td>
 <td>United States</td>
 <td>3.66931</td>
@@ -21713,7 +21714,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>United States</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
+<th data-quarto-table-cell-role="th">5</th>
 <td>AL</td>
 <td>Alabama</td>
 <td>3</td>
@@ -21721,7 +21722,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>Alabama</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
+<th data-quarto-table-cell-role="th">6</th>
 <td>AL</td>
 <td>Autauga County, AL</td>
 <td>2.7</td>
@@ -21729,7 +21730,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>Autauga County</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
+<th data-quarto-table-cell-role="th">7</th>
 <td>AL</td>
 <td>Baldwin County, AL</td>
 <td>2.8</td>
@@ -21737,7 +21738,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>Baldwin County</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
+<th data-quarto-table-cell-role="th">8</th>
 <td>AL</td>
 <td>Barbour County, AL</td>
 <td>3.8</td>
@@ -21745,7 +21746,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>Barbour County</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -21753,7 +21754,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3274</td>
+<th data-quarto-table-cell-role="th">3274</th>
 <td>PR</td>
 <td>Vega Baja Municipio, PR</td>
 <td>9.6</td>
@@ -21761,7 +21762,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>Vega Baja Municipio</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3275</td>
+<th data-quarto-table-cell-role="th">3275</th>
 <td>PR</td>
 <td>Vieques Municipio, PR</td>
 <td>7</td>
@@ -21769,7 +21770,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>Vieques Municipio</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3276</td>
+<th data-quarto-table-cell-role="th">3276</th>
 <td>PR</td>
 <td>Villalba Municipio, PR</td>
 <td>15.8</td>
@@ -21777,7 +21778,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>Villalba Municipio</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3277</td>
+<th data-quarto-table-cell-role="th">3277</th>
 <td>PR</td>
 <td>Yabucoa Municipio, PR</td>
 <td>13.1</td>
@@ -21785,7 +21786,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>Yabucoa Municipio</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3278</td>
+<th data-quarto-table-cell-role="th">3278</th>
 <td>PR</td>
 <td>Yauco Municipio, PR</td>
 <td>14.6</td>
@@ -21858,7 +21859,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -21875,60 +21876,60 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AL</td>
-<td data-quarto-table-cell-role="th">autauga</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AL</th>
+<th data-quarto-table-cell-role="th">autauga</th>
 <td>2.7</td>
 <td>112.482</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">baldwin</td>
+<th data-quarto-table-cell-role="th">baldwin</th>
 <td>2.8</td>
 <td>115.646</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">barbour</td>
+<th data-quarto-table-cell-role="th">barbour</th>
 <td>3.8</td>
 <td>69.4829</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">bibb</td>
+<th data-quarto-table-cell-role="th">bibb</th>
 <td>3.1</td>
 <td>92.5576</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">blount</td>
+<th data-quarto-table-cell-role="th">blount</th>
 <td>2.7</td>
 <td>102.185</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</td>
-<td data-quarto-table-cell-role="th">sweetwater</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</th>
+<th data-quarto-table-cell-role="th">sweetwater</th>
 <td>4</td>
 <td>121.9</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">teton</td>
+<th data-quarto-table-cell-role="th">teton</th>
 <td>2.8</td>
 <td>149.409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">uinta</td>
+<th data-quarto-table-cell-role="th">uinta</th>
 <td>4</td>
 <td>106.96</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">washakie</td>
+<th data-quarto-table-cell-role="th">washakie</th>
 <td>4.1</td>
 <td>83.3263</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">weston</td>
+<th data-quarto-table-cell-role="th">weston</th>
 <td>3</td>
 <td>89.8083</td>
 </tr>
@@ -21969,7 +21970,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -21998,8 +21999,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AL</td>
-<td data-quarto-table-cell-role="th">autauga</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">AL</th>
+<th data-quarto-table-cell-role="th">autauga</th>
 <td>54571</td>
 <td>26.5716</td>
 <td>12.1</td>
@@ -22010,7 +22011,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>0.00184533</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">baldwin</td>
+<th data-quarto-table-cell-role="th">baldwin</th>
 <td>182265</td>
 <td>31.8625</td>
 <td>10.1</td>
@@ -22021,7 +22022,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>0.0128458</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">barbour</td>
+<th data-quarto-table-cell-role="th">barbour</th>
 <td>27457</td>
 <td>11.5787</td>
 <td>27.1</td>
@@ -22032,7 +22033,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>0.00718466</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">bibb</td>
+<th data-quarto-table-cell-role="th">bibb</th>
 <td>22915</td>
 <td>10.3785</td>
 <td>20.3</td>
@@ -22043,7 +22044,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>0.0603812</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">blount</td>
+<th data-quarto-table-cell-role="th">blount</th>
 <td>57322</td>
 <td>13.0934</td>
 <td>16.3</td>
@@ -22054,8 +22055,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>0.0702235</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -22066,8 +22067,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>...</td>
 </tr>
 <tr class="odd">
-<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</td>
-<td data-quarto-table-cell-role="th">sweetwater</td>
+<th rowspan="5" data-quarto-table-cell-role="th" data-valign="top">WY</th>
+<th data-quarto-table-cell-role="th">sweetwater</th>
 <td>43806</td>
 <td>22.4984</td>
 <td>8.3</td>
@@ -22078,7 +22079,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>0.0557874</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">teton</td>
+<th data-quarto-table-cell-role="th">teton</th>
 <td>21294</td>
 <td>57.0051</td>
 <td>6</td>
@@ -22089,7 +22090,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>-0.086146</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">uinta</td>
+<th data-quarto-table-cell-role="th">uinta</th>
 <td>21118</td>
 <td>16.029</td>
 <td>8.5</td>
@@ -22100,7 +22101,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>0.0254894</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">washakie</td>
+<th data-quarto-table-cell-role="th">washakie</th>
 <td>8533</td>
 <td>23.3862</td>
 <td>11.1</td>
@@ -22111,7 +22112,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>0.0170218</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">weston</td>
+<th data-quarto-table-cell-role="th">weston</th>
 <td>7208</td>
 <td>19.9725</td>
 <td>10.5</td>
@@ -22446,7 +22447,7 @@ memory usage: 291.1+ KB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -22456,37 +22457,37 @@ memory usage: 291.1+ KB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">PC1</td>
+<th data-quarto-table-cell-role="th">PC1</th>
 <td>0.430413</td>
 <td>0.430413</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">PC2</td>
+<th data-quarto-table-cell-role="th">PC2</th>
 <td>0.258362</td>
 <td>0.688775</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">PC3</td>
+<th data-quarto-table-cell-role="th">PC3</th>
 <td>0.107205</td>
 <td>0.795980</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">PC4</td>
+<th data-quarto-table-cell-role="th">PC4</th>
 <td>0.065688</td>
 <td>0.861668</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">PC5</td>
+<th data-quarto-table-cell-role="th">PC5</th>
 <td>0.058344</td>
 <td>0.920012</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">PC6</td>
+<th data-quarto-table-cell-role="th">PC6</th>
 <td>0.043211</td>
 <td>0.963223</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">PC7</td>
+<th data-quarto-table-cell-role="th">PC7</th>
 <td>0.036777</td>
 <td>1.000000</td>
 </tr>
@@ -22575,7 +22576,7 @@ memory usage: 291.1+ KB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -22594,7 +22595,7 @@ memory usage: 291.1+ KB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">9</td>
+<th data-quarto-table-cell-role="th">9</th>
 <td>112.793684</td>
 <td>112.752322</td>
 <td>112.792071</td>
@@ -22608,7 +22609,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>4.598130e-04</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">8</td>
+<th data-quarto-table-cell-role="th">8</th>
 <td>118.096947</td>
 <td>118.095059</td>
 <td>118.254417</td>
@@ -22622,7 +22623,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>2.604844e-03</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">7</td>
+<th data-quarto-table-cell-role="th">7</th>
 <td>124.573840</td>
 <td>124.569070</td>
 <td>124.607084</td>
@@ -22636,7 +22637,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>2.414742e-03</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">6</td>
+<th data-quarto-table-cell-role="th">6</th>
 <td>132.515606</td>
 <td>132.515317</td>
 <td>132.517037</td>
@@ -22650,7 +22651,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>1.367255e-06</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
+<th data-quarto-table-cell-role="th">5</th>
 <td>143.716441</td>
 <td>143.715593</td>
 <td>143.716095</td>
@@ -22664,7 +22665,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>8.722930e-07</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>162.154985</td>
 <td>162.162328</td>
 <td>162.162328</td>
@@ -22678,7 +22679,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>1.293536e-05</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>185.423796</td>
 <td>185.423796</td>
 <td>185.424564</td>
@@ -22692,7 +22693,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>1.747208e-06</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>229.545849</td>
 <td>229.545849</td>
 <td>229.545849</td>
@@ -22759,7 +22760,7 @@ memory usage: 291.1+ KB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -22778,7 +22779,7 @@ memory usage: 291.1+ KB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>0.290016</td>
 <td>0.289844</td>
 <td>0.290016</td>
@@ -22792,7 +22793,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>7.395607e-09</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>0.227539</td>
 <td>0.227539</td>
 <td>0.228016</td>
@@ -22806,7 +22807,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>1.525486e-06</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>0.206167</td>
 <td>0.204784</td>
 <td>0.205682</td>
@@ -22820,7 +22821,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>1.036484e-06</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
+<th data-quarto-table-cell-role="th">5</th>
 <td>0.199699</td>
 <td>0.199818</td>
 <td>0.199881</td>
@@ -22834,7 +22835,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>3.637661e-09</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
+<th data-quarto-table-cell-role="th">6</th>
 <td>0.194488</td>
 <td>0.194488</td>
 <td>0.194488</td>
@@ -22848,7 +22849,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>5.233984e-10</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
+<th data-quarto-table-cell-role="th">7</th>
 <td>0.176485</td>
 <td>0.176393</td>
 <td>0.176348</td>
@@ -22862,7 +22863,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>2.684799e-06</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
+<th data-quarto-table-cell-role="th">8</th>
 <td>0.171261</td>
 <td>0.170907</td>
 <td>0.171012</td>
@@ -22876,7 +22877,7 @@ memory usage: 291.1+ KB</code></pre>
 <td>1.142087e-06</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
+<th data-quarto-table-cell-role="th">9</th>
 <td>0.164349</td>
 <td>0.165093</td>
 <td>0.164745</td>
@@ -23991,7 +23992,7 @@ Cluster 4: Size=302
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -24018,129 +24019,111 @@ Cluster 4: Size=302
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
             }
           }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
           }
-        } else {
-          return undefined;
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>
