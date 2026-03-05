@@ -5,8 +5,8 @@
 <script src="06-modeling_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="06-modeling_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="06-modeling_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="06-modeling_files/libs/quarto-html/quarto-syntax-highlighting-cdaacfc258cb6f151192107f105ac881.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.12">
+<link href="06-modeling_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.29">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="06-modeling_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="06-modeling_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -94,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="06-modeling_files/libs/revealjs/dist/theme/quarto-b3aa9dda08c8fde6dffd4aadb76df7d0.css">
+  <link rel="stylesheet" href="06-modeling_files/libs/revealjs/dist/theme/quarto-0e668b1a546779e99dcb54481cac3728.css">
   <link href="06-modeling_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="06-modeling_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="06-modeling_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -296,7 +299,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><em>Feature extraction</em>: extract the features from data to define the attributes in image and text data</li>
 </ul></li>
 </ul>
-<div id="80e1c257" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:01.986083Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:01.985894Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:02.700618Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:02.700021Z&quot;}}" data-outputid="19814ad4-7ef0-47a6-c339-2729b5be8854" data-execution_count="1">
+<div id="80e1c257" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:46.856751Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:46.856568Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:47.600774Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:47.600213Z&quot;}}" data-outputid="19814ad4-7ef0-47a6-c339-2729b5be8854" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> sklearn <span class="im">as</span> sk</span>
@@ -394,7 +397,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="datasets-in-sklearn" class="title-slide slide level1 center">
 <h1>Datasets in sklearn</h1>
-<div id="f54858f9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:02.703067Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:02.702599Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:02.740775Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:02.740246Z&quot;}}" data-execution_count="2">
+<div id="f54858f9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:47.603468Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:47.602809Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:47.644346Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:47.643791Z&quot;}}" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="im">import</span> sklearn.datasets <span class="im">as</span> datasets</span>
@@ -420,7 +423,7 @@ load_wine</code></pre>
 
 <section id="the-iris-dataset" class="title-slide slide level1 center">
 <h1>The <code>Iris</code> dataset</h1>
-<div id="Y-nsPIhDQe89" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:02.743000Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:02.742476Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:02.758119Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:02.757646Z&quot;}}" data-outputid="d019e408-35e4-4d21-d78a-9b92b6784e2a" data-execution_count="3">
+<div id="Y-nsPIhDQe89" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:47.646506Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:47.646093Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:47.661398Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:47.660931Z&quot;}}" data-outputid="d019e408-35e4-4d21-d78a-9b92b6784e2a" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
@@ -559,7 +562,7 @@ load_wine</code></pre>
 
 <section id="profiling" class="title-slide slide level1 center">
 <h1>Profiling</h1>
-<div id="ohmh7Kc8Nvm7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:02.760114Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:02.759720Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:02.766702Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:02.766125Z&quot;}}" data-outputid="3a9f740a-1006-4b5d-9d44-ff192314d6a1" data-execution_count="4">
+<div id="ohmh7Kc8Nvm7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:47.663193Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:47.662989Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:47.670171Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:47.669712Z&quot;}}" data-outputid="3a9f740a-1006-4b5d-9d44-ff192314d6a1" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>df.info()</span></code></pre></div>
@@ -583,7 +586,7 @@ memory usage: 6.0 KB</code></pre>
 
 <section id="training-and-test-sets-1" class="title-slide slide level1 center">
 <h1>Training and test sets</h1>
-<div id="fOKkpeA2NeEs" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:02.768909Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:02.768405Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:02.795282Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:02.794805Z&quot;}}" data-execution_count="5">
+<div id="fOKkpeA2NeEs" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:47.671869Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:47.671686Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:47.698589Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:47.698132Z&quot;}}" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="co"># Split the data into training and test sets</span></span>
@@ -621,7 +624,7 @@ y_test: (30,)</code></pre>
 <section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
 <p>When throwing two dice, the outcome of any roll is unpredictable, but a sum of 7 will tend to occur twice as often as 4</p>
-<div id="a1a121cf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:02.797389Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:02.796972Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:03.335427Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:03.334831Z&quot;}}" data-execution_count="6">
+<div id="a1a121cf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:47.700610Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:47.700311Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:48.218810Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:48.218213Z&quot;}}" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -655,7 +658,7 @@ y_test: (30,)</code></pre>
 <li><em>Consistency in Model Evaluation</em>: When comparing different models or tuning hyperparameters, the training test cannot change.</li>
 <li><em>Debugging and Testing</em>: During the development phase, you might need to debug your code or test different configurations.</li>
 </ul>
-<div id="4210a099" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:03.337623Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:03.337157Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:03.342319Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:03.341809Z&quot;}}" data-execution_count="7">
+<div id="4210a099" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:48.221078Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:48.220601Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:48.225712Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:48.225245Z&quot;}}" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="bu">print</span>(np.random.randint(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span><span class="dv">10</span>))</span>
@@ -669,8 +672,8 @@ y_test: (30,)</code></pre>
 <span id="cb20-9"><a href=""></a><span class="bu">print</span>(np.random.randint(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span><span class="dv">10</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1 3 2 6 6 4 3 3 4 6]
-[1 4 4 6 1 2 1 6 6 2]
+<pre><code>[4 4 5 3 6 1 4 2 5 4]
+[1 3 6 4 2 2 6 3 2 1]
 [4 5 3 5 5 2 3 3 3 5]
 [4 5 3 5 5 2 3 3 3 5]
 [4 5 3 5 5 2 3 3 3 5]
@@ -707,7 +710,7 @@ y_test: (30,)</code></pre>
 <section>
 <section id="decision-tree" class="title-slide slide level1 center">
 <h1>Decision tree</h1>
-<div id="qRGDyke9OGij" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:03.344390Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:03.343940Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:03.396736Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:03.396158Z&quot;}}" data-outputid="28adc7ac-dafc-4623-98c5-dda0795d6ca5" data-execution_count="8">
+<div id="qRGDyke9OGij" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:48.227692Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:48.227333Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:48.280855Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:48.280363Z&quot;}}" data-outputid="28adc7ac-dafc-4623-98c5-dda0795d6ca5" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier  <span class="co"># Import the model</span></span>
@@ -725,7 +728,7 @@ y_test: (30,)</code></pre>
 </section>
 <section id="plotting-the-tree" class="slide level2">
 <h2>Plotting the tree</h2>
-<div id="TCYt3BziRjqK" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:03.398865Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:03.398422Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:03.536952Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:03.536322Z&quot;}}" data-outputid="a5c6ce55-6e0d-4504-e4c8-408382791a1d" data-execution_count="9">
+<div id="TCYt3BziRjqK" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:48.283018Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:48.282542Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:48.413484Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:48.412950Z&quot;}}" data-outputid="a5c6ce55-6e0d-4504-e4c8-408382791a1d" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="im">from</span> sklearn.tree <span class="im">import</span> plot_tree</span>
@@ -735,7 +738,7 @@ y_test: (30,)</code></pre>
 
 </div>
 <img data-src="06-modeling_files/figure-revealjs/cell-10-output-1.png" class="r-stretch"><p>Checking feature relevance</p>
-<div id="JV7m4ZKqPaJm" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:03.538954Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:03.538630Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:03.546600Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:03.546134Z&quot;}}" data-outputid="efeb6271-4cec-4fcb-b621-84f298272ad7" data-execution_count="10">
+<div id="JV7m4ZKqPaJm" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:48.415529Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:48.415318Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:48.423292Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:48.422831Z&quot;}}" data-outputid="efeb6271-4cec-4fcb-b621-84f298272ad7" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>feature_importance_df <span class="op">=</span> pd.DataFrame({<span class="st">'Feature'</span>: X.columns, <span class="st">'Importance'</span>: clf.feature_importances_})  <span class="co"># Create a DataFrame to display feature importance</span></span>
@@ -796,7 +799,7 @@ y_test: (30,)</code></pre>
 </section></section>
 <section id="feature-selection-checking-correlations" class="title-slide slide level1 center">
 <h1>Feature selection: checking correlations</h1>
-<div id="e8799449" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:03.548397Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:03.548097Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:03.554821Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:03.554246Z&quot;}}" data-execution_count="11">
+<div id="e8799449" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:48.425101Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:48.424908Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:48.431227Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:48.430722Z&quot;}}" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>X_train.corr(method<span class="op">=</span><span class="st">'pearson'</span>, numeric_only<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
@@ -866,7 +869,7 @@ y_test: (30,)</code></pre>
 
 <section id="petal-vs-sepal" class="title-slide slide level1 center">
 <h1><code>petal</code> vs <code>sepal</code></h1>
-<div id="8h4GlwOOPlz3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:03.562749Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:03.562310Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:03.654410Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:03.653779Z&quot;}}" data-outputid="a3ff9957-5136-4fe3-d3e0-dc7a7ddf2bfe" data-execution_count="13">
+<div id="8h4GlwOOPlz3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:48.438709Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:48.438356Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:48.520281Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:48.519755Z&quot;}}" data-outputid="a3ff9957-5136-4fe3-d3e0-dc7a7ddf2bfe" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>plot(df, clf, feature_importance_df[<span class="st">'Feature'</span>].iloc[:<span class="dv">2</span>].tolist())  <span class="co"># plot the 2 most important features</span></span></code></pre></div>
@@ -879,7 +882,7 @@ y_test: (30,)</code></pre>
 </div>
 </div>
 </div>
-<div id="nFNaqWIOT-Rd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:03.656498Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:03.656179Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:03.750219Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:03.749585Z&quot;}}" data-outputid="e57d7a46-c26b-4bfc-c956-f67944b26ada" data-execution_count="14">
+<div id="nFNaqWIOT-Rd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:48.522160Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:48.521940Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:48.606525Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:48.605992Z&quot;}}" data-outputid="e57d7a46-c26b-4bfc-c956-f67944b26ada" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>plot(df, clf, feature_importance_df[<span class="st">'Feature'</span>].iloc[<span class="dv">2</span>:].tolist())  <span class="co"># plot the 2 lest important features</span></span></code></pre></div>
@@ -901,7 +904,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth1" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=1</code></h1>
-<div id="5d66e1c0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:03.764154Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:03.763858Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:04.191654Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:04.191036Z&quot;}}" data-execution_count="16">
+<div id="5d66e1c0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:48.619999Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:48.619699Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:49.038970Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:49.038395Z&quot;}}" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">1</span>, random_state<span class="op">=</span>seed), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -912,7 +915,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth2" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=2</code></h1>
-<div id="a334f69e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:04.193713Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:04.193413Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:04.625162Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:04.624641Z&quot;}}" data-execution_count="17">
+<div id="a334f69e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:49.041243Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:49.040798Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:49.465918Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:49.465351Z&quot;}}" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span>seed), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -923,7 +926,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth2-changing-the-random-seed" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=2</code> (changing the random seed)</h1>
-<div id="648564ec" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:04.627109Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:04.626775Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:05.048808Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:05.048243Z&quot;}}" data-execution_count="18">
+<div id="648564ec" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:49.468064Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:49.467676Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:49.881886Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:49.881351Z&quot;}}" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">1</span>), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -934,7 +937,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth3" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=3</code></h1>
-<div id="11077234" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:05.050911Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:05.050578Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:05.475293Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:05.474712Z&quot;}}" data-execution_count="19">
+<div id="11077234" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:49.884167Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:49.883765Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:50.300648Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:50.300062Z&quot;}}" data-execution_count="19">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">3</span>, random_state<span class="op">=</span>seed), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -945,7 +948,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth6" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=6</code></h1>
-<div id="6fd5a7ac" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:05.477336Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:05.476954Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:05.907399Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:05.906879Z&quot;}}" data-execution_count="20">
+<div id="6fd5a7ac" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:50.302794Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:50.302411Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:50.723221Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:50.722633Z&quot;}}" data-execution_count="20">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">6</span>, random_state<span class="op">=</span>seed), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -956,7 +959,7 @@ y_test: (30,)</code></pre>
 
 <section id="plotting-the-accuracy" class="title-slide slide level1 center">
 <h1>Plotting the accuracy</h1>
-<div id="b0ec6d95" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:05.909480Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:05.909102Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:06.069731Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:06.069131Z&quot;}}" data-execution_count="21">
+<div id="b0ec6d95" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:50.725389Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:50.725013Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:08:50.861951Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:08:50.861403Z&quot;}}" data-execution_count="21">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="co"># Prepare to store max_depth values and corresponding accuracies</span></span>
@@ -1065,7 +1068,7 @@ y_test: (30,)</code></pre>
 
 <section id="random-forest" class="title-slide slide level1 center">
 <h1>Random forest</h1>
-<div id="aa8c6cae" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:06.435016Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:06.434623Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:37:22.324492Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:37:22.323922Z&quot;}}" data-execution_count="24">
+<div id="aa8c6cae" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:08:51.186372Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:08:51.186060Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:09:05.930765Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:09:05.930149Z&quot;}}" data-execution_count="24">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> RandomizedSearchCV</span>
@@ -1106,7 +1109,7 @@ Best Cross-validation Accuracy: 0.9583333333333334 Test Set Accuracy with Best P
 
 <section id="decision-boundaries-k1-no-normalization" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>k=1</code> (no normalization)</h1>
-<div id="313f0aeb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:37:22.520970Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:37:22.520564Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:38:04.290875Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:38:04.290303Z&quot;}}" data-execution_count="26">
+<div id="313f0aeb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:09:06.107204Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:09:06.107010Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:09:35.749102Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:09:35.748521Z&quot;}}" data-execution_count="26">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
@@ -1119,7 +1122,7 @@ Best Cross-validation Accuracy: 0.9583333333333334 Test Set Accuracy with Best P
 
 <section id="decision-boundaries-k1-min-max-normalization" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>k=1</code> (min-max normalization)</h1>
-<div id="fd0b352a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:38:04.292780Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:38:04.292588Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:38:09.726751Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:38:09.726129Z&quot;}}" data-execution_count="27">
+<div id="fd0b352a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:09:35.751305Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:09:35.750924Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:09:39.828813Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:09:39.828234Z&quot;}}" data-execution_count="27">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href=""></a>knn <span class="op">=</span> plot_boundary(KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">1</span>), <span class="st">"knn_cplot"</span>, norm<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
@@ -1130,7 +1133,7 @@ Best Cross-validation Accuracy: 0.9583333333333334 Test Set Accuracy with Best P
 
 <section id="decision-boundaries-k10-min-max-normalization" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>k=10</code> (min-max normalization)</h1>
-<div id="8c2f5371" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:38:09.728717Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:38:09.728525Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:38:15.527046Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:38:15.526513Z&quot;}}" data-execution_count="28">
+<div id="8c2f5371" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:09:39.830936Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:09:39.830617Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:09:44.013202Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:09:44.012629Z&quot;}}" data-execution_count="28">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href=""></a>knn <span class="op">=</span> plot_boundary(KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">10</span>), <span class="st">"knn_cplot"</span>, norm<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
@@ -1141,7 +1144,7 @@ Best Cross-validation Accuracy: 0.9583333333333334 Test Set Accuracy with Best P
 
 <section id="plotting-the-accuracy-1" class="title-slide slide level1 center">
 <h1>Plotting the accuracy</h1>
-<div id="40f79431" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:38:15.528938Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:38:15.528717Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:38:15.683804Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:38:15.683230Z&quot;}}" data-execution_count="29">
+<div id="40f79431" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:09:44.015242Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:09:44.014933Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:09:44.151756Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:09:44.151283Z&quot;}}" data-execution_count="29">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb41-1"><a href=""></a><span class="co"># Prepare to store max_depth values and corresponding accuracies</span></span>
@@ -1197,7 +1200,7 @@ Is this image a grape?</code></pre>
 
 <section id="perceptron-1" class="title-slide slide level1 center">
 <h1>Perceptron</h1>
-<div id="38b9e754" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:38:15.686113Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:38:15.685629Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:38:16.157414Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:38:16.156913Z&quot;}}" data-execution_count="30">
+<div id="38b9e754" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:09:44.153874Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:09:44.153419Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:09:44.603466Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:09:44.602862Z&quot;}}" data-execution_count="30">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Perceptron</span>
@@ -1210,7 +1213,7 @@ Is this image a grape?</code></pre>
 
 <section id="perceptron-changing-the-seed" class="title-slide slide level1 center">
 <h1>Perceptron: changing the seed</h1>
-<div id="04c0a645" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:38:16.159473Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:38:16.159095Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:38:16.632089Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:38:16.631473Z&quot;}}" data-execution_count="31">
+<div id="04c0a645" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:09:44.605241Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:09:44.605066Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:09:45.056408Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:09:45.055821Z&quot;}}" data-execution_count="31">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb44-1"><a href=""></a>perceptron <span class="op">=</span> plot_boundary(Perceptron(random_state<span class="op">=</span><span class="dv">1</span>), <span class="st">"perceptron_cplot"</span>)</span></code></pre></div>
@@ -1221,7 +1224,7 @@ Is this image a grape?</code></pre>
 
 <section id="multi-layer-perceptron" class="title-slide slide level1 center">
 <h1>Multi-layer perceptron</h1>
-<div id="56b111d2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T19:38:16.634038Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T19:38:16.633714Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T19:38:17.524747Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T19:38:17.524234Z&quot;}}" data-execution_count="32">
+<div id="56b111d2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-05T23:09:45.058478Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-05T23:09:45.058099Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-05T23:09:45.887589Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-05T23:09:45.887014Z&quot;}}" data-execution_count="32">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href=""></a><span class="im">from</span> sklearn.neural_network <span class="im">import</span> MLPClassifier</span>
