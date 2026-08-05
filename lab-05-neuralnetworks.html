@@ -5,8 +5,8 @@
 <script src="lab-05-neuralnetworks_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-05-neuralnetworks_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lab-05-neuralnetworks_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lab-05-neuralnetworks_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.29">
+<link href="lab-05-neuralnetworks_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -200,7 +203,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it 
+Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
@@ -211,40 +214,40 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-0" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> SGDClassifier</span>
-<span id="cb1-4"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
-<span id="cb1-5"><a href=""></a></span>
-<span id="cb1-6"><a href=""></a><span class="co"># Define the AND dataset</span></span>
-<span id="cb1-7"><a href=""></a>X <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">1</span>]])</span>
-<span id="cb1-8"><a href=""></a>y <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>])  <span class="co"># AND operator</span></span>
-<span id="cb1-9"><a href=""></a></span>
-<span id="cb1-10"><a href=""></a><span class="co"># Initialize a single neuron model using SGDClassifier</span></span>
-<span id="cb1-11"><a href=""></a>model <span class="op">=</span> SGDClassifier(loss<span class="op">=</span><span class="st">"log_loss"</span>, max_iter<span class="op">=</span><span class="dv">1</span>, learning_rate<span class="op">=</span><span class="st">"constant"</span>, eta0<span class="op">=</span><span class="fl">0.1</span>, tol<span class="op">=</span><span class="va">None</span>)</span>
-<span id="cb1-12"><a href=""></a>n_epochs <span class="op">=</span> <span class="dv">100</span>  <span class="co"># number of training iterations</span></span>
-<span id="cb1-13"><a href=""></a>weights, biases <span class="op">=</span> [], []  <span class="co"># Lists to store weight and bias values per epoch</span></span>
-<span id="cb1-14"><a href=""></a></span>
-<span id="cb1-15"><a href=""></a><span class="co"># Training loop</span></span>
-<span id="cb1-16"><a href=""></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n_epochs):</span>
-<span id="cb1-17"><a href=""></a>    model.partial_fit(X, y, classes<span class="op">=</span>np.array([<span class="dv">0</span>, <span class="dv">1</span>]))  <span class="co"># Train one epoch</span></span>
-<span id="cb1-18"><a href=""></a>    weights.append(model.coef_.flatten().copy())       <span class="co"># Record weights</span></span>
-<span id="cb1-19"><a href=""></a>    biases.append(model.intercept_[<span class="dv">0</span>])                 <span class="co"># Record bias</span></span>
-<span id="cb1-20"><a href=""></a></span>
-<span id="cb1-21"><a href=""></a><span class="co"># Convert recorded weights and biases to numpy arrays for easier plotting</span></span>
-<span id="cb1-22"><a href=""></a>weights <span class="op">=</span> np.array(weights)</span>
-<span id="cb1-23"><a href=""></a>biases <span class="op">=</span> np.array(biases)</span>
-<span id="cb1-24"><a href=""></a></span>
-<span id="cb1-25"><a href=""></a><span class="co"># Plotting the gradient descent path for weights x1 and x2</span></span>
-<span id="cb1-26"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
-<span id="cb1-27"><a href=""></a>plt.plot(weights[:, <span class="dv">0</span>], label<span class="op">=</span><span class="st">"Weight for x1"</span>)</span>
-<span id="cb1-28"><a href=""></a>plt.plot(weights[:, <span class="dv">1</span>], label<span class="op">=</span><span class="st">"Weight for x2"</span>)</span>
-<span id="cb1-29"><a href=""></a>plt.xlabel(<span class="st">"Epoch"</span>)</span>
-<span id="cb1-30"><a href=""></a>plt.ylabel(<span class="st">"Weight Value"</span>)</span>
-<span id="cb1-31"><a href=""></a>plt.title(<span class="st">"Gradient Descent of x1 and x2 Weights for AND Operation"</span>)</span>
-<span id="cb1-32"><a href=""></a>plt.legend()</span>
-<span id="cb1-33"><a href=""></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb1-34"><a href=""></a>plt.show()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="" aria-label="2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="" aria-label="3"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> SGDClassifier</span>
+<span id="cb1-4"><a href="" aria-label="4"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb1-5"><a href="" aria-label="5"></a></span>
+<span id="cb1-6"><a href="" aria-label="6"></a><span class="co"># Define the AND dataset</span></span>
+<span id="cb1-7"><a href="" aria-label="7"></a>X <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">1</span>]])</span>
+<span id="cb1-8"><a href="" aria-label="8"></a>y <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>])  <span class="co"># AND operator</span></span>
+<span id="cb1-9"><a href="" aria-label="9"></a></span>
+<span id="cb1-10"><a href="" aria-label="10"></a><span class="co"># Initialize a single neuron model using SGDClassifier</span></span>
+<span id="cb1-11"><a href="" aria-label="11"></a>model <span class="op">=</span> SGDClassifier(loss<span class="op">=</span><span class="st">"log_loss"</span>, max_iter<span class="op">=</span><span class="dv">1</span>, learning_rate<span class="op">=</span><span class="st">"constant"</span>, eta0<span class="op">=</span><span class="fl">0.1</span>, tol<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb1-12"><a href="" aria-label="12"></a>n_epochs <span class="op">=</span> <span class="dv">100</span>  <span class="co"># number of training iterations</span></span>
+<span id="cb1-13"><a href="" aria-label="13"></a>weights, biases <span class="op">=</span> [], []  <span class="co"># Lists to store weight and bias values per epoch</span></span>
+<span id="cb1-14"><a href="" aria-label="14"></a></span>
+<span id="cb1-15"><a href="" aria-label="15"></a><span class="co"># Training loop</span></span>
+<span id="cb1-16"><a href="" aria-label="16"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n_epochs):</span>
+<span id="cb1-17"><a href="" aria-label="17"></a>    model.partial_fit(X, y, classes<span class="op">=</span>np.array([<span class="dv">0</span>, <span class="dv">1</span>]))  <span class="co"># Train one epoch</span></span>
+<span id="cb1-18"><a href="" aria-label="18"></a>    weights.append(model.coef_.flatten().copy())       <span class="co"># Record weights</span></span>
+<span id="cb1-19"><a href="" aria-label="19"></a>    biases.append(model.intercept_[<span class="dv">0</span>])                 <span class="co"># Record bias</span></span>
+<span id="cb1-20"><a href="" aria-label="20"></a></span>
+<span id="cb1-21"><a href="" aria-label="21"></a><span class="co"># Convert recorded weights and biases to numpy arrays for easier plotting</span></span>
+<span id="cb1-22"><a href="" aria-label="22"></a>weights <span class="op">=</span> np.array(weights)</span>
+<span id="cb1-23"><a href="" aria-label="23"></a>biases <span class="op">=</span> np.array(biases)</span>
+<span id="cb1-24"><a href="" aria-label="24"></a></span>
+<span id="cb1-25"><a href="" aria-label="25"></a><span class="co"># Plotting the gradient descent path for weights x1 and x2</span></span>
+<span id="cb1-26"><a href="" aria-label="26"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb1-27"><a href="" aria-label="27"></a>plt.plot(weights[:, <span class="dv">0</span>], label<span class="op">=</span><span class="st">"Weight for x1"</span>)</span>
+<span id="cb1-28"><a href="" aria-label="28"></a>plt.plot(weights[:, <span class="dv">1</span>], label<span class="op">=</span><span class="st">"Weight for x2"</span>)</span>
+<span id="cb1-29"><a href="" aria-label="29"></a>plt.xlabel(<span class="st">"Epoch"</span>)</span>
+<span id="cb1-30"><a href="" aria-label="30"></a>plt.ylabel(<span class="st">"Weight Value"</span>)</span>
+<span id="cb1-31"><a href="" aria-label="31"></a>plt.title(<span class="st">"Gradient Descent of x1 and x2 Weights for AND Operation"</span>)</span>
+<span id="cb1-32"><a href="" aria-label="32"></a>plt.legend()</span>
+<span id="cb1-33"><a href="" aria-label="33"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb1-34"><a href="" aria-label="34"></a>plt.show()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -257,67 +260,67 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-1" class="cell" data-execution_count="23">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-3"><a href=""></a></span>
-<span id="cb2-4"><a href=""></a><span class="co"># Define the AND truth table</span></span>
-<span id="cb2-5"><a href=""></a>inputs <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">0</span>],</span>
-<span id="cb2-6"><a href=""></a>                   [<span class="dv">0</span>, <span class="dv">1</span>],</span>
-<span id="cb2-7"><a href=""></a>                   [<span class="dv">1</span>, <span class="dv">0</span>],</span>
-<span id="cb2-8"><a href=""></a>                   [<span class="dv">1</span>, <span class="dv">1</span>]])</span>
-<span id="cb2-9"><a href=""></a>outputs <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>])</span>
-<span id="cb2-10"><a href=""></a></span>
-<span id="cb2-11"><a href=""></a><span class="co"># Parameters</span></span>
-<span id="cb2-12"><a href=""></a>learning_rate <span class="op">=</span> <span class="fl">0.1</span></span>
-<span id="cb2-13"><a href=""></a>num_epochs <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb2-14"><a href=""></a>w1_range <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
-<span id="cb2-15"><a href=""></a>w2_range <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
-<span id="cb2-16"><a href=""></a></span>
-<span id="cb2-17"><a href=""></a><span class="co"># Initialize weights</span></span>
-<span id="cb2-18"><a href=""></a>w1 <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb2-19"><a href=""></a>w2 <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb2-20"><a href=""></a>b <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb2-21"><a href=""></a></span>
-<span id="cb2-22"><a href=""></a><span class="co"># Function to compute the perceptron output</span></span>
-<span id="cb2-23"><a href=""></a><span class="kw">def</span> perceptron_output(x1, x2, w1, w2, b):</span>
-<span id="cb2-24"><a href=""></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="cf">if</span> (w1 <span class="op">*</span> x1 <span class="op">+</span> w2 <span class="op">*</span> x2 <span class="op">+</span> b) <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span></span>
-<span id="cb2-25"><a href=""></a></span>
-<span id="cb2-26"><a href=""></a><span class="co"># Train the perceptron</span></span>
-<span id="cb2-27"><a href=""></a><span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(num_epochs):</span>
-<span id="cb2-28"><a href=""></a>    <span class="cf">for</span> x, target <span class="kw">in</span> <span class="bu">zip</span>(inputs, outputs):</span>
-<span id="cb2-29"><a href=""></a>        x1, x2 <span class="op">=</span> x</span>
-<span id="cb2-30"><a href=""></a>        prediction <span class="op">=</span> perceptron_output(x1, x2, w1, w2, b)</span>
-<span id="cb2-31"><a href=""></a>        error <span class="op">=</span> target <span class="op">-</span> prediction</span>
-<span id="cb2-32"><a href=""></a>        <span class="co"># Update weights and bias</span></span>
-<span id="cb2-33"><a href=""></a>        w1 <span class="op">+=</span> learning_rate <span class="op">*</span> error <span class="op">*</span> x1</span>
-<span id="cb2-34"><a href=""></a>        w2 <span class="op">+=</span> learning_rate <span class="op">*</span> error <span class="op">*</span> x2</span>
-<span id="cb2-35"><a href=""></a>        b <span class="op">+=</span> learning_rate <span class="op">*</span> error</span>
-<span id="cb2-36"><a href=""></a></span>
-<span id="cb2-37"><a href=""></a><span class="co"># Function to compute error for a grid of weights</span></span>
-<span id="cb2-38"><a href=""></a><span class="kw">def</span> compute_error(w1_range, w2_range):</span>
-<span id="cb2-39"><a href=""></a>    error_grid <span class="op">=</span> np.zeros((<span class="bu">len</span>(w1_range), <span class="bu">len</span>(w2_range)))</span>
-<span id="cb2-40"><a href=""></a>    <span class="cf">for</span> i, w1 <span class="kw">in</span> <span class="bu">enumerate</span>(w1_range):</span>
-<span id="cb2-41"><a href=""></a>        <span class="cf">for</span> j, w2 <span class="kw">in</span> <span class="bu">enumerate</span>(w2_range):</span>
-<span id="cb2-42"><a href=""></a>            total_error <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb2-43"><a href=""></a>            <span class="cf">for</span> x, target <span class="kw">in</span> <span class="bu">zip</span>(inputs, outputs):</span>
-<span id="cb2-44"><a href=""></a>                prediction <span class="op">=</span> perceptron_output(x[<span class="dv">0</span>], x[<span class="dv">1</span>], w1, w2, b)</span>
-<span id="cb2-45"><a href=""></a>                total_error <span class="op">+=</span> (target <span class="op">-</span> prediction) <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb2-46"><a href=""></a>            error_grid[i, j] <span class="op">=</span> np.sqrt(total_error <span class="op">/</span> <span class="bu">len</span>(outputs))  <span class="co"># Root Mean squared error</span></span>
-<span id="cb2-47"><a href=""></a>    <span class="cf">return</span> error_grid</span>
-<span id="cb2-48"><a href=""></a></span>
-<span id="cb2-49"><a href=""></a><span class="co"># Compute the error grid</span></span>
-<span id="cb2-50"><a href=""></a>error_grid <span class="op">=</span> compute_error(w1_range, w2_range)</span>
-<span id="cb2-51"><a href=""></a></span>
-<span id="cb2-52"><a href=""></a><span class="co"># Plot the error surface</span></span>
-<span id="cb2-53"><a href=""></a>W1, W2 <span class="op">=</span> np.meshgrid(w1_range, w2_range)</span>
-<span id="cb2-54"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb2-55"><a href=""></a>contour <span class="op">=</span> plt.contourf(W1, W2, error_grid.T, levels<span class="op">=</span><span class="dv">50</span>, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
-<span id="cb2-56"><a href=""></a>plt.colorbar(contour)</span>
-<span id="cb2-57"><a href=""></a>plt.title(<span class="st">'Error Surface for Weights w1 and w2'</span>)</span>
-<span id="cb2-58"><a href=""></a>plt.xlabel(<span class="st">'Weight w1'</span>)</span>
-<span id="cb2-59"><a href=""></a>plt.ylabel(<span class="st">'Weight w2'</span>)</span>
-<span id="cb2-60"><a href=""></a>plt.title(<span class="st">'Mean Squared Error of Perceptron Learning the AND Operator'</span>)</span>
-<span id="cb2-61"><a href=""></a>plt.show()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="" aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="" aria-label="2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="" aria-label="3"></a></span>
+<span id="cb2-4"><a href="" aria-label="4"></a><span class="co"># Define the AND truth table</span></span>
+<span id="cb2-5"><a href="" aria-label="5"></a>inputs <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">0</span>],</span>
+<span id="cb2-6"><a href="" aria-label="6"></a>                   [<span class="dv">0</span>, <span class="dv">1</span>],</span>
+<span id="cb2-7"><a href="" aria-label="7"></a>                   [<span class="dv">1</span>, <span class="dv">0</span>],</span>
+<span id="cb2-8"><a href="" aria-label="8"></a>                   [<span class="dv">1</span>, <span class="dv">1</span>]])</span>
+<span id="cb2-9"><a href="" aria-label="9"></a>outputs <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb2-10"><a href="" aria-label="10"></a></span>
+<span id="cb2-11"><a href="" aria-label="11"></a><span class="co"># Parameters</span></span>
+<span id="cb2-12"><a href="" aria-label="12"></a>learning_rate <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb2-13"><a href="" aria-label="13"></a>num_epochs <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb2-14"><a href="" aria-label="14"></a>w1_range <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
+<span id="cb2-15"><a href="" aria-label="15"></a>w2_range <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
+<span id="cb2-16"><a href="" aria-label="16"></a></span>
+<span id="cb2-17"><a href="" aria-label="17"></a><span class="co"># Initialize weights</span></span>
+<span id="cb2-18"><a href="" aria-label="18"></a>w1 <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb2-19"><a href="" aria-label="19"></a>w2 <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb2-20"><a href="" aria-label="20"></a>b <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-21"><a href="" aria-label="21"></a></span>
+<span id="cb2-22"><a href="" aria-label="22"></a><span class="co"># Function to compute the perceptron output</span></span>
+<span id="cb2-23"><a href="" aria-label="23"></a><span class="kw">def</span> perceptron_output(x1, x2, w1, w2, b):</span>
+<span id="cb2-24"><a href="" aria-label="24"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="cf">if</span> (w1 <span class="op">*</span> x1 <span class="op">+</span> w2 <span class="op">*</span> x2 <span class="op">+</span> b) <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb2-25"><a href="" aria-label="25"></a></span>
+<span id="cb2-26"><a href="" aria-label="26"></a><span class="co"># Train the perceptron</span></span>
+<span id="cb2-27"><a href="" aria-label="27"></a><span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(num_epochs):</span>
+<span id="cb2-28"><a href="" aria-label="28"></a>    <span class="cf">for</span> x, target <span class="kw">in</span> <span class="bu">zip</span>(inputs, outputs):</span>
+<span id="cb2-29"><a href="" aria-label="29"></a>        x1, x2 <span class="op">=</span> x</span>
+<span id="cb2-30"><a href="" aria-label="30"></a>        prediction <span class="op">=</span> perceptron_output(x1, x2, w1, w2, b)</span>
+<span id="cb2-31"><a href="" aria-label="31"></a>        error <span class="op">=</span> target <span class="op">-</span> prediction</span>
+<span id="cb2-32"><a href="" aria-label="32"></a>        <span class="co"># Update weights and bias</span></span>
+<span id="cb2-33"><a href="" aria-label="33"></a>        w1 <span class="op">+=</span> learning_rate <span class="op">*</span> error <span class="op">*</span> x1</span>
+<span id="cb2-34"><a href="" aria-label="34"></a>        w2 <span class="op">+=</span> learning_rate <span class="op">*</span> error <span class="op">*</span> x2</span>
+<span id="cb2-35"><a href="" aria-label="35"></a>        b <span class="op">+=</span> learning_rate <span class="op">*</span> error</span>
+<span id="cb2-36"><a href="" aria-label="36"></a></span>
+<span id="cb2-37"><a href="" aria-label="37"></a><span class="co"># Function to compute error for a grid of weights</span></span>
+<span id="cb2-38"><a href="" aria-label="38"></a><span class="kw">def</span> compute_error(w1_range, w2_range):</span>
+<span id="cb2-39"><a href="" aria-label="39"></a>    error_grid <span class="op">=</span> np.zeros((<span class="bu">len</span>(w1_range), <span class="bu">len</span>(w2_range)))</span>
+<span id="cb2-40"><a href="" aria-label="40"></a>    <span class="cf">for</span> i, w1 <span class="kw">in</span> <span class="bu">enumerate</span>(w1_range):</span>
+<span id="cb2-41"><a href="" aria-label="41"></a>        <span class="cf">for</span> j, w2 <span class="kw">in</span> <span class="bu">enumerate</span>(w2_range):</span>
+<span id="cb2-42"><a href="" aria-label="42"></a>            total_error <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-43"><a href="" aria-label="43"></a>            <span class="cf">for</span> x, target <span class="kw">in</span> <span class="bu">zip</span>(inputs, outputs):</span>
+<span id="cb2-44"><a href="" aria-label="44"></a>                prediction <span class="op">=</span> perceptron_output(x[<span class="dv">0</span>], x[<span class="dv">1</span>], w1, w2, b)</span>
+<span id="cb2-45"><a href="" aria-label="45"></a>                total_error <span class="op">+=</span> (target <span class="op">-</span> prediction) <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb2-46"><a href="" aria-label="46"></a>            error_grid[i, j] <span class="op">=</span> np.sqrt(total_error <span class="op">/</span> <span class="bu">len</span>(outputs))  <span class="co"># Root Mean squared error</span></span>
+<span id="cb2-47"><a href="" aria-label="47"></a>    <span class="cf">return</span> error_grid</span>
+<span id="cb2-48"><a href="" aria-label="48"></a></span>
+<span id="cb2-49"><a href="" aria-label="49"></a><span class="co"># Compute the error grid</span></span>
+<span id="cb2-50"><a href="" aria-label="50"></a>error_grid <span class="op">=</span> compute_error(w1_range, w2_range)</span>
+<span id="cb2-51"><a href="" aria-label="51"></a></span>
+<span id="cb2-52"><a href="" aria-label="52"></a><span class="co"># Plot the error surface</span></span>
+<span id="cb2-53"><a href="" aria-label="53"></a>W1, W2 <span class="op">=</span> np.meshgrid(w1_range, w2_range)</span>
+<span id="cb2-54"><a href="" aria-label="54"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb2-55"><a href="" aria-label="55"></a>contour <span class="op">=</span> plt.contourf(W1, W2, error_grid.T, levels<span class="op">=</span><span class="dv">50</span>, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb2-56"><a href="" aria-label="56"></a>plt.colorbar(contour)</span>
+<span id="cb2-57"><a href="" aria-label="57"></a>plt.title(<span class="st">'Error Surface for Weights w1 and w2'</span>)</span>
+<span id="cb2-58"><a href="" aria-label="58"></a>plt.xlabel(<span class="st">'Weight w1'</span>)</span>
+<span id="cb2-59"><a href="" aria-label="59"></a>plt.ylabel(<span class="st">'Weight w2'</span>)</span>
+<span id="cb2-60"><a href="" aria-label="60"></a>plt.title(<span class="st">'Mean Squared Error of Perceptron Learning the AND Operator'</span>)</span>
+<span id="cb2-61"><a href="" aria-label="61"></a>plt.show()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -330,55 +333,55 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-2" class="cell" data-execution_count="49">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-3"><a href=""></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
-<span id="cb3-4"><a href=""></a></span>
-<span id="cb3-5"><a href=""></a><span class="co"># AND operator inputs and outputs</span></span>
-<span id="cb3-6"><a href=""></a>X <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">1</span>]])</span>
-<span id="cb3-7"><a href=""></a>y <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>])  <span class="co"># Target outputs for OR</span></span>
-<span id="cb3-8"><a href=""></a></span>
-<span id="cb3-9"><a href=""></a><span class="co"># Sigmoid activation function</span></span>
-<span id="cb3-10"><a href=""></a><span class="kw">def</span> sigmoid(x, b):</span>
-<span id="cb3-11"><a href=""></a>    <span class="cf">return</span> np.heaviside(x, <span class="dv">1</span>)</span>
-<span id="cb3-12"><a href=""></a>    <span class="co"># return 1 / (1 + np.exp(-x))</span></span>
-<span id="cb3-13"><a href=""></a></span>
-<span id="cb3-14"><a href=""></a><span class="co"># Perceptron output</span></span>
-<span id="cb3-15"><a href=""></a><span class="kw">def</span> perceptron_output(X, w1, w2, b):</span>
-<span id="cb3-16"><a href=""></a>    z <span class="op">=</span> w1 <span class="op">*</span> X[:, <span class="dv">0</span>] <span class="op">+</span> w2 <span class="op">*</span> X[:, <span class="dv">1</span>] <span class="op">+</span> b</span>
-<span id="cb3-17"><a href=""></a>    <span class="cf">return</span> sigmoid(z, b)</span>
-<span id="cb3-18"><a href=""></a></span>
-<span id="cb3-19"><a href=""></a><span class="co"># Function to calculate error</span></span>
-<span id="cb3-20"><a href=""></a><span class="kw">def</span> calculate_error(w1, w2, b):</span>
-<span id="cb3-21"><a href=""></a>    predictions <span class="op">=</span> perceptron_output(X, w1, w2, b)</span>
-<span id="cb3-22"><a href=""></a>    predictions <span class="op">=</span> np.<span class="bu">round</span>(predictions)  <span class="co"># Convert probabilities to binary</span></span>
-<span id="cb3-23"><a href=""></a>    <span class="cf">return</span> np.sqrt(np.mean((predictions <span class="op">-</span> y) <span class="op">**</span> <span class="dv">2</span>))  <span class="co"># Mean Squared Error</span></span>
-<span id="cb3-24"><a href=""></a></span>
-<span id="cb3-25"><a href=""></a><span class="co"># Generate weight grid</span></span>
-<span id="cb3-26"><a href=""></a>w1_range <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
-<span id="cb3-27"><a href=""></a>w2_range <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
-<span id="cb3-28"><a href=""></a>b <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="co"># Bias value, can be adjusted</span></span>
-<span id="cb3-29"><a href=""></a>W1, W2 <span class="op">=</span> np.meshgrid(w1_range, w2_range)</span>
-<span id="cb3-30"><a href=""></a><span class="co"># Calculate error for each weight combination</span></span>
-<span id="cb3-31"><a href=""></a>errors <span class="op">=</span> np.zeros(W1.shape)</span>
-<span id="cb3-32"><a href=""></a></span>
-<span id="cb3-33"><a href=""></a></span>
-<span id="cb3-34"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(W1.shape[<span class="dv">0</span>]):</span>
-<span id="cb3-35"><a href=""></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(W1.shape[<span class="dv">1</span>]):</span>
-<span id="cb3-36"><a href=""></a>        errors[i, j] <span class="op">=</span> calculate_error(W1[i, j], W2[i, j], b)</span>
-<span id="cb3-37"><a href=""></a></span>
-<span id="cb3-38"><a href=""></a><span class="co"># Plotting</span></span>
-<span id="cb3-39"><a href=""></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
-<span id="cb3-40"><a href=""></a>ax <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>, projection<span class="op">=</span><span class="st">'3d'</span>)</span>
-<span id="cb3-41"><a href=""></a>ax.plot_surface(W1, W2, errors, cmap<span class="op">=</span><span class="st">'viridis'</span>, edgecolor<span class="op">=</span><span class="st">'none'</span>)</span>
-<span id="cb3-42"><a href=""></a>ax.set_xlabel(<span class="st">'w1'</span>)</span>
-<span id="cb3-43"><a href=""></a>ax.set_ylabel(<span class="st">'w2'</span>)</span>
-<span id="cb3-44"><a href=""></a>ax.set_zlim([<span class="dv">0</span>, <span class="dv">1</span>])</span>
-<span id="cb3-45"><a href=""></a>ax.set_xlim([<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>])</span>
-<span id="cb3-46"><a href=""></a>ax.set_ylim([<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>])</span>
-<span id="cb3-47"><a href=""></a>ax.set_zlabel(<span class="st">'RMSE'</span>)</span>
-<span id="cb3-48"><a href=""></a>fig.tight_layout()</span>
-<span id="cb3-49"><a href=""></a>plt.show()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="" aria-label="2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="" aria-label="3"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
+<span id="cb3-4"><a href="" aria-label="4"></a></span>
+<span id="cb3-5"><a href="" aria-label="5"></a><span class="co"># AND operator inputs and outputs</span></span>
+<span id="cb3-6"><a href="" aria-label="6"></a>X <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">1</span>]])</span>
+<span id="cb3-7"><a href="" aria-label="7"></a>y <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>])  <span class="co"># Target outputs for OR</span></span>
+<span id="cb3-8"><a href="" aria-label="8"></a></span>
+<span id="cb3-9"><a href="" aria-label="9"></a><span class="co"># Sigmoid activation function</span></span>
+<span id="cb3-10"><a href="" aria-label="10"></a><span class="kw">def</span> sigmoid(x, b):</span>
+<span id="cb3-11"><a href="" aria-label="11"></a>    <span class="cf">return</span> np.heaviside(x, <span class="dv">1</span>)</span>
+<span id="cb3-12"><a href="" aria-label="12"></a>    <span class="co"># return 1 / (1 + np.exp(-x))</span></span>
+<span id="cb3-13"><a href="" aria-label="13"></a></span>
+<span id="cb3-14"><a href="" aria-label="14"></a><span class="co"># Perceptron output</span></span>
+<span id="cb3-15"><a href="" aria-label="15"></a><span class="kw">def</span> perceptron_output(X, w1, w2, b):</span>
+<span id="cb3-16"><a href="" aria-label="16"></a>    z <span class="op">=</span> w1 <span class="op">*</span> X[:, <span class="dv">0</span>] <span class="op">+</span> w2 <span class="op">*</span> X[:, <span class="dv">1</span>] <span class="op">+</span> b</span>
+<span id="cb3-17"><a href="" aria-label="17"></a>    <span class="cf">return</span> sigmoid(z, b)</span>
+<span id="cb3-18"><a href="" aria-label="18"></a></span>
+<span id="cb3-19"><a href="" aria-label="19"></a><span class="co"># Function to calculate error</span></span>
+<span id="cb3-20"><a href="" aria-label="20"></a><span class="kw">def</span> calculate_error(w1, w2, b):</span>
+<span id="cb3-21"><a href="" aria-label="21"></a>    predictions <span class="op">=</span> perceptron_output(X, w1, w2, b)</span>
+<span id="cb3-22"><a href="" aria-label="22"></a>    predictions <span class="op">=</span> np.<span class="bu">round</span>(predictions)  <span class="co"># Convert probabilities to binary</span></span>
+<span id="cb3-23"><a href="" aria-label="23"></a>    <span class="cf">return</span> np.sqrt(np.mean((predictions <span class="op">-</span> y) <span class="op">**</span> <span class="dv">2</span>))  <span class="co"># Mean Squared Error</span></span>
+<span id="cb3-24"><a href="" aria-label="24"></a></span>
+<span id="cb3-25"><a href="" aria-label="25"></a><span class="co"># Generate weight grid</span></span>
+<span id="cb3-26"><a href="" aria-label="26"></a>w1_range <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
+<span id="cb3-27"><a href="" aria-label="27"></a>w2_range <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
+<span id="cb3-28"><a href="" aria-label="28"></a>b <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="co"># Bias value, can be adjusted</span></span>
+<span id="cb3-29"><a href="" aria-label="29"></a>W1, W2 <span class="op">=</span> np.meshgrid(w1_range, w2_range)</span>
+<span id="cb3-30"><a href="" aria-label="30"></a><span class="co"># Calculate error for each weight combination</span></span>
+<span id="cb3-31"><a href="" aria-label="31"></a>errors <span class="op">=</span> np.zeros(W1.shape)</span>
+<span id="cb3-32"><a href="" aria-label="32"></a></span>
+<span id="cb3-33"><a href="" aria-label="33"></a></span>
+<span id="cb3-34"><a href="" aria-label="34"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(W1.shape[<span class="dv">0</span>]):</span>
+<span id="cb3-35"><a href="" aria-label="35"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(W1.shape[<span class="dv">1</span>]):</span>
+<span id="cb3-36"><a href="" aria-label="36"></a>        errors[i, j] <span class="op">=</span> calculate_error(W1[i, j], W2[i, j], b)</span>
+<span id="cb3-37"><a href="" aria-label="37"></a></span>
+<span id="cb3-38"><a href="" aria-label="38"></a><span class="co"># Plotting</span></span>
+<span id="cb3-39"><a href="" aria-label="39"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb3-40"><a href="" aria-label="40"></a>ax <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>, projection<span class="op">=</span><span class="st">'3d'</span>)</span>
+<span id="cb3-41"><a href="" aria-label="41"></a>ax.plot_surface(W1, W2, errors, cmap<span class="op">=</span><span class="st">'viridis'</span>, edgecolor<span class="op">=</span><span class="st">'none'</span>)</span>
+<span id="cb3-42"><a href="" aria-label="42"></a>ax.set_xlabel(<span class="st">'w1'</span>)</span>
+<span id="cb3-43"><a href="" aria-label="43"></a>ax.set_ylabel(<span class="st">'w2'</span>)</span>
+<span id="cb3-44"><a href="" aria-label="44"></a>ax.set_zlim([<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb3-45"><a href="" aria-label="45"></a>ax.set_xlim([<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>])</span>
+<span id="cb3-46"><a href="" aria-label="46"></a>ax.set_ylim([<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>])</span>
+<span id="cb3-47"><a href="" aria-label="47"></a>ax.set_zlabel(<span class="st">'RMSE'</span>)</span>
+<span id="cb3-48"><a href="" aria-label="48"></a>fig.tight_layout()</span>
+<span id="cb3-49"><a href="" aria-label="49"></a>plt.show()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>

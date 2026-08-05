@@ -5,8 +5,8 @@
 <script src="lab-cimice_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-cimice_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lab-cimice_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lab-cimice_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.29">
+<link href="lab-cimice_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -222,7 +225,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it 
+Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
@@ -370,9 +373,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-3" class="cell" data-execution_count="23">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./datasets/cimice/captures-raw.csv"</span>, sep<span class="op">=</span><span class="st">','</span>)</span>
-<span id="cb1-3"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-label="1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="" aria-label="2"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./datasets/cimice/captures-raw.csv"</span>, sep<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb1-3"><a href="" aria-label="3"></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <div>
@@ -694,24 +697,24 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-15" class="cell" data-execution_count="24">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> root_mean_squared_error</span>
-<span id="cb2-2"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb2-3"><a href=""></a><span class="im">from</span> flaml <span class="im">import</span> AutoML</span>
-<span id="cb2-4"><a href=""></a></span>
-<span id="cb2-5"><a href=""></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ADULTS'</span>])</span>
-<span id="cb2-6"><a href=""></a>y <span class="op">=</span> df[<span class="st">'ADULTS'</span>]</span>
-<span id="cb2-7"><a href=""></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb2-8"><a href=""></a></span>
-<span id="cb2-9"><a href=""></a>automl <span class="op">=</span> AutoML()</span>
-<span id="cb2-10"><a href=""></a>automl_settings <span class="op">=</span> {</span>
-<span id="cb2-11"><a href=""></a>    <span class="st">"time_budget"</span>: <span class="dv">30</span>,  <span class="co"># Time budget in seconds</span></span>
-<span id="cb2-12"><a href=""></a>    <span class="st">"max_iter"</span>: <span class="dv">30</span>,  <span class="co"># Max number of iterations</span></span>
-<span id="cb2-13"><a href=""></a>    <span class="st">"metric"</span>: <span class="st">'rmse'</span>,  <span class="co"># Evaluation metric</span></span>
-<span id="cb2-14"><a href=""></a>    <span class="st">"task"</span>: <span class="st">'regression'</span>,  <span class="co"># Task type</span></span>
-<span id="cb2-15"><a href=""></a>}</span>
-<span id="cb2-16"><a href=""></a>automl.fit(X_train, y_train, <span class="op">**</span>automl_settings)</span>
-<span id="cb2-17"><a href=""></a>y_pred <span class="op">=</span> automl.predict(X_test)</span>
-<span id="cb2-18"><a href=""></a>rmse <span class="op">=</span> root_mean_squared_error(y_test, y_pred)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> root_mean_squared_error</span>
+<span id="cb2-2"><a href="" aria-label="2"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb2-3"><a href="" aria-label="3"></a><span class="im">from</span> flaml <span class="im">import</span> AutoML</span>
+<span id="cb2-4"><a href="" aria-label="4"></a></span>
+<span id="cb2-5"><a href="" aria-label="5"></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ADULTS'</span>])</span>
+<span id="cb2-6"><a href="" aria-label="6"></a>y <span class="op">=</span> df[<span class="st">'ADULTS'</span>]</span>
+<span id="cb2-7"><a href="" aria-label="7"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb2-8"><a href="" aria-label="8"></a></span>
+<span id="cb2-9"><a href="" aria-label="9"></a>automl <span class="op">=</span> AutoML()</span>
+<span id="cb2-10"><a href="" aria-label="10"></a>automl_settings <span class="op">=</span> {</span>
+<span id="cb2-11"><a href="" aria-label="11"></a>    <span class="st">"time_budget"</span>: <span class="dv">30</span>,  <span class="co"># Time budget in seconds</span></span>
+<span id="cb2-12"><a href="" aria-label="12"></a>    <span class="st">"max_iter"</span>: <span class="dv">30</span>,  <span class="co"># Max number of iterations</span></span>
+<span id="cb2-13"><a href="" aria-label="13"></a>    <span class="st">"metric"</span>: <span class="st">'rmse'</span>,  <span class="co"># Evaluation metric</span></span>
+<span id="cb2-14"><a href="" aria-label="14"></a>    <span class="st">"task"</span>: <span class="st">'regression'</span>,  <span class="co"># Task type</span></span>
+<span id="cb2-15"><a href="" aria-label="15"></a>}</span>
+<span id="cb2-16"><a href="" aria-label="16"></a>automl.fit(X_train, y_train, <span class="op">**</span>automl_settings)</span>
+<span id="cb2-17"><a href="" aria-label="17"></a>y_pred <span class="op">=</span> automl.predict(X_test)</span>
+<span id="cb2-18"><a href="" aria-label="18"></a>rmse <span class="op">=</span> root_mean_squared_error(y_test, y_pred)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[flaml.automl.logger: 04-08 20:44:01] {1728} INFO - task = regression
@@ -802,7 +805,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-17" class="cell" data-execution_count="25">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="bu">print</span>(<span class="st">"RMSE using AutoML:"</span>, <span class="bu">round</span>(rmse, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="" aria-label="1"></a><span class="bu">print</span>(<span class="st">"RMSE using AutoML:"</span>, <span class="bu">round</span>(rmse, <span class="dv">2</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE using AutoML: 2.19</code></pre>
@@ -819,15 +822,15 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-22" class="cell" data-execution_count="26">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb6-2"><a href=""></a>mean_df <span class="op">=</span> df.groupby(<span class="st">'TIMESTAMP'</span>)[<span class="st">'ADULTS'</span>].mean()</span>
-<span id="cb6-3"><a href=""></a>mean_df.plot(kind<span class="op">=</span><span class="st">'bar'</span>, figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>), color<span class="op">=</span><span class="st">'blue'</span>)</span>
-<span id="cb6-4"><a href=""></a>plt.xticks([])  <span class="co"># Hide the x-axis ticks</span></span>
-<span id="cb6-5"><a href=""></a>mean <span class="op">=</span> mean_df.mean()</span>
-<span id="cb6-6"><a href=""></a>plt.axhline(y<span class="op">=</span>mean, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Average ADULTS'</span>)</span>
-<span id="cb6-7"><a href=""></a>plt.legend()</span>
-<span id="cb6-8"><a href=""></a></span>
-<span id="cb6-9"><a href=""></a><span class="bu">print</span>(<span class="ss">f"RMSE </span><span class="sc">{</span>rmse<span class="sc">:.3}</span><span class="ss">, Mean </span><span class="sc">{</span>mean<span class="sc">:.3}</span><span class="ss">, NRMSE </span><span class="sc">{</span>rmse <span class="op">/</span> mean<span class="sc">:.2%}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="" aria-label="1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-2"><a href="" aria-label="2"></a>mean_df <span class="op">=</span> df.groupby(<span class="st">'TIMESTAMP'</span>)[<span class="st">'ADULTS'</span>].mean()</span>
+<span id="cb6-3"><a href="" aria-label="3"></a>mean_df.plot(kind<span class="op">=</span><span class="st">'bar'</span>, figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>), color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb6-4"><a href="" aria-label="4"></a>plt.xticks([])  <span class="co"># Hide the x-axis ticks</span></span>
+<span id="cb6-5"><a href="" aria-label="5"></a>mean <span class="op">=</span> mean_df.mean()</span>
+<span id="cb6-6"><a href="" aria-label="6"></a>plt.axhline(y<span class="op">=</span>mean, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Average ADULTS'</span>)</span>
+<span id="cb6-7"><a href="" aria-label="7"></a>plt.legend()</span>
+<span id="cb6-8"><a href="" aria-label="8"></a></span>
+<span id="cb6-9"><a href="" aria-label="9"></a><span class="bu">print</span>(<span class="ss">f"RMSE </span><span class="sc">{</span>rmse<span class="sc">:.3}</span><span class="ss">, Mean </span><span class="sc">{</span>mean<span class="sc">:.3}</span><span class="ss">, NRMSE </span><span class="sc">{</span>rmse <span class="op">/</span> mean<span class="sc">:.2%}</span><span class="ss">"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE 2.19, Mean 8.92, NRMSE 24.52%</code></pre>
@@ -841,7 +844,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-24" class="cell" data-execution_count="27">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>df.info()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href="" aria-label="1"></a>df.info()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -876,19 +879,19 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-26" class="cell" data-execution_count="28">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
-<span id="cb10-2"><a href=""></a></span>
-<span id="cb10-3"><a href=""></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ADULTS'</span>])  <span class="co"># Drop the target variable 'ADULTS' from the feature set</span></span>
-<span id="cb10-4"><a href=""></a>X[<span class="st">'TIMESTAMP'</span>] <span class="op">=</span> pd.to_datetime(X[<span class="st">'TIMESTAMP'</span>]).astype(<span class="bu">int</span>) <span class="op">/</span> <span class="dv">10</span><span class="op">**</span><span class="dv">9</span>  <span class="co"># Convert the 'TIMESTAMP' column to datetime and then to a Unix timestamp (seconds)</span></span>
-<span id="cb10-5"><a href=""></a>X.fillna(X.mean(), inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Fill missing values with the mean of each column</span></span>
-<span id="cb10-6"><a href=""></a>y <span class="op">=</span> df[<span class="st">'ADULTS'</span>]  <span class="co"># Define the target variable</span></span>
-<span id="cb10-7"><a href=""></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)  <span class="co"># Split the dataset into training and testing sets (80% train, 20% test)</span></span>
-<span id="cb10-8"><a href=""></a>log_reg <span class="op">=</span> LinearRegression()  <span class="co"># Initialize and train a Linear Regression model</span></span>
-<span id="cb10-9"><a href=""></a>log_reg.fit(X_train, y_train)</span>
-<span id="cb10-10"><a href=""></a>y_pred_log_reg <span class="op">=</span> log_reg.predict(X_test)  <span class="co"># Predict the target variable on the test set</span></span>
-<span id="cb10-11"><a href=""></a><span class="co"># Calculate Root Mean Squared Error (RMSE)</span></span>
-<span id="cb10-12"><a href=""></a>rmse_log_reg <span class="op">=</span> root_mean_squared_error(y_test, y_pred_log_reg)</span>
-<span id="cb10-13"><a href=""></a><span class="bu">print</span>(<span class="st">"RMSE using Linear Regression:"</span>, <span class="bu">round</span>(rmse_log_reg, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb10-2"><a href="" aria-label="2"></a></span>
+<span id="cb10-3"><a href="" aria-label="3"></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ADULTS'</span>])  <span class="co"># Drop the target variable 'ADULTS' from the feature set</span></span>
+<span id="cb10-4"><a href="" aria-label="4"></a>X[<span class="st">'TIMESTAMP'</span>] <span class="op">=</span> pd.to_datetime(X[<span class="st">'TIMESTAMP'</span>]).astype(<span class="bu">int</span>) <span class="op">/</span> <span class="dv">10</span><span class="op">**</span><span class="dv">9</span>  <span class="co"># Convert the 'TIMESTAMP' column to datetime and then to a Unix timestamp (seconds)</span></span>
+<span id="cb10-5"><a href="" aria-label="5"></a>X.fillna(X.mean(), inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Fill missing values with the mean of each column</span></span>
+<span id="cb10-6"><a href="" aria-label="6"></a>y <span class="op">=</span> df[<span class="st">'ADULTS'</span>]  <span class="co"># Define the target variable</span></span>
+<span id="cb10-7"><a href="" aria-label="7"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)  <span class="co"># Split the dataset into training and testing sets (80% train, 20% test)</span></span>
+<span id="cb10-8"><a href="" aria-label="8"></a>log_reg <span class="op">=</span> LinearRegression()  <span class="co"># Initialize and train a Linear Regression model</span></span>
+<span id="cb10-9"><a href="" aria-label="9"></a>log_reg.fit(X_train, y_train)</span>
+<span id="cb10-10"><a href="" aria-label="10"></a>y_pred_log_reg <span class="op">=</span> log_reg.predict(X_test)  <span class="co"># Predict the target variable on the test set</span></span>
+<span id="cb10-11"><a href="" aria-label="11"></a><span class="co"># Calculate Root Mean Squared Error (RMSE)</span></span>
+<span id="cb10-12"><a href="" aria-label="12"></a>rmse_log_reg <span class="op">=</span> root_mean_squared_error(y_test, y_pred_log_reg)</span>
+<span id="cb10-13"><a href="" aria-label="13"></a><span class="bu">print</span>(<span class="st">"RMSE using Linear Regression:"</span>, <span class="bu">round</span>(rmse_log_reg, <span class="dv">2</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE using Linear Regression: 0.0</code></pre>
@@ -906,7 +909,7 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-29" class="cell" data-execution_count="29">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>df.columns</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href="" aria-label="1"></a>df.columns</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>Index(['GID', 'TIMESTAMP', 'CROP_ID', 'ADULTS', 'SMALL_INSTARS',
@@ -923,7 +926,7 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-31" class="cell" data-execution_count="30">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>log_reg.coef_  <span class="co"># weights (coefficients) of the Linear Regression model</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href="" aria-label="1"></a>log_reg.coef_  <span class="co"># weights (coefficients) of the Linear Regression model</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="30">
 <pre><code>array([-1.36733869e-15,  9.57400348e-19,  3.29282180e-16, -1.00000000e+00,
@@ -937,8 +940,8 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-33" class="cell" data-execution_count="31">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>equation <span class="op">=</span> <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span><span class="st">''</span> <span class="cf">if</span> weight <span class="op">&lt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">'+'</span><span class="sc">}{</span><span class="bu">round</span>(weight, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">*</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> weight, col <span class="kw">in</span> <span class="bu">zip</span>(log_reg.coef_, X_train.columns) <span class="cf">if</span> <span class="bu">abs</span>(weight) <span class="op">&gt;</span> <span class="fl">0.01</span>)</span>
-<span id="cb16-2"><a href=""></a><span class="bu">print</span>(<span class="ss">f"ADULTS = </span><span class="sc">{</span>equation<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href="" aria-label="1"></a>equation <span class="op">=</span> <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span><span class="st">''</span> <span class="cf">if</span> weight <span class="op">&lt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">'+'</span><span class="sc">}{</span><span class="bu">round</span>(weight, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">*</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> weight, col <span class="kw">in</span> <span class="bu">zip</span>(log_reg.coef_, X_train.columns) <span class="cf">if</span> <span class="bu">abs</span>(weight) <span class="op">&gt;</span> <span class="fl">0.01</span>)</span>
+<span id="cb16-2"><a href="" aria-label="2"></a><span class="bu">print</span>(<span class="ss">f"ADULTS = </span><span class="sc">{</span>equation<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>ADULTS = -1.0*SMALL_INSTARS -1.0*LARGE_INSTARS +1.0*TOTAL_CAPTURES</code></pre>
@@ -952,19 +955,19 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-35" class="cell" data-execution_count="32">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ADULTS'</span>, <span class="st">'TOTAL_CAPTURES'</span>])</span>
-<span id="cb18-2"><a href=""></a>y <span class="op">=</span> df[<span class="st">'ADULTS'</span>]</span>
-<span id="cb18-3"><a href=""></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb18-4"><a href=""></a>automl <span class="op">=</span> AutoML()</span>
-<span id="cb18-5"><a href=""></a>automl_settings <span class="op">=</span> {</span>
-<span id="cb18-6"><a href=""></a>    <span class="st">"time_budget"</span>: <span class="dv">30</span>,  <span class="co"># Time budget in seconds</span></span>
-<span id="cb18-7"><a href=""></a>    <span class="st">"max_iter"</span>: <span class="dv">30</span>,  <span class="co"># Max number of iterations</span></span>
-<span id="cb18-8"><a href=""></a>    <span class="st">"metric"</span>: <span class="st">'rmse'</span>,  <span class="co"># Evaluation metric</span></span>
-<span id="cb18-9"><a href=""></a>    <span class="st">"task"</span>: <span class="st">'regression'</span>,  <span class="co"># Task type</span></span>
-<span id="cb18-10"><a href=""></a>}</span>
-<span id="cb18-11"><a href=""></a>automl.fit(X_train, y_train, <span class="op">**</span>automl_settings)</span>
-<span id="cb18-12"><a href=""></a>y_pred <span class="op">=</span> automl.predict(X_test)</span>
-<span id="cb18-13"><a href=""></a>rmse <span class="op">=</span> root_mean_squared_error(y_test, y_pred)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href="" aria-label="1"></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ADULTS'</span>, <span class="st">'TOTAL_CAPTURES'</span>])</span>
+<span id="cb18-2"><a href="" aria-label="2"></a>y <span class="op">=</span> df[<span class="st">'ADULTS'</span>]</span>
+<span id="cb18-3"><a href="" aria-label="3"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb18-4"><a href="" aria-label="4"></a>automl <span class="op">=</span> AutoML()</span>
+<span id="cb18-5"><a href="" aria-label="5"></a>automl_settings <span class="op">=</span> {</span>
+<span id="cb18-6"><a href="" aria-label="6"></a>    <span class="st">"time_budget"</span>: <span class="dv">30</span>,  <span class="co"># Time budget in seconds</span></span>
+<span id="cb18-7"><a href="" aria-label="7"></a>    <span class="st">"max_iter"</span>: <span class="dv">30</span>,  <span class="co"># Max number of iterations</span></span>
+<span id="cb18-8"><a href="" aria-label="8"></a>    <span class="st">"metric"</span>: <span class="st">'rmse'</span>,  <span class="co"># Evaluation metric</span></span>
+<span id="cb18-9"><a href="" aria-label="9"></a>    <span class="st">"task"</span>: <span class="st">'regression'</span>,  <span class="co"># Task type</span></span>
+<span id="cb18-10"><a href="" aria-label="10"></a>}</span>
+<span id="cb18-11"><a href="" aria-label="11"></a>automl.fit(X_train, y_train, <span class="op">**</span>automl_settings)</span>
+<span id="cb18-12"><a href="" aria-label="12"></a>y_pred <span class="op">=</span> automl.predict(X_test)</span>
+<span id="cb18-13"><a href="" aria-label="13"></a>rmse <span class="op">=</span> root_mean_squared_error(y_test, y_pred)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[flaml.automl.logger: 04-08 20:44:12] {1728} INFO - task = regression
@@ -1049,7 +1052,7 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-37" class="cell" data-execution_count="33">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="bu">print</span>(<span class="st">"RMSE using AutoML:"</span>, <span class="bu">round</span>(rmse, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href="" aria-label="1"></a><span class="bu">print</span>(<span class="st">"RMSE using AutoML:"</span>, <span class="bu">round</span>(rmse, <span class="dv">2</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE using AutoML: 11.13</code></pre>
@@ -1058,7 +1061,7 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-38" class="cell" data-execution_count="34">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>automl.best_estimator</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href="" aria-label="1"></a>automl.best_estimator</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>'lgbm'</code></pre>
@@ -1067,7 +1070,7 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-39" class="cell" data-execution_count="35">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>automl.best_config</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href="" aria-label="1"></a>automl.best_config</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>{'n_estimators': 99,
@@ -1096,14 +1099,14 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-43" class="cell" data-execution_count="36">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
-<span id="cb26-2"><a href=""></a></span>
-<span id="cb26-3"><a href=""></a><span class="cf">for</span> c <span class="kw">in</span> [<span class="st">"ADULTS"</span>, <span class="st">"LARGE_INSTARS"</span>, <span class="st">"SMALL_INSTARS"</span>]:</span>
-<span id="cb26-4"><a href=""></a>    df.groupby(<span class="st">"TIMESTAMP"</span>)[c].mean().plot(x<span class="op">=</span><span class="st">"TIMESTAMP"</span>, y<span class="op">=</span>c, ax<span class="op">=</span>ax)</span>
-<span id="cb26-5"><a href=""></a></span>
-<span id="cb26-6"><a href=""></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span>
-<span id="cb26-7"><a href=""></a>fig.legend()</span>
-<span id="cb26-8"><a href=""></a>fig.tight_layout()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href="" aria-label="1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
+<span id="cb26-2"><a href="" aria-label="2"></a></span>
+<span id="cb26-3"><a href="" aria-label="3"></a><span class="cf">for</span> c <span class="kw">in</span> [<span class="st">"ADULTS"</span>, <span class="st">"LARGE_INSTARS"</span>, <span class="st">"SMALL_INSTARS"</span>]:</span>
+<span id="cb26-4"><a href="" aria-label="4"></a>    df.groupby(<span class="st">"TIMESTAMP"</span>)[c].mean().plot(x<span class="op">=</span><span class="st">"TIMESTAMP"</span>, y<span class="op">=</span>c, ax<span class="op">=</span>ax)</span>
+<span id="cb26-5"><a href="" aria-label="5"></a></span>
+<span id="cb26-6"><a href="" aria-label="6"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb26-7"><a href="" aria-label="7"></a>fig.legend()</span>
+<span id="cb26-8"><a href="" aria-label="8"></a>fig.tight_layout()</span></code></pre></div>
 </details>
 
 </div>
@@ -1114,14 +1117,14 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-45" class="cell" data-execution_count="37">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
-<span id="cb27-2"><a href=""></a></span>
-<span id="cb27-3"><a href=""></a><span class="cf">for</span> c <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">4</span>]:</span>
-<span id="cb27-4"><a href=""></a>    df.groupby(<span class="st">'TIMESTAMP'</span>)[<span class="st">'ADULTS'</span>].mean().shift(c).fillna(<span class="dv">0</span>).plot(x<span class="op">=</span><span class="st">"ADULTS"</span>, y<span class="op">=</span>c, ax<span class="op">=</span>ax, label<span class="op">=</span><span class="ss">f"ADULTS-</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb27-5"><a href=""></a></span>
-<span id="cb27-6"><a href=""></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span>
-<span id="cb27-7"><a href=""></a>fig.legend()</span>
-<span id="cb27-8"><a href=""></a>fig.tight_layout()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href="" aria-label="1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
+<span id="cb27-2"><a href="" aria-label="2"></a></span>
+<span id="cb27-3"><a href="" aria-label="3"></a><span class="cf">for</span> c <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">4</span>]:</span>
+<span id="cb27-4"><a href="" aria-label="4"></a>    df.groupby(<span class="st">'TIMESTAMP'</span>)[<span class="st">'ADULTS'</span>].mean().shift(c).fillna(<span class="dv">0</span>).plot(x<span class="op">=</span><span class="st">"ADULTS"</span>, y<span class="op">=</span>c, ax<span class="op">=</span>ax, label<span class="op">=</span><span class="ss">f"ADULTS-</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb27-5"><a href="" aria-label="5"></a></span>
+<span id="cb27-6"><a href="" aria-label="6"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb27-7"><a href="" aria-label="7"></a>fig.legend()</span>
+<span id="cb27-8"><a href="" aria-label="8"></a>fig.tight_layout()</span></code></pre></div>
 </details>
 
 </div>
@@ -1132,29 +1135,29 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-47" class="cell" data-execution_count="38">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./datasets/cimice/captures-raw.csv"</span>, sep<span class="op">=</span><span class="st">','</span>)  <span class="co"># Load the dataset from a CSV file</span></span>
-<span id="cb28-2"><a href=""></a></span>
-<span id="cb28-3"><a href=""></a>df[<span class="st">'TIMESTAMP'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'TIMESTAMP'</span>])  <span class="co"># Convert 'TIMESTAMP' to datetime format for time-based analysis</span></span>
-<span id="cb28-4"><a href=""></a>df.sort_values(by<span class="op">=</span>[<span class="st">'GID'</span>, <span class="st">'TIMESTAMP'</span>], inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Sort dataset by 'GID' (Group ID) and 'TIMESTAMP' to maintain chronological order</span></span>
-<span id="cb28-5"><a href=""></a></span>
-<span id="cb28-6"><a href=""></a>df[<span class="st">'WEEK'</span>] <span class="op">=</span> df[<span class="st">'TIMESTAMP'</span>].dt.isocalendar().week  <span class="co"># Extract the week number from the timestamp for seasonal analysis</span></span>
-<span id="cb28-7"><a href=""></a></span>
-<span id="cb28-8"><a href=""></a>df[<span class="st">'DEGREE_DAYS'</span>] <span class="op">=</span> df[<span class="st">'TEMPERATURE_AVG'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">max</span>(<span class="dv">0</span>, x <span class="op">-</span> <span class="fl">12.2</span>))  <span class="co"># Calculate degree days: only consider temperatures above 12.2°C</span></span>
-<span id="cb28-9"><a href=""></a>df[<span class="st">'DAYS_DIFF'</span>] <span class="op">=</span> df.groupby(<span class="st">'GID'</span>)[<span class="st">'TIMESTAMP'</span>].diff().dt.days.fillna(<span class="dv">14</span>)  <span class="co"># Compute the time difference (in days) between consecutive observations per 'GID'</span></span>
-<span id="cb28-10"><a href=""></a>df[<span class="st">'CUM_DEGREE_DAYS'</span>] <span class="op">=</span> df.groupby(<span class="st">'GID'</span>).<span class="bu">apply</span>(<span class="kw">lambda</span> group: (group[<span class="st">'DEGREE_DAYS'</span>] <span class="op">*</span> group[<span class="st">'DAYS_DIFF'</span>]).cumsum()).reset_index(level<span class="op">=</span><span class="dv">0</span>, drop<span class="op">=</span><span class="va">True</span>)  <span class="co"># Compute cumulative degree days for each 'GID' (sum of DEGREE_DAYS * DAYS_DIFF)</span></span>
-<span id="cb28-11"><a href=""></a></span>
-<span id="cb28-12"><a href=""></a>df[<span class="st">'ADULTS-1'</span>] <span class="op">=</span> df.groupby(<span class="st">'GID'</span>)[<span class="st">'ADULTS'</span>].shift(<span class="dv">1</span>).fillna(<span class="dv">0</span>)  <span class="co"># Create a lag feature: previous 'ADULTS' count for each 'GID', fill missing values with 0</span></span>
-<span id="cb28-13"><a href=""></a></span>
-<span id="cb28-14"><a href=""></a>df[<span class="st">'TIMESTAMP'</span>] <span class="op">=</span> df[<span class="st">'TIMESTAMP'</span>].astype(<span class="bu">int</span>) <span class="op">/</span> <span class="dv">10</span><span class="op">**</span><span class="dv">9</span>  <span class="co"># Convert 'TIMESTAMP' to Unix timestamp (seconds) for numerical processing</span></span>
-<span id="cb28-15"><a href=""></a></span>
-<span id="cb28-16"><a href=""></a>df.fillna(df.groupby(<span class="st">'WEEK'</span>).transform(<span class="st">'mean'</span>), inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Fill missing values using the mean of each column, grouped by 'WEEK'</span></span>
-<span id="cb28-17"><a href=""></a></span>
-<span id="cb28-18"><a href=""></a>df.drop(columns<span class="op">=</span>[<span class="st">'TOTAL_CAPTURES'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb28-19"><a href=""></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ADULTS'</span>])</span>
-<span id="cb28-20"><a href=""></a>y <span class="op">=</span> df[<span class="st">'ADULTS'</span>]</span>
-<span id="cb28-21"><a href=""></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb28-22"><a href=""></a></span>
-<span id="cb28-23"><a href=""></a>df.head()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href="" aria-label="1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./datasets/cimice/captures-raw.csv"</span>, sep<span class="op">=</span><span class="st">','</span>)  <span class="co"># Load the dataset from a CSV file</span></span>
+<span id="cb28-2"><a href="" aria-label="2"></a></span>
+<span id="cb28-3"><a href="" aria-label="3"></a>df[<span class="st">'TIMESTAMP'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'TIMESTAMP'</span>])  <span class="co"># Convert 'TIMESTAMP' to datetime format for time-based analysis</span></span>
+<span id="cb28-4"><a href="" aria-label="4"></a>df.sort_values(by<span class="op">=</span>[<span class="st">'GID'</span>, <span class="st">'TIMESTAMP'</span>], inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Sort dataset by 'GID' (Group ID) and 'TIMESTAMP' to maintain chronological order</span></span>
+<span id="cb28-5"><a href="" aria-label="5"></a></span>
+<span id="cb28-6"><a href="" aria-label="6"></a>df[<span class="st">'WEEK'</span>] <span class="op">=</span> df[<span class="st">'TIMESTAMP'</span>].dt.isocalendar().week  <span class="co"># Extract the week number from the timestamp for seasonal analysis</span></span>
+<span id="cb28-7"><a href="" aria-label="7"></a></span>
+<span id="cb28-8"><a href="" aria-label="8"></a>df[<span class="st">'DEGREE_DAYS'</span>] <span class="op">=</span> df[<span class="st">'TEMPERATURE_AVG'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">max</span>(<span class="dv">0</span>, x <span class="op">-</span> <span class="fl">12.2</span>))  <span class="co"># Calculate degree days: only consider temperatures above 12.2°C</span></span>
+<span id="cb28-9"><a href="" aria-label="9"></a>df[<span class="st">'DAYS_DIFF'</span>] <span class="op">=</span> df.groupby(<span class="st">'GID'</span>)[<span class="st">'TIMESTAMP'</span>].diff().dt.days.fillna(<span class="dv">14</span>)  <span class="co"># Compute the time difference (in days) between consecutive observations per 'GID'</span></span>
+<span id="cb28-10"><a href="" aria-label="10"></a>df[<span class="st">'CUM_DEGREE_DAYS'</span>] <span class="op">=</span> df.groupby(<span class="st">'GID'</span>).<span class="bu">apply</span>(<span class="kw">lambda</span> group: (group[<span class="st">'DEGREE_DAYS'</span>] <span class="op">*</span> group[<span class="st">'DAYS_DIFF'</span>]).cumsum()).reset_index(level<span class="op">=</span><span class="dv">0</span>, drop<span class="op">=</span><span class="va">True</span>)  <span class="co"># Compute cumulative degree days for each 'GID' (sum of DEGREE_DAYS * DAYS_DIFF)</span></span>
+<span id="cb28-11"><a href="" aria-label="11"></a></span>
+<span id="cb28-12"><a href="" aria-label="12"></a>df[<span class="st">'ADULTS-1'</span>] <span class="op">=</span> df.groupby(<span class="st">'GID'</span>)[<span class="st">'ADULTS'</span>].shift(<span class="dv">1</span>).fillna(<span class="dv">0</span>)  <span class="co"># Create a lag feature: previous 'ADULTS' count for each 'GID', fill missing values with 0</span></span>
+<span id="cb28-13"><a href="" aria-label="13"></a></span>
+<span id="cb28-14"><a href="" aria-label="14"></a>df[<span class="st">'TIMESTAMP'</span>] <span class="op">=</span> df[<span class="st">'TIMESTAMP'</span>].astype(<span class="bu">int</span>) <span class="op">/</span> <span class="dv">10</span><span class="op">**</span><span class="dv">9</span>  <span class="co"># Convert 'TIMESTAMP' to Unix timestamp (seconds) for numerical processing</span></span>
+<span id="cb28-15"><a href="" aria-label="15"></a></span>
+<span id="cb28-16"><a href="" aria-label="16"></a>df.fillna(df.groupby(<span class="st">'WEEK'</span>).transform(<span class="st">'mean'</span>), inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Fill missing values using the mean of each column, grouped by 'WEEK'</span></span>
+<span id="cb28-17"><a href="" aria-label="17"></a></span>
+<span id="cb28-18"><a href="" aria-label="18"></a>df.drop(columns<span class="op">=</span>[<span class="st">'TOTAL_CAPTURES'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb28-19"><a href="" aria-label="19"></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ADULTS'</span>])</span>
+<span id="cb28-20"><a href="" aria-label="20"></a>y <span class="op">=</span> df[<span class="st">'ADULTS'</span>]</span>
+<span id="cb28-21"><a href="" aria-label="21"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb28-22"><a href="" aria-label="22"></a></span>
+<span id="cb28-23"><a href="" aria-label="23"></a>df.head()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <div>
@@ -1327,20 +1330,20 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-49" class="cell" data-execution_count="39">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb29-2"><a href=""></a><span class="co"># Calculate weekly averages for temperature and cumulative degree days</span></span>
-<span id="cb29-3"><a href=""></a>weekly_avg_temp <span class="op">=</span> df.groupby(<span class="st">'WEEK'</span>)[<span class="st">'TEMPERATURE_AVG'</span>].mean()</span>
-<span id="cb29-4"><a href=""></a>weekly_avg_cum_degree_days <span class="op">=</span> df.groupby(<span class="st">'WEEK'</span>)[<span class="st">'CUM_DEGREE_DAYS'</span>].mean()</span>
-<span id="cb29-5"><a href=""></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))  <span class="co"># Create subplots</span></span>
-<span id="cb29-6"><a href=""></a>axes[<span class="dv">0</span>].plot(weekly_avg_temp.index, weekly_avg_temp.values, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'blue'</span>)  <span class="co"># Plot average temperature by week</span></span>
-<span id="cb29-7"><a href=""></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Average Temperature by Week'</span>)</span>
-<span id="cb29-8"><a href=""></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">'Week'</span>)</span>
-<span id="cb29-9"><a href=""></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'Temperature (°C)'</span>)</span>
-<span id="cb29-10"><a href=""></a>axes[<span class="dv">1</span>].plot(weekly_avg_cum_degree_days.index, weekly_avg_cum_degree_days.values, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'green'</span>)  <span class="co"># Plot average cumulative degree days by week</span></span>
-<span id="cb29-11"><a href=""></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Average Cumulative Degree Days by Week'</span>)</span>
-<span id="cb29-12"><a href=""></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'Week'</span>)</span>
-<span id="cb29-13"><a href=""></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Cumulative Degree Days'</span>)</span>
-<span id="cb29-14"><a href=""></a>plt.tight_layout()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href="" aria-label="1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb29-2"><a href="" aria-label="2"></a><span class="co"># Calculate weekly averages for temperature and cumulative degree days</span></span>
+<span id="cb29-3"><a href="" aria-label="3"></a>weekly_avg_temp <span class="op">=</span> df.groupby(<span class="st">'WEEK'</span>)[<span class="st">'TEMPERATURE_AVG'</span>].mean()</span>
+<span id="cb29-4"><a href="" aria-label="4"></a>weekly_avg_cum_degree_days <span class="op">=</span> df.groupby(<span class="st">'WEEK'</span>)[<span class="st">'CUM_DEGREE_DAYS'</span>].mean()</span>
+<span id="cb29-5"><a href="" aria-label="5"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))  <span class="co"># Create subplots</span></span>
+<span id="cb29-6"><a href="" aria-label="6"></a>axes[<span class="dv">0</span>].plot(weekly_avg_temp.index, weekly_avg_temp.values, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'blue'</span>)  <span class="co"># Plot average temperature by week</span></span>
+<span id="cb29-7"><a href="" aria-label="7"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Average Temperature by Week'</span>)</span>
+<span id="cb29-8"><a href="" aria-label="8"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">'Week'</span>)</span>
+<span id="cb29-9"><a href="" aria-label="9"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'Temperature (°C)'</span>)</span>
+<span id="cb29-10"><a href="" aria-label="10"></a>axes[<span class="dv">1</span>].plot(weekly_avg_cum_degree_days.index, weekly_avg_cum_degree_days.values, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'green'</span>)  <span class="co"># Plot average cumulative degree days by week</span></span>
+<span id="cb29-11"><a href="" aria-label="11"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Average Cumulative Degree Days by Week'</span>)</span>
+<span id="cb29-12"><a href="" aria-label="12"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'Week'</span>)</span>
+<span id="cb29-13"><a href="" aria-label="13"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Cumulative Degree Days'</span>)</span>
+<span id="cb29-14"><a href="" aria-label="14"></a>plt.tight_layout()</span></code></pre></div>
 </details>
 
 </div>
@@ -1351,10 +1354,10 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-51" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;ruby&quot;}}" data-execution_count="40">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a>numerical_columns <span class="op">=</span> df.select_dtypes(include<span class="op">=</span>[<span class="st">'float64'</span>, <span class="st">'int64'</span>]).columns  <span class="co"># Select numerical columns</span></span>
-<span id="cb30-2"><a href=""></a>df[numerical_columns].hist(bins<span class="op">=</span><span class="dv">50</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">9</span>), color<span class="op">=</span><span class="st">'blue'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)  <span class="co"># Plot histograms for numerical columns</span></span>
-<span id="cb30-3"><a href=""></a>plt.suptitle(<span class="st">'Distribution of Numerical Features'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb30-4"><a href=""></a>plt.tight_layout()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href="" aria-label="1"></a>numerical_columns <span class="op">=</span> df.select_dtypes(include<span class="op">=</span>[<span class="st">'float64'</span>, <span class="st">'int64'</span>]).columns  <span class="co"># Select numerical columns</span></span>
+<span id="cb30-2"><a href="" aria-label="2"></a>df[numerical_columns].hist(bins<span class="op">=</span><span class="dv">50</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">9</span>), color<span class="op">=</span><span class="st">'blue'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)  <span class="co"># Plot histograms for numerical columns</span></span>
+<span id="cb30-3"><a href="" aria-label="3"></a>plt.suptitle(<span class="st">'Distribution of Numerical Features'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb30-4"><a href="" aria-label="4"></a>plt.tight_layout()</span></code></pre></div>
 </details>
 
 </div>
@@ -1365,15 +1368,15 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-53" class="cell" data-execution_count="41">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb31-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb31-3"><a href=""></a>correlation_matrix <span class="op">=</span> df.corr()  <span class="co"># Compute the correlation matrix</span></span>
-<span id="cb31-4"><a href=""></a>filtered_correlation_matrix <span class="op">=</span> correlation_matrix[correlation_matrix.<span class="bu">abs</span>() <span class="op">&gt;=</span> <span class="fl">0.25</span>]  <span class="co"># Mask correlations with absolute values below 0.25</span></span>
-<span id="cb31-5"><a href=""></a>filtered_correlation_matrix[np.eye(filtered_correlation_matrix.shape[<span class="dv">0</span>], dtype<span class="op">=</span><span class="bu">bool</span>)] <span class="op">=</span> np.nan  <span class="co"># Mask the diagonal</span></span>
-<span id="cb31-6"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
-<span id="cb31-7"><a href=""></a>sns.heatmap(filtered_correlation_matrix, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">".2f"</span>, cmap<span class="op">=</span><span class="st">"coolwarm"</span>, cbar<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb31-8"><a href=""></a>plt.title(<span class="st">"Pairwise Correlations (|correlation| &gt;= 0.25)"</span>)</span>
-<span id="cb31-9"><a href=""></a>plt.tight_layout()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href="" aria-label="1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb31-2"><a href="" aria-label="2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb31-3"><a href="" aria-label="3"></a>correlation_matrix <span class="op">=</span> df.corr()  <span class="co"># Compute the correlation matrix</span></span>
+<span id="cb31-4"><a href="" aria-label="4"></a>filtered_correlation_matrix <span class="op">=</span> correlation_matrix[correlation_matrix.<span class="bu">abs</span>() <span class="op">&gt;=</span> <span class="fl">0.25</span>]  <span class="co"># Mask correlations with absolute values below 0.25</span></span>
+<span id="cb31-5"><a href="" aria-label="5"></a>filtered_correlation_matrix[np.eye(filtered_correlation_matrix.shape[<span class="dv">0</span>], dtype<span class="op">=</span><span class="bu">bool</span>)] <span class="op">=</span> np.nan  <span class="co"># Mask the diagonal</span></span>
+<span id="cb31-6"><a href="" aria-label="6"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
+<span id="cb31-7"><a href="" aria-label="7"></a>sns.heatmap(filtered_correlation_matrix, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">".2f"</span>, cmap<span class="op">=</span><span class="st">"coolwarm"</span>, cbar<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb31-8"><a href="" aria-label="8"></a>plt.title(<span class="st">"Pairwise Correlations (|correlation| &gt;= 0.25)"</span>)</span>
+<span id="cb31-9"><a href="" aria-label="9"></a>plt.tight_layout()</span></code></pre></div>
 </details>
 
 </div>
@@ -1384,8 +1387,8 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-55" class="cell" data-execution_count="43">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
-<span id="cb32-2"><a href=""></a>sns.pairplot(df[[<span class="st">"ADULTS"</span> , <span class="st">"LARGE_INSTARS"</span>, <span class="st">"WEEK"</span>, <span class="st">"CUM_DEGREE_DAYS"</span>, <span class="st">"ADULTS-1"</span>]])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href="" aria-label="1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
+<span id="cb32-2"><a href="" aria-label="2"></a>sns.pairplot(df[[<span class="st">"ADULTS"</span> , <span class="st">"LARGE_INSTARS"</span>, <span class="st">"WEEK"</span>, <span class="st">"CUM_DEGREE_DAYS"</span>, <span class="st">"ADULTS-1"</span>]])</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>&lt;Figure size 1000x1000 with 0 Axes&gt;</code></pre>
@@ -1399,12 +1402,12 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-57" class="cell" data-execution_count="44">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
-<span id="cb34-2"><a href=""></a>log_reg <span class="op">=</span> LinearRegression()</span>
-<span id="cb34-3"><a href=""></a>log_reg.fit(X_train, y_train)</span>
-<span id="cb34-4"><a href=""></a>y_pred_log_reg <span class="op">=</span> log_reg.predict(X_test)</span>
-<span id="cb34-5"><a href=""></a>rmse_log_reg <span class="op">=</span> root_mean_squared_error(y_test, y_pred_log_reg)</span>
-<span id="cb34-6"><a href=""></a><span class="bu">print</span>(<span class="st">"RMSE using Logistic Regression:"</span>, <span class="bu">round</span>(rmse_log_reg, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb34-2"><a href="" aria-label="2"></a>log_reg <span class="op">=</span> LinearRegression()</span>
+<span id="cb34-3"><a href="" aria-label="3"></a>log_reg.fit(X_train, y_train)</span>
+<span id="cb34-4"><a href="" aria-label="4"></a>y_pred_log_reg <span class="op">=</span> log_reg.predict(X_test)</span>
+<span id="cb34-5"><a href="" aria-label="5"></a>rmse_log_reg <span class="op">=</span> root_mean_squared_error(y_test, y_pred_log_reg)</span>
+<span id="cb34-6"><a href="" aria-label="6"></a><span class="bu">print</span>(<span class="st">"RMSE using Logistic Regression:"</span>, <span class="bu">round</span>(rmse_log_reg, <span class="dv">2</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE using Logistic Regression: 9.88</code></pre>
@@ -1413,12 +1416,12 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-58" class="cell" data-execution_count="45">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
-<span id="cb36-2"><a href=""></a>rf_regressor <span class="op">=</span> RandomForestRegressor(random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb36-3"><a href=""></a>rf_regressor.fit(X_train, y_train)</span>
-<span id="cb36-4"><a href=""></a>y_pred_rf <span class="op">=</span> rf_regressor.predict(X_test)</span>
-<span id="cb36-5"><a href=""></a>rmse_rf <span class="op">=</span> root_mean_squared_error(y_test, y_pred_rf)</span>
-<span id="cb36-6"><a href=""></a><span class="bu">print</span>(<span class="st">"RMSE using Random Forest Regressor:"</span>, <span class="bu">round</span>(rmse_rf, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
+<span id="cb36-2"><a href="" aria-label="2"></a>rf_regressor <span class="op">=</span> RandomForestRegressor(random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb36-3"><a href="" aria-label="3"></a>rf_regressor.fit(X_train, y_train)</span>
+<span id="cb36-4"><a href="" aria-label="4"></a>y_pred_rf <span class="op">=</span> rf_regressor.predict(X_test)</span>
+<span id="cb36-5"><a href="" aria-label="5"></a>rmse_rf <span class="op">=</span> root_mean_squared_error(y_test, y_pred_rf)</span>
+<span id="cb36-6"><a href="" aria-label="6"></a><span class="bu">print</span>(<span class="st">"RMSE using Random Forest Regressor:"</span>, <span class="bu">round</span>(rmse_rf, <span class="dv">2</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE using Random Forest Regressor: 9.57</code></pre>
@@ -1431,20 +1434,20 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-60" class="cell" data-execution_count="46">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> RandomizedSearchCV</span>
-<span id="cb38-2"><a href=""></a>rf <span class="op">=</span> RandomForestRegressor(random_state<span class="op">=</span><span class="dv">42</span>)  <span class="co"># Define the base model</span></span>
-<span id="cb38-3"><a href=""></a>param_dist <span class="op">=</span> {  <span class="co"># Define the hyperparameter grid</span></span>
-<span id="cb38-4"><a href=""></a>    <span class="st">'n_estimators'</span>: [<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>],</span>
-<span id="cb38-5"><a href=""></a>    <span class="st">'max_depth'</span>: [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>],</span>
-<span id="cb38-6"><a href=""></a>    <span class="st">'min_samples_split'</span>: [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>],</span>
-<span id="cb38-7"><a href=""></a>    <span class="st">'min_samples_leaf'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
-<span id="cb38-8"><a href=""></a>    <span class="st">'max_features'</span>: [<span class="st">'sqrt'</span>, <span class="st">'log2'</span>]</span>
-<span id="cb38-9"><a href=""></a>}</span>
-<span id="cb38-10"><a href=""></a>random_search <span class="op">=</span> RandomizedSearchCV(estimator<span class="op">=</span>rf, param_distributions<span class="op">=</span>param_dist, n_iter<span class="op">=</span><span class="dv">20</span>, cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">'neg_root_mean_squared_error'</span>, verbose<span class="op">=</span><span class="dv">2</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>, random_state<span class="op">=</span><span class="dv">42</span>)  <span class="co"># Use RandomizedSearchCV for rough tuning</span></span>
-<span id="cb38-11"><a href=""></a>random_search.fit(X_train, y_train)  <span class="co"># Best parameters from Randomized Search</span></span>
-<span id="cb38-12"><a href=""></a>best_model <span class="op">=</span> random_search.best_estimator_</span>
-<span id="cb38-13"><a href=""></a>y_pred_rf <span class="op">=</span> best_model.predict(X_test)  <span class="co"># Make predictions</span></span>
-<span id="cb38-14"><a href=""></a>rmse_rf <span class="op">=</span> root_mean_squared_error(y_test, y_pred_rf)  <span class="co"># Compute RMSE</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> RandomizedSearchCV</span>
+<span id="cb38-2"><a href="" aria-label="2"></a>rf <span class="op">=</span> RandomForestRegressor(random_state<span class="op">=</span><span class="dv">42</span>)  <span class="co"># Define the base model</span></span>
+<span id="cb38-3"><a href="" aria-label="3"></a>param_dist <span class="op">=</span> {  <span class="co"># Define the hyperparameter grid</span></span>
+<span id="cb38-4"><a href="" aria-label="4"></a>    <span class="st">'n_estimators'</span>: [<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>],</span>
+<span id="cb38-5"><a href="" aria-label="5"></a>    <span class="st">'max_depth'</span>: [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>],</span>
+<span id="cb38-6"><a href="" aria-label="6"></a>    <span class="st">'min_samples_split'</span>: [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>],</span>
+<span id="cb38-7"><a href="" aria-label="7"></a>    <span class="st">'min_samples_leaf'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
+<span id="cb38-8"><a href="" aria-label="8"></a>    <span class="st">'max_features'</span>: [<span class="st">'sqrt'</span>, <span class="st">'log2'</span>]</span>
+<span id="cb38-9"><a href="" aria-label="9"></a>}</span>
+<span id="cb38-10"><a href="" aria-label="10"></a>random_search <span class="op">=</span> RandomizedSearchCV(estimator<span class="op">=</span>rf, param_distributions<span class="op">=</span>param_dist, n_iter<span class="op">=</span><span class="dv">20</span>, cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">'neg_root_mean_squared_error'</span>, verbose<span class="op">=</span><span class="dv">2</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>, random_state<span class="op">=</span><span class="dv">42</span>)  <span class="co"># Use RandomizedSearchCV for rough tuning</span></span>
+<span id="cb38-11"><a href="" aria-label="11"></a>random_search.fit(X_train, y_train)  <span class="co"># Best parameters from Randomized Search</span></span>
+<span id="cb38-12"><a href="" aria-label="12"></a>best_model <span class="op">=</span> random_search.best_estimator_</span>
+<span id="cb38-13"><a href="" aria-label="13"></a>y_pred_rf <span class="op">=</span> best_model.predict(X_test)  <span class="co"># Make predictions</span></span>
+<span id="cb38-14"><a href="" aria-label="14"></a>rmse_rf <span class="op">=</span> root_mean_squared_error(y_test, y_pred_rf)  <span class="co"># Compute RMSE</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Fitting 5 folds for each of 20 candidates, totalling 100 fits
@@ -1557,7 +1560,7 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-62" class="cell" data-execution_count="47">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href=""></a>random_search.best_params_</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href="" aria-label="1"></a>random_search.best_params_</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="47">
 <pre><code>{'n_estimators': 200,
@@ -1570,7 +1573,7 @@ memory usage: 1.3+ MB</code></pre>
 <div id="cell-63" class="cell" data-execution_count="48">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb42-1"><a href=""></a>random_search.best_estimator_</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb42-1"><a href="" aria-label="1"></a>random_search.best_estimator_</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="48">
 <style>#sk-container-id-1 {
@@ -1996,7 +1999,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="cell-64" class="cell" data-execution_count="49">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href=""></a><span class="bu">print</span>(<span class="st">"Optimized RMSE using Random Forest Regressor:"</span>, <span class="bu">round</span>(rmse_rf, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href="" aria-label="1"></a><span class="bu">print</span>(<span class="st">"Optimized RMSE using Random Forest Regressor:"</span>, <span class="bu">round</span>(rmse_rf, <span class="dv">2</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Optimized RMSE using Random Forest Regressor: 9.49</code></pre>
@@ -2009,27 +2012,27 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="cell-66" class="cell" data-execution_count="50">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href=""></a><span class="im">import</span> xgboost <span class="im">as</span> xgb</span>
-<span id="cb45-2"><a href=""></a>xgb_regressor <span class="op">=</span> xgb.XGBRegressor(objective<span class="op">=</span><span class="st">'reg:squarederror'</span>, random_state<span class="op">=</span><span class="dv">42</span>)  <span class="co"># Define base XGBoost model</span></span>
-<span id="cb45-3"><a href=""></a>param_dist <span class="op">=</span> {  <span class="co"># Define hyperparameter grid</span></span>
-<span id="cb45-4"><a href=""></a>    <span class="st">'n_estimators'</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">500</span>],</span>
-<span id="cb45-5"><a href=""></a>    <span class="st">'learning_rate'</span>: [<span class="fl">0.01</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>],</span>
-<span id="cb45-6"><a href=""></a>    <span class="st">'max_depth'</span>: [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">10</span>],</span>
-<span id="cb45-7"><a href=""></a>    <span class="st">'min_child_weight'</span>: [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>],</span>
-<span id="cb45-8"><a href=""></a>    <span class="st">'subsample'</span>: [<span class="fl">0.6</span>, <span class="fl">0.8</span>, <span class="fl">1.0</span>],</span>
-<span id="cb45-9"><a href=""></a>    <span class="st">'colsample_bytree'</span>: [<span class="fl">0.6</span>, <span class="fl">0.8</span>, <span class="fl">1.0</span>],</span>
-<span id="cb45-10"><a href=""></a>    <span class="st">'gamma'</span>: [<span class="dv">0</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.5</span>]</span>
-<span id="cb45-11"><a href=""></a>}</span>
-<span id="cb45-12"><a href=""></a><span class="co"># Perform Randomized Search for broad tuning</span></span>
-<span id="cb45-13"><a href=""></a>random_search <span class="op">=</span> RandomizedSearchCV(</span>
-<span id="cb45-14"><a href=""></a>    estimator<span class="op">=</span>xgb_regressor, param_distributions<span class="op">=</span>param_dist,</span>
-<span id="cb45-15"><a href=""></a>    n_iter<span class="op">=</span><span class="dv">30</span>, cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">'neg_root_mean_squared_error'</span>,</span>
-<span id="cb45-16"><a href=""></a>    verbose<span class="op">=</span><span class="dv">2</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>, random_state<span class="op">=</span><span class="dv">42</span></span>
-<span id="cb45-17"><a href=""></a>)</span>
-<span id="cb45-18"><a href=""></a>random_search.fit(X_train, y_train)  <span class="co"># Get best parameters from Randomized Search</span></span>
-<span id="cb45-19"><a href=""></a>best_xgb <span class="op">=</span> random_search.best_estimator_</span>
-<span id="cb45-20"><a href=""></a>y_pred_xgb <span class="op">=</span> best_xgb.predict(X_test)  <span class="co"># Make predictions</span></span>
-<span id="cb45-21"><a href=""></a>rmse_xgb <span class="op">=</span> root_mean_squared_error(y_test, y_pred_xgb)  <span class="co"># Compute RMSE</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href="" aria-label="1"></a><span class="im">import</span> xgboost <span class="im">as</span> xgb</span>
+<span id="cb45-2"><a href="" aria-label="2"></a>xgb_regressor <span class="op">=</span> xgb.XGBRegressor(objective<span class="op">=</span><span class="st">'reg:squarederror'</span>, random_state<span class="op">=</span><span class="dv">42</span>)  <span class="co"># Define base XGBoost model</span></span>
+<span id="cb45-3"><a href="" aria-label="3"></a>param_dist <span class="op">=</span> {  <span class="co"># Define hyperparameter grid</span></span>
+<span id="cb45-4"><a href="" aria-label="4"></a>    <span class="st">'n_estimators'</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">500</span>],</span>
+<span id="cb45-5"><a href="" aria-label="5"></a>    <span class="st">'learning_rate'</span>: [<span class="fl">0.01</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>],</span>
+<span id="cb45-6"><a href="" aria-label="6"></a>    <span class="st">'max_depth'</span>: [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">10</span>],</span>
+<span id="cb45-7"><a href="" aria-label="7"></a>    <span class="st">'min_child_weight'</span>: [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>],</span>
+<span id="cb45-8"><a href="" aria-label="8"></a>    <span class="st">'subsample'</span>: [<span class="fl">0.6</span>, <span class="fl">0.8</span>, <span class="fl">1.0</span>],</span>
+<span id="cb45-9"><a href="" aria-label="9"></a>    <span class="st">'colsample_bytree'</span>: [<span class="fl">0.6</span>, <span class="fl">0.8</span>, <span class="fl">1.0</span>],</span>
+<span id="cb45-10"><a href="" aria-label="10"></a>    <span class="st">'gamma'</span>: [<span class="dv">0</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.5</span>]</span>
+<span id="cb45-11"><a href="" aria-label="11"></a>}</span>
+<span id="cb45-12"><a href="" aria-label="12"></a><span class="co"># Perform Randomized Search for broad tuning</span></span>
+<span id="cb45-13"><a href="" aria-label="13"></a>random_search <span class="op">=</span> RandomizedSearchCV(</span>
+<span id="cb45-14"><a href="" aria-label="14"></a>    estimator<span class="op">=</span>xgb_regressor, param_distributions<span class="op">=</span>param_dist,</span>
+<span id="cb45-15"><a href="" aria-label="15"></a>    n_iter<span class="op">=</span><span class="dv">30</span>, cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">'neg_root_mean_squared_error'</span>,</span>
+<span id="cb45-16"><a href="" aria-label="16"></a>    verbose<span class="op">=</span><span class="dv">2</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>, random_state<span class="op">=</span><span class="dv">42</span></span>
+<span id="cb45-17"><a href="" aria-label="17"></a>)</span>
+<span id="cb45-18"><a href="" aria-label="18"></a>random_search.fit(X_train, y_train)  <span class="co"># Get best parameters from Randomized Search</span></span>
+<span id="cb45-19"><a href="" aria-label="19"></a>best_xgb <span class="op">=</span> random_search.best_estimator_</span>
+<span id="cb45-20"><a href="" aria-label="20"></a>y_pred_xgb <span class="op">=</span> best_xgb.predict(X_test)  <span class="co"># Make predictions</span></span>
+<span id="cb45-21"><a href="" aria-label="21"></a>rmse_xgb <span class="op">=</span> root_mean_squared_error(y_test, y_pred_xgb)  <span class="co"># Compute RMSE</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Fitting 5 folds for each of 30 candidates, totalling 150 fits
@@ -2192,7 +2195,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="cell-68" class="cell" data-execution_count="51">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb47-1"><a href=""></a>random_search.best_params_</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb47-1"><a href="" aria-label="1"></a>random_search.best_params_</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="51">
 <pre><code>{'subsample': 0.6,
@@ -2207,7 +2210,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="cell-69" class="cell" data-execution_count="52">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb49-1"><a href=""></a>random_search.best_estimator_</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb49-1"><a href="" aria-label="1"></a>random_search.best_estimator_</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="52">
 <style>#sk-container-id-2 {
@@ -2651,7 +2654,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="cell-70" class="cell" data-execution_count="53">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb50-1"><a href=""></a><span class="bu">print</span>(<span class="st">"Optimized RMSE using XGBoost:"</span>, <span class="bu">round</span>(rmse_xgb, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb50-1"><a href="" aria-label="1"></a><span class="bu">print</span>(<span class="st">"Optimized RMSE using XGBoost:"</span>, <span class="bu">round</span>(rmse_xgb, <span class="dv">2</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Optimized RMSE using XGBoost: 9.48</code></pre>
@@ -2664,15 +2667,15 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="cell-72" class="cell" data-execution_count="54">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb52-1"><a href=""></a>feature_importance <span class="op">=</span> best_xgb.feature_importances_  <span class="co"># Get feature importance</span></span>
-<span id="cb52-2"><a href=""></a>feature_importance_df <span class="op">=</span> pd.DataFrame({ <span class="st">'Feature'</span>: X_train.columns, <span class="st">'Importance'</span>: feature_importance }).sort_values(by<span class="op">=</span><span class="st">'Importance'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb52-3"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb52-4"><a href=""></a>plt.barh(feature_importance_df[<span class="st">'Feature'</span>], feature_importance_df[<span class="st">'Importance'</span>])</span>
-<span id="cb52-5"><a href=""></a>plt.xlabel(<span class="st">'Importance'</span>)</span>
-<span id="cb52-6"><a href=""></a>plt.ylabel(<span class="st">'Feature'</span>)</span>
-<span id="cb52-7"><a href=""></a>plt.title(<span class="st">'Feature Importance from XGBoost'</span>)</span>
-<span id="cb52-8"><a href=""></a>plt.gca().invert_yaxis()</span>
-<span id="cb52-9"><a href=""></a>plt.tight_layout()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb52-1"><a href="" aria-label="1"></a>feature_importance <span class="op">=</span> best_xgb.feature_importances_  <span class="co"># Get feature importance</span></span>
+<span id="cb52-2"><a href="" aria-label="2"></a>feature_importance_df <span class="op">=</span> pd.DataFrame({ <span class="st">'Feature'</span>: X_train.columns, <span class="st">'Importance'</span>: feature_importance }).sort_values(by<span class="op">=</span><span class="st">'Importance'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb52-3"><a href="" aria-label="3"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb52-4"><a href="" aria-label="4"></a>plt.barh(feature_importance_df[<span class="st">'Feature'</span>], feature_importance_df[<span class="st">'Importance'</span>])</span>
+<span id="cb52-5"><a href="" aria-label="5"></a>plt.xlabel(<span class="st">'Importance'</span>)</span>
+<span id="cb52-6"><a href="" aria-label="6"></a>plt.ylabel(<span class="st">'Feature'</span>)</span>
+<span id="cb52-7"><a href="" aria-label="7"></a>plt.title(<span class="st">'Feature Importance from XGBoost'</span>)</span>
+<span id="cb52-8"><a href="" aria-label="8"></a>plt.gca().invert_yaxis()</span>
+<span id="cb52-9"><a href="" aria-label="9"></a>plt.tight_layout()</span></code></pre></div>
 </details>
 
 </div>
@@ -2683,17 +2686,17 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="cell-74" class="cell" data-execution_count="55">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb53-1"><a href=""></a>automl <span class="op">=</span> AutoML()</span>
-<span id="cb53-2"><a href=""></a>automl_settings <span class="op">=</span> {</span>
-<span id="cb53-3"><a href=""></a>    <span class="st">"time_budget"</span>: <span class="dv">30</span>,  <span class="co"># Time budget in seconds</span></span>
-<span id="cb53-4"><a href=""></a>    <span class="st">"max_iter"</span>: <span class="dv">30</span>,  <span class="co"># Max number of iterations</span></span>
-<span id="cb53-5"><a href=""></a>    <span class="st">"metric"</span>: <span class="st">'rmse'</span>,  <span class="co"># Evaluation metric</span></span>
-<span id="cb53-6"><a href=""></a>    <span class="co"># "estimator_list": ["xgboost"],</span></span>
-<span id="cb53-7"><a href=""></a>    <span class="st">"task"</span>: <span class="st">'regression'</span>,  <span class="co"># Task type</span></span>
-<span id="cb53-8"><a href=""></a>}</span>
-<span id="cb53-9"><a href=""></a>automl.fit(X_train, y_train, <span class="op">**</span>automl_settings)</span>
-<span id="cb53-10"><a href=""></a>y_pred <span class="op">=</span> automl.predict(X_test)</span>
-<span id="cb53-11"><a href=""></a>rmse <span class="op">=</span> root_mean_squared_error(y_test, y_pred)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb53-1"><a href="" aria-label="1"></a>automl <span class="op">=</span> AutoML()</span>
+<span id="cb53-2"><a href="" aria-label="2"></a>automl_settings <span class="op">=</span> {</span>
+<span id="cb53-3"><a href="" aria-label="3"></a>    <span class="st">"time_budget"</span>: <span class="dv">30</span>,  <span class="co"># Time budget in seconds</span></span>
+<span id="cb53-4"><a href="" aria-label="4"></a>    <span class="st">"max_iter"</span>: <span class="dv">30</span>,  <span class="co"># Max number of iterations</span></span>
+<span id="cb53-5"><a href="" aria-label="5"></a>    <span class="st">"metric"</span>: <span class="st">'rmse'</span>,  <span class="co"># Evaluation metric</span></span>
+<span id="cb53-6"><a href="" aria-label="6"></a>    <span class="co"># "estimator_list": ["xgboost"],</span></span>
+<span id="cb53-7"><a href="" aria-label="7"></a>    <span class="st">"task"</span>: <span class="st">'regression'</span>,  <span class="co"># Task type</span></span>
+<span id="cb53-8"><a href="" aria-label="8"></a>}</span>
+<span id="cb53-9"><a href="" aria-label="9"></a>automl.fit(X_train, y_train, <span class="op">**</span>automl_settings)</span>
+<span id="cb53-10"><a href="" aria-label="10"></a>y_pred <span class="op">=</span> automl.predict(X_test)</span>
+<span id="cb53-11"><a href="" aria-label="11"></a>rmse <span class="op">=</span> root_mean_squared_error(y_test, y_pred)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[flaml.automl.logger: 04-08 20:50:07] {1728} INFO - task = regression
@@ -2778,7 +2781,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="cell-76" class="cell" data-execution_count="56">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb55-1"><a href=""></a>automl.best_estimator</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb55-1"><a href="" aria-label="1"></a>automl.best_estimator</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="56">
 <pre><code>'lgbm'</code></pre>
@@ -2787,7 +2790,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="cell-77" class="cell" data-execution_count="57">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb57-1"><a href=""></a>automl.best_config</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb57-1"><a href="" aria-label="1"></a>automl.best_config</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="57">
 <pre><code>{'n_estimators': 34,
@@ -2803,7 +2806,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="cell-78" class="cell" data-execution_count="58">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb59-1"><a href=""></a><span class="bu">print</span>(<span class="st">"RMSE using AutoML:"</span>, <span class="bu">round</span>(rmse, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb59-1"><a href="" aria-label="1"></a><span class="bu">print</span>(<span class="st">"RMSE using AutoML:"</span>, <span class="bu">round</span>(rmse, <span class="dv">2</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE using AutoML: 9.77</code></pre>

@@ -5,8 +5,8 @@
 <script src="lab-09-breastcancer_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-09-breastcancer_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lab-09-breastcancer_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lab-09-breastcancer_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.29">
+<link href="lab-09-breastcancer_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -200,7 +203,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it 
+Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
@@ -230,25 +233,25 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-4" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co"># Import the libraries used for machine learning</span></span>
-<span id="cb1-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># linear algebra</span></span>
-<span id="cb1-3"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># data processing, CSV file I/O (e.g. pd.read_csv), data manipulation as in SQL</span></span>
-<span id="cb1-4"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># used for plotting </span></span>
-<span id="cb1-5"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns   <span class="co"># used for plotting</span></span>
-<span id="cb1-6"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split  <span class="co">#  split the data into training and test</span></span>
-<span id="cb1-7"><a href=""></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier  <span class="co"># import a machine learning model</span></span>
-<span id="cb1-8"><a href=""></a><span class="im">from</span> sklearn <span class="im">import</span> metrics  <span class="co"># check the error and accuracy of the model</span></span>
-<span id="cb1-9"><a href=""></a></span>
-<span id="cb1-10"><a href=""></a><span class="co"># SEED all random generators</span></span>
-<span id="cb1-11"><a href=""></a><span class="im">import</span> random</span>
-<span id="cb1-12"><a href=""></a><span class="im">import</span> os</span>
-<span id="cb1-13"><a href=""></a>seed <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb1-14"><a href=""></a>random.seed(seed)</span>
-<span id="cb1-15"><a href=""></a>os.environ[<span class="st">'PYTHONHASHSEED'</span>] <span class="op">=</span> <span class="bu">str</span>(seed)</span>
-<span id="cb1-16"><a href=""></a>np.random.seed(seed)</span>
-<span id="cb1-17"><a href=""></a></span>
-<span id="cb1-18"><a href=""></a><span class="co"># read the data</span></span>
-<span id="cb1-19"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/w4bo/teaching-handsondatapipelines/main/materials/datasets/breastcancer.csv"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-label="1"></a><span class="co"># Import the libraries used for machine learning</span></span>
+<span id="cb1-2"><a href="" aria-label="2"></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># linear algebra</span></span>
+<span id="cb1-3"><a href="" aria-label="3"></a><span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># data processing, CSV file I/O (e.g. pd.read_csv), data manipulation as in SQL</span></span>
+<span id="cb1-4"><a href="" aria-label="4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># used for plotting </span></span>
+<span id="cb1-5"><a href="" aria-label="5"></a><span class="im">import</span> seaborn <span class="im">as</span> sns   <span class="co"># used for plotting</span></span>
+<span id="cb1-6"><a href="" aria-label="6"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split  <span class="co">#  split the data into training and test</span></span>
+<span id="cb1-7"><a href="" aria-label="7"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier  <span class="co"># import a machine learning model</span></span>
+<span id="cb1-8"><a href="" aria-label="8"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics  <span class="co"># check the error and accuracy of the model</span></span>
+<span id="cb1-9"><a href="" aria-label="9"></a></span>
+<span id="cb1-10"><a href="" aria-label="10"></a><span class="co"># SEED all random generators</span></span>
+<span id="cb1-11"><a href="" aria-label="11"></a><span class="im">import</span> random</span>
+<span id="cb1-12"><a href="" aria-label="12"></a><span class="im">import</span> os</span>
+<span id="cb1-13"><a href="" aria-label="13"></a>seed <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb1-14"><a href="" aria-label="14"></a>random.seed(seed)</span>
+<span id="cb1-15"><a href="" aria-label="15"></a>os.environ[<span class="st">'PYTHONHASHSEED'</span>] <span class="op">=</span> <span class="bu">str</span>(seed)</span>
+<span id="cb1-16"><a href="" aria-label="16"></a>np.random.seed(seed)</span>
+<span id="cb1-17"><a href="" aria-label="17"></a></span>
+<span id="cb1-18"><a href="" aria-label="18"></a><span class="co"># read the data</span></span>
+<span id="cb1-19"><a href="" aria-label="19"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/w4bo/teaching-handsondatapipelines/main/materials/datasets/breastcancer.csv"</span>)</span></code></pre></div>
 </details>
 </div>
 </section>
@@ -263,7 +266,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-6" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="" aria-label="1"></a>df</span></code></pre></div>
 </details>
 </div>
 </section>
@@ -273,7 +276,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-8" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>df.info()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-label="1"></a>df.info()</span></code></pre></div>
 </details>
 </div>
 </section>

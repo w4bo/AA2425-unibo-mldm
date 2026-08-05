@@ -5,8 +5,8 @@
 <script src="lab-03-datapreparation_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-03-datapreparation_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lab-03-datapreparation_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lab-03-datapreparation_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.29">
+<link href="lab-03-datapreparation_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -203,7 +206,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it 
+Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
@@ -218,18 +221,18 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="aacb3166" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:38.883641Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:38.883641Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.228268Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.228268Z&quot;}}" data-outputid="6d82288e-1a47-4674-a7d3-6500cf9f04d1" data-execution_count="244">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># data wrangling</span></span>
-<span id="cb1-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># fast operations on arrays</span></span>
-<span id="cb1-3"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns  <span class="co"># plots</span></span>
-<span id="cb1-4"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># plots</span></span>
-<span id="cb1-5"><a href=""></a></span>
-<span id="cb1-6"><a href=""></a>df <span class="op">=</span> pd.DataFrame([</span>
-<span id="cb1-7"><a href=""></a>    [<span class="dv">100</span>,   <span class="st">'low'</span>,    <span class="st">'05/07/2021'</span>, <span class="dv">10</span>, <span class="dv">2</span>],</span>
-<span id="cb1-8"><a href=""></a>    [<span class="dv">101</span>,  <span class="st">'medium'</span>, <span class="st">'05/07/2021'</span>, <span class="dv">25</span>, <span class="dv">1</span>],</span>
-<span id="cb1-9"><a href=""></a>    [<span class="dv">102</span>,   <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, <span class="dv">100</span>, <span class="dv">3</span>],</span>
-<span id="cb1-10"><a href=""></a>    [<span class="dv">103</span>, <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, np.nan, <span class="dv">4</span>],</span>
-<span id="cb1-11"><a href=""></a>    [<span class="dv">104</span>,  <span class="st">'medium'</span>, <span class="st">'06/07/2021'</span>, <span class="dv">25</span>, <span class="dv">5</span>]], columns<span class="op">=</span>[<span class="st">'ID'</span>, <span class="st">'PriceBin'</span>, <span class="st">'Date'</span>, <span class="st">'Quantity'</span>, <span class="st">'Review'</span>])</span>
-<span id="cb1-12"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-label="1"></a><span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># data wrangling</span></span>
+<span id="cb1-2"><a href="" aria-label="2"></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># fast operations on arrays</span></span>
+<span id="cb1-3"><a href="" aria-label="3"></a><span class="im">import</span> seaborn <span class="im">as</span> sns  <span class="co"># plots</span></span>
+<span id="cb1-4"><a href="" aria-label="4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># plots</span></span>
+<span id="cb1-5"><a href="" aria-label="5"></a></span>
+<span id="cb1-6"><a href="" aria-label="6"></a>df <span class="op">=</span> pd.DataFrame([</span>
+<span id="cb1-7"><a href="" aria-label="7"></a>    [<span class="dv">100</span>,   <span class="st">'low'</span>,    <span class="st">'05/07/2021'</span>, <span class="dv">10</span>, <span class="dv">2</span>],</span>
+<span id="cb1-8"><a href="" aria-label="8"></a>    [<span class="dv">101</span>,  <span class="st">'medium'</span>, <span class="st">'05/07/2021'</span>, <span class="dv">25</span>, <span class="dv">1</span>],</span>
+<span id="cb1-9"><a href="" aria-label="9"></a>    [<span class="dv">102</span>,   <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, <span class="dv">100</span>, <span class="dv">3</span>],</span>
+<span id="cb1-10"><a href="" aria-label="10"></a>    [<span class="dv">103</span>, <span class="st">'high'</span>,   <span class="st">'06/07/2021'</span>, np.nan, <span class="dv">4</span>],</span>
+<span id="cb1-11"><a href="" aria-label="11"></a>    [<span class="dv">104</span>,  <span class="st">'medium'</span>, <span class="st">'06/07/2021'</span>, <span class="dv">25</span>, <span class="dv">5</span>]], columns<span class="op">=</span>[<span class="st">'ID'</span>, <span class="st">'PriceBin'</span>, <span class="st">'Date'</span>, <span class="st">'Quantity'</span>, <span class="st">'Review'</span>])</span>
+<span id="cb1-12"><a href="" aria-label="12"></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="244">
 <div>
@@ -324,8 +327,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="bff9fa20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.230273Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.230273Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.233699Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.233699Z&quot;}}" data-outputid="739c6259-428c-4018-b542-419bf9733f1a" data-execution_count="245">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="co"># array with distinct values sorted by first appearance</span></span>
-<span id="cb2-2"><a href=""></a>df[<span class="st">"Quantity"</span>].unique()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="" aria-label="1"></a><span class="co"># array with distinct values sorted by first appearance</span></span>
+<span id="cb2-2"><a href="" aria-label="2"></a>df[<span class="st">"Quantity"</span>].unique()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="245">
 <pre><code>array([ 10.,  25., 100.,  nan])</code></pre>
@@ -334,8 +337,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="3041345b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.235703Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.234703Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.238022Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.238022Z&quot;}}" data-outputid="03cf3d32-e761-42ab-c44e-0bee001b1a10" data-execution_count="246">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># quantity of unique values</span></span>
-<span id="cb4-2"><a href=""></a>df[<span class="st">"Quantity"</span>].nunique()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="" aria-label="1"></a><span class="co"># quantity of unique values</span></span>
+<span id="cb4-2"><a href="" aria-label="2"></a>df[<span class="st">"Quantity"</span>].nunique()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="246">
 <pre><code>3</code></pre>
@@ -348,8 +351,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="5f596a69" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.239037Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.239037Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.243023Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.243023Z&quot;}}" data-outputid="47be88b8-164b-4a18-b43f-f20d27568ad1" data-execution_count="247">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="co"># return a new series that associates each value with its number of occurrences, sorted by frequency</span></span>
-<span id="cb6-2"><a href=""></a>df[<span class="st">"Quantity"</span>].value_counts()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="" aria-label="1"></a><span class="co"># return a new series that associates each value with its number of occurrences, sorted by frequency</span></span>
+<span id="cb6-2"><a href="" aria-label="2"></a>df[<span class="st">"Quantity"</span>].value_counts()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="247">
 <pre><code>Quantity
@@ -362,8 +365,8 @@ Name: count, dtype: int64</code></pre>
 <div id="a1d99dac" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.244034Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.244034Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.327720Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.327720Z&quot;}}" data-outputid="a643086a-bec0-4717-c801-2d6132f09508" data-execution_count="248">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
-<span id="cb8-2"><a href=""></a>df[<span class="st">"Quantity"</span>].hist(bins<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href="" aria-label="1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
+<span id="cb8-2"><a href="" aria-label="2"></a>df[<span class="st">"Quantity"</span>].hist(bins<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div>
 </details>
 
 </div>
@@ -386,11 +389,11 @@ Name: count, dtype: int64</code></pre>
 <div id="5c2f6e66" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.329726Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.329726Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.335584Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.335584Z&quot;}}" data-outputid="5fd6a227-7a4c-4123-c162-0944d0687b0d" data-execution_count="249">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="co"># add the column "isna", True if the value is NaN</span></span>
-<span id="cb11-2"><a href=""></a>df[<span class="st">"isna"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].isna()</span>
-<span id="cb11-3"><a href=""></a><span class="co"># add the column "notna", False if the value is NaN</span></span>
-<span id="cb11-4"><a href=""></a>df[<span class="st">"notna"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].notna()</span>
-<span id="cb11-5"><a href=""></a>df[[<span class="st">"Quantity"</span>, <span class="st">"isna"</span>, <span class="st">"notna"</span>]]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="" aria-label="1"></a><span class="co"># add the column "isna", True if the value is NaN</span></span>
+<span id="cb11-2"><a href="" aria-label="2"></a>df[<span class="st">"isna"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].isna()</span>
+<span id="cb11-3"><a href="" aria-label="3"></a><span class="co"># add the column "notna", False if the value is NaN</span></span>
+<span id="cb11-4"><a href="" aria-label="4"></a>df[<span class="st">"notna"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].notna()</span>
+<span id="cb11-5"><a href="" aria-label="5"></a>df[[<span class="st">"Quantity"</span>, <span class="st">"isna"</span>, <span class="st">"notna"</span>]]</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="249">
 <div>
@@ -476,11 +479,11 @@ Name: count, dtype: int64</code></pre>
 <div id="fba624ad" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.337595Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.337595Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.344768Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.344768Z&quot;}}" data-outputid="e7cfe545-497f-4381-9411-152012c46700" data-execution_count="250">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>df[<span class="st">"Quantity_mean"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].fillna(df[<span class="st">"Quantity"</span>].mean())  <span class="co"># fill the missing value with the average</span></span>
-<span id="cb12-2"><a href=""></a>df[<span class="st">"Quantity_ffill"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].ffill()  <span class="co"># fill the missing value with the previous (not NaN) value</span></span>
-<span id="cb12-3"><a href=""></a>df[<span class="st">"Quantity_bfill"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].bfill()  <span class="co"># fill the missing value with the following (not NaN) value</span></span>
-<span id="cb12-4"><a href=""></a>imputed_df <span class="op">=</span> df[[x <span class="cf">for</span> x <span class="kw">in</span> df.columns <span class="cf">if</span> <span class="st">"Quantity"</span> <span class="kw">in</span> x]]</span>
-<span id="cb12-5"><a href=""></a>imputed_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href="" aria-label="1"></a>df[<span class="st">"Quantity_mean"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].fillna(df[<span class="st">"Quantity"</span>].mean())  <span class="co"># fill the missing value with the average</span></span>
+<span id="cb12-2"><a href="" aria-label="2"></a>df[<span class="st">"Quantity_ffill"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].ffill()  <span class="co"># fill the missing value with the previous (not NaN) value</span></span>
+<span id="cb12-3"><a href="" aria-label="3"></a>df[<span class="st">"Quantity_bfill"</span>] <span class="op">=</span> df[<span class="st">"Quantity"</span>].bfill()  <span class="co"># fill the missing value with the following (not NaN) value</span></span>
+<span id="cb12-4"><a href="" aria-label="4"></a>imputed_df <span class="op">=</span> df[[x <span class="cf">for</span> x <span class="kw">in</span> df.columns <span class="cf">if</span> <span class="st">"Quantity"</span> <span class="kw">in</span> x]]</span>
+<span id="cb12-5"><a href="" aria-label="5"></a>imputed_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="250">
 <div>
@@ -553,7 +556,7 @@ Name: count, dtype: int64</code></pre>
 <div id="a854694e" class="cell" data-execution_count="251">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>imputed_df.describe()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href="" aria-label="1"></a>imputed_df.describe()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="251">
 <div>
@@ -675,17 +678,17 @@ Name: count, dtype: int64</code></pre>
 <div id="4037dc5a" class="cell" data-execution_count="253">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">3</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb14-2"><a href=""></a><span class="cf">for</span> i, (title, color) <span class="kw">in</span> <span class="bu">enumerate</span>([(<span class="st">'Quantity'</span>, <span class="st">'blue'</span>), (<span class="st">'Quantity_mean'</span>, <span class="st">'green'</span>), (<span class="st">'Quantity_ffill'</span>, <span class="st">'orange'</span>), (<span class="st">'Quantity_bfill'</span>, <span class="st">'red'</span>)]):</span>
-<span id="cb14-3"><a href=""></a>    axs[i].set_title(<span class="ss">f'</span><span class="sc">{</span>title<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb14-4"><a href=""></a>    <span class="co"># Calculate bin edges based on quantiles</span></span>
-<span id="cb14-5"><a href=""></a>    bin_edges <span class="op">=</span> np.quantile(imputed_df[title].dropna(), [<span class="dv">0</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">1.0</span>])</span>
-<span id="cb14-6"><a href=""></a>    axs[i].hist(imputed_df[title], bins<span class="op">=</span>bin_edges, color<span class="op">=</span>color, alpha<span class="op">=</span><span class="fl">0.7</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
-<span id="cb14-7"><a href=""></a>    axs[i].grid()</span>
-<span id="cb14-8"><a href=""></a></span>
-<span id="cb14-9"><a href=""></a>fig.suptitle(<span class="st">"Equi-frequency histograms with 4 bins"</span>)</span>
-<span id="cb14-10"><a href=""></a>fig.tight_layout()</span>
-<span id="cb14-11"><a href=""></a><span class="co"># fig.savefig("./img/datapreprocessing/imputation_equi_frequency.svg")</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href="" aria-label="1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">3</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-2"><a href="" aria-label="2"></a><span class="cf">for</span> i, (title, color) <span class="kw">in</span> <span class="bu">enumerate</span>([(<span class="st">'Quantity'</span>, <span class="st">'blue'</span>), (<span class="st">'Quantity_mean'</span>, <span class="st">'green'</span>), (<span class="st">'Quantity_ffill'</span>, <span class="st">'orange'</span>), (<span class="st">'Quantity_bfill'</span>, <span class="st">'red'</span>)]):</span>
+<span id="cb14-3"><a href="" aria-label="3"></a>    axs[i].set_title(<span class="ss">f'</span><span class="sc">{</span>title<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb14-4"><a href="" aria-label="4"></a>    <span class="co"># Calculate bin edges based on quantiles</span></span>
+<span id="cb14-5"><a href="" aria-label="5"></a>    bin_edges <span class="op">=</span> np.quantile(imputed_df[title].dropna(), [<span class="dv">0</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">1.0</span>])</span>
+<span id="cb14-6"><a href="" aria-label="6"></a>    axs[i].hist(imputed_df[title], bins<span class="op">=</span>bin_edges, color<span class="op">=</span>color, alpha<span class="op">=</span><span class="fl">0.7</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb14-7"><a href="" aria-label="7"></a>    axs[i].grid()</span>
+<span id="cb14-8"><a href="" aria-label="8"></a></span>
+<span id="cb14-9"><a href="" aria-label="9"></a>fig.suptitle(<span class="st">"Equi-frequency histograms with 4 bins"</span>)</span>
+<span id="cb14-10"><a href="" aria-label="10"></a>fig.tight_layout()</span>
+<span id="cb14-11"><a href="" aria-label="11"></a><span class="co"># fig.savefig("./img/datapreprocessing/imputation_equi_frequency.svg")</span></span></code></pre></div>
 </details>
 
 </div>
@@ -695,7 +698,7 @@ Name: count, dtype: int64</code></pre>
 <div id="1aebd691" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.598141Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.598141Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.605375Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.605375Z&quot;}}" data-outputid="2b43d7bb-c729-4a90-bff0-0c5e5c142cb7" data-scrolled="true" data-execution_count="254">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>df.drop(columns<span class="op">=</span>[<span class="st">"Quantity"</span>])  <span class="co"># drop the `Quantity` column</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href="" aria-label="1"></a>df.drop(columns<span class="op">=</span>[<span class="st">"Quantity"</span>])  <span class="co"># drop the `Quantity` column</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="254">
 <div>
@@ -798,8 +801,8 @@ Name: count, dtype: int64</code></pre>
 <div id="3ba31db2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.607381Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.607381Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.615739Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.615739Z&quot;}}" data-outputid="7960fed3-8e65-462c-edbc-4dcb782a807b" data-execution_count="255">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>df.dropna()  <span class="co"># drop all rows with missing values in any column</span></span>
-<span id="cb16-2"><a href=""></a>df.dropna(subset<span class="op">=</span>[<span class="st">"Quantity"</span>])  <span class="co"># drop all rows with missing values in the column `Quantity`</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href="" aria-label="1"></a>df.dropna()  <span class="co"># drop all rows with missing values in any column</span></span>
+<span id="cb16-2"><a href="" aria-label="2"></a>df.dropna(subset<span class="op">=</span>[<span class="st">"Quantity"</span>])  <span class="co"># drop all rows with missing values in the column `Quantity`</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="255">
 <div>
@@ -898,9 +901,9 @@ Name: count, dtype: int64</code></pre>
 <div id="ec233c90" class="cell" data-execution_count="256">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>price_map <span class="op">=</span> {<span class="st">'low'</span>: <span class="dv">10</span>, <span class="st">'medium'</span>: <span class="dv">20</span>, <span class="st">'high'</span>: <span class="dv">30</span>}</span>
-<span id="cb17-2"><a href=""></a>df[<span class="st">'PriceBin_encoded'</span>] <span class="op">=</span> df[<span class="st">'PriceBin'</span>].<span class="bu">map</span>(price_map)</span>
-<span id="cb17-3"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href="" aria-label="1"></a>price_map <span class="op">=</span> {<span class="st">'low'</span>: <span class="dv">10</span>, <span class="st">'medium'</span>: <span class="dv">20</span>, <span class="st">'high'</span>: <span class="dv">30</span>}</span>
+<span id="cb17-2"><a href="" aria-label="2"></a>df[<span class="st">'PriceBin_encoded'</span>] <span class="op">=</span> df[<span class="st">'PriceBin'</span>].<span class="bu">map</span>(price_map)</span>
+<span id="cb17-3"><a href="" aria-label="3"></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="256">
 <div>
@@ -1020,9 +1023,9 @@ Name: count, dtype: int64</code></pre>
 <div id="4c87578a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.709168Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.709168Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.717770Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.717770Z&quot;}}" data-execution_count="257">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>df[<span class="st">'Date'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%m/</span><span class="sc">%d</span><span class="st">/%Y'</span>)  <span class="co"># Setting the date format is essential!</span></span>
-<span id="cb18-2"><a href=""></a>df[<span class="st">'Date_unix'</span>] <span class="op">=</span> df[<span class="st">'Date'</span>].astype(<span class="bu">int</span>) <span class="op">//</span> <span class="dv">10</span><span class="op">**</span><span class="dv">9</span>  <span class="co"># Convert to seconds since epoch</span></span>
-<span id="cb18-3"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href="" aria-label="1"></a>df[<span class="st">'Date'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%m/</span><span class="sc">%d</span><span class="st">/%Y'</span>)  <span class="co"># Setting the date format is essential!</span></span>
+<span id="cb18-2"><a href="" aria-label="2"></a>df[<span class="st">'Date_unix'</span>] <span class="op">=</span> df[<span class="st">'Date'</span>].astype(<span class="bu">int</span>) <span class="op">//</span> <span class="dv">10</span><span class="op">**</span><span class="dv">9</span>  <span class="co"># Convert to seconds since epoch</span></span>
+<span id="cb18-3"><a href="" aria-label="3"></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="257">
 <div>
@@ -1147,8 +1150,8 @@ Name: count, dtype: int64</code></pre>
 <div id="2ec92bdf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.719774Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.719774Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.724260Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.724260Z&quot;}}" data-execution_count="258">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>products_df <span class="op">=</span> pd.DataFrame({<span class="st">'ProductID'</span>: [<span class="dv">100</span>, <span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">104</span>], <span class="st">'ProductName'</span>: [<span class="st">'Cola'</span>, <span class="st">'Bread'</span>, <span class="st">'Beer'</span>, <span class="st">'Diaper'</span>, <span class="st">'Pizza'</span>]})</span>
-<span id="cb19-2"><a href=""></a>products_df.head(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href="" aria-label="1"></a>products_df <span class="op">=</span> pd.DataFrame({<span class="st">'ProductID'</span>: [<span class="dv">100</span>, <span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">104</span>], <span class="st">'ProductName'</span>: [<span class="st">'Cola'</span>, <span class="st">'Bread'</span>, <span class="st">'Beer'</span>, <span class="st">'Diaper'</span>, <span class="st">'Pizza'</span>]})</span>
+<span id="cb19-2"><a href="" aria-label="2"></a>products_df.head(<span class="dv">2</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="258">
 <div>
@@ -1194,8 +1197,8 @@ Name: count, dtype: int64</code></pre>
 <div id="72658bae" class="cell" data-execution_count="259">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="bu">print</span>(<span class="ss">f"df: </span><span class="sc">{</span><span class="bu">list</span>(df.columns)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb20-2"><a href=""></a><span class="bu">print</span>(<span class="ss">f"products_df: </span><span class="sc">{</span><span class="bu">list</span>(products_df.columns)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href="" aria-label="1"></a><span class="bu">print</span>(<span class="ss">f"df: </span><span class="sc">{</span><span class="bu">list</span>(df.columns)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb20-2"><a href="" aria-label="2"></a><span class="bu">print</span>(<span class="ss">f"products_df: </span><span class="sc">{</span><span class="bu">list</span>(products_df.columns)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>df: ['ID', 'PriceBin', 'Date', 'Quantity', 'Review', 'isna', 'notna', 'Quantity_mean', 'Quantity_ffill', 'Quantity_bfill', 'PriceBin_encoded', 'Date_unix']
@@ -1205,9 +1208,9 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="acfbcf36" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.726270Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.725270Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.734816Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.734816Z&quot;}}" data-execution_count="260">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>products_df <span class="op">=</span> products_df.rename({<span class="st">"ProductID"</span>: <span class="st">"ID"</span>}, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb22-2"><a href=""></a>combined_df <span class="op">=</span> pd.merge(df, products_df, on<span class="op">=</span><span class="st">'ID'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
-<span id="cb22-3"><a href=""></a>combined_df.head(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href="" aria-label="1"></a>products_df <span class="op">=</span> products_df.rename({<span class="st">"ProductID"</span>: <span class="st">"ID"</span>}, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb22-2"><a href="" aria-label="2"></a>combined_df <span class="op">=</span> pd.merge(df, products_df, on<span class="op">=</span><span class="st">'ID'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb22-3"><a href="" aria-label="3"></a>combined_df.head(<span class="dv">2</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="260">
 <div>
@@ -1290,20 +1293,20 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <ol type="1">
 <li><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html">Create</a> a sales dataframe. Hint: use <code>pd.DataFrame()</code></li>
 </ol>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>{</span>
-<span id="cb23-2"><a href=""></a>    <span class="st">'ID'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
-<span id="cb23-3"><a href=""></a>    <span class="st">'ProductID'</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">101</span>, <span class="dv">104</span>],</span>
-<span id="cb23-4"><a href=""></a>    <span class="st">'PriceBin'</span>: [<span class="st">'Low'</span>, <span class="st">'Medium'</span>, <span class="st">'High'</span>, <span class="st">'Low'</span>, <span class="st">'Low'</span>],</span>
-<span id="cb23-5"><a href=""></a>    <span class="st">'Date'</span>: [<span class="st">'10/01/2024'</span>, <span class="st">'10/02/2024'</span>, <span class="st">'10/03/2024'</span>, <span class="st">'10/04/2024'</span>, <span class="st">'10/05/2024'</span>],</span>
-<span id="cb23-6"><a href=""></a>    <span class="st">'Quantity'</span>: [<span class="dv">5</span>, <span class="dv">10</span>, np.nan, <span class="dv">20</span>, <span class="dv">15</span>]</span>
-<span id="cb23-7"><a href=""></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href="" aria-label="1"></a>{</span>
+<span id="cb23-2"><a href="" aria-label="2"></a>    <span class="st">'ID'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
+<span id="cb23-3"><a href="" aria-label="3"></a>    <span class="st">'ProductID'</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">101</span>, <span class="dv">104</span>],</span>
+<span id="cb23-4"><a href="" aria-label="4"></a>    <span class="st">'PriceBin'</span>: [<span class="st">'Low'</span>, <span class="st">'Medium'</span>, <span class="st">'High'</span>, <span class="st">'Low'</span>, <span class="st">'Low'</span>],</span>
+<span id="cb23-5"><a href="" aria-label="5"></a>    <span class="st">'Date'</span>: [<span class="st">'10/01/2024'</span>, <span class="st">'10/02/2024'</span>, <span class="st">'10/03/2024'</span>, <span class="st">'10/04/2024'</span>, <span class="st">'10/05/2024'</span>],</span>
+<span id="cb23-6"><a href="" aria-label="6"></a>    <span class="st">'Quantity'</span>: [<span class="dv">5</span>, <span class="dv">10</span>, np.nan, <span class="dv">20</span>, <span class="dv">15</span>]</span>
+<span id="cb23-7"><a href="" aria-label="7"></a>}</span></code></pre></div>
 <ol start="2" type="1">
 <li><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html">Create</a> a products dataframe. Hint: use <code>pd.DataFrame()</code></li>
 </ol>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>{</span>
-<span id="cb24-2"><a href=""></a>    <span class="st">'productid'</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">104</span>],</span>
-<span id="cb24-3"><a href=""></a>    <span class="st">'ProductName'</span>: [<span class="st">'Product A'</span>, <span class="st">'Product B'</span>, <span class="st">'Product C'</span>, <span class="st">'Product D'</span>]</span>
-<span id="cb24-4"><a href=""></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href="" aria-label="1"></a>{</span>
+<span id="cb24-2"><a href="" aria-label="2"></a>    <span class="st">'productid'</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">104</span>],</span>
+<span id="cb24-3"><a href="" aria-label="3"></a>    <span class="st">'ProductName'</span>: [<span class="st">'Product A'</span>, <span class="st">'Product B'</span>, <span class="st">'Product C'</span>, <span class="st">'Product D'</span>]</span>
+<span id="cb24-4"><a href="" aria-label="4"></a>}</span></code></pre></div>
 <ol start="3" type="1">
 <li>Handle missing values in <code>sales_df</code>. Hint: use method <code>fillna()</code>, check the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.fillna.html">documentation</a></li>
 <li>Convert <code>Date</code> to Unix timestamp.</li>
@@ -1320,7 +1323,7 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="qZWX_HgfeQpM" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:40.736836Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:40.735820Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:40.738699Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:40.738699Z&quot;}}" data-execution_count="261">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a><span class="co"># Write your code here</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href="" aria-label="1"></a><span class="co"># Write your code here</span></span></code></pre></div>
 </details>
 </div>
 </section>
@@ -1337,25 +1340,25 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="b6f9dbbc" class="cell" data-execution_count="263">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="im">import</span> requests</span>
-<span id="cb26-2"><a href=""></a></span>
-<span id="cb26-3"><a href=""></a><span class="kw">def</span> get_sp500_tickers():  <span class="co"># Fetch S&amp;P 500 tickers from Wikipedia.</span></span>
-<span id="cb26-4"><a href=""></a>    url <span class="op">=</span> <span class="st">"https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"</span></span>
-<span id="cb26-5"><a href=""></a>    html <span class="op">=</span> requests.get(url).text</span>
-<span id="cb26-6"><a href=""></a>    tables <span class="op">=</span> pd.read_html(html)</span>
-<span id="cb26-7"><a href=""></a>    sp500_table <span class="op">=</span> tables[<span class="dv">0</span>]</span>
-<span id="cb26-8"><a href=""></a>    tickers <span class="op">=</span> sp500_table[<span class="st">'Symbol'</span>].tolist()</span>
-<span id="cb26-9"><a href=""></a>    <span class="cf">return</span> tickers</span>
-<span id="cb26-10"><a href=""></a></span>
-<span id="cb26-11"><a href=""></a>tickers <span class="op">=</span> get_sp500_tickers() <span class="op">+</span> [<span class="st">"^GSPC"</span>]</span>
-<span id="cb26-12"><a href=""></a><span class="cf">for</span> ticker <span class="kw">in</span> tickers:</span>
-<span id="cb26-13"><a href=""></a>    get_sp500_historical_data(start_date, end_date, ticker)  <span class="co"># Fetch data</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href="" aria-label="1"></a><span class="im">import</span> requests</span>
+<span id="cb26-2"><a href="" aria-label="2"></a></span>
+<span id="cb26-3"><a href="" aria-label="3"></a><span class="kw">def</span> get_sp500_tickers():  <span class="co"># Fetch S&amp;P 500 tickers from Wikipedia.</span></span>
+<span id="cb26-4"><a href="" aria-label="4"></a>    url <span class="op">=</span> <span class="st">"https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"</span></span>
+<span id="cb26-5"><a href="" aria-label="5"></a>    html <span class="op">=</span> requests.get(url).text</span>
+<span id="cb26-6"><a href="" aria-label="6"></a>    tables <span class="op">=</span> pd.read_html(html)</span>
+<span id="cb26-7"><a href="" aria-label="7"></a>    sp500_table <span class="op">=</span> tables[<span class="dv">0</span>]</span>
+<span id="cb26-8"><a href="" aria-label="8"></a>    tickers <span class="op">=</span> sp500_table[<span class="st">'Symbol'</span>].tolist()</span>
+<span id="cb26-9"><a href="" aria-label="9"></a>    <span class="cf">return</span> tickers</span>
+<span id="cb26-10"><a href="" aria-label="10"></a></span>
+<span id="cb26-11"><a href="" aria-label="11"></a>tickers <span class="op">=</span> get_sp500_tickers() <span class="op">+</span> [<span class="st">"^GSPC"</span>]</span>
+<span id="cb26-12"><a href="" aria-label="12"></a><span class="cf">for</span> ticker <span class="kw">in</span> tickers:</span>
+<span id="cb26-13"><a href="" aria-label="13"></a>    get_sp500_historical_data(start_date, end_date, ticker)  <span class="co"># Fetch data</span></span></code></pre></div>
 </details>
 </div>
 <div id="6c8a2eff" class="cell" data-execution_count="265">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>merged_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href="" aria-label="1"></a>merged_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="265">
 <div>
@@ -1540,20 +1543,20 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="ad5df4ee" class="cell" data-execution_count="266">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a></span>
-<span id="cb28-2"><a href=""></a>shares_outstanding <span class="op">=</span> {}</span>
-<span id="cb28-3"><a href=""></a></span>
-<span id="cb28-4"><a href=""></a><span class="cf">for</span> ticker <span class="kw">in</span> tickers:</span>
-<span id="cb28-5"><a href=""></a>    c <span class="op">=</span> yf.Ticker(ticker)</span>
-<span id="cb28-6"><a href=""></a>    shares_outstanding[ticker] <span class="op">=</span> { <span class="st">"Ticker"</span>: ticker, <span class="st">"Shares"</span>: c.info.get(<span class="st">'sharesOutstanding'</span>), <span class="st">"Name"</span>: c.info.get(<span class="st">'shortName'</span>) }</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href="" aria-label="1"></a></span>
+<span id="cb28-2"><a href="" aria-label="2"></a>shares_outstanding <span class="op">=</span> {}</span>
+<span id="cb28-3"><a href="" aria-label="3"></a></span>
+<span id="cb28-4"><a href="" aria-label="4"></a><span class="cf">for</span> ticker <span class="kw">in</span> tickers:</span>
+<span id="cb28-5"><a href="" aria-label="5"></a>    c <span class="op">=</span> yf.Ticker(ticker)</span>
+<span id="cb28-6"><a href="" aria-label="6"></a>    shares_outstanding[ticker] <span class="op">=</span> { <span class="st">"Ticker"</span>: ticker, <span class="st">"Shares"</span>: c.info.get(<span class="st">'sharesOutstanding'</span>), <span class="st">"Name"</span>: c.info.get(<span class="st">'shortName'</span>) }</span></code></pre></div>
 </details>
 </div>
 <div id="b9458659" class="cell" data-execution_count="267">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>shares_outstanding_df <span class="op">=</span> pd.DataFrame(shares_outstanding.values(), columns<span class="op">=</span>[<span class="st">'Ticker'</span>, <span class="st">'Shares'</span>, <span class="st">'Name'</span>])</span>
-<span id="cb29-2"><a href=""></a>shares_outstanding_df[<span class="st">"Date"</span>] <span class="op">=</span> yesterday</span>
-<span id="cb29-3"><a href=""></a>shares_outstanding_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href="" aria-label="1"></a>shares_outstanding_df <span class="op">=</span> pd.DataFrame(shares_outstanding.values(), columns<span class="op">=</span>[<span class="st">'Ticker'</span>, <span class="st">'Shares'</span>, <span class="st">'Name'</span>])</span>
+<span id="cb29-2"><a href="" aria-label="2"></a>shares_outstanding_df[<span class="st">"Date"</span>] <span class="op">=</span> yesterday</span>
+<span id="cb29-3"><a href="" aria-label="3"></a>shares_outstanding_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="267">
 <div>
@@ -1672,10 +1675,10 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="1e39a0f9" class="cell" data-execution_count="268">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a>merge <span class="op">=</span> pd.merge(merged_df[merged_df[<span class="st">"Date"</span>] <span class="op">==</span> yesterday], shares_outstanding_df, on<span class="op">=</span>[<span class="st">'Ticker'</span>, <span class="st">'Date'</span>], how<span class="op">=</span><span class="st">'left'</span>)</span>
-<span id="cb30-2"><a href=""></a>merge[<span class="st">"Market Cap"</span>] <span class="op">=</span> merge[<span class="st">"Shares"</span>] <span class="op">*</span> merge[<span class="st">"Close"</span>]</span>
-<span id="cb30-3"><a href=""></a>merge[<span class="st">"Market Cap (%)"</span>] <span class="op">=</span> merge[<span class="st">"Market Cap"</span>] <span class="op">/</span> merge[<span class="st">"Market Cap"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb30-4"><a href=""></a>merge</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href="" aria-label="1"></a>merge <span class="op">=</span> pd.merge(merged_df[merged_df[<span class="st">"Date"</span>] <span class="op">==</span> yesterday], shares_outstanding_df, on<span class="op">=</span>[<span class="st">'Ticker'</span>, <span class="st">'Date'</span>], how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb30-2"><a href="" aria-label="2"></a>merge[<span class="st">"Market Cap"</span>] <span class="op">=</span> merge[<span class="st">"Shares"</span>] <span class="op">*</span> merge[<span class="st">"Close"</span>]</span>
+<span id="cb30-3"><a href="" aria-label="3"></a>merge[<span class="st">"Market Cap (%)"</span>] <span class="op">=</span> merge[<span class="st">"Market Cap"</span>] <span class="op">/</span> merge[<span class="st">"Market Cap"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb30-4"><a href="" aria-label="4"></a>merge</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="268">
 <div>
@@ -1890,17 +1893,17 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="ffe71096" class="cell" data-execution_count="269">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
-<span id="cb31-2"><a href=""></a>n <span class="op">=</span> <span class="dv">25</span></span>
-<span id="cb31-3"><a href=""></a><span class="bu">sorted</span> <span class="op">=</span> merge.sort_values(by<span class="op">=</span><span class="st">"Market Cap (%)"</span>, ascending<span class="op">=</span><span class="va">False</span>).head(n<span class="op">=</span>n)</span>
-<span id="cb31-4"><a href=""></a><span class="bu">sorted</span>.plot.bar(x<span class="op">=</span><span class="st">"Ticker"</span>, y<span class="op">=</span><span class="st">"Market Cap (%)"</span>, ax<span class="op">=</span>ax)</span>
-<span id="cb31-5"><a href=""></a>ax.grid()</span>
-<span id="cb31-6"><a href=""></a>ax.legend().remove()</span>
-<span id="cb31-7"><a href=""></a>ax.set_ylabel(<span class="st">"Market Cap (%)"</span>)</span>
-<span id="cb31-8"><a href=""></a>ax.set_title(<span class="ss">f"Top </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> tickers"</span>)</span>
-<span id="cb31-9"><a href=""></a>fig.tight_layout()</span>
-<span id="cb31-10"><a href=""></a>fig.savefig(<span class="st">"./img/datapreprocessing/market_cap_topn.svg"</span>)</span>
-<span id="cb31-11"><a href=""></a>fig.savefig(<span class="st">"./img/datapreprocessing/market_cap_topn.pdf"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href="" aria-label="1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
+<span id="cb31-2"><a href="" aria-label="2"></a>n <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb31-3"><a href="" aria-label="3"></a><span class="bu">sorted</span> <span class="op">=</span> merge.sort_values(by<span class="op">=</span><span class="st">"Market Cap (%)"</span>, ascending<span class="op">=</span><span class="va">False</span>).head(n<span class="op">=</span>n)</span>
+<span id="cb31-4"><a href="" aria-label="4"></a><span class="bu">sorted</span>.plot.bar(x<span class="op">=</span><span class="st">"Ticker"</span>, y<span class="op">=</span><span class="st">"Market Cap (%)"</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb31-5"><a href="" aria-label="5"></a>ax.grid()</span>
+<span id="cb31-6"><a href="" aria-label="6"></a>ax.legend().remove()</span>
+<span id="cb31-7"><a href="" aria-label="7"></a>ax.set_ylabel(<span class="st">"Market Cap (%)"</span>)</span>
+<span id="cb31-8"><a href="" aria-label="8"></a>ax.set_title(<span class="ss">f"Top </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> tickers"</span>)</span>
+<span id="cb31-9"><a href="" aria-label="9"></a>fig.tight_layout()</span>
+<span id="cb31-10"><a href="" aria-label="10"></a>fig.savefig(<span class="st">"./img/datapreprocessing/market_cap_topn.svg"</span>)</span>
+<span id="cb31-11"><a href="" aria-label="11"></a>fig.savefig(<span class="st">"./img/datapreprocessing/market_cap_topn.pdf"</span>)</span></code></pre></div>
 </details>
 
 </div>
@@ -1910,36 +1913,36 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="a3b9d69f" class="cell" data-execution_count="270">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb32-2"><a href=""></a>n <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb32-3"><a href=""></a>bins <span class="op">=</span> np.linspace(<span class="dv">0</span>, merge[<span class="st">"Market Cap (%)"</span>].<span class="bu">max</span>(), n)  <span class="co"># 5 bins from 0 to 3</span></span>
-<span id="cb32-4"><a href=""></a>merge[<span class="st">"Bin"</span>] <span class="op">=</span> pd.cut(merge[<span class="st">"Market Cap (%)"</span>], bins)</span>
-<span id="cb32-5"><a href=""></a>bin_counts <span class="op">=</span> merge.groupby(<span class="st">"Bin"</span>)[<span class="st">"Market Cap (%)"</span>].count()</span>
-<span id="cb32-6"><a href=""></a>bin_left_edges <span class="op">=</span> bins[:<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb32-7"><a href=""></a>bin_tickers <span class="op">=</span> merge.groupby(<span class="st">"Bin"</span>)[<span class="st">"Ticker"</span>].<span class="bu">apply</span>(<span class="bu">list</span>)</span>
-<span id="cb32-8"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
-<span id="cb32-9"><a href=""></a>bars <span class="op">=</span> ax.bar(bin_left_edges, bin_counts <span class="op">/</span> merge[<span class="st">"Ticker"</span>].nunique() <span class="op">*</span> <span class="dv">100</span>) <span class="co"># , tick_label=bin_counts.index.astype(str)</span></span>
-<span id="cb32-10"><a href=""></a><span class="cf">for</span> i, bar <span class="kw">in</span> <span class="bu">enumerate</span>(bars):</span>
-<span id="cb32-11"><a href=""></a>    tickers_in_bin <span class="op">=</span> bin_counts.iloc[i]</span>
-<span id="cb32-12"><a href=""></a>    tickers <span class="op">=</span> bin_tickers.iloc[i]</span>
-<span id="cb32-13"><a href=""></a>    <span class="cf">if</span> tickers_in_bin <span class="op">&lt;</span> <span class="dv">2</span>:</span>
-<span id="cb32-14"><a href=""></a>        ax.text(bar.get_x() <span class="op">+</span> bar.get_width() <span class="op">/</span> <span class="dv">2</span>, bar.get_height() <span class="op">+</span> <span class="fl">0.2</span>, <span class="st">", "</span>.join(tickers), va<span class="op">=</span><span class="st">'bottom'</span>, fontsize<span class="op">=</span><span class="dv">8</span>, rotation<span class="op">=</span><span class="dv">90</span>)</span>
-<span id="cb32-15"><a href=""></a>ax.set_xticks(bins[::<span class="dv">9</span>])</span>
-<span id="cb32-16"><a href=""></a>ax.set_xticklabels([<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:.3f}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> bins][::<span class="dv">9</span>], rotation<span class="op">=</span><span class="dv">90</span>)</span>
-<span id="cb32-17"><a href=""></a>ax.set_ylabel(<span class="st">"</span><span class="sc">% o</span><span class="st">f Tickers"</span>)</span>
-<span id="cb32-18"><a href=""></a>ax.set_xlabel(<span class="st">"Market Cap (%)"</span>)</span>
-<span id="cb32-19"><a href=""></a>ax.set_title(<span class="st">"Market cap distribution"</span>)</span>
-<span id="cb32-20"><a href=""></a>ax.grid(linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)  <span class="co"># axis='y',</span></span>
-<span id="cb32-21"><a href=""></a>fig.tight_layout()</span>
-<span id="cb32-22"><a href=""></a>fig.savefig(<span class="st">"./img/datapreprocessing/market_cap_distribution.svg"</span>)</span>
-<span id="cb32-23"><a href=""></a>fig.savefig(<span class="st">"./img/datapreprocessing/market_cap_distribution.pdf"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href="" aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb32-2"><a href="" aria-label="2"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb32-3"><a href="" aria-label="3"></a>bins <span class="op">=</span> np.linspace(<span class="dv">0</span>, merge[<span class="st">"Market Cap (%)"</span>].<span class="bu">max</span>(), n)  <span class="co"># 5 bins from 0 to 3</span></span>
+<span id="cb32-4"><a href="" aria-label="4"></a>merge[<span class="st">"Bin"</span>] <span class="op">=</span> pd.cut(merge[<span class="st">"Market Cap (%)"</span>], bins)</span>
+<span id="cb32-5"><a href="" aria-label="5"></a>bin_counts <span class="op">=</span> merge.groupby(<span class="st">"Bin"</span>)[<span class="st">"Market Cap (%)"</span>].count()</span>
+<span id="cb32-6"><a href="" aria-label="6"></a>bin_left_edges <span class="op">=</span> bins[:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb32-7"><a href="" aria-label="7"></a>bin_tickers <span class="op">=</span> merge.groupby(<span class="st">"Bin"</span>)[<span class="st">"Ticker"</span>].<span class="bu">apply</span>(<span class="bu">list</span>)</span>
+<span id="cb32-8"><a href="" aria-label="8"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
+<span id="cb32-9"><a href="" aria-label="9"></a>bars <span class="op">=</span> ax.bar(bin_left_edges, bin_counts <span class="op">/</span> merge[<span class="st">"Ticker"</span>].nunique() <span class="op">*</span> <span class="dv">100</span>) <span class="co"># , tick_label=bin_counts.index.astype(str)</span></span>
+<span id="cb32-10"><a href="" aria-label="10"></a><span class="cf">for</span> i, bar <span class="kw">in</span> <span class="bu">enumerate</span>(bars):</span>
+<span id="cb32-11"><a href="" aria-label="11"></a>    tickers_in_bin <span class="op">=</span> bin_counts.iloc[i]</span>
+<span id="cb32-12"><a href="" aria-label="12"></a>    tickers <span class="op">=</span> bin_tickers.iloc[i]</span>
+<span id="cb32-13"><a href="" aria-label="13"></a>    <span class="cf">if</span> tickers_in_bin <span class="op">&lt;</span> <span class="dv">2</span>:</span>
+<span id="cb32-14"><a href="" aria-label="14"></a>        ax.text(bar.get_x() <span class="op">+</span> bar.get_width() <span class="op">/</span> <span class="dv">2</span>, bar.get_height() <span class="op">+</span> <span class="fl">0.2</span>, <span class="st">", "</span>.join(tickers), va<span class="op">=</span><span class="st">'bottom'</span>, fontsize<span class="op">=</span><span class="dv">8</span>, rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb32-15"><a href="" aria-label="15"></a>ax.set_xticks(bins[::<span class="dv">9</span>])</span>
+<span id="cb32-16"><a href="" aria-label="16"></a>ax.set_xticklabels([<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:.3f}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> bins][::<span class="dv">9</span>], rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb32-17"><a href="" aria-label="17"></a>ax.set_ylabel(<span class="st">"</span><span class="sc">% o</span><span class="st">f Tickers"</span>)</span>
+<span id="cb32-18"><a href="" aria-label="18"></a>ax.set_xlabel(<span class="st">"Market Cap (%)"</span>)</span>
+<span id="cb32-19"><a href="" aria-label="19"></a>ax.set_title(<span class="st">"Market cap distribution"</span>)</span>
+<span id="cb32-20"><a href="" aria-label="20"></a>ax.grid(linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)  <span class="co"># axis='y',</span></span>
+<span id="cb32-21"><a href="" aria-label="21"></a>fig.tight_layout()</span>
+<span id="cb32-22"><a href="" aria-label="22"></a>fig.savefig(<span class="st">"./img/datapreprocessing/market_cap_distribution.svg"</span>)</span>
+<span id="cb32-23"><a href="" aria-label="23"></a>fig.savefig(<span class="st">"./img/datapreprocessing/market_cap_distribution.pdf"</span>)</span></code></pre></div>
 </details>
 
 </div>
 <img data-src="lab-03-datapreparation_files/figure-revealjs/cell-28-output-1.png" class="r-stretch"><div id="d01deead" class="cell" data-execution_count="271">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Mean: </span><span class="sc">{</span>merge[<span class="st">"Market Cap"</span>]<span class="sc">.</span>mean()<span class="sc">.</span><span class="bu">round</span>()<span class="sc">}</span><span class="ss">, Median: </span><span class="sc">{</span>merge[<span class="st">"Market Cap"</span>]<span class="sc">.</span>median()<span class="sc">.</span><span class="bu">round</span>()<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href="" aria-label="1"></a><span class="bu">print</span>(<span class="ss">f"Mean: </span><span class="sc">{</span>merge[<span class="st">"Market Cap"</span>]<span class="sc">.</span>mean()<span class="sc">.</span><span class="bu">round</span>()<span class="sc">}</span><span class="ss">, Median: </span><span class="sc">{</span>merge[<span class="st">"Market Cap"</span>]<span class="sc">.</span>median()<span class="sc">.</span><span class="bu">round</span>()<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mean: 103158262914.0, Median: 36666524821.0</code></pre>
@@ -1956,18 +1959,18 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="747386e2" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb35-1"><a href=""></a><span class="im">import</span> requests</span>
-<span id="cb35-2"><a href=""></a></span>
-<span id="cb35-3"><a href=""></a><span class="kw">def</span> get_dow_jones_tickers():</span>
-<span id="cb35-4"><a href=""></a>    url <span class="op">=</span> <span class="st">"https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average"</span></span>
-<span id="cb35-5"><a href=""></a>    html <span class="op">=</span> requests.get(url).text</span>
-<span id="cb35-6"><a href=""></a>    tables <span class="op">=</span> pd.read_html(html)</span>
-<span id="cb35-7"><a href=""></a>    dow_jones_table <span class="op">=</span> tables[<span class="dv">2</span>]  <span class="co"># The second table contains the tickers</span></span>
-<span id="cb35-8"><a href=""></a>    dow_jones_table.to_csv(<span class="st">"./datasets/stocks/DJIA/tickers.csv"</span>, header<span class="op">=</span><span class="va">True</span>, index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb35-9"><a href=""></a>    <span class="cf">return</span> dow_jones_table</span>
-<span id="cb35-10"><a href=""></a></span>
-<span id="cb35-11"><a href=""></a>dow_jones_tickers <span class="op">=</span> get_dow_jones_tickers()</span>
-<span id="cb35-12"><a href=""></a>dow_jones_tickers.head()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb35-1"><a href="" aria-label="1"></a><span class="im">import</span> requests</span>
+<span id="cb35-2"><a href="" aria-label="2"></a></span>
+<span id="cb35-3"><a href="" aria-label="3"></a><span class="kw">def</span> get_dow_jones_tickers():</span>
+<span id="cb35-4"><a href="" aria-label="4"></a>    url <span class="op">=</span> <span class="st">"https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average"</span></span>
+<span id="cb35-5"><a href="" aria-label="5"></a>    html <span class="op">=</span> requests.get(url).text</span>
+<span id="cb35-6"><a href="" aria-label="6"></a>    tables <span class="op">=</span> pd.read_html(html)</span>
+<span id="cb35-7"><a href="" aria-label="7"></a>    dow_jones_table <span class="op">=</span> tables[<span class="dv">2</span>]  <span class="co"># The second table contains the tickers</span></span>
+<span id="cb35-8"><a href="" aria-label="8"></a>    dow_jones_table.to_csv(<span class="st">"./datasets/stocks/DJIA/tickers.csv"</span>, header<span class="op">=</span><span class="va">True</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb35-9"><a href="" aria-label="9"></a>    <span class="cf">return</span> dow_jones_table</span>
+<span id="cb35-10"><a href="" aria-label="10"></a></span>
+<span id="cb35-11"><a href="" aria-label="11"></a>dow_jones_tickers <span class="op">=</span> get_dow_jones_tickers()</span>
+<span id="cb35-12"><a href="" aria-label="12"></a>dow_jones_tickers.head()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="272">
 <div>
@@ -2311,8 +2314,8 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="b6fc0b23" class="cell" data-execution_count="273">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a>djia <span class="op">=</span> pd.merge(dow_jones_tickers, merge, left_on<span class="op">=</span><span class="st">'Symbol'</span>, right_on<span class="op">=</span><span class="st">'Ticker'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
-<span id="cb36-2"><a href=""></a>djia.head()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href="" aria-label="1"></a>djia <span class="op">=</span> pd.merge(dow_jones_tickers, merge, left_on<span class="op">=</span><span class="st">'Symbol'</span>, right_on<span class="op">=</span><span class="st">'Ticker'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb36-2"><a href="" aria-label="2"></a>djia.head()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="273">
 <div>
@@ -2481,8 +2484,8 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="8ef7fc54" class="cell" data-execution_count="274">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb37-1"><a href=""></a>djia[<span class="st">"PWI (%)"</span>] <span class="op">=</span> djia[<span class="st">"Close"</span>] <span class="op">/</span> djia[<span class="st">"Close"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb37-2"><a href=""></a>djia.head()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb37-1"><a href="" aria-label="1"></a>djia[<span class="st">"PWI (%)"</span>] <span class="op">=</span> djia[<span class="st">"Close"</span>] <span class="op">/</span> djia[<span class="st">"Close"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb37-2"><a href="" aria-label="2"></a>djia.head()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="274">
 <div>
@@ -2661,22 +2664,22 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="434a6de5" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href=""></a>comparison_df <span class="op">=</span> djia[[<span class="st">'Name'</span>, <span class="st">'Ticker'</span>, <span class="st">'PWI (%)'</span>, <span class="st">'Market Cap (%)'</span>]].copy()</span>
-<span id="cb38-2"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb38-3"><a href=""></a>bar_width <span class="op">=</span> <span class="fl">0.35</span></span>
-<span id="cb38-4"><a href=""></a>r1 <span class="op">=</span> <span class="bu">range</span>(<span class="bu">len</span>(comparison_df))</span>
-<span id="cb38-5"><a href=""></a>r2 <span class="op">=</span> [x <span class="op">+</span> bar_width <span class="cf">for</span> x <span class="kw">in</span> r1]</span>
-<span id="cb38-6"><a href=""></a>ax.bar(r1, comparison_df[<span class="st">'PWI (%)'</span>], width<span class="op">=</span>bar_width, edgecolor<span class="op">=</span><span class="st">'grey'</span>, label<span class="op">=</span><span class="st">'PWI (%)'</span>)</span>
-<span id="cb38-7"><a href=""></a>ax.bar(r2, comparison_df[<span class="st">'Market Cap (%)'</span>], width<span class="op">=</span>bar_width, edgecolor<span class="op">=</span><span class="st">'grey'</span>, label<span class="op">=</span><span class="st">'Market Cap (%)'</span>)</span>
-<span id="cb38-8"><a href=""></a>ax.set_ylabel(<span class="st">'Percentage'</span>)</span>
-<span id="cb38-9"><a href=""></a>ax.set_title(<span class="st">'Comparison of Price and Market-Cap Weight'</span>)</span>
-<span id="cb38-10"><a href=""></a>ax.set_xticks([r <span class="op">+</span> bar_width<span class="op">/</span><span class="dv">2</span> <span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(comparison_df))])</span>
-<span id="cb38-11"><a href=""></a>ax.set_xticklabels(comparison_df[<span class="st">'Name'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.replace(<span class="st">" (The)"</span>, <span class="st">""</span>) <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> <span class="ss">f"</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>.replace(<span class="st">"nan"</span>, <span class="st">""</span>)) <span class="op">+</span> <span class="st">" ("</span> <span class="op">+</span> comparison_df[<span class="st">'Ticker'</span>] <span class="op">+</span> <span class="st">")"</span>, rotation<span class="op">=</span><span class="dv">90</span>)</span>
-<span id="cb38-12"><a href=""></a>ax.legend()</span>
-<span id="cb38-13"><a href=""></a>ax.grid(linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb38-14"><a href=""></a>fig.tight_layout()</span>
-<span id="cb38-15"><a href=""></a>fig.savefig(<span class="st">"./img/datapreprocessing/price_weight_distribution.svg"</span>)</span>
-<span id="cb38-16"><a href=""></a>fig.savefig(<span class="st">"./img/datapreprocessing/price_weight_distribution.pdf"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href="" aria-label="1"></a>comparison_df <span class="op">=</span> djia[[<span class="st">'Name'</span>, <span class="st">'Ticker'</span>, <span class="st">'PWI (%)'</span>, <span class="st">'Market Cap (%)'</span>]].copy()</span>
+<span id="cb38-2"><a href="" aria-label="2"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb38-3"><a href="" aria-label="3"></a>bar_width <span class="op">=</span> <span class="fl">0.35</span></span>
+<span id="cb38-4"><a href="" aria-label="4"></a>r1 <span class="op">=</span> <span class="bu">range</span>(<span class="bu">len</span>(comparison_df))</span>
+<span id="cb38-5"><a href="" aria-label="5"></a>r2 <span class="op">=</span> [x <span class="op">+</span> bar_width <span class="cf">for</span> x <span class="kw">in</span> r1]</span>
+<span id="cb38-6"><a href="" aria-label="6"></a>ax.bar(r1, comparison_df[<span class="st">'PWI (%)'</span>], width<span class="op">=</span>bar_width, edgecolor<span class="op">=</span><span class="st">'grey'</span>, label<span class="op">=</span><span class="st">'PWI (%)'</span>)</span>
+<span id="cb38-7"><a href="" aria-label="7"></a>ax.bar(r2, comparison_df[<span class="st">'Market Cap (%)'</span>], width<span class="op">=</span>bar_width, edgecolor<span class="op">=</span><span class="st">'grey'</span>, label<span class="op">=</span><span class="st">'Market Cap (%)'</span>)</span>
+<span id="cb38-8"><a href="" aria-label="8"></a>ax.set_ylabel(<span class="st">'Percentage'</span>)</span>
+<span id="cb38-9"><a href="" aria-label="9"></a>ax.set_title(<span class="st">'Comparison of Price and Market-Cap Weight'</span>)</span>
+<span id="cb38-10"><a href="" aria-label="10"></a>ax.set_xticks([r <span class="op">+</span> bar_width<span class="op">/</span><span class="dv">2</span> <span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(comparison_df))])</span>
+<span id="cb38-11"><a href="" aria-label="11"></a>ax.set_xticklabels(comparison_df[<span class="st">'Name'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.replace(<span class="st">" (The)"</span>, <span class="st">""</span>) <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> <span class="ss">f"</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>.replace(<span class="st">"nan"</span>, <span class="st">""</span>)) <span class="op">+</span> <span class="st">" ("</span> <span class="op">+</span> comparison_df[<span class="st">'Ticker'</span>] <span class="op">+</span> <span class="st">")"</span>, rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb38-12"><a href="" aria-label="12"></a>ax.legend()</span>
+<span id="cb38-13"><a href="" aria-label="13"></a>ax.grid(linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb38-14"><a href="" aria-label="14"></a>fig.tight_layout()</span>
+<span id="cb38-15"><a href="" aria-label="15"></a>fig.savefig(<span class="st">"./img/datapreprocessing/price_weight_distribution.svg"</span>)</span>
+<span id="cb38-16"><a href="" aria-label="16"></a>fig.savefig(<span class="st">"./img/datapreprocessing/price_weight_distribution.pdf"</span>)</span></code></pre></div>
 </details>
 
 </div>
@@ -2687,12 +2690,12 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="46011f3e" class="cell" data-execution_count="276">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href=""></a>height_df <span class="op">=</span> pd.read_csv(<span class="st">'./datasets/height/height.csv'</span>)</span>
-<span id="cb39-2"><a href=""></a>height_df <span class="op">=</span> height_df.dropna()</span>
-<span id="cb39-3"><a href=""></a>height_df <span class="op">=</span> height_df[height_df[<span class="st">"age"</span>] <span class="op">==</span> <span class="st">"20-29"</span>]</span>
-<span id="cb39-4"><a href=""></a>height_df[<span class="st">"percentage"</span>] <span class="op">=</span> height_df[<span class="st">"percentage_under"</span>].diff().fillna(<span class="dv">0</span>)</span>
-<span id="cb39-5"><a href=""></a>height_df[<span class="st">"height (cm)"</span>] <span class="op">=</span> (height_df[<span class="st">'height'</span>].<span class="bu">str</span>.extract(<span class="vs">r'</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="kw">)</span><span class="ch">\'</span><span class="dv">\s</span><span class="op">*</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="kw">)</span><span class="vs">'</span>).astype(<span class="bu">float</span>).mul([<span class="dv">12</span><span class="op">*</span><span class="fl">2.54</span>, <span class="fl">2.54</span>]).<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>).<span class="bu">round</span>())</span>
-<span id="cb39-6"><a href=""></a>height_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href="" aria-label="1"></a>height_df <span class="op">=</span> pd.read_csv(<span class="st">'./datasets/height/height.csv'</span>)</span>
+<span id="cb39-2"><a href="" aria-label="2"></a>height_df <span class="op">=</span> height_df.dropna()</span>
+<span id="cb39-3"><a href="" aria-label="3"></a>height_df <span class="op">=</span> height_df[height_df[<span class="st">"age"</span>] <span class="op">==</span> <span class="st">"20-29"</span>]</span>
+<span id="cb39-4"><a href="" aria-label="4"></a>height_df[<span class="st">"percentage"</span>] <span class="op">=</span> height_df[<span class="st">"percentage_under"</span>].diff().fillna(<span class="dv">0</span>)</span>
+<span id="cb39-5"><a href="" aria-label="5"></a>height_df[<span class="st">"height (cm)"</span>] <span class="op">=</span> (height_df[<span class="st">'height'</span>].<span class="bu">str</span>.extract(<span class="vs">r'</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="kw">)</span><span class="ch">\'</span><span class="dv">\s</span><span class="op">*</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="kw">)</span><span class="vs">'</span>).astype(<span class="bu">float</span>).mul([<span class="dv">12</span><span class="op">*</span><span class="fl">2.54</span>, <span class="fl">2.54</span>]).<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>).<span class="bu">round</span>())</span>
+<span id="cb39-6"><a href="" aria-label="6"></a>height_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="276">
 <div>
@@ -2924,23 +2927,23 @@ products_df: ['ProductID', 'ProductName']</code></pre>
 <div id="583218ca" class="cell" data-execution_count="277">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
-<span id="cb40-2"><a href=""></a>height_df.plot.bar(x<span class="op">=</span><span class="st">"height (cm)"</span>, y<span class="op">=</span><span class="st">"percentage"</span>, ax<span class="op">=</span>ax)</span>
-<span id="cb40-3"><a href=""></a>ax.grid(linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb40-4"><a href=""></a>ax.legend().remove()</span>
-<span id="cb40-5"><a href=""></a>ax.set_ylabel(<span class="st">"</span><span class="sc">% o</span><span class="st">f Population"</span>)</span>
-<span id="cb40-6"><a href=""></a>ax.set_xlabel(<span class="st">"Height (cm)"</span>)</span>
-<span id="cb40-7"><a href=""></a>ax.set_title(<span class="st">"Height distribution (20-29 years)"</span>)</span>
-<span id="cb40-8"><a href=""></a>fig.tight_layout()</span>
-<span id="cb40-9"><a href=""></a>fig.savefig(<span class="st">"./img/datapreprocessing/height_distribution.svg"</span>)</span>
-<span id="cb40-10"><a href=""></a>fig.savefig(<span class="st">"./img/datapreprocessing/market_cap_distribution.pdf"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href="" aria-label="1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">3</span>))</span>
+<span id="cb40-2"><a href="" aria-label="2"></a>height_df.plot.bar(x<span class="op">=</span><span class="st">"height (cm)"</span>, y<span class="op">=</span><span class="st">"percentage"</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb40-3"><a href="" aria-label="3"></a>ax.grid(linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb40-4"><a href="" aria-label="4"></a>ax.legend().remove()</span>
+<span id="cb40-5"><a href="" aria-label="5"></a>ax.set_ylabel(<span class="st">"</span><span class="sc">% o</span><span class="st">f Population"</span>)</span>
+<span id="cb40-6"><a href="" aria-label="6"></a>ax.set_xlabel(<span class="st">"Height (cm)"</span>)</span>
+<span id="cb40-7"><a href="" aria-label="7"></a>ax.set_title(<span class="st">"Height distribution (20-29 years)"</span>)</span>
+<span id="cb40-8"><a href="" aria-label="8"></a>fig.tight_layout()</span>
+<span id="cb40-9"><a href="" aria-label="9"></a>fig.savefig(<span class="st">"./img/datapreprocessing/height_distribution.svg"</span>)</span>
+<span id="cb40-10"><a href="" aria-label="10"></a>fig.savefig(<span class="st">"./img/datapreprocessing/market_cap_distribution.pdf"</span>)</span></code></pre></div>
 </details>
 
 </div>
 <img data-src="lab-03-datapreparation_files/figure-revealjs/cell-36-output-1.png" class="r-stretch"><div id="59c93a55" class="cell" data-execution_count="278">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb41-1"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Mean: </span><span class="sc">{</span>height_df[<span class="st">"height (cm)"</span>]<span class="sc">.</span>mean()<span class="sc">.</span><span class="bu">round</span>()<span class="sc">}</span><span class="ss">, Median: </span><span class="sc">{</span>height_df[<span class="st">"height (cm)"</span>]<span class="sc">.</span>median()<span class="sc">.</span><span class="bu">round</span>()<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb41-1"><a href="" aria-label="1"></a><span class="bu">print</span>(<span class="ss">f"Mean: </span><span class="sc">{</span>height_df[<span class="st">"height (cm)"</span>]<span class="sc">.</span>mean()<span class="sc">.</span><span class="bu">round</span>()<span class="sc">}</span><span class="ss">, Median: </span><span class="sc">{</span>height_df[<span class="st">"height (cm)"</span>]<span class="sc">.</span>median()<span class="sc">.</span><span class="bu">round</span>()<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mean: 173.0, Median: 173.0</code></pre>

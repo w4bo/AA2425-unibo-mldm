@@ -5,8 +5,8 @@
 <script src="lab-00-introduction_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-00-introduction_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lab-00-introduction_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lab-00-introduction_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.29">
+<link href="lab-00-introduction_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -200,7 +203,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it 
+Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
@@ -268,10 +271,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="26a8d793-2849-444a-ab33-ca9095355a5c" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>file_path <span class="op">=</span> <span class="st">'/content/sample_data/california_housing_train.csv'</span></span>
-<span id="cb1-2"><a href=""></a><span class="cf">with</span> <span class="bu">open</span>(file_path, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
-<span id="cb1-3"><a href=""></a>    lines <span class="op">=</span> f.readlines()</span>
-<span id="cb1-4"><a href=""></a><span class="bu">print</span>(<span class="st">'Read </span><span class="sc">{}</span><span class="st"> lines'</span>.<span class="bu">format</span>(<span class="bu">len</span>(lines)))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-label="1"></a>file_path <span class="op">=</span> <span class="st">'/content/sample_data/california_housing_train.csv'</span></span>
+<span id="cb1-2"><a href="" aria-label="2"></a><span class="cf">with</span> <span class="bu">open</span>(file_path, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
+<span id="cb1-3"><a href="" aria-label="3"></a>    lines <span class="op">=</span> f.readlines()</span>
+<span id="cb1-4"><a href="" aria-label="4"></a><span class="bu">print</span>(<span class="st">'Read </span><span class="sc">{}</span><span class="st"> lines'</span>.<span class="bu">format</span>(<span class="bu">len</span>(lines)))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Read 17001 lines</code></pre>
@@ -283,8 +286,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-8" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">from</span> google.colab <span class="im">import</span> files</span>
-<span id="cb3-2"><a href=""></a><span class="co"># uploaded = files.upload()  # uncomment this line to open the prompt to upload the dataset</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-label="1"></a><span class="im">from</span> google.colab <span class="im">import</span> files</span>
+<span id="cb3-2"><a href="" aria-label="2"></a><span class="co"># uploaded = files.upload()  # uncomment this line to open the prompt to upload the dataset</span></span></code></pre></div>
 </details>
 </div>
 </section>
@@ -293,15 +296,15 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="06e47a9c-8e5b-44a7-f3b4-3830a7f360fb" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="op">!</span>rm <span class="op">-</span>rf iris<span class="op">/</span> <span class="op">||</span> true <span class="co"># remove the folder if exists</span></span>
-<span id="cb4-2"><a href=""></a><span class="op">!</span>rm iris.<span class="bu">zip</span> <span class="op">||</span> true <span class="co"># remove the zip file if exists</span></span>
-<span id="cb4-3"><a href=""></a><span class="op">!</span>wget https:<span class="op">//</span>archive.ics.uci.edu<span class="op">/</span>static<span class="op">/</span>public<span class="op">/</span><span class="dv">53</span><span class="op">/</span>iris.<span class="bu">zip</span> <span class="co"># download the public dataset</span></span>
-<span id="cb4-4"><a href=""></a><span class="op">!</span>unzip iris.<span class="bu">zip</span> <span class="op">-</span>d iris <span class="co"># unzip it</span></span>
-<span id="cb4-5"><a href=""></a></span>
-<span id="cb4-6"><a href=""></a>file_path <span class="op">=</span> <span class="st">'/content/iris/iris.data'</span></span>
-<span id="cb4-7"><a href=""></a><span class="cf">with</span> <span class="bu">open</span>(file_path, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
-<span id="cb4-8"><a href=""></a>    lines <span class="op">=</span> f.readlines()</span>
-<span id="cb4-9"><a href=""></a><span class="bu">print</span>(<span class="st">'Read </span><span class="sc">{}</span><span class="st"> lines'</span>.<span class="bu">format</span>(<span class="bu">len</span>(lines)))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="" aria-label="1"></a><span class="op">!</span>rm <span class="op">-</span>rf iris<span class="op">/</span> <span class="op">||</span> true <span class="co"># remove the folder if exists</span></span>
+<span id="cb4-2"><a href="" aria-label="2"></a><span class="op">!</span>rm iris.<span class="bu">zip</span> <span class="op">||</span> true <span class="co"># remove the zip file if exists</span></span>
+<span id="cb4-3"><a href="" aria-label="3"></a><span class="op">!</span>wget https:<span class="op">//</span>archive.ics.uci.edu<span class="op">/</span>static<span class="op">/</span>public<span class="op">/</span><span class="dv">53</span><span class="op">/</span>iris.<span class="bu">zip</span> <span class="co"># download the public dataset</span></span>
+<span id="cb4-4"><a href="" aria-label="4"></a><span class="op">!</span>unzip iris.<span class="bu">zip</span> <span class="op">-</span>d iris <span class="co"># unzip it</span></span>
+<span id="cb4-5"><a href="" aria-label="5"></a></span>
+<span id="cb4-6"><a href="" aria-label="6"></a>file_path <span class="op">=</span> <span class="st">'/content/iris/iris.data'</span></span>
+<span id="cb4-7"><a href="" aria-label="7"></a><span class="cf">with</span> <span class="bu">open</span>(file_path, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
+<span id="cb4-8"><a href="" aria-label="8"></a>    lines <span class="op">=</span> f.readlines()</span>
+<span id="cb4-9"><a href="" aria-label="9"></a><span class="bu">print</span>(<span class="st">'Read </span><span class="sc">{}</span><span class="st"> lines'</span>.<span class="bu">format</span>(<span class="bu">len</span>(lines)))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>--2024-09-18 14:50:37--  https://archive.ics.uci.edu/static/public/53/iris.zip
@@ -346,7 +349,7 @@ Read 151 lines</code></pre>
 <div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="7fae3041-86e0-4bfb-c4d5-b691ad97282a" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>lines[:<span class="dv">5</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="" aria-label="1"></a>lines[:<span class="dv">5</span>]</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>['5.1,3.5,1.4,0.2,Iris-setosa\n',
@@ -359,18 +362,18 @@ Read 151 lines</code></pre>
 <div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="fb637c5a-2982-4754-f5ff-2d5afbf9517c" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="cf">for</span> line <span class="kw">in</span> lines[:<span class="dv">2</span>]:</span>
-<span id="cb8-2"><a href=""></a>    <span class="bu">print</span>(<span class="st">"Raw content:"</span>, line)</span>
-<span id="cb8-3"><a href=""></a>    content <span class="op">=</span> line.strip()</span>
-<span id="cb8-4"><a href=""></a>    <span class="bu">print</span>(<span class="st">"Content after strip:"</span>, content)</span>
-<span id="cb8-5"><a href=""></a>    content <span class="op">=</span> content.split(<span class="st">','</span>)</span>
-<span id="cb8-6"><a href=""></a>    <span class="bu">print</span>(<span class="st">"Content after split:"</span>, content)</span>
-<span id="cb8-7"><a href=""></a>    <span class="co"># now the content is a list with the splitted elements</span></span>
-<span id="cb8-8"><a href=""></a>    data <span class="op">=</span> content[:<span class="op">-</span><span class="dv">2</span>]   <span class="co"># the image name is in the first position</span></span>
-<span id="cb8-9"><a href=""></a>    label <span class="op">=</span> content[<span class="op">-</span><span class="dv">1</span>] <span class="co"># coordinates in the following part</span></span>
-<span id="cb8-10"><a href=""></a>    <span class="co"># print the content</span></span>
-<span id="cb8-11"><a href=""></a>    <span class="bu">print</span>(<span class="st">'Data:'</span>, data, <span class="st">'Label:'</span>, label)</span>
-<span id="cb8-12"><a href=""></a>    <span class="bu">print</span>(<span class="st">'---'</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href="" aria-label="1"></a><span class="cf">for</span> line <span class="kw">in</span> lines[:<span class="dv">2</span>]:</span>
+<span id="cb8-2"><a href="" aria-label="2"></a>    <span class="bu">print</span>(<span class="st">"Raw content:"</span>, line)</span>
+<span id="cb8-3"><a href="" aria-label="3"></a>    content <span class="op">=</span> line.strip()</span>
+<span id="cb8-4"><a href="" aria-label="4"></a>    <span class="bu">print</span>(<span class="st">"Content after strip:"</span>, content)</span>
+<span id="cb8-5"><a href="" aria-label="5"></a>    content <span class="op">=</span> content.split(<span class="st">','</span>)</span>
+<span id="cb8-6"><a href="" aria-label="6"></a>    <span class="bu">print</span>(<span class="st">"Content after split:"</span>, content)</span>
+<span id="cb8-7"><a href="" aria-label="7"></a>    <span class="co"># now the content is a list with the splitted elements</span></span>
+<span id="cb8-8"><a href="" aria-label="8"></a>    data <span class="op">=</span> content[:<span class="op">-</span><span class="dv">2</span>]   <span class="co"># the image name is in the first position</span></span>
+<span id="cb8-9"><a href="" aria-label="9"></a>    label <span class="op">=</span> content[<span class="op">-</span><span class="dv">1</span>] <span class="co"># coordinates in the following part</span></span>
+<span id="cb8-10"><a href="" aria-label="10"></a>    <span class="co"># print the content</span></span>
+<span id="cb8-11"><a href="" aria-label="11"></a>    <span class="bu">print</span>(<span class="st">'Data:'</span>, data, <span class="st">'Label:'</span>, label)</span>
+<span id="cb8-12"><a href="" aria-label="12"></a>    <span class="bu">print</span>(<span class="st">'---'</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Raw content: 5.1,3.5,1.4,0.2,Iris-setosa
@@ -395,10 +398,10 @@ Data: ['4.9', '3.0', '1.4'] Label: Iris-setosa
 <div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="11af9843-fac7-496b-f618-9a0d2d77b7e6" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="bu">print</span>(<span class="st">'Type of the data:'</span>, <span class="bu">type</span>(data[<span class="dv">0</span>]))</span>
-<span id="cb10-2"><a href=""></a>data <span class="op">=</span> [<span class="bu">float</span>(x) <span class="cf">for</span> x <span class="kw">in</span> data]</span>
-<span id="cb10-3"><a href=""></a><span class="bu">print</span>(<span class="st">'Type of the data:'</span>, [<span class="bu">type</span>(x) <span class="cf">for</span> x <span class="kw">in</span> data])</span>
-<span id="cb10-4"><a href=""></a>data</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href="" aria-label="1"></a><span class="bu">print</span>(<span class="st">'Type of the data:'</span>, <span class="bu">type</span>(data[<span class="dv">0</span>]))</span>
+<span id="cb10-2"><a href="" aria-label="2"></a>data <span class="op">=</span> [<span class="bu">float</span>(x) <span class="cf">for</span> x <span class="kw">in</span> data]</span>
+<span id="cb10-3"><a href="" aria-label="3"></a><span class="bu">print</span>(<span class="st">'Type of the data:'</span>, [<span class="bu">type</span>(x) <span class="cf">for</span> x <span class="kw">in</span> data])</span>
+<span id="cb10-4"><a href="" aria-label="4"></a>data</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Type of the data: &lt;class 'str'&gt;
@@ -422,12 +425,12 @@ Type of the data: [&lt;class 'float'&gt;, &lt;class 'float'&gt;, &lt;class 'floa
 4.9,3.0,1.4,0.2,Iris-setosa
 ...</code></pre>
 <p>The lists should look like</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>dataset <span class="op">=</span> [[<span class="fl">5.1</span>,<span class="fl">3.5</span>,<span class="fl">1.4</span>,<span class="fl">0.2</span>], [<span class="fl">4.9</span>,<span class="fl">3.0</span>,<span class="fl">1.4</span>,<span class="fl">0.2</span>], ...]</span>
-<span id="cb14-2"><a href=""></a>labels <span class="op">=</span> [<span class="st">'Iris-setosa'</span>, <span class="st">'Iris-setosa'</span>, ...]</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href="" aria-label="1"></a>dataset <span class="op">=</span> [[<span class="fl">5.1</span>,<span class="fl">3.5</span>,<span class="fl">1.4</span>,<span class="fl">0.2</span>], [<span class="fl">4.9</span>,<span class="fl">3.0</span>,<span class="fl">1.4</span>,<span class="fl">0.2</span>], ...]</span>
+<span id="cb14-2"><a href="" aria-label="2"></a>labels <span class="op">=</span> [<span class="st">'Iris-setosa'</span>, <span class="st">'Iris-setosa'</span>, ...]</span></code></pre></div>
 <div id="cell-17" class="cell" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="co"># write the code here</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href="" aria-label="1"></a><span class="co"># write the code here</span></span></code></pre></div>
 </details>
 </div>
 

@@ -5,8 +5,8 @@
 <script src="lab-01-dataunderstanding_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-01-dataunderstanding_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lab-01-dataunderstanding_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lab-01-dataunderstanding_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.29">
+<link href="lab-01-dataunderstanding_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -203,7 +206,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it 
+Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
@@ -252,8 +255,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="aacb3166" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:11.042531Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:11.042531Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:11.457784Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:11.457784Z&quot;}}" data-outputid="de89e76c-077f-4794-f448-2e10c89e7d4e" data-execution_count="55">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># By convention, the package pandas is imported as `pd`</span></span>
-<span id="cb1-2"><a href=""></a><span class="bu">print</span>(pd.__version__)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-label="1"></a><span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># By convention, the package pandas is imported as `pd`</span></span>
+<span id="cb1-2"><a href="" aria-label="2"></a><span class="bu">print</span>(pd.__version__)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>2.2.3</code></pre>
@@ -272,9 +275,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="3932b785" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:11.459794Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:11.459794Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.505838Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.505838Z&quot;}}" data-execution_count="56">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># operations on arrays</span></span>
-<span id="cb3-2"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns  <span class="co"># plots</span></span>
-<span id="cb3-3"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># plots</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># operations on arrays</span></span>
+<span id="cb3-2"><a href="" aria-label="2"></a><span class="im">import</span> seaborn <span class="im">as</span> sns  <span class="co"># plots</span></span>
+<span id="cb3-3"><a href="" aria-label="3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># plots</span></span></code></pre></div>
 </details>
 </div>
 </section>
@@ -290,11 +293,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="74c37032" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.507846Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.507846Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.518309Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.518309Z&quot;}}" data-outputid="45bb3eea-fc45-4c4b-b85b-4e92363a03b5" data-scrolled="true" data-execution_count="57">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># create a numeric dataframe/table</span></span>
-<span id="cb4-2"><a href=""></a>df <span class="op">=</span> pd.DataFrame([[i <span class="op">+</span> j <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)] <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)],</span>
-<span id="cb4-3"><a href=""></a>                  index<span class="op">=</span>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)],</span>
-<span id="cb4-4"><a href=""></a>                  columns<span class="op">=</span><span class="bu">list</span>(<span class="st">'abcdefghij'</span>))</span>
-<span id="cb4-5"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="" aria-label="1"></a><span class="co"># create a numeric dataframe/table</span></span>
+<span id="cb4-2"><a href="" aria-label="2"></a>df <span class="op">=</span> pd.DataFrame([[i <span class="op">+</span> j <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)] <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)],</span>
+<span id="cb4-3"><a href="" aria-label="3"></a>                  index<span class="op">=</span>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)],</span>
+<span id="cb4-4"><a href="" aria-label="4"></a>                  columns<span class="op">=</span><span class="bu">list</span>(<span class="st">'abcdefghij'</span>))</span>
+<span id="cb4-5"><a href="" aria-label="5"></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="57">
 <div>
@@ -406,14 +409,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="e5cf8058" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.521318Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.520317Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.527838Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.527838Z&quot;}}" data-outputid="f7338355-f16f-4b8c-a9e8-ad6eb57607be" data-execution_count="58">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co"># Get the headers (i.e., the column names)</span></span>
-<span id="cb5-2"><a href=""></a>df.columns</span>
-<span id="cb5-3"><a href=""></a><span class="co"># Get just the first two rows</span></span>
-<span id="cb5-4"><a href=""></a>df.head(<span class="dv">2</span>)</span>
-<span id="cb5-5"><a href=""></a><span class="co"># Get just the last two rows</span></span>
-<span id="cb5-6"><a href=""></a>df.tail(<span class="dv">2</span>)</span>
-<span id="cb5-7"><a href=""></a><span class="co"># Sort the dataframe by columns</span></span>
-<span id="cb5-8"><a href=""></a>df.sort_values(by<span class="op">=</span>[<span class="st">'a'</span>, <span class="st">'b'</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="" aria-label="1"></a><span class="co"># Get the headers (i.e., the column names)</span></span>
+<span id="cb5-2"><a href="" aria-label="2"></a>df.columns</span>
+<span id="cb5-3"><a href="" aria-label="3"></a><span class="co"># Get just the first two rows</span></span>
+<span id="cb5-4"><a href="" aria-label="4"></a>df.head(<span class="dv">2</span>)</span>
+<span id="cb5-5"><a href="" aria-label="5"></a><span class="co"># Get just the last two rows</span></span>
+<span id="cb5-6"><a href="" aria-label="6"></a>df.tail(<span class="dv">2</span>)</span>
+<span id="cb5-7"><a href="" aria-label="7"></a><span class="co"># Sort the dataframe by columns</span></span>
+<span id="cb5-8"><a href="" aria-label="8"></a>df.sort_values(by<span class="op">=</span>[<span class="st">'a'</span>, <span class="st">'b'</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>])</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="58">
 <div>
@@ -536,7 +539,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="205a800c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.529833Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.528836Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.533338Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.533338Z&quot;}}" data-outputid="ee7c35e1-e9ca-40ed-b5a3-e58fb5e9e1a4" data-execution_count="59">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="" aria-label="1"></a>pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="59">
 <pre><code>a    1
@@ -548,8 +551,8 @@ dtype: int64</code></pre>
 <div id="a4ed958f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.535543Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.534996Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.538706Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.538706Z&quot;}}" data-outputid="55e128f0-c560-41ee-f31a-0b2c1dcd6e07" data-execution_count="60">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co"># Select a column (i.e., a series) as in a SQL projection</span></span>
-<span id="cb8-2"><a href=""></a>df[<span class="st">'a'</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href="" aria-label="1"></a><span class="co"># Select a column (i.e., a series) as in a SQL projection</span></span>
+<span id="cb8-2"><a href="" aria-label="2"></a>df[<span class="st">'a'</span>]</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="60">
 <pre><code>0    0
@@ -567,9 +570,9 @@ Name: a, dtype: int64</code></pre>
 <div id="8af0fee7-2e12-4b68-8634-58a26ae19839" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.540248Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.540248Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.547263Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.546737Z&quot;}}" data-outputid="44762d8c-a2cd-46d7-ede2-161edaa90c77" data-execution_count="61">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="co"># Add another column to the dataframe</span></span>
-<span id="cb10-2"><a href=""></a>df[<span class="st">'k'</span>] <span class="op">=</span> df[<span class="st">'a'</span>] <span class="op">*</span> df[<span class="st">'b'</span>]</span>
-<span id="cb10-3"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href="" aria-label="1"></a><span class="co"># Add another column to the dataframe</span></span>
+<span id="cb10-2"><a href="" aria-label="2"></a>df[<span class="st">'k'</span>] <span class="op">=</span> df[<span class="st">'a'</span>] <span class="op">*</span> df[<span class="st">'b'</span>]</span>
+<span id="cb10-3"><a href="" aria-label="3"></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="61">
 <div>
@@ -684,9 +687,9 @@ Name: a, dtype: int64</code></pre>
 <div id="50a5bde6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.548837Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.548319Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.553027Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.553027Z&quot;}}" data-outputid="c58ad916-7ffe-4fe8-ecb7-f7ec0f3c30aa" data-execution_count="62">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>ser_a <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])</span>
-<span id="cb11-2"><a href=""></a>ser_b <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"b"</span>, <span class="st">"a"</span>, <span class="st">"c"</span>])</span>
-<span id="cb11-3"><a href=""></a>ser_a <span class="op">+</span> ser_b  <span class="co"># +, -, /, *</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="" aria-label="1"></a>ser_a <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])</span>
+<span id="cb11-2"><a href="" aria-label="2"></a>ser_b <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"b"</span>, <span class="st">"a"</span>, <span class="st">"c"</span>])</span>
+<span id="cb11-3"><a href="" aria-label="3"></a>ser_a <span class="op">+</span> ser_b  <span class="co"># +, -, /, *</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="62">
 <pre><code>a    3
@@ -702,7 +705,7 @@ dtype: int64</code></pre>
 <div id="3e8bbab0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.555124Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.555124Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.561506Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.560959Z&quot;}}" data-execution_count="63">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>df[df[<span class="st">'a'</span>] <span class="op">&gt;</span> <span class="dv">2</span>]  <span class="co"># filter the entire dataframe</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href="" aria-label="1"></a>df[df[<span class="st">'a'</span>] <span class="op">&gt;</span> <span class="dv">2</span>]  <span class="co"># filter the entire dataframe</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="63">
 <div>
@@ -775,7 +778,7 @@ dtype: int64</code></pre>
 <div id="85083d76" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.563612Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.563085Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.567274Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.567240Z&quot;}}" data-execution_count="64">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>df[df[<span class="st">'a'</span>] <span class="op">&gt;</span> <span class="dv">2</span>][<span class="st">'a'</span>]  <span class="co"># filter and select the column 'a'</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href="" aria-label="1"></a>df[df[<span class="st">'a'</span>] <span class="op">&gt;</span> <span class="dv">2</span>][<span class="st">'a'</span>]  <span class="co"># filter and select the column 'a'</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="64">
 <pre><code>3    3
@@ -790,13 +793,13 @@ Name: a, dtype: int64</code></pre>
 <div id="b2c64c8e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.568860Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.568860Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.572023Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.572023Z&quot;}}" data-outputid="f34e8487-ac46-416f-a5e4-bd79c94e101a" data-execution_count="65">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>ser_c <span class="op">=</span> df[<span class="st">"a"</span>]</span>
-<span id="cb16-2"><a href=""></a>ser_c.count()  <span class="co"># count the values =&gt; 5</span></span>
-<span id="cb16-3"><a href=""></a>ser_c.<span class="bu">sum</span>()    <span class="co"># sum the values =&gt; 10</span></span>
-<span id="cb16-4"><a href=""></a>ser_c.mean()   <span class="co"># average the values =&gt; 2.0</span></span>
-<span id="cb16-5"><a href=""></a>ser_c.<span class="bu">max</span>()    <span class="co"># maximum value =&gt; 4</span></span>
-<span id="cb16-6"><a href=""></a>ser_c.<span class="bu">min</span>()    <span class="co"># minimum value =&gt; 0</span></span>
-<span id="cb16-7"><a href=""></a>ser_c.idxmax() <span class="co"># index of the maximum value =&gt; 4</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href="" aria-label="1"></a>ser_c <span class="op">=</span> df[<span class="st">"a"</span>]</span>
+<span id="cb16-2"><a href="" aria-label="2"></a>ser_c.count()  <span class="co"># count the values =&gt; 5</span></span>
+<span id="cb16-3"><a href="" aria-label="3"></a>ser_c.<span class="bu">sum</span>()    <span class="co"># sum the values =&gt; 10</span></span>
+<span id="cb16-4"><a href="" aria-label="4"></a>ser_c.mean()   <span class="co"># average the values =&gt; 2.0</span></span>
+<span id="cb16-5"><a href="" aria-label="5"></a>ser_c.<span class="bu">max</span>()    <span class="co"># maximum value =&gt; 4</span></span>
+<span id="cb16-6"><a href="" aria-label="6"></a>ser_c.<span class="bu">min</span>()    <span class="co"># minimum value =&gt; 0</span></span>
+<span id="cb16-7"><a href="" aria-label="7"></a>ser_c.idxmax() <span class="co"># index of the maximum value =&gt; 4</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="65">
 <pre><code>np.int64(4)</code></pre>
@@ -805,7 +808,7 @@ Name: a, dtype: int64</code></pre>
 <div id="4f74f58d-d995-49d8-ae68-6e3ce7fe6d0e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.573028Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.573028Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.589770Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.589263Z&quot;}}" data-outputid="e103511b-c049-44e4-e494-e0256500b82d" data-execution_count="66">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>df.groupby([<span class="st">'a'</span>]).agg([<span class="st">'mean'</span>, <span class="st">'count'</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href="" aria-label="1"></a>df.groupby([<span class="st">'a'</span>]).agg([<span class="st">'mean'</span>, <span class="st">'count'</span>])</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="66">
 <div>
@@ -1029,7 +1032,7 @@ Name: a, dtype: int64</code></pre>
 <div id="fe21ad74" class="cell" data-execution_count="68">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href="" aria-label="1"></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="68">
 <div>
@@ -1148,7 +1151,7 @@ Name: a, dtype: int64</code></pre>
 <div id="7d53489b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.591778Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.590779Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.595784Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.595784Z&quot;}}" data-outputid="97c41b58-041b-4538-c9de-d8315c66f7cd" data-execution_count="69">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>df.dtypes</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href="" aria-label="1"></a>df.dtypes</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="69">
 <pre><code>Product Name          object
@@ -1187,7 +1190,7 @@ dtype: object</code></pre>
 <div id="4d3c26ed" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.597791Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.597791Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.602441Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.602441Z&quot;}}" data-outputid="4ab0845e-47d5-40e1-f72e-bb8ca33e95f7" data-execution_count="70">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>df.info()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href="" aria-label="1"></a>df.info()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -1211,8 +1214,8 @@ memory usage: 532.0+ bytes</code></pre>
 <div id="4061127e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.603449Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.603449Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.613265Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.613265Z&quot;}}" data-outputid="b0361495-a3ad-4caf-a648-ff76fcc16a61" data-execution_count="71">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="co"># To get some statistics (e.g., count, mean, std, min, etc.)</span></span>
-<span id="cb24-2"><a href=""></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href="" aria-label="1"></a><span class="co"># To get some statistics (e.g., count, mean, std, min, etc.)</span></span>
+<span id="cb24-2"><a href="" aria-label="2"></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="71">
 <div>
@@ -1348,8 +1351,8 @@ memory usage: 532.0+ bytes</code></pre>
 <div id="411d3ecf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.615270Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.615270Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.821514Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.821514Z&quot;}}" data-execution_count="76">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>df.hist(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>), bins<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, grid<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb25-2"><a href=""></a>plt.tight_layout()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href="" aria-label="1"></a>df.hist(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>), bins<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, grid<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb25-2"><a href="" aria-label="2"></a>plt.tight_layout()</span></code></pre></div>
 </details>
 
 </div>
@@ -1360,14 +1363,14 @@ memory usage: 532.0+ bytes</code></pre>
 <div id="a3cfe38f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.823519Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.823519Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:12.908265Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:12.908265Z&quot;}}" data-execution_count="73">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb26-2"><a href=""></a><span class="co"># Select only numeric columns</span></span>
-<span id="cb26-3"><a href=""></a>numeric_cols <span class="op">=</span> df.select_dtypes(include<span class="op">=</span>[<span class="st">'int64'</span>, <span class="st">'float64'</span>])</span>
-<span id="cb26-4"><a href=""></a>numeric_cols.boxplot()</span>
-<span id="cb26-5"><a href=""></a><span class="co"># Add a title and axis labels</span></span>
-<span id="cb26-6"><a href=""></a>plt.title(<span class="st">'Boxplot of Numeric Columns'</span>)</span>
-<span id="cb26-7"><a href=""></a>plt.ylabel(<span class="st">'Values'</span>)</span>
-<span id="cb26-8"><a href=""></a>plt.tight_layout()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href="" aria-label="1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb26-2"><a href="" aria-label="2"></a><span class="co"># Select only numeric columns</span></span>
+<span id="cb26-3"><a href="" aria-label="3"></a>numeric_cols <span class="op">=</span> df.select_dtypes(include<span class="op">=</span>[<span class="st">'int64'</span>, <span class="st">'float64'</span>])</span>
+<span id="cb26-4"><a href="" aria-label="4"></a>numeric_cols.boxplot()</span>
+<span id="cb26-5"><a href="" aria-label="5"></a><span class="co"># Add a title and axis labels</span></span>
+<span id="cb26-6"><a href="" aria-label="6"></a>plt.title(<span class="st">'Boxplot of Numeric Columns'</span>)</span>
+<span id="cb26-7"><a href="" aria-label="7"></a>plt.ylabel(<span class="st">'Values'</span>)</span>
+<span id="cb26-8"><a href="" aria-label="8"></a>plt.tight_layout()</span></code></pre></div>
 </details>
 
 </div>
@@ -1378,20 +1381,20 @@ memory usage: 532.0+ bytes</code></pre>
 <div id="0f8ddde6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:12.910278Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:12.910278Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:13.149818Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:13.149818Z&quot;}}" data-execution_count="74">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="co"># Select only the categorical columns (non-numeric)</span></span>
-<span id="cb27-2"><a href=""></a>categorical_cols <span class="op">=</span> df.select_dtypes(include<span class="op">=</span>[<span class="st">'object'</span>])</span>
-<span id="cb27-3"><a href=""></a><span class="co"># Plot the distribution of each categorical column</span></span>
-<span id="cb27-4"><a href=""></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="bu">len</span>(categorical_cols.columns), figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb27-5"><a href=""></a><span class="co"># In case there is only one categorical column, we make sure axes is treated as an array</span></span>
-<span id="cb27-6"><a href=""></a><span class="cf">if</span> <span class="bu">len</span>(categorical_cols.columns) <span class="op">==</span> <span class="dv">1</span>: axes <span class="op">=</span> [axes]</span>
-<span id="cb27-7"><a href=""></a><span class="co"># Loop over each categorical column and plot a bar plot</span></span>
-<span id="cb27-8"><a href=""></a><span class="cf">for</span> i, col <span class="kw">in</span> <span class="bu">enumerate</span>(categorical_cols.columns):</span>
-<span id="cb27-9"><a href=""></a>    categorical_cols[col].value_counts().plot(kind<span class="op">=</span><span class="st">'bar'</span>, ax<span class="op">=</span>axes[i], color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
-<span id="cb27-10"><a href=""></a>    axes[i].set_title(<span class="ss">f'</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss"> Distribution'</span>)</span>
-<span id="cb27-11"><a href=""></a>    axes[i].set_xlabel(col)</span>
-<span id="cb27-12"><a href=""></a>    axes[i].set_ylabel(<span class="st">'Count'</span>)</span>
-<span id="cb27-13"><a href=""></a><span class="co"># Show the plots</span></span>
-<span id="cb27-14"><a href=""></a>plt.tight_layout()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href="" aria-label="1"></a><span class="co"># Select only the categorical columns (non-numeric)</span></span>
+<span id="cb27-2"><a href="" aria-label="2"></a>categorical_cols <span class="op">=</span> df.select_dtypes(include<span class="op">=</span>[<span class="st">'object'</span>])</span>
+<span id="cb27-3"><a href="" aria-label="3"></a><span class="co"># Plot the distribution of each categorical column</span></span>
+<span id="cb27-4"><a href="" aria-label="4"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="bu">len</span>(categorical_cols.columns), figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb27-5"><a href="" aria-label="5"></a><span class="co"># In case there is only one categorical column, we make sure axes is treated as an array</span></span>
+<span id="cb27-6"><a href="" aria-label="6"></a><span class="cf">if</span> <span class="bu">len</span>(categorical_cols.columns) <span class="op">==</span> <span class="dv">1</span>: axes <span class="op">=</span> [axes]</span>
+<span id="cb27-7"><a href="" aria-label="7"></a><span class="co"># Loop over each categorical column and plot a bar plot</span></span>
+<span id="cb27-8"><a href="" aria-label="8"></a><span class="cf">for</span> i, col <span class="kw">in</span> <span class="bu">enumerate</span>(categorical_cols.columns):</span>
+<span id="cb27-9"><a href="" aria-label="9"></a>    categorical_cols[col].value_counts().plot(kind<span class="op">=</span><span class="st">'bar'</span>, ax<span class="op">=</span>axes[i], color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
+<span id="cb27-10"><a href="" aria-label="10"></a>    axes[i].set_title(<span class="ss">f'</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss"> Distribution'</span>)</span>
+<span id="cb27-11"><a href="" aria-label="11"></a>    axes[i].set_xlabel(col)</span>
+<span id="cb27-12"><a href="" aria-label="12"></a>    axes[i].set_ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb27-13"><a href="" aria-label="13"></a><span class="co"># Show the plots</span></span>
+<span id="cb27-14"><a href="" aria-label="14"></a>plt.tight_layout()</span></code></pre></div>
 </details>
 
 </div>
@@ -1413,7 +1416,7 @@ memory usage: 532.0+ bytes</code></pre>
 <div id="1e4187e7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:13.151816Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:13.150815Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:13.153537Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:13.153537Z&quot;}}" data-execution_count="75">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="co"># write your code here</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href="" aria-label="1"></a><span class="co"># write your code here</span></span></code></pre></div>
 </details>
 </div>
 

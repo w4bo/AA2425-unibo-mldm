@@ -5,8 +5,8 @@
 <script src="bank_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="bank_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="bank_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="bank_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.29">
+<link href="bank_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -203,7 +206,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it 
+Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
@@ -214,14 +217,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-0" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href=""></a><span class="im">import</span> zipfile</span>
-<span id="cb1-3"><a href=""></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
-<span id="cb1-4"><a href=""></a><span class="im">import</span> requests</span>
-<span id="cb1-5"><a href=""></a><span class="im">from</span> io <span class="im">import</span> BytesIO</span>
-<span id="cb1-6"><a href=""></a></span>
-<span id="cb1-7"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./datasets/bank/bank-additional.csv"</span>, sep<span class="op">=</span><span class="st">';'</span>)</span>
-<span id="cb1-8"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-label="1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="" aria-label="2"></a><span class="im">import</span> zipfile</span>
+<span id="cb1-3"><a href="" aria-label="3"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
+<span id="cb1-4"><a href="" aria-label="4"></a><span class="im">import</span> requests</span>
+<span id="cb1-5"><a href="" aria-label="5"></a><span class="im">from</span> io <span class="im">import</span> BytesIO</span>
+<span id="cb1-6"><a href="" aria-label="6"></a></span>
+<span id="cb1-7"><a href="" aria-label="7"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./datasets/bank/bank-additional.csv"</span>, sep<span class="op">=</span><span class="st">';'</span>)</span>
+<span id="cb1-8"><a href="" aria-label="8"></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
@@ -541,34 +544,34 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-1" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb2-2"><a href=""></a><span class="im">from</span> flaml <span class="im">import</span> AutoML</span>
-<span id="cb2-3"><a href=""></a></span>
-<span id="cb2-4"><a href=""></a><span class="co"># Split the data into features (X) and target (y)</span></span>
-<span id="cb2-5"><a href=""></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'y'</span>])</span>
-<span id="cb2-6"><a href=""></a>y <span class="op">=</span> df[<span class="st">'y'</span>]</span>
-<span id="cb2-7"><a href=""></a></span>
-<span id="cb2-8"><a href=""></a><span class="co"># Perform train-test split</span></span>
-<span id="cb2-9"><a href=""></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb2-10"><a href=""></a></span>
-<span id="cb2-11"><a href=""></a><span class="co"># Initialize AutoML</span></span>
-<span id="cb2-12"><a href=""></a>automl <span class="op">=</span> AutoML()</span>
-<span id="cb2-13"><a href=""></a></span>
-<span id="cb2-14"><a href=""></a><span class="co"># Define settings for AutoML</span></span>
-<span id="cb2-15"><a href=""></a>automl_settings <span class="op">=</span> {</span>
-<span id="cb2-16"><a href=""></a>    <span class="st">"time_budget"</span>: <span class="dv">30</span>,  <span class="co"># Time budget in seconds</span></span>
-<span id="cb2-17"><a href=""></a>    <span class="st">"max_iter"</span>: <span class="dv">30</span>,  <span class="co"># Max number of iterations</span></span>
-<span id="cb2-18"><a href=""></a>    <span class="st">"metric"</span>: <span class="st">'accuracy'</span>,  <span class="co"># Evaluation metric</span></span>
-<span id="cb2-19"><a href=""></a>    <span class="st">"task"</span>: <span class="st">'classification'</span>,  <span class="co"># Task type</span></span>
-<span id="cb2-20"><a href=""></a>    <span class="st">"log_file_name"</span>: <span class="st">"automl.log"</span>,  <span class="co"># Log file</span></span>
-<span id="cb2-21"><a href=""></a>}</span>
-<span id="cb2-22"><a href=""></a></span>
-<span id="cb2-23"><a href=""></a><span class="co"># Run AutoML</span></span>
-<span id="cb2-24"><a href=""></a>automl.fit(X_train, y_train, <span class="op">**</span>automl_settings)</span>
-<span id="cb2-25"><a href=""></a></span>
-<span id="cb2-26"><a href=""></a><span class="co"># Evaluate on the test set</span></span>
-<span id="cb2-27"><a href=""></a><span class="bu">print</span>(<span class="st">"Best ML model:"</span>, automl.best_estimator)</span>
-<span id="cb2-28"><a href=""></a><span class="bu">print</span>(<span class="st">"Accuracy on test set:"</span>, automl.score(X_test, y_test))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb2-2"><a href="" aria-label="2"></a><span class="im">from</span> flaml <span class="im">import</span> AutoML</span>
+<span id="cb2-3"><a href="" aria-label="3"></a></span>
+<span id="cb2-4"><a href="" aria-label="4"></a><span class="co"># Split the data into features (X) and target (y)</span></span>
+<span id="cb2-5"><a href="" aria-label="5"></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'y'</span>])</span>
+<span id="cb2-6"><a href="" aria-label="6"></a>y <span class="op">=</span> df[<span class="st">'y'</span>]</span>
+<span id="cb2-7"><a href="" aria-label="7"></a></span>
+<span id="cb2-8"><a href="" aria-label="8"></a><span class="co"># Perform train-test split</span></span>
+<span id="cb2-9"><a href="" aria-label="9"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb2-10"><a href="" aria-label="10"></a></span>
+<span id="cb2-11"><a href="" aria-label="11"></a><span class="co"># Initialize AutoML</span></span>
+<span id="cb2-12"><a href="" aria-label="12"></a>automl <span class="op">=</span> AutoML()</span>
+<span id="cb2-13"><a href="" aria-label="13"></a></span>
+<span id="cb2-14"><a href="" aria-label="14"></a><span class="co"># Define settings for AutoML</span></span>
+<span id="cb2-15"><a href="" aria-label="15"></a>automl_settings <span class="op">=</span> {</span>
+<span id="cb2-16"><a href="" aria-label="16"></a>    <span class="st">"time_budget"</span>: <span class="dv">30</span>,  <span class="co"># Time budget in seconds</span></span>
+<span id="cb2-17"><a href="" aria-label="17"></a>    <span class="st">"max_iter"</span>: <span class="dv">30</span>,  <span class="co"># Max number of iterations</span></span>
+<span id="cb2-18"><a href="" aria-label="18"></a>    <span class="st">"metric"</span>: <span class="st">'accuracy'</span>,  <span class="co"># Evaluation metric</span></span>
+<span id="cb2-19"><a href="" aria-label="19"></a>    <span class="st">"task"</span>: <span class="st">'classification'</span>,  <span class="co"># Task type</span></span>
+<span id="cb2-20"><a href="" aria-label="20"></a>    <span class="st">"log_file_name"</span>: <span class="st">"automl.log"</span>,  <span class="co"># Log file</span></span>
+<span id="cb2-21"><a href="" aria-label="21"></a>}</span>
+<span id="cb2-22"><a href="" aria-label="22"></a></span>
+<span id="cb2-23"><a href="" aria-label="23"></a><span class="co"># Run AutoML</span></span>
+<span id="cb2-24"><a href="" aria-label="24"></a>automl.fit(X_train, y_train, <span class="op">**</span>automl_settings)</span>
+<span id="cb2-25"><a href="" aria-label="25"></a></span>
+<span id="cb2-26"><a href="" aria-label="26"></a><span class="co"># Evaluate on the test set</span></span>
+<span id="cb2-27"><a href="" aria-label="27"></a><span class="bu">print</span>(<span class="st">"Best ML model:"</span>, automl.best_estimator)</span>
+<span id="cb2-28"><a href="" aria-label="28"></a><span class="bu">print</span>(<span class="st">"Accuracy on test set:"</span>, automl.score(X_test, y_test))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[flaml.automl.logger: 03-25 17:15:30] {1728} INFO - task = classification

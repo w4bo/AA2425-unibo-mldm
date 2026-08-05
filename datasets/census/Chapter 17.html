@@ -5,8 +5,8 @@
 <script src="Chapter 17_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="Chapter 17_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="Chapter 17_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Chapter 17_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.29">
+<link href="Chapter 17_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Hands-On Data Preprocessing in Python</title>
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -203,7 +206,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it 
+Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
@@ -221,10 +224,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-1" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-3"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-4"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="" aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="" aria-label="2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="" aria-label="3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-4"><a href="" aria-label="4"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code></pre></div>
 </details>
 </div>
 </section>
@@ -240,8 +243,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-5" class="cell" data-scrolled="true" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>edu_df <span class="op">=</span> pd.read_excel(<span class="st">'Education.xls'</span>)</span>
-<span id="cb4-2"><a href=""></a>edu_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="" aria-label="1"></a>edu_df <span class="op">=</span> pd.read_excel(<span class="st">'Education.xls'</span>)</span>
+<span id="cb4-2"><a href="" aria-label="2"></a>edu_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
@@ -562,8 +565,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-7" class="cell" data-scrolled="true" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>pop_df <span class="op">=</span> pd.read_excel(<span class="st">'PopulationEstimates.xls'</span>)</span>
-<span id="cb5-2"><a href=""></a>pop_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="" aria-label="1"></a>pop_df <span class="op">=</span> pd.read_excel(<span class="st">'PopulationEstimates.xls'</span>)</span>
+<span id="cb5-2"><a href="" aria-label="2"></a>pop_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -884,8 +887,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-9" class="cell" data-scrolled="true" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>pov_df <span class="op">=</span> pd.read_excel(<span class="st">'PovertyEstimates.xls'</span>)</span>
-<span id="cb6-2"><a href=""></a>pov_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="" aria-label="1"></a>pov_df <span class="op">=</span> pd.read_excel(<span class="st">'PovertyEstimates.xls'</span>)</span>
+<span id="cb6-2"><a href="" aria-label="2"></a>pov_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
@@ -1206,8 +1209,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-11" class="cell" data-scrolled="true" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>employment_df <span class="op">=</span> pd.read_excel(<span class="st">'Unemployment.xlsx'</span>)</span>
-<span id="cb7-2"><a href=""></a>employment_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="" aria-label="1"></a>employment_df <span class="op">=</span> pd.read_excel(<span class="st">'Unemployment.xlsx'</span>)</span>
+<span id="cb7-2"><a href="" aria-label="2"></a>employment_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -1530,8 +1533,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-13" class="cell" data-scrolled="true" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>election_df <span class="op">=</span> pd.read_csv(<span class="st">'countypres_2000-2020.csv'</span>)</span>
-<span id="cb9-2"><a href=""></a>election_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="" aria-label="1"></a>election_df <span class="op">=</span> pd.read_csv(<span class="st">'countypres_2000-2020.csv'</span>)</span>
+<span id="cb9-2"><a href="" aria-label="2"></a>election_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -1750,9 +1753,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-16" class="cell" data-scrolled="true" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>BM <span class="op">=</span> election_df[<span class="st">'mode'</span>] <span class="op">==</span> <span class="st">'TOTAL'</span></span>
-<span id="cb10-2"><a href=""></a>election_df <span class="op">=</span> pd.DataFrame(election_df[BM].drop(columns <span class="op">=</span> [<span class="st">'mode'</span>]))</span>
-<span id="cb10-3"><a href=""></a>election_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href="" aria-label="1"></a>BM <span class="op">=</span> election_df[<span class="st">'mode'</span>] <span class="op">==</span> <span class="st">'TOTAL'</span></span>
+<span id="cb10-2"><a href="" aria-label="2"></a>election_df <span class="op">=</span> pd.DataFrame(election_df[BM].drop(columns <span class="op">=</span> [<span class="st">'mode'</span>]))</span>
+<span id="cb10-3"><a href="" aria-label="3"></a>election_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -1952,7 +1955,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-17" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>election_df.groupby([<span class="st">'state_po'</span>,<span class="st">'county_name'</span>]).size().index</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="" aria-label="1"></a>election_df.groupby([<span class="st">'state_po'</span>,<span class="st">'county_name'</span>]).size().index</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>MultiIndex([('AK',  'DISTRICT 1'),
@@ -1982,9 +1985,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-18" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>partisanElection_df <span class="op">=</span> pd.DataFrame(index <span class="op">=</span> election_df.groupby([<span class="st">'state_po'</span>,<span class="st">'county_name'</span>,<span class="st">'year'</span>]).size().index,</span>
-<span id="cb13-2"><a href=""></a>                    columns <span class="op">=</span> [<span class="st">'partisanism'</span>])</span>
-<span id="cb13-3"><a href=""></a>partisanElection_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href="" aria-label="1"></a>partisanElection_df <span class="op">=</span> pd.DataFrame(index <span class="op">=</span> election_df.groupby([<span class="st">'state_po'</span>,<span class="st">'county_name'</span>,<span class="st">'year'</span>]).size().index,</span>
+<span id="cb13-2"><a href="" aria-label="2"></a>                    columns <span class="op">=</span> [<span class="st">'partisanism'</span>])</span>
+<span id="cb13-3"><a href="" aria-label="3"></a>partisanElection_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
@@ -2078,29 +2081,29 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-19" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="cf">for</span> i, row <span class="kw">in</span> partisanElection_df.iterrows():</span>
-<span id="cb14-2"><a href=""></a>    state<span class="op">=</span> i[<span class="dv">0</span>]</span>
-<span id="cb14-3"><a href=""></a>    county<span class="op">=</span> i[<span class="dv">1</span>]</span>
-<span id="cb14-4"><a href=""></a>    year <span class="op">=</span> i[<span class="dv">2</span>]</span>
-<span id="cb14-5"><a href=""></a>    </span>
-<span id="cb14-6"><a href=""></a>    BM <span class="op">=</span> (election_df.state_po<span class="op">==</span> state) <span class="op">&amp;</span> (</span>
-<span id="cb14-7"><a href=""></a>        election_df.county_name<span class="op">==</span>county) <span class="op">&amp;</span> (</span>
-<span id="cb14-8"><a href=""></a>        election_df.year<span class="op">==</span>year)</span>
-<span id="cb14-9"><a href=""></a>    </span>
-<span id="cb14-10"><a href=""></a>    wdf <span class="op">=</span> election_df[BM]</span>
-<span id="cb14-11"><a href=""></a>    </span>
-<span id="cb14-12"><a href=""></a>    numerator <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-13"><a href=""></a>    denominator <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-14"><a href=""></a>    <span class="cf">for</span> wi,wrow <span class="kw">in</span> wdf.iterrows():</span>
-<span id="cb14-15"><a href=""></a>        denominator <span class="op">+=</span> wrow.candidatevotes</span>
-<span id="cb14-16"><a href=""></a>        <span class="cf">if</span>(wrow.party<span class="op">==</span><span class="st">'DEMOCRAT'</span>):</span>
-<span id="cb14-17"><a href=""></a>            numerator <span class="op">-=</span> wrow.candidatevotes</span>
-<span id="cb14-18"><a href=""></a>        <span class="cf">if</span>(wrow.party<span class="op">==</span><span class="st">'REPUBLICAN'</span>):</span>
-<span id="cb14-19"><a href=""></a>            numerator <span class="op">+=</span> wrow.candidatevotes</span>
-<span id="cb14-20"><a href=""></a>    partisanism  <span class="op">=</span> numerator<span class="op">/</span>denominator</span>
-<span id="cb14-21"><a href=""></a>    partisanElection_df.at[i,<span class="st">'partisanism'</span>] <span class="op">=</span> partisanism</span>
-<span id="cb14-22"><a href=""></a>    <span class="bu">print</span>(i,partisanism)</span>
-<span id="cb14-23"><a href=""></a>        </span></code></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href="" aria-label="1"></a><span class="cf">for</span> i, row <span class="kw">in</span> partisanElection_df.iterrows():</span>
+<span id="cb14-2"><a href="" aria-label="2"></a>    state<span class="op">=</span> i[<span class="dv">0</span>]</span>
+<span id="cb14-3"><a href="" aria-label="3"></a>    county<span class="op">=</span> i[<span class="dv">1</span>]</span>
+<span id="cb14-4"><a href="" aria-label="4"></a>    year <span class="op">=</span> i[<span class="dv">2</span>]</span>
+<span id="cb14-5"><a href="" aria-label="5"></a>    </span>
+<span id="cb14-6"><a href="" aria-label="6"></a>    BM <span class="op">=</span> (election_df.state_po<span class="op">==</span> state) <span class="op">&amp;</span> (</span>
+<span id="cb14-7"><a href="" aria-label="7"></a>        election_df.county_name<span class="op">==</span>county) <span class="op">&amp;</span> (</span>
+<span id="cb14-8"><a href="" aria-label="8"></a>        election_df.year<span class="op">==</span>year)</span>
+<span id="cb14-9"><a href="" aria-label="9"></a>    </span>
+<span id="cb14-10"><a href="" aria-label="10"></a>    wdf <span class="op">=</span> election_df[BM]</span>
+<span id="cb14-11"><a href="" aria-label="11"></a>    </span>
+<span id="cb14-12"><a href="" aria-label="12"></a>    numerator <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb14-13"><a href="" aria-label="13"></a>    denominator <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb14-14"><a href="" aria-label="14"></a>    <span class="cf">for</span> wi,wrow <span class="kw">in</span> wdf.iterrows():</span>
+<span id="cb14-15"><a href="" aria-label="15"></a>        denominator <span class="op">+=</span> wrow.candidatevotes</span>
+<span id="cb14-16"><a href="" aria-label="16"></a>        <span class="cf">if</span>(wrow.party<span class="op">==</span><span class="st">'DEMOCRAT'</span>):</span>
+<span id="cb14-17"><a href="" aria-label="17"></a>            numerator <span class="op">-=</span> wrow.candidatevotes</span>
+<span id="cb14-18"><a href="" aria-label="18"></a>        <span class="cf">if</span>(wrow.party<span class="op">==</span><span class="st">'REPUBLICAN'</span>):</span>
+<span id="cb14-19"><a href="" aria-label="19"></a>            numerator <span class="op">+=</span> wrow.candidatevotes</span>
+<span id="cb14-20"><a href="" aria-label="20"></a>    partisanism  <span class="op">=</span> numerator<span class="op">/</span>denominator</span>
+<span id="cb14-21"><a href="" aria-label="21"></a>    partisanElection_df.at[i,<span class="st">'partisanism'</span>] <span class="op">=</span> partisanism</span>
+<span id="cb14-22"><a href="" aria-label="22"></a>    <span class="bu">print</span>(i,partisanism)</span>
+<span id="cb14-23"><a href="" aria-label="23"></a>        </span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>('AK', 'DISTRICT 1', 2000) 0.5103665865384616
@@ -20158,7 +20161,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-20" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>partisanElection_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href="" aria-label="1"></a>partisanElection_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
@@ -20252,8 +20255,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-21" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>partisanElection_df.reset_index(drop<span class="op">=</span><span class="va">False</span>,inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb17-2"><a href=""></a>partisanElection_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href="" aria-label="1"></a>partisanElection_df.reset_index(drop<span class="op">=</span><span class="va">False</span>,inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb17-2"><a href="" aria-label="2"></a>partisanElection_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div>
@@ -20369,9 +20372,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-22" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>partisan_df <span class="op">=</span> pd.DataFrame(index <span class="op">=</span> election_df.groupby([<span class="st">'state_po'</span>,<span class="st">'county_name'</span>]).size().index,</span>
-<span id="cb18-2"><a href=""></a>                    columns <span class="op">=</span> [<span class="st">'mean'</span>,<span class="st">'slope'</span>])</span>
-<span id="cb18-3"><a href=""></a>partisan_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href="" aria-label="1"></a>partisan_df <span class="op">=</span> pd.DataFrame(index <span class="op">=</span> election_df.groupby([<span class="st">'state_po'</span>,<span class="st">'county_name'</span>]).size().index,</span>
+<span id="cb18-2"><a href="" aria-label="2"></a>                    columns <span class="op">=</span> [<span class="st">'mean'</span>,<span class="st">'slope'</span>])</span>
+<span id="cb18-3"><a href="" aria-label="3"></a>partisan_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
@@ -20473,56 +20476,56 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-23" class="cell" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="kw">def</span> linearFunction(t,a,b):</span>
-<span id="cb19-2"><a href=""></a>    y <span class="op">=</span> a<span class="op">+</span> b<span class="op">*</span>t</span>
-<span id="cb19-3"><a href=""></a>    <span class="cf">return</span> y</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href="" aria-label="1"></a><span class="kw">def</span> linearFunction(t,a,b):</span>
+<span id="cb19-2"><a href="" aria-label="2"></a>    y <span class="op">=</span> a<span class="op">+</span> b<span class="op">*</span>t</span>
+<span id="cb19-3"><a href="" aria-label="3"></a>    <span class="cf">return</span> y</span></code></pre></div>
 </details>
 </div>
 <div id="cell-24" class="cell" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="im">from</span> scipy.optimize <span class="im">import</span> curve_fit</span>
-<span id="cb20-2"><a href=""></a></span>
-<span id="cb20-3"><a href=""></a><span class="cf">for</span> i, row <span class="kw">in</span> partisan_df.iterrows():</span>
-<span id="cb20-4"><a href=""></a>    state<span class="op">=</span> i[<span class="dv">0</span>]</span>
-<span id="cb20-5"><a href=""></a>    county<span class="op">=</span> i[<span class="dv">1</span>]</span>
-<span id="cb20-6"><a href=""></a>    </span>
-<span id="cb20-7"><a href=""></a>    BM <span class="op">=</span> (partisanElection_df.state_po<span class="op">==</span> state) <span class="op">&amp;</span> (</span>
-<span id="cb20-8"><a href=""></a>        partisanElection_df.county_name<span class="op">==</span>county) </span>
-<span id="cb20-9"><a href=""></a>    </span>
-<span id="cb20-10"><a href=""></a>    wdf <span class="op">=</span> partisanElection_df[BM]</span>
-<span id="cb20-11"><a href=""></a>    BM_MV <span class="op">=</span> wdf.partisanism.isna()</span>
-<span id="cb20-12"><a href=""></a>    n <span class="op">=</span> <span class="bu">len</span>(wdf) <span class="op">-</span> <span class="bu">sum</span>(BM_MV)</span>
-<span id="cb20-13"><a href=""></a>    </span>
-<span id="cb20-14"><a href=""></a>    x_data <span class="op">=</span> <span class="bu">range</span>(n)</span>
-<span id="cb20-15"><a href=""></a>    y_data <span class="op">=</span> wdf[<span class="op">~</span>BM_MV].partisanism</span>
-<span id="cb20-16"><a href=""></a>    </span>
-<span id="cb20-17"><a href=""></a>    <span class="cf">if</span>(n<span class="op">&lt;=</span><span class="dv">1</span>):</span>
-<span id="cb20-18"><a href=""></a>        <span class="co">#'Just one datapoint avaiable!'</span></span>
-<span id="cb20-19"><a href=""></a>        </span>
-<span id="cb20-20"><a href=""></a>        mean <span class="op">=</span> wdf[<span class="op">~</span>BM_MV]</span>
-<span id="cb20-21"><a href=""></a>        slope <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb20-22"><a href=""></a>    <span class="cf">else</span>:</span>
-<span id="cb20-23"><a href=""></a>        p,c<span class="op">=</span> curve_fit(linearFunction, x_data, y_data)</span>
-<span id="cb20-24"><a href=""></a>        <span class="co">## Uncomment and run if you want to see the curve fitting, Caveat: it will increase runtime</span></span>
-<span id="cb20-25"><a href=""></a>        <span class="co">#fit_y = linearFunction(x_data,p[0],p[1])</span></span>
-<span id="cb20-26"><a href=""></a>        <span class="co">#plt.plot(x_data,y_data,label='data' )</span></span>
-<span id="cb20-27"><a href=""></a>        <span class="co">#plt.plot(x_data, fit_y, '--', label='fit')</span></span>
-<span id="cb20-28"><a href=""></a>        <span class="co">#plt.xticks(x_data,y_data.index)</span></span>
-<span id="cb20-29"><a href=""></a>        <span class="co">#plt.legend()</span></span>
-<span id="cb20-30"><a href=""></a>        <span class="co">#plt.show()</span></span>
-<span id="cb20-31"><a href=""></a>        </span>
-<span id="cb20-32"><a href=""></a>        mean <span class="op">=</span> wdf[<span class="op">~</span>BM_MV].partisanism.mean()</span>
-<span id="cb20-33"><a href=""></a>        slope <span class="op">=</span> p[<span class="dv">1</span>]</span>
-<span id="cb20-34"><a href=""></a>    </span>
-<span id="cb20-35"><a href=""></a>    partisan_df.at[i,<span class="st">'mean'</span>] <span class="op">=</span> mean</span>
-<span id="cb20-36"><a href=""></a>    partisan_df.at[i,<span class="st">'slope'</span>] <span class="op">=</span> slope</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href="" aria-label="1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> curve_fit</span>
+<span id="cb20-2"><a href="" aria-label="2"></a></span>
+<span id="cb20-3"><a href="" aria-label="3"></a><span class="cf">for</span> i, row <span class="kw">in</span> partisan_df.iterrows():</span>
+<span id="cb20-4"><a href="" aria-label="4"></a>    state<span class="op">=</span> i[<span class="dv">0</span>]</span>
+<span id="cb20-5"><a href="" aria-label="5"></a>    county<span class="op">=</span> i[<span class="dv">1</span>]</span>
+<span id="cb20-6"><a href="" aria-label="6"></a>    </span>
+<span id="cb20-7"><a href="" aria-label="7"></a>    BM <span class="op">=</span> (partisanElection_df.state_po<span class="op">==</span> state) <span class="op">&amp;</span> (</span>
+<span id="cb20-8"><a href="" aria-label="8"></a>        partisanElection_df.county_name<span class="op">==</span>county) </span>
+<span id="cb20-9"><a href="" aria-label="9"></a>    </span>
+<span id="cb20-10"><a href="" aria-label="10"></a>    wdf <span class="op">=</span> partisanElection_df[BM]</span>
+<span id="cb20-11"><a href="" aria-label="11"></a>    BM_MV <span class="op">=</span> wdf.partisanism.isna()</span>
+<span id="cb20-12"><a href="" aria-label="12"></a>    n <span class="op">=</span> <span class="bu">len</span>(wdf) <span class="op">-</span> <span class="bu">sum</span>(BM_MV)</span>
+<span id="cb20-13"><a href="" aria-label="13"></a>    </span>
+<span id="cb20-14"><a href="" aria-label="14"></a>    x_data <span class="op">=</span> <span class="bu">range</span>(n)</span>
+<span id="cb20-15"><a href="" aria-label="15"></a>    y_data <span class="op">=</span> wdf[<span class="op">~</span>BM_MV].partisanism</span>
+<span id="cb20-16"><a href="" aria-label="16"></a>    </span>
+<span id="cb20-17"><a href="" aria-label="17"></a>    <span class="cf">if</span>(n<span class="op">&lt;=</span><span class="dv">1</span>):</span>
+<span id="cb20-18"><a href="" aria-label="18"></a>        <span class="co">#'Just one datapoint avaiable!'</span></span>
+<span id="cb20-19"><a href="" aria-label="19"></a>        </span>
+<span id="cb20-20"><a href="" aria-label="20"></a>        mean <span class="op">=</span> wdf[<span class="op">~</span>BM_MV]</span>
+<span id="cb20-21"><a href="" aria-label="21"></a>        slope <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb20-22"><a href="" aria-label="22"></a>    <span class="cf">else</span>:</span>
+<span id="cb20-23"><a href="" aria-label="23"></a>        p,c<span class="op">=</span> curve_fit(linearFunction, x_data, y_data)</span>
+<span id="cb20-24"><a href="" aria-label="24"></a>        <span class="co">## Uncomment and run if you want to see the curve fitting, Caveat: it will increase runtime</span></span>
+<span id="cb20-25"><a href="" aria-label="25"></a>        <span class="co">#fit_y = linearFunction(x_data,p[0],p[1])</span></span>
+<span id="cb20-26"><a href="" aria-label="26"></a>        <span class="co">#plt.plot(x_data,y_data,label='data' )</span></span>
+<span id="cb20-27"><a href="" aria-label="27"></a>        <span class="co">#plt.plot(x_data, fit_y, '--', label='fit')</span></span>
+<span id="cb20-28"><a href="" aria-label="28"></a>        <span class="co">#plt.xticks(x_data,y_data.index)</span></span>
+<span id="cb20-29"><a href="" aria-label="29"></a>        <span class="co">#plt.legend()</span></span>
+<span id="cb20-30"><a href="" aria-label="30"></a>        <span class="co">#plt.show()</span></span>
+<span id="cb20-31"><a href="" aria-label="31"></a>        </span>
+<span id="cb20-32"><a href="" aria-label="32"></a>        mean <span class="op">=</span> wdf[<span class="op">~</span>BM_MV].partisanism.mean()</span>
+<span id="cb20-33"><a href="" aria-label="33"></a>        slope <span class="op">=</span> p[<span class="dv">1</span>]</span>
+<span id="cb20-34"><a href="" aria-label="34"></a>    </span>
+<span id="cb20-35"><a href="" aria-label="35"></a>    partisan_df.at[i,<span class="st">'mean'</span>] <span class="op">=</span> mean</span>
+<span id="cb20-36"><a href="" aria-label="36"></a>    partisan_df.at[i,<span class="st">'slope'</span>] <span class="op">=</span> slope</span></code></pre></div>
 </details>
 </div>
 <div id="cell-25" class="cell" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a>partisan_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href="" aria-label="1"></a>partisan_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>
@@ -20624,31 +20627,31 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-26" class="cell" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>partisan_df <span class="op">=</span> partisan_df.reset_index()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href="" aria-label="1"></a>partisan_df <span class="op">=</span> partisan_df.reset_index()</span></code></pre></div>
 </details>
 </div>
 <div id="cell-27" class="cell" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>partisan_df.county_name <span class="op">=</span> partisan_df.county_name.<span class="bu">str</span>.lower()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href="" aria-label="1"></a>partisan_df.county_name <span class="op">=</span> partisan_df.county_name.<span class="bu">str</span>.lower()</span></code></pre></div>
 </details>
 </div>
 <div id="cell-28" class="cell" data-execution_count="19">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>partisan_df.columns <span class="op">=</span> [<span class="st">'State'</span>,<span class="st">'County_Name'</span>,<span class="st">'Mean_Partisanism'</span>,<span class="st">'Slope_Partisanism'</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href="" aria-label="1"></a>partisan_df.columns <span class="op">=</span> [<span class="st">'State'</span>,<span class="st">'County_Name'</span>,<span class="st">'Mean_Partisanism'</span>,<span class="st">'Slope_Partisanism'</span>]</span></code></pre></div>
 </details>
 </div>
 <div id="cell-29" class="cell" data-execution_count="20">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>partisan_df.set_index([<span class="st">'State'</span>,<span class="st">'County_Name'</span>],inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href="" aria-label="1"></a>partisan_df.set_index([<span class="st">'State'</span>,<span class="st">'County_Name'</span>],inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-30" class="cell" data-execution_count="21">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>partisan_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href="" aria-label="1"></a>partisan_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <div>
@@ -20753,74 +20756,74 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-33" class="cell" data-execution_count="22">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>edu_df.columns <span class="op">=</span> edu_df.iloc[<span class="dv">3</span>].values</span>
-<span id="cb27-2"><a href=""></a>edu_df <span class="op">=</span> edu_df.drop(index <span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href="" aria-label="1"></a>edu_df.columns <span class="op">=</span> edu_df.iloc[<span class="dv">3</span>].values</span>
+<span id="cb27-2"><a href="" aria-label="2"></a>edu_df <span class="op">=</span> edu_df.drop(index <span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-34" class="cell" data-execution_count="23">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>edu_df <span class="op">=</span> pd.DataFrame(edu_df[[<span class="st">'State'</span>,<span class="st">'Area name'</span>,<span class="st">"Percent of adults with a bachelor's degree or higher, 2015-19"</span>]])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href="" aria-label="1"></a>edu_df <span class="op">=</span> pd.DataFrame(edu_df[[<span class="st">'State'</span>,<span class="st">'Area name'</span>,<span class="st">"Percent of adults with a bachelor's degree or higher, 2015-19"</span>]])</span></code></pre></div>
 </details>
 </div>
 <div id="cell-35" class="cell" data-execution_count="24">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>edu_df.columns <span class="op">=</span> [<span class="st">'State'</span>,<span class="st">'Area_Name'</span>,<span class="st">"Percent of adults with a bachelor's degree or higher, 2015-19"</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href="" aria-label="1"></a>edu_df.columns <span class="op">=</span> [<span class="st">'State'</span>,<span class="st">'Area_Name'</span>,<span class="st">"Percent of adults with a bachelor's degree or higher, 2015-19"</span>]</span></code></pre></div>
 </details>
 </div>
 <div id="cell-36" class="cell" data-execution_count="25">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a><span class="kw">def</span> SeperateArea_Name(v):</span>
-<span id="cb30-2"><a href=""></a>    s_parts <span class="op">=</span> v.split(<span class="st">' '</span>)</span>
-<span id="cb30-3"><a href=""></a>    </span>
-<span id="cb30-4"><a href=""></a>    <span class="cf">if</span>(<span class="bu">len</span>(s_parts)<span class="op">&gt;</span><span class="dv">1</span>):</span>
-<span id="cb30-5"><a href=""></a>        <span class="cf">return</span>(s_parts[<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href="" aria-label="1"></a><span class="kw">def</span> SeperateArea_Name(v):</span>
+<span id="cb30-2"><a href="" aria-label="2"></a>    s_parts <span class="op">=</span> v.split(<span class="st">' '</span>)</span>
+<span id="cb30-3"><a href="" aria-label="3"></a>    </span>
+<span id="cb30-4"><a href="" aria-label="4"></a>    <span class="cf">if</span>(<span class="bu">len</span>(s_parts)<span class="op">&gt;</span><span class="dv">1</span>):</span>
+<span id="cb30-5"><a href="" aria-label="5"></a>        <span class="cf">return</span>(s_parts[<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div>
 </details>
 </div>
 <div id="cell-37" class="cell" data-execution_count="26">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a>BM <span class="op">=</span> edu_df.Area_Name.<span class="bu">apply</span>(SeperateArea_Name) <span class="op">==</span> <span class="st">'County'</span></span>
-<span id="cb31-2"><a href=""></a>droping_indices <span class="op">=</span> edu_df[<span class="op">~</span>BM].index</span>
-<span id="cb31-3"><a href=""></a>edu_df.drop(index <span class="op">=</span> droping_indices,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href="" aria-label="1"></a>BM <span class="op">=</span> edu_df.Area_Name.<span class="bu">apply</span>(SeperateArea_Name) <span class="op">==</span> <span class="st">'County'</span></span>
+<span id="cb31-2"><a href="" aria-label="2"></a>droping_indices <span class="op">=</span> edu_df[<span class="op">~</span>BM].index</span>
+<span id="cb31-3"><a href="" aria-label="3"></a>edu_df.drop(index <span class="op">=</span> droping_indices,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-38" class="cell" data-execution_count="27">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>edu_df.reset_index(drop<span class="op">=</span><span class="va">True</span>,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href="" aria-label="1"></a>edu_df.reset_index(drop<span class="op">=</span><span class="va">True</span>,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-39" class="cell" data-execution_count="28">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>edu_df[<span class="st">'County_Name'</span>] <span class="op">=</span> edu_df.Area_Name.<span class="bu">apply</span>(<span class="kw">lambda</span> v: v[:v.find(<span class="st">'County'</span>)<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href="" aria-label="1"></a>edu_df[<span class="st">'County_Name'</span>] <span class="op">=</span> edu_df.Area_Name.<span class="bu">apply</span>(<span class="kw">lambda</span> v: v[:v.find(<span class="st">'County'</span>)<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div>
 </details>
 </div>
 <div id="cell-40" class="cell" data-execution_count="29">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href=""></a>edu_df.County_Name <span class="op">=</span> edu_df.County_Name.<span class="bu">str</span>.lower()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href="" aria-label="1"></a>edu_df.County_Name <span class="op">=</span> edu_df.County_Name.<span class="bu">str</span>.lower()</span></code></pre></div>
 </details>
 </div>
 <div id="cell-41" class="cell" data-execution_count="30">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb35-1"><a href=""></a>edu_df <span class="op">=</span> edu_df.drop(columns <span class="op">=</span> [<span class="st">'Area_Name'</span>]).set_index([<span class="st">'State'</span>,<span class="st">'County_Name'</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb35-1"><a href="" aria-label="1"></a>edu_df <span class="op">=</span> edu_df.drop(columns <span class="op">=</span> [<span class="st">'Area_Name'</span>]).set_index([<span class="st">'State'</span>,<span class="st">'County_Name'</span>])</span></code></pre></div>
 </details>
 </div>
 <div id="cell-42" class="cell" data-execution_count="31">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a>edu_df.columns <span class="op">=</span> [<span class="st">'HigherEdPercent'</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href="" aria-label="1"></a>edu_df.columns <span class="op">=</span> [<span class="st">'HigherEdPercent'</span>]</span></code></pre></div>
 </details>
 </div>
 <div id="cell-43" class="cell" data-execution_count="32">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb37-1"><a href=""></a>edu_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb37-1"><a href="" aria-label="1"></a>edu_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="32">
 <div>
@@ -20910,58 +20913,58 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-45" class="cell" data-execution_count="33">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href=""></a>pop_df.columns <span class="op">=</span> pop_df.iloc[<span class="dv">1</span>].values</span>
-<span id="cb38-2"><a href=""></a>pop_df <span class="op">=</span> pop_df.drop(index <span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>]).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href="" aria-label="1"></a>pop_df.columns <span class="op">=</span> pop_df.iloc[<span class="dv">1</span>].values</span>
+<span id="cb38-2"><a href="" aria-label="2"></a>pop_df <span class="op">=</span> pop_df.drop(index <span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>]).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-46" class="cell" data-execution_count="34">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href=""></a>pop_df <span class="op">=</span> pd.DataFrame(pop_df[[<span class="st">'State'</span>,<span class="st">'Area_Name'</span>,<span class="st">'CENSUS_2010_POP'</span>]])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href="" aria-label="1"></a>pop_df <span class="op">=</span> pd.DataFrame(pop_df[[<span class="st">'State'</span>,<span class="st">'Area_Name'</span>,<span class="st">'CENSUS_2010_POP'</span>]])</span></code></pre></div>
 </details>
 </div>
 <div id="cell-47" class="cell" data-execution_count="35">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href=""></a>BM <span class="op">=</span> pop_df.Area_Name.<span class="bu">apply</span>(SeperateArea_Name) <span class="op">==</span> <span class="st">'County'</span></span>
-<span id="cb40-2"><a href=""></a>droping_indices <span class="op">=</span> pop_df[<span class="op">~</span>BM].index</span>
-<span id="cb40-3"><a href=""></a>pop_df.drop(index <span class="op">=</span> droping_indices,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href="" aria-label="1"></a>BM <span class="op">=</span> pop_df.Area_Name.<span class="bu">apply</span>(SeperateArea_Name) <span class="op">==</span> <span class="st">'County'</span></span>
+<span id="cb40-2"><a href="" aria-label="2"></a>droping_indices <span class="op">=</span> pop_df[<span class="op">~</span>BM].index</span>
+<span id="cb40-3"><a href="" aria-label="3"></a>pop_df.drop(index <span class="op">=</span> droping_indices,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-48" class="cell" data-execution_count="36">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb41-1"><a href=""></a>pop_df.reset_index(drop<span class="op">=</span><span class="va">True</span>,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb41-1"><a href="" aria-label="1"></a>pop_df.reset_index(drop<span class="op">=</span><span class="va">True</span>,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-49" class="cell" data-execution_count="37">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb42-1"><a href=""></a>pop_df[<span class="st">'County_Name'</span>] <span class="op">=</span> pop_df.Area_Name.<span class="bu">apply</span>(<span class="kw">lambda</span> v: v[:v.find(<span class="st">'County'</span>)<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb42-1"><a href="" aria-label="1"></a>pop_df[<span class="st">'County_Name'</span>] <span class="op">=</span> pop_df.Area_Name.<span class="bu">apply</span>(<span class="kw">lambda</span> v: v[:v.find(<span class="st">'County'</span>)<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div>
 </details>
 </div>
 <div id="cell-50" class="cell" data-execution_count="38">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href=""></a>pop_df.County_Name <span class="op">=</span> pop_df.County_Name.<span class="bu">str</span>.lower()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href="" aria-label="1"></a>pop_df.County_Name <span class="op">=</span> pop_df.County_Name.<span class="bu">str</span>.lower()</span></code></pre></div>
 </details>
 </div>
 <div id="cell-51" class="cell" data-execution_count="39">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb44-1"><a href=""></a>pop_df <span class="op">=</span> pop_df.drop(columns <span class="op">=</span> [<span class="st">'Area_Name'</span>]).set_index([<span class="st">'State'</span>,<span class="st">'County_Name'</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb44-1"><a href="" aria-label="1"></a>pop_df <span class="op">=</span> pop_df.drop(columns <span class="op">=</span> [<span class="st">'Area_Name'</span>]).set_index([<span class="st">'State'</span>,<span class="st">'County_Name'</span>])</span></code></pre></div>
 </details>
 </div>
 <div id="cell-52" class="cell" data-execution_count="40">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href=""></a>pop_df.columns <span class="op">=</span> [<span class="st">'Population'</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href="" aria-label="1"></a>pop_df.columns <span class="op">=</span> [<span class="st">'Population'</span>]</span></code></pre></div>
 </details>
 </div>
 <div id="cell-53" class="cell" data-execution_count="41">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb46-1"><a href=""></a>pop_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb46-1"><a href="" aria-label="1"></a>pop_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="41">
 <div>
@@ -21051,14 +21054,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-55" class="cell" data-execution_count="42">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb47-1"><a href=""></a>pov_df.columns <span class="op">=</span> pov_df.iloc[<span class="dv">3</span>].values</span>
-<span id="cb47-2"><a href=""></a>pov_df.drop(index <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb47-1"><a href="" aria-label="1"></a>pov_df.columns <span class="op">=</span> pov_df.iloc[<span class="dv">3</span>].values</span>
+<span id="cb47-2"><a href="" aria-label="2"></a>pov_df.drop(index <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-56" class="cell" data-execution_count="43">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb48-1"><a href=""></a>pov_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb48-1"><a href="" aria-label="1"></a>pov_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="43">
 <div>
@@ -21378,45 +21381,45 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-57" class="cell" data-execution_count="44">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb49-1"><a href=""></a>pov_df <span class="op">=</span> pov_df[[<span class="st">'Stabr'</span>,<span class="st">'Area_name'</span>,<span class="st">'PCTPOVALL_2019'</span>,<span class="st">'MEDHHINC_2019'</span>]].reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb49-1"><a href="" aria-label="1"></a>pov_df <span class="op">=</span> pov_df[[<span class="st">'Stabr'</span>,<span class="st">'Area_name'</span>,<span class="st">'PCTPOVALL_2019'</span>,<span class="st">'MEDHHINC_2019'</span>]].reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-58" class="cell" data-execution_count="45">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb50-1"><a href=""></a>BM <span class="op">=</span> pov_df.Area_name.<span class="bu">apply</span>(SeperateArea_Name) <span class="op">==</span> <span class="st">'County'</span></span>
-<span id="cb50-2"><a href=""></a>droping_indices <span class="op">=</span> pov_df[<span class="op">~</span>BM].index</span>
-<span id="cb50-3"><a href=""></a>pov_df.drop(index <span class="op">=</span> droping_indices,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb50-1"><a href="" aria-label="1"></a>BM <span class="op">=</span> pov_df.Area_name.<span class="bu">apply</span>(SeperateArea_Name) <span class="op">==</span> <span class="st">'County'</span></span>
+<span id="cb50-2"><a href="" aria-label="2"></a>droping_indices <span class="op">=</span> pov_df[<span class="op">~</span>BM].index</span>
+<span id="cb50-3"><a href="" aria-label="3"></a>pov_df.drop(index <span class="op">=</span> droping_indices,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-59" class="cell" data-execution_count="46">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb51-1"><a href=""></a>pov_df.reset_index(drop<span class="op">=</span><span class="va">True</span>,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb51-1"><a href="" aria-label="1"></a>pov_df.reset_index(drop<span class="op">=</span><span class="va">True</span>,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-60" class="cell" data-execution_count="47">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb52-1"><a href=""></a>pov_df[<span class="st">'County_Name'</span>] <span class="op">=</span> pov_df.Area_name.<span class="bu">apply</span>(<span class="kw">lambda</span> v: v[:v.find(<span class="st">'County'</span>)<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb52-1"><a href="" aria-label="1"></a>pov_df[<span class="st">'County_Name'</span>] <span class="op">=</span> pov_df.Area_name.<span class="bu">apply</span>(<span class="kw">lambda</span> v: v[:v.find(<span class="st">'County'</span>)<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div>
 </details>
 </div>
 <div id="cell-61" class="cell" data-execution_count="48">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb53-1"><a href=""></a>pov_df.County_Name <span class="op">=</span> pov_df.County_Name.<span class="bu">str</span>.lower()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb53-1"><a href="" aria-label="1"></a>pov_df.County_Name <span class="op">=</span> pov_df.County_Name.<span class="bu">str</span>.lower()</span></code></pre></div>
 </details>
 </div>
 <div id="cell-62" class="cell" data-execution_count="49">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb54-1"><a href=""></a>pov_df.drop(columns <span class="op">=</span> [<span class="st">'Area_name'</span>],inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb54-1"><a href="" aria-label="1"></a>pov_df.drop(columns <span class="op">=</span> [<span class="st">'Area_name'</span>],inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-63" class="cell" data-execution_count="50">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb55-1"><a href=""></a>pov_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb55-1"><a href="" aria-label="1"></a>pov_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="50">
 <div>
@@ -21532,8 +21535,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-64" class="cell" data-execution_count="51">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb56-1"><a href=""></a>{<span class="st">'POV04_2019'</span>:<span class="st">'Estimated percent of people of all ages in poverty 2019'</span>,</span>
-<span id="cb56-2"><a href=""></a><span class="st">'MEDHHINC_2019'</span>:<span class="st">'Estimate of median household income 2019'</span>}</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb56-1"><a href="" aria-label="1"></a>{<span class="st">'POV04_2019'</span>:<span class="st">'Estimated percent of people of all ages in poverty 2019'</span>,</span>
+<span id="cb56-2"><a href="" aria-label="2"></a><span class="st">'MEDHHINC_2019'</span>:<span class="st">'Estimate of median household income 2019'</span>}</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="51">
 <pre><code>{'POV04_2019': 'Estimated percent of people of all ages in poverty 2019',
@@ -21543,19 +21546,19 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-65" class="cell" data-execution_count="52">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb58-1"><a href=""></a>pov_df.columns <span class="op">=</span> [<span class="st">'State'</span>,<span class="st">'PovertyPercentage'</span>, <span class="st">'MedianHHIncome'</span>,<span class="st">'County_Name'</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb58-1"><a href="" aria-label="1"></a>pov_df.columns <span class="op">=</span> [<span class="st">'State'</span>,<span class="st">'PovertyPercentage'</span>, <span class="st">'MedianHHIncome'</span>,<span class="st">'County_Name'</span>]</span></code></pre></div>
 </details>
 </div>
 <div id="cell-66" class="cell" data-execution_count="53">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb59-1"><a href=""></a>pov_df.set_index([<span class="st">'State'</span>,<span class="st">'County_Name'</span>],inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb59-1"><a href="" aria-label="1"></a>pov_df.set_index([<span class="st">'State'</span>,<span class="st">'County_Name'</span>],inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-67" class="cell" data-execution_count="54">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb60-1"><a href=""></a>pov_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb60-1"><a href="" aria-label="1"></a>pov_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="54">
 <div>
@@ -21658,27 +21661,27 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-69" class="cell" data-execution_count="55">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb61-1"><a href=""></a>employment_df.columns <span class="op">=</span> employment_df.iloc[<span class="dv">3</span>].values</span>
-<span id="cb61-2"><a href=""></a>employment_df.drop(index<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb61-1"><a href="" aria-label="1"></a>employment_df.columns <span class="op">=</span> employment_df.iloc[<span class="dv">3</span>].values</span>
+<span id="cb61-2"><a href="" aria-label="2"></a>employment_df.drop(index<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-70" class="cell" data-execution_count="56">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb62-1"><a href=""></a>employment_df <span class="op">=</span> pd.DataFrame(employment_df[</span>
-<span id="cb62-2"><a href=""></a>    [<span class="st">'State'</span>,<span class="st">'Area_name'</span>,<span class="st">'Unemployment_rate_2019'</span>,<span class="st">'Med_HH_Income_Percent_of_State_Total_2019'</span>]])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb62-1"><a href="" aria-label="1"></a>employment_df <span class="op">=</span> pd.DataFrame(employment_df[</span>
+<span id="cb62-2"><a href="" aria-label="2"></a>    [<span class="st">'State'</span>,<span class="st">'Area_name'</span>,<span class="st">'Unemployment_rate_2019'</span>,<span class="st">'Med_HH_Income_Percent_of_State_Total_2019'</span>]])</span></code></pre></div>
 </details>
 </div>
 <div id="cell-71" class="cell" data-execution_count="57">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb63-1"><a href=""></a>employment_df[<span class="st">'Area_Name'</span>] <span class="op">=</span> employment_df.Area_name.<span class="bu">apply</span>(<span class="kw">lambda</span> v: v[:v.find(<span class="st">','</span>)] <span class="cf">if</span> <span class="st">','</span> <span class="kw">in</span> v <span class="cf">else</span> v)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb63-1"><a href="" aria-label="1"></a>employment_df[<span class="st">'Area_Name'</span>] <span class="op">=</span> employment_df.Area_name.<span class="bu">apply</span>(<span class="kw">lambda</span> v: v[:v.find(<span class="st">','</span>)] <span class="cf">if</span> <span class="st">','</span> <span class="kw">in</span> v <span class="cf">else</span> v)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-72" class="cell" data-scrolled="true" data-execution_count="58">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb64-1"><a href=""></a>employment_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb64-1"><a href="" aria-label="1"></a>employment_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="58">
 <div>
@@ -21806,45 +21809,45 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-73" class="cell" data-execution_count="59">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb65-1"><a href=""></a>BM <span class="op">=</span> employment_df.Area_Name.<span class="bu">apply</span>(SeperateArea_Name) <span class="op">==</span> <span class="st">'County'</span></span>
-<span id="cb65-2"><a href=""></a>droping_indices <span class="op">=</span> employment_df[<span class="op">~</span>BM].index</span>
-<span id="cb65-3"><a href=""></a>employment_df.drop(index <span class="op">=</span> droping_indices,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb65-1"><a href="" aria-label="1"></a>BM <span class="op">=</span> employment_df.Area_Name.<span class="bu">apply</span>(SeperateArea_Name) <span class="op">==</span> <span class="st">'County'</span></span>
+<span id="cb65-2"><a href="" aria-label="2"></a>droping_indices <span class="op">=</span> employment_df[<span class="op">~</span>BM].index</span>
+<span id="cb65-3"><a href="" aria-label="3"></a>employment_df.drop(index <span class="op">=</span> droping_indices,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-74" class="cell" data-execution_count="60">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb66-1"><a href=""></a>employment_df.reset_index(drop<span class="op">=</span><span class="va">True</span>,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb66-1"><a href="" aria-label="1"></a>employment_df.reset_index(drop<span class="op">=</span><span class="va">True</span>,inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-75" class="cell" data-execution_count="61">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb67-1"><a href=""></a>employment_df[<span class="st">'County_Name'</span>] <span class="op">=</span> employment_df.Area_Name.<span class="bu">apply</span>(<span class="kw">lambda</span> v: v[:v.find(<span class="st">'County'</span>)<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb67-1"><a href="" aria-label="1"></a>employment_df[<span class="st">'County_Name'</span>] <span class="op">=</span> employment_df.Area_Name.<span class="bu">apply</span>(<span class="kw">lambda</span> v: v[:v.find(<span class="st">'County'</span>)<span class="op">-</span><span class="dv">1</span>])</span></code></pre></div>
 </details>
 </div>
 <div id="cell-76" class="cell" data-execution_count="62">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb68-1"><a href=""></a>employment_df.County_Name <span class="op">=</span> employment_df.County_Name.<span class="bu">str</span>.lower()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb68-1"><a href="" aria-label="1"></a>employment_df.County_Name <span class="op">=</span> employment_df.County_Name.<span class="bu">str</span>.lower()</span></code></pre></div>
 </details>
 </div>
 <div id="cell-77" class="cell" data-execution_count="63">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb69-1"><a href=""></a>employment_df <span class="op">=</span> employment_df.drop(columns <span class="op">=</span> [<span class="st">'Area_Name'</span>,<span class="st">'Area_name'</span>]).set_index([<span class="st">'State'</span>,<span class="st">'County_Name'</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb69-1"><a href="" aria-label="1"></a>employment_df <span class="op">=</span> employment_df.drop(columns <span class="op">=</span> [<span class="st">'Area_Name'</span>,<span class="st">'Area_name'</span>]).set_index([<span class="st">'State'</span>,<span class="st">'County_Name'</span>])</span></code></pre></div>
 </details>
 </div>
 <div id="cell-78" class="cell" data-execution_count="64">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb70-1"><a href=""></a>employment_df.columns<span class="op">=</span>[<span class="st">'UnemploymentRate'</span>, <span class="st">'MedHHIncome_Percent_of_State_Total'</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb70-1"><a href="" aria-label="1"></a>employment_df.columns<span class="op">=</span>[<span class="st">'UnemploymentRate'</span>, <span class="st">'MedHHIncome_Percent_of_State_Total'</span>]</span></code></pre></div>
 </details>
 </div>
 <div id="cell-79" class="cell" data-execution_count="65">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb71-1"><a href=""></a>employment_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb71-1"><a href="" aria-label="1"></a>employment_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="65">
 <div>
@@ -21949,13 +21952,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-81" class="cell" data-execution_count="66">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb72-1"><a href=""></a>county_df <span class="op">=</span> pop_df.join(edu_df).join(pov_df).join(employment_df).join(partisan_df)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb72-1"><a href="" aria-label="1"></a>county_df <span class="op">=</span> pop_df.join(edu_df).join(pov_df).join(employment_df).join(partisan_df)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-82" class="cell" data-scrolled="false" data-execution_count="67">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb73-1"><a href=""></a>county_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb73-1"><a href="" aria-label="1"></a>county_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="67">
 <div>
@@ -22139,7 +22142,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-85" class="cell" data-execution_count="68">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb74-1"><a href=""></a>sns.heatmap(county_df.isna())</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb74-1"><a href="" aria-label="1"></a>sns.heatmap(county_df.isna())</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -22152,7 +22155,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="cell-86" class="cell" data-execution_count="69">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb75-1"><a href=""></a>county_df.info()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb75-1"><a href="" aria-label="1"></a>county_df.info()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -22175,13 +22178,13 @@ memory usage: 372.1+ KB</code></pre>
 <div id="cell-87" class="cell" data-execution_count="70">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb77-1"><a href=""></a>county_df.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb77-1"><a href="" aria-label="1"></a>county_df.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-88" class="cell" data-execution_count="71">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb78-1"><a href=""></a>county_df.info()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb78-1"><a href="" aria-label="1"></a>county_df.info()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -22205,19 +22208,19 @@ memory usage: 291.1+ KB</code></pre>
 <div id="cell-90" class="cell" data-execution_count="72">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb80-1"><a href=""></a>county_df <span class="op">=</span> county_df.astype(<span class="bu">float</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb80-1"><a href="" aria-label="1"></a>county_df <span class="op">=</span> county_df.astype(<span class="bu">float</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-91" class="cell" data-scrolled="false" data-execution_count="73">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb81-1"><a href=""></a><span class="cf">for</span> att <span class="kw">in</span> county_df.columns:</span>
-<span id="cb81-2"><a href=""></a>    plt.subplot(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb81-3"><a href=""></a>    county_df[att].plot.hist()</span>
-<span id="cb81-4"><a href=""></a>    plt.title(att)</span>
-<span id="cb81-5"><a href=""></a>    plt.subplot(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb81-6"><a href=""></a>    county_df[att].plot.box(vert<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb81-7"><a href=""></a>    plt.show()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb81-1"><a href="" aria-label="1"></a><span class="cf">for</span> att <span class="kw">in</span> county_df.columns:</span>
+<span id="cb81-2"><a href="" aria-label="2"></a>    plt.subplot(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb81-3"><a href="" aria-label="3"></a>    county_df[att].plot.hist()</span>
+<span id="cb81-4"><a href="" aria-label="4"></a>    plt.title(att)</span>
+<span id="cb81-5"><a href="" aria-label="5"></a>    plt.subplot(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb81-6"><a href="" aria-label="6"></a>    county_df[att].plot.box(vert<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb81-7"><a href="" aria-label="7"></a>    plt.show()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -22279,20 +22282,20 @@ memory usage: 291.1+ KB</code></pre>
 <div id="cell-92" class="cell" data-execution_count="74">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb82-1"><a href=""></a>county_df[<span class="st">'log_Population'</span>] <span class="op">=</span> np.log(county_df.Population)</span>
-<span id="cb82-2"><a href=""></a>county_df[<span class="st">'log_UnemploymentRate'</span>] <span class="op">=</span> np.log(county_df.UnemploymentRate)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb82-1"><a href="" aria-label="1"></a>county_df[<span class="st">'log_Population'</span>] <span class="op">=</span> np.log(county_df.Population)</span>
+<span id="cb82-2"><a href="" aria-label="2"></a>county_df[<span class="st">'log_UnemploymentRate'</span>] <span class="op">=</span> np.log(county_df.UnemploymentRate)</span></code></pre></div>
 </details>
 </div>
 <div id="cell-93" class="cell" data-scrolled="true" data-execution_count="75">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb83-1"><a href=""></a><span class="cf">for</span> att <span class="kw">in</span> county_df.columns:</span>
-<span id="cb83-2"><a href=""></a>    plt.subplot(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb83-3"><a href=""></a>    county_df[att].plot.hist()</span>
-<span id="cb83-4"><a href=""></a>    plt.title(att)</span>
-<span id="cb83-5"><a href=""></a>    plt.subplot(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb83-6"><a href=""></a>    county_df[att].plot.box(vert<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb83-7"><a href=""></a>    plt.show()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb83-1"><a href="" aria-label="1"></a><span class="cf">for</span> att <span class="kw">in</span> county_df.columns:</span>
+<span id="cb83-2"><a href="" aria-label="2"></a>    plt.subplot(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb83-3"><a href="" aria-label="3"></a>    county_df[att].plot.hist()</span>
+<span id="cb83-4"><a href="" aria-label="4"></a>    plt.title(att)</span>
+<span id="cb83-5"><a href="" aria-label="5"></a>    plt.subplot(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb83-6"><a href="" aria-label="6"></a>    county_df[att].plot.box(vert<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb83-7"><a href="" aria-label="7"></a>    plt.show()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -22371,8 +22374,8 @@ memory usage: 291.1+ KB</code></pre>
 <div id="cell-95" class="cell" data-execution_count="76">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb84-1"><a href=""></a>sns.pairplot(county_df.drop(columns<span class="op">=</span>[<span class="st">'Population'</span>,<span class="st">'UnemploymentRate'</span>]))</span>
-<span id="cb84-2"><a href=""></a>plt.savefig(<span class="st">'ScatterMatrix.png'</span>,dpi<span class="op">=</span><span class="dv">500</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb84-1"><a href="" aria-label="1"></a>sns.pairplot(county_df.drop(columns<span class="op">=</span>[<span class="st">'Population'</span>,<span class="st">'UnemploymentRate'</span>]))</span>
+<span id="cb84-2"><a href="" aria-label="2"></a>plt.savefig(<span class="st">'ScatterMatrix.png'</span>,dpi<span class="op">=</span><span class="dv">500</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -22385,11 +22388,11 @@ memory usage: 291.1+ KB</code></pre>
 <div id="cell-96" class="cell" data-execution_count="77">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb85-1"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">10</span>))</span>
-<span id="cb85-2"><a href=""></a>sns.heatmap(county_df.drop(columns<span class="op">=</span>[<span class="st">'Population'</span>,<span class="st">'UnemploymentRate'</span>]).corr(),</span>
-<span id="cb85-3"><a href=""></a>            linewidths<span class="op">=</span><span class="fl">.5</span>, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'binary'</span>)</span>
-<span id="cb85-4"><a href=""></a>plt.tight_layout()</span>
-<span id="cb85-5"><a href=""></a>plt.savefig(<span class="st">'Corelation.png'</span>,dpi<span class="op">=</span><span class="dv">500</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb85-1"><a href="" aria-label="1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">10</span>))</span>
+<span id="cb85-2"><a href="" aria-label="2"></a>sns.heatmap(county_df.drop(columns<span class="op">=</span>[<span class="st">'Population'</span>,<span class="st">'UnemploymentRate'</span>]).corr(),</span>
+<span id="cb85-3"><a href="" aria-label="3"></a>            linewidths<span class="op">=</span><span class="fl">.5</span>, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'binary'</span>)</span>
+<span id="cb85-4"><a href="" aria-label="4"></a>plt.tight_layout()</span>
+<span id="cb85-5"><a href="" aria-label="5"></a>plt.savefig(<span class="st">'Corelation.png'</span>,dpi<span class="op">=</span><span class="dv">500</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -22406,33 +22409,33 @@ memory usage: 291.1+ KB</code></pre>
 <div id="cell-99" class="cell" data-execution_count="80">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb86-1"><a href=""></a>Xs <span class="op">=</span> county_df.drop(columns<span class="op">=</span> [<span class="st">'UnemploymentRate'</span>,<span class="st">'Population'</span>,<span class="st">'MedianHHIncome'</span>])</span>
-<span id="cb86-2"><a href=""></a></span>
-<span id="cb86-3"><a href=""></a>Xs <span class="op">=</span> (Xs <span class="op">-</span>Xs.mean())<span class="op">/</span>Xs.std()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb86-1"><a href="" aria-label="1"></a>Xs <span class="op">=</span> county_df.drop(columns<span class="op">=</span> [<span class="st">'UnemploymentRate'</span>,<span class="st">'Population'</span>,<span class="st">'MedianHHIncome'</span>])</span>
+<span id="cb86-2"><a href="" aria-label="2"></a></span>
+<span id="cb86-3"><a href="" aria-label="3"></a>Xs <span class="op">=</span> (Xs <span class="op">-</span>Xs.mean())<span class="op">/</span>Xs.std()</span></code></pre></div>
 </details>
 </div>
 <div id="cell-100" class="cell" data-execution_count="82">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb87-1"><a href=""></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
-<span id="cb87-2"><a href=""></a>pca <span class="op">=</span> PCA()</span>
-<span id="cb87-3"><a href=""></a></span>
-<span id="cb87-4"><a href=""></a>pca.fit(Xs)</span>
-<span id="cb87-5"><a href=""></a></span>
-<span id="cb87-6"><a href=""></a>Xs_t <span class="op">=</span> pd.DataFrame(pca.transform(Xs),index <span class="op">=</span> Xs.index)</span>
-<span id="cb87-7"><a href=""></a>Xs_t.columns <span class="op">=</span> [<span class="st">'PC</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">8</span>)]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb87-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb87-2"><a href="" aria-label="2"></a>pca <span class="op">=</span> PCA()</span>
+<span id="cb87-3"><a href="" aria-label="3"></a></span>
+<span id="cb87-4"><a href="" aria-label="4"></a>pca.fit(Xs)</span>
+<span id="cb87-5"><a href="" aria-label="5"></a></span>
+<span id="cb87-6"><a href="" aria-label="6"></a>Xs_t <span class="op">=</span> pd.DataFrame(pca.transform(Xs),index <span class="op">=</span> Xs.index)</span>
+<span id="cb87-7"><a href="" aria-label="7"></a>Xs_t.columns <span class="op">=</span> [<span class="st">'PC</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">8</span>)]</span></code></pre></div>
 </details>
 </div>
 <div id="cell-101" class="cell" data-execution_count="83">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb88-1"><a href=""></a>total_variance <span class="op">=</span> Xs_t.var().<span class="bu">sum</span>()</span>
-<span id="cb88-2"><a href=""></a>dic <span class="op">=</span> {<span class="st">'variance_percentage'</span>:Xs_t.var()<span class="op">/</span>total_variance,</span>
-<span id="cb88-3"><a href=""></a>       <span class="st">'cumulative_variance_percentage'</span>:</span>
-<span id="cb88-4"><a href=""></a>       Xs_t.var().cumsum()<span class="op">/</span>total_variance}</span>
-<span id="cb88-5"><a href=""></a></span>
-<span id="cb88-6"><a href=""></a>explanation_df <span class="op">=</span> pd.DataFrame(dic)</span>
-<span id="cb88-7"><a href=""></a>explanation_df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb88-1"><a href="" aria-label="1"></a>total_variance <span class="op">=</span> Xs_t.var().<span class="bu">sum</span>()</span>
+<span id="cb88-2"><a href="" aria-label="2"></a>dic <span class="op">=</span> {<span class="st">'variance_percentage'</span>:Xs_t.var()<span class="op">/</span>total_variance,</span>
+<span id="cb88-3"><a href="" aria-label="3"></a>       <span class="st">'cumulative_variance_percentage'</span>:</span>
+<span id="cb88-4"><a href="" aria-label="4"></a>       Xs_t.var().cumsum()<span class="op">/</span>total_variance}</span>
+<span id="cb88-5"><a href="" aria-label="5"></a></span>
+<span id="cb88-6"><a href="" aria-label="6"></a>explanation_df <span class="op">=</span> pd.DataFrame(dic)</span>
+<span id="cb88-7"><a href="" aria-label="7"></a>explanation_df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="83">
 <div>
@@ -22503,7 +22506,7 @@ memory usage: 291.1+ KB</code></pre>
 <div id="cell-102" class="cell" data-execution_count="84">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb89-1"><a href=""></a>Xs_t.plot.scatter(x<span class="op">=</span><span class="st">'PC1'</span>,y<span class="op">=</span><span class="st">'PC2'</span>,c<span class="op">=</span><span class="st">'PC3'</span>,sharex<span class="op">=</span><span class="va">False</span>,colormap <span class="op">=</span><span class="st">'gray'</span>,marker<span class="op">=</span><span class="st">'.'</span>,figsize<span class="op">=</span>(<span class="dv">18</span>,<span class="dv">8</span>))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb89-1"><a href="" aria-label="1"></a>Xs_t.plot.scatter(x<span class="op">=</span><span class="st">'PC1'</span>,y<span class="op">=</span><span class="st">'PC2'</span>,c<span class="op">=</span><span class="st">'PC3'</span>,sharex<span class="op">=</span><span class="va">False</span>,colormap <span class="op">=</span><span class="st">'gray'</span>,marker<span class="op">=</span><span class="st">'.'</span>,figsize<span class="op">=</span>(<span class="dv">18</span>,<span class="dv">8</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -22516,14 +22519,14 @@ memory usage: 291.1+ KB</code></pre>
 <div id="cell-103" class="cell" data-execution_count="89">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb90-1"><a href=""></a>Xs_t.plot.scatter(x<span class="op">=</span><span class="st">'PC1'</span>,y<span class="op">=</span><span class="st">'PC2'</span>,c<span class="op">=</span><span class="st">'PC3'</span>,sharex<span class="op">=</span><span class="va">False</span>,colormap <span class="op">=</span><span class="st">'gray'</span>,marker<span class="op">=</span><span class="st">'.'</span>,figsize<span class="op">=</span>(<span class="dv">18</span>,<span class="dv">8</span>))</span>
-<span id="cb90-2"><a href=""></a></span>
-<span id="cb90-3"><a href=""></a><span class="cf">for</span> i, row <span class="kw">in</span> Xs_t.iterrows():</span>
-<span id="cb90-4"><a href=""></a>    <span class="cf">if</span>(row.PC1<span class="op">&gt;</span><span class="dv">7</span> <span class="kw">or</span> row.PC2<span class="op">&lt;-</span><span class="fl">5.5</span> <span class="kw">or</span> row.PC2<span class="op">&gt;</span><span class="dv">4</span>):</span>
-<span id="cb90-5"><a href=""></a>        plt.annotate(i, (row.PC1, row.PC2),size<span class="op">=</span><span class="dv">8</span>)</span>
-<span id="cb90-6"><a href=""></a>    <span class="cf">if</span>(row.PC1<span class="op">&lt;-</span><span class="fl">4.2</span>):</span>
-<span id="cb90-7"><a href=""></a>        plt.annotate(i, (row.PC1<span class="op">-</span><span class="dv">1</span>, row.PC2),size<span class="op">=</span><span class="dv">8</span>)</span>
-<span id="cb90-8"><a href=""></a>plt.savefig(<span class="st">'PCs.png'</span>,dpi<span class="op">=</span><span class="dv">900</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb90-1"><a href="" aria-label="1"></a>Xs_t.plot.scatter(x<span class="op">=</span><span class="st">'PC1'</span>,y<span class="op">=</span><span class="st">'PC2'</span>,c<span class="op">=</span><span class="st">'PC3'</span>,sharex<span class="op">=</span><span class="va">False</span>,colormap <span class="op">=</span><span class="st">'gray'</span>,marker<span class="op">=</span><span class="st">'.'</span>,figsize<span class="op">=</span>(<span class="dv">18</span>,<span class="dv">8</span>))</span>
+<span id="cb90-2"><a href="" aria-label="2"></a></span>
+<span id="cb90-3"><a href="" aria-label="3"></a><span class="cf">for</span> i, row <span class="kw">in</span> Xs_t.iterrows():</span>
+<span id="cb90-4"><a href="" aria-label="4"></a>    <span class="cf">if</span>(row.PC1<span class="op">&gt;</span><span class="dv">7</span> <span class="kw">or</span> row.PC2<span class="op">&lt;-</span><span class="fl">5.5</span> <span class="kw">or</span> row.PC2<span class="op">&gt;</span><span class="dv">4</span>):</span>
+<span id="cb90-5"><a href="" aria-label="5"></a>        plt.annotate(i, (row.PC1, row.PC2),size<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb90-6"><a href="" aria-label="6"></a>    <span class="cf">if</span>(row.PC1<span class="op">&lt;-</span><span class="fl">4.2</span>):</span>
+<span id="cb90-7"><a href="" aria-label="7"></a>        plt.annotate(i, (row.PC1<span class="op">-</span><span class="dv">1</span>, row.PC2),size<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb90-8"><a href="" aria-label="8"></a>plt.savefig(<span class="st">'PCs.png'</span>,dpi<span class="op">=</span><span class="dv">900</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -22537,31 +22540,31 @@ memory usage: 291.1+ KB</code></pre>
 <div id="cell-105" class="cell" data-execution_count="104">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb91-1"><a href=""></a>Xs <span class="op">=</span> county_df.drop(columns<span class="op">=</span> [<span class="st">'UnemploymentRate'</span>,<span class="st">'Population'</span>,<span class="st">'MedianHHIncome'</span>])</span>
-<span id="cb91-2"><a href=""></a></span>
-<span id="cb91-3"><a href=""></a>Xs <span class="op">=</span> (Xs <span class="op">-</span>Xs.<span class="bu">min</span>())<span class="op">/</span>(Xs.<span class="bu">max</span>()<span class="op">-</span>Xs.<span class="bu">min</span>())</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb91-1"><a href="" aria-label="1"></a>Xs <span class="op">=</span> county_df.drop(columns<span class="op">=</span> [<span class="st">'UnemploymentRate'</span>,<span class="st">'Population'</span>,<span class="st">'MedianHHIncome'</span>])</span>
+<span id="cb91-2"><a href="" aria-label="2"></a></span>
+<span id="cb91-3"><a href="" aria-label="3"></a>Xs <span class="op">=</span> (Xs <span class="op">-</span>Xs.<span class="bu">min</span>())<span class="op">/</span>(Xs.<span class="bu">max</span>()<span class="op">-</span>Xs.<span class="bu">min</span>())</span></code></pre></div>
 </details>
 </div>
 <h4 id="computational-experimentations-to-find-k">Computational experimentations to find K</h4>
 <div id="cell-107" class="cell" data-execution_count="110">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb92-1"><a href=""></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
-<span id="cb92-2"><a href=""></a>repetitions <span class="op">=</span> [<span class="st">'R</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>)]</span>
-<span id="cb92-3"><a href=""></a></span>
-<span id="cb92-4"><a href=""></a>SSE_results <span class="op">=</span> pd.DataFrame(<span class="fl">0.0</span>, index <span class="op">=</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">10</span>), </span>
-<span id="cb92-5"><a href=""></a>                       columns<span class="op">=</span> repetitions)</span>
-<span id="cb92-6"><a href=""></a></span>
-<span id="cb92-7"><a href=""></a></span>
-<span id="cb92-8"><a href=""></a><span class="cf">for</span> n_cluster <span class="kw">in</span> SSE_results.index:</span>
-<span id="cb92-9"><a href=""></a>    <span class="cf">for</span> col <span class="kw">in</span> SSE_results.columns:</span>
-<span id="cb92-10"><a href=""></a>        algort <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>n_cluster).fit(Xs)</span>
-<span id="cb92-11"><a href=""></a>        SSE_results.at[n_cluster,col] <span class="op">=</span> algort.inertia_ </span>
-<span id="cb92-12"><a href=""></a>        <span class="co"># Inertia: Sum of distances of samples to their closest cluster center</span></span>
-<span id="cb92-13"><a href=""></a></span>
-<span id="cb92-14"><a href=""></a>SSE_results[<span class="st">'Mean'</span>] <span class="op">=</span> SSE_results[repetitions].mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb92-15"><a href=""></a>SSE_results[<span class="st">'Var'</span>] <span class="op">=</span> SSE_results[repetitions].var(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb92-16"><a href=""></a>SSE_results.sort_values(<span class="st">'Mean'</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb92-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb92-2"><a href="" aria-label="2"></a>repetitions <span class="op">=</span> [<span class="st">'R</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>)]</span>
+<span id="cb92-3"><a href="" aria-label="3"></a></span>
+<span id="cb92-4"><a href="" aria-label="4"></a>SSE_results <span class="op">=</span> pd.DataFrame(<span class="fl">0.0</span>, index <span class="op">=</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">10</span>), </span>
+<span id="cb92-5"><a href="" aria-label="5"></a>                       columns<span class="op">=</span> repetitions)</span>
+<span id="cb92-6"><a href="" aria-label="6"></a></span>
+<span id="cb92-7"><a href="" aria-label="7"></a></span>
+<span id="cb92-8"><a href="" aria-label="8"></a><span class="cf">for</span> n_cluster <span class="kw">in</span> SSE_results.index:</span>
+<span id="cb92-9"><a href="" aria-label="9"></a>    <span class="cf">for</span> col <span class="kw">in</span> SSE_results.columns:</span>
+<span id="cb92-10"><a href="" aria-label="10"></a>        algort <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>n_cluster).fit(Xs)</span>
+<span id="cb92-11"><a href="" aria-label="11"></a>        SSE_results.at[n_cluster,col] <span class="op">=</span> algort.inertia_ </span>
+<span id="cb92-12"><a href="" aria-label="12"></a>        <span class="co"># Inertia: Sum of distances of samples to their closest cluster center</span></span>
+<span id="cb92-13"><a href="" aria-label="13"></a></span>
+<span id="cb92-14"><a href="" aria-label="14"></a>SSE_results[<span class="st">'Mean'</span>] <span class="op">=</span> SSE_results[repetitions].mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb92-15"><a href="" aria-label="15"></a>SSE_results[<span class="st">'Var'</span>] <span class="op">=</span> SSE_results[repetitions].var(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb92-16"><a href="" aria-label="16"></a>SSE_results.sort_values(<span class="st">'Mean'</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="110">
 <div>
@@ -22718,7 +22721,7 @@ memory usage: 291.1+ KB</code></pre>
 <div id="cell-108" class="cell" data-execution_count="284">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb93-1"><a href=""></a>SSE_results.Mean.plot()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb93-1"><a href="" aria-label="1"></a>SSE_results.Mean.plot()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -22731,21 +22734,21 @@ memory usage: 291.1+ KB</code></pre>
 <div id="cell-109" class="cell" data-execution_count="285">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb94-1"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> silhouette_score</span>
-<span id="cb94-2"><a href=""></a>repetitions <span class="op">=</span> [<span class="st">'R</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>)]</span>
-<span id="cb94-3"><a href=""></a></span>
-<span id="cb94-4"><a href=""></a>SIL_results <span class="op">=</span> pd.DataFrame( index <span class="op">=</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">10</span>), </span>
-<span id="cb94-5"><a href=""></a>                       columns<span class="op">=</span> repetitions)</span>
-<span id="cb94-6"><a href=""></a></span>
-<span id="cb94-7"><a href=""></a></span>
-<span id="cb94-8"><a href=""></a><span class="cf">for</span> n_cluster <span class="kw">in</span> SIL_results.index:</span>
-<span id="cb94-9"><a href=""></a>    <span class="cf">for</span> col <span class="kw">in</span> SIL_results.columns:</span>
-<span id="cb94-10"><a href=""></a>        algort <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>n_cluster).fit(Xs)</span>
-<span id="cb94-11"><a href=""></a>        SIL_results.at[n_cluster,col] <span class="op">=</span> silhouette_score(Xs,algort.labels_)</span>
-<span id="cb94-12"><a href=""></a>        </span>
-<span id="cb94-13"><a href=""></a>SIL_results[<span class="st">'Mean'</span>] <span class="op">=</span> SIL_results[repetitions].mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb94-14"><a href=""></a>SIL_results[<span class="st">'Var'</span>] <span class="op">=</span> SIL_results[repetitions].var(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb94-15"><a href=""></a>SIL_results.sort_values(<span class="st">'Mean'</span>,ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb94-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> silhouette_score</span>
+<span id="cb94-2"><a href="" aria-label="2"></a>repetitions <span class="op">=</span> [<span class="st">'R</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>)]</span>
+<span id="cb94-3"><a href="" aria-label="3"></a></span>
+<span id="cb94-4"><a href="" aria-label="4"></a>SIL_results <span class="op">=</span> pd.DataFrame( index <span class="op">=</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">10</span>), </span>
+<span id="cb94-5"><a href="" aria-label="5"></a>                       columns<span class="op">=</span> repetitions)</span>
+<span id="cb94-6"><a href="" aria-label="6"></a></span>
+<span id="cb94-7"><a href="" aria-label="7"></a></span>
+<span id="cb94-8"><a href="" aria-label="8"></a><span class="cf">for</span> n_cluster <span class="kw">in</span> SIL_results.index:</span>
+<span id="cb94-9"><a href="" aria-label="9"></a>    <span class="cf">for</span> col <span class="kw">in</span> SIL_results.columns:</span>
+<span id="cb94-10"><a href="" aria-label="10"></a>        algort <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>n_cluster).fit(Xs)</span>
+<span id="cb94-11"><a href="" aria-label="11"></a>        SIL_results.at[n_cluster,col] <span class="op">=</span> silhouette_score(Xs,algort.labels_)</span>
+<span id="cb94-12"><a href="" aria-label="12"></a>        </span>
+<span id="cb94-13"><a href="" aria-label="13"></a>SIL_results[<span class="st">'Mean'</span>] <span class="op">=</span> SIL_results[repetitions].mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb94-14"><a href="" aria-label="14"></a>SIL_results[<span class="st">'Var'</span>] <span class="op">=</span> SIL_results[repetitions].var(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb94-15"><a href="" aria-label="15"></a>SIL_results.sort_values(<span class="st">'Mean'</span>,ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="285">
 <div>
@@ -22902,7 +22905,7 @@ memory usage: 291.1+ KB</code></pre>
 <div id="cell-110" class="cell" data-execution_count="286">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb95-1"><a href=""></a>SIL_results.Mean.plot()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb95-1"><a href="" aria-label="1"></a>SIL_results.Mean.plot()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -22916,16 +22919,16 @@ memory usage: 291.1+ KB</code></pre>
 <div id="cell-112" class="cell" data-execution_count="107">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb96-1"><a href=""></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
-<span id="cb96-2"><a href=""></a></span>
-<span id="cb96-3"><a href=""></a>kmeans <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">5</span>)</span>
-<span id="cb96-4"><a href=""></a>kmeans.fit(Xs)</span>
-<span id="cb96-5"><a href=""></a></span>
-<span id="cb96-6"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb96-7"><a href=""></a>    BM <span class="op">=</span> kmeans.labels_<span class="op">==</span>i</span>
-<span id="cb96-8"><a href=""></a>    <span class="bu">print</span>(<span class="st">'Cluster </span><span class="sc">{}</span><span class="st">: Size=</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(i,<span class="bu">sum</span>(BM)))</span>
-<span id="cb96-9"><a href=""></a>    <span class="bu">print</span>(county_df[BM].index.values)</span>
-<span id="cb96-10"><a href=""></a>    <span class="bu">print</span>(<span class="st">'--------------------------------------'</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb96-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb96-2"><a href="" aria-label="2"></a></span>
+<span id="cb96-3"><a href="" aria-label="3"></a>kmeans <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb96-4"><a href="" aria-label="4"></a>kmeans.fit(Xs)</span>
+<span id="cb96-5"><a href="" aria-label="5"></a></span>
+<span id="cb96-6"><a href="" aria-label="6"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb96-7"><a href="" aria-label="7"></a>    BM <span class="op">=</span> kmeans.labels_<span class="op">==</span>i</span>
+<span id="cb96-8"><a href="" aria-label="8"></a>    <span class="bu">print</span>(<span class="st">'Cluster </span><span class="sc">{}</span><span class="st">: Size=</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(i,<span class="bu">sum</span>(BM)))</span>
+<span id="cb96-9"><a href="" aria-label="9"></a>    <span class="bu">print</span>(county_df[BM].index.values)</span>
+<span id="cb96-10"><a href="" aria-label="10"></a>    <span class="bu">print</span>(<span class="st">'--------------------------------------'</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Cluster 0: Size=573
@@ -23742,15 +23745,15 @@ Cluster 4: Size=302
 <div id="cell-113" class="cell" data-scrolled="true" data-execution_count="115">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb98-1"><a href=""></a>clusters <span class="op">=</span> [<span class="st">'Cluster </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
-<span id="cb98-2"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">4</span>))</span>
-<span id="cb98-3"><a href=""></a>markerlist <span class="op">=</span> [<span class="st">'*'</span>,<span class="st">'o'</span>,<span class="st">'.'</span>,<span class="st">'^'</span>,<span class="st">'+'</span>]</span>
-<span id="cb98-4"><a href=""></a><span class="cf">for</span> i,clst <span class="kw">in</span> <span class="bu">enumerate</span>(clusters):</span>
-<span id="cb98-5"><a href=""></a>    BM <span class="op">=</span> kmeans.labels_<span class="op">==</span>i</span>
-<span id="cb98-6"><a href=""></a>    wdf <span class="op">=</span> Xs_t[BM]</span>
-<span id="cb98-7"><a href=""></a>    plt.scatter(wdf.PC1,wdf.PC2, marker <span class="op">=</span>markerlist[i] ,label<span class="op">=</span>clst)</span>
-<span id="cb98-8"><a href=""></a>plt.legend()</span>
-<span id="cb98-9"><a href=""></a>plt.savefig(<span class="st">'ClustersInPCs.png'</span>,dpi<span class="op">=</span><span class="dv">900</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb98-1"><a href="" aria-label="1"></a>clusters <span class="op">=</span> [<span class="st">'Cluster </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
+<span id="cb98-2"><a href="" aria-label="2"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">4</span>))</span>
+<span id="cb98-3"><a href="" aria-label="3"></a>markerlist <span class="op">=</span> [<span class="st">'*'</span>,<span class="st">'o'</span>,<span class="st">'.'</span>,<span class="st">'^'</span>,<span class="st">'+'</span>]</span>
+<span id="cb98-4"><a href="" aria-label="4"></a><span class="cf">for</span> i,clst <span class="kw">in</span> <span class="bu">enumerate</span>(clusters):</span>
+<span id="cb98-5"><a href="" aria-label="5"></a>    BM <span class="op">=</span> kmeans.labels_<span class="op">==</span>i</span>
+<span id="cb98-6"><a href="" aria-label="6"></a>    wdf <span class="op">=</span> Xs_t[BM]</span>
+<span id="cb98-7"><a href="" aria-label="7"></a>    plt.scatter(wdf.PC1,wdf.PC2, marker <span class="op">=</span>markerlist[i] ,label<span class="op">=</span>clst)</span>
+<span id="cb98-8"><a href="" aria-label="8"></a>plt.legend()</span>
+<span id="cb98-9"><a href="" aria-label="9"></a>plt.savefig(<span class="st">'ClustersInPCs.png'</span>,dpi<span class="op">=</span><span class="dv">900</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -23763,31 +23766,31 @@ Cluster 4: Size=302
 <div id="cell-114" class="cell" data-execution_count="108">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb99-1"><a href=""></a>clusters <span class="op">=</span> [<span class="st">'Cluster </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
-<span id="cb99-2"><a href=""></a></span>
-<span id="cb99-3"><a href=""></a>Centroids <span class="op">=</span> pd.DataFrame(<span class="fl">0.0</span>, index <span class="op">=</span>  clusters, columns <span class="op">=</span> Xs.columns)</span>
-<span id="cb99-4"><a href=""></a>centrodis_orig <span class="op">=</span> pd.DataFrame(<span class="fl">0.0</span>, index <span class="op">=</span>  clusters, columns <span class="op">=</span> county_df.columns)</span>
-<span id="cb99-5"><a href=""></a>size_df <span class="op">=</span> pd.DataFrame(<span class="fl">0.0</span>, index <span class="op">=</span>  clusters, columns <span class="op">=</span> [<span class="st">'Cluster size'</span>])</span>
-<span id="cb99-6"><a href=""></a></span>
-<span id="cb99-7"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="fl">2.5</span>))</span>
-<span id="cb99-8"><a href=""></a><span class="cf">for</span> i,clst <span class="kw">in</span> <span class="bu">enumerate</span>(clusters):</span>
-<span id="cb99-9"><a href=""></a>    BM <span class="op">=</span> kmeans.labels_<span class="op">==</span>i</span>
-<span id="cb99-10"><a href=""></a>    Centroids.loc[clst] <span class="op">=</span> Xs[BM].mean(axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb99-11"><a href=""></a>    centrodis_orig.loc[clst] <span class="op">=</span> county_df[BM].mean()</span>
-<span id="cb99-12"><a href=""></a>    size_df.loc[clst] <span class="op">=</span> <span class="bu">sum</span>(BM)</span>
-<span id="cb99-13"><a href=""></a></span>
-<span id="cb99-14"><a href=""></a>sns.heatmap(Centroids.transpose(), linewidths<span class="op">=</span><span class="fl">.5</span>, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'binary'</span>)</span>
-<span id="cb99-15"><a href=""></a>plt.show()</span>
-<span id="cb99-16"><a href=""></a></span>
-<span id="cb99-17"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>))</span>
-<span id="cb99-18"><a href=""></a>plt.subplot(<span class="dv">11</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb99-19"><a href=""></a>sns.heatmap(size_df.transpose(), linewidths<span class="op">=</span><span class="fl">.5</span>, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'binary'</span>,fmt<span class="op">=</span><span class="st">'g'</span>)</span>
-<span id="cb99-20"><a href=""></a>plt.yticks(rotation<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb99-21"><a href=""></a><span class="cf">for</span> i,att <span class="kw">in</span> <span class="bu">enumerate</span>(county_df.columns):</span>
-<span id="cb99-22"><a href=""></a>    plt.subplot(<span class="dv">11</span>,<span class="dv">1</span>,i<span class="op">+</span><span class="dv">2</span>)</span>
-<span id="cb99-23"><a href=""></a>    sns.heatmap(centrodis_orig[[att]].transpose(), linewidths<span class="op">=</span><span class="fl">.5</span>, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'binary'</span>)</span>
-<span id="cb99-24"><a href=""></a>    plt.yticks(rotation<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb99-25"><a href=""></a>plt.show()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb99-1"><a href="" aria-label="1"></a>clusters <span class="op">=</span> [<span class="st">'Cluster </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
+<span id="cb99-2"><a href="" aria-label="2"></a></span>
+<span id="cb99-3"><a href="" aria-label="3"></a>Centroids <span class="op">=</span> pd.DataFrame(<span class="fl">0.0</span>, index <span class="op">=</span>  clusters, columns <span class="op">=</span> Xs.columns)</span>
+<span id="cb99-4"><a href="" aria-label="4"></a>centrodis_orig <span class="op">=</span> pd.DataFrame(<span class="fl">0.0</span>, index <span class="op">=</span>  clusters, columns <span class="op">=</span> county_df.columns)</span>
+<span id="cb99-5"><a href="" aria-label="5"></a>size_df <span class="op">=</span> pd.DataFrame(<span class="fl">0.0</span>, index <span class="op">=</span>  clusters, columns <span class="op">=</span> [<span class="st">'Cluster size'</span>])</span>
+<span id="cb99-6"><a href="" aria-label="6"></a></span>
+<span id="cb99-7"><a href="" aria-label="7"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="fl">2.5</span>))</span>
+<span id="cb99-8"><a href="" aria-label="8"></a><span class="cf">for</span> i,clst <span class="kw">in</span> <span class="bu">enumerate</span>(clusters):</span>
+<span id="cb99-9"><a href="" aria-label="9"></a>    BM <span class="op">=</span> kmeans.labels_<span class="op">==</span>i</span>
+<span id="cb99-10"><a href="" aria-label="10"></a>    Centroids.loc[clst] <span class="op">=</span> Xs[BM].mean(axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb99-11"><a href="" aria-label="11"></a>    centrodis_orig.loc[clst] <span class="op">=</span> county_df[BM].mean()</span>
+<span id="cb99-12"><a href="" aria-label="12"></a>    size_df.loc[clst] <span class="op">=</span> <span class="bu">sum</span>(BM)</span>
+<span id="cb99-13"><a href="" aria-label="13"></a></span>
+<span id="cb99-14"><a href="" aria-label="14"></a>sns.heatmap(Centroids.transpose(), linewidths<span class="op">=</span><span class="fl">.5</span>, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'binary'</span>)</span>
+<span id="cb99-15"><a href="" aria-label="15"></a>plt.show()</span>
+<span id="cb99-16"><a href="" aria-label="16"></a></span>
+<span id="cb99-17"><a href="" aria-label="17"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>))</span>
+<span id="cb99-18"><a href="" aria-label="18"></a>plt.subplot(<span class="dv">11</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb99-19"><a href="" aria-label="19"></a>sns.heatmap(size_df.transpose(), linewidths<span class="op">=</span><span class="fl">.5</span>, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'binary'</span>,fmt<span class="op">=</span><span class="st">'g'</span>)</span>
+<span id="cb99-20"><a href="" aria-label="20"></a>plt.yticks(rotation<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb99-21"><a href="" aria-label="21"></a><span class="cf">for</span> i,att <span class="kw">in</span> <span class="bu">enumerate</span>(county_df.columns):</span>
+<span id="cb99-22"><a href="" aria-label="22"></a>    plt.subplot(<span class="dv">11</span>,<span class="dv">1</span>,i<span class="op">+</span><span class="dv">2</span>)</span>
+<span id="cb99-23"><a href="" aria-label="23"></a>    sns.heatmap(centrodis_orig[[att]].transpose(), linewidths<span class="op">=</span><span class="fl">.5</span>, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'binary'</span>)</span>
+<span id="cb99-24"><a href="" aria-label="24"></a>    plt.yticks(rotation<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb99-25"><a href="" aria-label="25"></a>plt.show()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
