@@ -9,6 +9,7 @@ subtitle: Data Preparation
 #
 
 *Without clean data, the results of a data mining analysis are in question*.
+
 # Data Preparation (aka *data pre-processing*)
 
 The **data preparation** phase covers all activities to construct the dataset fed into the modeling tools from the initial data.
